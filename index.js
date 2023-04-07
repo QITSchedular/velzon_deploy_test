@@ -988,37 +988,12 @@ app.post("/sendmsg", function (req, res) {
                   "')",
                 function (err, result, fields) {
                   if (err) return res.send(status.forbidden());
-
-                  conn.query(
-                    "select * from users where apikey='" + apikey + "'",
-                    function (err, result2, fields) {
-                      if (result2.length > 0) {
-                        var email = result2[0].email;
-
-                        const options2 = {
-                          hostname: "localhost",
-                          port: `8081`,
-                          path: "/sendNotification/" + email + "/" + phone + "",
-                          method: "POST",
-                        };
-                        var data2 = "";
-                        request2 = http.request(options2, (response2) => {
-                          response2.on("data", (chunk) => {
-                            data2 += chunk;
-                          });
-
-                          response2.on("end", () => {
-                            if (data2 == "email sent") {
-                              res.send(status.ok());
-                            } else {
-                              res.send(status.expectationFailed());
-                            }
-                          });
-                        });
-                        request2.end();
-                      }
-                    }
-                  );
+                  if(result.affectedRows==1){
+                    res.send(status.ok());
+                  }
+                  else{
+                    res.send(status.internalservererror());
+                  }
                 }
               );
             } else {
