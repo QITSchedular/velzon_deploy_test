@@ -76,7 +76,9 @@
 
     <!-- Jquery -->
     <script src="../assets/js/jquery.js"></script>
-    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/130527/qrcode.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+
 
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js"
@@ -1092,22 +1094,18 @@
               $("#loader").addClass("d-none");
               $("#output").removeClass("d-none");
 
-              $("#output").empty();
-              // Clear Previous QR Code
+              QRCode.toCanvas(
+                data,
+                { errorCorrectionLevel: "H" },
+                function (err, canvas) {
+                  if (err) throw err;
 
-              // Set Size to Match User Input
-              $("#output").css({
-                width: 200,
-                height: 200,
-              });
-
-              // Generate and Output QR Code
-              $("#output").qrcode({
-                width: 200,
-                height: 200,
-                text: data,
-              });
-
+                  var container = document.getElementById("output");
+                  canvas.style.cssText = "height: 200px; width: 200px;";
+                  container.appendChild(canvas);
+                }
+              );
+              
               var index = getCookie("index");
               alert(index);
               console.log(getCookie("index"));
