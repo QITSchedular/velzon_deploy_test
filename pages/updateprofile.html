@@ -1,0 +1,1403 @@
+<!doctype html>
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg"
+    data-sidebar-image="none" data-preloader="disable">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Profile Settings | Velzon - Admin & Dashboard Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesbrand" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+    <!-- jsvectormap css -->
+    <link href="assets/libs/jsvectormap/css/jsvectormap.min.css" rel="stylesheet" type="text/css" />
+
+    <!--Swiper slider css-->
+    <link href="assets/libs/swiper/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Layout config Js -->
+    <script src="assets/js/layout.js"></script>
+    <!-- Bootstrap Css -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <!-- custom Css-->
+    <link href="assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Font Awesome Files -->
+    <link href="assets/fontawesome/css/all.min.css" rel="stylesheet">
+    <link href="assets/fontawesome/css/solid.css" rel="stylesheet">
+    <link href="assets/fontawesome/css/solid.min.css" rel="stylesheet">
+    <link href="assets/fontawesome/css/regular.css" rel="stylesheet">
+    <link href="assets/fontawesome/css/regular.min.css" rel="stylesheet">
+    <link href="assets/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+    <link href="assets/fontawesome/css/fontawesome.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+        <header id="page-topbar">
+            <div class="layout-width">
+                <div class="navbar-header">
+                    <div class="d-flex">
+                        <!-- LOGO -->
+                        <div class="navbar-brand-box horizontal-logo">
+                            <a href="/dashboard" class="logo logo-dark">
+                                <span class="logo-sm">
+                                    <img src="assets/images/logo-sm.png" alt="" height="22">
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="assets/images/logo-dark.png" alt="" height="17">
+                                </span>
+                            </a>
+
+                            <a href="/dashboard" class="logo logo-light">
+                                <span class="logo-sm">
+                                    <img src="assets/images/logo-sm.png" alt="" height="22">
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="assets/images/logo-light.png" alt="" height="17">
+                                </span>
+                            </a>
+                        </div>
+
+                        <button type="button"
+                            class="btn btn-sm px-3 fs-16 header-item vertical-menu-btn topnav-hamburger"
+                            id="topnav-hamburger-icon">
+                            <span class="hamburger-icon">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </button>
+                    </div>
+
+                    <div class="d-flex align-items-center">
+                        <div class="dropdown d-md-none topbar-head-dropdown header-item">
+                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
+                                id="page-header-search-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                <i class="bx bx-search fs-22"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
+                                aria-labelledby="page-header-search-dropdown">
+                                <form class="p-3">
+                                    <div class="form-group m-0">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Search ..."
+                                                aria-label="Recipient's username">
+                                            <button class="btn btn-primary" type="submit"><i
+                                                    class="mdi mdi-magnify"></i></button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="ms-1 header-item d-none d-sm-flex">
+                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
+                                data-toggle="fullscreen">
+                                <i class='bx bx-fullscreen fs-22'></i>
+                            </button>
+                        </div>
+
+                        <div class="ms-1 header-item d-none d-sm-flex">
+                            <button type="button"
+                                class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle light-dark-mode">
+                                <i class='bx bx-moon fs-22'></i>
+                            </button>
+                        </div>
+
+                        <div class="dropdown ms-sm-3 header-item topbar-user">
+                            <button type="button" class="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <span class="d-flex align-items-center">
+                                    <img class="rounded-circle header-profile-user profileimg" />
+                                    <span class="text-start ms-xl-2">
+                                        <span
+                                            class="d-none d-xl-inline-block ms-1 fw-medium user-name-text profilename"></span>
+                                        <span class="d-none d-xl-block ms-1 fs-12 text-muted user-name-sub-text">
+                                            Founder
+                                        </span>
+                                    </span>
+                                </span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <!-- item-->
+                                <h6 class="dropdown-header">Welcome <span class="profilename"></span></h6>
+                                <a class="dropdown-item" href="/profile">
+                                    <i class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i>
+                                    <span class="align-middle">Profile</span>
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" id="logout">
+                                    <i class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i>
+                                    <span class="align-middle" data-key="t-logout">Logout</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- ========== App Menu ========== -->
+        <div class="app-menu navbar-menu">
+            <!-- LOGO -->
+            <div class="navbar-brand-box">
+                <!-- Dark Logo-->
+                <a href="/dashboard" class="logo logo-dark">
+                    <span class="logo-sm">
+                        <img src="assets/images/logo-sm.png" alt="" height="22">
+                    </span>
+                    <span class="logo-lg">
+                        <img src="assets/images/logo-dark.png" alt="" height="17">
+                    </span>
+                </a>
+                <!-- Light Logo-->
+                <a href="/dashboard" class="logo logo-light">
+                    <span class="logo-sm">
+                        <img src="assets/images/logo-sm.png" alt="" height="22">
+                    </span>
+                    <span class="logo-lg">
+                        <img src="assets/images/logo-light.png" alt="" height="17">
+                    </span>
+                </a>
+                <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover"
+                    id="vertical-hover">
+                    <i class="ri-record-circle-line"></i>
+                </button>
+            </div>
+
+            <div id="scrollbar">
+                <div class="container-fluid">
+                    <div id="two-column-menu"></div>
+                    <ul class="navbar-nav" id="navbar-nav">
+                        <li class="menu-title"><span data-key="t-menu">Menu</span></li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="/dashboard" role="button" aria-expanded="false"
+                                aria-controls="sidebarDashboards">
+                                <i class="ri-dashboard-2-line"></i>
+                                <span data-key="t-dashboards">Dashboards</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="/instance">
+                                <i class="ri-apps-2-line"></i>
+                                <span data-key="t-apps">Instance</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="sidebar-background"></div>
+        </div>
+        <!-- Left Sidebar End -->
+        <!-- Vertical Overlay-->
+        <div class="vertical-overlay"></div>
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container-fluid">
+                    <div class="position-relative mx-n4 mt-n4">
+                        <div class="profile-wid-bg profile-setting-img">
+                            <img src="assets/images/profile-bg.jpg" class="profile-wid-img" alt="">
+                            <div class="overlay-content"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xxl-3">
+                        <div class="card mt-n5">
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <div class="profile-user position-relative d-inline-block mx-auto mb-4">
+                                        <form method="post" enctype="multipart/form-data">
+                                            <img class="rounded-circle avatar-xl user-profile-image profileimg" />
+                                            <div class="avatar-xs p-0 rounded-circle profile-photo-edit">
+                                                <input id="profile-img-file-input" type="file"
+                                                    class="profile-img-file-input" name="uploadFile">
+                                                <label for="profile-img-file-input"
+                                                    class="profile-photo-edit avatar-xs">
+                                                    <span class="avatar-title rounded-circle bg-light text-body">
+                                                        <i class="ri-camera-fill"></i>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <h5 class="fs-16 mb-1 profilename"></h5>
+                                    <p class="text-muted mb-0">Lead Designer / Developer</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end card-->
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-2">
+                                    <div class="flex-grow-1">
+                                        <h5 class="card-title mb-2" id="progress-title"></h5>
+                                    </div>
+                                </div>
+                                <div class="progress animated-progress custom-progress progress-label">
+                                    <div class="progress-bar bg-success" id="progress-bar" aria-valuenow="60"
+                                        aria-valuemin="0" aria-valuemax="100">
+                                        <div id="progress-lbl" class="label"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end col-->
+                    <div class="col-xxl-9" id="boximage">
+                        <div class="card mt-xxl-n5">
+                            <div class="card-header">
+                                <ul class="nav nav-tabs-custom rounded card-header-tabs border-bottom-0" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" data-bs-toggle="tab" href="#personalDetails"
+                                            role="tab">
+                                            <i class="fas fa-home"></i> Personal Details
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-bs-toggle="tab" href="#changePassword" role="tab">
+                                            <i class="far fa-user"></i> Change Password
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-bs-toggle="tab" href="#experience" role="tab">
+                                            <i class="far fa-envelope"></i> Experience
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-bs-toggle="tab" href="#privacy" role="tab">
+                                            <i class="far fa-envelope"></i> Privacy Policy
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="card-body p-4">
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="personalDetails" role="tabpanel">
+                                        <div class="row">
+                                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                                <div class="mb-3">
+                                                    <label for="nameInput" class="form-label">
+                                                        Name
+                                                    </label>
+                                                    <input type="text" class="form-control" id="nameInput"
+                                                        placeholder="Enter Name" value="">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                                <div class="mb-3">
+                                                    <label for="emailInput" class="form-label">
+                                                        Email
+                                                    </label>
+                                                    <input type="email" class="form-control" id="emailInput"
+                                                        placeholder="Enter Email" value="">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                                <div class="mb-3">
+                                                    <label for="phoneInput" class="form-label">
+                                                        Phone Number
+                                                    </label>
+                                                    <div class="input-group">
+                                                        <input type="tel" class="form-control" id="phoneInput"
+                                                            placeholder="Enter Phone-number" value="">
+                                                        <button class="btn btn-warning rounded-end d-none" type="button"
+                                                            id="verifybtn" data-bs-toggle="modal"
+                                                            data-bs-target="#phoneverifymodal">
+                                                            <span>
+                                                                <i class="fa-solid fa-triangle-exclamation me-2"></i>
+                                                                Verify
+                                                            </span>
+                                                        </button>
+                                                        <button class="btn btn-success rounded-end d-none" type="button"
+                                                            id="verifiedbtn">
+                                                            <span>
+                                                                <i class="fa-solid fa-check me-2"></i>
+                                                                Verified
+                                                            </span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal fade" id="phoneverifymodal" tabindex="-1" role="dialog"
+                                            aria-modal="true" data-bs-backdrop="static">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                                <div class="modal-content">
+                                                    <div class="card mb-0">
+                                                        <div class="card-body">
+                                                            <button type="button" class="btn-close"
+                                                                data-bs-dismiss="modal"></button>
+
+                                                            <div class="mb-2">
+                                                                <div class="avatar-lg mx-auto">
+                                                                    <div
+                                                                        class="avatar-title bg-light text-primary display-5 rounded-circle">
+                                                                        <i class="ri-phone-fill"></i>
+                                                                    </div>
+                                                                </div>
+                                                                <h4 class="text-center mt-2">Verify Your
+                                                                    phone</h4>
+                                                            </div>
+
+                                                            <div class="p-2 mt-2" id="numberinput">
+                                                                <div class="row">
+                                                                    <div class="col-4">
+                                                                        <label for="phonecode" class="form-label">
+                                                                            Code
+                                                                        </label>
+                                                                        <select class="form-select mb-3" id="phonecode">
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="col-8">
+                                                                        <label for="phone" class="form-label">
+                                                                            Phone
+                                                                            <span class="text-danger">*</span>
+                                                                            <span class="text-danger"
+                                                                                id="err_phone"></span>
+                                                                        </label>
+                                                                        <input type="number"
+                                                                            class="form-control required" id="phone"
+                                                                            readonly disabled>
+                                                                    </div>
+                                                                </div>
+                                                                <div id="recaptcha"
+                                                                    class="d-flex justify-content-center d-none">
+                                                                </div>
+                                                                <div class="mt-2">
+                                                                    <button id="sendcode" class="btn btn-success w-100">
+                                                                        <span>Send Code</span>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="p-2 mt-2 d-none" id="otpinput">
+                                                                <div class="text-muted text-center mb-4 mx-lg-3">
+                                                                    <span>An OTP has been sent to </span>
+                                                                    <span class="phone"></span>
+                                                                </div>
+
+                                                                <form autocomplete="off">
+                                                                    <div class="row">
+                                                                        <div class="col-2">
+                                                                            <div class="mb-3">
+                                                                                <label for="digit1-input"
+                                                                                    class="visually-hidden">Digit
+                                                                                    1</label>
+                                                                                <input type="text"
+                                                                                    class="form-control form-control-lg bg-light p-0 text-center"
+                                                                                    onkeyup="moveToNext(1, event)"
+                                                                                    maxLength="1" id="digit1-input">
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-2">
+                                                                            <div class="mb-3">
+                                                                                <label for="digit2-input"
+                                                                                    class="visually-hidden">Digit
+                                                                                    2</label>
+                                                                                <input type="text"
+                                                                                    class="form-control form-control-lg bg-light p-0 text-center"
+                                                                                    onkeyup="moveToNext(2, event)"
+                                                                                    maxLength="1" id="digit2-input">
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-2">
+                                                                            <div class="mb-3">
+                                                                                <label for="digit3-input"
+                                                                                    class="visually-hidden">Digit
+                                                                                    3</label>
+                                                                                <input type="text"
+                                                                                    class="form-control form-control-lg bg-light p-0 text-center"
+                                                                                    onkeyup="moveToNext(3, event)"
+                                                                                    maxLength="1" id="digit3-input">
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-2">
+                                                                            <div class="mb-3">
+                                                                                <label for="digit4-input"
+                                                                                    class="visually-hidden">Digit
+                                                                                    4</label>
+                                                                                <input type="text"
+                                                                                    class="form-control form-control-lg bg-light p-0 text-center"
+                                                                                    onkeyup="moveToNext(4, event)"
+                                                                                    maxLength="1" id="digit4-input">
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-2">
+                                                                            <div class="mb-3">
+                                                                                <label for="digit5-input"
+                                                                                    class="visually-hidden">Digit
+                                                                                    5</label>
+                                                                                <input type="text"
+                                                                                    class="form-control form-control-lg bg-light p-0 text-center"
+                                                                                    onkeyup="moveToNext(5, event)"
+                                                                                    maxLength="1" id="digit5-input">
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="col-2">
+                                                                            <div class="mb-3">
+                                                                                <label for="digit6-input"
+                                                                                    class="visually-hidden">
+                                                                                    Digit 4</label>
+                                                                                <input type="text"
+                                                                                    class="form-control form-control-lg bg-light p-0 text-center"
+                                                                                    maxLength="1" id="digit6-input">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                                <div class="mt-3">
+                                                                    <button type="button" id="verify"
+                                                                        class="btn btn-success w-100"
+                                                                        data-bs-dismiss="modal">Verify</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                                <div class="mb-3">
+                                                    <label for="countryInput" class="form-label">
+                                                        Country
+                                                    </label>
+                                                    <input type="text" class="form-control" id="countryInput"
+                                                        placeholder="Enter Country" value="" />
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                                <div class="mb-3">
+                                                    <label for="stateInput" class="form-label">
+                                                        State
+                                                    </label>
+                                                    <input type="text" class="form-control" id="stateInput"
+                                                        placeholder="Enter State" value="" />
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                                <div class="mb-3">
+                                                    <label for="cityInput" class="form-label">City</label>
+                                                    <input type="text" class="form-control" id="cityInput"
+                                                        placeholder="City" value="" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="row">
+                                                    <div class="col-lg-4 col-md-4 col-sm-12">
+                                                        <div class="mb-3">
+                                                            <label for="designationInput"
+                                                                class="form-label">Designation</label>
+                                                            <input type="text" class="form-control"
+                                                                id="designationInput" placeholder="Designation"
+                                                                value="Lead Designer / Developer">
+                                                        </div>
+                                                    </div>
+                                                </div> -->
+                                        <div class="row mt-3">
+                                            <div class="col-lg-8 col-md-8 col-sm-12">
+                                                <div class="mb-3">
+                                                    <div class="justify-content-lg-start justify-content-sm-center">
+                                                        <button class="btn btn-primary" id="updatepersonalinfo">
+                                                            <span>Update</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!--end tab-pane-->
+                                    <div class="tab-pane" id="changePassword" role="tabpanel">
+                                        <form action="javascript:void(0);">
+                                            <div class="row g-2">
+                                                <div class="col-lg-4">
+                                                    <div>
+                                                        <label for="oldpasswordInput" class="form-label">Old
+                                                            Password*</label>
+                                                        <input type="password" class="form-control"
+                                                            id="oldpasswordInput" placeholder="Enter current password">
+                                                    </div>
+                                                </div>
+                                                <!--end col-->
+                                                <div class="col-lg-4">
+                                                    <div>
+                                                        <label for="newpasswordInput" class="form-label">New
+                                                            Password*</label>
+                                                        <input type="password" class="form-control"
+                                                            id="newpasswordInput" placeholder="Enter new password">
+                                                    </div>
+                                                </div>
+                                                <!--end col-->
+                                                <div class="col-lg-4">
+                                                    <div>
+                                                        <label for="confirmpasswordInput" class="form-label">Confirm
+                                                            Password*</label>
+                                                        <input type="password" class="form-control"
+                                                            id="confirmpasswordInput" placeholder="Confirm password">
+                                                    </div>
+                                                </div>
+                                                <!--end col-->
+                                                <div class="col-lg-12">
+                                                    <div class="mb-3">
+                                                        <a href="javascript:void(0);"
+                                                            class="link-primary text-decoration-underline">Forgot
+                                                            Password ?</a>
+                                                    </div>
+                                                </div>
+                                                <!--end col-->
+                                                <div class="col-lg-12">
+                                                    <div class="text-end">
+                                                        <button type="submit" class="btn btn-success">Change
+                                                            Password</button>
+                                                    </div>
+                                                </div>
+                                                <!--end col-->
+                                            </div>
+                                            <!--end row-->
+                                        </form>
+                                        <div class="mt-4 mb-3 border-bottom pb-2">
+                                            <div class="float-end">
+                                                <a href="javascript:void(0);" class="link-primary">All
+                                                    Logout</a>
+                                            </div>
+                                            <h5 class="card-title">Login History</h5>
+                                        </div>
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="flex-shrink-0 avatar-sm">
+                                                <div class="avatar-title bg-light text-primary rounded-3 fs-18">
+                                                    <i class="ri-smartphone-line"></i>
+                                                </div>
+                                            </div>
+                                            <div class="flex-grow-1 ms-3">
+                                                <h6>iPhone 12 Pro</h6>
+                                                <p class="text-muted mb-0">Los Angeles, United States - March 16
+                                                    at
+                                                    2:47PM</p>
+                                            </div>
+                                            <div>
+                                                <a href="javascript:void(0);">Logout</a>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="flex-shrink-0 avatar-sm">
+                                                <div class="avatar-title bg-light text-primary rounded-3 fs-18">
+                                                    <i class="ri-tablet-line"></i>
+                                                </div>
+                                            </div>
+                                            <div class="flex-grow-1 ms-3">
+                                                <h6>Apple iPad Pro</h6>
+                                                <p class="text-muted mb-0">Washington, United States - November
+                                                    06
+                                                    at 10:43AM</p>
+                                            </div>
+                                            <div>
+                                                <a href="javascript:void(0);">Logout</a>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="flex-shrink-0 avatar-sm">
+                                                <div class="avatar-title bg-light text-primary rounded-3 fs-18">
+                                                    <i class="ri-smartphone-line"></i>
+                                                </div>
+                                            </div>
+                                            <div class="flex-grow-1 ms-3">
+                                                <h6>Galaxy S21 Ultra 5G</h6>
+                                                <p class="text-muted mb-0">Conneticut, United States - June 12
+                                                    at
+                                                    3:24PM</p>
+                                            </div>
+                                            <div>
+                                                <a href="javascript:void(0);">Logout</a>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <div class="flex-shrink-0 avatar-sm">
+                                                <div class="avatar-title bg-light text-primary rounded-3 fs-18">
+                                                    <i class="ri-macbook-line"></i>
+                                                </div>
+                                            </div>
+                                            <div class="flex-grow-1 ms-3">
+                                                <h6>Dell Inspiron 14</h6>
+                                                <p class="text-muted mb-0">Phoenix, United States - July 26 at
+                                                    8:10AM</p>
+                                            </div>
+                                            <div>
+                                                <a href="javascript:void(0);">Logout</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end tab-pane-->
+                                    <div class="tab-pane" id="experience" role="tabpanel">
+                                        <form>
+                                            <div id="newlink">
+                                                <div id="1">
+                                                    <div class="row">
+                                                        <div class="col-lg-12">
+                                                            <div class="mb-3">
+                                                                <label for="jobTitle" class="form-label">Job
+                                                                    Title</label>
+                                                                <input type="text" class="form-control" id="jobTitle"
+                                                                    placeholder="Job title"
+                                                                    value="Lead Designer / Developer">
+                                                            </div>
+                                                        </div>
+                                                        <!--end col-->
+                                                        <div class="col-lg-6">
+                                                            <div class="mb-3">
+                                                                <label for="companyName" class="form-label">Company
+                                                                    Name</label>
+                                                                <input type="text" class="form-control" id="companyName"
+                                                                    placeholder="Company name" value="Themesbrand">
+                                                            </div>
+                                                        </div>
+                                                        <!--end col-->
+                                                        <div class="col-lg-6">
+                                                            <div class="mb-3">
+                                                                <label for="experienceYear"
+                                                                    class="form-label">Experience Years</label>
+                                                                <div class="row">
+                                                                    <div class="col-lg-5">
+                                                                        <select class="form-control" data-choices
+                                                                            data-choices-search-false
+                                                                            name="experienceYear" id="experienceYear">
+                                                                            <option value="">Select years
+                                                                            </option>
+                                                                            <option value="Choice 1">2001
+                                                                            </option>
+                                                                            <option value="Choice 2">2002
+                                                                            </option>
+                                                                            <option value="Choice 3">2003
+                                                                            </option>
+                                                                            <option value="Choice 4">2004
+                                                                            </option>
+                                                                            <option value="Choice 5">2005
+                                                                            </option>
+                                                                            <option value="Choice 6">2006
+                                                                            </option>
+                                                                            <option value="Choice 7">2007
+                                                                            </option>
+                                                                            <option value="Choice 8">2008
+                                                                            </option>
+                                                                            <option value="Choice 9">2009
+                                                                            </option>
+                                                                            <option value="Choice 10">2010
+                                                                            </option>
+                                                                            <option value="Choice 11">2011
+                                                                            </option>
+                                                                            <option value="Choice 12">2012
+                                                                            </option>
+                                                                            <option value="Choice 13">2013
+                                                                            </option>
+                                                                            <option value="Choice 14">2014
+                                                                            </option>
+                                                                            <option value="Choice 15">2015
+                                                                            </option>
+                                                                            <option value="Choice 16">2016
+                                                                            </option>
+                                                                            <option value="Choice 17" selected>
+                                                                                2017
+                                                                            </option>
+                                                                            <option value="Choice 18">2018
+                                                                            </option>
+                                                                            <option value="Choice 19">2019
+                                                                            </option>
+                                                                            <option value="Choice 20">2020
+                                                                            </option>
+                                                                            <option value="Choice 21">2021
+                                                                            </option>
+                                                                            <option value="Choice 22">2022
+                                                                            </option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <!--end col-->
+                                                                    <div class="col-auto align-self-center">
+                                                                        to
+                                                                    </div>
+                                                                    <!--end col-->
+                                                                    <div class="col-lg-5">
+                                                                        <select class="form-control" data-choices
+                                                                            data-choices-search-false
+                                                                            name="choices-single-default2">
+                                                                            <option value="">Select years
+                                                                            </option>
+                                                                            <option value="Choice 1">2001
+                                                                            </option>
+                                                                            <option value="Choice 2">2002
+                                                                            </option>
+                                                                            <option value="Choice 3">2003
+                                                                            </option>
+                                                                            <option value="Choice 4">2004
+                                                                            </option>
+                                                                            <option value="Choice 5">2005
+                                                                            </option>
+                                                                            <option value="Choice 6">2006
+                                                                            </option>
+                                                                            <option value="Choice 7">2007
+                                                                            </option>
+                                                                            <option value="Choice 8">2008
+                                                                            </option>
+                                                                            <option value="Choice 9">2009
+                                                                            </option>
+                                                                            <option value="Choice 10">2010
+                                                                            </option>
+                                                                            <option value="Choice 11">2011
+                                                                            </option>
+                                                                            <option value="Choice 12">2012
+                                                                            </option>
+                                                                            <option value="Choice 13">2013
+                                                                            </option>
+                                                                            <option value="Choice 14">2014
+                                                                            </option>
+                                                                            <option value="Choice 15">2015
+                                                                            </option>
+                                                                            <option value="Choice 16">2016
+                                                                            </option>
+                                                                            <option value="Choice 17">2017
+                                                                            </option>
+                                                                            <option value="Choice 18">2018
+                                                                            </option>
+                                                                            <option value="Choice 19">2019
+                                                                            </option>
+                                                                            <option value="Choice 20" selected>
+                                                                                2020
+                                                                            </option>
+                                                                            <option value="Choice 21">2021
+                                                                            </option>
+                                                                            <option value="Choice 22">2022
+                                                                            </option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <!--end col-->
+                                                                </div>
+                                                                <!--end row-->
+                                                            </div>
+                                                        </div>
+                                                        <!--end col-->
+                                                        <div class="col-lg-12">
+                                                            <div class="mb-3">
+                                                                <label for="jobDescription" class="form-label">Job
+                                                                    Description</label>
+                                                                <textarea class="form-control" id="jobDescription"
+                                                                    rows="3"
+                                                                    placeholder="Enter description">You always want to make sure that your fonts work well together and try to limit the number of fonts you use to three or less. Experiment and play around with the fonts that you already have in the software you're working with reputable font websites. </textarea>
+                                                            </div>
+                                                        </div>
+                                                        <!--end col-->
+                                                        <div class="hstack gap-2 justify-content-end">
+                                                            <a class="btn btn-success"
+                                                                href="javascript:deleteEl(1)">Delete</a>
+                                                        </div>
+                                                    </div>
+                                                    <!--end row-->
+                                                </div>
+                                            </div>
+                                            <div id="newForm" style="display: none;">
+
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="hstack gap-2">
+                                                    <button type="submit" class="btn btn-success">Update</button>
+                                                    <a href="javascript:new_link()" class="btn btn-primary">Add
+                                                        New</a>
+                                                </div>
+                                            </div>
+                                            <!--end col-->
+                                        </form>
+                                    </div>
+                                    <!--end tab-pane-->
+                                    <div class="tab-pane" id="privacy" role="tabpanel">
+                                        <div class="mb-4 pb-2">
+                                            <h5 class="card-title text-decoration-underline mb-3">Security:</h5>
+                                            <div class="d-flex flex-column flex-sm-row mb-4 mb-sm-0">
+                                                <div class="flex-grow-1">
+                                                    <h6 class="fs-14 mb-1">Two-factor Authentication</h6>
+                                                    <p class="text-muted">Two-factor authentication is an
+                                                        enhanced
+                                                        security meansur. Once enabled, you'll be required to
+                                                        give
+                                                        two types of identification when you log into Google
+                                                        Authentication and SMS are Supported.</p>
+                                                </div>
+                                                <div class="flex-shrink-0 ms-sm-3">
+                                                    <a href="javascript:void(0);" class="btn btn-sm btn-primary">Enable
+                                                        Two-facor
+                                                        Authentication</a>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex flex-column flex-sm-row mb-4 mb-sm-0 mt-2">
+                                                <div class="flex-grow-1">
+                                                    <h6 class="fs-14 mb-1">Secondary Verification</h6>
+                                                    <p class="text-muted">The first factor is a password and the
+                                                        second commonly includes a text with a code sent to your
+                                                        smartphone, or biometrics using your fingerprint, face,
+                                                        or
+                                                        retina.</p>
+                                                </div>
+                                                <div class="flex-shrink-0 ms-sm-3">
+                                                    <a href="javascript:void(0);" class="btn btn-sm btn-primary">Set
+                                                        up secondary method</a>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex flex-column flex-sm-row mb-4 mb-sm-0 mt-2">
+                                                <div class="flex-grow-1">
+                                                    <h6 class="fs-14 mb-1">Backup Codes</h6>
+                                                    <p class="text-muted mb-sm-0">A backup code is automatically
+                                                        generated for you when you turn on two-factor
+                                                        authentication
+                                                        through your iOS or Android Twitter app. You can also
+                                                        generate a backup code on twitter.com.</p>
+                                                </div>
+                                                <div class="flex-shrink-0 ms-sm-3">
+                                                    <a href="javascript:void(0);"
+                                                        class="btn btn-sm btn-primary">Generate backup codes</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <h5 class="card-title text-decoration-underline mb-3">Application
+                                                Notifications:</h5>
+                                            <ul class="list-unstyled mb-0">
+                                                <li class="d-flex">
+                                                    <div class="flex-grow-1">
+                                                        <label for="directMessage" class="form-check-label fs-14">Direct
+                                                            messages</label>
+                                                        <p class="text-muted">Messages from people you follow
+                                                        </p>
+                                                    </div>
+                                                    <div class="flex-shrink-0">
+                                                        <div class="form-check form-switch">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                role="switch" id="directMessage" checked />
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="d-flex mt-2">
+                                                    <div class="flex-grow-1">
+                                                        <label class="form-check-label fs-14" for="desktopNotification">
+                                                            Show desktop notifications
+                                                        </label>
+                                                        <p class="text-muted">Choose the option you want as your
+                                                            default setting. Block a site: Next to "Not allowed
+                                                            to
+                                                            send notifications," click Add.</p>
+                                                    </div>
+                                                    <div class="flex-shrink-0">
+                                                        <div class="form-check form-switch">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                role="switch" id="desktopNotification" checked />
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="d-flex mt-2">
+                                                    <div class="flex-grow-1">
+                                                        <label class="form-check-label fs-14" for="emailNotification">
+                                                            Show email notifications
+                                                        </label>
+                                                        <p class="text-muted"> Under Settings, choose
+                                                            Notifications.
+                                                            Under Select an account, choose the account to
+                                                            enable
+                                                            notifications for. </p>
+                                                    </div>
+                                                    <div class="flex-shrink-0">
+                                                        <div class="form-check form-switch">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                role="switch" id="emailNotification" />
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="d-flex mt-2">
+                                                    <div class="flex-grow-1">
+                                                        <label class="form-check-label fs-14" for="chatNotification">
+                                                            Show chat notifications
+                                                        </label>
+                                                        <p class="text-muted">To prevent duplicate mobile
+                                                            notifications from the Gmail and Chat apps, in
+                                                            settings,
+                                                            turn off Chat notifications.</p>
+                                                    </div>
+                                                    <div class="flex-shrink-0">
+                                                        <div class="form-check form-switch">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                role="switch" id="chatNotification" />
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="d-flex mt-2">
+                                                    <div class="flex-grow-1">
+                                                        <label class="form-check-label fs-14"
+                                                            for="purchaesNotification">
+                                                            Show purchase notifications
+                                                        </label>
+                                                        <p class="text-muted">Get real-time purchase alerts to
+                                                            protect yourself from fraudulent charges.</p>
+                                                    </div>
+                                                    <div class="flex-shrink-0">
+                                                        <div class="form-check form-switch">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                role="switch" id="purchaesNotification" />
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <h5 class="card-title text-decoration-underline mb-3">Delete This
+                                                Account:</h5>
+                                            <p class="text-muted">Go to the Data & Privacy section of your
+                                                profile
+                                                Account. Scroll to "Your data & privacy options." Delete your
+                                                Profile Account. Follow the instructions to delete your account
+                                                :
+                                            </p>
+                                            <div>
+                                                <input type="password" class="form-control" id="passwordInput"
+                                                    placeholder="Enter your password" value="make@321654987"
+                                                    style="max-width: 265px;">
+                                            </div>
+                                            <div class="hstack gap-2 mt-3">
+                                                <a href="javascript:void(0);" class="btn btn-soft-danger">Close
+                                                    &
+                                                    Delete This Account</a>
+                                                <a href="javascript:void(0);" class="btn btn-light">Cancel</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end tab-pane-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end col-->
+                </div>
+                <!--end row-->
+
+            </div>
+            <!-- container-fluid -->
+        </div><!-- End Page-content -->
+
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <script>document.write(new Date().getFullYear())</script> © Velzon.
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="text-sm-end d-none d-sm-block">
+                            Design & Develop by Themesbrand
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+    <!--start back-to-top-->
+    <button onclick="topFunction()" class="btn btn-danger btn-icon" id="back-to-top">
+        <i class="ri-arrow-up-line"></i>
+    </button>
+    <!--end back-to-top-->
+
+    <!--preloader-->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner-border text-primary avatar-sm" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="customizer-setting d-none d-md-block" id="chatbot">
+        <div class="btn-info btn-rounded shadow-lg btn btn-icon btn-lg p-2">
+            <i class="fa-solid fa-comment" id="iconchat"></i>
+        </div>
+    </div>
+
+    <div class="email-chat-detail" id="emailchat-detailElem" style="display: none;">
+        <div class="card mb-0">
+            <div class="card-header align-items-center d-flex bg-primary text-white-50">
+                <div class="flex-grow-1">
+                    <h5 class="fs-15 text-white mb-1 profile-username">Velzon ChatBot</h5>
+                    <p class="mb-0 fs-12 lh-1">Ask here for help</p>
+                </div>
+                <div>
+                    <i class="fa-brands fa-bots fs-1 text-white"></i>
+                </div>
+            </div>
+
+            <div class="card-body p-0">
+                <div id="users-chat">
+                    <div class="chat-conversation p-3" id="chat-conversation" data-simplebar style="height: 250px;">
+                        <ul class="list-unstyled chat-conversation-list chat-sm" id="conversation"></ul>
+                    </div>
+                </div>
+
+                <div class="border-top border-top-dashed">
+                    <div class="row g-2 mx-3 mt-2 mb-3">
+                        <div class="col">
+                            <div class="position-relative">
+                                <input type="text" class="form-control border-light bg-light message-input"
+                                    placeholder="Enter Message..." id="input">
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <button class="btn btn-primary" id="sendbotmsg">
+                                <i class="mdi mdi-send"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/validate.js"></script>
+    <!-- <script src="assets/js/chatbot.js"></script> -->
+
+    <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="assets/libs/node-waves/waves.min.js"></script>
+    <script src="assets/libs/feather-icons/feather.min.js"></script>
+    <script src="assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+
+    <!-- Vector map-->
+    <script src="assets/libs/jsvectormap/js/jsvectormap.min.js"></script>
+    <script src="assets/libs/jsvectormap/maps/world-merc.js"></script>
+
+    <!--Swiper slider js-->
+    <script src="assets/libs/swiper/swiper-bundle.min.js"></script>
+
+    <!-- App js -->
+    <script src="assets/js/app.js"></script>
+
+    <script src="assets/sweetalert2/sweet-alert.init.js"></script>
+    <script src="assets/sweetalert2/sweetalert2.all.js"></script>
+
+    <!-- particles js -->
+    <script src="assets/libs/particles.js/particles.js"></script>
+    <!-- particles app js -->
+    <script src="assets/js/pages/particles.app.js"></script>
+    <!-- two-step-verification js -->
+    <script src="assets/js/pages/two-step-verification.init.js"></script>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyD6W14JWMlx9lVD7YpvMm1z_bWa_NlOCp8",
+            authDomain: "velzonwhatsapp.firebaseapp.com",
+            projectId: "velzonwhatsapp",
+            storageBucket: "velzonwhatsapp.appspot.com",
+            messagingSenderId: "904191185377",
+            appId: "1:904191185377:web:654a2b1bc16214c40282a0",
+            measurementId: "G-7Z86ZZ6622"
+        };
+
+        function render(number) {
+            window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('sendcode', {
+                'size': 'invisible',
+                'callback': (response) => {
+                }
+            });
+        }
+
+        // send otp message function
+        function phoneAuth(number) {
+            firebase.auth().signInWithPhoneNumber(number, window.recaptchaVerifier).then(function (confirmationResult) {
+                window.confirmationResult = confirmationResult;
+                coderesult = confirmationResult;
+                console.log(coderesult);
+            }).catch(function (error) {
+                console.log(error.message);
+            });
+        }
+
+        $(document).ready(function () {
+            chkLogin();
+            firebase.initializeApp(firebaseConfig);
+
+            const apikey = getCookie("apikey");
+
+            let name = document.getElementById('nameInput'),
+                email = document.getElementById('emailInput'),
+                phone = document.getElementById('phoneInput'),
+                country = document.getElementById('countryInput'),
+                state = document.getElementById('stateInput'),
+                city = document.getElementById('cityInput');
+
+            const nameper = 20,
+                phoneper = 20,
+                emailper = 20,
+                countryper = 10,
+                stateper = 10,
+                cityper = 10,
+                imgper = 10;
+
+            function displaydata() {
+                $.ajax({
+                    url: "/userinfo",
+                    method: "GET",
+                    success: function (val) {
+                        let Obj = {};
+                        var data = "";
+                        for (let i = 0; i < val.length; i++) {
+                            Object.assign(Obj, val[i]);
+                        }
+                        var percent = 0;
+                        name.value = Obj.uname;
+                        email.value = Obj.email;
+                        phone.value = Obj.phone;
+                        country.value = Obj.country;
+                        state.value = Obj.state;
+                        city.value = Obj.city;
+
+                        if (Obj.phoneverify == true) {
+                            $('#verifiedbtn').removeClass('d-none');
+                            $('#verifybtn').removeClass('d-none');
+                            $('#verifybtn').addClass('d-none');
+                        }
+                        else {
+                            $('#verifybtn').removeClass('d-none');
+                            $('#verifiedbtn').removeClass('d-none');
+                            $('#verifiedbtn').addClass('d-none');
+                        }
+
+                        if (Obj.image == null || Obj.image == "") {
+                            $('.profileimg').attr('src', `assets/images/users/user-dummy-img.jpg`);
+                        }
+                        else {
+                            $('.profileimg').attr('src', `assets/upload/profile/${apikey}/${Obj.image}`);
+                        }
+
+                        $('.profilename').html(Obj.uname);
+
+                        if ($('#nameInput').val() != '') {
+                            percent += nameper;
+                            console.log($('#nameInput').val() + "name : " + percent)
+                        }
+                        if ($('#phoneInput').val() != '') {
+                            percent += phoneper;
+                            console.log($('#phoneInput').val() + "phone : " + percent)
+                        }
+                        if ($('#emailInput').val() != '') {
+                            percent += emailper;
+                            console.log($('#emailInput').val() + "email : " + percent)
+                        }
+                        if ($('#countryInput').val() != '') {
+                            percent += countryper;
+                            console.log($('#countryInput').val() + "country : " + percent)
+                        }
+                        if ($('#stateInput').val() != '') {
+                            percent += stateper;
+                            console.log($('#stateInput').val() + "state : " + percent)
+                        }
+                        if ($('#cityInput').val() != '') {
+                            percent += cityper;
+                            console.log($('#cityInput').val() + "city : " + percent)
+                        }
+                        if (Obj.image != '') {
+                            percent += imgper;
+                            console.log(Obj.image + " : " + percent)
+                        }
+
+                        if (percent != 100) {
+                            $('#progress-title').html("Complete Your Profile");
+                        }
+                        else {
+                            $('#progress-title').html("Profile UP TO DATE");
+                        }
+
+                        $('#progress-bar').css('width', `${percent}%`);
+                        $('#progress-lbl').html(`${percent} % `);
+                    }
+                })
+            }
+            displaydata();
+
+            $(document).on('click', '#verifybtn', () => {
+                $('#phone').val($('#phoneInput').val());
+                $('.phone').html('******' + $('#phoneInput').val().slice(6));
+            })
+
+            $.ajax({
+                url: "/get_phone_code",
+                method: "GET",
+                success: function (val) {
+                    var data = "";
+                    for (var i = 0; i < val.length; i++) {
+                        if (val[i].name == "India") {
+                            data += `<option id="${val[i].name}" value="${val[i].dial_code}" selected>
+                    (${val[i].dial_code})
+                    </option>`;
+                        }
+                        else {
+                            data += `<option id="${val[i].name}" value="${val[i].dial_code}" >
+                    (${val[i].dial_code})
+                    </option>`;
+                        }
+                    }
+                    document.getElementById("phonecode").innerHTML = data;
+                }
+            })
+
+            $(document).on('click', '#sendcode', function () {
+                console.log($('#phonecode').val() + $('#phoneInput').val());
+                nullfield_validation('phone');
+                render();
+                if (flag_phone == 0) {
+                    var phone_str = $('#phonecode').val() + "" + $('#phoneInput').val();
+
+                    $('#resendcodelink').removeClass("d-none");
+                    $('#otpinput').removeClass("d-none");
+                    $('#numberinput').addClass("d-none");
+                    phoneAuth(phone_str);
+                    $('#digit1-input').focus();
+                }
+                else {
+                    $('.phone').focus();
+                }
+            })
+
+            $('#digit6-input').keypress((e) => {
+                var keycode = (event.keyCode ? event.keyCode : event.which);
+                if (keycode == '13') {
+                    $('#digit6-input').blur();
+                    $('#verify').click();
+                }
+            })
+
+            $(document).on('click', '#verify', function () {
+                var otp = $("#digit1-input").val() + $("#digit2-input").val() + $("#digit3-input").val() + $("#digit4-input").val() + $("#digit5-input").val() + $("#digit6-input").val();
+                coderesult.confirm(otp).then(function (result) {
+                    var user = result.user;
+                    console.log(user);
+
+                    $.ajax({
+                        url: "/phoneverify",
+                        method: "PUT",
+                        success: function (val) {
+                            console.log(val);
+                            if (val.status_code == 200) {
+                                $('#verifybtn').addClass('d-none');
+                                swal({
+                                    title: 'Phone number verified',
+                                    type: 'success',
+                                    timer: 2000,
+                                    showConfirmButton: false,
+                                }).then(function () {
+                                    displaydata();
+                                })
+                            }
+                        }
+                    })
+                }).catch(function (error) {
+                    console.log(error.message);
+                    swal({
+                        title: 'Phone number not verified',
+                        text: 'May be wrong OTP / Number',
+                        type: 'error',
+                        timer: 2000,
+                        showConfirmButton: false,
+                    }).then(function () {
+                        displaydata();
+                    })
+                });
+            })
+
+            $(document).on('click', '#updatepersonalinfo', function () {
+                const audio = new Audio("assets/dataupdated.mp3");
+
+                $.ajax({
+                    url: "/updatepersonalinfo",
+                    method: "PUT",
+                    data: {
+                        "name": $('#nameInput').val(),
+                        "phone": $('#phoneInput').val(),
+                        "email": $('#emailInput').val(),
+                        "country": $('#countryInput').val().toUpperCase(),
+                        "state": $('#stateInput').val().toUpperCase(),
+                        "city": $('#cityInput').val().toUpperCase(),
+                    },
+                    success: function (val) {
+                        console.log(val);
+                        if (val.status_code == 200) {
+                            swal({
+                                title: 'Data Updated successfully',
+                                type: 'success',
+                                timer: 2000,
+                                showConfirmButton: false,
+                            })
+                            audio.play();
+                            displaydata();
+                        }
+                        else {
+                            swal({
+                                title: 'Internal server error',
+                                type: 'error',
+                                timer: 2000,
+                                showConfirmButton: false,
+                            })
+                        }
+                    }
+                })
+            })
+
+            $("#profile-img-file-input").change(function () {
+                let formData = new FormData()
+                formData.append("img", document.getElementById('profile-img-file-input').files[0]);
+
+                $.ajax({
+                    url: "/profile_img",
+                    method: "POST",
+                    data: formData,
+                    async: false,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: function (val) {
+                        console.log(val);
+                        if (val.status_code == 200) {
+                            displaydata();
+                        }
+                    }
+                })
+            });
+        })
+    </script>
+</body>
+
+</html>

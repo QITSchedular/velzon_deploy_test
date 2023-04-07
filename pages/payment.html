@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  data-layout="vertical"
+  data-topbar="light"
+  data-sidebar="dark"
+  data-sidebar-size="lg"
+  data-sidebar-image="none"
+  data-preloader="disable"
+>
+  <head>
+    <meta charset="utf-8" />
+    <title>Payment | WhatsApp Message</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      content="Premium Multipurpose Admin & Dashboard Template"
+      name="description"
+    />
+    <meta content="Themesbrand" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico" />
+
+    <!-- Layout config Js -->
+    <script src="assets/js/layout.js"></script>
+    <!-- Bootstrap Css -->
+    <link
+      href="assets/css/bootstrap.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- Icons Css -->
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <!-- custom Css-->
+    <link href="assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <!-- <div class="container p-5">
+        <div class="row">
+
+                            <div class="card">
+                                <div class="card-body">
+                                    <p class="text-muted">Use <code>nav-tabs-custom</code> class to create custom tabs with borders.</p>
+                                     Nav tabs -->
+    <!-- <ul class="nav nav-tabs nav-tabs-custom nav-success nav-justified mb-3" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" data-bs-toggle="tab" href="#home1" role="tab">
+                                                Home
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-bs-toggle="tab" href="#profile1" role="tab">
+                                                Profile
+                                            </a>
+                                        </li>
+                                    </ul>
+
+                                    Tab panes -->
+    <!-- <div class="tab-content text-muted">
+                                        <div class="tab-pane active" id="home1" role="tabpanel">
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0">
+                                                    <i class="ri-checkbox-multiple-blank-fill text-success"></i>
+                                                </div>
+                                                <div class="flex-grow-1 ms-2">
+                                                    Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR.
+                                                    <div class="mt-2">
+                                                        <a href="javascript:void(0);" class="btn btn-sm btn-soft-primary">Read More <i class="ri-arrow-right-line ms-1 align-middle"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane" id="profile1" role="tabpanel">
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0">
+                                                    <i class="ri-checkbox-multiple-blank-fill text-success"></i>
+                                                </div>
+                                                <div class="flex-grow-1 ms-2">
+                                                    When, while the lovely valley teems with vapour around me, and the meridian sun strikes the upper surface of the impenetrable foliage of my trees, and but a few stray gleams steal into the inner sanctuary, I throw myself down among the tall grass by the trickling stream; and, as I lie close to the earth, a thousand unknown.
+                                                    <div class="mt-2">
+                                                        <a href="javascript:void(0);" class="btn btn-sm btn-soft-primary">Read More <i class="ri-arrow-right-line ms-1 align-middle"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                         -->
+    <!-- </div> -->
+    <!-- </div>end card-body -->
+    <!-- </div>end card -->
+
+    <!-- </div>
+    </div> -->
+
+    <!-- Standard Monthly pan -->
+    <div class="p-5 container d-none" id="standardMonthly">
+      <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+          <div class="card">
+            <div class="card-body p-0">
+              <div class="tab-content">
+                <div class="tab-pane active" id="cryptoBuy" role="tabpanel">
+                  <div
+                    class="p-3 bg-soft-warning text-center fs-3 text-primary fw-bold"
+                  >
+                    Monthly Standard Plan
+                  </div>
+                  <div class="px-5 py-4">
+                    <div class="row">
+                      <div class="col-6">
+                        <div class="mb-3">
+                          <label class="">Currency :</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            value="INR"
+                            readonly
+                          />
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="mb-3">
+                          <label class="">Payment Method :</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            value="Online Payment"
+                            readonly
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row mb-2">
+                      <span class="col-6 fs-5 text-dark">Amount</span>
+                      <span class="col-6 fs-5 text-dark text-end">847.46</span>
+                    </div>
+                    <div class="row mb-2">
+                      <span class="col-6 fs-5 text-dark">GST (18%)</span>
+                      <span class="col-6 fs-5 text-dark text-end">152.54</span>
+                    </div>
+                    <hr />
+                    <div class="row mb-2">
+                      <span class="col-6 fs-4 text-dark">Total Price</span>
+                      <span class="col-6 fs-4 text-dark text-end">1000.00</span>
+                    </div>
+                    <div class="mt-3 pt-2 text-center">
+                      <button
+                        type="button"
+                        class="btn btn-primary w-100"
+                        id="standardMonth"
+                      >
+                        Pay
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-3"></div>
+      </div>
+    </div>
+    <!-- Standarad Monthly plan ends -->
+
+    <!-- Standard Yearly plan starts -->
+    <div class="p-5 container d-none" id="standardYearly">
+      <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+          <div class="card">
+            <div class="card-body p-0">
+              <div class="tab-content">
+                <div class="tab-pane active" id="cryptoBuy" role="tabpanel">
+                  <div
+                    class="p-3 bg-soft-warning text-center fs-3 text-primary fw-bold"
+                  >
+                    Yearly Standarad Plan
+                  </div>
+                  <div class="px-5 py-4">
+                    <div class="row">
+                      <div class="col-6">
+                        <div class="mb-3">
+                          <label class="">Currency :</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            value="INR"
+                            readonly
+                          />
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="mb-3">
+                          <label class="">Payment Method :</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            value="Online Payment"
+                            readonly
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row mb-2">
+                      <span class="col-6 fs-5 text-dark">Amount</span>
+                      <span class="col-6 fs-5 text-dark text-end">8474.68</span>
+                    </div>
+                    <div class="row mb-2">
+                      <span class="col-6 fs-5 text-dark">GST (18%)</span>
+                      <span class="col-6 fs-5 text-dark text-end">1525.42</span>
+                    </div>
+                    <hr />
+                    <div class="row mb-2">
+                      <span class="col-6 fs-4 text-dark">Total Price</span>
+                      <span class="col-6 fs-4 text-dark text-end"
+                        >10000.00</span
+                      >
+                    </div>
+                    <div class="mt-3 pt-2 text-center">
+                      <button
+                        type="button"
+                        class="btn btn-primary w-100"
+                        id="standardYear"
+                      >
+                        Pay
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-3"></div>
+      </div>
+    </div>
+    <!-- Standard Yearly plan ends -->
+
+    <!-- Premium Monthly plan starts -->
+    <div class="p-5 container d-none" id="premiumMonthly">
+      <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+          <div class="card">
+            <div class="card-body p-0">
+              <div class="tab-content">
+                <div class="tab-pane active" id="cryptoBuy" role="tabpanel">
+                  <div
+                    class="p-3 bg-soft-warning text-center fs-3 text-primary fw-bold"
+                  >
+                    Monthly Premium Plan
+                  </div>
+                  <div class="px-5 py-4">
+                    <div class="row">
+                      <div class="col-6">
+                        <div class="mb-3">
+                          <label class="">Currency :</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            value="INR"
+                            readonly
+                          />
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="mb-3">
+                          <label class="">Payment Method :</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            value="Online Payment"
+                            readonly
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row mb-2">
+                      <span class="col-6 fs-5 text-dark">Amount</span>
+                      <span class="col-6 fs-5 text-dark text-end">1694.92</span>
+                    </div>
+                    <div class="row mb-2">
+                      <span class="col-6 fs-5 text-dark">GST (18%)</span>
+                      <span class="col-6 fs-5 text-dark text-end">305.08</span>
+                    </div>
+                    <hr />
+                    <div class="row mb-2">
+                      <span class="col-6 fs-4 text-dark">Total Price</span>
+                      <span class="col-6 fs-4 text-dark text-end">2000.00</span>
+                    </div>
+                    <div class="mt-3 pt-2 text-center">
+                      <button
+                        type="button"
+                        class="btn btn-primary w-100"
+                        id="premiumMonth"
+                      >
+                        Pay
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-3"></div>
+      </div>
+    </div>
+    <!-- Premium Monthly plan ends -->
+
+    <!-- Premium Yearly plan starts -->
+    <div class="p-5 container d-none" id="premiumYearly">
+      <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+          <div class="card">
+            <div class="card-body p-0">
+              <div class="tab-content">
+                <div class="tab-pane active" id="cryptoBuy" role="tabpanel">
+                  <div
+                    class="p-3 bg-soft-warning text-center fs-3 text-primary fw-bold"
+                  >
+                    Yearly Premium Plan
+                  </div>
+                  <div class="px-5 py-4">
+                    <div class="row">
+                      <div class="col-6">
+                        <div class="mb-3">
+                          <label class="">Currency :</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            value="INR"
+                            readonly
+                          />
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="mb-3">
+                          <label class="">Payment Method :</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            value="Online Payment"
+                            readonly
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row mb-2">
+                      <span class="col-6 fs-5 text-dark">Amount</span>
+                      <span class="col-6 fs-5 text-dark text-end"
+                        >16949.16</span
+                      >
+                    </div>
+                    <div class="row mb-2">
+                      <span class="col-6 fs-5 text-dark">GST (18%)</span>
+                      <span class="col-6 fs-5 text-dark text-end">3050.84</span>
+                    </div>
+                    <hr />
+                    <div class="row mb-2">
+                      <span class="col-6 fs-4 text-dark">Total Price</span>
+                      <span class="col-6 fs-4 text-dark text-end"
+                        >20000.00</span
+                      >
+                    </div>
+                    <div class="mt-3 pt-2 text-center">
+                      <button
+                        type="button"
+                        class="btn btn-primary w-100"
+                        id="premiumYear"
+                      >
+                        Pay
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-3"></div>
+      </div>
+    </div>
+    <!-- Premium Yearly plan ends -->
+
+    <!-- JAVASCRIPT -->
+    <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="assets/libs/node-waves/waves.min.js"></script>
+    <script src="assets/libs/feather-icons/feather.min.js"></script>
+    <script src="assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+    <script src="assets/js/plugins.js"></script>
+
+    <script src="assets/js/pages/pricing.init.js"></script>
+
+    <!-- App js -->
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/jquery.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+    <script>
+      alert(window.location);
+      var orderId;
+      var rzp1;
+      $(document).ready(function () {
+        let apikey = getCookie("apikey");
+        function getCookie(cname) {
+          let name = cname + "=";
+          let decodedCookie = decodeURIComponent(document.cookie);
+          let ca = decodedCookie.split(";");
+          for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == " ") {
+              c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+              return c.substring(name.length, c.length);
+            }
+          }
+          return "";
+        }
+
+        function pay(amount) {
+          var settings = {
+            url: "/create/orderId",
+            method: "POST",
+            timeout: 0,
+            headers: {
+              "Content-Type": "application/json",
+            },
+            data: JSON.stringify({
+              amount: amount,
+            }),
+          };
+
+          $.ajax({
+            url: "/dis_user",
+            method: "get",
+            success: function (res) {
+              console.log(res);
+              for (let i = 0; i < res.length; i++) {
+                if (res[i].id == apikey) {
+                  //creates new orderId everytime
+                  $.ajax(settings).done(function (response) {
+                    alert(res[i].uname);
+                    orderId = response.orderId;
+                    console.log(orderId);
+                    // $("button").show();
+                    var options = {
+                      key: "rzp_test_gT4CfidgcDL0uH", // Enter the Key ID generated from the Dashboard
+                      amount: amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+                      currency: "INR",
+                      name: "standard" + apikey,
+                      description: "Monthly Standard Plan",
+                      order_id: orderId, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+                      handler: function (response) {
+                        localStorage.setItem(
+                          "paymentID",
+                          response.razorpay_payment_id
+                        );
+                        localStorage.setItem(
+                          "orderID",
+                          response.razorpay_order_id
+                        );
+                        localStorage.setItem(
+                          "signature",
+                          response.razorpay_signature
+                        );
+                        console.log(response);
+                        alert(response.razorpay_payment_id);
+                        alert(response.razorpay_order_id);
+                        alert(response.razorpay_signature);
+
+                        $.ajax({
+                          url: "/api/payment/verify",
+                          method: "POST",
+                          timeout: 0,
+                          headers: {
+                            "Content-Type": "application/json",
+                          },
+                          data: JSON.stringify({ response }),
+                          success: function (rest) {
+                            console.log(rest);
+                            if (rest.signatureIsValid) {
+                              alert("Payment successfull!!");
+                            } else {
+                              alert("Payment failed!!");
+                            }
+                          },
+                        });
+                      },
+                      prefill: {
+                        name: res[i].uname,
+                        email: res[i].email,
+                        contact: res[i].phone,
+                      },
+                      notes: {
+                        address: "Razorpay Corporate Office",
+                      },
+                      theme: {
+                        color: "#3399cc",
+                      },
+                    };
+                    rzp1 = new Razorpay(options);
+                    rzp1.open();
+                    // e.preventDefault();
+
+                    rzp1.on("payment.failed", function (response) {
+                      alert(response.error.code);
+                      alert(response.error.description);
+                      alert(response.error.source);
+                      alert(response.error.step);
+                      alert(response.error.reason);
+                      alert(response.error.metadata.order_id);
+                      alert(response.error.metadata.payment_id);
+                    });
+                  });
+                }
+              }
+            },
+          });
+        }
+
+        // $('#datePicker').val(new Date().toDateInputValue());
+        $("#standardMonth").on("click", function () {
+          alert(1000);
+          //pay(1000);
+        });
+
+        $("#standardYear").on("click", function () {
+          alert(10000);
+          //pay(10000);
+        });
+
+        $("#premiumMonth").on("click", function () {
+          alert(2000);
+          //pay(2000);
+        });
+
+        $("#premiumYear").on("click", function () {
+          alert(20000);
+          //pay(20000);
+        });
+      });
+      function getParameters() {
+        let urlString = window.location.toString();
+        let paramString = urlString.split("?")[1];
+        let queryString = new URLSearchParams(paramString);
+        var out = "";
+        for (let pair of queryString.entries()) {
+          console.log(pair);
+          alert("Key is:" + pair[0]);
+          alert("Value is:" + pair[1]);
+          if (pair[1] == "Basic") {
+            alert("Free Plan");
+          } else if (pair[1] == "StandardMonthly") {
+            $("#standardMonthly").removeClass("d-none");
+          } else if (pair[1] == "PremiumMonthly") {
+            alert();
+            $("#premiumMonthly").removeClass("d-none");
+          } else if (pair[1] == "StandardYearly") {
+            $("#standardYearly").removeClass("d-none");
+          } else if (pair[1] == "PremiumYearly") {
+            $("#premiumYearly").removeClass("d-none");
+          }
+        }
+      }
+      getParameters();
+    </script>
+  </body>
+</html>

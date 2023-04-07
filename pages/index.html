@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  data-layout="vertical"
+  data-topbar="light"
+  data-sidebar="dark"
+  data-sidebar-size="lg"
+  data-sidebar-image="none"
+  data-preloader="disable"
+>
+  <head>
+    <meta charset="utf-8" />
+    <title>Dashboard | WhatsApp Messages</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      content="Premium Multipurpose Admin & Dashboard Template"
+      name="description"
+    />
+    <meta content="Themesbrand" name="author" />
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico" />
+
+    <!-- jsvectormap css -->
+    <link
+      href="assets/libs/jsvectormap/css/jsvectormap.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!--Swiper slider css-->
+    <link
+      href="assets/libs/swiper/swiper-bundle.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- Layout config Js -->
+    <script src="assets/js/layout.js"></script>
+    <!-- Bootstrap Css -->
+    <link
+      href="assets/css/bootstrap.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- Icons Css -->
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <!-- custom Css-->
+    <link href="assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Font Awesome Files -->
+    <link href="assets/fontawesome/css/all.min.css" rel="stylesheet" />
+    <link href="assets/fontawesome/css/solid.css" rel="stylesheet" />
+    <link href="assets/fontawesome/css/solid.min.css" rel="stylesheet" />
+    <link href="assets/fontawesome/css/regular.css" rel="stylesheet" />
+    <link href="assets/fontawesome/css/regular.min.css" rel="stylesheet" />
+    <link href="assets/fontawesome/css/fontawesome.min.css" rel="stylesheet" />
+    <link href="assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
+
+    <!-- Jquery -->
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/main.js"></script>
+  </head>
+
+  <body>
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+      <header id="page-topbar">
+        <div class="layout-width">
+          <div class="navbar-header">
+            <div class="d-flex">
+              <!-- LOGO -->
+              <div class="navbar-brand-box horizontal-logo">
+                <a href="/dashboard" class="logo logo-dark">
+                  <span class="logo-sm">
+                    <img
+                      src="../assets/images/logo-sm.png"
+                      alt=""
+                      height="22"
+                    />
+                  </span>
+                  <span class="logo-lg">
+                    <img
+                      src="../assets/images/logo-dark.png"
+                      alt=""
+                      height="17"
+                    />
+                  </span>
+                </a>
+
+                <a href="/dashboard" class="logo logo-light">
+                  <span class="logo-sm">
+                    <img
+                      src="../assets/images/logo-sm.png"
+                      alt=""
+                      height="22"
+                    />
+                  </span>
+                  <span class="logo-lg">
+                    <img
+                      src="../assets/images/logo-light.png"
+                      alt=""
+                      height="17"
+                    />
+                  </span>
+                </a>
+              </div>
+
+              <button
+                type="button"
+                class="btn btn-sm px-3 fs-16 header-item vertical-menu-btn topnav-hamburger"
+                id="topnav-hamburger-icon"
+              >
+                <span class="hamburger-icon">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </button>
+            </div>
+
+            <div class="d-flex align-items-center">
+              <div class="dropdown d-md-none topbar-head-dropdown header-item">
+                <button
+                  type="button"
+                  class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
+                  id="page-header-search-dropdown"
+                  data-bs-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <i class="bx bx-search fs-22"></i>
+                </button>
+                <div
+                  class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
+                  aria-labelledby="page-header-search-dropdown"
+                >
+                  <form class="p-3">
+                    <div class="form-group m-0">
+                      <div class="input-group">
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="Search ..."
+                          aria-label="Recipient's username"
+                        />
+                        <button class="btn btn-primary" type="submit">
+                          <i class="mdi mdi-magnify"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+              <div class="ms-1 header-item d-none d-sm-flex">
+                <button
+                  type="button"
+                  class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
+                  data-toggle="fullscreen"
+                >
+                  <i class="bx bx-fullscreen fs-22"></i>
+                </button>
+              </div>
+
+              <div class="ms-1 header-item d-none d-sm-flex">
+                <button
+                  type="button"
+                  class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle light-dark-mode"
+                >
+                  <i class="bx bx-moon fs-22"></i>
+                </button>
+              </div>
+
+              <div class="dropdown ms-sm-3 header-item topbar-user">
+                <button
+                  type="button"
+                  class="btn"
+                  id="page-header-user-dropdown"
+                  data-bs-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <span class="d-flex align-items-center">
+                    <img
+                      class="rounded-circle header-profile-user profileimg"
+                    />
+                    <span class="text-start ms-xl-2">
+                      <span
+                        class="d-none d-xl-inline-block ms-1 fw-medium user-name-text profilename"
+                      ></span>
+                      <span
+                        class="d-none d-xl-block ms-1 fs-12 text-muted user-name-sub-text"
+                      >
+                        Founder
+                      </span>
+                    </span>
+                  </span>
+                </button>
+                <div class="dropdown-menu dropdown-menu-end">
+                  <!-- item-->
+                  <h6 class="dropdown-header">
+                    Welcome <span class="profilename"></span>
+                  </h6>
+                  <a class="dropdown-item" href="/profile">
+                    <i
+                      class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"
+                    ></i>
+                    <span class="align-middle">Profile</span>
+                  </a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" id="logout">
+                    <i
+                      class="mdi mdi-logout text-muted fs-16 align-middle me-1"
+                    ></i>
+                    <span class="align-middle" data-key="t-logout">Logout</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- ========== App Menu ========== -->
+      <div class="app-menu navbar-menu">
+        <!-- LOGO -->
+        <div class="navbar-brand-box">
+          <!-- Dark Logo-->
+          <a href="/dashboard" class="logo logo-dark">
+            <span class="logo-sm">
+              <img src="assets/images/logo-sm.png" alt="" height="22" />
+            </span>
+            <span class="logo-lg">
+              <img src="assets/images/logo-dark.png" alt="" height="17" />
+            </span>
+          </a>
+          <!-- Light Logo-->
+          <a href="/dashboard" class="logo logo-light">
+            <span class="logo-sm">
+              <img src="assets/images/logo-sm.png" alt="" height="22" />
+            </span>
+            <span class="logo-lg">
+              <img src="assets/images/logo-light.png" alt="" height="17" />
+            </span>
+          </a>
+          <button
+            type="button"
+            class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover"
+            id="vertical-hover"
+          >
+            <i class="ri-record-circle-line"></i>
+          </button>
+        </div>
+
+        <div id="scrollbar">
+          <div class="container-fluid">
+            <div id="two-column-menu"></div>
+            <ul class="navbar-nav" id="navbar-nav">
+              <li class="menu-title"><span data-key="t-menu">Menu</span></li>
+              <li class="nav-item">
+                <a
+                  class="nav-link menu-link active"
+                  href="/dashboard"
+                  role="button"
+                  aria-expanded="false"
+                  aria-controls="sidebarDashboards"
+                >
+                  <i class="ri-dashboard-2-line"></i>
+                  <span data-key="t-dashboards">Dashboards</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link menu-link" href="/instance">
+                  <i class="ri-apps-2-line"></i>
+                  <span data-key="t-apps">Instance</span>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link menu-link" href="/contactlist">
+                  <i class="fa-solid fa-address-book"></i>
+                  <span data-key="t-apps">Contact list</span>
+                </a>
+              </li>
+              <!-- end Dashboard Menu -->
+              <li class="nav-item">
+                <a
+                  class="nav-link menu-link"
+                  href="/email"
+                  role="button"
+                  aria-expanded="false"
+                  aria-controls="sidebarDashboards"
+                >
+                  <i class="las la-mail-bulk"></i>
+                  <span data-key="t-dashboards">Bulk Mail</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link menu-link"
+                  href="/channels"
+                  role="button"
+                  aria-expanded="false"
+                  aria-controls="sidebarDashboards"
+                >
+                  <i class="mdi mdi-account-group"></i>
+                  <span data-key="t-dashboards">Channels</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- Sidebar -->
+        </div>
+
+        <div class="sidebar-background"></div>
+      </div>
+      <!-- Left Sidebar End -->
+      <!-- Vertical Overlay-->
+      <div class="vertical-overlay"></div>
+
+      <!-- ============================================================== -->
+      <!-- Start right Content here -->
+      <!-- ============================================================== -->
+      <div class="main-content">
+        <div class="page-content">
+          <div class="container-fluid">
+            <div class="card" id="msgform">
+              <h3 class="card-header text-center">Application stats</h3>
+              <div class="card-body">
+                <div class="record" id="record"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <footer class="footer">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-sm-6">
+                <script>
+                  document.write(new Date().getFullYear());
+                </script>
+                © Velzon.
+              </div>
+              <div class="col-sm-6">
+                <div class="text-sm-end d-none d-sm-block">
+                  Design & Develop by Themesbrand
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <!--start back-to-top-->
+    <button
+      onclick="topFunction()"
+      class="btn btn-danger btn-icon"
+      id="back-to-top"
+    >
+      <i class="ri-arrow-up-line"></i>
+    </button>
+    <!--end back-to-top-->
+
+    <!--preloader-->
+    <div id="preloader">
+      <div id="status">
+        <div class="spinner-border text-primary avatar-sm" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="customizer-setting d-none d-md-block" id="chatbot">
+      <div class="btn-info btn-rounded shadow-lg btn btn-icon btn-lg p-2">
+        <i class="fa-solid fa-comment" id="iconchat"></i>
+      </div>
+    </div>
+
+    <div
+      class="email-chat-detail"
+      id="emailchat-detailElem"
+      style="display: none"
+    >
+      <div class="card mb-0">
+        <div
+          class="card-header align-items-center d-flex bg-primary text-white-50"
+        >
+          <div class="flex-grow-1">
+            <h5 class="fs-15 text-white mb-1 profile-username">
+              Velzon ChatBot
+            </h5>
+            <p class="mb-0 fs-12 lh-1">Ask here for help</p>
+          </div>
+          <div>
+            <i class="fa-brands fa-bots fs-1 text-white"></i>
+          </div>
+        </div>
+
+        <div class="card-body p-0">
+          <div id="users-chat">
+            <div
+              class="chat-conversation p-3"
+              id="chat-conversation"
+              data-simplebar
+              style="height: 250px"
+            >
+              <ul
+                class="list-unstyled chat-conversation-list chat-sm"
+                id="conversation"
+              >
+                <li class="chat-list left">
+                  <div class="conversation-list">
+                    <div class="user-chat-content">
+                      <div class="ctext-wrap">
+                        <div class="ctext-wrap-content bg-soft-info">
+                          <p class="mb-0 ctext-content">
+                            Hii Qit at your service.<br /><br />
+                            How can I Help you?
+                          </p>
+                        </div>
+                      </div>
+                      <input
+                        type="button"
+                        class="que btn btn-outline-success waves-effect waves-line"
+                        value="Authenticate"
+                        name="authenticate"
+                        id="authenticate"
+                      /><br />
+                      <input
+                        type="button"
+                        value="Message Information"
+                        name="message"
+                        class="btn btn-outline-success waves-effect waves-line que"
+                        id="msginfo"
+                      /><br /><input
+                        type="button"
+                        class="que btn btn-outline-success waves-effect waves-line"
+                        value="Other"
+                        id="other"
+                        name="Other"
+                      />
+                    </div>
+                  </div>
+                </li>
+                <!-- <div class="conversation-list">
+                                <div class="user-chat-content"> -->
+                <!-- <div class="ctext-wrap">
+                                        <div class="ctext-wrap-content">
+                                            <p class="mb-0 ctext-content">
+                                                Hii Qit at your service.<br>
+                                                'How can I Help you?<br><input type="button" class="que" value="authenticate" name="authenticate"
+                                                    onclick="Authenticate();">&nbsp<input type="button" value="message" name="message" class="que"
+                                                    onclick="Message();">&nbsp<input type="button" class="que" value="Other" name="Other" onclick="Other();">'
+                                            </p>
+                                        </div>
+                                    </div> -->
+                <!-- <div class="conversation-name">
+                                        <small class="text-muted time">${Date().getHours()} : ${date_ob.getMinutes()}</small>
+                                        <span class="text-success check-message-icon">
+                                            <i class="ri-check-double-line align-bottom"></i>
+                                        </span>
+                                    </div> -->
+                <!-- </div>
+                            </div> -->
+              </ul>
+            </div>
+          </div>
+
+          <div class="border-top border-top-dashed">
+            <div class="row g-2 mx-3 mt-2 mb-3">
+              <div class="col">
+                <div class="position-relative">
+                  <input
+                    type="text"
+                    class="form-control border-light bg-light message-input"
+                    placeholder="Enter Message..."
+                    id="input"
+                  />
+                </div>
+              </div>
+              <div class="col-auto">
+                <button class="btn btn-info" id="sendbotmsg">
+                  <i class="mdi mdi-send"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="assets/libs/node-waves/waves.min.js"></script>
+    <script src="assets/libs/feather-icons/feather.min.js"></script>
+    <script src="assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+    <script src="assets/js/plugins.js"></script>
+
+    <!-- apexcharts -->
+    <script src="assets/libs/apexcharts/apexcharts.min.js"></script>
+
+    <!-- Vector map-->
+    <script src="assets/libs/jsvectormap/js/jsvectormap.min.js"></script>
+    <script src="assets/libs/jsvectormap/maps/world-merc.js"></script>
+
+    <!--Swiper slider js-->
+    <script src="assets/libs/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Dashboard init -->
+    <script src="assets/js/pages/dashboard-ecommerce.init.js"></script>
+
+    <!-- App js -->
+    <script src="assets/js/app.js"></script>
+
+    <!-- prismjs plugin -->
+    <script src="assets/libs/prismjs/prism.js"></script>
+
+    <script>
+      
+      
+      $(document).ready(() => {
+        chkLogin();
+        function getChartColorsArray(e) {
+          if (null !== document.getElementById(e))
+            return (
+              (e = document.getElementById(e).getAttribute("data-colors")),
+              (e = JSON.parse(e)).map(function (e) {
+                var t = e.replace(" ", "");
+                return -1 === t.indexOf(",")
+                  ? getComputedStyle(document.documentElement).getPropertyValue(
+                      t
+                    ) || t
+                  : 2 == (e = e.split(",")).length
+                  ? "rgba(" +
+                    getComputedStyle(document.documentElement).getPropertyValue(
+                      e[0]
+                    ) +
+                    "," +
+                    e[1] +
+                    ")"
+                  : t;
+              })
+            );
+        }
+
+        function displayPieChart(count, id) {
+          var chartPieBasicColors = getChartColorsArray(id);
+
+          chartPieBasicColors &&
+            ((options = {
+              series: count,
+              chart: { height: 250, type: "pie" },
+              labels: ["Message", "Image", "Bulk Messages"],
+              legend: { position: "bottom" },
+              dataLabels: { dropShadow: { enabled: !1 } },
+              colors: chartPieBasicColors,
+            }),
+            (chart = new ApexCharts(
+              document.querySelector("#" + id),
+              options
+            )).render());
+        }
+
+        function record() {
+          var apikey = getCookie("apikey");
+          var object1 = "";
+          var msgcount = 0,
+            imgcount = 0,
+            bulkcount = 0;
+          var cnt = 0,
+            arrcount = 0;
+          var countmsg = new Array();
+          var countmsgarray = new Array();
+          $.ajax({
+            url: "/msg_record/" + apikey + "",
+            method: "get",
+            async: false,
+            success: function (result) {
+              if (result.length > 0) {
+                object1 += '<div class="row">';
+                for (let i = 0; i < result.length; i++) {
+                  $.ajax({
+                    url: "/getmsgtypes/" + result[i].iid + "",
+                    method: "GET",
+                    async: false,
+                    success: function (res) {
+                      msgcount = res.msg;
+                      imgcount = res.img;
+                      bulkcount = res.bulk;
+                      countmsg.push(msgcount);
+                      countmsg.push(imgcount);
+                      countmsg.push(bulkcount);
+                      object1 += `
+                                <div class="col-4">
+                                    <div class=" card card-animate ">
+                                        <div class="card-body p-3 shadow" 
+                                                data-bs-toggle="collapse" data-bs-target="#id${result[i].iid}"   
+                                                aria-expanded="true" aria-controls="collapseOne">
+                                            <div class="accordion" id="iid${result[i].iid}">
+                                                <div class="accordion-item border-0">
+                                                    <div class="accordion-header" id="${result[i].iid}">
+                                                        <div class="row">
+                                                            <div class="col-9" class="accordion-button" >
+                                                                <h2 class="fw-medium text-primary">${result[i].iname}</h2>
+                                                                <div class="fs-4">
+                                                                    Total - 
+                                                                    <span class="text-info fw-semibold">
+                                                                        ${result[i].total}
+                                                                    </span>
+                                                                </div>
+                                                                </div>
+                                                                <div class="col-3">
+                                                                    <div class="avatar-sm flex-shrink-0 m-auto">
+                                                                        <span class="avatar-title bg-info rounded-circle">
+                                                                            <h3 class="fw-semibold fs-5 text-light mt-2">
+                                                                                <i class="fa-solid fa-message"></i>
+                                                                                </h3>
+                                                                                </span>
+                                                                </div>
+                                                            </div>
+                                                            </div>
+                                                        <div id="id${result[i].iid}" class="accordion-collapse collapse"
+                                                        aria-labelledby="${result[i].iid}"
+                                                        data-bs-parent="#iid${result[i].iid}">
+                                                        <hr />
+                                                            <div class="accordion-body p-0 text-daek fs-5">
+                                                                <div id="chart${cnt}" data-colors='["rgb(41, 156, 219)",
+                                                                "rgb(247, 184, 75)", "rgb(240, 101, 72)"]' 
+                                                                class="apex-charts" dir="ltr">
+                                                                </div>
+                                                                <div>Message : ${res.msg}</div>
+                                                                <div>Image : ${res.img}</div>
+                                                                <div>Bulk message : ${res.bulk}</div>
+                                                            </div>
+                                                            </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>`;
+                    },
+                  });
+                  cnt++;
+                }
+                object1 += `</div>`;
+              } else {
+                object1 += `
+                        <div class="text-center">
+                            <h5 class="p-3">No message sent from instance / create instance</h5>
+                            <a class="btn btn-soft-success" href="/instance">
+                                Create Instance
+                            </a>
+                        </div>`;
+              }
+              document.getElementById("record").innerHTML = object1;
+              while (countmsg.length) countmsgarray.push(countmsg.splice(0, 3));
+
+              for (let i = 0; i < countmsgarray.length; i++) {
+                displayPieChart(countmsgarray[i], "chart" + i);
+              }
+            },
+          });
+        }
+        record();
+        const obj = document.querySelectorAll(".counter-value");
+        console.log(obj);
+
+        /*------------Chatbot-------------*/
+
+        $(document).on("click", "#chatbot", () => {
+          $("#emailchat-detailElem").toggle();
+          $("#iconchat").toggleClass("fa-solid fa-xmark fa-solid fa-comment");
+        });
+
+        const userTexts = [
+          ["hi", "hey", "hello", "good morning", "good afternoon", "good day"],
+          [
+            "how are you",
+            "how is life",
+            "how are things",
+            "how are you doing",
+            "are you doing good",
+            "are you fine",
+            "how is your day going",
+            "how is your day",
+            "what's up",
+            "whats up",
+            "you good",
+          ],
+          [
+            "what are you doing",
+            "what is going on",
+            "what is up",
+            "what's up",
+            "whats up",
+            "you good",
+          ],
+          [
+            "how is your day",
+            "how was your day",
+            "how did your day go",
+            "how's your day going",
+            "how's your day",
+            "hows your day",
+            "how's your day going",
+            "how is your day going",
+          ],
+          ["how old are you", "are you old"],
+          [
+            "who are you",
+            "are you human",
+            "are you bot",
+            "are you human or bot",
+          ],
+          ["who created you", "who made you", "were you created"],
+          [
+            "your name please",
+            "your name",
+            "may i know your name",
+            "what is your name",
+            "what call yourself",
+            "What are you called",
+            "What do i call you",
+            "do you have a name",
+            "tell me your name",
+          ],
+          ["i love you", "i like you"],
+          [
+            "happy",
+            "good",
+            "fun",
+            "wonderful",
+            "fantastic",
+            "cool",
+            "nice",
+            "lovely",
+          ],
+          ["bad", "bored", "tired", "sad"],
+          ["help me", "tell me story", "tell me joke", "im bored"],
+          ["ah", "yes", "ok", "okay", "nice"],
+          ["bye", "good bye", "goodbye", "see you later"],
+          ["what should i eat today", "what do i cook today"],
+          ["bro"],
+          ["what", "why", "how", "where", "when"],
+          ["no", "not sure", "maybe", "no thanks"],
+          [""],
+          ["haha", "ha", "lol", "hehe", "funny", "joke", "lmao"],
+          ["im ok", "im good", "im okay", "im fine", "good"],
+          ["authenticate"],
+          ["message information"],
+          ["other"],
+        ];
+
+        const botReplies = [
+          ["Hello!", "Hi!", "Hey!", "Hi there!", "Howdy"],
+          ["Fine... and you?", "Pretty well, and you?", "Fantastic, and you?"],
+          [
+            "Nothing much",
+            "About to go to sleep",
+            "I'm just chilling",
+            "I don't know actually",
+          ],
+          ["Been good so far"],
+          ["I am infinite"],
+          ["I am just a bot", "I am a bot. What are you?"],
+          ["The one true God, JavaScript"],
+          ["I am nameless", "I don't have a name"],
+          ["I love you too", "Me too"],
+          ["Have you ever felt bad?", "Glad to hear it"],
+          ["Why?", "Why? You shouldn't!", "Try watching TV"],
+          ["What about?", "Once upon a time... that's the end of my story"],
+          ["Tell me a story", "Tell me a joke", "Tell me about yourself"],
+          ["Bye", "Goodbye", "See you later"],
+          ["Sushi", "Pizza"],
+          ["Bro!"],
+          ["Great question"],
+          ["That's ok", "I understand", "What do you want to talk about?"],
+          ["Please say something :("],
+          ["Haha!", "Good one!"],
+          ["that's nice", "that's good", "nice", "okay"],
+          [
+            "1. Click on scanQR button to generate a QRcode<br>2. Scan QR-code and then wait for sometime to Authenticate message.",
+          ],
+          [
+            "1. Enter valid mobile-number to send a message<br>2. Enter image to send a image.<br>video or Gif not a supported.",
+          ],
+          ["For any other problem dial on 9898737345"],
+        ];
+
+        const alternative = [
+          "Same",
+          "Go on...",
+          "Bro...",
+          "Try again",
+          "I'm listening...",
+          "I don't understand :/",
+        ];
+
+        const inputValue = document.getElementById("input");
+        let finalResult;
+        let reply;
+        const messagesContainer = document.getElementById("conversation");
+        var x = document.getElementsByClassName("simplebar-content")[0];
+        var date_ob = new Date();
+
+        // $(document).ready(function () {
+        //     messagesContainer.mCustomScrollbar();
+        // });
+
+        function updateScrollbar() {
+          // messagesContainer.mCustomScrollbar("update").mCustomScrollbar('scrollTo', 'bottom', {
+          //     scrollInertia: 100,
+          //     timeout: 0
+          // });
+          // alert($(".simplebar-content-wrapper").height());
+          // x.scrollTo(0, $('.simplebar-placeholder').height());
+          // $("#chat-conversation").animate({ scrollTop: $('#chat-conversation').prop("scrollHeight") }, 1000);
+          // x.animate({ scrollTop: x.prop("scrollHeight") }, 1000);
+          // x.scrollTop($('.simplebar-content-wrapper')[0].height());
+          // x.scrollTop = x.scrollHeight;
+          $(".simplebar-content").animate(
+            {
+              scrollTop: $(hash).offset().top,
+            },
+            800,
+            function () {
+              window.location.hash = hash;
+            }
+          );
+        }
+
+        // document.addEventListener("DOMContentLoaded", () => {
+        //     inputValue.addEventListener("keydown", (e) => {
+        //         if (e.code === "Enter") {
+        //             let input = inputValue.value;
+        //             inputValue.value = "";
+        //             output(input);
+        //         }
+        //     });
+        // });
+
+        function output(input) {
+          inputValue.value = "";
+
+          // Regex remove non word/space chars
+          // Trim trailing whitespce
+          // Remove digits - not sure if this is best
+
+          let text = input
+            .toLowerCase()
+            .replace(/[^\w\s]/gi, "")
+            .replace(/[\d]/gi, "")
+            .trim();
+
+          text = text
+            .replace(/ a /g, " ") // replaces 'tell me a story' to 'tell me story'
+            .replace(/i feel /g, "")
+            .replace(/whats/g, "what is") // replaces "whats" to "what is"
+            .replace(/please /g, "")
+            .replace(/ please/g, "")
+            .replace(/r u/g, "are you"); //replaces "r u" to "are you"
+
+          if (compare(userTexts, botReplies, text)) {
+            // search for exact match in `userTexts`
+            finalResult = compare(userTexts, botReplies, text);
+          } else {
+            // if everything else fails, bot produces a random alternative reply
+            finalResult =
+              alternative[Math.floor(Math.random() * alternative.length)];
+          }
+
+          // to update our HTML DOM element
+          addToChat(input, finalResult);
+        }
+
+        // function to match the bot's reply to a user's text
+        function compare(userTexts, botReplies, text) {
+          for (let x = 0; x < userTexts.length; x++) {
+            for (let y = 0; y < botReplies.length; y++) {
+              if (userTexts[x][y] == text) {
+                let replies = botReplies[x];
+                console.log(botReplies[x][y]);
+                reply = replies[Math.floor(Math.random() * replies.length)];
+              }
+            }
+          }
+          return reply;
+        }
+
+        function addToChat(input, finalResult) {
+          let userDiv = document.createElement("li");
+          userDiv.id = "user";
+          userDiv.className = "chat-list right";
+          userDiv.innerHTML = `
+                    <div class="conversation-list">
+                        <div class="user-chat-content">
+                            <div class="ctext-wrap">
+                                <div class="ctext-wrap-content">
+                                    <p class="mb-0 ctext-content">${input}</p>
+                                </div>
+                            </div>
+                            <div class="conversation-name">
+                                <small class="text-muted time">${date_ob.getHours()} : ${date_ob.getMinutes()}</small>
+                                <span class="text-success check-message-icon">
+                                    <i class="ri-check-double-line align-bottom"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>`;
+          messagesContainer.appendChild(userDiv);
+
+          let botDiv = document.createElement("div");
+          let botImg = document.createElement("img");
+          let botText = document.createElement("span");
+          botDiv.id = "bot";
+          botImg.className = "avatar";
+          botDiv.className = "chat-list left";
+          botText.innerHTML = `
+                    <li class="chat-list left">
+                        <div class="conversation-list">
+                            <div class="user-chat-content">
+                                <div class="ctext-wrap">
+                                    <div class="ctext-wrap-content bg-soft-info">
+                                        <p class="mb-0 ctext-content">Typing</p>
+                                    </div>
+                                </div>
+                                <div class="conversation-name">
+                                    <small class="text-muted time">${date_ob.getHours()} : ${date_ob.getMinutes()}</small>
+                                    <span class="text-success check-message-icon">
+                                        <i class="ri-check-double-line align-bottom"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>`;
+          botDiv.appendChild(botImg);
+          botDiv.appendChild(botText);
+          messagesContainer.appendChild(botDiv);
+          // Keep messages at most recent
+          messagesContainer.scrollTop =
+            messagesContainer.scrollHeight - messagesContainer.clientHeight;
+
+          // Fake delay to seem "real"
+          setTimeout(() => {
+            botText.innerHTML = `
+                    <li class="chat-list left">
+                        <div class="conversation-list">
+                            <div class="user-chat-content">
+                                <div class="ctext-wrap">
+                                    <div class="ctext-wrap-content bg-soft-info">
+                                        <p class="mb-0 ctext-content">${finalResult}</p>
+                                    </div>
+                                </div>
+                                <div class="conversation-name">
+                                    <small class="text-muted time">${date_ob.getHours()} : ${date_ob.getMinutes()}</small>
+                                    <span class="text-success check-message-icon">
+                                        <i class="ri-check-double-line align-bottom"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>`;
+          }, 2000);
+          updateScrollbar();
+        }
+
+        $(document).on("click", "#sendbotmsg", function () {
+          output(inputValue.value);
+        });
+
+        $("#authenticate").on("click", function () {
+          Authenticate();
+        });
+
+        $("#msginfo").on("click", function () {
+          Message();
+        });
+
+        $("#other").on("click", function () {
+          Other();
+        });
+
+        function Authenticate() {
+          inputValue.value = "Authenticate";
+          $("#sendbotmsg").click();
+        }
+
+        function Message() {
+          inputValue.value = "Message Information";
+          $("#sendbotmsg").click();
+        }
+
+        function Other() {
+          inputValue.value = "Other";
+          $("#sendbotmsg").click();
+        }
+      });
+    </script>
+  </body>
+</html>

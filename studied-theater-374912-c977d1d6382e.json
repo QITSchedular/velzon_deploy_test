@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "studied-theater-374912",
+  "private_key_id": "c977d1d6382e22c32a7d3383e36b9c527dcc79a8",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDZOe5/guSw+LIa\njPqm+IUjl7nOLE6HmvTJx7OLggazsE1ZddRZ6IVwtzkpg43YWxR1O2akONvnIO3H\ndOG228xfmtsRZtpchfUP1o889PVKS0foUGsxWy5B7yGlfapnT0vGLvle/DVA8js7\noFlZN+geW2R/SVxXndSalzKtj4ShDKhgfuSFIKs211rvUVFYibD+CJY3k8Iy5GDt\nmkS9/MShGVIhkdwLt7XSEEauvh+Goor+LAbFS9lTOLPEuKerjUzvrvrluT6EDMqL\n0ynp1GT9M6vLqFhAnB104fPUDLqdicm2WjhFt893jL/jrM/xAiY1tqPqUwXHqJsO\nk1dyu5gtAgMBAAECggEAHArAuVjAJYFhWpCW/e2IoGziiVVKaPKNxaugR7LoIxOw\nFIujt1yPN1sLx8pqCgNN+4lIyYvmhWqIj45M4hJzSmc+/vrYVwfa+CmyUYPs02Ou\n+3RANj2nVc8lOIwlrpL7vPCM9CBaTpFGqL6dMimHrz2Mlmr1vwDKtI8utV2Y2UJA\nXZ2rwlQDqKLngYGQXwBGBLwShUpfmQcx3Srt1CPqvc/tSCTcaH/sGQovNzgAVb+B\noospMjuDUsLR5rswJWFZ2siHvR2OxGL2zSeaPk6EPA4yfANgpnfDxumhnAvyIv4H\ntI+Y9Id7bL7kxu2uXblbNnS5Uhe1VXuKLVALnjyqSQKBgQD1r6NVukZNlaWXK6fG\n1cBiGAgOO0R8bgcDh8zcWx6whuCRiTSEohGJF2EDrxBc/59JcqWMIOkmC6ZAuWOr\nXTbRROmIbWkSShgsIiZcDx0KLtkbZujpLoZ4YMfMhs6/6ByPB+cSOV9h5YF+Xj1G\nZf06km/1o2CBypzIIajMuxdzxQKBgQDiWHB1lDgpdVTzqOF8g5lW2zohG84Zfspw\n5XMGFlWsgNcr2Lqk246pELPt1Gi+o5zHhgJaUD5fXNcE7+36xK50Vx2jBDE4oHOQ\nvVgv/r88aJgj5Jq9XQI/tmo/s0oXsucN3WkQdFkYWKPppX8coMqgzCaLdFPeevF2\nn9biESWRSQKBgQDc77iLZDrKlFNYEVsMVLZvwDqmSaf52ZwXEa0pUAvWJUSXu/Ht\ngC0SwmJsxKaLaxicHSxASmw/2WQFenHl7apZIIZ+OB2v48+/CGrEiJbNzHlSygWT\nhFJKuIWUKHqOWzYrbajfW5ap25DKygaCYz8IyB1EoUotDb5VvuckTO73HQKBgA/V\n0iBXu0ojPEtDsGrOpiaudbWlRVkBRtZ5Jv/xBhNofCVEJ2KrPaLUWVI1PxK/TZOj\n63w4CvUPALgGtSaLJg1bnuYtv+fPSeaBaK8K6oQmaSZxsuW2oRamA27rcy6PRJzy\ntYwCJ82NPgJ1opv1H9f6EGRHQirZfRUof5cXTgKJAoGBANgpN/wfXtbzBnKuyzT3\nwIxNhwjJinpBCH9I+QvIGpRRQWK879UhBZfVxayUEH3ehNwc1rM26IELX6Sx4bWO\n5fK+I3iaiSIeHNQOjfYO9k9F2Zjew9mjXpnom23AnLpcCBOdLVsEC67E0315eFFp\nFwPyBk2cm3Q4GXWyG7d9vP0o\n-----END PRIVATE KEY-----\n",
+  "client_email": "velzon@studied-theater-374912.iam.gserviceaccount.com",
+  "client_id": "113280420711992999959",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/velzon%40studied-theater-374912.iam.gserviceaccount.com"
+}
