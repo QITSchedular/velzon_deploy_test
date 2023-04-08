@@ -162,6 +162,10 @@
 
     <script>
         $(document).ready(() => {
+            if (localStorage.getItem("email") == "" || localStorage.getItem("email") == null) {
+                localStorage.removeItem("email");
+                location.href = "/signin";
+            }
             $(".required").on('focusout', function () {
                 onfocusout_validation($(this).attr('id'));
                 oninput_validation($(this).attr('id'));
@@ -233,6 +237,7 @@
                             })
                         }
                     }
+
                 }
             })
         })

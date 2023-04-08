@@ -71,8 +71,8 @@ router.get("/offline", (req, res) => {
   res.sendFile(path + "/offline.html");
 });
 
-router.get("/passchangebasic", (req, res) => {
-  res.sendFile(path + "/pass-change-basic.html");
+router.get("/password-change", (req, res) => {
+  res.sendFile(path + "/pass-change.html");
 })
 
 router.get("/password-reset", (req, res) => {

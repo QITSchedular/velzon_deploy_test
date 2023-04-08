@@ -144,6 +144,10 @@
 
     <script>
         $(document).ready(() => {
+            if (localStorage.getItem("email") == "" || localStorage.getItem("email") == null) {
+                localStorage.removeItem("email");
+                location.href = "/signin";
+            }
             $('#email').val(localStorage.getItem("email"));
 
             $(".required").on('focusout', function () {
@@ -190,6 +194,8 @@
                                     type: 'success',
                                     showConfirmButton: false,
                                     timer: 3000
+                                }).then(() => {
+                                    window.close();
                                 })
                             }
                             else if (val.status_code == 400) {
