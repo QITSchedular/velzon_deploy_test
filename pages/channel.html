@@ -50,19 +50,19 @@
                         <div class="navbar-brand-box horizontal-logo">
                             <a href="/dashboard" class="logo logo-dark">
                                 <span class="logo-sm">
-                                    <img src="../assets/images/logo-sm.png" alt="" height="22" />
+                                    <img src="../assets/images/logo-sm.png" alt="" height="22">
                                 </span>
                                 <span class="logo-lg">
-                                    <img src="../assets/images/logo-dark.png" alt="" height="17" />
+                                    <img src="../assets/images/logo-dark.png" alt="" height="17">
                                 </span>
                             </a>
 
                             <a href="/dashboard" class="logo logo-light">
                                 <span class="logo-sm">
-                                    <img src="../assets/images/logo-sm.png" alt="" height="22" />
+                                    <img src="../assets/images/logo-sm.png" alt="" height="22">
                                 </span>
                                 <span class="logo-lg">
-                                    <img src="../assets/images/logo-light.png" alt="" height="17" />
+                                    <img src="../assets/images/logo-light.png" alt="" height="17">
                                 </span>
                             </a>
                         </div>
@@ -76,9 +76,11 @@
                                 <span></span>
                             </span>
                         </button>
+
                     </div>
 
                     <div class="d-flex align-items-center">
+
                         <div class="dropdown d-md-none topbar-head-dropdown header-item">
                             <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
                                 id="page-header-search-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
@@ -91,7 +93,7 @@
                                     <div class="form-group m-0">
                                         <div class="input-group">
                                             <input type="text" class="form-control" placeholder="Search ..."
-                                                aria-label="Recipient's username" />
+                                                aria-label="Recipient's username">
                                             <button class="btn btn-primary" type="submit">
                                                 <i class="mdi mdi-magnify"></i>
                                             </button>
@@ -104,7 +106,7 @@
                         <div class="ms-1 header-item d-none d-sm-flex">
                             <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
                                 data-toggle="fullscreen">
-                                <i class="bx bx-fullscreen fs-22"></i>
+                                <i class='bx bx-fullscreen fs-22'></i>
                             </button>
                         </div>
 
@@ -135,6 +137,10 @@
                                 <a class="dropdown-item" href="/profile">
                                     <i class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i>
                                     <span class="align-middle">Profile</span>
+                                </a>
+                                <a class="dropdown-item" href="/subscription">
+                                    <i class="mdi mdi-credit-card-chip text-muted fs-16 align-middle me-1"></i>
+                                    <span class="align-middle">Pay</span>
                                 </a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" id="logout">
@@ -344,6 +350,7 @@
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/chatbot.js"></script>
     <script src="../assets/js/validate.js"></script>
+
     <script src="../assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/libs/simplebar/simplebar.min.js"></script>
     <script src="../assets/libs/node-waves/waves.min.js"></script>
@@ -428,7 +435,7 @@
                         console.log(val['status_code'] == 404);
                         if (val['status_code'] == 404) {
                             output += `
-                            <div class="noresult pt-5">
+                            <div class="noresult p-5 container d-flex align-items-center justify-content-center">
                                 <div class="text-center">
                                     <lord-icon src="https://cdn.lordicon.com/msoeawqm.json" trigger="loop"
                                         colors="primary:#212529,secondary:#405189"

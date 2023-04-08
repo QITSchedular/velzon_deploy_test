@@ -2,7 +2,6 @@
 <html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg"
     data-sidebar-image="none" data-preloader="disable">
 
-
 <head>
 
     <meta charset="utf-8" />
@@ -56,16 +55,13 @@
                         </div>
                     </div>
                 </div>
-                <!-- end row -->
-
                 <div class="row justify-content-center">
                     <div class="col-md-8 col-lg-6 col-xl-5">
                         <div class="card mt-4">
                             <div class="card-body p-4">
                                 <div class="text-center mt-2">
                                     <h5 class="text-primary">Welcome Back !</h5>
-                                    <p class="text-muted">Sign in to continue to WhatsApp Message.</p>
-                                </div id="signinwithgoogle">
+                                </div>
                                 <div class="mt-4 text-center">
                                     <a href="/auth/google" class="btn btn-outline-success">
                                         <i class="ri-google-fill fs-14"></i>
@@ -75,52 +71,50 @@
                                     <h5 class="fs-13 title">or</h5>
                                 </div>
                                 <div class="p-2">
-                                    <form action="/welcome" method="post">
-                                        <div class="mb-3">
-                                            <label for="email" class="form-label">
-                                                Email
-                                                <span class="text-danger">*</span>
-                                                <span class="text-danger" id="err_email"></span>
-                                            </label>
-                                            <input type="email" class="form-control required" name="email" id="email"
-                                                placeholder="Enter email address" />
-                                        </div>
-                                        <div class="mb-1">
-                                            <label for="password" class="form-label">
-                                                Password
-                                                <span class="text-danger">*</span>
-                                                <span class="text-danger" id="err_password"></span>
-                                            </label>
-                                            <div class="position-relative auth-pass-inputgroup">
-                                                <input type="password" class="form-control pe-5 password-input required"
-                                                    name="password" placeholder="Enter password" id="password" />
-                                                <button class="btn btn-link position-absolute end-0 top-0
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label">
+                                            Email
+                                            <span class="text-danger">*</span>
+                                            <span class="text-danger" id="err_email"></span>
+                                        </label>
+                                        <input type="email" class="form-control required" name="email" id="email"
+                                            placeholder="Enter email address" />
+                                    </div>
+                                    <div class="mb-1">
+                                        <label for="password" class="form-label">
+                                            Password
+                                            <span class="text-danger">*</span>
+                                            <span class="text-danger" id="err_password"></span>
+                                        </label>
+                                        <div class="position-relative auth-pass-inputgroup">
+                                            <input type="password" class="form-control pe-5 password-input required"
+                                                name="password" placeholder="Enter password" id="password" />
+                                            <button class="btn btn-link position-absolute end-0 top-0
                                                      text-decoration-none text-muted password-addon" type="button"
-                                                    id="password-addon">
-                                                    <i class="ri-eye-fill align-middle"></i>
-                                                </button>
-                                            </div>
+                                                id="password-addon">
+                                                <i class="ri-eye-fill align-middle"></i>
+                                            </button>
                                         </div>
-                                        <div class="mb-3 row">
-                                            <div class="col-6">
-                                                <input class="form-check-input" type="checkbox" value=""
-                                                    id="rememberme" />
-                                                <label class="form-check-label" for="auth-remember-check">
-                                                    Remember me
-                                                </label>
-                                            </div>
-                                            <div class="col-6">
-                                                <div class="float-end" style="cursor: pointer;">
-                                                    <span id="Forgotpassword" class="text-muted">Forgot
-                                                        password?</span>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <div class="col-6">
+                                            <input class="form-check-input" type="checkbox" value="" id="remeberme" />
+                                            <label class="form-check-label" for="remeberme">
+                                                Remember me
+                                            </label>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="float-end cursor-pointer">
+                                                <div id="forgot-pwd" class="text-muted">
+                                                    <u>Forgot password?</u>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="mt-4">
-                                            <input type="button" class="btn btn-success w-100" id="signin"
-                                                value="Sign In" />
-                                        </div>
-                                    </form>
+                                    </div>
+                                    <div class="mt-4">
+                                        <input type="button" class="btn btn-success w-100" id="signin"
+                                            value="Sign In" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -148,166 +142,94 @@
             </div>
         </footer>
     </div>
-
-    <!-- JAVASCRIPT -->
-    <script src="../assets/js/jquery.js"></script>
-    <script src="../assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="../assets/libs/simplebar/simplebar.min.js"></script>
-    <script src="../assets/libs/node-waves/waves.min.js"></script>
-    <script src="../assets/libs/feather-icons/feather.min.js"></script>
-    <script src="../assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
-    <script src="../assets/js/plugins.js"></script>
-
-    <!-- particles js -->
-    <script src="../assets/libs/particles.js/particles.js"></script>
-    <!-- particles app js -->
-    <script src="../assets/js/pages/particles.app.js"></script>
-    <!-- validation init -->
-    <script src="../assets/js/pages/form-validation.init.js"></script>
-    <!-- password create init -->
-    <script src="../assets/js/pages/passowrd-create.init.js"></script>
-
-    <script src="../assets/sweetalert2/sweet-alert.init.js"></script>
-    <script src="../assets/sweetalert2/sweetalert2.all.js"></script>
-
-    <!-- validation of field -->
-    <script src="../assets/js/validate.js"></script>
-    <script>
-        $(document).ready(() => {
-            var email = document.getElementById('email');
-            var password = document.getElementById('password');
-            var rememberme = false;
-
-            email.value = getCookie('email');
-            password.value = getCookie('password');
-
-            localStorage.setItem("limit", 5);
-
-            function getCookie(cname) {
-                let name = cname + "=";
-                let decodedCookie = decodeURIComponent(document.cookie);
-                let ca = decodedCookie.split(';');
-                for (let i = 0; i < ca.length; i++) {
-                    let c = ca[i];
-                    while (c.charAt(0) == ' ') {
-                        c = c.substring(1);
-                    }
-                    if (c.indexOf(name) == 0) {
-                        return c.substring(name.length, c.length);
-                    }
-                }
-                return "";
-            }
-
-            $(".required").on('focusout', function () {
-                onfocusout_validation($(this).attr('id'));
-            });
-
-            $(".required").on('input', function () {
-                nullfield_validation($(this).attr('id'));
-            });
-
-            $(document).on('click', '#signin', function () {
-                nullfield_validation('email');
-                nullfield_validation('password');
-                if (flag_email == 0 && flag_password == 0) {
-                    if ($('input[id="remeberme"]').prop("checked") == true) {
-                        remeberme = true;
-
-                    }
-                    else if ($('input[id="remeberme"]').prop("checked") == false) {
-                        remeberme = false;
-                    }
-                    $.ajax({
-                        url: "/signin",
-                        method: "POST",
-                        data: {
-                            "email": email.value,
-                            "password": password.value,
-                            "rememberme": rememberme
-                        },
-                        success: function (val) {
-                            console.log(val);
-                            if (val.status_code == 200) {
-                                location.href = "/dashboard";
-                            }
-                            else if (val.status_code == 401) {
-                                swal(
-                                    {
-                                        title: 'Invalid email or password',
-                                        type: 'error',
-                                        timer: 3000
-                                    }
-                                )
-                            }
-                        }
-                    })
-                }
-            })
-
-            $(document).on('click', '#Forgotpassword', function () {
-                $.ajax({
-                    url: "/resetpasswordmail",
-                    method: "POST",
-                    data: {
-                        "email": email.value
-                    },
-                    success: function (data) {
-                        if (data == "email sent") {
-                            swal(
-                                {
-                                    title: 'E-mail sent!!!',
-                                    text: 'check e-mail for change password',
-                                    type: 'success',
-                                    showConfirmButton: false,
-                                    timer: 3000
-                                }
-                            )
-                        }
-                        else if (data == "email not sent") {
-                            swal(
-                                {
-                                    title: 'E-mail not sent!!!',
-                                    text: 'Try again!!!',
-                                    type: 'warning',
-                                    showConfirmButton: false,
-                                    timer: 3000
-                                }
-                            )
-                        }
-                        else if (data == "user not found") {
-                            swal(
-                                {
-                                    title: 'User not found!!!',
-                                    text: 'Please enter valid e-mail',
-                                    type: 'error',
-                                    timer: 3000
-                                }
-                            )
-                        }
-
-                    }
-                })
-            })
-
-            $(document).on('click', '#signinwithgoogle', function () {
-                $.ajax({
-                    url: "/auth/google",
-                    method: "GET",
-                    success: function (val) {
-                        console.log(val);
-                        if (val == "done") {
-                            alert("done");
-                        }
-                        else {
-                            alert("error");
-                        }
-                    }
-                })
-            })
-        })
-    </script>
 </body>
 
+
+<!-- JAVASCRIPT -->
+<script src="../assets/js/jquery.js"></script>
+<script src="../assets/js/validate.js"></script>
+<script src="../assets/js/main.js"></script>
+
+<script src="../assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/libs/simplebar/simplebar.min.js"></script>
+<script src="../assets/libs/node-waves/waves.min.js"></script>
+<script src="../assets/libs/feather-icons/feather.min.js"></script>
+<script src="../assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+
+<!-- particles js -->
+<script src="../assets/libs/particles.js/particles.js"></script>
+<!-- particles app js -->
+<script src="../assets/js/pages/particles.app.js"></script>
+<!-- validation init -->
+<script src="../assets/js/pages/form-validation.init.js"></script>
+<!-- password create init -->
+<script src="../assets/js/pages/passowrd-create.init.js"></script>
+
+<script src="../assets/sweetalert2/sweet-alert.init.js"></script>
+<script src="../assets/sweetalert2/sweetalert2.all.js"></script>
+
+
+<script>
+    $(document).ready(() => {
+        var email = document.getElementById('email');
+        var password = document.getElementById('password');
+        var remeberme = false;
+
+        email.value = getCookie('email');
+        password.value = getCookie('password');
+
+
+        $(".required").on('focusout', function () {
+            onfocusout_validation($(this).attr('id'));
+        });
+
+        $(".required").on('input', function () {
+            nullfield_validation($(this).attr('id'));
+        });
+
+        $(document).on('click', '#forgot-pwd', function () {
+            localStorage.setItem("email", email.value.trim());
+            location.href = `/password-reset`;
+        })
+
+        $(document).on('click', '#signin', function () {
+            nullfield_validation('email');
+            nullfield_validation('password');
+            if (flag_email == 0 && flag_password == 0) {
+                if ($('input[id="remeberme"]').prop("checked") == true) {
+                    remeberme = true;
+                }
+                else if ($('input[id="remeberme"]').prop("checked") == false) {
+                    remeberme = false;
+                }
+
+                $.ajax({
+                    url: "/signin",
+                    method: "POST",
+                    data: {
+                        "email": email.value.trim(),
+                        "password": password.value.trim(),
+                        "rememberme": remeberme
+                    },
+                    success: function (val) {
+                        if (val.status_code == 200) {
+                            location.href = "/dashboard";
+                        }
+                        else if (val.status_code == 401) {
+                            swal({
+                                title: 'Invalid email or password',
+                                type: 'error',
+                                timer: 3000
+                            })
+                        }
+                        else if (val.status_code == 500) {
+                            InternalServerError();
+                        }
+                    }
+                })
+            }
+        })
+    })
+</script>
 
 </html>
