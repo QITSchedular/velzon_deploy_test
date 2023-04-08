@@ -50,6 +50,7 @@
             <div class="layout-width">
                 <div class="navbar-header">
                     <div class="d-flex">
+                        <!-- LOGO -->
                         <div class="navbar-brand-box horizontal-logo">
                             <a href="/dashboard" class="logo logo-dark">
                                 <span class="logo-sm">
@@ -59,6 +60,7 @@
                                     <img src="../assets/images/logo-dark.png" alt="" height="17">
                                 </span>
                             </a>
+
                             <a href="/dashboard" class="logo logo-light">
                                 <span class="logo-sm">
                                     <img src="../assets/images/logo-sm.png" alt="" height="22">
@@ -78,8 +80,11 @@
                                 <span></span>
                             </span>
                         </button>
+
                     </div>
+
                     <div class="d-flex align-items-center">
+
                         <div class="dropdown d-md-none topbar-head-dropdown header-item">
                             <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
                                 id="page-header-search-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
@@ -131,10 +136,15 @@
                                 </span>
                             </button>
                             <div class="dropdown-menu dropdown-menu-end">
+                                <!-- item-->
                                 <h6 class="dropdown-header">Welcome <span class="profilename"></span></h6>
                                 <a class="dropdown-item" href="/profile">
                                     <i class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i>
                                     <span class="align-middle">Profile</span>
+                                </a>
+                                <a class="dropdown-item" href="/subscription">
+                                    <i class="mdi mdi-credit-card-chip text-muted fs-16 align-middle me-1"></i>
+                                    <span class="align-middle">Pay</span>
                                 </a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" id="logout">
@@ -349,8 +359,13 @@
                                     </div>
                                     <div class="modal-footer">
                                         <div class="hstack gap-2 justify-content-end">
-                                            <button class="btn btn-success" data-bs-dismiss="modal" id="add-contact">
+                                            <button class="btn btn-success d-none" data-bs-dismiss="modal"
+                                                id="add-contact">
                                                 Add Contact
+                                            </button>
+                                            <button class="btn btn-success d-none" data-bs-dismiss="modal"
+                                                id="edit-contact">
+                                                Edit Contact
                                             </button>
                                         </div>
                                     </div>
@@ -630,7 +645,7 @@
                                             value="${val[i].id}">
                                     </div>
                                 </th>
-                                <td class="customer_name">${val[i].name}</td>
+                                <td class="customer_name" style="width:40%;">${val[i].name}</td>
                                 <td class="phone">${val[i].phone}</td>
                                 <td>
                                     <div class="d-flex gap-2">
@@ -670,6 +685,17 @@
                 }
             })
 
+            $(document).on('click', '#addcontactmodalbtn', () => {
+                $('#modallbl').html('Add Contact');
+
+                $('#contact-name').val("");
+                $('#contact-phone').val("");
+
+                $('#add-contact').addClass("d-none");
+                $('#edit-contact').addClass("d-none");
+                $('#add-contact').removeClass("d-none");
+            });
+
             $(document).on('click', '#add-contact', () => {
                 $.ajax({
                     url: "/addcontact",
@@ -706,14 +732,61 @@
                 });
             })
 
-            $(document).on("click", ".edit-item-btn", () => {
+            $(document).on("click", ".edit-item-btn", function () {
                 const id = $(this).attr("data-id");
                 let name = $(this).attr("data-name");
                 let phone = $(this).attr("data-phone");
+
+                console.log(id + " : " + name + " : " + phone);
+
+                $('#contact-name').attr("data-id", id);
+                $('#contact-name').val(name);
+                $('#contact-phone').val(phone);
+
                 $('#modallbl').html('Edit Contact');
 
-
+                $('#add-contact').addClass("d-none");
+                $('#edit-contact').addClass("d-none");
+                $('#edit-contact').removeClass("d-none");
             });
+
+            $(document).on('click', '#edit-contact', () => {
+                $.ajax({
+                    url: "/updateData",
+                    method: "PUT",
+                    data: {
+                        "table": "contact",
+                        "paramstr": `name = '${$('#contact-name').val()}', phone = ${$('#contact-phone').val()}`,
+                        "condition": `contact_id = '${$('#contact-name').attr('data-id')}' and apikey = '${getCookie('apikey')}'`
+                    },
+                    success: function (val) {
+                        console.log(val);
+                        if (val.status_code == 200) {
+                            swal({
+                                title: "Contact Updated successfully",
+                                type: "success",
+                                timer: 1500,
+                                showConfirmButton: false,
+                            }).then(function () {
+                                $('#contact-name').val('');
+                                $('#contact-phone').val('');
+                            });
+                        } else {
+                            swal({
+                                title: "Contact can't be updated.",
+                                text: "Some Internal Server Error!! Try again later",
+                                type: "error",
+                                timer: 1500,
+                                showConfirmButton: false,
+                            });
+                        }
+                        displayContact({
+                            table: "contact",
+                            paramstr: true,
+                        });
+                    }
+                });
+            })
 
             $(document).on('click', '.remove-item-btn', function () {
                 const id = $(this).attr("data-id");
@@ -760,7 +833,7 @@
             });
 
             $(document).on("input", "#searchContact", function () {
-                let val = $('#searchContact').val();
+                let val = $('#searchContact').val().trim();
 
                 displayContact({
                     table: "contact",

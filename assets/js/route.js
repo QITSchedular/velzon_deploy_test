@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const mainpath = require('path');
-const path = mainpath.join(__dirname,'../../pages');
+const path = mainpath.join(__dirname, '../../pages');
 
 router.get("/", (req, res) => {
   res.sendFile(path + "/landing.html");
@@ -71,13 +71,13 @@ router.get("/offline", (req, res) => {
   res.sendFile(path + "/offline.html");
 });
 
-router.get("/passchangebasic", (req, res) => {
-  res.sendFile(path + "/pass-change-basic.html");
-});
+router.get("/password-change", (req, res) => {
+  res.sendFile(path + "/pass-change.html");
+})
 
-router.get("/passresetbasic", (req, res) => {
-  res.sendFile(path + "/pass-reset-basic.html");
-});
+router.get("/password-reset", (req, res) => {
+  res.sendFile(path + "/pass-reset.html");
+})
 
 router.get("/signin", (req, res) => {
   res.sendFile(path + "/signin.html");
