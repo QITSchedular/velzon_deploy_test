@@ -787,22 +787,22 @@ let client;
 // Bulkmessage : QRcode Generetor API
 app.get("/qr/:iid", async (req, res) => {
     let iid = req.params.iid;
-    // obj[iid] = new clients(
-    //     // {
-    //     //     authStrategy: new LocalAuth({ clientId: iid }),
-    //     //     // puppeteer: {
-    //     //     //     executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe',
-    //     //     // }
-    //     // }
-    // );
-    // await obj[iid].generateqr().then(async (qr) => {
-    //     res.send(qr);
-    // }).catch((error) => {
-    //     return res.send(error);
+    obj[iid] = new clients(
+        // {
+        //     authStrategy: new LocalAuth({ clientId: iid }),
+        //     // puppeteer: {
+        //     //     executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe',
+        //     // }
+        // }
+    );
+    await obj[iid].generateqr().then(async (qr) => {
+        res.send(qr);
+    }).catch((error) => {
+        return res.send(error);
 
-    //     console.log("Error In QR Generation", error);
-    // });
-    return res.send(iid);
+        console.log("Error In QR Generation", error);
+    });
+    // return res.send(iid);
 });
 
 // Bulkmessage : Authentication Client API

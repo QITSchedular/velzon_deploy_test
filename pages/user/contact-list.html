@@ -711,10 +711,9 @@
 
             focusEvent('contact_name', 'contact_email');
             focusEvent('contact_email', 'contact_phone');
-            // focusEvent('contact_phone', 'add_contact');
-            // focusEvent('contact_phone', 'edit_contact');
 
             $(document).on('click', '#addcontactmodalbtn', () => {
+                $('#contact_name,#contact_email,#contact_phone').val(``);
                 $('#modallbl').html('Add Contact');
                 $('#add_contact,#edit_contact').addClass("d-none");
                 $('#add_contact').removeClass("d-none");
