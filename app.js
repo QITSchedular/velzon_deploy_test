@@ -31,19 +31,19 @@ let obj = [], apikey, userProfile;
 
 const SESSION_FILE_PATH = './assets/json/session-data.json';
 
-// const conn = mysql.createConnection({
-//     host: process.env.DB_HOST,
-//     user: process.env.DB_USER,
-//     password: process.env.DB_PASSWORD,
-//     database: process.env.DB_NAME,
-// });
-
 const conn = mysql.createConnection({
-    host: 'm3-db.cpqpqooy9dzn.ap-south-1.rds.amazonaws.com',
-    user: 'admin',
-    password: 'M3passb4u#0',
-    database: 'qrdb',
-})
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+});
+
+// const conn = mysql.createConnection({
+//     host: 'm3-db.cpqpqooy9dzn.ap-south-1.rds.amazonaws.com',
+//     user: 'admin',
+//     password: 'M3passb4u#0',
+//     database: 'qrdb',
+// })
 conn.connect((err) => {
     if (err) {
         console.error('Error connecting to the database:', err);
@@ -2734,7 +2734,6 @@ app.post("/addticket", async (req, res) => {
                 if (err) res.send(err);
                 if (result.length > 0) {
                     for (i = 0; i < result.length; i++) {
-                        //console.log(result);
                         agents.push(result[i].a_email);
                         if (result[i].a_category == "Account Management") {
                             Account_Management.push(result[i].a_email);
@@ -2757,11 +2756,14 @@ app.post("/addticket", async (req, res) => {
                         "Service Inquiry": Service_Inquiry,
                         "Feedback and Suggestions": Feedback,
                     };
+                    console.log(categories);
                     const agentsInCategory = categories[t_type];
                     const assignedAgent = agentsInCategory[Math.floor(Math.random() * agentsInCategory.length)];
 
+
                     conn.query(`INSERT INTO support_ticket VALUES(?,?,?,?,?,?,?,?,?,?,?)`, [t_id, c_id, `email`, email, subject, t_type, description, `open`, `current_timestamp`, apikey, assignedAgent],
                         (err, resp) => {
+                            console.log(err);
                             if (err) return res.send(status.internalservererror());
                             //mail to support person for support ticket assigning
                             const smtpTransport = nodemailer.createTransport({

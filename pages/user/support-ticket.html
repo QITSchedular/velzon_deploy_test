@@ -741,6 +741,7 @@
                 }
             })
 
+
             $("#add-ticket").on('click', function () {
                 $.ajax({
                     url: "/getdata",
@@ -762,6 +763,7 @@
                                 "description": $('#t_description').val().trim()
                             },
                             success: function (data1) {
+                                console.log(data1);
                                 if (data1.status_code == 200) {
                                     $('#createTicket').removeClass('show');
                                     $('#createTicket').css('display', 'none');
