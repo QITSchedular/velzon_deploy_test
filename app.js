@@ -2542,7 +2542,7 @@ app.post("/user", async (req, res) => {
     }
 });
 app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
+    console.log(`Server is up and running on port: ${port}`);
 });
 
 // Test the ci cd pipeline
