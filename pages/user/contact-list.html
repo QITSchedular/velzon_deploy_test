@@ -711,17 +711,8 @@
 
             focusEvent('contact_name', 'contact_email');
             focusEvent('contact_email', 'contact_phone');
-
-            // $("#contact_phone").on('input', function () {
-            //     alert($('#add_contact').hasClass('d-none'));
-            // });
-            focusEvent('contact_phone', 'add_contact');
-            focusEvent('contact_phone', 'edit_contact');
-
-            // if ($('#add_contact').hasClass('d-none')) {
-            // }
-            // else {
-            // }
+            // focusEvent('contact_phone', 'add_contact');
+            // focusEvent('contact_phone', 'edit_contact');
 
             $(document).on('click', '#addcontactmodalbtn', () => {
                 $('#modallbl').html('Add Contact');
