@@ -31,19 +31,19 @@ let obj = [], apikey, userProfile;
 
 const SESSION_FILE_PATH = './assets/json/session-data.json';
 
-const conn = mysql.createConnection({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME,
-});
-
 // const conn = mysql.createConnection({
-//     host: 'm3-db.cpqpqooy9dzn.ap-south-1.rds.amazonaws.com',
-//     user: 'admin',
-//     password: 'M3passb4u#0',
-//     database: 'qrdb',
-// })
+//     host: process.env.DB_HOST,
+//     user: process.env.DB_USER,
+//     password: process.env.DB_PASSWORD,
+//     database: process.env.DB_NAME,
+// });
+
+const conn = mysql.createConnection({
+    host: 'm3-db.cpqpqooy9dzn.ap-south-1.rds.amazonaws.com',
+    user: 'admin',
+    password: 'M3passb4u#0',
+    database: 'qrdb',
+})
 conn.connect((err) => {
     if (err) {
         console.error('Error connecting to the database:', err);
@@ -2890,7 +2890,7 @@ app.use((req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Server up and running on PORT: ${port}`);
+    console.log(`Your server is up and running on : ${port}`);
 
 });
 
