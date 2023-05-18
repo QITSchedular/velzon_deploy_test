@@ -1003,7 +1003,9 @@
                     url: `/qr/${iid}`,
                     method: "GET",
                     success: async function (data) {
-                        console.log(data);
+                        alert(data);
+                        location.href = "/dashboard";
+                        return null;
                         $("#loader").addClass("d-none");
                         $("#output").html("");
 
