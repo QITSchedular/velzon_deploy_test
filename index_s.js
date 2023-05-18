@@ -3374,20 +3374,26 @@ app.post("/replyToTicket", (req, res) => {
     }
 });
 
-app.post("/addticket", (req, res) => {
-    const prefix = "ST";
-    const randomString = crypto.randomBytes(8).toString("hex");
-    const prefixedString = prefix + randomString;
-    let apikey = req.cookies.apikey;
+app.post("/addticket", async (req, res) => {
+    apikey = req.cookies.apikey;
+
+    const isValidapikey = await checkAPIKey(apikey);
+    try {
+        if (isValidapikey) {
+
+        } else res.send(status.unauthorized());
+    } catch (e) {
+        //console.log(e);
+        res.send(status.unauthorized());
+    }
+
+
     let email = req.body.email;
     let subject = req.body.subject;
     let t_type = req.body.t_type;
     let description = req.body.description;
-    console.log(
-        apikey + " " + email + " " + subject + " " + t_type + " " + description
-    );
-    conn.query(
-        `INSERT INTO support_ticket(ticket_id,category,user,t_subject,t_type,t_description,apikey) VALUES ('${prefixedString}','email','${email}','${subject}','${t_type}','${description}','${apikey}')`,
+
+    conn.query(`INSERT INTO support_ticket(ticket_id,category,user,t_subject,t_type,t_description,apikey) VALUES ('${prefixedString}','email','${email}','${subject}','${t_type}','${description}','${apikey}')`,
         (err, resp) => {
             if (err) console.log(err);
             if (resp) {

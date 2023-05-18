@@ -798,9 +798,8 @@ app.get("/qr/:iid", async (req, res) => {
     await obj[iid].generateqr().then(async (qr) => {
         res.send(qr);
     }).catch((error) => {
-        return res.send(error);
-
         console.log("Error In QR Generation", error);
+        return res.send(error);
     });
     // return res.send(iid);
 });
@@ -2697,6 +2696,131 @@ app.get("/usersubscription", (req, res) => {
             }
         })
 })
+
+app.post("/addticket", async (req, res) => {
+    let apikey = req.cookies.apikey;
+
+    const isValidapikey = await checkAPIKey(apikey);
+    try {
+        if (isValidapikey) {
+            const t_id = `ST${crypto.randomBytes(8).toString("hex")}`;
+            const c_id = `ST${crypto.randomBytes(4).toString('Base64url').replace(/[^A-Z0-9]/g, '')}`;
+
+            let email = req.body.email;
+            let subject = req.body.subject;
+            let t_type = req.body.t_type;
+            let description = req.body.description;
+
+            let agents = new Array();
+            let Account_Management = new Array();
+            let Technical_Support = new Array();
+            let Payment_Problem = new Array();
+            let Service_Inquiry = new Array();
+            let Feedback = new Array();
+
+            conn.query(`select * from support_agents`, (err, result) => {
+                if (err) res.send(err);
+                if (result.length > 0) {
+                    for (i = 0; i < result.length; i++) {
+                        //console.log(result);
+                        agents.push(result[i].a_email);
+                        if (result[i].a_category == "Account Management") {
+                            Account_Management.push(result[i].a_email);
+                        } else if (result[i].a_category == "Technical Support") {
+                            Technical_Support.push(result[i].a_email);
+                        } else if (result[i].a_category == "Payment Problem") {
+                            Payment_Problem.push(result[i].a_email);
+                        }
+                        else if (result[i].a_category == "Service Inquiry") {
+                            Service_Inquiry.push(result[i].a_email);
+                        }
+                        else if (result[i].a_category == "Feedback and Suggestions") {
+                            Feedback.push(result[i].a_email);
+                        }
+                    }
+                    let categories = {
+                        "Account Management": Account_Management,
+                        "Technical Support": Technical_Support,
+                        "Payment Problem": Payment_Problem,
+                        "Service Inquiry": Service_Inquiry,
+                        "Feedback and Suggestions": Feedback,
+                    };
+                    const agentsInCategory = categories[t_type];
+                    const assignedAgent = agentsInCategory[Math.floor(Math.random() * agentsInCategory.length)];
+
+                    conn.query(`INSERT INTO support_ticket VALUES(?,?,?,?,?,?,?,?,?,?,?)`, [t_id, c_id, `email`, email, subject, t_type, description, `open`, `current_timestamp`, apikey, assignedAgent],
+                        (err, resp) => {
+                            if (err) return res.send(status.internalservererror());
+                            //mail to support person for support ticket assigning
+                            const smtpTransport = nodemailer.createTransport({
+                                service: 'gmail',
+                                auth: {
+                                    user: "dashboardcrm.2022@gmail.com",
+                                    pass: "dbwtdfmwrxmwzcat",
+                                }
+                            });
+
+                            // Define the email options
+                            // const mailOptions = {
+                            //     from: 'dashboardcrm.2022@gmail.com',
+                            //     to: assignedAgent,
+                            //     subject: `New support ticket (${ticketId}): ${t_type}`,
+                            //     text: `Dear ${assignedAgent},\n\nYou have been assigned a new support ticket (${ticketId}) for the category '${t_type}'.\n\nPlease log in to the support portal to view and respond to this ticket.\n\nThank you,\nThe support team`
+                            // };
+
+                            // const Acknowledgementmail = {
+                            //     from: 'dashboardcrm.2022@gmail.com',
+                            //     to: email,
+                            //     subject: `Support ticket (${ticketId}) submitted`,
+                            //     text: `Dear customer,\n\nThank you for submitting a support ticket (${ticketId}).\n\nOur support team will review your ticket and get back to you as soon as possible.\n\nThank you,\nThe support team`
+                            // };
+
+
+                            sendEmail(assignedAgent, `New support ticket (${t_id}): ${t_type}`, `Dear ${assignedAgent},\n\nYou have been assigned a new support ticket (${ticketId}) for the category '${t_type}'.\n\nPlease log in to the support portal to view and respond to this ticket.\n\nThank you,\nThe support team`).then(() => {
+                                console.log("Email Sent Scuuessfully");
+                                sendEmail(email, `Support ticket (${t_id}) issued`, `Dear customer,\n\nThank you for submitting a support ticket (${ticketId}).\n\nOur support team will review your ticket and get back to you as soon as possible.\n\nThank you,\nThe support team`).then(() => {
+                                    return res.send(status.ok());;
+                                }).catch((error) => {
+                                    console.log(`error in Sending  E-Mail ::::::: <${error}>`);
+                                    return res.send(status.badRequest());
+                                })
+                            }).catch((error) => {
+                                console.log(`error in Sending  E-Mail ::::::: <${error}>`);
+                                return res.send(status.badRequest());
+                            })
+                            // Send the email
+                            // smtpTransport.sendMail(Acknowledgementmail, function (error, response) {
+                            //     if (error) {
+                            //         console.log(error);
+                            //     } else {
+                            //         console.log('Message sent: ' + response.message);
+                            //     }
+                            //     smtpTransport.close();
+                            // });
+
+                            // smtpTransport.sendMail(mailOptions, function (error, response) {
+                            //     if (error) {
+                            //         console.log(error);
+                            //     } else {
+                            //         console.log('Message sent: ' + response.message);
+                            //     }
+                            //     smtpTransport.close();
+                            // });
+
+                        });
+                }
+            })
+        } else res.send(status.unauthorized());
+    } catch (e) {
+        //console.log(e);
+        res.send(status.unauthorized());
+    }
+
+
+
+
+
+});
 
 app.post("/getTickets", (req, res) => {
     try {
