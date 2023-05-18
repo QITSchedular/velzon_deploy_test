@@ -1002,7 +1002,7 @@
                 await $.ajax({
                     url: `/qr/${iid}`,
                     method: "GET",
-                    success: function (data) {
+                    success: async function (data) {
                         $("#loader").addClass("d-none");
                         $("#output").html("");
 
@@ -1021,7 +1021,7 @@
                             height: 200,
                         });
 
-                        $.ajax({
+                        await $.ajax({
                             url: `/authenticated/${iid}`,
                             method: "GET",
                             success: function (val) {
