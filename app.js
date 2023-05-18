@@ -44,7 +44,6 @@ const conn = mysql.createConnection({
     password: 'M3passb4u#0',
     database: 'qrdb',
 })
-
 conn.connect((err) => {
     if (err) {
         console.error('Error connecting to the database:', err);
@@ -2892,8 +2891,8 @@ app.use((req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
-    console.log(`http://localhost:${port}/`);
+    console.log(`Server up and running on port ${port}`);
+    // console.log(`http://localhost:${port}/`);
 });
 
 // bcrypt.hash('harsh@123', 10, (err, hash) => {
