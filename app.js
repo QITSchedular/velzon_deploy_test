@@ -31,19 +31,19 @@ let obj = [], apikey, userProfile;
 
 const SESSION_FILE_PATH = './assets/json/session-data.json';
 
-// const conn = mysql.createConnection({
-//     host: process.env.DB_HOST,
-//     user: process.env.DB_USER,
-//     password: process.env.DB_PASSWORD,
-//     database: process.env.DB_NAME,
-// });
-
 const conn = mysql.createConnection({
-    host: 'm3-db.cpqpqooy9dzn.ap-south-1.rds.amazonaws.com',
-    user: 'admin',
-    password: 'M3passb4u#0',
-    database: 'qrdb',
-})
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+});
+
+// const conn = mysql.createConnection({
+//     host: 'm3-db.cpqpqooy9dzn.ap-south-1.rds.amazonaws.com',
+//     user: 'admin',
+//     password: 'M3passb4u#0',
+//     database: 'qrdb',
+// })
 conn.connect((err) => {
     if (err) {
         console.error('Error connecting to the database:', err);
@@ -1528,12 +1528,11 @@ app.get('/message_summary', async (req, res) => {
     const isValidapikey = await checkAPIKey(apikey);
     try {
         if (isValidapikey) {
-            conn.query(`SELECT instance_id, COUNT(CASE WHEN msg_type = 'image' THEN 1 END) AS image_count, COUNT(CASE WHEN msg_type = 'msg' THEN 1 END) AS msg_count, COUNT(CASE WHEN msg_type = 'bulk through channel' THEN 1 END) AS bulk_count, COUNT(CASE WHEN msg_type = 'Schedule Single Mess' THEN 1 END) AS single_schedule_count FROM message GROUP BY apikey, instance_id HAVING apikey = '${apikey}'`,
-                function (err, result) {
-                    if (err) return res.send(status.internalservererror());
-                    if (result.length < 0) return res.send(status.nodatafound());
-                    res.send(result);
-                })
+            conn.query(`SELECT m.instance_id,i.i_name,COUNT(CASE WHEN m.msg_type = 'image' THEN 1 END) AS image_count,COUNT(CASE WHEN m.msg_type = 'Schedule Single Mess' THEN 1 END) AS schedule_single_count,COUNT(CASE WHEN m.msg_type = 'bulk through channel' THEN 1 END) AS bulk_through_channel_count FROM message m JOIN instance i ON m.instance_id = i.instance_id GROUP BY m.apikey, m.instance_id, i.i_name having apikey = '${apikey}'`, function (err, result) {
+                if (err) return res.send(status.internalservererror());
+                if (result.length <= 0) return res.send(status.nodatafound());
+                res.send(result);
+            })
         } else res.send(status.unauthorized());
     }
     catch (e) {
@@ -2891,8 +2890,8 @@ app.use((req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Server up and running on port ${port}`);
-    // console.log(`http://localhost:${port}/`);
+    console.log(`Server up and running on PORT: ${port}`);
+
 });
 
 // bcrypt.hash('harsh@123', 10, (err, hash) => {
