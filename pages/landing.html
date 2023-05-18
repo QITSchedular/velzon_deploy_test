@@ -1,0 +1,1119 @@
+<!doctype html>
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg"
+    data-sidebar-image="none" data-preloader="disable">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Landing | Velzon - Admin & Dashboard Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesbrand" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="../assets/images/favicon.ico">
+
+    <!--Swiper slider css-->
+    <link href="../assets/libs/swiper/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- aos css -->
+    <link rel="stylesheet" href="../assets/libs/aos/aos.css" />
+    <!-- Layout config Js -->
+    <script src="../assets/js/layout.js"></script>
+    <!-- Bootstrap Css -->
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="../assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <!-- custom Css-->
+    <link href="../assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"
+        integrity="sha512-BdHyGtczsUoFcEma+MfXc71KJLv/cd+sUsUaYYf2mXpfG/PtBjNXsPo78+rxWjscxUYN2Qr2+DbeGGiJx81ifg=="
+        crossorigin="anonymous"></script>
+
+</head>
+
+<style>
+    .positivity {
+        /* position: absolute;
+        top: 0%;
+        left: 50%;
+        transform: translate(-50%, -50%); */
+
+        width: auto;
+        height: auto;
+        padding: 1rem;
+        overflow: hidden;
+        text-transform: uppercase;
+    }
+
+    .positivity .positivity__alone {
+        font-size: 2rem;
+        font-family: serif;
+        color: #000000;
+    }
+
+    .positivity .positivity__words .change {
+        position: absolute;
+        left: 10%;
+        opacity: 0;
+        -webkit-animation: changeword 8s linear infinite;
+        animation: changeword 8s linear infinite;
+        font-family: serif;
+        font-size: 2rem;
+        font-weight: bolder;
+    }
+
+    .positivity .positivity__words .change:nth-child(1) {
+        -webkit-animation-delay: 0s;
+        animation-delay: 0s;
+    }
+
+    .positivity .positivity__words .change:nth-child(2) {
+        -webkit-animation-delay: 2s;
+        animation-delay: 2s;
+    }
+
+    .positivity .positivity__words .change:nth-child(3) {
+        -webkit-animation-delay: 4s;
+        animation-delay: 4s;
+    }
+
+    .positivity .positivity__words .change:nth-child(4) {
+        -webkit-animation-delay: 6s;
+        animation-delay: 6s;
+    }
+
+    @-webkit-keyframes changeword {
+        0% {
+            transform: translateY(-50px);
+            opacity: 0;
+        }
+
+        5% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        20% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        30% {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        80% {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+    }
+
+    @keyframes changeword {
+        0% {
+            transform: translateY(-50px);
+            opacity: 0;
+        }
+
+        5% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        20% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        30% {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        80% {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+    }
+</style>
+
+<body data-bs-spy="scroll" data-bs-target="#navbar-example">
+
+    <!-- Begin page -->
+    <div class="layout-wrapper landing">
+        <nav class="navbar navbar-expand-lg navbar-landing fixed-top" id="navbar">
+            <div class="container">
+                <a class="navbar-brand" href="/">
+                    <img src="../assets/images/logo-dark.png" class="card-logo card-logo-dark" alt="logo dark"
+                        height="17">
+                    <img src="../assets/images/logo-light.png" class="card-logo card-logo-light" alt="logo light"
+                        height="17">
+                </a>
+                <button class="navbar-toggler py-0 fs-20 text-body" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="mdi mdi-menu"></i>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto mt-2 mt-lg-0" id="navbar-example">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#hero">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#services">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#reviews">Reviews</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#plans">Plans</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#team">Team</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+
+                    <div class="">
+                        <a href="/signin" class="btn btn-link fw-medium text-decoration-none text-dark">Sign in</a>
+                        <a href="/signup" class="btn btn-primary">Sign Up</a>
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+        <!-- end navbar -->
+        <div class="vertical-overlay" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent.show"></div>
+
+        <!-- start hero section -->
+        <section class="section mb-5 hero-section" id="hero">
+            <div class="bg-overlay bg-overlay-pattern"></div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 col-sm-10">
+                        <div class="text-center mt-lg-5 pt-5">
+                            <h1 class="display-6 fw-semibold mb-3 lh-base">The better way to communicate with
+                                <span class="text-success">M3</span>
+                            </h1>
+
+                            <div class="d-flex gap-4 justify-content-center mt-4 ">
+                                <a href="/signup" class="btn btn-primary fs-16">Get Started
+                                    <i class="ri-arrow-right-line align-middle ms-1"></i>
+                                </a>
+                                <a href="/docs" class="btn btn-outline-success fs-16">
+                                    <i class="bx bx-file align-middle me-2 fs-20"></i>Api Documentation
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="mt-4 mt-sm-5 pt-sm-5 mb-sm-n5 demo-carousel">
+                            <div class="demo-img-patten-top d-none d-sm-block">
+                                <img src="../assets/images/landing/img-pattern.png" class="d-block img-fluid" alt="...">
+                            </div>
+                            <div class="demo-img-patten-bottom d-none d-sm-block">
+                                <img src="../assets/images/landing/img-pattern.png" class="d-block img-fluid" alt="...">
+                            </div>
+                            <div class="carousel slide carousel-fade" data-bs-ride="carousel">
+                                <div class="carousel-inner shadow-lg p-2 bg-white rounded">
+                                    <div class="carousel-item active" data-bs-interval="2000">
+                                        <img src="../assets/images/demos/dashboard_img.png" class="d-block w-100"
+                                            alt="...">
+                                    </div>
+                                    <div class="carousel-item" data-bs-interval="2000">
+                                        <img src="../assets/images/demos/instance_img.png" class="d-block w-100"
+                                            alt="...">
+                                    </div>
+                                    <div class="carousel-item" data-bs-interval="2000">
+                                        <img src="../assets/images/demos/channel_img.png" class="d-block w-100"
+                                            alt="...">
+                                    </div>
+                                    <div class="carousel-item" data-bs-interval="2000">
+                                        <img src="../assets/images/demos/contact_img.png" class="d-block w-100"
+                                            alt="...">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+            <div class="position-absolute start-0 end-0 bottom-0 hero-shape-svg">
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 0 1440 120">
+                    <g mask="url(&quot;#SvgjsMask1003&quot;)" fill="none">
+                        <path d="M 0,118 C 288,98.6 1152,40.4 1440,21L1440 140L0 140z">
+                        </path>
+                    </g>
+                </svg>
+            </div>
+            <!-- end shape -->
+        </section>
+        <!-- end hero section -->
+
+        <!-- start features -->
+        <section class="section bg-light py-5 mt-5" id="services">
+            <div class="container">
+                <div class="positivity mb-5">
+                    <div class="positivity__words text-center">
+                        <span class="change text-primary">Send Message</span>
+                        <span class="change text-primary">Bulk Message</span>
+                        <span class="change text-primary">Bulk Mail</span>
+                        <span class="change text-primary">Manage Contact</span>
+                    </div>
+                </div>
+                <!-- <div class="row text-muted fw-semibold mb-3 fs-1 text-center">
+                    <span class="text-muted">
+                        <span id="dynamicContent" class="overflow-hidden text-primary"></span>
+                    </span>
+                </div> -->
+
+                <p class="text-muted fs-5 ff-secondary my-4 text-justify">
+                    Welcome to our comprehensive messaging platform, where communication is made easy and efficient. Our
+                    user-friendly interface provides a range of features to help you stay connected with your contacts,
+                    including bulk mail, bulk messaging, and contact management.
+                    <br />
+                    <br />
+                    With our bulk mail feature, you can easily send emails to large groups of contacts with just a few
+                    clicks. Whether you need to send newsletters, updates, or promotional materials, our bulk mail
+                    feature simplifies the process and saves you time.
+                    <br />
+                    <br />
+                    Our contact management feature helps you keep your contact list organized and up-to-date. You can
+                    import contacts from various sources, including spreadsheets, email accounts, and social media, and
+                    easily sort and categorize them.
+                    <br />
+                    <br />
+                    Whether you need to communicate with family, friends, or colleagues, our messaging platform is the
+                    perfect solution. Sign up today and start messaging with ease and efficiency!
+                </p>
+            </div>
+            <!-- end container -->
+        </section>
+        <!-- end features -->
+
+
+        <!-- start review -->
+        <section class="section bg-primary" id="reviews">
+            <div class="bg-overlay bg-overlay-pattern"></div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="text-center">
+                            <div>
+                                <i class="ri-double-quotes-l text-success display-3"></i>
+                            </div>
+                            <h4 class="text-white mb-5"><span class="text-success">19k</span>+ Satisfied clients</h4>
+
+                            <!-- Swiper -->
+                            <div class="swiper client-review-swiper rounded" dir="ltr">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="row justify-content-center">
+                                            <div class="col-10">
+                                                <div class="text-white-50">
+                                                    <p class="fs-20 ff-secondary mb-4">" I am givng 5 stars. Theme is
+                                                        great and everyone one stuff everything in theme. Future request
+                                                        should not affect current state of theme. "</p>
+
+                                                    <div>
+                                                        <h5 class="text-white">gregoriusus</h5>
+                                                        <p>- Skote User</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end slide -->
+                                    <div class="swiper-slide">
+                                        <div class="row justify-content-center">
+                                            <div class="col-10">
+                                                <div class="text-white-50">
+                                                    <p class="fs-20 ff-secondary mb-4">" Awesome support. Had few issues
+                                                        while setting up because of my device, the support team helped
+                                                        me fix them up in a day. Everything looks clean and good. Highly
+                                                        recommended! "</p>
+
+                                                    <div>
+                                                        <h5 class="text-white">GeekyGreenOwl</h5>
+                                                        <p>- Skote User</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end slide -->
+                                    <div class="swiper-slide">
+                                        <div class="row justify-content-center">
+                                            <div class="col-10">
+                                                <div class="text-white-50">
+                                                    <p class="fs-20 ff-secondary mb-4">" Amazing template, Redux store
+                                                        and components is nicely designed. It's a great start point for
+                                                        an admin based project. Clean Code and good documentation.
+                                                        Template is completely in React and absolutely no usage of
+                                                        jQuery "</p>
+
+                                                    <div>
+                                                        <h5 class="text-white">sreeks456</h5>
+                                                        <p>- Veltrix User</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end slide -->
+                                </div>
+                                <div class="swiper-button-next bg-white rounded-circle"></div>
+                                <div class="swiper-button-prev bg-white rounded-circle"></div>
+                                <div class="swiper-pagination position-relative mt-2"></div>
+                            </div>
+                            <!-- end slider -->
+                        </div>
+                    </div>
+                    <!-- end col -->
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+        </section>
+        <!-- end review -->
+
+        <section class="py-5 position-relative bg-white">
+            <div class="container">
+                <div class="row text-center gy-4">
+                    <div class="col-lg-4 col-6">
+                        <div>
+                            <h2 class="mb-2">
+                                <span class="counter-value" data-target="100" id="totaluser"></span>+
+                            </h2>
+                            <div class="text-muted">Total Users</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-6">
+                        <div>
+                            <h2 class="mb-2">
+                                <span class="counter-value" data-target="24" id="totalinstance"></span>
+                            </h2>
+                            <div class="text-muted">Total Instance</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-6">
+                        <div>
+                            <h2 class="mb-2">
+                                <span class="counter-value" data-target="20.3" id="totalmessage"></span>
+                            </h2>
+                            <div class="text-muted">Total Message Sent</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+        </section>
+
+
+        <!-- start plan -->
+        <section class="section bg-light" id="plans">
+            <div class="bg-overlay bg-overlay-pattern"></div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="text-center mb-5">
+                            <h3 class="mb-3 fw-semibold">Choose the plan that's right for you</h3>
+                            <p class="text-muted mb-4">Simple pricing. No hidden fees. Advanced features for you
+                                business.</p>
+
+                            <div class="d-flex justify-content-center align-items-center">
+                                <div>
+                                    <h5 class="fs-14 mb-0">Month</h5>
+                                </div>
+                                <div class="form-check form-switch fs-20 ms-3 " onclick="check()">
+                                    <input class="form-check-input" type="checkbox" id="plan-switch">
+                                    <label class="form-check-label" for="plan-switch"></label>
+                                </div>
+                                <div>
+                                    <h5 class="fs-14 mb-0">Annual <span class="badge badge-soft-success">Save 20%</span>
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col -->
+                </div>
+                <!-- end row -->
+
+                <div class="row gy-4">
+                    <div class="col-lg-4">
+                        <div class="card plan-box mb-0">
+                            <div class="card-body p-4 m-2">
+                                <div class="d-flex align-items-center">
+                                    <div class="flex-grow-1">
+                                        <h5 class="mb-1 fw-semibold">Basic Plan</h5>
+                                        <p class="text-muted mb-0">For Startup</p>
+                                    </div>
+                                    <div class="avatar-sm">
+                                        <div class="avatar-title bg-light rounded-circle text-primary">
+                                            <i class="ri-book-mark-line fs-20"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="py-4 text-center">
+                                    <h1 class="month"><sup><small>$</small></sup><span
+                                            class="ff-secondary fw-bold">19</span> <span
+                                            class="fs-13 text-muted">/Month</span></h1>
+                                    <h1 class="annual"><sup><small>$</small></sup><span
+                                            class="ff-secondary fw-bold">171</span> <span
+                                            class="fs-13 text-muted">/Year</span></h1>
+                                </div>
+
+                                <div>
+                                    <ul class="list-unstyled text-muted vstack gap-3 ff-secondary">
+                                        <li>
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0 text-success me-1">
+                                                    <i class="ri-checkbox-circle-fill fs-15 align-middle"></i>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    Upto <b>3</b> Projects
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0 text-success me-1">
+                                                    <i class="ri-checkbox-circle-fill fs-15 align-middle"></i>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    Upto <b>299</b> Customers
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0 text-success me-1">
+                                                    <i class="ri-checkbox-circle-fill fs-15 align-middle"></i>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    Scalable Bandwidth
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0 text-success me-1">
+                                                    <i class="ri-checkbox-circle-fill fs-15 align-middle"></i>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <b>5</b> FTP Login
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0 text-danger me-1">
+                                                    <i class="ri-close-circle-fill fs-15 align-middle"></i>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <b>24/7</b> Support
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0 text-danger me-1">
+                                                    <i class="ri-close-circle-fill fs-15 align-middle"></i>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <b>Unlimited</b> Storage
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0 text-danger me-1">
+                                                    <i class="ri-close-circle-fill fs-15 align-middle"></i>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    Domain
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="mt-4">
+                                        <a href="javascript:void(0);" class="btn btn-soft-success w-100">Get Started</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end col-->
+                    <div class="col-lg-4">
+                        <div class="card plan-box mb-0 ribbon-box right">
+                            <div class="card-body p-4 m-2">
+                                <div class="ribbon-two ribbon-two-danger"><span>Popular</span></div>
+                                <div class="d-flex align-items-center">
+                                    <div class="flex-grow-1">
+                                        <h5 class="mb-1 fw-semibold">Pro Business</h5>
+                                        <p class="text-muted mb-0">Professional plans</p>
+                                    </div>
+                                    <div class="avatar-sm">
+                                        <div class="avatar-title bg-light rounded-circle text-primary">
+                                            <i class="ri-medal-fill fs-20"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="py-4 text-center">
+                                    <h1 class="month"><sup><small>$</small></sup><span
+                                            class="ff-secondary fw-bold">29</span> <span
+                                            class="fs-13 text-muted">/Month</span></h1>
+                                    <h1 class="annual"><sup><small>$</small></sup><span
+                                            class="ff-secondary fw-bold">261</span> <span
+                                            class="fs-13 text-muted">/Year</span></h1>
+                                </div>
+
+                                <div>
+                                    <ul class="list-unstyled text-muted vstack gap-3 ff-secondary">
+                                        <li>
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0 text-success me-1">
+                                                    <i class="ri-checkbox-circle-fill fs-15 align-middle"></i>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    Upto <b>15</b> Projects
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0 text-success me-1">
+                                                    <i class="ri-checkbox-circle-fill fs-15 align-middle"></i>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <b>Unlimited</b> Customers
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0 text-success me-1">
+                                                    <i class="ri-checkbox-circle-fill fs-15 align-middle"></i>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    Scalable Bandwidth
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0 text-success me-1">
+                                                    <i class="ri-checkbox-circle-fill fs-15 align-middle"></i>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <b>12</b> FTP Login
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0 text-success me-1">
+                                                    <i class="ri-checkbox-circle-fill fs-15 align-middle"></i>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <b>24/7</b> Support
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0 text-danger me-1">
+                                                    <i class="ri-close-circle-fill fs-15 align-middle"></i>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <b>Unlimited</b> Storage
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0 text-danger me-1">
+                                                    <i class="ri-close-circle-fill fs-15 align-middle"></i>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    Domain
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="mt-4">
+                                        <a href="javascript:void(0);" class="btn btn-soft-success w-100">Get Started</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end col-->
+                    <div class="col-lg-4">
+                        <div class="card plan-box mb-0">
+                            <div class="card-body p-4 m-2">
+                                <div class="d-flex align-items-center">
+                                    <div class="flex-grow-1">
+                                        <h5 class="mb-1 fw-semibold">Platinum Plan</h5>
+                                        <p class="text-muted mb-0">Enterprise Businesses</p>
+                                    </div>
+                                    <div class="avatar-sm">
+                                        <div class="avatar-title bg-light rounded-circle text-primary">
+                                            <i class="ri-stack-fill fs-20"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="py-4 text-center">
+                                    <h1 class="month"><sup><small>$</small></sup><span
+                                            class="ff-secondary fw-bold">39</span> <span
+                                            class="fs-13 text-muted">/Month</span></h1>
+                                    <h1 class="annual"><sup><small>$</small></sup><span
+                                            class="ff-secondary fw-bold">351</span> <span
+                                            class="fs-13 text-muted">/Year</span></h1>
+                                </div>
+
+                                <div>
+                                    <ul class="list-unstyled text-muted vstack gap-3 ff-secondary">
+                                        <li>
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0 text-success me-1">
+                                                    <i class="ri-checkbox-circle-fill fs-15 align-middle"></i>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <b>Unlimited</b> Projects
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0 text-success me-1">
+                                                    <i class="ri-checkbox-circle-fill fs-15 align-middle"></i>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <b>Unlimited</b> Customers
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0 text-success me-1">
+                                                    <i class="ri-checkbox-circle-fill fs-15 align-middle"></i>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    Scalable Bandwidth
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0 text-success me-1">
+                                                    <i class="ri-checkbox-circle-fill fs-15 align-middle"></i>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <b>Unlimited</b> FTP Login
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0 text-success me-1">
+                                                    <i class="ri-checkbox-circle-fill fs-15 align-middle"></i>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <b>24/7</b> Support
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0 text-success me-1">
+                                                    <i class="ri-checkbox-circle-fill fs-15 align-middle"></i>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <b>Unlimited</b> Storage
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0 text-success me-1">
+                                                    <i class="ri-checkbox-circle-fill fs-15 align-middle"></i>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    Domain
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="mt-4">
+                                        <a href="javascript:void(0);" class="btn btn-soft-success w-100">Get Started</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end plan -->
+
+        <!-- start team -->
+        <section class="section bg-light" id="team">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="text-center mb-5">
+                            <h3 class="mb-3 fw-semibold">Our <span class="text-danger">Team</span></h3>
+                            <p class="text-muted mb-4 ff-secondary">To achieve this, it would be necessary to have
+                                uniform grammar, pronunciation and more common words. If several languages coalesce the
+                                grammar.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- end row -->
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="card">
+                            <div class="card-body text-center p-4">
+                                <div class="avatar-xl mx-auto mb-4 position-relative">
+                                    <img src="../assets/images/users/avatar-2.jpg" alt=""
+                                        class="img-fluid rounded-circle">
+                                    <a href="apps-mailbox.html"
+                                        class="btn btn-success btn-sm position-absolute bottom-0 end-0 rounded-circle avatar-xs">
+                                        <div class="avatar-title bg-transparent">
+                                            <i class="ri-mail-fill align-bottom"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                                <!-- end card body -->
+                                <h5 class="mb-1"><a href="pages-profile.html" class="text-body">Nancy Martino</a></h5>
+                                <p class="text-muted mb-0 ff-secondary">Team Leader</p>
+                            </div>
+                        </div>
+                        <!-- end card -->
+                    </div>
+                    <!-- end col -->
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="card">
+                            <div class="card-body text-center p-4">
+                                <div class="avatar-xl mx-auto mb-4 position-relative">
+                                    <img src="../assets/images/users/avatar-10.jpg" alt=""
+                                        class="img-fluid rounded-circle">
+                                    <a href="apps-mailbox.html"
+                                        class="btn btn-success btn-sm position-absolute bottom-0 end-0 rounded-circle avatar-xs">
+                                        <div class="avatar-title bg-transparent">
+                                            <i class="ri-mail-fill align-bottom"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                                <!-- end card body -->
+                                <h5 class="mb-1"><a href="pages-profile.html" class="text-body">Henry Baird</a></h5>
+                                <p class="text-muted mb-0 ff-secondary">Full Stack Developer</p>
+                            </div>
+                        </div>
+                        <!-- end card -->
+                    </div>
+                    <!-- end col -->
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="card">
+                            <div class="card-body text-center p-4">
+                                <div class="avatar-xl mx-auto mb-4 position-relative">
+                                    <img src="../assets/images/users/avatar-3.jpg" alt=""
+                                        class="img-fluid rounded-circle">
+                                    <a href="apps-mailbox.html"
+                                        class="btn btn-success btn-sm position-absolute bottom-0 end-0 rounded-circle avatar-xs">
+                                        <div class="avatar-title bg-transparent">
+                                            <i class="ri-mail-fill align-bottom"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                                <!-- end card body -->
+                                <h5 class="mb-1"><a href="pages-profile.html" class="text-body">Frank Hook</a></h5>
+                                <p class="text-muted mb-0 ff-secondary">Project Manager</p>
+                            </div>
+                        </div>
+                        <!-- end card -->
+                    </div>
+                    <!-- end col -->
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+        </section>
+        <!-- end team -->
+
+        <!-- start contact -->
+        <section class="section" id="contact">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="text-center mb-5">
+                            <h3 class="mb-3 fw-semibold">Get In Touch</h3>
+                            <p class="text-muted mb-4 ff-secondary">We thrive when coming up with innovative ideas but
+                                also understand that a smart concept should be supported with faucibus sapien odio
+                                measurable results.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- end row -->
+
+                <div class="row gy-4">
+                    <div class="col-lg-4">
+                        <div>
+                            <div class="mt-4">
+                                <h5 class="fs-13 text-muted text-uppercase">Office Address 1:</h5>
+                                <div class="ff-secondary fw-semibold">4461 Cedar Street Moro, <br />AR 72368</div>
+                            </div>
+                            <div class="mt-4">
+                                <h5 class="fs-13 text-muted text-uppercase">Office Address 2:</h5>
+                                <div class="ff-secondary fw-semibold">2467 Swick Hill Street <br />New Orleans, LA</div>
+                            </div>
+                            <div class="mt-4">
+                                <h5 class="fs-13 text-muted text-uppercase">Working Hours:</h5>
+                                <div class="ff-secondary fw-semibold">9:00am to 6:00pm</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col -->
+                    <div class="col-lg-8">
+                        <div>
+                            <form>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="mb-4">
+                                            <label for="name" class="form-label fs-13">Name</label>
+                                            <input name="name" id="name" type="text"
+                                                class="form-control bg-light border-light" placeholder="Your name*">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="mb-4">
+                                            <label for="email" class="form-label fs-13">Email</label>
+                                            <input name="email" id="email" type="email"
+                                                class="form-control bg-light border-light" placeholder="Your email*">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="mb-4">
+                                            <label for="subject" class="form-label fs-13">Subject</label>
+                                            <input type="text" class="form-control bg-light border-light" id="subject"
+                                                name="subject" placeholder="Your Subject.." />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="mb-3">
+                                            <label for="comments" class="form-label fs-13">Message</label>
+                                            <textarea name="comments" id="comments" rows="3"
+                                                class="form-control bg-light border-light"
+                                                placeholder="Your message..."></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 text-end">
+                                        <input type="submit" id="submit" name="send" class="submitBnt btn btn-primary"
+                                            value="Send Message">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+        </section>
+        <!-- end contact -->
+
+        <!-- Start footer -->
+        <footer class="custom-footer bg-dark py-5 position-relative">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 mt-4">
+                        <div>
+                            <div>
+                                <img src="../assets/images/logo-light.png" alt="logo light" height="17">
+                            </div>
+                            <div class="mt-4 fs-13">
+                                <p>Premium Multipurpose Admin & Dashboard Template</p>
+                                <p class="ff-secondary">You can build any type of web application like eCommerce, CRM,
+                                    CMS, Project management apps, Admin Panels, etc using Velzon.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-7 ms-lg-auto">
+                        <div class="row">
+                            <div class="col-sm-4 mt-4">
+                                <h5 class="text-white mb-0">Company</h5>
+                                <div class="text-muted mt-3">
+                                    <ul class="list-unstyled ff-secondary footer-list">
+                                        <li><a href="pages-profile.html">About Us</a></li>
+                                        <li><a href="pages-gallery.html">Gallery</a></li>
+                                        <li><a href="apps-projects-overview.html">Projects</a></li>
+                                        <li><a href="pages-timeline.html">Timeline</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 mt-4">
+                                <h5 class="text-white mb-0">Apps Pages</h5>
+                                <div class="text-muted mt-3">
+                                    <ul class="list-unstyled ff-secondary footer-list">
+                                        <li><a href="pages-pricing.html">Calendar</a></li>
+                                        <li><a href="apps-mailbox.html">Mailbox</a></li>
+                                        <li><a href="apps-chat.html">Chat</a></li>
+                                        <li><a href="apps-crm-deals.html">Deals</a></li>
+                                        <li><a href="apps-tasks-kanban.html">Kanban Board</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 mt-4">
+                                <h5 class="text-white mb-0">Support</h5>
+                                <div class="text-muted mt-3">
+                                    <ul class="list-unstyled ff-secondary footer-list">
+                                        <li><a href="pages-faqs.html">FAQ</a></li>
+                                        <li><a href="pages-faqs.html">Contact</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row text-center text-sm-start align-items-center mt-5">
+                    <div class="col-sm-6">
+
+                        <div>
+                            <p class="copy-rights mb-0">
+                                <script> document.write(new Date().getFullYear()) </script> © Velzon - Themesbrand
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="text-sm-end mt-3 mt-sm-0">
+                            <ul class="list-inline mb-0 footer-social-link">
+                                <li class="list-inline-item">
+                                    <a href="javascript: void(0);" class="avatar-xs d-block">
+                                        <div class="avatar-title rounded-circle">
+                                            <i class="ri-facebook-fill"></i>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="javascript: void(0);" class="avatar-xs d-block">
+                                        <div class="avatar-title rounded-circle">
+                                            <i class="ri-github-fill"></i>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="javascript: void(0);" class="avatar-xs d-block">
+                                        <div class="avatar-title rounded-circle">
+                                            <i class="ri-linkedin-fill"></i>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="javascript: void(0);" class="avatar-xs d-block">
+                                        <div class="avatar-title rounded-circle">
+                                            <i class="ri-google-fill"></i>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="javascript: void(0);" class="avatar-xs d-block">
+                                        <div class="avatar-title rounded-circle">
+                                            <i class="ri-dribbble-line"></i>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- end footer -->
+
+
+        <!--start back-to-top-->
+        <button onclick="topFunction()" class="btn btn-danger btn-icon landing-back-top" id="back-to-top">
+            <i class="ri-arrow-up-line"></i>
+        </button>
+        <!--end back-to-top-->
+
+    </div>
+    <!-- end layout wrapper -->
+
+
+    <!-- JAVASCRIPT -->
+    <script src="../assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="../assets/libs/node-waves/waves.min.js"></script>
+    <script src="../assets/libs/feather-icons/feather.min.js"></script>
+    <script src="../assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+    <script src="../assets/js/plugins.js"></script>
+
+    <!--Swiper slider js-->
+    <script src="../assets/libs/swiper/swiper-bundle.min.js"></script>
+
+    <!-- landing init -->
+    <script src="../assets/js/pages/landing.init.js"></script>
+    <script src="../assets/js/jquery.js"></script>
+
+    <script>
+
+        $(document).ready(function () {
+            $.ajax({
+                url: "/get-landingpage-data",
+                method: "GET",
+                success: function (val) {
+                    console.log(val[0].total);
+                    $('#totaluser').html(val[0].total);
+                    $('#totalinstance').html(val[1].total);
+                    $('#totalmessage').html(val[2].total);
+                    $('#totaluser').attr('data-target', val[0].total);
+                    $('#totalinstance').attr('data-target', val[1].total);
+                    $('#totalmessage').attr('data-target', val[2].total);
+                }
+            })
+
+            text = ["Send Message", "Bulk Message", "Bulk Mail", "Manage Contact"]
+            intervalTime = 600;
+            window.load = displayText();
+            function displayText() {
+                document.querySelector('#dynamicContent').innerText = text[0];
+                setTimeout(() => {
+                    document.querySelector('#dynamicContent').innerText = text[1];
+                }, intervalTime * 3);
+                setTimeout(() => {
+                    document.querySelector('#dynamicContent').innerText = text[2];
+                }, intervalTime * 5);
+                setTimeout(() => {
+                    document.querySelector('#dynamicContent').innerText = text[3];
+                }, intervalTime * 7);
+            }
+
+            setInterval(() => {
+                displayText();
+            }, intervalTime * 9);
+        })
+    </script>
+</body>
+
+</html>

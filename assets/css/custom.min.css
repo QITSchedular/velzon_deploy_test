@@ -1,0 +1,97 @@
+/*# sourceMappingURL=custom.min.css.map */
+
+
+/* landing page animation */
+.positivity {
+    padding: 1rem;
+    overflow: hidden;
+    text-transform: uppercase;
+}
+
+.positivity .positivity__alone {
+    font-size: 2rem;
+    font-family: serif;
+    color: #000000;
+}
+
+.positivity .positivity__words .change {
+    opacity: 0;
+    -webkit-animation: changeword 8s linear infinite;
+    animation: changeword 8s linear infinite;
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+.positivity .positivity__words .change:nth-child(1) {
+    -webkit-animation-delay: 0s;
+    animation-delay: 0s;
+}
+
+.positivity .positivity__words .change:nth-child(2) {
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+}
+
+.positivity .positivity__words .change:nth-child(3) {
+    -webkit-animation-delay: 4s;
+    animation-delay: 4s;
+}
+
+.positivity .positivity__words .change:nth-child(4) {
+    -webkit-animation-delay: 6s;
+    animation-delay: 6s;
+}
+
+@-webkit-keyframes changeword {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    20% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    30% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    80% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+}
+
+@keyframes changeword {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    20% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    30% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    80% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+}

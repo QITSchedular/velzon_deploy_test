@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg"
+    data-sidebar-image="none" data-preloader="disable">
+
+<head>
+    <meta charset="utf-8" />
+
+    <title>Dashboard | WhatsApp Messages</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesbrand" name="author" />
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+
+    <!-- jsvectormap css -->
+    <link href="/assets/libs/jsvectormap/css/jsvectormap.min.css" rel="stylesheet" type="text/css" />
+
+    <!--Swiper slider css-->
+    <link href="/assets/libs/swiper/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Layout config Js -->
+    <script src="/assets/js/layout.js"></script>
+    <!-- Bootstrap Css -->
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="/assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <!-- custom Css-->
+    <link href="/assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Font Awesome Files -->
+    <link href="/assets/fontawesome/css/all.min.css" rel="stylesheet" />
+    <link href="/assets/fontawesome/css/solid.css" rel="stylesheet" />
+    <link href="/assets/fontawesome/css/solid.min.css" rel="stylesheet" />
+    <link href="/assets/fontawesome/css/regular.css" rel="stylesheet" />
+    <link href="/assets/fontawesome/css/regular.min.css" rel="stylesheet" />
+    <link href="/assets/fontawesome/css/fontawesome.min.css" rel="stylesheet" />
+    <link href="/assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+        <header id="page-topbar">
+            <div class="layout-width">
+                <div class="navbar-header">
+                    <div class="d-flex">
+                        <!-- LOGO -->
+                        <div class="navbar-brand-box horizontal-logo">
+                            <a href="/" class="logo logo-dark">
+                                <span class="logo-sm">
+                                    <img src="/assets/images/logo-sm.png" alt="" height="22" />
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="/assets/images/logo-dark.png" alt="" height="17" />
+                                </span>
+                            </a>
+
+                            <a href="/" class="logo logo-light">
+                                <span class="logo-sm">
+                                    <img src="/assets/images/logo-sm.png" alt="" height="22" />
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="/assets/images/logo-light.png" alt="" height="17" />
+                                </span>
+                            </a>
+                        </div>
+
+                        <button type="button"
+                            class="btn btn-sm px-3 fs-16 header-item vertical-menu-btn topnav-hamburger"
+                            id="topnav-hamburger-icon">
+                            <span class="hamburger-icon">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </button>
+                    </div>
+
+                    <div class="d-flex align-items-center">
+                        <div class="dropdown d-md-none topbar-head-dropdown header-item">
+                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
+                                id="page-header-search-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                <i class="bx bx-search fs-22"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
+                                aria-labelledby="page-header-search-dropdown">
+                                <form class="p-3">
+                                    <div class="form-group m-0">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Search ..."
+                                                aria-label="Recipient's username" />
+                                            <button class="btn btn-primary" type="submit">
+                                                <i class="mdi mdi-magnify"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="ms-1 header-item d-none d-sm-flex">
+                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
+                                data-toggle="fullscreen">
+                                <i class="bx bx-fullscreen fs-22"></i>
+                            </button>
+                        </div>
+
+                        <div class="ms-1 header-item d-none d-sm-flex">
+                            <button type="button"
+                                class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle light-dark-mode">
+                                <i class="bx bx-moon fs-22"></i>
+                            </button>
+                        </div>
+
+                        <div class="dropdown ms-sm-3 header-item topbar-user">
+                            <button type="button" class="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <span class="d-flex align-items-center">
+                                    <img class="rounded-circle header-profile-user profileimg" />
+                                    <span class="text-start ms-xl-2">
+                                        <span
+                                            class="d-none d-xl-inline-block ms-1 fw-medium user-name-text profilename"></span>
+                                        <span class="d-none d-xl-block ms-1 fs-12 text-muted user-name-sub-text">
+                                            Founder
+                                        </span>
+                                    </span>
+                                </span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <!-- item-->
+                                <h6 class="dropdown-header">
+                                    Welcome <span class="profilename"></span>
+                                </h6>
+                                <a class="dropdown-item" href="/profile">
+                                    <i class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i>
+                                    <span class="align-middle">Profile</span>
+                                </a>
+                                <a class="dropdown-item" href="/subscription">
+                                    <i class="mdi mdi-credit-card-chip text-muted fs-16 align-middle me-1"></i>
+                                    <span class="align-middle">Pay</span>
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" id="logout">
+                                    <i class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i>
+                                    <span class="align-middle" data-key="t-logout">Logout</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- ========== App Menu ========== -->
+        <div class="app-menu navbar-menu">
+            <!-- LOGO -->
+            <div class="navbar-brand-box">
+                <!-- Dark Logo-->
+                <a href="/" class="logo logo-dark">
+                    <span class="logo-sm">
+                        <img src="/assets/images/logo-sm.png" alt="" height="22" />
+                    </span>
+                    <span class="logo-lg">
+                        <img src="/assets/images/logo-dark.png" alt="" height="17" />
+                    </span>
+                </a>
+                <!-- Light Logo-->
+                <a href="/" class="logo logo-light">
+                    <span class="logo-sm">
+                        <img src="/assets/images/logo-sm.png" alt="" height="22" />
+                    </span>
+                    <span class="logo-lg">
+                        <img src="/assets/images/logo-light.png" alt="" height="17" />
+                    </span>
+                </a>
+                <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover"
+                    id="vertical-hover">
+                    <i class="ri-record-circle-line"></i>
+                </button>
+            </div>
+
+            <div id="scrollbar">
+                <div id="scrollbar">
+                    <div class="container-fluid">
+                        <div id="two-column-menu"></div>
+                        <ul class="navbar-nav" id="navbar-nav"></ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-background"></div>
+        </div>
+        <!-- Left Sidebar End -->
+        <!-- Vertical Overlay-->
+        <div class="vertical-overlay"></div>
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+            <div class="page-content">
+                <div class="container-fluid">
+                    <div class="chat-wrapper d-lg-flex gap-1 mx-n4 mt-n4 p-1">
+                        <div class="chat-leftsidebar">
+                            <div class="px-4 pt-4 mb-3">
+                                <div class="d-flex align-items-start">
+                                    <div class="flex-grow-1">
+                                        <h5 class="mb-4">Chats</h5>
+                                    </div>
+
+                                </div>
+                                <div class="search-box">
+                                    <input type="text" class="form-control bg-light border-light"
+                                        placeholder="Search Contact..." id="search_contact" />
+                                    <i class="ri-search-2-line search-icon"></i>
+                                </div>
+                            </div>
+
+                            <div class="tab-content text-muted">
+
+                                <div class="tab-pane active" id="contacts" role="tabpanel">
+                                    <div class="chat-room-list pt-3 mb-5" data-simplebar>
+                                        <div class="sort-contact">
+                                            <ul class="list-unstyled contact-list" id="contacts_data"></ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end tab contact -->
+                        </div>
+                        <!-- end chat leftsidebar -->
+                        <!-- Start User chat -->
+                        <div class="user-chat w-100 overflow-hidden d-none" id="userchat">
+                            <div class="chat-content d-lg-flex">
+                                <!-- start chat conversation section -->
+                                <div class="w-100 overflow-hidden position-relative">
+                                    <!-- conversation user -->
+                                    <div class="position-relative">
+                                        <div class="position-relative" id="users-chat">
+                                            <div class="p-3 user-chat-topbar">
+                                                <div class="row align-items-center">
+                                                    <div class="col-sm-4 col-8">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0 d-block d-lg-none me-3">
+                                                                <a href="javascript: void(0);"
+                                                                    class="user-chat-remove fs-18 p-1"><i
+                                                                        class="ri-arrow-left-s-line align-bottom"></i></a>
+                                                            </div>
+                                                            <div class="flex-grow-1 overflow-hidden">
+                                                                <div class="d-flex align-items-center">
+                                                                    <div
+                                                                        class="flex-shrink-0 chat-user-img online user-own-img align-self-center me-3 ms-0">
+                                                                        <img src="/assets/images/users/user-dummy-img.jpg"
+                                                                            class="rounded-circle avatar-xs" alt="" />
+                                                                        <span class="user-status"></span>
+                                                                    </div>
+                                                                    <div class="flex-grow-1 overflow-hidden">
+                                                                        <h5 class="text-truncate mb-0 fs-16">
+                                                                            <a class="text-reset username"
+                                                                                data-bs-toggle="offcanvas"
+                                                                                href="#userProfileCanvasExample"
+                                                                                aria-controls="userProfileCanvasExample"
+                                                                                id="username"></a>
+                                                                        </h5>
+                                                                        <p
+                                                                            class="text-truncate text-muted fs-14 mb-0 userStatus">
+                                                                            <small>Online</small>
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-8 col-4">
+                                                        <ul class="list-inline user-chat-nav text-end mb-0">
+                                                            <li class="list-inline-item m-0">
+                                                                <div class="dropdown">
+                                                                    <button class="btn btn-ghost-secondary btn-icon"
+                                                                        type="button" data-bs-toggle="dropdown"
+                                                                        aria-haspopup="true" aria-expanded="false">
+                                                                        <i data-feather="search" class="icon-sm"></i>
+                                                                    </button>
+                                                                    <div
+                                                                        class="dropdown-menu p-0 dropdown-menu-end dropdown-menu-lg">
+                                                                        <div class="p-2">
+                                                                            <div class="search-box">
+                                                                                <input type="text"
+                                                                                    class="form-control bg-light border-light"
+                                                                                    placeholder="Search here..."
+                                                                                    onkeyup="searchMessages()"
+                                                                                    id="searchMessage" />
+                                                                                <i
+                                                                                    class="ri-search-2-line search-icon"></i>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+
+                                                            <li class="list-inline-item d-none d-lg-inline-block m-0">
+                                                                <button type="button"
+                                                                    class="btn btn-ghost-secondary btn-icon"
+                                                                    data-bs-toggle="offcanvas"
+                                                                    data-bs-target="#userProfileCanvasExample"
+                                                                    aria-controls="userProfileCanvasExample">
+                                                                    <i data-feather="info" class="icon-sm"></i>
+                                                                </button>
+                                                            </li>
+
+                                                            <li class="list-inline-item m-0">
+                                                                <div class="dropdown">
+                                                                    <button class="btn btn-ghost-secondary btn-icon"
+                                                                        type="button" data-bs-toggle="dropdown"
+                                                                        aria-haspopup="true" aria-expanded="false">
+                                                                        <i data-feather="more-vertical"
+                                                                            class="icon-sm"></i>
+                                                                    </button>
+                                                                    <div class="dropdown-menu dropdown-menu-end">
+                                                                        <a class="dropdown-item d-block d-lg-none user-profile-show"
+                                                                            href="#"><i
+                                                                                class="ri-user-2-fill align-bottom text-muted me-2"></i>
+                                                                            View Profile</a>
+                                                                        <a class="dropdown-item" href="#"><i
+                                                                                class="ri-inbox-archive-line align-bottom text-muted me-2"></i>
+                                                                            Archive</a>
+                                                                        <a class="dropdown-item" href="#"><i
+                                                                                class="ri-mic-off-line align-bottom text-muted me-2"></i>
+                                                                            Muted</a>
+                                                                        <a class="dropdown-item" href="#"><i
+                                                                                class="ri-delete-bin-5-line align-bottom text-muted me-2"></i>
+                                                                            Delete</a>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- end chat user head -->
+                                            <div class="chat-conversation p-3 p-lg-4" id="chat-conversation"
+                                                data-simplebar>
+                                                <div id="elmLoader">
+                                                    <div class="spinner-border text-primary avatar-sm d-none"
+                                                        role="status">
+                                                        <span class="visually-hidden">Loading...</span>
+                                                    </div>
+                                                </div>
+                                                <ul class="list-unstyled chat-conversation-list"
+                                                    id="users-conversation"></ul>
+                                                <!-- end chat-conversation-list -->
+                                            </div>
+                                            <div class="alert alert-warning alert-dismissible copyclipboard-alert px-4 fade show"
+                                                id="copyClipBoard" role="alert">
+                                                Message copied
+                                            </div>
+                                        </div>
+
+                                        <div class="position-relative" id="channel-chat">
+                                            <div class="p-3 user-chat-topbar">
+                                                <div class="row align-items-center">
+                                                    <div class="col-sm-4 col-8">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-shrink-0 d-block d-lg-none me-3">
+                                                                <a href="javascript: void(0);"
+                                                                    class="user-chat-remove fs-18 p-1"><i
+                                                                        class="ri-arrow-left-s-line align-bottom"></i></a>
+                                                            </div>
+                                                            <div class="flex-grow-1 overflow-hidden">
+                                                                <div class="d-flex align-items-center">
+                                                                    <div
+                                                                        class="flex-shrink-0 chat-user-img online user-own-img align-self-center me-3 ms-0">
+                                                                        <img src="assets/images/users/avatar-2.jpg"
+                                                                            class="rounded-circle avatar-xs" alt="" />
+                                                                    </div>
+                                                                    <div class="flex-grow-1 overflow-hidden">
+                                                                        <h5 class="text-truncate mb-0 fs-16">
+                                                                            <a class="text-reset username"
+                                                                                data-bs-toggle="offcanvas"
+                                                                                href="#userProfileCanvasExample"
+                                                                                aria-controls="userProfileCanvasExample">Lisa
+                                                                                Parker</a>
+                                                                        </h5>
+                                                                        <p
+                                                                            class="text-truncate text-muted fs-14 mb-0 userStatus">
+                                                                            <small>24 Members</small>
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-8 col-4">
+                                                        <ul class="list-inline user-chat-nav text-end mb-0">
+                                                            <li class="list-inline-item m-0">
+                                                                <div class="dropdown">
+                                                                    <button class="btn btn-ghost-secondary btn-icon"
+                                                                        type="button" data-bs-toggle="dropdown"
+                                                                        aria-haspopup="true" aria-expanded="false">
+                                                                        <i data-feather="search" class="icon-sm"></i>
+                                                                    </button>
+                                                                    <div
+                                                                        class="dropdown-menu p-0 dropdown-menu-end dropdown-menu-lg">
+                                                                        <div class="p-2">
+                                                                            <div class="search-box">
+                                                                                <input type="text"
+                                                                                    class="form-control bg-light border-light"
+                                                                                    placeholder="Search here..."
+                                                                                    onkeyup="searchMessages()"
+                                                                                    id="searchMessage" />
+                                                                                <i
+                                                                                    class="ri-search-2-line search-icon"></i>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+
+                                                            <li class="list-inline-item d-none d-lg-inline-block m-0">
+                                                                <button type="button"
+                                                                    class="btn btn-ghost-secondary btn-icon"
+                                                                    data-bs-toggle="offcanvas"
+                                                                    data-bs-target="#userProfileCanvasExample"
+                                                                    aria-controls="userProfileCanvasExample">
+                                                                    <i data-feather="info" class="icon-sm"></i>
+                                                                </button>
+                                                            </li>
+
+                                                            <li class="list-inline-item m-0">
+                                                                <div class="dropdown">
+                                                                    <button class="btn btn-ghost-secondary btn-icon"
+                                                                        type="button" data-bs-toggle="dropdown"
+                                                                        aria-haspopup="true" aria-expanded="false">
+                                                                        <i data-feather="more-vertical"
+                                                                            class="icon-sm"></i>
+                                                                    </button>
+                                                                    <div class="dropdown-menu dropdown-menu-end">
+                                                                        <a class="dropdown-item d-block d-lg-none user-profile-show"
+                                                                            href="#"><i
+                                                                                class="ri-user-2-fill align-bottom text-muted me-2"></i>
+                                                                            View Profile</a>
+                                                                        <a class="dropdown-item" href="#"><i
+                                                                                class="ri-inbox-archive-line align-bottom text-muted me-2"></i>
+                                                                            Archive</a>
+                                                                        <a class="dropdown-item" href="#"><i
+                                                                                class="ri-mic-off-line align-bottom text-muted me-2"></i>
+                                                                            Muted</a>
+                                                                        <a class="dropdown-item" href="#"><i
+                                                                                class="ri-delete-bin-5-line align-bottom text-muted me-2"></i>
+                                                                            Delete</a>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- end chat user head -->
+                                            <div class="chat-conversation p-3 p-lg-4" id="chat-conversation"
+                                                data-simplebar>
+                                                <ul class="list-unstyled chat-conversation-list"
+                                                    id="channel-conversation"></ul>
+                                                <!-- end chat-conversation-list -->
+                                            </div>
+                                            <div class="alert alert-warning alert-dismissible copyclipboard-alert px-4 fade show"
+                                                id="copyClipBoardChannel" role="alert">
+                                                Message copied
+                                            </div>
+                                        </div>
+
+                                        <!-- end chat-conversation -->
+
+                                        <div class="chat-input-section p-3 p-lg-4">
+                                            <form id="chatinput-form" enctype="multipart/form-data">
+                                                <div class="row g-0 align-items-center">
+
+                                                    <div class="col">
+                                                        <div class="chat-input-feedback">
+                                                            Please Enter a Message
+                                                        </div>
+                                                        <input type="text"
+                                                            class="form-control chat-input bg-light border-light"
+                                                            id="chat-input" placeholder="Type your message..."
+                                                            autocomplete="off" />
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <div class="chat-input-links ms-2">
+                                                            <div class="links-list-item">
+                                                                <button type="submit" id="chatmsg"
+                                                                    class="btn btn-success chat-send waves-effect waves-light">
+                                                                    <i class="ri-send-plane-2-fill align-bottom"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                        <div class="replyCard">
+                                            <div class="card mb-0">
+                                                <div class="card-body py-3">
+                                                    <div class="replymessage-block mb-0 d-flex align-items-start">
+                                                        <div class="flex-grow-1">
+                                                            <h5 class="conversation-name"></h5>
+                                                            <p class="mb-0"></p>
+                                                        </div>
+                                                        <div class="flex-shrink-0">
+                                                            <button type="button" id="close_toggle"
+                                                                class="btn btn-sm btn-link mt-n2 me-n3 fs-18">
+                                                                <i class="bx bx-x align-middle"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- footer -->
+            <footer class="footer"></footer>
+        </div>
+    </div>
+
+    <!--start back-to-top-->
+    <button onclick="topFunction()" class="btn btn-danger btn-icon" id="back-to-top">
+        <i class="ri-arrow-up-line"></i>
+    </button>
+    <!--end back-to-top-->
+
+    <!--preloader-->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner-border text-primary avatar-sm" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="customizer-setting" id="chatbot">
+        <div class="btn-info btn-rounded shadow-lg btn btn-icon btn-lg p-2">
+            <i class="fa-solid fa-comment" id="iconchat"></i>
+        </div>
+    </div>
+
+    <div class="email-chat-detail" id="emailchat-detailElem" style="display: none">
+        <div class="card mb-0">
+            <div class="card-header align-items-center d-flex bg-primary text-white-50">
+                <div class="flex-grow-1">
+                    <h5 class="fs-15 text-white mb-1 profile-username">
+                        Velzon ChatBot
+                    </h5>
+                    <p class="mb-0 fs-12 lh-1">Ask here for help</p>
+                </div>
+                <div>
+                    <i class="fa-brands fa-bots fs-1 text-white"></i>
+                </div>
+            </div>
+
+            <div class="card-body p-0">
+                <div id="users-chat">
+                    <div class="chat-conversation p-3" id="chat-conversation" data-simplebar style="height: 250px">
+                        <ul class="list-unstyled chat-conversation-list chat-sm" id="conversation"></ul>
+                    </div>
+                </div>
+
+                <div class="border-top border-top-dashed">
+                    <div class="row g-2 mx-3 mt-2 mb-3">
+                        <div class="col">
+                            <div class="position-relative">
+                                <input type="text" class="form-control border-light bg-light message-input"
+                                    placeholder="Enter Message..." id="input" />
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <button class="btn btn-primary" id="sendbotmsg">
+                                <i class="mdi mdi-send"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script src="/assets/js/jquery.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/chatbot.js"></script>
+    <script src="/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="/assets/libs/node-waves/waves.min.js"></script>
+    <script src="/assets/libs/feather-icons/feather.min.js"></script>
+    <script src="/assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+
+    <!-- App js -->
+    <script src="/assets/js/app.js"></script>
+
+    <!-- prismjs plugin -->
+    <script src="/assets/libs/prismjs/prism.js"></script>
+
+    <script src="/assets/sweetalert2/sweet-alert.init.js"></script>
+    <script src="/assets/sweetalert2/sweetalert2.all.js"></script>
+
+    <!-- glightbox js -->
+    <script src="/assets/libs/glightbox/js/glightbox.min.js"></script>
+
+    <!-- fgEmojiPicker js -->
+    <script src="/assets/libs/fg-emoji-picker/fgEmojiPicker.js"></script>
+
+    <!-- chat init js -->
+    <script src="/assets/js/pages/chat.init.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            chkLogin();
+            const iid = document.URL.split("/")[4];
+
+            $.ajax({
+                url: "/getData",
+                method: "post",
+                data: {
+                    obj: {
+                        table: "instance",
+                        paramstr: `instance_id='${iid}'`
+                    }
+                },
+                success: function (data) {
+                    if (data[0].isActive == 0) {
+                        swal({
+                            title: "Access Denied",
+                            text: 'First scan QR code to get access of chat',
+                            type: 'error',
+                            timer: 4000,
+                            showConfirmButton: false,
+                        }).then(() => {
+                            location.href = `/instance/${iid}/bulkmessage`;
+                        })
+                    }
+                }
+            })
+
+            let index;
+            let phone;
+
+            function contacts_data(obj) {
+                $.ajax({
+                    url: "/getData",
+                    method: "POST",
+                    data: {
+                        obj: obj,
+                    },
+                    success: function (val) {
+                        let data = "";
+                        if (val.status_code == 404) {
+                            $("#contact-list").addClass("d-none");
+                            $(".noresult").addClass("d-none");
+                            $(".noresult").removeClass("d-none");
+                        } else {
+                            $("#contact-list").addClass("d-none");
+                            $(".noresult").addClass("d-none");
+                            $("#contact-list").removeClass("d-none");
+                            for (var i in val) {
+                                data += `
+                                <li id="${val[i].contact_id}" class="contact" data-id="${val[i].contact_id}" data-name="${val[i].name}" data-phone="${val[i].phone}">
+                                    <div class="d-flex align-items-center" >
+                                        <div class="flex-shrink-0 me-2">
+                                            <img class="rounded-circle header-profile-user profileimg" src="/assets/images/users/user-dummy-img.jpg">
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <p class="text-truncate contactlist-name fs-5 mb-0">${val[i].name}</p>
+                                        </div>
+                                    </div>
+                                </li>`;
+                            }
+                        }
+                        $("#contacts_data").html(data);
+                    },
+                });
+            }
+            contacts_data({
+                "table": "contact",
+                "paramstr": `instance_id = '${iid}'`,
+            });
+
+            $(document).on('input', '#search_contact', function () {
+                let str = $('#search_contact').val().trim();
+                if (str == null || str == "") {
+                    contacts_data({
+                        "table": "contact",
+                        "paramstr": `instance_id = '${iid}'`,
+                    });
+                } else {
+                    contacts_data({
+                        "table": "contact",
+                        "paramstr": `name like '%${str}%' and instance_id = '${iid}'`,
+                    });
+                }
+            })
+
+            $(document).on("click", ".contact", function () {
+                phone = $(this).attr("data-phone");
+                $("#username").html($(this).attr("data-name"));
+                $("#userchat").removeClass("d-none");
+                $.ajax({
+                    url: "/getUserMessages",
+                    method: "POST",
+                    data: {
+                        "iid": iid,
+                        "phone": phone
+                    },
+                    success: function (data) {
+                        var output = "";
+                        console.log("data", data);
+                        for (let i = 0; i < data.length; i++) {
+                            // console.log(data[i].timestamp);
+                            let dt = new Date(data[i].timestamp * 1000);
+                            // console.log(dt.getHours(), dt.getMinutes());
+                            let h = dt.getHours();
+                            h = h % 12 || 12;
+                            let ampm = dt.getHours() >= 12 ? "pm" : "am";
+
+                            if (data[i].fromMe) {
+                                output += `
+                            <li class="chat-list right" id="2">
+                                <div class="conversation-list">
+                                    <div class="user-chat-content">
+                                        <div class="ctext-wrap">
+                                            <div class="ctext-wrap-content" id="2">
+                                                <p class="mb-0 ctext-content fromMe">${data[i].msg}</p>
+                                            </div>
+                                            <div class="dropdown align-self-start message-box-drop">
+                                                <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false">
+                                                    <i class="ri-more-2-fill"></i>
+                                                </a>
+                                                <div class="dropdown-menu">
+                                                    <a class="dropdown-item reply-message" href="#"><i
+                                                            class="ri-reply-line me-2 text-muted align-bottom"></i>Reply</a>
+                                                    <a class="dropdown-item" href="#"><i
+                                                            class="ri-share-line me-2 text-muted align-bottom"></i>Forward</a>
+                                                    <a class="dropdown-item copy-message" href="#"><i
+                                                            class="ri-file-copy-line me-2 text-muted align-bottom"></i>Copy</a>
+                                                    <a class="dropdown-item" href="#"><i
+                                                            class="ri-bookmark-line me-2 text-muted align-bottom"></i>Bookmark</a>
+                                                    <a class="dropdown-item delete-item" href="#"><i
+                                                            class="ri-delete-bin-5-line me-2 text-muted align-bottom"></i>Delete</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="conversation-name">
+                                            <span class="d-none name">Frank Thomas</span>
+                                            <small class="text-muted time">${h}:${dt.getMinutes()} ${ampm}</small>
+                                            <span class="text-success check-message-icon"><i class="bx bx-check-double"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>`;
+                            } else {
+                                output += `
+                  <li class="chat-list left" id="1">
+                    <div class="conversation-list">
+                      <div class="chat-avatar">
+                        <img src="/assets/images/users/user-dummy-img.jpg" alt="">
+                      </div>
+                      <div class="user-chat-content">
+                        <div class="ctext-wrap">
+                          <div class="ctext-wrap-content" id="1">
+                            <p class="mb-0 ctext-content"></html>${data[i].msg}<html></p>
+                          </div>
+                        <div class="dropdown align-self-start message-box-drop">  
+                          <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ri-more-2-fill"></i></a>
+                            <div class="dropdown-menu">
+                              <a class="dropdown-item reply-message" href="#"><i class="ri-reply-line me-2 text-muted align-bottom"></i>Reply</a>
+                              <a class="dropdown-item" href="#"><i class="ri-share-line me-2 text-muted align-bottom"></i>Forward</a>
+                              <a class="dropdown-item copy-message" href="#"><i class="ri-file-copy-line me-2 text-muted align-bottom"></i>Copy</a>
+                              <a class="dropdown-item" href="#"><i class="ri-bookmark-line me-2 text-muted align-bottom"></i>Bookmark</a>    
+                              <a class="dropdown-item delete-item" href="#"><i class="ri-delete-bin-5-line me-2 text-muted align-bottom"></i>Delete</a> 
+                            </div>
+                        </div>
+                      </div>
+                      <div class="conversation-name">
+                        <span class="d-none name">Lisa Parker</span>
+                        <small class="text-muted time">${h}:${(dt.getMinutes())} ${ampm} </small> 
+                        <span class="text-success check-message-icon"><i class="bx bx-check-double"></i></span>
+                      </div>
+                    </div>
+                  </div>
+                </li>`;
+                            }
+                        }
+                        // console.log(output);
+                        $("#users-conversation").html(`${output}`);
+                    },
+                });
+            });
+
+            $(document).on("click", "#chatmsg", function () {
+                let usermsg = $("#chat-input").val();
+                alert(phone);
+
+                $.ajax({
+                    url: "/sendmsg",
+                    method: "POST",
+                    data: {
+                        "to": phone,
+                        "message": usermsg,
+                        "token": `8835d812fcbbde290574`,
+                        "iid": iid,
+                    },
+                    beforeSend: function () {
+                        $('#chatmsg')
+                            .removeClass('btn-primary btn-success')
+                            .addClass('btn-warning')
+                            .html(`<span class="d-flex align-items-center">
+                            <span class="flex-grow-1 me-lg-2 me-md-2">
+                                Sending
+                                </span>
+                                <span class="spinner-border flex-shrink-0" role="status">
+                                            <span class="visually-hidden"></span>
+                                            </span>
+                                            </span>`);
+                    },
+                    success: function (val) {
+                        console.log(val);
+                        switch (val.status_code) {
+                            case '401': {
+                                InvalidUser();
+                                break;
+                            }
+
+                            case '500': {
+                                InternalServerError();
+                                break;
+                            }
+
+                            case '1013': {
+                                userNotFound(iid);
+                                $('#chatmsg')
+                                    .removeClass('btn-success btn-warning')
+                                    .addClass('btn-primary')
+                                    .html(`<i class="mdi mdi-send me-lg-2 me-md-2"></i>
+                                            <span class="d-none d-lg-inline-block d-md-inline-block">
+                                                Send
+                                            </span>`);
+                                break;
+                            }
+
+                            case '403': {
+                                swal({
+                                    title: `Instance not valid`,
+                                    type: 'error',
+                                    timer: 2000,
+                                    showConfirmButton: false,
+                                }).then(() => {
+                                    $('#chatmsg')
+                                        .removeClass('btn-success btn-warning')
+                                        .addClass('btn-primary')
+                                        .html(`<i class="mdi mdi-send me-lg-2 me-md-2"></i>
+                                                <span class="d-none d-lg-inline-block d-md-inline-block">
+                                                    Send
+                                                </span>`);
+                                });
+                                break;
+                            }
+
+                            case '200': {
+                                $('#chatmsg')
+                                    .removeClass('btn-primary btn-warning')
+                                    .addClass('btn-success')
+                                    .val('Sent');
+                                swal({
+                                    title: "Message sent successfully",
+                                    type: "success",
+                                    timer: 2000,
+                                    showConfirmButton: false,
+                                }).then(() => {
+                                    // $("#phone, #msg").val(``);
+                                    $('#chatmsg')
+                                        .removeClass('btn-success btn-warning')
+                                        .addClass('btn-primary')
+                                        .html(`<i class="mdi mdi-send me-lg-2 me-md-2"></i>
+                                            <span class="d-none d-lg-inline-block d-md-inline-block">
+                                                Send
+                                            </span>`);
+                                });
+                                break;
+                            }
+                        }
+                    }
+                });
+
+                // $.ajax({
+                //     url: "/sendDirectMessage",
+                //     method: "POST",
+                //     data: { phone: phone, message: usermsg },
+                //     success: function (data) {
+                //         if (data.status_code != 200) {
+                //             swal({
+                //                 title: "Message not sent",
+                //                 type: "error",
+                //                 timer: 2000,
+                //                 showConfirmButton: false,
+                //             });
+                //         }
+                //     }
+                // })
+            });
+        });
+    </script>
+</body>
+
+</html>

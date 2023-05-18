@@ -1,0 +1,69 @@
+[
+    {
+        "page": "Dashboard",
+        "link": "dashboard",
+        "icon": "ri-dashboard-2-line"
+    },
+    {
+        "page": "Instance",
+        "link": "instance",
+        "icon": "ri-apps-2-line",
+        "submenu": [
+            {
+                "page": "Bulk Message",
+                "link": "bulkmessage",
+                "icon": "bx bxs-message-detail"
+            },
+            {
+                "page": "Bulk Mail",
+                "link": "bulkmail",
+                "icon": "fas fa-mail-bulk"
+            },
+            {
+                "page": "Contacts",
+                "link": "contact-list",
+                "icon": "bx bxs-contact"
+            },
+            {
+                "page": "Channel",
+                "link": "channel",
+                "icon": "mdi mdi-account-group"
+            },
+            {
+                "page": "Chat",
+                "link": "chat",
+                "icon": "bx bxs-chat"
+            },
+            {
+                "page": "Workflow",
+                "link": "workflow",
+                "icon": "mdi mdi-arrow-decision"
+            }
+        ]
+    },
+    {
+        "page": "Custom Template",
+        "link": "customtemplate",
+        "icon": "ri-pages-fill"
+    },
+    {
+        "page": "Email Configuration",
+        "link": "addpasscode",
+        "icon": "ri-lock-password-fill"
+    },
+    {
+        "page": "Support Ticket",
+        "link": "support-ticket",
+        "icon": "mdi mdi-ticket-account"
+    },
+    {
+        "page": "Pricing",
+        "link": "subscription",
+        "icon": "ri-price-tag-3-fill"
+    },
+    {
+        "page": "API DOCS",
+        "link": "docs",
+        "icon": "bx bxs-book"
+    }
+]

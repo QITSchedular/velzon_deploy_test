@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg"
+    data-sidebar-image="none" data-preloader="disable">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Sign Up | WhatsApp Message</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesbrand" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="../assets/images/favicon.ico">
+
+    <!-- aos css -->
+    <link rel="stylesheet" href="../assets/libs/aos/aos.css" />
+    <!-- Layout config Js -->
+    <script src="../assets/js/layout.js"></script>
+    <!-- Bootstrap Css -->
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="../assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <!-- custom Css-->
+    <link href="../assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Font Awesome Files -->
+    <link href="../assets/fontawesome/css/all.min.css" rel="stylesheet">
+    <link href="../assets/fontawesome/css/solid.css" rel="stylesheet">
+    <link href="../assets/fontawesome/css/solid.min.css" rel="stylesheet">
+    <link href="../assets/fontawesome/css/regular.css" rel="stylesheet">
+    <link href="../assets/fontawesome/css/regular.min.css" rel="stylesheet">
+    <link href="../assets/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+    <link href="../assets/fontawesome/css/fontawesome.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="auth-page-wrapper pt-5">
+        <!-- auth page bg -->
+        <div class="auth-one-bg-position auth-one-bg" id="auth-particles">
+            <div class="bg-overlay"></div>
+
+            <div class="shape">
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 0 1440 120">
+                    <path d="M 0,36 C 144,53.6 432,123.2 720,124 C 1008,124.8 1296,56.8 1440,40L1440 140L0 140z"></path>
+                </svg>
+            </div>
+        </div>
+
+        <!-- auth page content -->
+        <div class="auth-page-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="text-center mt-sm-2 mb-2 text-white-50">
+                            <div>
+                                <a href="/" class="d-inline-block auth-logo">
+                                    <img src="../assets/images/logo-light.png" alt="" height="20">
+                                </a>
+                            </div>
+                            <p class="mt-3 fs-15 fw-medium">WhatsApp Message</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- end row -->
+
+                <div class="row justify-content-center">
+                    <div class="col-md-8 col-lg-6 col-xl-5">
+                        <div class="card mt-4">
+                            <div class="card-body p-4">
+                                <div class="text-center mt-2">
+                                    <h5 class="text-primary">Create New Account</h5>
+                                </div>
+                                <div class="p-2 mt-4">
+                                    <form method="post" autocomplete="off" class="needs-validation" novalidate>
+                                        <div class="mb-3">
+                                            <label for="username" class="form-label">
+                                                Name
+                                                <span class="text-danger">*</span>
+                                                <span class="text-danger" id="err_name"></span>
+                                            </label>
+                                            <input type="text" class="form-control required inputrequired" name="name"
+                                                id="name" placeholder="Enter name" />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="phone" class="form-label">
+                                                Phone
+                                                <span class="text-danger">*</span>
+                                                <span class="text-danger" id="err_phone"></span>
+                                            </label>
+                                            <input type="number" class="form-control required inputrequired"
+                                                name="phone" id="phone" placeholder="Enter phone number" />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="email" class="form-label">
+                                                Email
+                                                <span class="text-danger">*</span>
+                                                <span class="text-danger" id="err_email"></span>
+                                            </label>
+                                            <input type="email" class="form-control required inputrequired" name="email"
+                                                id="email" placeholder="Enter email address" />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="password">
+                                                Password
+                                                <span class="text-danger">*</span>
+                                                <span class="text-danger" id="err_password"></span>
+                                            </label>
+                                            <div class="position-relative auth-pass-inputgroup">
+                                                <input type="password"
+                                                    class="form-control pe-5 password-input required inputrequired"
+                                                    name="password" onpaste="return false" placeholder="Enter password"
+                                                    id="password" />
+                                                <button class="btn btn-link position-absolute end-0 top-0 
+                                                    text-decoration-none text-muted password-addon" type="button"
+                                                    id="password-addon">
+                                                    <i class="ri-eye-fill align-middle"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="country" class="form-label">
+                                                Country
+                                                <span class="text-danger">*</span>
+                                                <span class="text-danger" id="err_country"></span>
+                                            </label>
+                                            <select id="country" name="country"
+                                                class='form-control required changerequired'>
+                                                <option selected disabled value=""> Select Country </option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="state" class="form-label">
+                                                State
+                                                <span class="text-danger">*</span>
+                                                <span class="text-danger" id="err_state"></span>
+                                            </label>
+                                            <select id="state" name="state"
+                                                class='form-control required changerequired'>
+                                                <option selected disabled value=""> Select State </option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="city" class="form-label">
+                                                City
+                                                <!-- <span class="text-danger">*</span> -->
+                                                <span class="text-danger" id="err_city"></span>
+                                            </label>
+                                            <select id="city" name="city" class='form-control'>
+                                                <option selected disabled value=""> Select City </option>
+                                            </select>
+                                        </div>
+                                        <!-- <div class="mb-3">
+                                            <label class="form-label" for="password-input">Password</label>
+                                            <div class="position-relative auth-pass-inputgroup">
+                                                <input type="password" class="form-control pe-5 password-input"
+                                                    onpaste="return false" placeholder="Enter password"
+                                                    id="password-input" aria-describedby="passwordInput"
+                                                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                                                <button
+                                                    class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon"
+                                                    type="button" id="password-addon"><i
+                                                        class="ri-eye-fill align-middle"></i></button>
+                                                <div class="invalid-feedback">
+                                                    Please enter password
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="password-contain" class="p-3 bg-light mb-2 rounded">
+                                            <h5 class="fs-13">Password must contain:</h5>
+                                            <p id="pass-length" class="invalid fs-12 mb-2">Minimum <b>8 characters</b>
+                                            </p>
+                                            <p id="pass-lower" class="invalid fs-12 mb-2">At <b>lowercase</b> letter
+                                                (a-z)</p>
+                                            <p id="pass-upper" class="invalid fs-12 mb-2">At least <b>uppercase</b>
+                                                letter (A-Z)</p>
+                                            <p id="pass-number" class="invalid fs-12 mb-0">A least <b>number</b> (0-9)
+                                            </p>
+                                        </div> -->
+                                        <!-- <div id="pwd_tip" class="border border-danger rounded-3 mt-1">
+                                            <ul class="text-danger mb-0 bg-danger bg-opacity-10 py-2">
+                                                <li>Must be minimum 8 character.</li>
+                                                <li>Must be atleast one special character.</li>
+                                                <li>Must be atleast one uppercase alphabate.</li>
+                                                <li>Must be atleast one lowercase alphabate.</li>
+                                                <li>Must be atleast one number.</li>
+                                            </ul>
+                                        </div> -->
+                                        <div class="mt-2">
+                                            <input type="button" class="btn btn-success w-100" id="signup"
+                                                value="Sign Up" />
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-4 text-center">
+                            <p class="mb-0">
+                                Already have an account ?
+                                <a href="/signin" class="fw-semibold text-primary text-decoration-underline">
+                                    Signin
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="text-center">
+                            <p class="mb-0 text-muted">&copy;
+                                <span id="current_year"></span> Velzon. Created by Triangles
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- end Footer -->
+    </div>
+    <!-- end auth-page-wrapper -->
+
+    <!-- JAVASCRIPT -->
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/validate.js"></script>
+    <script src="../assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="../assets/libs/node-waves/waves.min.js"></script>
+    <script src="../assets/libs/feather-icons/feather.min.js"></script>
+    <script src="../assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+    <script src="../assets/js/plugins.js"></script>
+
+    <!-- particles js -->
+    <script src="assets/libs/particles.js/particles.js"></script>
+    <!-- particles app js -->
+    <script src="assets/js/pages/particles.app.js"></script>
+    <!-- validation init -->
+    <script src="assets/js/pages/form-validation.init.js"></script>
+    <!-- password create init -->
+    <script src="assets/js/pages/passowrd-create.init.js"></script>
+
+    <script src="../assets/sweetalert2/sweet-alert.init.js"></script>
+    <script src="../assets/sweetalert2/sweetalert2.all.js"></script>
+
+    <!-- validation of field -->
+    <script>
+        $(document).ready(function () {
+            //-------------------------------SELECT CASCADING-------------------------//
+            var selectedCountry = (selectedRegion = selectedCity = "");
+            // This is a demo API key for testing purposes. You should rather request your API key (free) from http://battuta.medunes.net/
+            var BATTUTA_KEY = "00000000000000000000000000000000";
+            // Populate country select box from battuta API
+            url = "https://battuta.medunes.net/api/country/all/?key=" + BATTUTA_KEY + "&callback=?";
+
+            // EXTRACT JSON DATA.
+            $.getJSON(url, function (data) {
+                $.each(data, function (index, value) {
+                    // APPEND OR INSERT DATA TO SELECT ELEMENT.
+                    $("#country").append(
+                        '<option id="' + value.name + '" value="' + value.code + '">' + value.name + "</option>"
+                    );
+                });
+            });
+            $("#country").change(function () {
+                selectedCountry = this.options[this.selectedIndex].text;
+                countryCode = $("#country").val();
+                url =
+                    "https://battuta.medunes.net/api/region/" +
+                    countryCode +
+                    "/all/?key=" +
+                    BATTUTA_KEY +
+                    "&callback=?";
+                $.getJSON(url, function (data) {
+                    $("#state option").remove();
+                    $('#state').append('<option selected disabled value=""> Select State </option>');
+                    $.each(data, function (index, value) {
+                        // APPEND OR INSERT DATA TO SELECT ELEMENT.
+                        $("#state").append(
+                            '<option value="' + value.region + '">' + value.region + "</option>"
+                        );
+                    });
+                });
+            });
+            // Region selected --> updated city list
+            $("#state").on("change", function () {
+                selectedRegion = this.options[this.selectedIndex].text;
+                // Populate country select box from battuta API
+                countryCode = $("#country").val();
+                state = $("#state").val();
+                url =
+                    "https://battuta.medunes.net/api/city/" +
+                    countryCode +
+                    "/search/?region=" +
+                    state +
+                    "&key=" +
+                    BATTUTA_KEY +
+                    "&callback=?";
+                $.getJSON(url, function (data) {
+                    console.log(data);
+                    $("#city option").remove();
+                    $('#city').append('<option selected disabled value=""> Select City </option>');
+                    $.each(data, function (index, value) {
+                        // APPEND OR INSERT DATA TO SELECT ELEMENT.
+                        $("#city").append(
+                            '<option value="' + value.city + '">' + value.city + "</option>"
+                        );
+                    });
+
+                });
+            });
+            // city selected --> update location string
+            $("#city").on("change", function () {
+                selectedCity = this.options[this.selectedIndex].text;
+                $("#location").html(
+                    "Locatation: Country: " +
+                    selectedCountry +
+                    ", Region: " +
+                    selectedRegion +
+                    ", City: " +
+                    selectedCity
+
+
+                );
+                //alert(selectedCountry + "" + selectedRegion + "" + selectedCity);
+            });
+        });
+
+        $(document).ready(() => {
+            var name = document.getElementById('name');
+            var phone = document.getElementById('phone');
+            var email = document.getElementById('email');
+            var password = document.getElementById('password');
+            var country = document.getElementById('country');
+            var state = document.getElementById('state');
+            var city = document.getElementById('city');
+            $('#pwd_tip').show();
+
+            $(".required").on('focusout', function () {
+                onfocusout_validation($(this).attr('id'));
+            });
+
+            $(".inputrequired").on('input', function () {
+                oninput_validation($(this).attr('id'));
+            });
+
+            $(".changerequired").on('change', function () {
+                nullfield_validation($(this).attr('id'));
+            });
+
+            $(document).on('click', '#signup', function () {
+                nullfield_validation('name');
+                nullfield_validation('phone');
+                nullfield_validation('email');
+                nullfield_validation('password');
+                nullfield_validation('country');
+                nullfield_validation('state');
+
+                if (objFlag.flag_name == 0 && objFlag.flag_phone == 0 && objFlag.flag_email == 0 && objFlag.flag_password == 0 && objFlag.flag_country == 0 && objFlag.flag_state == 0) {
+                    oninput_validation('name');
+                    oninput_validation('phone');
+                    oninput_validation('email');
+                    oninput_validation('password');
+                    nullfield_validation('country');
+                    nullfield_validation('state');
+                    if (objFlag.flag_name == 0 && objFlag.flag_phone == 0 && objFlag.flag_email == 0 && objFlag.flag_password == 0 && objFlag.flag_country == 0 && objFlag.flag_state == 0) {
+                        selectedCountry = country.options[country.selectedIndex].text;
+                        $.ajax({
+                            url: "/adduser",
+                            method: "POST",
+                            data: {
+                                "name": name.value,
+                                "phone": phone.value,
+                                "email": email.value,
+                                "password": password.value,
+                                "country": selectedCountry.toUpperCase(),
+                                "state": state.value.toUpperCase(),
+                                "city": city.value.toUpperCase()
+                            },
+                            success: function (val) {
+                                if (val.status_code == 200) {
+                                    swal({
+                                        title: 'Registered successfully',
+                                        type: 'success',
+                                        timer: 3000
+                                    }).then(function () {
+                                        location.href = "/signin";
+                                    })
+                                }
+                                else if (val.status_code == 409) {
+                                    document.getElementById('email').focus();
+                                    swal(
+                                        {
+                                            title: 'User alerady exist',
+                                            type: 'error',
+                                            timer: 3000
+                                        }
+                                    )
+                                    email.classList.add('form-control-danger');
+                                }
+                                else if (val.status_code == 500) {
+                                    swal({
+                                        title: 'Internal server error',
+                                        text: 'try againg later',
+                                        type: 'warning',
+                                        timer: 3000
+                                    }).then(function () {
+                                        location.href = "/signup";
+                                    })
+                                }
+                            }
+                        })
+                    }
+                }
+            })
+        })
+    </script>
+</body>
+
+
+</html>

@@ -1,0 +1,37 @@
+{
+    "web": {
+        "client_id": "946707776966-qbbl9q9eikhrtfld5l9pnbv3pkvcni7g.apps.googleusercontent.com",
+        "project_id": "dashboard-crm-2022",
+        "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+        "token_uri": "https://oauth2.googleapis.com/token",
+        "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+        "client_secret": "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",
+        "redirect_uris": [
+            "http://localhost:3000/oauth2callback",
+            "http://localhost/sakshi",
+            "http://localhost/QIT/sheetPHP2/callback.php",
+            "http://127.0.0.1",
+            "http://localhost/QIT/sheetPHP4/temp.php",
+            "http://localhost/QIT/sheetPHP4/auth.php",
+            "http://localhost/QIT/New_SoftUI_dashboard_New/pages/workflow.php",
+            "http://localhost/signinwithgoogle/index.php",
+            "http://localhost/signinwithgoogle/test.php",
+            "http://localhost/QIT/New_SoftUI_dashboard_New/pages/temp.php",
+            "http://localhost/QIT/pages/test.php",
+            "http://localhost/QIT/index.php",
+            "http://localhost/QIT/pages/signinAuth.php",
+            "http://localhost/company/New_SoftUI_dashboard_New/pages/workflow.php",
+            "http://localhost/QIT/pages/auth.php",
+            "http://127.0.0.1:5500/google-drive.html",
+            "http://localhost/QIT/New_SoftUI_dashboard_New/js/sheet.js",
+            "http://localhost/qit/send_mail/callback.php"
+        ],
+        "javascript_origins": [
+            "http://localhost:3000",
+            "http://localhost:8000",
+            "http://localhost",
+            "http://127.0.0.1:5500",
+            "http://127.0.0.1:5501"
+        ]
+    }
+}

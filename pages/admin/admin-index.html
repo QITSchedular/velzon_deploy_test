@@ -1,0 +1,888 @@
+<!doctype html>
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg"
+    data-sidebar-image="none" data-preloader="disable">
+
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Admin Index | M3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesbrand" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="/assets/images/favicon.ico">
+
+    <!-- Layout config Js -->
+    <script src="/assets/js/layout.js"></script>
+    <!-- Bootstrap Css -->
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="/assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <!-- custom Css-->
+    <link href="/assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+    <!-- cdn of chart -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+</head>
+
+<body>
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+        <header id="page-topbar">
+            <div class="layout-width">
+                <div class="navbar-header">
+                    <div class="d-flex">
+                        <div class="navbar-brand-box horizontal-logo">
+                            <a href="/" class="logo logo-dark">
+                                <span class="logo-sm">
+                                    <img src="/assets/images/logo-sm.png" alt="" height="22" />
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="/assets/images/logo-dark.png" alt="" height="17" />
+                                </span>
+                            </a>
+                            <a href="/" class="logo logo-light">
+                                <span class="logo-sm">
+                                    <img src="/assets/images/logo-sm.png" alt="" height="22" />
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="/assets/images/logo-light.png" alt="" height="17" />
+                                </span>
+                            </a>
+                        </div>
+
+                        <button type="button"
+                            class="btn btn-sm px-3 fs-16 header-item vertical-menu-btn topnav-hamburger"
+                            id="topnav-hamburger-icon">
+                            <span class="hamburger-icon">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <div class="dropdown d-md-none topbar-head-dropdown header-item">
+                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
+                                id="page-header-search-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                <i class="bx bx-search fs-22"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
+                                aria-labelledby="page-header-search-dropdown">
+                                <form class="p-3">
+                                    <div class="form-group m-0">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Search ..."
+                                                aria-label="Recipient's username" />
+                                            <button class="btn btn-primary" type="submit">
+                                                <i class="mdi mdi-magnify"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="ms-1 header-item d-none d-sm-flex">
+                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
+                                data-toggle="fullscreen">
+                                <i class="bx bx-fullscreen fs-22"></i>
+                            </button>
+                        </div>
+
+                        <div class="ms-1 header-item d-none d-sm-flex">
+                            <button type="button"
+                                class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle light-dark-mode">
+                                <i class="bx bx-moon fs-22"></i>
+                            </button>
+                        </div>
+
+                        <div class="ms-1 header-item d-none d-sm-flex">
+                            <button type="button" id="logout"
+                                class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle">
+                                <i class="mdi mdi-logout fs-22"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ========== App Menu ========== -->
+        <div class="app-menu navbar-menu">
+            <!-- LOGO -->
+            <div class="navbar-brand-box">
+                <!-- Dark Logo-->
+                <a href="/" class="logo logo-dark">
+                    <span class="logo-sm">
+                        <img src="/assets/images/logo-sm.png" alt="" height="22">
+                    </span>
+                    <span class="logo-lg">
+                        <img src="/assets/images/logo-dark.png" alt="" height="17">
+                    </span>
+                </a>
+                <!-- Light Logo-->
+                <a href="/" class="logo logo-light">
+                    <span class="logo-sm">
+                        <img src="/assets/images/logo-sm.png" alt="" height="22">
+                    </span>
+                    <span class="logo-lg">
+                        <img src="/assets/images/logo-light.png" alt="" height="17">
+                    </span>
+                </a>
+                <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover"
+                    id="vertical-hover">
+                    <i class="ri-record-circle-line"></i>
+                </button>
+            </div>
+
+            <div id="scrollbar">
+                <div class="container-fluid">
+                    <div id="two-column-menu"></div>
+                    <ul class="navbar-nav" id="navbar-nav" data-aos="fade-right" data-aos-duration="1000"></ul>
+                </div>
+            </div>
+
+            <div class="sidebar-background"></div>
+        </div>
+        <!-- Left Sidebar End -->
+        <!-- Vertical Overlay-->
+        <div class="vertical-overlay"></div>
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+
+        <div class="main-content">
+            <div class="page-content">
+                <div class="container-fluid">
+                    <div class="row mb-3">
+                        <div class="col-12">
+                            <div class="d-flex align-items-lg-center flex-lg-row flex-column">
+                                <div class="flex-grow-1">
+                                    <h4 class="fs-16 mb-1">Hello,
+                                        <span class="text-primary fw-bold">Admin !</span>
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 col-sm-12">
+                            <div class="card card-animate">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <p class="text-uppercase fs-4 fw-medium text-muted text-truncate">
+                                                Total Users
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-end justify-content-between">
+                                        <div id="usercard" class="text-primary"></div>
+                                        <div class="avatar-sm flex-shrink-0">
+                                            <span class="avatar-title bg-soft-success rounded fs-2">
+                                                <i class="bx bxs-user-account text-success"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 col-sm-12">
+
+                            <div class="card card-animate">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <p class="text-uppercase fw-medium fs-4 text-muted text-truncate mb-0">
+                                                Total Instances
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-end justify-content-between mt-4">
+                                        <div id="inscard" class="text-primary"></div>
+                                        <div class="avatar-sm flex-shrink-0">
+                                            <span class="avatar-title bg-soft-info rounded fs-2">
+                                                <i class="ri-apps-2-line text-info"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 col-sm-12">
+                            <div class="card card-animate">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <p class="text-uppercase fs-4 fw-medium text-muted text-truncate mb-0">
+                                                Total Messages
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-end justify-content-between mt-4">
+                                        <div id="msgcard" class="text-primary"></div>
+                                        <div class="avatar-sm flex-shrink-0">
+                                            <span class="avatar-title bg-soft-warning rounded fs-2">
+                                                <i class="bx bx-message-detail text-warning"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 col-sm-12">
+                            <div class="card card-animate">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <p class="text-uppercase fs-4 fw-medium text-muted text-truncate mb-0">
+                                                Total Payments
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-end justify-content-between mt-4">
+                                        <div id="paycard" class="text-primary"></div>
+                                        <div class="avatar-sm flex-shrink-0">
+                                            <span class="avatar-title bg-soft-primary rounded fs-2">
+                                                <i class="bx bx-rupee text-primary"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xl-4">
+                            <div class="card justify-content-center">
+                                <div class="card-header border-0 align-items-center d-flex">
+                                    <h4 class="card-title text-center fs-2 mb-0 flex-grow-1 ">Country Wise User</h4>
+                                </div>
+                                <div class="card-body d-flex align-items-center justify-content-center">
+                                    <canvas id="countryuser" style="width:50%;max-width:350px"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-8">
+                            <div class="card justify-content-center">
+                                <div class="card-header border-0 align-items-center d-flex">
+                                    <h4 class="card-title text-center fs-2 mb-0 flex-grow-1 ">Monthly Registration of
+                                        User
+                                    </h4>
+                                </div>
+                                <div class="card-body d-flex align-items-center justify-content-center">
+                                    <canvas id="monthlychart" style="height:350px;width:100%;max-width:600px"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xl-8">
+                            <div class="card justify-content-center">
+                                <div class="card-header border-0 align-items-center d-flex">
+                                    <h4 class="card-title text-center fs-2 mb-0 flex-grow-1 ">Monthly Instances</h4>
+                                </div>
+                                <div class="card-body d-flex align-items-center justify-content-center">
+                                    <canvas id="monthlyinstances"
+                                        style="height:350px;width:100%;max-width:600px"></canvas>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-4">
+                            <div class="card justify-content-center">
+                                <div class="card-header border-0 align-items-center d-flex">
+                                    <h4 class="card-title text-center fs-2 mb-0 flex-grow-1 ">Messages</h4>
+                                </div>
+                                <div class="card-body d-flex align-items-center justify-content-center">
+                                    <canvas id="messages" style="width:50%;max-width:350px"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-center">
+                        <div class="col-xl-8">
+                            <div class="card">
+                                <div class="card-header border-0 align-items-center d-flex">
+                                    <h4 class="card-title text-center fs-2 mb-0 flex-grow-1 ">Subscriptions</h4>
+                                </div>
+                                <div class="card-body d-flex align-items-center justify-content-center ">
+                                    <canvas id="subscriptionuser" style="width:100%;max-width:600px;"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- End Page-content -->
+
+                    <footer class="footer"></footer>
+                </div>
+                <!-- end main content-->
+            </div>
+        </div>
+    </div>
+    <!-- END layout-wrapper -->
+
+    <!--start back-to-top-->
+    <button onclick="topFunction()" class="btn btn-danger btn-icon" id="back-to-top">
+        <i class="ri-arrow-up-line"></i>
+    </button>
+    <!--end back-to-top-->
+
+    <!--preloader-->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner-border text-primary avatar-sm" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="customizer-setting d-none d-md-block">
+        <div class="btn-info btn-rounded shadow-lg btn btn-icon btn-lg p-2" data-bs-toggle="offcanvas"
+            data-bs-target="#theme-settings-offcanvas" aria-controls="theme-settings-offcanvas">
+            <i class='mdi mdi-spin mdi-cog-outline fs-22'></i>
+        </div>
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="/assets/js/jquery.js"></script>
+    <script src="/assets/js/admin.js"></script>
+    <script src="/assets/js/validate.js"></script>
+
+    <script src="/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="/assets/libs/node-waves/waves.min.js"></script>
+    <script src="/assets/libs/feather-icons/feather.min.js"></script>
+    <script src="/assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+
+    <!-- aos js -->
+    <script src="/assets/libs/aos/aos.js"></script>
+
+    <!-- apexcharts -->
+    <script src="/assets/libs/apexcharts/apexcharts.min.js"></script>
+
+    <!-- App js -->
+    <script src="/assets/js/app.js"></script>
+
+
+    <!-- code here -->
+    <script>
+        function card() {
+            $.ajax({
+                url: "/card",
+                method: "post",
+                data: {
+                    table: "users",
+                    paramstr: true,
+                },
+                success: function (data) {
+                    var user = `<h4 class="fs-3 fw-bold ff-secondary mb-4">${data[0].cnt}
+                                </h4>
+                            <a href="/usersData" class="text-decoration-underline fs-5">see details</a>`;
+                    $("#usercard").html(user);
+                }
+            })
+
+            $.ajax({
+                url: "/card",
+                method: "post",
+                data: {
+                    table: "instance",
+                    paramstr: true,
+                },
+                success: function (data) {
+                    var ins = `<h4 class="fs-3 fw-bold ff-secondary mb-4">${data[0].cnt}
+                                        </h4>
+                                        <a href="/instanceData" class="text-decoration-underline fs-5">see details</a>`;
+                    $("#inscard").html(ins);
+                }
+            })
+
+            $.ajax({
+                url: "/card",
+                method: "post",
+                data: {
+                    table: "message",
+                    paramstr: true,
+                },
+                success: function (data) {
+                    var msg = `<h4 class="fs-3 fw-bold ff-secondary mb-4">${data[0].cnt}
+                                        </h4>
+                                        <a href="/messageData" class="text-decoration-underline fs-5">see details</a>`;
+                    $("#msgcard").html(msg);
+                }
+            })
+
+            $.ajax({
+                url: "/card",
+                method: "post",
+                data: {
+                    table: "subscription",
+                    paramstr: true,
+                },
+                success: function (data) {
+                    var pay = `<h4 class="fs-3 fw-bold ff-secondary mb-4">${data[0].cnt}
+                                        </h4>
+                                        <a href="/subscriptionData" class="text-decoration-underline fs-5">see details</a>`;
+                    $("#paycard").html(pay);
+                }
+            })
+        }
+
+        var countryname = new Array();
+        var usercount = new Array();
+        var usermonth = new Array();
+        var monthlyuser = new Array();
+        var messagecount = new Array();
+        var instancedata = new Array();
+        var instancemonth = new Array();
+        var plancount = new Array();
+        //ajax for data of chart
+
+        function countryuserchart() {
+            $.ajax({
+                url: "/distinct",
+                method: "post",
+                data: {
+                    table: "users",
+                    column: "country"
+                },
+                success: function (data) {
+                    for (i = 0; i < data.length; i++) {
+                        countryname.push(data[i].country);
+                    }
+                    let xValues = countryname;
+                    for (i = 0; i < countryname.length; i++) {
+                        $.ajax({
+                            url: "/card",
+                            method: "post",
+                            data: {
+                                table: "users",
+                                paramstr: `country='${countryname[i]}'`,
+                            },
+                            success: function (data) {
+                                for (i = 0; i < data.length; i++) {
+                                    usercount.push(data[i].cnt);
+                                }
+                                let yValues = usercount;
+                                var barColors = ['rgb(255, 99, 132)',
+                                    'rgb(75, 192, 192)',
+                                    'rgb(255, 159, 64)',
+                                    'rgb(54, 162, 235)',
+                                    'rgb(255, 205, 86)',
+                                    'rgb(153, 102, 255)',
+                                    'rgb(201, 203, 207)'];
+
+                                new Chart("countryuser", {
+                                    type: "doughnut",
+                                    data: {
+                                        labels: xValues,
+                                        datasets: [{
+                                            backgroundColor: barColors,
+                                            data: yValues
+                                        }]
+                                    },
+                                    options: {
+                                        legend: {
+                                            display: false,
+                                        },
+
+                                        title: {
+                                            display: true,
+                                            text: "Country Wise UserData"
+                                        }
+                                    }
+                                });
+                            }
+                        })
+                    }
+                }
+            })
+        }
+
+
+
+        function registrationuserchart() {
+
+            var currentDate = new Date();
+
+            for (var i = 0; i < 6; i++) {
+
+                var monthNumber = currentDate.getMonth() - i;
+
+                var dateObj = new Date(currentDate.getFullYear(), monthNumber, 1);
+
+                var monthName = dateObj.toLocaleString('default', { month: 'long' });
+                usermonth.push(monthName);
+            }
+            var m = 0;
+            usermonth.reverse();
+            for (i = 0; i < usermonth.length; i++) {
+                switch (usermonth[i]) {
+                    case "January":
+                        m = 1;
+
+                        break;
+                    case "February":
+                        m = 2;
+
+                        break;
+                    case "March":
+                        m = 3;
+
+                        break;
+                    case "April":
+                        m = 4;
+
+                        break;
+                    case "May":
+                        m = 5;
+
+                        break;
+                    case "June":
+                        m = 6;
+
+                        break;
+                    case "July":
+                        m = 7;
+
+                        break;
+                    case "August":
+                        m = 8;
+
+                        break;
+                    case "september":
+                        m = 9;
+
+                        break;
+                    case "october":
+                        m = 10;
+
+                        break;
+                    case "November":
+                        m = 11;
+
+                        break;
+                    case "December":
+                        m = 12;
+
+                        break;
+                    default:
+
+                }
+                $.ajax({
+                    url: "/monthlyreport",
+                    method: "post",
+                    data: {
+                        month: m,
+                        year: currentDate.getFullYear(),
+                    },
+                    success: function (data) {
+                        //console.log(data);
+                        monthlyuser.push(data[0].cnt);
+                        var xValues = usermonth;
+                        var yValues = monthlyuser;
+                        var barColors = ['rgb(255, 99, 132)',
+                            'rgb(75, 192, 192)',
+                            'rgb(255, 159, 64)',
+                            'rgb(54, 162, 235)',
+                            'rgb(255, 205, 86)',
+                            'rgb(153, 102, 255)',
+                            'rgb(201, 203, 207)'];
+                        new Chart("monthlychart", {
+                            type: "line",
+                            data: {
+                                labels: xValues,
+                                datasets: [{
+                                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                                    borderColor: 'rgb(75, 192, 192)',
+                                    data: yValues,
+                                }]
+                            },
+                            options: {
+                                legend: { display: false },
+                                title: {
+                                    display: true,
+                                    text: "Monthly User Registration Data"
+                                }
+                            }
+                        })
+                    }
+                })
+
+            }
+        }
+
+
+        function messagedisplay() {
+            $.ajax({
+                url: "/messagecount",
+                method: "get",
+                success: function (data) {
+                    msgcount = data.msg;
+                    imgcount = data.img;
+                    bulkcount = data.bulk;
+                    channelcount = data.channel;
+                    messagecount.push(msgcount);
+                    messagecount.push(imgcount);
+                    messagecount.push(bulkcount);
+                    messagecount.push(channelcount);
+                    var xValues = ["Message", "Custom Bulk", "Template Bulk", "Channel message"];
+                    var yValues = messagecount;
+                    var barColors = ['rgb(255, 99, 132)',
+                        'rgb(75, 192, 192)',
+                        'rgb(255, 159, 64)',
+                        'rgb(54, 162, 235)'
+                    ];
+
+                    new Chart("messages", {
+                        type: "pie",
+                        data: {
+                            labels: xValues,
+                            datasets: [{
+                                backgroundColor: barColors,
+                                data: yValues
+                            }]
+                        },
+                        options: {
+                            legend: { display: false },
+                            title: {
+                                display: true,
+                                text: "Message Types"
+                            }
+                        }
+                    });
+                }
+            })
+        }
+
+
+        function monthlyinstancereport() {
+            let currentDate = new Date();
+
+            for (var i = 0; i < 6; i++) {
+
+                let monthNumber = currentDate.getMonth() - i;
+
+                let dateObj = new Date(currentDate.getFullYear(), monthNumber, 1);
+
+                let monthName = dateObj.toLocaleString('default', { month: 'long' });
+                instancemonth.push(monthName);
+            }
+
+            let m = 0;
+            instancemonth.reverse();
+            for (i = 0; i < instancemonth.length; i++) {
+                switch (instancemonth[i]) {
+                    case "January":
+                        m = 1;
+
+                        break;
+                    case "February":
+                        m = 2;
+
+                        break;
+                    case "March":
+                        m = 3;
+
+                        break;
+                    case "April":
+                        m = 4;
+
+                        break;
+                    case "May":
+                        m = 5;
+
+                        break;
+                    case "June":
+                        m = 6;
+
+                        break;
+                    case "July":
+                        m = 7;
+
+                        break;
+                    case "August":
+                        m = 8;
+
+                        break;
+                    case "september":
+                        m = 9;
+
+                        break;
+                    case "october":
+                        m = 10;
+
+                        break;
+                    case "November":
+                        m = 11;
+
+                        break;
+                    case "December":
+                        m = 12;
+
+                        break;
+                    default:
+
+                }
+                $.ajax({
+                    url: "/instancereport",
+                    method: "post",
+                    data: {
+                        month: m,
+                        year: currentDate.getFullYear(),
+                    },
+                    success: function (data) {
+                        instancedata.push(data[0].cnt);
+                        var xValues = instancemonth;
+                        var yValues = instancedata;
+                        var barColors = ['rgb(255, 99, 132)',
+                            'rgb(75, 192, 192)',
+                            'rgb(255, 159, 64)',
+                            'rgb(54, 162, 235)',
+                            'rgb(255, 205, 86)',
+                            'rgb(153, 102, 255)',
+                            'rgb(201, 203, 207)'];
+                        new Chart("monthlyinstances", {
+                            type: "bar",
+                            data: {
+                                labels: xValues,
+                                datasets: [{
+                                    backgroundColor: barColors,
+                                    data: yValues,
+                                }]
+                            },
+                            options: {
+                                legend: { display: false },
+                                title: {
+                                    display: true,
+                                    text: "Monthly Instance Data"
+                                }
+                            }
+                        })
+                    }
+                })
+
+
+            }
+        }
+
+
+        function usersubscription() {
+            $.ajax({
+                url: "/usersubscription",
+                method: "get",
+                success: function (data) {
+                    console.log(data);
+                    let flag = false;
+                    for (i = 0; i < data.length; i++) {
+                        if (data[i].planID == "101") {
+                            plancount.push(data[i].cnt);
+                            flag = true;
+                        }
+                    }
+                    if (flag == false) {
+                        plancount.push(0);
+                    }
+                    flag = false;
+                    for (i = 0; i < data.length; i++) {
+                        if (data[i].planID == "102") {
+                            plancount.push(data[i].cnt);
+                            flag = true;
+                        }
+                    }
+                    if (flag == false) {
+                        plancount.push(0);
+                    }
+                    flag = false;
+                    for (i = 0; i < data.length; i++) {
+                        if (data[i].planID == "103") {
+                            plancount.push(data[i].cnt);
+                            flag = true;
+                        }
+                    }
+                    if (flag == false) {
+                        plancount.push(0);
+                    }
+                    flag = false;
+                    for (i = 0; i < data.length; i++) {
+                        if (data[i].planID == "104") {
+                            plancount.push(data[i].cnt);
+                            flag = true;
+                        }
+                    }
+                    if (flag == false) {
+                        plancount.push(0);
+                    }
+                    flag = false;
+                    for (i = 0; i < data.length; i++) {
+                        if (data[i].planID == "105") {
+                            plancount.push(data[i].cnt);
+                            flag = true;
+                        }
+                    }
+                    if (flag == false) {
+                        plancount.push(0);
+                    }
+                    console.log(plancount);
+                    var xValues = ["Basic", "Standard(month)", "Premium(month)", "Standard(year)", "Premium(year)"];
+                    var yValues = plancount;
+                    var barColors = ['rgb(255, 99, 132)',
+                        'rgb(75, 192, 192)',
+                        'rgb(255, 159, 64)',
+                        'rgb(54, 162, 235)',
+                        'rgb(255, 205, 86)',
+                        'rgb(153, 102, 255)',
+                        'rgb(201, 203, 207)'];
+                    new Chart("subscriptionuser", {
+                        type: "bar",
+                        data: {
+                            labels: xValues,
+                            datasets: [{
+                                backgroundColor: barColors,
+                                data: yValues,
+                            }]
+                        },
+                        options: {
+                            legend: { display: false },
+                            title: {
+                                display: true,
+                                text: "Plan Subscription Data"
+                            }
+                        }
+                    })
+                }
+
+            })
+
+        }
+
+
+        $(document).ready(function () {
+            card();
+            usersubscription();
+            monthlyinstancereport();
+            messagedisplay();
+            registrationuserchart();
+            countryuserchart();
+        })
+    </script>
+
+</body>
+
+</html>

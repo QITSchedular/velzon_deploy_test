@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg"
+    data-sidebar-image="none" data-preloader="disable">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Dashboard | WhatsApp Messages</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesbrand" name="author" />
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+
+    <!-- jsvectormap css -->
+    <link href="/assets/libs/jsvectormap/css/jsvectormap.min.css" rel="stylesheet" type="text/css" />
+
+    <!--Swiper slider css-->
+    <link href="/assets/libs/swiper/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- aos css -->
+    <link rel="stylesheet" href="/assets/libs/aos/aos.css" />
+    <!-- Layout config Js -->
+    <script src="/assets/js/layout.js"></script>
+    <!-- Bootstrap Css -->
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="/assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <!-- custom Css-->
+    <link href="/assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Font Awesome Files -->
+    <link href="/assets/fontawesome/css/all.min.css" rel="stylesheet" />
+    <link href="/assets/fontawesome/css/solid.css" rel="stylesheet" />
+    <link href="/assets/fontawesome/css/solid.min.css" rel="stylesheet" />
+    <link href="/assets/fontawesome/css/regular.css" rel="stylesheet" />
+    <link href="/assets/fontawesome/css/regular.min.css" rel="stylesheet" />
+    <link href="/assets/fontawesome/css/fontawesome.min.css" rel="stylesheet" />
+    <link href="/assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+        <header id="page-topbar">
+            <div class="layout-width">
+                <div class="navbar-header">
+                    <div class="d-flex">
+                        <!-- LOGO -->
+                        <div class="navbar-brand-box horizontal-logo">
+                            <a href="/" class="logo logo-dark">
+                                <span class="logo-sm">
+                                    <img src="/assets/images/logo-sm.png" alt="" height="22" />
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="/assets/images/logo-dark.png" alt="" height="17" />
+                                </span>
+                            </a>
+
+                            <a href="/" class="logo logo-light">
+                                <span class="logo-sm">
+                                    <img src="/assets/images/logo-sm.png" alt="" height="22" />
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="/assets/images/logo-light.png" alt="" height="17" />
+                                </span>
+                            </a>
+                        </div>
+
+                        <button type="button"
+                            class="btn btn-sm px-3 fs-16 header-item vertical-menu-btn topnav-hamburger"
+                            id="topnav-hamburger-icon">
+                            <span class="hamburger-icon">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </button>
+                    </div>
+
+                    <div class="d-flex align-items-center">
+                        <div class="dropdown d-md-none topbar-head-dropdown header-item">
+                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
+                                id="page-header-search-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                <i class="bx bx-search fs-22"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
+                                aria-labelledby="page-header-search-dropdown">
+                                <form class="p-3">
+                                    <div class="form-group m-0">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Search ..."
+                                                aria-label="Recipient's username" />
+                                            <button class="btn btn-primary" type="submit">
+                                                <i class="mdi mdi-magnify"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="ms-1 header-item d-none d-sm-flex">
+                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
+                                data-toggle="fullscreen">
+                                <i class='bx bx-fullscreen fs-22'></i>
+                            </button>
+                        </div>
+
+                        <div class="ms-1 header-item d-none d-sm-flex">
+                            <button type="button"
+                                class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle light-dark-mode">
+                                <i class='bx bx-moon fs-22'></i>
+                            </button>
+                        </div>
+
+                        <div class="dropdown ms-sm-3 header-item topbar-user">
+                            <button type="button" class="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <span class="d-flex align-items-center">
+                                    <img class="rounded-circle header-profile-user profileimg" />
+                                    <span class="text-start ms-xl-2">
+                                        <span
+                                            class="d-none d-xl-inline-block ms-1 fw-medium user-name-text profilename"></span>
+                                        <span class="d-none d-xl-block ms-1 fs-12 text-muted user-name-sub-text">
+                                            Founder
+                                        </span>
+                                    </span>
+                                </span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <h6 class="dropdown-header">Welcome <span class="profilename"></span></h6>
+                                <a class="dropdown-item" href="/profile">
+                                    <i class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i>
+                                    <span class="align-middle">Profile</span>
+                                </a>
+                                <a class="dropdown-item" href="/subscription">
+                                    <i class="mdi mdi-credit-card-chip text-muted fs-16 align-middle me-1"></i>
+                                    <span class="align-middle">Pay</span>
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" id="logout">
+                                    <i class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i>
+                                    <span class="align-middle" data-key="t-logout">Logout</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- ========== App Menu ========== -->
+        <div class="app-menu navbar-menu">
+            <!-- LOGO -->
+            <div class="navbar-brand-box">
+                <!-- Dark Logo-->
+                <a href="/" class="logo logo-dark">
+                    <span class="logo-sm">
+                        <img src="/assets/images/logo-sm.png" alt="" height="22" />
+                    </span>
+                    <span class="logo-lg">
+                        <img src="/assets/images/logo-dark.png" alt="" height="17" />
+                    </span>
+                </a>
+                <!-- Light Logo-->
+                <a href="/" class="logo logo-light">
+                    <span class="logo-sm">
+                        <img src="/assets/images/logo-sm.png" alt="" height="22" />
+                    </span>
+                    <span class="logo-lg">
+                        <img src="/assets/images/logo-light.png" alt="" height="17" />
+                    </span>
+                </a>
+                <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover"
+                    id="vertical-hover">
+                    <i class="ri-record-circle-line"></i>
+                </button>
+            </div>
+
+            <div id="scrollbar">
+                <div class="container-fluid">
+                    <div id="two-column-menu"></div>
+                    <ul class="navbar-nav" id="navbar-nav" data-aos="fade-right" data-aos-duration="1000"></ul>
+                </div>
+            </div>
+
+            <div class="sidebar-background"></div>
+        </div>
+        <!-- Left Sidebar End -->
+        <!-- Vertical Overlay-->
+        <div class="vertical-overlay"></div>
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+            <div class="page-content">
+                <div class="container-fluid">
+                    <h3 class="mb-3 text-center">Send Bulk Email</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-pills nav-justified mb-3 h-5 fs-5" role="tablist">
+                                <li class="nav-item waves-effect waves-light">
+                                    <a class="nav-link active" data-bs-toggle="tab" href="#googlesheetform" role="tab">
+                                        Google Sheet
+                                    </a>
+                                </li>
+                                <li class="nav-item waves-effect waves-light">
+                                    <a class="nav-link" data-bs-toggle="tab" href="#csvfileform" role="tab">
+                                        Local CSV File
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- Tab panes -->
+                            <div class="tab-content text-muted">
+                                <div class="tab-pane active" id="googlesheetform" role="tabpanel">
+
+                                    <div class="card" id="bulkformgoogle">
+                                        <h3 class="card-header text-center">Send Bulk Email from Google Sheet</h3>
+                                        <div class="card-body">
+                                            <div class="mb-3">
+                                                <button id="connect" class="btn btn-md btn-success">
+                                                    <span class="mx-1">
+                                                        <i class="fa-solid fa-plug"></i>
+                                                    </span>
+                                                    <span>
+                                                        Connect
+                                                    </span>
+                                                </button>
+                                            </div>
+                                            <div class="mb-1 row">
+                                                <div class="col-6">
+                                                    <select class="form-select mb-3" id="spreedsheet">
+                                                        <option selected>select spreedsheet</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-6">
+                                                    <select class="form-select mb-3" id="sheetname">
+                                                        <option selected>select sheet</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="mt-3" id="sheetdata">
+                                                <table class="table align-middle" id="tbldata">
+                                                </table>
+                                            </div>
+                                            <div class="mb-1">
+                                                <label for="subject1" class="form-label">Subject :</label>
+                                                <input type="text" class="form-control w-25" id="subject1"
+                                                    name="subject1">
+                                            </div>
+                                            <div class="mb-1">
+                                                <label for="msgtype1" class="form-label">Select Message Type
+                                                    :</label>
+                                                <select class="form-select w-25" id="msgtype1" name="msgtype">
+                                                    <option value="">-- select message type --</option>
+                                                    <option value="custom">custom message</option>
+                                                    <option value="template">template message</option>
+                                                </select>
+                                            </div>
+                                            <div class="d-none mb-3" id="discustom">
+                                                <label for="message" class="form-label">
+                                                    Message
+                                                    <span class="text-danger">*</span>
+                                                    <span class="text-danger" id="err_msg"></span>
+                                                </label>
+                                                <input type="text" name="msg" id="msg"
+                                                    class="form-control required mb-3" />
+                                                <div class="mb-3">
+                                                    <button id="send_gsheet_custom" class="btn btn-md btn-primary">
+                                                        <span class="mx-1">
+                                                            <i class="fa-solid fa-paper-plane"></i>
+                                                        </span>
+                                                        <span>
+                                                            Send to All
+                                                        </span>
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                            <div class="d-none" id="distemplate">
+                                                <label class="form-label">Template:</label>
+                                                <select class="form-select w-50" id="template1" name="template">
+                                                </select>
+                                                <div id="templatemsg1" class="row mb-3"></div>
+                                                <textarea class="form-control mb-3" style="resize: none;" cols="50"
+                                                    rows="6" id="mesg1"></textarea>
+                                                <div class="mb-3">
+                                                    <button id="send_gsheet_temp" class="btn btn-md btn-primary">
+                                                        <span class="mx-1">
+                                                            <i class="fa-solid fa-paper-plane"></i>
+                                                        </span>
+                                                        <span>
+                                                            Send to All
+                                                        </span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="csvfileform" role="tabpanel">
+                                    <div class="card" id="bulkformsimple">
+                                        <h3 class="card-header text-center">Send Bulk Email from Local File</h3>
+                                        <div class="card-body">
+                                            <div class="mb-1">
+                                                <label for="datafile" class="form-label">Select CSV File :</label>
+                                                <input type="file" id="datafile" class="form-control">
+                                                <input type="hidden" name="clientdata"><br>
+                                                <table class="table align-middle" id="tbldata2">
+                                                </table>
+
+                                            </div>
+                                            <div class="mb-1">
+                                                <label for="subject2" class="form-label">Subject :</label>
+                                                <input type="text" class="form-control w-25" id="subject2"
+                                                    name="subject1">
+                                            </div><br>
+                                            <div class="mb-1">
+                                                <label for="msgtype" class="form-label">Select Message Type
+                                                    :</label>
+                                                <select class="form-select w-25" id="msgtype" name="msgtype">
+                                                    <option value="">-- select message type --</option>
+                                                    <option value="custom">custom message</option>
+                                                    <option value="template">template message</option>
+                                                </select>
+                                            </div><br>
+                                            <div class="d-none mt-3" id="sheetdata2">
+                                                <div class="mb-3">
+                                                    <label for="message" class="form-label">
+                                                        Message
+                                                        <span class="text-danger">*</span>
+                                                        <span class="text-danger" id="err_msg2"></span>
+                                                    </label>
+                                                    <input type="text" name="msg2" id="msg2"
+                                                        class="form-control required" />
+                                                </div>
+                                                <button id="send_file_custom" class="btn btn-md btn-primary">
+                                                    <span class="mx-1">
+                                                        <i class="fa-solid fa-paper-plane"></i>
+                                                    </span>
+                                                    <span>
+                                                        Send to All
+                                                    </span>
+                                                </button>
+                                            </div>
+                                            <!-- template display -->
+                                            <div class="d-none " id="distemp">
+                                                <label class="form-label">Template:</label>
+                                                <select class="form-select w-50" id="template" name="template">
+                                                </select><br>
+                                                <div id="templatemsg" class="row mb-3">
+
+                                                </div>
+                                                <textarea class="form-control mb-3" style="resize: none;" cols="50"
+                                                    rows="6" id="mesg"></textarea>
+                                                <button id="send_file_temp" class="btn btn-md btn-primary">
+                                                    <span class="mx-1">
+                                                        <i class="fa-solid fa-paper-plane"></i>
+                                                    </span>
+                                                    <span>
+                                                        Send to All
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <footer class="footer">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <script>
+                                        document.write(new Date().getFullYear());
+                                    </script>
+                                    © Velzon.
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="text-sm-end d-none d-sm-block">
+                                        Design & Develop by Themesbrand
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+
+            <!--start back-to-top-->
+            <button onclick="topFunction()" class="btn btn-danger btn-icon" id="back-to-top">
+                <i class="ri-arrow-up-line"></i>
+            </button>
+            <!--end back-to-top-->
+
+            <!--preloader-->
+            <div id="preloader">
+                <div id="status">
+                    <div class="spinner-border text-primary avatar-sm" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="customizer-setting" id="chatbot">
+                <div class="btn-info btn-rounded shadow-lg btn btn-icon btn-lg p-2">
+                    <i class="fa-solid fa-comment" id="iconchat"></i>
+                </div>
+            </div>
+
+            <div class="email-chat-detail" id="emailchat-detailElem" style="display: none">
+                <div class="card mb-0">
+                    <div class="card-header align-items-center d-flex bg-primary text-white-50">
+                        <div class="flex-grow-1">
+                            <h5 class="fs-15 text-white mb-1 profile-username">
+                                Velzon ChatBot
+                            </h5>
+                            <p class="mb-0 fs-12 lh-1">Ask here for help</p>
+                        </div>
+                        <div>
+                            <i class="fa-brands fa-bots fs-1 text-white"></i>
+                        </div>
+                    </div>
+
+                    <div class="card-body p-0">
+                        <div id="users-chat">
+                            <div class="chat-conversation p-3" id="chat-conversation" data-simplebar
+                                style="height: 250px">
+                                <ul class="list-unstyled chat-conversation-list chat-sm" id="conversation"></ul>
+                            </div>
+                        </div>
+
+                        <div class="border-top border-top-dashed">
+                            <div class="row g-2 mx-3 mt-2 mb-3">
+                                <div class="col">
+                                    <div class="position-relative">
+                                        <input type="text" class="form-control border-light bg-light message-input"
+                                            placeholder="Enter Message..." id="input" />
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <button class="btn btn-info" id="sendbotmsg">
+                                        <i class="mdi mdi-send"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script src="/assets/js/jquery.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/validate.js"></script>
+    <script src="/assets/js/chatbot.js"></script>
+    <script src="/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="/assets/libs/node-waves/waves.min.js"></script>
+    <script src="/assets/libs/feather-icons/feather.min.js"></script>
+    <script src="/assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+
+    <!-- apexcharts -->
+    <script src="/assets/libs/apexcharts/apexcharts.min.js"></script>
+
+    <!-- Vector map-->
+    <script src="/assets/libs/jsvectormap/js/jsvectormap.min.js"></script>
+    <script src="/assets/libs/jsvectormap/maps/world-merc.js"></script>
+
+    <!--Swiper slider js-->
+    <script src="/assets/libs/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Dashboard init -->
+    <script src="/assets/js/pages/dashboard-ecommerce.init.js"></script>
+
+    <!-- aos js -->
+    <script src="/assets/libs/aos/aos.js"></script>
+    <!-- prismjs plugin -->
+    <script src="/assets/libs/prismjs/prism.js"></script>
+    <!-- animation init -->
+    <script src="/assets/js/pages/animation-aos.init.js"></script>
+
+    <!-- App js -->
+    <script src="/assets/js/app.js"></script>
+
+    <!-- prismjs plugin -->
+    <script src="/assets/libs/prismjs/prism.js"></script>
+
+    <script src="/assets/sweetalert2/sweet-alert.init.js"></script>
+    <script src="/assets/sweetalert2/sweetalert2.all.js"></script>
+
+
+    <script async defer src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>
+    <script async defer src="https://accounts.google.com/gsi/client" onload="gisLoaded()"></script>
+
+    <script>
+        const CLIENT_ID = '946707776966-qbbl9q9eikhrtfld5l9pnbv3pkvcni7g.apps.googleusercontent.com';
+        const API_KEY = 'AIzaSyA2-ajldm4p1SEP1mZjG4qeco5uqqzM2vU';
+
+        async function getSheet(sheetID) {
+            let sheetName = "";
+            const endpoint = `https://sheets.googleapis.com/v4/spreadsheets/${sheetID}?key=${API_KEY}`;
+            let count = 0;
+            await fetch(endpoint).then(response => response.json()).then(data => {
+                const sheetNames = data.sheets.map(sheet => sheet.properties);
+                for (i = 0; i < sheetNames.length; i++) {
+                    sheetName += "<option value='" + count + "'>" + sheetNames[i].title + "</option>";
+                    console.log(sheetNames[i]);
+                    count++;
+                }
+                document.getElementById('sheetname').innerHTML = sheetName;
+            }).catch(error => {
+                swal({
+                    title: 'Oops !',
+                    text: 'Provide appropriate reading permission in your selected spreadsheet..!!',
+                    icon: 'warning',
+                    closeOnEsc: true
+                });
+                document.getElementById('sheetname').innerHTML = "";
+                console.error('There was an error!', error);
+            });
+        }
+        const DISCOVERY_DOC = 'https://www.googleapis.com/discovery/v1/apis/drive/v3/rest';
+
+        const SCOPES = 'https://www.googleapis.com/auth/drive.metadata.readonly';
+
+        let tokenClient;
+        let gapiInited = false;
+        let gisInited = false;
+
+        function gapiLoaded() {
+            gapi.load('client', initializeGapiClient);
+        }
+
+        async function initializeGapiClient() {
+            await gapi.client.init({
+                apiKey: API_KEY,
+                discoveryDocs: [DISCOVERY_DOC],
+            });
+            gapiInited = true;
+            maybeEnableButtons();
+        }
+
+        function gisLoaded() {
+            tokenClient = google.accounts.oauth2.initTokenClient({
+                client_id: CLIENT_ID,
+                scope: SCOPES,
+                callback: '', // defined later
+            });
+            gisInited = true;
+            maybeEnableButtons();
+        }
+
+        function maybeEnableButtons() {
+            if (gapiInited && gisInited) {
+                // document.getElementById('authorize_button').style.visibility = 'visible';
+                //display_in_out();
+            }
+        }
+        function handleAuthClick() {
+
+            tokenClient.callback = async (resp) => {
+                if (resp.error !== undefined) {
+                    throw (resp);
+                }
+
+                await listFiles();
+            };
+
+            if (gapi.client.getToken() === null) {
+                tokenClient.requestAccessToken({
+                    prompt: 'consent'
+                });
+            } else {
+                tokenClient.requestAccessToken({
+                    prompt: ''
+                });
+            }
+        }
+        async function listFiles() {
+            let response;
+            try {
+                response = await gapi.client.drive.files.list({
+                    'fields': 'files(id, name, mimeType)'
+                });
+            } catch (err) {
+                document.getElementById('content').innerText = err.message;
+                return;
+            }
+            const files = response.result.files;
+            let output = "";
+            if (!files || files.length == 0) {
+                document.getElementById('content').innerText = 'No files found.';
+                return;
+            } else {
+                getSheet(files[0].id);
+                var obj = {};
+                for (var i = 0; i < files.length; i++) {
+                    if (files[i].mimeType == "application/vnd.google-apps.spreadsheet") {
+                        var str2 = files[i].name;
+                        obj['id'] = files[i].id;
+                        obj['name'] = files[i].name;
+                        obj = JSON.stringify(obj);
+                        output += "<option value='" + files[i].id + "'>" + files[i].name + "</option>";
+                    }
+                }
+            }
+            document.getElementById('spreedsheet').innerHTML = output;
+        }
+
+        function makeApiCall(ssheetId) {
+            var params = {
+                spreadsheetId: ssheetId,
+                ranges: [],
+                includeGridData: false,
+            };
+
+            var request = gapi.client.sheets.spreadsheets.get(params);
+            alert(request);
+            request.then(function (response) {
+                // TODO: Change code below to process the `response` object:
+                console.log(response.result);
+            }, function (reason) {
+                console.error('error: ' + reason.result.error.message);
+            });
+        }
+    </script>
+
+    <script>
+        let apikey, token, iid, i_name;
+        let colnames, colvalues;
+        let clientobj = new Array();
+        let clientarr = new Array();
+        let clientvalue = new Array();
+        $(document).ready(function () {
+            chkLogin();
+
+            //msgType display localfile
+            $("#msgtype").change(function () {
+                if ($("#msgtype").val() == "custom") {
+                    $("#sheetdata2").removeClass("d-none");
+                    $("#distemp").addClass("d-none");
+                }
+                else if ($("#msgtype").val() == "template") {
+                    $("#sheetdata2").addClass("d-none");
+                    $("#distemp").removeClass("d-none");
+                }
+            })
+            // send message form validation
+            var instanceid = document.getElementById('instanceid');
+            var apikey = document.getElementById('apikey');
+            var token = document.getElementById('token');
+            var msg = document.getElementById('msg');
+            var phone = document.getElementById('phone');
+
+            $(".required").on('focusout', function () {
+                onfocusout_validation($(this).attr('id'));
+            });
+
+            $("#connect").click(function () {
+                handleAuthClick();
+            })
+
+            $("#spreedsheet").on("change", function () {
+                getSheet($("#spreedsheet").val());
+            })
+
+            var data1 = new Array();
+
+            $("#sheetname").on("change", function () {
+                var ssid = $("#spreedsheet").val();
+                var sheetindex = $("#sheetname").val();
+
+                $.ajax({
+                    url: "/sheetdata",
+                    method: "POST",
+                    data: {
+                        ssid: ssid,
+                        sheetindex: sheetindex,
+                    },
+                    success: function (val) {
+                        clientarr = [];
+                        clientobj = val.colnames[0];
+                        clientvalue = val.values;
+                        let result = {};
+                        for (let i = 0; i < clientvalue.length; i++) {
+                            clientobj.forEach((key, j) => {
+                                result[key] = clientvalue[i][j];
+                                console.log(result[key]);
+                            });
+                            console.log(result);
+                            clientarr.push(result);
+                            result = {};
+                        }
+
+                        console.log(clientarr);
+
+                        var data = '<thead class="table-light"><tr>';
+                        for (let i = 0; i < val.colnames[0].length; i++) {
+                            data += "<th>" + val.colnames[0][i] + "</th>";
+                        }
+                        data += '</tr></thead><tbody class="list form-check-all">';
+                        if (val.values[0].length > 0) {
+                            for (let i = 0; i < val.values.length; i++) {
+                                data += "<tr>";
+                                for (let j = 0; j < val.colnames[0].length; j++) {
+                                    data +=
+                                        '<td class="' +
+                                        val.colnames[0][j] +
+                                        '">' +
+                                        val.values[i][j] +
+                                        "</td>";
+                                }
+                                data += "</tr>";
+                            }
+                            data += "</tbody></table>";
+                            console.log(data);
+                            document.getElementById("tbldata").innerHTML = data;
+                        } else {
+                            data +=
+                                '<tr><td colspan="' +
+                                val.colnames.length +
+                                '"><b>No Such column like name and phone in this sheet !!!</b></td></tr></tbody></table>';
+                            console.log(data);
+                            document.getElementById("tbldata").innerHTML = data;
+                        }
+                    }
+                })
+            })
+
+            $(document).on('click', "#send_gsheet_custom", function (e) {
+                $.ajax({
+                    url: "/sendEmailToAll",
+                    method: "POST",
+                    data: {
+                        "clientarr": clientarr,
+                        "subject": $("#subject1").val(),
+                        "msg": $("#msg").val()
+                    },
+                    success: function (val) {
+                        console.log(val);
+                        if (val.status_code == 200) {
+                            swal(
+                                {
+                                    title: 'Email sent to all clients',
+                                    type: 'success',
+                                    timer: 2000,
+                                    showConfirmButton: false,
+                                }
+                            )
+                        } else {
+                            swal(
+                                {
+                                    title: "Email not sent",
+                                    type: 'error',
+                                    timer: 2000,
+                                    text: 'Try again later',
+                                    showConfirmButton: false,
+                                }
+                            )
+                        }
+                    }
+                })
+            })
+
+            $("#gsheet").on('click', function () {
+                $("#bulkformgoogle").removeClass("d-none");
+                $("#bulkformsimple").addClass("d-none");
+            })
+
+            $("#lfile").on('click', function () {
+                $("#bulkformgoogle").addClass("d-none");
+                $("#bulkformsimple").removeClass("d-none");
+            })
+
+            $("#datafile").on('change', function (e) {
+                e.preventDefault();
+
+                var frmdata = new FormData();
+                frmdata.append("csvfile", document.getElementById("datafile").files[0])
+                $.ajax({
+                    type: "POST",
+                    url: "file",
+                    data: frmdata,
+                    contentType: false,
+                    processData: false,
+                    success: function (val) {
+                        console.log(val);
+                        let ddcol = "<option>-- Select Column --</option>";
+                        colnames = Object.keys(val.json[0]);
+                        var data = `<thead class="table-light">
+                                        <tr><th></th>`;
+
+                        for (let i = 0; i < colnames.length; i++) {
+                            data += '<th>' + colnames[i] + '</th>';
+                            ddcol += '<option value="' + colnames[i] + '">' + colnames[i] + '</option>'
+                        }
+                        data += `</tr>
+                                    </thead>
+                                    <tbody class="list form-check-all">`;
+                        if (val.json.length == 0) {
+
+                            data += `<tr>
+                                        <td colspan="3" class="text-center">
+                                            <b>No Such column like name and phone in this sheet !!!</b>
+                                        </td>
+                                    </tr>`;
+                        }
+                        else {
+                            localStorage.setItem("clientobj", val.json);
+                            for (let i = 0; i < val.json.length; i++) {
+
+                                colvalues = Object.values(val.json[i]);
+                                clientobj = val.json;
+                                console.log(clientobj);
+
+                                let y = localStorage.getItem("clientobj");
+
+
+                                //alert(clientobj);
+                                // let tempobj = { "name": val.json[i].name, "phone": val.json[i].phone };
+                                // clientobj.push(tempobj);
+                                //console.log(tempobj);
+                                //console.log(clientobj);
+                                data += `<tr>
+                                            <td scope="row">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox"
+                                                        name="${val.json[i].name}" value="${val.json[i].phone}" checked>
+                                                </div>
+                                            </td>`;
+                                for (let j = 0; j < colnames.length; j++) {
+                                    data += `<td class="name">` + colvalues[j] + `</td>`;
+                                }
+
+                                `</tr>`;
+                            }
+
+                            localStorage.setItem("colnames", colnames);
+                            // localStorage.setItem("clientdata", clientdata);
+                            //console.log("option colnames : " + ddcol);
+                            // document.getElementById("colnames").innerHTML = ddcol;
+
+                        }
+                        data += `</tbody>`;
+                        document.getElementById("tbldata2").innerHTML = data;
+
+                    }
+                })
+            })
+
+            $(document).on("click", '#send_file_custom', function (e) {
+                $.ajax({
+                    url: "/sendEmailToAll",
+                    method: "POST",
+                    data: {
+                        "clientarr": clientobj,
+                        "subject": $("#subject2").val(),
+                        "msg": $("#msg2").val()
+                    },
+                    success: function (val) {
+                        console.log(val);
+                        if (val.status_code == 200) {
+                            swal(
+                                {
+                                    title: 'Email sent to all clients',
+                                    type: 'success',
+                                    timer: 2000,
+                                    showConfirmButton: false,
+                                }
+                            )
+                        } else {
+                            swal(
+                                {
+                                    title: "Email not sent",
+                                    type: 'error',
+                                    timer: 2000,
+                                    text: 'Try again later',
+                                    showConfirmButton: false,
+                                }
+                            )
+                        }
+                    }
+                })
+            })
+        });
+
+        var obj = "<option>--Select Template--</option>";
+        $.ajax({
+            url: "/dis_template",
+            method: "get",
+            success: function (data) {
+                for (var i = 0; i < data.length; i++) {
+                    obj += `
+                        <option value="${data[i].temp_name}">${data[i].temp_name}</option>`
+                }
+                document.getElementById("template").innerHTML = obj;
+                document.getElementById("template1").innerHTML = obj;
+            }
+        })
+        //dynamic dropdown localfile
+        $(document).on('change', '#template', function () {
+            let obj1 = "";
+            $.ajax({
+                url: "/dis_mes",
+                method: "post",
+                data: {
+                    "temp_name": $("#template").val()
+                },
+                success: function (data) {
+                    document.getElementById("mesg").innerHTML = data[0].temp_message;
+                    let x = localStorage.getItem("colnames").split(",");
+                    for (let i = 0; i < data[0].userfields; i++) {
+                        obj1 += `<div class="col-3 mb-2"><label class="form-label">Value ${i + 1} :</label><select class="form-select selcol" id="colnames">
+                            <option>--Select column--</option>`;
+                        for (let j = 0; j < x.length; j++) {
+                            obj1 += "<option value=" + x[j] + ">" + x[j] + "</option>";
+
+                        }
+                        obj1 += `</select></div>`;
+                    }
+                    document.getElementById("templatemsg").innerHTML = obj1;
+                }
+            })
+        })
+        //dynamic dropdown googlesheet
+        $(document).on('change', '#template1', function () {
+            let obj1 = "";
+            $.ajax({
+                url: "/dis_mes",
+                method: "post",
+                data: {
+                    "temp_name": $("#template1").val()
+                },
+                success: function (data) {
+                    document.getElementById("mesg1").innerHTML = data[0].temp_message;
+                    for (let i = 0; i < data[0].userfields; i++) {
+                        obj1 += `<div class="col-3 mb-2"><label class="form-label">Value ${i + 1} :</label><select class="form-select selcol" id="colnames">
+                            <option>--Select column--</option>`;
+                        for (let j = 0; j < clientobj.length; j++) {
+                            obj1 += "<option value=" + clientobj[j] + ">" + clientobj[j] + "</option>";
+
+                        }
+                        obj1 += `</select></div>`;
+                    }
+                    document.getElementById("templatemsg1").innerHTML = obj1;
+                }
+            })
+        })
+
+
+        $("#sendto").on('click', function (e) {
+            e.preventDefault();
+            console.log(clientobj);
+            let selectedcol = new Array();
+            for (let i = 0; i < document.getElementsByClassName("selcol").length; i++) {
+                let data2 = document.getElementsByClassName("selcol")[i].value;
+                selectedcol.push(data2);
+            }
+            // let token = document.getElementById("token").value;
+            let message = document.getElementById("mesg").value;
+            alert($("#template").val());
+            alert(message);
+            var emailarray = new Array();
+            for (let i = 0; i < clientobj.length; i++) {
+                emailarray.push(clientobj[i].email);
+            }
+            console.log(selectedcol);
+            console.log(emailarray);
+            $.ajax({
+                url: "/sendTemplateBulkMail",
+                method: "post",
+                data: {
+                    "template": $("#template").val(),
+                    "message": $("#mesg").val(),
+                    "clientobj": clientobj,
+                    "selectedcol": selectedcol,
+                    "emailarray": emailarray,
+                    "subject": $("#subject2").val(),
+                },
+                success: function (data) {
+                    console.log(data);
+                    if (data.status_code == 200) {
+                        swal(
+                            {
+                                title: 'Email sent to all clients',
+                                type: 'success',
+                                timer: 2000,
+                                showConfirmButton: false,
+                            }
+                        )
+                    } else {
+                        swal(
+                            {
+                                title: 'Email not sent!!',
+                                type: 'error',
+                                timer: 2000,
+                                showConfirmButton: false,
+                            }
+                        )
+                    }
+                }
+            })
+        })
+        //msgtype display g-sheet
+        $("#msgtype1").change(function () {
+            if ($("#msgtype1").val() == "custom") {
+                $("#discustom").removeClass("d-none");
+                $("#distemplate").addClass("d-none");
+            }
+            else if ($("#msgtype1").val() == "template") {
+                $("#discustom").addClass("d-none");
+                $("#distemplate").removeClass("d-none");
+            }
+        })
+        //googlesheet template message
+        $("#sendto1").on('click', function (e) {
+            e.preventDefault();
+            console.log(clientobj);
+            let selectedcol = new Array();
+            for (let i = 0; i < document.getElementsByClassName("selcol").length; i++) {
+                let data2 = document.getElementsByClassName("selcol")[i].value;
+                alert(data2);
+                selectedcol.push(data2);
+            }
+            // let token = document.getElementById("token").value;
+            let message = document.getElementById("mesg1").value;
+            alert($("#template1").val());
+            alert(message);
+            // alert(token);
+            var emailarray = new Array();
+            for (let i = 0; i < clientarr.length; i++) {
+                emailarray.push(clientarr[i].email);
+            }
+            //console.log(selectedcol);
+            console.log(emailarray);
+            $.ajax({
+                url: "/sendTemplateBulkMail",
+                method: "post",
+                data: {
+                    "template": $("#template1").val(),
+                    "message": $("#mesg1").val(),
+                    "subject": $("#subject1").val(),
+                    "clientobj": clientarr,
+                    "selectedcol": selectedcol,
+                    "emailarray": emailarray
+                },
+                success: function (data) {
+                    console.log(data);
+                    if (data.status_code == 200) {
+                        swal({
+                            title: 'Email sent to all clients',
+                            type: 'success',
+                            timer: 2000,
+                            showConfirmButton: false,
+                        })
+                    } else {
+                        swal({
+                            title: 'Email not sent!!',
+                            type: 'error',
+                            timer: 2000,
+                            showConfirmButton: false,
+                        })
+                    }
+                }
+            })
+        })
+    </script>
+
+</body>
+
+</html>
