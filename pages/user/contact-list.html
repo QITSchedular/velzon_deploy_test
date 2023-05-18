@@ -716,9 +716,7 @@
 
             $(document).on('click', '#addcontactmodalbtn', () => {
                 $('#modallbl').html('Add Contact');
-
-                $('#add_contact').addClass("d-none");
-                $('#edit_contact').addClass("d-none");
+                $('#add_contact,#edit_contact').addClass("d-none");
                 $('#add_contact').removeClass("d-none");
             });
 
