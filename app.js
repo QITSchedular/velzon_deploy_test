@@ -2890,7 +2890,7 @@ app.use((req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Server up and running on PORT: ${port}`);
+    console.log(`Your server is up and running on : ${port}`);
 
 });
 
