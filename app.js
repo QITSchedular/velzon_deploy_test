@@ -43,7 +43,15 @@ const conn = mysql.createConnection({
     user: 'admin',
     password: 'M3passb4u#0',
     database: 'qrdb',
-});
+})
+
+conn.connect((err) => {
+    if (err) {
+        console.error('Error connecting to the database:', err);
+        return;
+    }
+    console.log('Connected to the database');
+})
 
 let transporter = nodemailer.createTransport({
     service: "gmail",
