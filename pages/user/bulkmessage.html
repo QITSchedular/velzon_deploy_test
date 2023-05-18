@@ -996,18 +996,20 @@
             });
 
             $("#scanqr").on("click", function () {
-                $("#QRbox, #loader").removeClass("d-none");
-                $("#output").addClass("d-none");
                 alert('Before');
                 $.ajax({
                     url: `/qr/${iid}`,
                     method: "GET",
-                    success: async function (data) {
+                    beforeSend: function () {
+                        $("#QRbox, #loader").removeClass("d-none");
+                        $("#output").addClass("d-none");
+                    },
+                    success: function (data) {
                         alert(data);
                         $("#loader").addClass("d-none");
                         $("#output").html("");
 
-                        await QRCode.toCanvas(data, { errorCorrectionLevel: 'H' }, function (err, canvas) {
+                        QRCode.toCanvas(data, { errorCorrectionLevel: 'H' }, function (err, canvas) {
                             if (err) { throw err };
 
                             var container = document.getElementById('output')
@@ -1022,7 +1024,7 @@
                             height: 200,
                         });
 
-                        await $.ajax({
+                        $.ajax({
                             url: `/authenticated/${iid}`,
                             method: "GET",
                             success: function (val) {
