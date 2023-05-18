@@ -995,11 +995,11 @@
                 }
             });
 
-            $("#scanqr").on("click", async function () {
+            $("#scanqr").on("click", function () {
                 $("#QRbox, #loader").removeClass("d-none");
                 $("#output").addClass("d-none");
-
-                await $.ajax({
+                alert('Before');
+                $.ajax({
                     url: `/qr/${iid}`,
                     method: "GET",
                     success: async function (data) {
@@ -1009,8 +1009,8 @@
                         $("#loader").addClass("d-none");
                         $("#output").html("");
 
-                        QRCode.toCanvas(data, { errorCorrectionLevel: 'H' }, function (err, canvas) {
-                            if (err) throw err;
+                        await QRCode.toCanvas(data, { errorCorrectionLevel: 'H' }, function (err, canvas) {
+                            if (err) { throw err };
 
                             var container = document.getElementById('output')
                             canvas.style.cssText = "height: 200px; width: 200px;";
@@ -1056,6 +1056,7 @@
                         });
                     }
                 });
+                alert("after")
             });
 
 
