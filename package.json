@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "keywords": [
     "whatsappweb",
@@ -65,6 +66,9 @@
   },
   "bugs": {
     "url": "https://github.com/Srangwala02/test/issues"
+  },
+  "engines": {
+    "node": ">=10.18.1"
   },
   "homepage": "https://github.com/Srangwala02/test#readme",
   "description": ""

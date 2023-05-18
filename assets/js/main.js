@@ -212,10 +212,12 @@ $(document).ready(function () {
     });
 
     switch (page[3]) {
-        case 'instance':
         case 'dashboard':
+        case 'instance':
         case 'customtemplate':
         case 'support-ticket':
+        case 'updateprofile':
+        case 'profile':
         case 'subscription':
         case 'addpasscode': {
             fetch('../../assets/json/common-nav.json')
