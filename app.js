@@ -31,19 +31,19 @@ let obj = [], apikey, userProfile;
 
 const SESSION_FILE_PATH = './assets/json/session-data.json';
 
-const conn = mysql.createConnection({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME,
-});
-
 // const conn = mysql.createConnection({
-//     host: 'm3-db.cpqpqooy9dzn.ap-south-1.rds.amazonaws.com',
-//     user: 'admin',
-//     password: 'M3passb4u#0',
-//     database: 'qrdb',
-// })
+//     host: process.env.DB_HOST,
+//     user: process.env.DB_USER,
+//     password: process.env.DB_PASSWORD,
+//     database: process.env.DB_NAME,
+// });
+
+const conn = mysql.createConnection({
+    host: 'm3-db.cpqpqooy9dzn.ap-south-1.rds.amazonaws.com',
+    user: 'admin',
+    password: 'M3passb4u#0',
+    database: 'qrdb',
+})
 conn.connect((err) => {
     if (err) {
         console.error('Error connecting to the database:', err);
@@ -2733,20 +2733,27 @@ app.post("/addticket", async (req, res) => {
             conn.query(`select * from support_agents`, (err, result) => {
                 if (err) res.send(err);
                 if (result.length > 0) {
-                    for (i = 0; i < result.length; i++) {
-                        agents.push(result[i].a_email);
-                        if (result[i].a_category == "Account Management") {
-                            Account_Management.push(result[i].a_email);
-                        } else if (result[i].a_category == "Technical Support") {
-                            Technical_Support.push(result[i].a_email);
-                        } else if (result[i].a_category == "Payment Problem") {
-                            Payment_Problem.push(result[i].a_email);
+                    console.log(result);
+                    for (let i = 0; i < result.length; i++) {
+                        agents.push(result[i].email);
+                        console.log("agents", agents);
+                        if (result[i].category == "Account Management") {
+                            console.log(Account_Management);
+                            Account_Management.push(result[i].email);
+                        } else if (result[i].category == "Technical Support") {
+                            console.log(Technical_Support);
+                            Technical_Support.push(result[i].email);
+                        } else if (result[i].category == "Payment Problem") {
+                            console.log(Payment_Problem);
+                            Payment_Problem.push(result[i].email);
                         }
-                        else if (result[i].a_category == "Service Inquiry") {
-                            Service_Inquiry.push(result[i].a_email);
+                        else if (result[i].category == "Service Inquiry") {
+                            console.log(Service_Inquiry);
+                            Service_Inquiry.push(result[i].email);
                         }
-                        else if (result[i].a_category == "Feedback and Suggestions") {
-                            Feedback.push(result[i].a_email);
+                        else if (result[i].category == "Feedback and Suggestions") {
+                            console.log(Feedback);
+                            Feedback.push(result[i].email);
                         }
                     }
                     let categories = {
@@ -2763,7 +2770,6 @@ app.post("/addticket", async (req, res) => {
 
                     conn.query(`INSERT INTO support_ticket VALUES(?,?,?,?,?,?,?,?,?,?,?)`, [t_id, c_id, `email`, email, subject, t_type, description, `open`, `current_timestamp`, apikey, assignedAgent],
                         (err, resp) => {
-                            console.log(err);
                             if (err) return res.send(status.internalservererror());
                             //mail to support person for support ticket assigning
                             const smtpTransport = nodemailer.createTransport({
@@ -2790,9 +2796,9 @@ app.post("/addticket", async (req, res) => {
                             // };
 
 
-                            sendEmail(assignedAgent, `New support ticket (${t_id}): ${t_type}`, `Dear ${assignedAgent},\n\nYou have been assigned a new support ticket (${ticketId}) for the category '${t_type}'.\n\nPlease log in to the support portal to view and respond to this ticket.\n\nThank you,\nThe support team`).then(() => {
+                            sendEmail(assignedAgent, `New support ticket (${t_id}): ${t_type}`, `Dear ${assignedAgent},\n\nYou have been assigned a new support ticket (${t_id}) for the category '${t_type}'.\n\nPlease log in to the support portal to view and respond to this ticket.\n\nThank you,\nThe support team`).then(() => {
                                 console.log("Email Sent Scuuessfully");
-                                sendEmail(email, `Support ticket (${t_id}) issued`, `Dear customer,\n\nThank you for submitting a support ticket (${ticketId}).\n\nOur support team will review your ticket and get back to you as soon as possible.\n\nThank you,\nThe support team`).then(() => {
+                                sendEmail(email, `Support ticket (${t_id}) issued`, `Dear customer,\n\nThank you for submitting a support ticket (${t_id}).\n\nOur support team will review your ticket and get back to you as soon as possible.\n\nThank you,\nThe support team`).then(() => {
                                     return res.send(status.ok());;
                                 }).catch((error) => {
                                     console.log(`error in Sending  E-Mail ::::::: <${error}>`);
