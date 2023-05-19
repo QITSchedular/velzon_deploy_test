@@ -1091,7 +1091,7 @@ app.post("/sendmsgchannel", async function (req, res) {
             const iid = req.body.iid;
 
             let message = req.body.message;
-            let contacts = req.body.contacts;
+            let contacts = req.body.contacts.split(",");
 
             conn.query(`select * from instance where instance_id = '${iid}' and apikey = '${apikey}' and token = '${token}'`, async function (err, result) {
                 if (err || result.length <= 0) return res.send(status.forbidden());
@@ -1140,15 +1140,17 @@ app.post('/schedule', async (req, res) => {
             const to = await findEmail(apikey);
             const subject = `Regarding your Schedule Message on M3`;
 
-            let contacts = req.body.contacts;
+            let contacts = req.body.contacts_list;
+            console.log(req.body);
+            console.log(contacts);
 
             // let time = `${minute + 1} ${hour} ${date} ${month + 1} *`;
-            console.log("time", `[${time}]`);
+            // console.log("time", `[${time}]`);
             // console.log("token", token);
             // console.log("contacts", contacts);
             // console.log("type", req.body.type);
 
-            console.log(iid, apikey, token);
+            // console.log(iid, apikey, token);
 
             conn.query(`select * from instance where instance_id = '${iid}' and apikey = '${apikey}' and token = '${token}'`,
                 async function (err, result) {
@@ -1168,6 +1170,7 @@ app.post('/schedule', async (req, res) => {
                                     // console.log("0", contacts);
                                     // console.log("0", req.body.type);
                                     for (let i = 0; i < contacts.length; i++) {
+                                        console.log(contacts.length, contacts);
                                         const chatId = `91${contacts[i]}@c.us`;
 
                                         console.log("1", iid);
@@ -1246,9 +1249,12 @@ app.post('/schedule', async (req, res) => {
 
                             case 'document': {
                                 createfolder(`image_data\\${apikey}\\${iid}`);
+
                                 if (req.files && Object.keys(req.files).length !== 0) {
                                     const uploadedFile = req.files.image;
                                     const uploadPath = `${__dirname}/assets/upload/image_data/${apikey}/${iid}/${uploadedFile.name}`;
+
+                                    // console.log(contacts.length, contacts);
 
                                     uploadedFile.mv(uploadPath, async function (err) {
                                         if (err) res.send(status.badRequest());
@@ -1261,6 +1267,7 @@ app.post('/schedule', async (req, res) => {
                                         };
                                         const task = cron.schedule(time, async () => {
                                             let filepath = `${__dirname}/assets/upload/image_data/${apikey}/${iid}/${uploadedFile.name}`;
+                                            // console.log(contacts.length, contacts);
                                             for (let i = 0; i < contacts.length; i++) {
                                                 const chatId = `91${contacts[i]}@c.us`;
                                                 if (obj[iid]) {
@@ -1318,7 +1325,16 @@ app.post('/schedule', async (req, res) => {
                                                 }
                                                 else {
                                                     console.log("no iid found");
-                                                    res.send(status.userNotValid());
+                                                    // conn.query(`update schedule set status = ? where schedule_id = ?`, [`ERROR`, schedule_id],
+                                                    //     function (err, result) {
+                                                    //         if (err || result.affectedRows < 1) return console.log(status.internalservererror());
+                                                    //         let body = `Your scheduled task has not completed due to : disconnected instance.`;
+                                                    //         sendEmail(to, subject, body).then(() => {
+                                                    //             return console.log("Email Sent Scuuessfully");
+                                                    //         }).catch((error) => {
+                                                    //             return console.log(`error in Sending  E-Mail ::::::: <${error}>`);
+                                                    //         })
+                                                    //     });
                                                 }
                                             }
                                         }, { scheduled: false, timezone: 'Asia/Kolkata' });
@@ -3013,3 +3029,13 @@ app.listen(port, () => {
 // }, 5000)
 
 // task.stop();
+
+let arr = ['1', '2', '3'];
+
+let frmdata = new FormData();
+
+arr.forEach((value, index) => {
+    frmdata.append(`i${index}`, value);
+})
+
+console.log(frmdata);

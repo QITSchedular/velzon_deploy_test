@@ -372,7 +372,7 @@
                                     </div>
                                     <div class="mb-3">
                                         <div class="btn-group dropup">
-                                            <button id="sendmsg" class="btn btn-primary">
+                                            <button id="sendmsg" class="btn btn-primary btn-load">
                                                 <i class="mdi mdi-send me-lg-2 me-md-2"></i>
                                                 <span class="d-none d-lg-inline-block d-md-inline-block">
                                                     Send
@@ -421,7 +421,7 @@
                                     </div>
                                     <div class="mb-3">
                                         <div class="btn-group dropup">
-                                            <button class="btn btn-primary" id="send_image">
+                                            <button class="btn btn-primary btn-load" id="send_image">
                                                 <i class="mdi mdi-send me-lg-2 me-md-2"></i>
                                                 <span class="d-none d-lg-inline-block d-md-inline-block">
                                                     Send
@@ -469,7 +469,7 @@
                                 <div class="tab-content card-body">
                                     <div class="tab-pane active" id="bulkformgoogle" role="tabpanel">
                                         <div class="mb-3">
-                                            <button id="connect" class="btn btn-md btn-success">
+                                            <button id="connect" class="btn btn-md btn-success btn-load">
                                                 <span class="mx-1">
                                                     <i class="fa-solid fa-plug me-2"></i>Connect
                                                 </span>
@@ -507,7 +507,7 @@
                                             <input type="text" name="msggsheet" id="msggsheet"
                                                 class="form-control required" />
                                             <div class="mb-3">
-                                                <button id="sendtoallgsheet" class="btn btn-md btn-primary">
+                                                <button id="sendtoallgsheet" class="btn btn-md btn-primary btn-load">
                                                     <span class="mx-1">
                                                         <i class="fa-solid fa-paper-plane"></i>
                                                     </span>
@@ -523,7 +523,7 @@
                                             <textarea class="form-control mb-3" style="resize: none" cols="50" rows="6"
                                                 id="mesg1"></textarea>
                                             <div class="mb-3">
-                                                <button id="sendto1" class="btn btn-md btn-primary">
+                                                <button id="sendto1" class="btn btn-md btn-primary btn-load">
                                                     <span class="mx-1">
                                                         <i class="fa-solid fa-paper-plane"></i>
                                                     </span>
@@ -556,7 +556,7 @@
                                                 </label>
                                                 <input type="text" name="msg2" id="msg2" class="form-control" />
                                             </div>
-                                            <button id="sendtoall2" class="btn btn-md btn-primary">
+                                            <button id="sendtoall2" class="btn btn-md btn-primary btn-load">
                                                 <span class="mx-1">
                                                     <i class="fa-solid fa-paper-plane"></i>
                                                 </span>
@@ -571,7 +571,7 @@
                                             <div id="templatemsg" class="row mb-3"></div>
                                             <textarea class="form-control mb-3" style="resize: none" cols="50" rows="6"
                                                 id="mesg"></textarea>
-                                            <button id="sendto" class="btn btn-md btn-primary">
+                                            <button id="sendto" class="btn btn-md btn-primary btn-load">
                                                 <span class="mx-1">
                                                     <i class="fa-solid fa-paper-plane"></i>
                                                 </span>
@@ -608,7 +608,7 @@
                                                         data-type="message"></textarea>
                                                 </div>
                                                 <div class="my-2 d-flex justify-content-end">
-                                                    <button class="btn btn-primary" id="sendmsg_channel">
+                                                    <button class="btn btn-primary btn-load" id="sendmsg_channel">
                                                         <i class="mdi mdi-send me-lg-2 me-md-2"></i>
                                                         <span class="d-none d-lg-inline-block d-md-inline-block">
                                                             Send
@@ -690,7 +690,7 @@
                         <div class="modal-header bg-soft-info p-3">
                             <h5 class="modal-title" id="modallbl">Schedule Document</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
-                                id="close-modal"></button>
+                                id="close-modal-document"></button>
                         </div>
                         <div class="modal-body">
                             <div class="bg-warning bg-opacity-10 border border-warning p-2 rounded-3 text-warning mb-3">
@@ -719,7 +719,8 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button class="btn btn-primary" id="send_document_schedule_btn">
+                            <button class="btn btn-primary btn-load" id="send_document_schedule_btn">
+                                <i class="mdi mdi-clock-outline me-2"></i>
                                 Schedule
                             </button>
                         </div>
@@ -1223,12 +1224,16 @@
 
                 if (cDate < new Date(`${date_val} ${time_val}`)) {
                     let formData = new FormData();
+                    let contacts = [];
+                    contacts.push($('#document_phone').val().trim());
                     formData.append("iid", iid);
                     formData.append("image", document.getElementById('document_file').files[0]);
                     formData.append("token", $('#token').val().trim());
                     formData.append("type", `document`);
                     formData.append("time", time);
-                    formData.append("contacts", [$('#document_phone').val().trim()]);
+                    contacts.forEach((value, index) => {
+                        formData.append(`contacts_list`, value);
+                    })
                     $.ajax({
                         url: "/schedule",
                         method: "POST",
@@ -1342,7 +1347,7 @@
                         url: "/schedule",
                         method: "POST",
                         data: {
-                            "contacts": [$('#phone').val().trim()],
+                            "contacts_list": [$('#phone').val().trim(), $('#phone').val().trim(), $('#phone').val().trim()],
                             "message": $('#msg').val().trim(),
                             "token": $('#token').val().trim(),
                             "type": 'message',
