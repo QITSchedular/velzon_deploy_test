@@ -1140,17 +1140,9 @@ app.post('/schedule', async (req, res) => {
             const to = await findEmail(apikey);
             const subject = `Regarding your Schedule Message on M3`;
 
-            let contacts = req.body.contacts_list;
-            console.log(req.body);
-            console.log(contacts);
+
 
             // let time = `${minute + 1} ${hour} ${date} ${month + 1} *`;
-            // console.log("time", `[${time}]`);
-            // console.log("token", token);
-            // console.log("contacts", contacts);
-            // console.log("type", req.body.type);
-
-            // console.log(iid, apikey, token);
 
             conn.query(`select * from instance where instance_id = '${iid}' and apikey = '${apikey}' and token = '${token}'`,
                 async function (err, result) {
@@ -1162,55 +1154,28 @@ app.post('/schedule', async (req, res) => {
                                     "api": "/sendmsg",
                                     "body": req.body.message,
                                     "contacts": contacts
-                                }, message = req.body.message;
+                                }, message = req.body.message, contacts = req.body.contacts_list;
+
                                 const task = cron.schedule(time, () => {
 
-                                    // console.log("0", iid);
-                                    // console.log("0", token);
-                                    // console.log("0", contacts);
-                                    // console.log("0", req.body.type);
                                     for (let i = 0; i < contacts.length; i++) {
                                         console.log(contacts.length, contacts);
                                         const chatId = `91${contacts[i]}@c.us`;
 
-                                        console.log("1", iid);
-                                        console.log("1", token);
-                                        console.log("1", contacts);
-                                        console.log("1", req.body.type);
                                         if (obj[iid]) {
                                             obj[iid].send_whatsapp_message(chatId, message).then((messageId) => {
-                                                console.log("2", iid);
-                                                console.log("2", token);
-                                                console.log("2", contacts);
-                                                console.log("2", req.body.type);
                                                 let msgid = crypto.randomBytes(8).toString("hex");
+
                                                 conn.query(`insert into message values(?,?,'Schedule Single Message',?,?,?,?,CURRENT_TIMESTAMP)`,
                                                     [msgid, message, chatId, iid, apikey, token],
                                                     function (err, result) {
-                                                        // console.log("3", iid);
-                                                        // console.log("3", token);
-                                                        // console.log("3", contacts);
-                                                        // console.log("3", req.body.type);
                                                         if (err || result.affectedRows < 1) return status.internalservererror();
                                                         if (i === contacts.length - 1) {
-                                                            // console.log("4", iid);
-                                                            // console.log("4", token);
-                                                            // console.log("4", contacts);
-                                                            // console.log("4", req.body.type);
-                                                            // task.stop();
                                                             conn.query(`update schedule set status = ? where schedule_id = ?`, [`DONE`, schedule_id],
                                                                 function (err, result) {
-                                                                    console.log("5", iid);
-                                                                    console.log("5", token);
-                                                                    console.log("5", contacts);
-                                                                    console.log("5", req.body.type);
                                                                     if (err || result.affectedRows < 1) return console.log(status.internalservererror());
                                                                     let body = "Your scheduled task has completed without any error.";
                                                                     sendEmail(to, subject, body).then(() => {
-                                                                        console.log("6", iid);
-                                                                        console.log("6", token);
-                                                                        console.log("6", contacts);
-                                                                        console.log("6", req.body.type);
                                                                         return console.log("Email Sent Scuuessfully");
                                                                     }).catch((error) => {
                                                                         return console.log(`error in Sending  E-Mail ::::::: <${error}>`);
@@ -1233,8 +1198,17 @@ app.post('/schedule', async (req, res) => {
                                             })
                                         }
                                         else {
-                                            // res.send(status.userNotValid());
                                             console.log("no iid found");
+                                            // conn.query(`update schedule set status = ? where schedule_id = ?`, [`ERROR`, schedule_id],
+                                            //     function (err, result) {
+                                            //         if (err || result.affectedRows < 1) return console.log(status.internalservererror());
+                                            //         let body = `Your scheduled task has not completed due to : disconnected instance.`;
+                                            //         sendEmail(to, subject, body).then(() => {
+                                            //             return console.log("Email Sent Scuuessfully");
+                                            //         }).catch((error) => {
+                                            //             return console.log(`error in Sending  E-Mail ::::::: <${error}>`);
+                                            //         })
+                                            //     });
                                         }
                                     }
                                 }, { scheduled: true, timezone: 'Asia/Kolkata' });
@@ -1267,7 +1241,7 @@ app.post('/schedule', async (req, res) => {
                                         };
                                         const task = cron.schedule(time, async () => {
                                             let filepath = `${__dirname}/assets/upload/image_data/${apikey}/${iid}/${uploadedFile.name}`;
-                                            // console.log(contacts.length, contacts);
+
                                             for (let i = 0; i < contacts.length; i++) {
                                                 const chatId = `91${contacts[i]}@c.us`;
                                                 if (obj[iid]) {
@@ -1280,10 +1254,10 @@ app.post('/schedule', async (req, res) => {
                                                                 function (err, result) {
                                                                     if (err || result.affectedRows < 1) return res.send(status.internalservererror());
                                                                     if (i === contacts.length - 1) {
-                                                                        task.stop();
                                                                         conn.query(`update schedule set status = ? where schedule_id = ?`, [`DONE`, schedule_id],
                                                                             function (err, result) {
                                                                                 if (err || result.affectedRows < 1) return console.log(status.internalservererror());
+
                                                                                 let body = "Your scheduled task has completed without any error.";
                                                                                 sendEmail(to, subject, body).then(() => {
                                                                                     return console.log("Email Sent Scuuessfully");
@@ -3029,13 +3003,3 @@ app.listen(port, () => {
 // }, 5000)
 
 // task.stop();
-
-let arr = ['1', '2', '3'];
-
-let frmdata = new FormData();
-
-arr.forEach((value, index) => {
-    frmdata.append(`i${index}`, value);
-})
-
-console.log(frmdata);
