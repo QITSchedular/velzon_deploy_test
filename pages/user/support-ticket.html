@@ -208,75 +208,44 @@
                                 <div class="card-header border-0">
                                     <div class="d-flex align-items-center">
                                         <h5 class="card-title mb-0 flex-grow-1">Tickets Summary</h5>
-                                        <div class="d-flex flex-wrap gap-2">
-                                            <button id="add_instance_btn" type="button" class="btn btn-success"
-                                                data-bs-toggle="modal" data-bs-target="#createTicket">
-                                                <i class="ri-add-circle-line align-middle me-1"></i>
-                                                Create Ticket
-                                            </button>
-                                        </div>
                                     </div>
                                 </div>
                                 <div class="card-body border border-dashed border-end-0 border-start-0">
-                                    <div class="row g-3">
-                                        <div class="col-lg-12 col-md-12">
-                                            <div class="search-box">
-                                                <input type="text" class="form-control bg-light border-light"
-                                                    placeholder="Search for ticket ..." id="search_ticket">
-                                                <i class="ri-search-line search-icon"></i>
-                                            </div>
+                                    <div class="d-flex gap-0 justify-content-between">
+                                        <div class="search-box">
+                                            <input type="text" class="form-control" placeholder="Search for ticket ..."
+                                                id="search_ticket">
+                                            <i class="ri-search-line search-icon"></i>
                                         </div>
+                                        <button id="add_instance_btn" type="button" class="btn btn-success"
+                                            data-bs-toggle="modal" data-bs-target="#raise_ticket_modal">
+                                            <i class="ri-add-circle-line align-middle me-lg-1"></i>
+                                            <span class="d-none d-lg-inline-block">Raise Ticket</span>
+                                        </button>
                                     </div>
                                 </div>
                                 <!--end card-body-->
                                 <div class="card-body p-4">
-                                    <div class="table-responsive table-card mb-4">
+                                    <div class="table-responsive table-card">
                                         <table class="table align-middle table-nowrap" id="customerTable">
                                             <thead class="table-light">
                                                 <tr>
-                                                    <th>client Ticket_id</th>
-                                                    <th>Category</th>
-                                                    <th>Subject</th>
-                                                    <th>Type</th>
-                                                    <th>Status</th>
+                                                    <th class="w-20">Ticket ID</th>
+                                                    <th class="w-20">Subject</th>
+                                                    <th class="w-25">Category</th>
+                                                    <th class="w-20">Status</th>
+                                                    <th class="w-15">Type</th>
                                                 </tr>
                                             </thead>
                                             <tbody class="list form-check-all d-none" id="ticket-data"></tbody>
                                         </table>
-                                        <div class="noresult d-none py-5" id="noresult_ticket">
+                                        <div class="noresult d-none p-5" id="noresult_ticket">
                                             <div class="text-center">
                                                 <lord-icon src="https://cdn.lordicon.com/msoeawqm.json" trigger="loop"
                                                     colors="primary:#212529,secondary:#405189"
                                                     style="width: 75px; height: 75px">
                                                 </lord-icon>
-                                                <h5 class="mt-2">No Ticket issued</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Modal -->
-                                    <div class="modal fade flip" id="deleteOrder" tabindex="-1" aria-hidden="true">
-                                        <div class="modal-dialog modal-dialog-centered">
-                                            <div class="modal-content">
-                                                <div class="modal-body p-5 text-center">
-                                                    <lord-icon src="https://cdn.lordicon.com/gsqxdxog.json"
-                                                        trigger="loop" colors="primary:#405189,secondary:#f06548"
-                                                        style="width:90px;height:90px"></lord-icon>
-                                                    <div class="mt-4 text-center">
-                                                        <h4>You are about to delete a order ?</h4>
-                                                        <p class="text-muted fs-14 mb-4">Deleting your order will remove
-                                                            all of your information from our database.</p>
-                                                        <div class="hstack gap-2 justify-content-center remove">
-                                                            <button
-                                                                class="btn btn-link link-success fw-medium text-decoration-none"
-                                                                id="deleteRecord-close" data-bs-dismiss="modal"><i
-                                                                    class="ri-close-line me-1 align-middle"></i>
-                                                                Close</button>
-                                                            <button class="btn btn-danger" id="delete-record">Yes,
-                                                                Delete It</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                <h5 class="mt-2">No Ticket Found</h5>
                                             </div>
                                         </div>
                                     </div>
@@ -524,15 +493,15 @@
                             </div>
                         </div>
                     </div>
-                    <!--end row-->
+
                     <!-- insert ticket modal -->
-                    <div class="modal fade zoomIn" id="createTicket" tabindex="-1" aria-hidden="true">
+                    <div class="modal flip" id="raise_ticket_modal" tabindex="-1" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered modal-lg">
                             <div class="modal-content border-0">
                                 <div class="modal-header p-3 bg-soft-info">
-                                    <h5 class="modal-title">Create Ticket</h5>
+                                    <h5 class="modal-title">Raise Ticket</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
-                                        id="close-modal"></button>
+                                        id="raise_ticket_modal_close"></button>
                                 </div>
                                 <div class="modal-body">
                                     <div class="row g-3">
@@ -540,7 +509,7 @@
                                             <label for="t_subject" class="form-label">
                                                 Subject
                                                 <span class="text-danger">*</span>
-                                                <span class="text-danger" id="err_t_subjext"></span>
+                                                <span class="text-danger" id="err_t_subject"></span>
                                             </label>
                                             <input type="text" id="t_subject" class="form-control required"
                                                 placeholder="Subject" data-type="name" />
@@ -552,7 +521,7 @@
                                                 <span class="text-danger" id="err_t_type"></span>
                                             </label>
                                             <select class="form-select required" data-plugin="choices"
-                                                name="ticket-status" id="t_type" data-type="name">
+                                                data-type="message" id="t_type" data-type="name">
                                                 <option value="" selected disabled>Select Ticket Type</option>
                                                 <option value="Account Management">Account Management</option>
                                                 <option value="Technical Support">Technical Support</option>
@@ -566,22 +535,21 @@
                                             <label for="t_desc" class="form-label">
                                                 Description
                                                 <span class="text-danger">*</span>
-                                                <span class="text-danger" id="err_t_desc"></span>
+                                                <span class="text-danger" id="err_t_description"></span>
                                             </label>
                                             <textarea class="form-control" style="resize: none;" id="t_description"
-                                                rows="10"></textarea>
+                                                rows="10" data-type="message"></textarea>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <div class="hstack gap-2 justify-content-end">
-                                        <button class="btn btn-light">Close</button>
-                                        <button class="btn btn-success" id="add-ticket">
-                                            Add Ticket
-                                        </button>
-                                    </div>
+                                    <button class="btn btn-primary btn-load" id="add_ticket">
+                                        Raise Ticket
+                                    </button>
                                 </div>
+
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -677,6 +645,7 @@
     <script>
         $(document).ready(() => {
             chkLogin();
+
             function ticket_data(obj) {
                 $.ajax({
                     url: "/getdata",
@@ -708,11 +677,24 @@
                                 for (var i in val) {
                                     output += `<tr>
                                         <td><a href="/support-ticket/${val[i].client_id}">#${val[i].client_id}</a></td>
-                                        <td>${val[i].category}</td>
                                         <td>${val[i].t_subject}</td>
-                                        <td>${val[i].t_type}</td>
-                                        <td>${val[i].status}</td>
-                                    </tr>`;
+                                        <td>${val[i].t_type}</td>`;
+
+                                    switch (val[i].status) {
+                                        case 'open': output += `<td><span class="badge badge-soft-success">${val[i].status}</span></td>`;
+                                            break;
+                                        case 'inprogress': output += `<td><span class="badge badge-soft-warning">${val[i].status}</span></td>`;
+                                            break;
+                                        case 'closed': output += `<td><span class="badge badge-soft-danger">${val[i].status}</span></td>`;
+                                            break;
+                                    }
+
+                                    switch (val[i].category) {
+                                        case 'email': output += `<td><i class="bx bxl-gmail align-middle text-danger fs-18"></i></td></tr>`;
+                                            break;
+                                        case 'whatsapp': output += `<td><i class="ri-whatsapp-fill align-middle text-success fs-18"></i></td></tr>`;
+                                            break;
+                                    }
                                 }
                                 $("#ticket-data").html(output);
                             }
@@ -741,58 +723,96 @@
                 }
             })
 
-
-            $('#t_subject,#t_description').val('abc');
-            $("#add-ticket").on('click', function () {
-                $.ajax({
-                    url: "/getdata",
-                    method: "post",
-                    data: {
-                        obj: {
-                            table: "users",
-                            paramstr: true,
-                        }
-                    },
-                    success: function (data) {
+            $(document).on('click', "#add_ticket", function () {
+                nullfield_validation('t_subject');
+                nullfield_validation('t_type');
+                nullfield_validation('t_description');
+                if (objFlag.flag_t_subject == 0 && objFlag.flag_t_type == 0 && objFlag.flag_t_description == 0) {
+                    oninput_validation('t_subject');
+                    oninput_validation('t_type');
+                    oninput_validation('t_description');
+                    if (objFlag.flag_t_subject == 0 && objFlag.flag_t_type == 0 && objFlag.flag_t_description == 0) {
                         $.ajax({
                             url: "/addticket",
                             method: "POST",
                             data: {
-                                "email": data[0].email,
                                 "subject": $('#t_subject').val().trim(),
                                 "t_type": $('#t_type').val().trim(),
                                 "description": $('#t_description').val().trim()
                             },
-                            success: function (data1) {
-                                console.log(data1);
-                                if (data1.status_code == 200) {
-                                    $('#createTicket').removeClass('show');
-                                    $('#createTicket').css('display', 'none');
-                                    document.querySelector('.modal-backdrop').remove();
-                                    swal({
-                                        title: "Ticket Registered!!!",
-                                        type: 'success',
-                                        timer: 3000,
-                                        showConfirmButton: false,
-                                    })
-                                    ticket_data({
-                                        table: "support_ticket",
-                                        paramstr: true,
-                                    });
+                            beforeSend: function () {
+                                $('#add_ticket')
+                                    .removeClass('btn-primary btn-success')
+                                    .addClass('btn-warning')
+                                    .html(`<span class="d-flex align-items-center">
+                                        <span class="flex-grow-1 me-lg-2 me-md-2">
+                                            Sending
+                                        </span>
+                                        <span class="spinner-border flex-shrink-0" role="status">
+                                            <span class="visually-hidden"></span>
+                                        </span>
+                                    </span>`);
+                            },
+                            success: function (val) {
+                                switch (val.status_code) {
+                                    case '401': {
+                                        InvalidUser();
+                                        break;
+                                    }
+
+                                    case '500': {
+                                        InternalServerError();
+                                        break;
+                                    }
+
+                                    case '400': {
+                                        $('#raise_ticket_modal_close').click();
+                                        swal({
+                                            title: "Ticket not Raised",
+                                            type: 'error',
+                                            timer: 2500,
+                                            showConfirmButton: false,
+                                        }).then(() => {
+                                            $('#t_subject,#t_description,#t_type').val('');
+                                            $('#add_ticket')
+                                                .removeClass('btn-success btn-warning')
+                                                .addClass('btn-primary')
+                                                .html(`Raise Ticket`);
+                                        })
+                                        break;
+                                    }
+
+                                    case '200': {
+                                        swal({
+                                            title: "Ticket Registered!!!",
+                                            type: 'success',
+                                            timer: 3000,
+                                            showConfirmButton: false,
+                                        }).then(() => {
+                                            $('#t_subject,#t_description,#t_type').val('').removeClass('form-control-danger form-control-success');
+                                            $('#add_ticket')
+                                                .removeClass('btn-primary btn-warning')
+                                                .addClass('btn-success')
+                                                .html(`Ticket Raised`);
+                                            $('#raise_ticket_modal_close').click();
+                                            $('#add_ticket')
+                                                .removeClass('btn-success btn-warning')
+                                                .addClass('btn-primary')
+                                                .html(`Raise Ticket`);
+                                        })
+                                        break;
+                                    }
                                 }
-                                else {
-                                    swal({
-                                        title: "Ticket not Registered!!!",
-                                        text: 'Please Try Again!!!',
-                                        type: 'error',
-                                        timer: 3000,
-                                        showConfirmButton: false,
-                                    })
-                                }
+
+
+                                ticket_data({
+                                    table: "support_ticket",
+                                    paramstr: true,
+                                });
                             }
                         })
                     }
-                })
+                }
             })
         })
     </script>

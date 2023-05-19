@@ -1318,7 +1318,7 @@ app.post('/schedule', async (req, res) => {
                                                 }
                                                 else {
                                                     console.log("no iid found");
-                                                    // res.send(status.userNotValid());
+                                                    res.send(status.userNotValid());
                                                 }
                                             }
                                         }, { scheduled: false, timezone: 'Asia/Kolkata' });
@@ -1333,8 +1333,6 @@ app.post('/schedule', async (req, res) => {
                                 break;
                             }
                         }
-
-
                     } catch (error) {
                         console.log(`Failed to schedule message: ${error}`);
                         return res.send(status.expectationFailed());
@@ -2718,7 +2716,7 @@ app.post("/addticket", async (req, res) => {
             const t_id = `ST${crypto.randomBytes(8).toString("hex")}`;
             const c_id = `ST${crypto.randomBytes(4).toString('Base64url').replace(/[^A-Z0-9]/g, '')}`;
 
-            let email = req.body.email;
+            let email = await findEmail(apikey);
             let subject = req.body.subject;
             let t_type = req.body.t_type;
             let description = req.body.description;
@@ -2731,115 +2729,73 @@ app.post("/addticket", async (req, res) => {
             let Feedback = new Array();
 
             conn.query(`select * from support_agents`, (err, result) => {
-                if (err) res.send(err);
-                if (result.length > 0) {
-                    console.log(result);
-                    for (let i = 0; i < result.length; i++) {
-                        agents.push(result[i].email);
-                        console.log("agents", agents);
-                        if (result[i].category == "Account Management") {
-                            console.log(Account_Management);
-                            Account_Management.push(result[i].email);
-                        } else if (result[i].category == "Technical Support") {
-                            console.log(Technical_Support);
-                            Technical_Support.push(result[i].email);
-                        } else if (result[i].category == "Payment Problem") {
-                            console.log(Payment_Problem);
-                            Payment_Problem.push(result[i].email);
-                        }
-                        else if (result[i].category == "Service Inquiry") {
-                            console.log(Service_Inquiry);
-                            Service_Inquiry.push(result[i].email);
-                        }
-                        else if (result[i].category == "Feedback and Suggestions") {
-                            console.log(Feedback);
-                            Feedback.push(result[i].email);
-                        }
+                if (err || result.length <= 0) res.send(status.internalservererror());
+                for (let i = 0; i < result.length; i++) {
+                    agents.push(result[i].email);
+                    console.log("agents", agents);
+                    if (result[i].category == "Account Management") {
+                        console.log(Account_Management);
+                        Account_Management.push(result[i].email);
+                    } else if (result[i].category == "Technical Support") {
+                        console.log(Technical_Support);
+                        Technical_Support.push(result[i].email);
+                    } else if (result[i].category == "Payment Problem") {
+                        console.log(Payment_Problem);
+                        Payment_Problem.push(result[i].email);
                     }
-                    let categories = {
-                        "Account Management": Account_Management,
-                        "Technical Support": Technical_Support,
-                        "Payment Problem": Payment_Problem,
-                        "Service Inquiry": Service_Inquiry,
-                        "Feedback and Suggestions": Feedback,
-                    };
-                    console.log(categories);
-                    const agentsInCategory = categories[t_type];
-                    const assignedAgent = agentsInCategory[Math.floor(Math.random() * agentsInCategory.length)];
+                    else if (result[i].category == "Service Inquiry") {
+                        console.log(Service_Inquiry);
+                        Service_Inquiry.push(result[i].email);
+                    }
+                    else if (result[i].category == "Feedback and Suggestions") {
+                        console.log(Feedback);
+                        Feedback.push(result[i].email);
+                    }
+                }
+                let categories = {
+                    "Account Management": Account_Management,
+                    "Technical Support": Technical_Support,
+                    "Payment Problem": Payment_Problem,
+                    "Service Inquiry": Service_Inquiry,
+                    "Feedback and Suggestions": Feedback,
+                };
+                console.log(categories);
+                const agentsInCategory = categories[t_type];
+                const assignedAgent = agentsInCategory[Math.floor(Math.random() * agentsInCategory.length)];
 
 
-                    conn.query(`INSERT INTO support_ticket VALUES(?,?,?,?,?,?,?,?,?,?,?)`, [t_id, c_id, `email`, email, subject, t_type, description, `open`, `current_timestamp`, apikey, assignedAgent],
-                        (err, resp) => {
-                            if (err) return res.send(status.internalservererror());
-                            //mail to support person for support ticket assigning
-                            const smtpTransport = nodemailer.createTransport({
-                                service: 'gmail',
-                                auth: {
-                                    user: "dashboardcrm.2022@gmail.com",
-                                    pass: "dbwtdfmwrxmwzcat",
-                                }
-                            });
+                conn.query(`INSERT INTO support_ticket VALUES(?,?,?,?,?,?,?,?,?,?,?)`,
+                    [t_id, c_id, `email`, email, subject, t_type, description, `open`, `current_timestamp`, apikey, assignedAgent],
+                    (err, resp) => {
+                        if (err) return res.send(status.internalservererror());
+                        //mail to support person for support ticket assigning
+                        const smtpTransport = nodemailer.createTransport({
+                            service: 'gmail',
+                            auth: {
+                                user: "dashboardcrm.2022@gmail.com",
+                                pass: "dbwtdfmwrxmwzcat",
+                            }
+                        });
 
-                            // Define the email options
-                            // const mailOptions = {
-                            //     from: 'dashboardcrm.2022@gmail.com',
-                            //     to: assignedAgent,
-                            //     subject: `New support ticket (${ticketId}): ${t_type}`,
-                            //     text: `Dear ${assignedAgent},\n\nYou have been assigned a new support ticket (${ticketId}) for the category '${t_type}'.\n\nPlease log in to the support portal to view and respond to this ticket.\n\nThank you,\nThe support team`
-                            // };
-
-                            // const Acknowledgementmail = {
-                            //     from: 'dashboardcrm.2022@gmail.com',
-                            //     to: email,
-                            //     subject: `Support ticket (${ticketId}) submitted`,
-                            //     text: `Dear customer,\n\nThank you for submitting a support ticket (${ticketId}).\n\nOur support team will review your ticket and get back to you as soon as possible.\n\nThank you,\nThe support team`
-                            // };
-
-
-                            sendEmail(assignedAgent, `New support ticket (${t_id}): ${t_type}`, `Dear ${assignedAgent},\n\nYou have been assigned a new support ticket (${t_id}) for the category '${t_type}'.\n\nPlease log in to the support portal to view and respond to this ticket.\n\nThank you,\nThe support team`).then(() => {
-                                console.log("Email Sent Scuuessfully");
-                                sendEmail(email, `Support ticket (${t_id}) issued`, `Dear customer,\n\nThank you for submitting a support ticket (${t_id}).\n\nOur support team will review your ticket and get back to you as soon as possible.\n\nThank you,\nThe support team`).then(() => {
-                                    return res.send(status.ok());;
-                                }).catch((error) => {
-                                    console.log(`error in Sending  E-Mail ::::::: <${error}>`);
-                                    return res.send(status.badRequest());
-                                })
+                        sendEmail(assignedAgent, `New support ticket (${t_id}): ${t_type}`, `Dear ${assignedAgent},\n\nYou have been assigned a new support ticket (${t_id}) for the category '${t_type}'.\n\nPlease log in to the support portal to view and respond to this ticket.\n\nThank you,\nThe support team`).then(() => {
+                            console.log("Email Sent Scuuessfully");
+                            sendEmail(email, `Support ticket (${t_id}) issued`, `Dear customer,\n\nThank you for submitting a support ticket (${t_id}).\n\nOur support team will review your ticket and get back to you as soon as possible.\n\nThank you,\nThe support team`).then(() => {
+                                return res.send(status.ok());;
                             }).catch((error) => {
                                 console.log(`error in Sending  E-Mail ::::::: <${error}>`);
                                 return res.send(status.badRequest());
                             })
-                            // Send the email
-                            // smtpTransport.sendMail(Acknowledgementmail, function (error, response) {
-                            //     if (error) {
-                            //         console.log(error);
-                            //     } else {
-                            //         console.log('Message sent: ' + response.message);
-                            //     }
-                            //     smtpTransport.close();
-                            // });
-
-                            // smtpTransport.sendMail(mailOptions, function (error, response) {
-                            //     if (error) {
-                            //         console.log(error);
-                            //     } else {
-                            //         console.log('Message sent: ' + response.message);
-                            //     }
-                            //     smtpTransport.close();
-                            // });
-
-                        });
-                }
+                        }).catch((error) => {
+                            console.log(`error in Sending  E-Mail ::::::: <${error}>`);
+                            return res.send(status.badRequest());
+                        })
+                    });
             })
         } else res.send(status.unauthorized());
     } catch (e) {
         //console.log(e);
         res.send(status.unauthorized());
     }
-
-
-
-
-
 });
 
 app.post("/getTickets", (req, res) => {
