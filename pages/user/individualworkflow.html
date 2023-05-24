@@ -1199,7 +1199,7 @@
         let channel_contact_mail = new Array();
 
         $(document).ready(function () {
-
+            chkLogin();
             function displayCards(bodydata, iconclass, title) {
                 let output = "";
                 bodydata = $.parseJSON(bodydata);
@@ -1255,18 +1255,8 @@
                 $("#main-flow").append(output);
             }
 
-            let iid = document.URL.split("/")[4];
-
-            $.ajax({
-                url: "/validateInstance",
-                method: "POST",
-                data: { iid: iid },
-                success: function (data) {
-                    if (data.status_code != 200) {
-                        location.href = "/instance";
-                    }
-                }
-            })
+            const iid = document.URL.split("/")[4];
+            const wid = new URLSearchParams(location.search).get('id');
 
             $(".required").on('focusout', function () {
                 onfocusout_validation($(this).attr('id'));
@@ -1305,7 +1295,7 @@
                 data: {
                     obj: {
                         table: "workflow",
-                        paramstr: `workflow_id='${page[6]}' order by index_no`
+                        paramstr: `workflow_id='${wid}' order by index_no`
                     }
                 },
                 success: function (data) {
@@ -1530,7 +1520,7 @@
                             data: {
                                 obj: {
                                     table: "workflow",
-                                    paramstr: `workflow_id='${page[6]}'`
+                                    paramstr: `workflow_id='${wid}'`
                                 }
                             },
                             success: (data) => {
@@ -1547,7 +1537,7 @@
                                         data: {
                                             table: "workflow",
                                             paramstr: paramstr,
-                                            condition: `workflow_id='${page[6]}'`
+                                            condition: `workflow_id='${wid}'`
                                         },
                                         success: function (data) {
                                             // console.log(data);
@@ -1585,7 +1575,7 @@
                                         url: "/insertWorkflowApi",
                                         method: "POST",
                                         data: {
-                                            wfid: page[6],
+                                            wfid: wid,
                                             wfname: $("#wfname").text(),
                                             api_name: "/sendmsg",
                                             index_no: data.length,
@@ -1946,7 +1936,7 @@
                             data: {
                                 obj: {
                                     table: "workflow",
-                                    paramstr: `workflow_id='${page[6]}'`
+                                    paramstr: `workflow_id='${wid}'`
                                 }
                             },
                             success: (data) => {
@@ -1961,7 +1951,7 @@
                                         data: {
                                             table: "workflow",
                                             paramstr: paramstr,
-                                            condition: `workflow_id='${page[6]}'`
+                                            condition: `workflow_id='${wid}'`
                                         },
                                         success: function (data) {
                                             // console.log(data);
@@ -2000,7 +1990,7 @@
                                         url: "/insertWorkflowApi",
                                         method: "POST",
                                         data: {
-                                            wfid: page[6],
+                                            wfid: wid,
                                             wfname: $("#wfname").text(),
                                             api_name: "/sendtoallgsheet",
                                             index_no: data.length,
@@ -2069,7 +2059,7 @@
                         data: {
                             obj: {
                                 table: "workflow",
-                                paramstr: `workflow_id='${page[6]}' order by index_no`
+                                paramstr: `workflow_id='${wid}' order by index_no`
                             }
                         },
                         success: function (workflowdata) {
@@ -2345,7 +2335,7 @@
                             data: {
                                 obj: {
                                     table: "workflow",
-                                    paramstr: `workflow_id='${page[6]}'`
+                                    paramstr: `workflow_id='${wid}'`
                                 }
                             },
                             success: (data) => {
@@ -2360,7 +2350,7 @@
                                         data: {
                                             table: "workflow",
                                             paramstr: paramstr,
-                                            condition: `workflow_id='${page[6]}'`
+                                            condition: `workflow_id='${wid}'`
                                         },
                                         success: function (data) {
                                             // console.log(data);
@@ -2399,7 +2389,7 @@
                                         url: "/insertWorkflowApi",
                                         method: "POST",
                                         data: {
-                                            wfid: page[6],
+                                            wfid: wid,
                                             wfname: $("#wfname").text(),
                                             api_name: "/sendToAllUsingLfile",
                                             index_no: data.length,
@@ -2473,7 +2463,7 @@
                             data: {
                                 obj: {
                                     table: "workflow",
-                                    paramstr: `workflow_id='${page[6]}'`
+                                    paramstr: `workflow_id='${wid}'`
                                 }
                             },
                             success: (data) => {
@@ -2488,7 +2478,7 @@
                                         data: {
                                             table: "workflow",
                                             paramstr: paramstr,
-                                            condition: `workflow_id='${page[6]}'`
+                                            condition: `workflow_id='${wid}'`
                                         },
                                         success: function (data) {
                                             // console.log(data);
@@ -2525,7 +2515,7 @@
                                         url: "/insertWorkflowApi",
                                         method: "POST",
                                         data: {
-                                            wfid: page[6],
+                                            wfid: wid,
                                             wfname: $("#wfname").text(),
                                             api_name: "/sendEmailToAll",
                                             index_no: data.length,
@@ -2598,7 +2588,7 @@
                             data: {
                                 obj: {
                                     table: "workflow",
-                                    paramstr: `workflow_id='${page[6]}'`
+                                    paramstr: `workflow_id='${wid}'`
                                 }
                             },
                             success: (data) => {
@@ -2614,7 +2604,7 @@
                                         data: {
                                             table: "workflow",
                                             paramstr: paramstr,
-                                            condition: `workflow_id='${page[6]}'`
+                                            condition: `workflow_id='${wid}'`
                                         },
                                         success: function (data) {
                                             // console.log(data);
@@ -2652,7 +2642,7 @@
                                         url: "/insertWorkflowApi",
                                         method: "POST",
                                         data: {
-                                            wfid: page[6],
+                                            wfid: wid,
                                             wfname: $("#wfname").text(),
                                             api_name: "/sendMail",
                                             index_no: data.length,
@@ -2726,7 +2716,7 @@
                             data: {
                                 obj: {
                                     table: "workflow",
-                                    paramstr: `workflow_id='${page[6]}'`
+                                    paramstr: `workflow_id='${wid}'`
                                 }
                             },
                             success: (data) => {
@@ -2742,7 +2732,7 @@
                                         data: {
                                             table: "workflow",
                                             paramstr: paramstr,
-                                            condition: `workflow_id='${page[6]}'`
+                                            condition: `workflow_id='${wid}'`
                                         },
                                         success: function (data) {
                                             // console.log(data);
@@ -2780,7 +2770,7 @@
                                         url: "/insertWorkflowApi",
                                         method: "POST",
                                         data: {
-                                            wfid: page[6],
+                                            wfid: wid,
                                             wfname: $("#wfname").text(),
                                             api_name: "/sendEmailToAll",
                                             index_no: data.length,
@@ -3028,7 +3018,7 @@
                             data: {
                                 obj: {
                                     table: "workflow",
-                                    paramstr: `workflow_id='${page[6]}'`
+                                    paramstr: `workflow_id='${wid}'`
                                 }
                             },
                             success: (data) => {
@@ -3045,7 +3035,7 @@
                                         data: {
                                             table: "workflow",
                                             paramstr: paramstr,
-                                            condition: `workflow_id='${page[6]}'`
+                                            condition: `workflow_id='${wid}'`
                                         },
                                         success: function (data) {
                                             // console.log(data);
@@ -3083,7 +3073,7 @@
                                         url: "/insertWorkflowApi",
                                         method: "POST",
                                         data: {
-                                            wfid: page[6],
+                                            wfid: wid,
                                             wfname: $("#wfname").text(),
                                             api_name: "/tempmsg",
                                             index_no: data.length,
@@ -3178,7 +3168,7 @@
                             data: {
                                 obj: {
                                     table: "workflow",
-                                    paramstr: `workflow_id='${page[6]}'`
+                                    paramstr: `workflow_id='${wid}'`
                                 }
                             },
                             success: (data) => {
@@ -3194,7 +3184,7 @@
                                         data: {
                                             table: "workflow",
                                             paramstr: paramstr,
-                                            condition: `workflow_id='${page[6]}'`
+                                            condition: `workflow_id='${wid}'`
                                         },
                                         success: function (data) {
                                             // console.log(data);
@@ -3232,7 +3222,7 @@
                                         url: "/insertWorkflowApi",
                                         method: "POST",
                                         data: {
-                                            wfid: page[6],
+                                            wfid: wid,
                                             wfname: $("#wfname").text(),
                                             api_name: "/sendTemplateBulkMail",
                                             index_no: data.length,
@@ -3325,7 +3315,7 @@
                             data: {
                                 obj: {
                                     table: "workflow",
-                                    paramstr: `workflow_id='${page[6]}'`
+                                    paramstr: `workflow_id='${wid}'`
                                 }
                             },
                             success: (data) => {
@@ -3342,7 +3332,7 @@
                                         data: {
                                             table: "workflow",
                                             paramstr: paramstr,
-                                            condition: `workflow_id='${page[6]}'`
+                                            condition: `workflow_id='${wid}'`
                                         },
                                         success: function (data) {
                                             // console.log(data);
@@ -3380,7 +3370,7 @@
                                         url: "/insertWorkflowApi",
                                         method: "POST",
                                         data: {
-                                            wfid: page[6],
+                                            wfid: wid,
                                             wfname: $("#wfname").text(),
                                             api_name: "/tempmsg",
                                             index_no: data.length,
@@ -3469,7 +3459,7 @@
                             data: {
                                 obj: {
                                     table: "workflow",
-                                    paramstr: `workflow_id='${page[6]}'`
+                                    paramstr: `workflow_id='${wid}'`
                                 }
                             },
                             success: (data) => {
@@ -3485,7 +3475,7 @@
                                         data: {
                                             table: "workflow",
                                             paramstr: paramstr,
-                                            condition: `workflow_id='${page[6]}'`
+                                            condition: `workflow_id='${wid}'`
                                         },
                                         success: function (data) {
                                             // console.log(data);
@@ -3523,7 +3513,7 @@
                                         url: "/insertWorkflowApi",
                                         method: "POST",
                                         data: {
-                                            wfid: page[6],
+                                            wfid: wid,
                                             wfname: $("#wfname").text(),
                                             api_name: "/sendTemplateBulkMail",
                                             index_no: data.length,
@@ -3696,7 +3686,7 @@
                             data: {
                                 obj: {
                                     table: "workflow",
-                                    paramstr: `workflow_id='${page[6]}'`
+                                    paramstr: `workflow_id='${wid}'`
                                 }
                             },
                             success: (data) => {
@@ -3712,7 +3702,7 @@
                                         data: {
                                             table: "workflow",
                                             paramstr: paramstr,
-                                            condition: `workflow_id='${page[6]}'`
+                                            condition: `workflow_id='${wid}'`
                                         },
                                         success: function (data) {
                                             // console.log(data);
@@ -3749,7 +3739,7 @@
                                         url: "/insertWorkflowApi",
                                         method: "POST",
                                         data: {
-                                            wfid: page[6],
+                                            wfid: wid,
                                             wfname: $("#wfname").text(),
                                             api_name: "/sendEmailToAll",
                                             index_no: data.length,
@@ -3821,7 +3811,7 @@
                             data: {
                                 obj: {
                                     table: "workflow",
-                                    paramstr: `workflow_id='${page[6]}'`
+                                    paramstr: `workflow_id='${wid}'`
                                 }
                             },
                             success: (data) => {
@@ -3837,7 +3827,7 @@
                                         data: {
                                             table: "workflow",
                                             paramstr: paramstr,
-                                            condition: `workflow_id='${page[6]}'`
+                                            condition: `workflow_id='${wid}'`
                                         },
                                         success: function (data) {
                                             // console.log(data);
@@ -3874,7 +3864,7 @@
                                         url: "/insertWorkflowApi",
                                         method: "POST",
                                         data: {
-                                            wfid: page[6],
+                                            wfid: wid,
                                             wfname: $("#wfname").text(),
                                             api_name: "/sendmsgchannel",
                                             index_no: data.length,
@@ -3926,6 +3916,7 @@
                     }
                 }
             })
+
 
         });
     </script>

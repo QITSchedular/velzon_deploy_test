@@ -28,7 +28,7 @@ function oninput_validation(x) {
         },
         phone: {
             rgx: "^[0-9]{10}$",
-            msg: "Phone number must be of 10 digits."
+            msg: "Invalid Phone number."
         },
         email: {
             rgx: "^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$",

@@ -806,8 +806,6 @@
 
             $(document).on("click", "#chatmsg", function () {
                 let usermsg = $("#chat-input").val();
-                alert(phone);
-
                 $.ajax({
                     url: "/sendmsg",
                     method: "POST",
@@ -884,7 +882,7 @@
                                     timer: 2000,
                                     showConfirmButton: false,
                                 }).then(() => {
-                                    // $("#phone, #msg").val(``);
+                                    $("#chat-input").val(``);
                                     $('#chatmsg')
                                         .removeClass('btn-success btn-warning')
                                         .addClass('btn-primary')
@@ -898,22 +896,6 @@
                         }
                     }
                 });
-
-                // $.ajax({
-                //     url: "/sendDirectMessage",
-                //     method: "POST",
-                //     data: { phone: phone, message: usermsg },
-                //     success: function (data) {
-                //         if (data.status_code != 200) {
-                //             swal({
-                //                 title: "Message not sent",
-                //                 type: "error",
-                //                 timer: 2000,
-                //                 showConfirmButton: false,
-                //             });
-                //         }
-                //     }
-                // })
             });
         });
     </script>

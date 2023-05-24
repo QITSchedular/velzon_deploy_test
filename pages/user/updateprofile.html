@@ -654,6 +654,11 @@
     <!--Swiper slider js-->
     <script src="/assets/libs/swiper/swiper-bundle.min.js"></script>
 
+    <!-- cleave.js -->
+    <script src="/assets/libs/cleave.js/cleave.min.js"></script>
+    <!-- form masks init -->
+    <script src="/assets/js/pages/form-masks.init.js"></script>
+
     <!-- aos js -->
     <script src="/assets/libs/aos/aos.js"></script>
     <!-- prismjs plugin -->
@@ -1029,21 +1034,21 @@
             $("#profile-img-file-input").change(function () {
                 let formData = new FormData()
                 formData.append("img", document.getElementById('profile-img-file-input').files[0]);
-
+                console.log(document.getElementById('profile-img-file-input').files[0]);
                 $.ajax({
                     url: "/profile_img",
                     method: "POST",
                     data: formData,
-                    async: false,
-                    cache: false,
                     contentType: false,
                     processData: false,
                     success: function (val) {
+                        console.log(val);
                         switch (val.status_code) {
                             case '400':
                             case '401':
                             case '404': {
-                                InvalidUser();
+                                // InvalidUser();
+                                console.log(val);
                                 break;
                             }
 

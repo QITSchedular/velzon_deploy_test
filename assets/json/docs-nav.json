@@ -39,8 +39,8 @@
         "icon": "mdi mdi-email",
         "submenu": [
             {
-                "method": "GET",
-                "link": "send",
+                "method": "POST",
+                "link": "post_email",
                 "name": "Send Email"
             }
         ]
@@ -64,11 +64,6 @@
                 "method": "DELETE",
                 "link": "delete_contact",
                 "name": "DELETE Contacts"
-            },
-            {
-                "method": "PUT",
-                "link": "put_contact",
-                "name": "UPDATE Contacts"
             }
         ]
     },

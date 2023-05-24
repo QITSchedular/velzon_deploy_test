@@ -222,7 +222,7 @@
                                 <div class="modal-header bg-soft-info p-3">
                                     <h5 class="modal-title" id="modal_title">Monthly Plan</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
-                                        id="close-modal-message"></button>
+                                        id="close_modal_payment"></button>
                                 </div>
                                 <div class="modal-body">
                                     <table class="table table-borderless mb-0">
@@ -244,39 +244,10 @@
                                             </tr>
                                             <tr class="border-top border-top-dashed">
                                                 <th scope="row">Total</th>
-                                                <th class="text-end"></th>
+                                                <th class="text-end" id="total"></th>
                                             </tr>
                                         </tbody>
                                     </table>
-                                    <!-- <div class="row">
-                                        <div class="col-6">
-                                            <div class="mb-3">
-                                                <label class="">Currency :</label>
-                                                <input type="text" class="form-control" value="INR" readonly />
-                                            </div>
-                                        </div>
-                                        <div class="col-6">
-                                            <div class="mb-3">
-                                                <label class="">Payment Method :</label>
-                                                <input type="text" class="form-control" value="Online Payment"
-                                                    readonly />
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-2">
-                                        <span class="col-6 fs-5 text-dark">Amount</span>
-                                        <span class="col-6 fs-5 text-dark text-end">16949.16</span>
-                                    </div>
-                                    <div class="row mb-2">
-                                        <span class="col-6 fs-5 text-dark">GST (18%)</span>
-                                        <span class="col-6 fs-5 text-dark text-end">3050.84</span>
-                                    </div>
-                                    <hr />
-                                    <div class="row mb-2">
-                                        <span class="col-6 fs-4 text-dark">Total Price</span>
-                                        <span class="col-6 fs-4 text-dark text-end">20000.00</span>
-                                    </div> -->
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-primary" id="pay">
@@ -288,7 +259,7 @@
                     </div>
 
                     <!-- staticBackdrop Modal -->
-                    <div class="modal fade" id="premiumYearly" tabindex="-1" role="dialog"
+                    <!-- <div class="modal fade" id="premiumYearly" tabindex="-1" role="dialog"
                         aria-labelledby="staticBackdropLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered" role="document">
                             <div class="modal-content">
@@ -521,7 +492,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
@@ -629,7 +600,7 @@
                                                     </li>
                                                 </ul>
                                                 <div class="mt-4">
-                                                    <button class="btn btn-info w-100" data-bs-toggle="modal" data-bs-target="#payment_modal">
+                                                    <button id="pay_modal_btn" class="btn btn-info w-100" data-bs-toggle="modal" data-bs-target="#payment_modal" data-planid="${val[i].planid}" data-price="${val[i].price}" data-discount="${val[i].discount}" data-duration="${val[i].durationMonth}">
                                                         SUBSCRIBE
                                                     </button>
                                                 </div>
@@ -650,7 +621,22 @@
             $(document).on('click', '#month_tab', function () {
                 planDataDisplay('Monthly', 'month');
             })
+            let price;
+            $(document).on('click', '#pay_modal_btn', function () {
+                price = $(this).attr('data-price');
+                let discount = $(this).attr('data-discount');
 
+                $('#amount').html(price);
+                $('#discount').html(discount);
+                // $('#disc_amount').html(discount / price * 10000);
+                $('#total').html(+price + 100);
+
+
+            })
+
+            $(document).on('click', '#pay', function () {
+                pay(price);
+            })
             // $.ajax({
             //     url: "/getData",
             //     method: "POST",
@@ -775,9 +761,10 @@
             //     },
             // });
 
-            let apikey = getCookie("apikey");
 
             function pay(amount) {
+                let apikey = getCookie("apikey");
+                alert(amount)
                 var settings = {
                     url: "/create/orderId",
                     method: "POST",

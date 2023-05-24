@@ -2644,10 +2644,14 @@ app.get("/instance/:id/:page", async (req, res) => {
                         res.send(status.internalservererror());
                         break;
                     }
-                    default:
-                        res.sendFile(
-                            __dirname + "/pages/user/" + page + ".html"
-                        );
+                    default:{
+                        if(req.query.id){
+                            return res.sendFile(`${__dirname}/pages/user/${page}.html?id=${req.query.id}`);
+                        }
+                        else{
+                            return res.sendFile(`${__dirname}/pages/user/${page}.html`);
+                        }
+                    }
                 }
             });
         } else res.send(status.unauthorized());

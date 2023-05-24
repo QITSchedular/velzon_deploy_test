@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8" />
 
-    <title>POST Channels | API Docs</title>
+    <title>Send Email | API Docs</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
@@ -108,7 +108,7 @@
                                     </div>
                                 </form>
                             </div>
-                        </div>
+                        </div>                      
 
                         <div class="ms-1 header-item d-none d-sm-flex">
                             <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
@@ -124,14 +124,14 @@
                             </button>
                         </div>
 
-                        <div class="ms-1 header-item d-none d-sm-flex">
+                        <div class="ms-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Goto dashboard">
                             <a href="/dashboard">
                                 <button type="button" class="btn btn-outline-primary">
-                                    <i class='ri-dashboard-2-line fs-20 align-middle me-1'></i>
-                                    Dashboard
+                                    <i class='ri-dashboard-2-line fs-20 align-middle me-lg-1 me-md-1'></i>
+                                    <span class="d-md-inline-block d-lg-inline-block d-none">Dashboard</span>
                                 </button>
                             </a>
-                        </div>
+                        </div>                       
                     </div>
                 </div>
             </div>
@@ -186,13 +186,24 @@
                         <div class="page-title">
                             <ol class="breadcrumb m-0" id="api_path"></ol>
                         </div>
+                        <div class="page-title-right d-flex align-items-center">
+                            <span class="text-muted mx-2 fw-medium">
+                                <img width="27" height="27" src="https://img.icons8.com/color/48/gmail-new.png"
+                                    alt="gmail-new" class="mt-n1" />
+                                Configuration :
+                            </span>
+                            <div class="page-title-right" id="configuration_status"></div>
+                        </div>
                     </div>
                     <div class="card card-body">
-                        <div class="d-flex justify-content-evenly gap-3">
-                            <input type="text" class="form-control required" id="iid" placeholder="Enter Instance ID"
-                                data-type="message" autocomplete="off" />
-                            <input type="text" class="form-control required" id="apikey" placeholder="Enter API KEY"
-                                data-type="message" autocomplete="off" />
+                        <div class="d-lg-flex d-md-flex justify-content-space-between gap-3">
+                            <!-- <label>Instance ID</label> -->
+                            <input type="text" class="form-control required w-50" id="iid"
+                                placeholder="Enter Instance ID" data-type="message" autocomplete="off" />
+                            <!-- <label>API KEY</label> -->
+                            <input type="text" class="form-control required w-50" id="apikey"
+                                placeholder="Enter API KEY" data-type="message" autocomplete="off" />
+                            <div class="vr"></div>
                             <button type="button" class="btn btn-primary" id="save">
                                 Save
                             </button>
@@ -208,22 +219,44 @@
                                     <div class="text-primary fs-18 fw-medium">Request Body</div>
                                 </div>
                                 <div class="card-body">
-                                    <label for="phone" class="form-label">
-                                        Phone Number (To)
+                                    <div class="bg-info bg-opacity-10 border border-info p-2 rounded-3 text-info mb-3">
+                                        <div class="d-flex align-items-center">
+                                            <i class="ri-error-warning-line align-middle me-2 fs-18"></i>
+                                            <div class="vr"></div>
+                                            <p class="fs-12 fw-medium mb-0 ms-2" style="text-align: justify;">
+                                                Sender Email Address will automatically taken from the account you have
+                                                Logined IN and that must be configured properly
+                                                <a class="text-primary" href="/addpasscode">
+                                                    click here
+
+                                                </a>
+                                                to config if pending
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <label for="to" class="form-label">
+                                        Receiver Email (To)
                                         <span class="text-danger">*</span>
-                                        <span class="text-danger" id="err_phone"></span>
+                                        <span class="text-danger" id="err_to"></span>
                                     </label>
-                                    <input type="text" class="form-control required mb-2" id="phone"
-                                        placeholder="xxxxx xxxxx" data-type="phone" />
-                                    <label for="message" class="form-label">
-                                        Message
+                                    <input type="text" class="form-control required mb-2" id="to"
+                                        placeholder="abc123@xyz.com" data-type="email" />
+                                    <label for="subject" class="form-label">
+                                        Subject
                                         <span class="text-danger">*</span>
-                                        <span class="text-danger" id="err_message_box"></span>
+                                        <span class="text-danger" id="err_subject"></span>
+                                    </label>
+                                    <input type="text" class="form-control required mb-2" id="subject"
+                                        placeholder="Enter Subject" data-type="message" />
+                                    <label for="body" class="form-label">
+                                        Body
+                                        <span class="text-danger">*</span>
+                                        <span class="text-danger" id="err_body"></span>
                                     </label>
                                     <textarea class="form-control required mb-2" style="resize: none" cols="50" rows="6"
-                                        id="message_box" data-type="message" placeholder="Enter Messagr here ..."></textarea>
+                                        id="body" data-type="message" placeholder="Enter Message here ..."></textarea>
                                     <div class="text-end">
-                                        <button type="button" class="btn btn-primary" id="test">
+                                        <button type="button" class="btn btn-primary btn-load" id="test">
                                             <i class="ri-send-plane-fill align-middle me-2"></i>
                                             Test
                                         </button>
@@ -291,12 +324,30 @@
                                                             <table class="table table-bordered">
                                                                 <tr>
                                                                     <th style="width: 40%;">
-                                                                        Name
+                                                                        To
                                                                         <span class="text-danger fs-12 mx-2">
                                                                             (Required)
                                                                         </span>
                                                                     </th>
-                                                                    <td style="width: 70%;">Name of Channel</td>
+                                                                    <td style="width: 70%;">Recipient Email Address</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th style="width: 40%;">
+                                                                        Subject
+                                                                        <span class="text-danger fs-12 mx-2">
+                                                                            (Required)
+                                                                        </span>
+                                                                    </th>
+                                                                    <td style="width: 70%;">Subject For Email</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th style="width: 40%;">
+                                                                        Body
+                                                                        <span class="text-danger fs-12 mx-2">
+                                                                            (Required)
+                                                                        </span>
+                                                                    </th>
+                                                                    <td style="width: 70%;">Body For Email</td>
                                                                 </tr>
                                                             </table>
                                                         </div>
@@ -319,10 +370,10 @@
                                                                 <tr>
                                                                     <th class="text-success text-center"
                                                                         style="width: 20%;">
-                                                                        201
+                                                                        200
                                                                     </th>
                                                                     <td style="width: 80%;">
-                                                                        Channel Created
+                                                                        Email Sent
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
@@ -341,6 +392,15 @@
                                                                     </th>
                                                                     <td style="width: 80%;">
                                                                         Internal Server Error
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th class="text-danger text-center"
+                                                                        style="width: 20%;">
+                                                                        1013
+                                                                    </th>
+                                                                    <td style="width: 80%;">
+                                                                        Error In Sending Email
                                                                     </td>
                                                                 </tr>
                                                             </table>
@@ -474,6 +534,27 @@
 
     <script>
         $(document).ready(function () {
+            $.ajax({
+                url: `/getData`,
+                method: `POST`,
+                data: {
+                    obj: {
+                        "table": `users`,
+                        "paramstr": `true`,
+                    }
+                },
+                success: function (val) {
+                    let data = ``;
+                    if (val[0].emailpasscode === "") {
+                        data += `<span class="badge text-bg-danger fs-13 p-2">Pending</span>`;
+                    }
+                    else {
+                        data += `<span class="badge text-bg-success fs-13 p-2">Done</span>`;
+                    }
+                    $('#configuration_status').html(data);
+                }
+            });
+
             $(".required").on('focusout', function () {
                 onfocusout_validation($(this).attr('id'));
             });
@@ -483,25 +564,46 @@
             });
 
             $(document).on('click', '#test', function () {
-                nullfield_validation('phone');
-                nullfield_validation('message_box');
-                if (objFlag.flag_phone == 0 && objFlag.flag_message_box == 0) {
-                    oninput_validation('phone');
-                    oninput_validation('message_box');
-                    if (objFlag.flag_phone == 0 && objFlag.flag_message_box == 0) {
+                nullfield_validation('to');
+                nullfield_validation('subject');
+                nullfield_validation('body');
+                if (objFlag.flag_to == 0 && objFlag.flag_subject == 0 && objFlag.flag_body == 0) {
+                    oninput_validation('to');
+                    oninput_validation('subject');
+                    oninput_validation('body');
+                    if (objFlag.flag_to == 0 && objFlag.flag_subject == 0 && objFlag.flag_body == 0) {
                         const iid = sessionStorage.getItem('iid') || `{{ instance_id }}`;
                         $.ajax({
-                            url: `/api/${iid}/message`,
+                            url: `/api/${iid}/email`,
                             method: `POST`,
                             headers: {
                                 "apikey": $('#apikey').val()
                             },
                             data: {
-                                "phone": `${$('#phone').val().trim()}`,
-                                "message": `${$('#message_box').val()}`,
+                                "to": `${$('#to').val().trim()}`,
+                                "subject": `${$('#subject').val()}`,
+                                "body": `${$('#body').val()}`,
+                            },
+                            beforeSend: function () {
+                                $('#test')
+                                    .addClass('btn-warning')
+                                    .removeClass('btn-primary btn-success')
+                                    .html(`<span class= "d-flex align-items-center">
+                                            <span class="flex-grow-1 me-lg-2 me-md-2">
+                                                Sending
+                                            </span>
+                                            <span class="spinner-border flex-shrink-0" role="status">
+                                                <span class="visually-hidden"></span>
+                                            </span>
+                                        </span>`);
                             },
                             success: function (val) {
-                                console.log(val);
+                                $('#test')
+                                    .addClass('btn-primary')
+                                    .removeClass('btn-warning btn-success')
+                                    .html(`<i class="ri-send-plane-fill align-middle me-2"></i>
+                                            Test`);
+
                                 $(`#requesttab, a.nav-link[href="#requesttab"], 
                                         #responsetab,a.nav-link[href="#responsetab"]`).removeClass('active');
                                 $('#responsetab, a.nav-link[href="#responsetab"]').addClass('active');
@@ -511,7 +613,9 @@
                                 pre.textContent = JSON.stringify(val, null, 2);
                                 hljs.highlightBlock(pre);
 
-                                $('#phone,#message_box').removeClass('form-control-success form-control-success').val(``);
+                                if (val.status_code === '200') {
+                                    $('#to, #subject, #body').removeClass('form-control-success form-control-success').val(``);
+                                }
 
                                 if (val.status_code == 401) {
                                     (val.Message.includes("API KEY"))

@@ -296,12 +296,7 @@ $(document).ready(function () {
                     let divid = $(`#${page[4]} :nth-child(1) [data-page='${page[5]}']`);
 
                     $(`#api_path`).html(`
-                                <li class="breadcrumb-item">
-                                    <span class="px-2 py-1 rounded-2 text-bg-success fw-medium me-2 fs-10">
-                                        ${divid.attr('data-method')}
-                                    </span>
-                                </li>
-                                <li class="breadcrumb-item">api</li>
+                                <li class="breadcrumb-item">Docs</li>
                                 <li class="breadcrumb-item">${divid.attr('data-folder')}</li>
                                 <li class="breadcrumb-item">${divid.attr('data-page')}</li>`);
 
@@ -315,65 +310,69 @@ $(document).ready(function () {
     }
 
     if (page[3] === 'instance') {
-        switch (page[5]) {
+        switch (page[5].split('?')[0]) {
             case 'bulkmessage':
             case 'bulkmail':
             case 'contact-list':
             case 'channel':
+            case 'individualworkflow':
             case 'workflow':
             case 'chat': {
-                $.ajax({
-                    url: "/validateInstance",
-                    method: "POST",
-                    data: { iid: page[4] },
-                    success: function (data) {
-                        if (data.status_code != 200) {
-                            location.href = "/instance";
-                        }
-                        else {
-                            fetch('../../assets/json/common-nav.json')
-                                .then(response => response.json())
-                                .then(data => {
-                                    let result = ``;
-                                    for (var i in data) {
-                                        if (data[i].submenu) {
-                                            result += `
+                fetch('../../assets/json/common-nav.json')
+                    .then(response => response.json())
+                    .then(data => {
+                        let result = ``;
+                        for (var i in data) {
+                            if (data[i].submenu) {
+                                result += `
                                     <li class="nav-item">
                                         <a class="nav-link menu-link" href="/${data[i].link}" data-page="${data[i].link}">
                                             <i class="${data[i].icon}"></i>
                                             <span data-key="t-dashboards">${data[i].page}</span>
                                         </a>
                                         <ul class="nav nav-sm flex-column fs-15" id="instance_page_menu">`;
-                                            for (var j in data[i].submenu) {
-                                                result += `
+                                for (var j in data[i].submenu) {
+                                    result += `
                                             <li class="nav-item">
                                                 <a class="nav-link menu-link" href="/instance/${document.URL.split("/")[4]}/${data[i].submenu[j].link}" data-page="${data[i].submenu[j].link}">
                                                     <i class="${data[i].submenu[j].icon}"></i>
                                                     <span data-key="t-dashboards">${data[i].submenu[j].page}</span>
                                                 </a>
                                             </li>`;
-                                            }
-                                            result += `</ul></li>`;
-                                        }
-                                        else {
-                                            result += `
+                                }
+                                result += `</ul></li>`;
+                            }
+                            else {
+                                result += `
                                     <li class="nav-item">
                                         <a class="nav-link menu-link" href="/${data[i].link}" data-page="${data[i].link}">
                                             <i class="${data[i].icon}"></i>
                                             <span data-key="t-dashboards">${data[i].page}</span>
                                         </a>
                                     </li>`;
-                                        }
-                                    }
-                                    $('#navbar-nav').html(result);
-                                    $(`a[data-page='${page[3]}'],a[data-page='${page[5]}']`).addClass('active');
-                                })
-                                .catch(error => {
-                                    console.error(error);
-                                });
+                            }
                         }
-                    }
-                })
+                        $('#navbar-nav').html(result);
+                        $(`a[data-page='${page[3]}'],a[data-page='${page[5]}']`).addClass('active');
+                    })
+                    .catch(error => {
+                        console.error(error);
+                    });
+                // $.ajax({
+                //     url: "/validateInstance",
+                //     method: "POST",
+                //     data: { iid: page[4] },
+                //     success: function (data) {
+                //         if (data.status_code != 200) {
+                //             // alert(data);
+                //             // console.log(data);
+                //             // location.href = "/instance";
+                //         }
+                //         else {
+                            
+                //         }
+                //     }
+                // })
                 break;
             }
         }

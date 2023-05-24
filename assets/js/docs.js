@@ -1,4 +1,7 @@
 $(document).ready(function () {
+    if (getCookie('apikey')){
+        sessionStorage.setItem('apikey', getCookie('apikey'));
+    }
     const page = document.URL.split('/');
     $('#iid').val(sessionStorage.getItem('iid'));
     $('#apikey').val(sessionStorage.getItem('apikey'));

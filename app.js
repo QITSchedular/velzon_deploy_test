@@ -31,19 +31,19 @@ let obj = [], apikey, userProfile;
 
 const SESSION_FILE_PATH = './assets/json/session-data.json';
 
-// const conn = mysql.createConnection({
-//     host: process.env.DB_HOST,
-//     user: process.env.DB_USER,
-//     password: process.env.DB_PASSWORD,
-//     database: process.env.DB_NAME,
-// });
-
 const conn = mysql.createConnection({
-    host: 'm3-db.cpqpqooy9dzn.ap-south-1.rds.amazonaws.com',
-    user: 'admin',
-    password: 'M3passb4u#0',
-    database: 'qrdb',
-})
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+});
+
+// const conn = mysql.createConnection({
+//     host: 'm3-db.cpqpqooy9dzn.ap-south-1.rds.amazonaws.com',
+//     user: 'admin',
+//     password: 'M3passb4u#0',
+//     database: 'qrdb',
+// })
 conn.connect((err) => {
     if (err) {
         console.error('Error connecting to the database:', err);
@@ -134,10 +134,8 @@ class clients {
 
     async send_whatsapp_message(chatId, message) {
         await this.client.sendMessage(chatId, message).then((messageId) => {
-            console.log(messageId);
             return Promise.resolve(messageId);
         }).catch((error) => {
-            console.log(error);
             return Promise.reject(error);
         })
     };
@@ -230,12 +228,12 @@ async function checkAPIKey(apikey) {
     }
 }
 
-async function findEmail(apikey) {
+async function findData(apikey, column) {
     try {
         return await new Promise((resolve, reject) => {
-            conn.query(`SELECT * FROM users WHERE apikey = '${apikey}'`, (error, result) => {
+            conn.query(`SELECT ${column} FROM users WHERE apikey = '${apikey}'`, (error, result) => {
                 if (error || result.length <= 0) return reject(status.internalservererror().status_code);
-                resolve(result[0].email);
+                resolve(result[0][column]);
             });
         });
     }
@@ -255,6 +253,7 @@ function createfolder(foldername) {
 
         for (const dir of dirs) {
             currentDir = path.join(currentDir, dir);
+            console.log(dir, currentDir);
 
             if (!fs.existsSync(`${__dirname}\\assets\\upload\\${currentDir}`)) {
                 if (fs.mkdirSync(`${__dirname}\\assets\\upload\\${currentDir}`)) {
@@ -275,8 +274,11 @@ function createfolder(foldername) {
 
 const tableData = (data, callback) => {
     try {
-        conn.query(`SELECT * FROM ${data.table} WHERE ${data.paramstr} AND apikey = '${data.apikey}'`,
+        const sql = `SELECT * FROM ${data.table} WHERE ${data.paramstr} AND apikey = '${data.apikey}'`;
+        conn.query(sql,
             (err, result) => {
+                // console.log(err);
+                // console.log(result);
                 if (err) return callback(status.internalservererror());
                 if (result.length == 0) return callback(status.nodatafound());
                 return callback(result);
@@ -288,14 +290,17 @@ const tableData = (data, callback) => {
     }
 }
 
-async function sendEmail(to, subject, body) {
+async function sendEmail(sender, to, subject, body) {
     var transporter = nodemailer.createTransport({
-        service: "gmail",
+        host: sender.hostname,
+        port: sender.port,
+        secure: true,
         auth: {
-            user: "dashboardcrm.2022@gmail.com",
-            pass: "dbwtdfmwrxmwzcat",
+            user: sender.email,
+            pass: sender.passcode,
         },
     });
+
     var mailOptions = {
         from: "sakshiiit232@gmail.com",
         to: to,
@@ -310,6 +315,22 @@ async function sendEmail(to, subject, body) {
         });
     });
 }
+
+async function abc() {
+    apikey = '623a67ec8d223c63b94757a02be0c206';
+    const sender = {
+        "hostname": await findData(apikey, 'hostname'),
+        "port": await findData(apikey, 'port'),
+        "email": await findData(apikey, 'email'),
+        "passcode": await findData(apikey, 'emailpasscode')
+    };
+    sendEmail(sender, `hpgh048@gmail.com`, 'subject', 'body').then(() => {
+        return console.log("Email Sent Scuuessfully");
+    }).catch((error) => {
+        return console.log(`error in Sending  E-Mail ::::::: <${error}>`);
+    })
+}
+// abc();
 
 function createInstance() {
     conn.query(`select * from instance where isActive = 1`, (err, result) => {
@@ -398,12 +419,12 @@ app.post("/sheetdata", async (req, res) => {
 
         for (let i = 0; i < rows.length; i++) {
             const row = rows[i];
-            console.log(row._rawData);
             data.push(row._rawData);
             phones.push(row.phone);
         }
         object["colnames"] = colnames;
         object["values"] = data;
+        console.log(object);
         res.send(object);
     }
     catch (e) {
@@ -411,52 +432,9 @@ app.post("/sheetdata", async (req, res) => {
     }
 });
 
-app.post("/sendtoall", async (req, res) => {
-    apikey = req.cookies.apikey;
-
-    var indx = req.cookies.index;
-    var iid = req.body.instanceid;
-    var data = req.body.data;
-    let token = req.body.token;
-
-    var date_ob = new Date();
-    var object, flag = 0;
-
-    conn.query(`select * from instance where instance_id = '${iid}' and apikey = '${apikey}' and token = '${token}'`,
-        async function (err, result) {
-            if (err) return res.send(status.forbidden());
-            if (result.length > 0) {
-                try {
-                    for (let i = 0; i < data.names.length; i++) {
-                        let prefix = "+91";
-                        let phone = data.phones[i];
-                        phone = prefix.concat(phone);
-                        let chatId = phone.substring(1) + "@c.us";
-                        if (await obj[indx].client.sendMessage(chatId, `Hello ${data.names[i]} how are you ? it's ${date_ob.getHours()} : ${date_ob.getMinutes()} : ${date_ob.getSeconds()}`)) {
-                            console.log("message sent to " + data.names[i]);
-                        }
-                        flag = 1;
-                    }
-                } catch (e) {
-                    console.log(e);
-                    object = {
-                        error: "client is not initialized",
-                    };
-                }
-            }
-        }
-    );
-    if (flag == 1) {
-        object = {
-            error: null,
-        };
-    }
-    res.send(object);
-});
-
 app.post("/file", async (req, res) => {
-    try {
-        csvData = await req.files.csvfile.data.toString("utf8");
+    if (req.files.csvfile.mimetype === 'text/csv') {
+        let csvData = await req.files.csvfile.data.toString("utf8");
         return csvtojson().fromString(csvData).then((json) => {
             return res.status(201).json({
                 csv: csvData,
@@ -464,348 +442,26 @@ app.post("/file", async (req, res) => {
             });
         });
     }
-    catch (e) {
-        console.log(e);
+    else {
+        return res.send(status.notAccepted());
     }
-});
-
-
-
-
-/*--------------------[ Mail ]--------------------*/
-
-app.post("/sendEmailToAll", (req, res) => {
-    var clientarr = req.body.clientarr;
-    var subject = req.body.subject;
-    var msg = req.body.msg;
-    console.log(clientarr, subject, msg);
-    var apikey = req.cookies.apikey;
-    var iid = req.body.iid;
-    conn.query(
-        "select * from users where apikey='" + apikey + "'",
-        (err, result) => {
-            if (err) return res.send(status.internalservererror());
-            if (result.length > 0) {
-                if (result[0].emailpasscode == "") {
-                    res.send(status.badRequest());
-                } else {
-                    conn.query(
-                        `select * from instance where instance_id = '` +
-                        iid +
-                        `' and  apikey = '` +
-                        apikey +
-                        `'`,
-                        function (err, result2) {
-                            if (err) return res.send(status.forbidden());
-                            if (result2.length > 0) {
-                                var transporter = nodemailer.createTransport({
-                                    host: result[0].hostname,
-                                    port: result[0].port,
-                                    secure: true, // use TLS
-                                    auth: {
-                                        user: result[0].email,
-                                        pass: result[0].emailpasscode,
-                                    },
-                                });
-
-                                for (let i = 0; i < clientarr.length; i++) {
-                                    var mailOptions = {
-                                        from: result[0].email,
-                                        to: clientarr[i].email,
-                                        subject: subject,
-                                        text: msg,
-                                    };
-
-                                    transporter.sendMail(
-                                        mailOptions,
-                                        function (err, info) {
-                                            if (err) {
-                                                console.log(err);
-                                                res.send(status.expectationFailed());
-                                            } else {
-                                                console.log("Email sent: " + info.response);
-                                                let id = crypto.randomBytes(8).toString("hex");
-                                                let emailtype = "bulk";
-                                                conn.query(`insert into email(email_id,from_email,to_email,email_type,subject,message,instance_id,apikey) values('${id}','${result[0].email}','${clientarr[i].email}','${emailtype}','${subject}','${msg}','${iid}','${apikey}')`,
-                                                    (err, result3) => {
-                                                        console.log(result3);
-                                                        if (err)
-                                                            console.log("record not added");
-                                                        if (
-                                                            result3.affectedRows >=
-                                                            1
-                                                        ) {
-                                                            console.log(
-                                                                "record added"
-                                                            );
-                                                        } else {
-                                                            console.log(
-                                                                "record not added"
-                                                            );
-                                                        }
-                                                    }
-                                                );
-                                            }
-                                        }
-                                    );
-                                }
-                                res.send(status.ok());
-                            } else {
-                                res.send(status.badRequest());
-                            }
-                        }
-                    );
-                }
-            }
-        }
-    );
-});
-
-app.post("/sendMail", async (req, res) => {
-    var receiveremail = req.body.mail;
-    var msg = req.body.message;
-    var subject = req.body.subject;
-    var apikey = req.cookies.apikey;
-    var iid = req.body.iid;
-
-    conn.query(
-        "select * from users where apikey='" + apikey + "'",
-        (err, result) => {
-            if (err) return res.send(status.internalservererror());
-            if (result.length > 0) {
-                if (result[0].emailpasscode == "") {
-                    res.send(status.badRequest());
-                } else {
-                    conn.query(
-                        `select * from instance where instance_id = '` +
-                        iid +
-                        `' and  apikey = '` +
-                        apikey +
-                        `'`,
-                        function (err, result2) {
-                            if (err) return res.send(status.forbidden());
-                            if (result2.length > 0) {
-                                var transporter = nodemailer.createTransport({
-                                    host: result[0].hostname,
-                                    port: result[0].port,
-                                    secure: true, // use TLS
-                                    auth: {
-                                        user: result[0].email,
-                                        pass: result[0].emailpasscode,
-                                    },
-                                });
-
-                                var mailOptions = {
-                                    from: result[0].email,
-                                    to: receiveremail,
-                                    subject: subject,
-                                    text: msg,
-                                };
-                                transporter.sendMail(
-                                    mailOptions,
-                                    function (err, info) {
-                                        if (err) {
-                                            console.log(err);
-                                            res.send(
-                                                status.expectationFailed()
-                                            );
-                                        } else {
-                                            console.log(
-                                                "Email sent: " + info.response
-                                            );
-                                            let id = crypto
-                                                .randomBytes(8)
-                                                .toString("hex");
-                                            let emailtype = "email";
-                                            conn.query(
-                                                `insert into email(email_id,from_email,to_email,email_type,subject,message,instance_id,apikey) values('${id}','${result[0].email}','${receiveremail}','${emailtype}','${subject}','${msg}','${iid}','${apikey}')`,
-                                                (err, result3) => {
-                                                    if (err)
-                                                        res.send(
-                                                            status.internalservererror()
-                                                        );
-                                                    if (
-                                                        result3.affectedRows ==
-                                                        1
-                                                    ) {
-                                                        res.send(status.ok());
-                                                    } else {
-                                                        res.send(
-                                                            status.badRequest()
-                                                        );
-                                                    }
-                                                }
-                                            );
-                                        }
-                                    }
-                                );
-                            } else {
-                                res.send(status.badRequest());
-                            }
-                        }
-                    );
-                }
-            }
-        }
-    );
-});
-
-app.post("/sendTemplateBulkMail", async (req, res) => {
-    var emailarray = req.body.emailarray;
-    var msg = req.body.message;
-    var clientobj = req.body.clientobj;
-    var selectedcol = req.body.selectedcol;
-    var subject = req.body.subject;
-    var apikey = req.cookies.apikey;
-    var iid = req.body.iid;
-
-    if (req.body.type == "workflow") {
-        emailarray = emailarray.split(",");
-        selectedcol = selectedcol.split(",");
-    }
-    console.log(clientobj);
-    console.log("selected column");
-    console.log(selectedcol);
-    let msgarr;
-    conn.query(
-        "select * from users where apikey='" + apikey + "'",
-        (err, result) => {
-            if (err) return res.send(status.internalservererror());
-            if (result.length > 0) {
-                if (result[0].emailpasscode == "") {
-                    res.send(status.badRequest());
-                } else {
-                    conn.query(
-                        `select * from instance where apikey='${apikey}' and instance_id='${iid}'`,
-                        (err, result2) => {
-                            if (err)
-                                return res.send(status.internalservererror());
-                            if (result2.length > 0) {
-                                var transporter = nodemailer.createTransport({
-                                    host: result[0].hostname,
-                                    port: result[0].port,
-                                    secure: true, // use TLS
-                                    auth: {
-                                        user: result[0].email,
-                                        pass: result[0].emailpasscode,
-                                    },
-                                });
-
-                                if (selectedcol.length == 1) {
-                                    msgarr = one(msg, clientobj, selectedcol);
-                                } else if (selectedcol.length == 2) {
-                                    msgarr = two(msg, clientobj, selectedcol);
-                                } else if (selectedcol.length == 3) {
-                                    msgarr = three(msg, clientobj, selectedcol);
-                                } else if (selectedcol.length == 4) {
-                                    msgarr = four(msg, clientobj, selectedcol);
-                                } else if (selectedcol.length == 5) {
-                                    msgarr = five(msg, clientobj, selectedcol);
-                                }
-                                for (let i = 0; i < clientobj.length; i++) {
-                                    // let prefix = "+91";
-                                    let receiveremail = emailarray[i];
-                                    // phone = prefix.concat(phone);
-                                    // let chatId = phone.substring(1) + "@c.us";
-                                    var mailOptions = {
-                                        from: result[0].email,
-                                        to: receiveremail,
-                                        subject: subject,
-                                        text: msgarr[i],
-                                    };
-
-                                    transporter.sendMail(
-                                        mailOptions,
-                                        function (err, info) {
-                                            if (err) {
-                                                console.log(err);
-                                                res.send(
-                                                    status.expectationFailed()
-                                                );
-                                            } else {
-                                                console.log(
-                                                    "Email sent: " +
-                                                    info.response
-                                                );
-                                                let id = crypto
-                                                    .randomBytes(8)
-                                                    .toString("hex");
-                                                let emailtype = "template_bulk";
-                                                conn.query(
-                                                    `insert into email(email_id,from_email,to_email,email_type,subject,message,instance_id,apikey) values('${id}','${result[0].email}','${receiveremail}','${emailtype}','${subject}','${msgarr[i]}','${iid}','${apikey}')`,
-                                                    (err, result3) => {
-                                                        if (err)
-                                                            console.log(
-                                                                "record not added"
-                                                            );
-                                                        if (
-                                                            result3.affectedRows >=
-                                                            1
-                                                        ) {
-                                                            console.log(
-                                                                "record added"
-                                                            );
-                                                        } else {
-                                                            console.log(
-                                                                "record not added"
-                                                            );
-                                                        }
-                                                    }
-                                                );
-                                            }
-                                        }
-                                    );
-                                }
-                                res.send(status.ok());
-                            } else {
-                                res.send(status.badRequest());
-                            }
-                        }
-                    );
-                }
-            }
-        }
-    );
 });
 
 /*----------------------------------------------------------*/
 
 /*--------------------[ User | Support ]--------------------*/
 
-// if (fs.existsSync(SESSION_FILE_PATH)) {
-//     sessionData = require(SESSION_FILE_PATH);
-// };
-let client;
-// if (fs.existsSync(SESSION_FILE_PATH)) {
-//     const sessionData = fs.readFileSync(SESSION_FILE_PATH, { encoding: 'utf-8' });
-//     const session = JSON.parse(sessionData);
-//     client = new Client({ session });
-// } else {
-//     client = new Client();
-// }
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
 
 // Bulkmessage : QRcode Generetor API
 app.get("/qr/:iid", async (req, res) => {
     let iid = req.params.iid;
     try {
-        obj[iid] = new clients(
-            // {
-            //     authStrategy: new LocalAuth({ clientId: iid }),
-            //     // puppeteer: {
-            //     //     executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe',
-            //     // }
-            // }
-        );
-        // await obj[iid].generateqr().then(async (qr) => {
-        //     res.send(qr);
-        // }).catch((error) => {
-        //     console.log("Error In QR Generation", error);
-        //     return res.send(error);
-        // });
-        // return res.send(iid);
+        obj[iid] = new clients();
         const qrData = await obj[iid].generateqr();
         if (qrData.length < 0) {
-            console.log("No qr")
+            console.log("No qr");
         } else {
             res.send(qrData);
         }
@@ -813,7 +469,6 @@ app.get("/qr/:iid", async (req, res) => {
         console.log(error)
         res.send(error)
     }
-
 });
 
 // Bulkmessage : Authentication Client API
@@ -866,110 +521,74 @@ app.get("/disconnected/:iid", async (req, res) => {
     }
 });
 
-app.post("/sendToAllUsingLfile", (req, res) => {
-    var indx = req.cookies.index;
+// Bulkmessage : Send Bulk Template Message API
+app.post("/bulktemplatemessage", async function (req, res) {
+    apikey = req.cookies.apikey;
 
-    const apikey = req.body.apikey;
-    const token = req.body.token;
-    var iid = req.body.instanceid;
+    const isValidapikey = await checkAPIKey(apikey);
+    try {
+        if (isValidapikey) {
+            const iid = req.body.iid;
+            const token = req.body.token;
 
-    var clientinfo = req.body.clientdata;
-    var message = req.body.message;
+            let contacts = req.body.contacts;
+            let msg = req.body.message;
+            let clientobj = req.body.clientobj;
+            let selectedcol = req.body.selectedcol;
 
-    var object, flag = 0;
-
-    conn.query(`select * from instance where instance_id = '${iid}' and apikey = '${apikey}' and token = '${token}'`,
-        async function (err, result) {
-            if (err) return res.send(status.forbidden());
-            if (result.length > 0) {
-                try {
-                    for (let i = 0; i < clientinfo.length; i++) {
-                        let prefix = "+91";
-                        let phone = clientinfo[i].phone;
-                        phone = prefix.concat(phone);
-                        let chatId = phone.substring(1) + "@c.us";
-                        if (await obj[indx].client.sendMessage(chatId, `${message}`)) {
-                            var msgid = crypto.randomBytes(8).toString("hex");
-                            var msgtype = "custom_bulk";
-                            conn.query(
-                                "insert into message(`msgid`,`msg`,`msg_type`,`receiver`,`instance_id`,`apikey`,`token`)    values('" +
-                                msgid +
-                                "','" +
-                                message +
-                                "','" +
-                                msgtype +
-                                "','" +
-                                chatId +
-                                "','" +
-                                iid +
-                                "','" +
-                                apikey +
-                                "','" +
-                                token +
-                                "')",
-                                function (err, result, fields) {
-                                    if (err)
-                                        return res.send(status.forbidden());
-                                    console.log("record added");
-                                }
-                            );
-                        }
-                        flag = 1;
-                    }
-                } catch (e) {
-                    console.log(e);
-                    object = {
-                        error: "client is not initialized",
-                    };
-                }
+            if (req.body.type == "workflow") {
+                contacts = contacts.split(",");
+                selectedcol = selectedcol.split(",");
             }
-        });
-    if (flag == 1) {
-        object = {
-            error: null,
-        };
-    }
-    res.send(object);
-});
+            let msgarr;
 
-app.post("/tempmsg", async function (req, res) {
-    var phonearray = req.body.phonearray;
-    var msg = req.body.message;
-    var clientobj = req.body.clientobj;
-    var selectedcol = req.body.selectedcol;
-    var indx = req.cookies.index;
-    var iid = req.body.iid;
-    var apikey = req.cookies.apikey;
-    var token = req.body.token;
-    let msgarr;
-    if (selectedcol.length == 1) {
-        msgarr = one(msg, clientobj, selectedcol);
-    } else if (selectedcol.length == 2) {
-        msgarr = two(msg, clientobj, selectedcol);
-    } else if (selectedcol.length == 3) {
-        msgarr = three(msg, clientobj, selectedcol);
-    } else if (selectedcol.length == 4) {
-        msgarr = four(msg, clientobj, selectedcol);
-    } else if (selectedcol.length == 5) {
-        msgarr = five(msg, clientobj, selectedcol);
-    }
-    for (let i = 0; i < clientobj.length; i++) {
-        let prefix = "+91";
-        let phone = phonearray[i];
-        phone = prefix.concat(phone);
-        let chatId = phone.substring(1) + "@c.us";
+            if (selectedcol.length == 1) {
+                msgarr = one(msg, clientobj, selectedcol);
+            } else if (selectedcol.length == 2) {
+                msgarr = two(msg, clientobj, selectedcol);
+            } else if (selectedcol.length == 3) {
+                msgarr = three(msg, clientobj, selectedcol);
+            } else if (selectedcol.length == 4) {
+                msgarr = four(msg, clientobj, selectedcol);
+            } else if (selectedcol.length == 5) {
+                msgarr = five(msg, clientobj, selectedcol);
+            }
 
-        if (await obj[indx].client.sendMessage(chatId, msgarr[i])) {
-            var msgid = crypto.randomBytes(8).toString("hex");
-            var msgtype = "template_bulk";
-            conn.query(`insert into message values('${msgid}','${msgarr[i]}','${msgtype}','${chatId}','${iid}','${apikey}','${token}')`,
-                function (err, result, fields) {
-                    if (err) return res.send(status.forbidden());
-                    console.log("record added");
+            conn.query(`select * from instance where instance_id = '${iid}' and apikey = '${apikey}' and token = '${token}'`,
+                function (err, result) {
+                    if (err || result.length <= 0) return res.send(status.forbidden());
+                    for (let i = 0; i < clientobj.length; i++) {
+                        if (obj[iid]) {
+                            let chatId = `91${contacts[i]}@c.us`;
+
+                            obj[iid].send_whatsapp_message(chatId, msgarr[i]).then((messageId) => {
+                                let msgid = crypto.randomBytes(8).toString("hex");
+
+                                conn.query(`insert into message values(?,?,?,?,?,?,?,?)`,
+                                    [msgid, msgarr[i], 'Bulk Message Template localfile', chatId, iid, apikey, token, new Date()],
+                                    function (err, result) {
+                                        if (err || result.affectedRows < 1) return status.internalservererror();
+                                        if (i === clientobj.length - 1) {
+                                            return res.send(status.ok());
+                                        }
+                                    });
+                            }).catch((error) => {
+                                console.log(`error in Sending schedule Message ::::::: <${error}>`);
+                                return res.send(status.userNotValid());
+                            })
+                        }
+                        else {
+                            console.log("no iid found");
+                            return res.send(status.userNotValid());
+                        }
+                    }
                 });
         }
     }
-    res.send(status.ok());
+    catch (e) {
+        console.log(e);
+        return res.send(status.unauthorized());
+    }
 });
 
 // Bulkmessage : Send Document and Image API
@@ -987,7 +606,7 @@ app.post("/sendimage", async function (req, res) {
                 function (err, result) {
                     if (err || result.length <= 0) return res.send(status.forbidden());
 
-                    createfolder(`image_data\\${apikey}\\${iid}`)
+                    createfolder(`image_data\\${apikey}\\${iid}`);
                     if (req.files && Object.keys(req.files).length !== 0) {
                         const uploadedFile = req.files.image;
                         const uploadPath = `${__dirname}/assets/upload/image_data/${apikey}/${iid}/${uploadedFile.name}`;
@@ -1003,16 +622,16 @@ app.post("/sendimage", async function (req, res) {
                                     var msgid = crypto.randomBytes(8).toString("hex");
 
                                     cloudinary.uploader.upload(filepath, { folder: 'M3' }).then((data) => {
-                                        conn.query(`insert into message values(?,?,?,?,?,?,?,CURRENT_TIMESTAMP)`,
-                                            [msgid, data.secure_url, req.files.image.mimetype, chatId, iid, apikey, token],
+                                        conn.query(`insert into message values(?,?,?,?,?,?,?,?)`,
+                                            [msgid, data.secure_url, req.files.image.mimetype, chatId, iid, apikey, token, new Date()],
                                             function (err, result) {
                                                 if (err || result.affectedRows < 1) return res.send(status.internalservererror());
                                                 res.send(status.ok());
                                             });
                                     }).catch((err) => {
                                         console.log(`error in storing Document on cloudnary ::::::: <${err}>`);
-                                        conn.query(`insert into message values(?,?,?,?,?,?,?,CURRENT_TIMESTAMP)`,
-                                            [msgid, uploadedFile.name, req.files.image.mimetype, chatId, iid, apikey, token],
+                                        conn.query(`insert into message values(?,?,?,?,?,?,?,?)`,
+                                            [msgid, uploadedFile.name, req.files.image.mimetype, chatId, iid, apikey, token, new Date()],
                                             function (err, result) {
                                                 if (err || result.affectedRows < 1) return res.send(status.internalservererror());
                                                 res.send(status.ok());
@@ -1055,10 +674,9 @@ app.post("/sendmsg", async function (req, res) {
                     if (err || result.length <= 0) return res.send(status.forbidden());
                     if (obj[iid]) {
                         obj[iid].send_whatsapp_message(chatId, message).then((messageId) => {
-                            console.log("yo", messageId)
                             var msgid = crypto.randomBytes(8).toString("hex");
-                            conn.query(`insert into message values(?,?,'Single Message',?,?,?,?,CURRENT_TIMESTAMP)`,
-                                [msgid, message, chatId, iid, apikey, token],
+                            conn.query(`insert into message values(?,?,?,?,?,?,?,?)`,
+                                [msgid, message, 'Single Message', chatId, iid, apikey, token, new Date()],
                                 function (err, result) {
                                     if (err || result.affectedRows < 1) return res.send(status.internalservererror());
                                     res.send(status.ok());
@@ -1080,6 +698,52 @@ app.post("/sendmsg", async function (req, res) {
     }
 });
 
+// Bulkmessage : Send Bulk Custom Message API
+app.post("/bulkcustommessage", async function (req, res) {
+    apikey = req.cookies.apikey;
+
+    const isValidapikey = await checkAPIKey(apikey);
+    try {
+        if (isValidapikey) {
+            const token = req.body.token;
+            const iid = req.body.iid;
+
+            let message = req.body.message;
+            var contacts = req.body.contacts;
+
+            conn.query(`select * from instance where instance_id = '${iid}' and apikey = '${apikey}' and token = '${token}'`,
+                async function (err, result) {
+                    if (err || result.length <= 0) return res.send(status.forbidden());
+                    for (let i = 0; i < contacts.length; i++) {
+                        const chatId = `91${contacts[i]}@c.us`;
+                        let msgid = crypto.randomBytes(8).toString("hex");
+                        if (obj[iid]) {
+
+                            obj[iid].send_whatsapp_message(chatId, message).then((messageId) => {
+                                conn.query(`insert into message values(?,?,?,?,?,?,?,?)`,
+                                    [msgid, message, 'Bulk Message custom localfile', chatId, iid, apikey, token, new Date()],
+                                    function (err, result) {
+                                        if (err || result.affectedRows < 1) return res.send(status.internalservererror());
+                                        if (i === contacts.length - 1) return res.send(status.ok());
+                                    });
+                            }).catch((error) => {
+                                console.log(`error in Sending Bulk Message to Channel ::::::: <${error}>`);
+                                return res.send(status.userNotValid());
+                            })
+                        }
+                        else {
+                            return res.send(status.userNotValid());
+                        }
+                    }
+                });
+        } else res.send(status.unauthorized());
+    }
+    catch (e) {
+        console.log(e);
+        res.send(status.unauthorized());
+    }
+});
+
 // Bulkmessage : Send Message through channel API
 app.post("/sendmsgchannel", async function (req, res) {
     apikey = req.cookies.apikey;
@@ -1091,7 +755,7 @@ app.post("/sendmsgchannel", async function (req, res) {
             const iid = req.body.iid;
 
             let message = req.body.message;
-            let contacts = req.body.contacts.split(",");
+            let contacts = req.body.contacts;
 
             conn.query(`select * from instance where instance_id = '${iid}' and apikey = '${apikey}' and token = '${token}'`, async function (err, result) {
                 if (err || result.length <= 0) return res.send(status.forbidden());
@@ -1102,8 +766,8 @@ app.post("/sendmsgchannel", async function (req, res) {
 
                         obj[iid].send_whatsapp_message(chatId, message).then((messageId) => {
                             conn.query(
-                                `insert into message values(?,?,'Bulk Message channel',?,?,?,?,CURRENT_TIMESTAMP)`,
-                                [msgid, message, chatId, iid, apikey, token],
+                                `insert into message values(?,?,?,?,?,?,?,?)`,
+                                [msgid, message, 'Bulk Message channel', chatId, iid, apikey, token, new Date()],
                                 function (err, result) {
                                     if (err || result.affectedRows < 1) return res.send(status.internalservererror());
                                     if (i === contacts.length - 1) return res.send(status.ok());
@@ -1126,9 +790,16 @@ app.post("/sendmsgchannel", async function (req, res) {
     }
 });
 
-// console.log(obj);
+// Bulkmessage : Send Message on Schedule API
 app.post('/schedule', async (req, res) => {
     apikey = req.cookies.apikey;
+
+    const sender = {
+        "hostname": await findData(apikey, 'hostname'),
+        "port": await findData(apikey, 'port'),
+        "email": await findData(apikey, 'email'),
+        "passcode": await findData(apikey, 'emailpasscode')
+    };
 
     const isValidapikey = await checkAPIKey(apikey);
     try {
@@ -1137,11 +808,8 @@ app.post('/schedule', async (req, res) => {
             const token = req.body.token;
             const time = req.body.time;
             const schedule_id = `sh_${crypto.randomBytes(6).toString("hex")}`;
-            const to = await findEmail(apikey);
+            const to = await findData(apikey, 'email');
             const subject = `Regarding your Schedule Message on M3`;
-
-
-
             // let time = `${minute + 1} ${hour} ${date} ${month + 1} *`;
 
             conn.query(`select * from instance where instance_id = '${iid}' and apikey = '${apikey}' and token = '${token}'`,
@@ -1150,32 +818,33 @@ app.post('/schedule', async (req, res) => {
                     try {
                         switch (req.body.type) {
                             case 'message': {
+                                let message = req.body.message, contacts = req.body.contacts_list;
                                 let data = {
                                     "api": "/sendmsg",
-                                    "body": req.body.message,
+                                    "body": message,
                                     "contacts": contacts
-                                }, message = req.body.message, contacts = req.body.contacts_list;
+                                };
 
                                 const task = cron.schedule(time, () => {
 
-                                    for (let i = 0; i < contacts.length; i++) {
-                                        console.log(contacts.length, contacts);
-                                        const chatId = `91${contacts[i]}@c.us`;
+                                    if (obj[iid]) {
+                                        for (let i = 0; i < contacts.length; i++) {
+                                            console.log(contacts.length, contacts);
+                                            const chatId = `91${contacts[i]}@c.us`;
 
-                                        if (obj[iid]) {
                                             obj[iid].send_whatsapp_message(chatId, message).then((messageId) => {
                                                 let msgid = crypto.randomBytes(8).toString("hex");
 
-                                                conn.query(`insert into message values(?,?,'Schedule Single Message',?,?,?,?,CURRENT_TIMESTAMP)`,
-                                                    [msgid, message, chatId, iid, apikey, token],
+                                                conn.query(`insert into message values(?,?,?,?,?,?,?,?)`,
+                                                    [msgid, message, 'Schedule Single Message', chatId, iid, apikey, token, new Date()],
                                                     function (err, result) {
                                                         if (err || result.affectedRows < 1) return status.internalservererror();
                                                         if (i === contacts.length - 1) {
                                                             conn.query(`update schedule set status = ? where schedule_id = ?`, [`DONE`, schedule_id],
-                                                                function (err, result) {
+                                                                async function (err, result) {
                                                                     if (err || result.affectedRows < 1) return console.log(status.internalservererror());
                                                                     let body = "Your scheduled task has completed without any error.";
-                                                                    sendEmail(to, subject, body).then(() => {
+                                                                    sendEmail(sender, to, subject, body).then(() => {
                                                                         return console.log("Email Sent Scuuessfully");
                                                                     }).catch((error) => {
                                                                         return console.log(`error in Sending  E-Mail ::::::: <${error}>`);
@@ -1186,10 +855,10 @@ app.post('/schedule', async (req, res) => {
                                             }).catch((error) => {
                                                 console.log(`error in Sending schedule Message ::::::: <${error}>`);
                                                 conn.query(`update schedule set status = ? where schedule_id = ?`, [`ERROR`, schedule_id],
-                                                    function (err, result) {
+                                                    async function (err, result) {
                                                         if (err || result.affectedRows < 1) return console.log(status.internalservererror());
                                                         let body = `Your scheduled task has not completed due to : ${error}`;
-                                                        sendEmail(to, subject, body).then(() => {
+                                                        sendEmail(sender, to, subject, body).then(() => {
                                                             return console.log("Email Sent Scuuessfully");
                                                         }).catch((error) => {
                                                             return console.log(`error in Sending  E-Mail ::::::: <${error}>`);
@@ -1197,20 +866,21 @@ app.post('/schedule', async (req, res) => {
                                                     });
                                             })
                                         }
-                                        else {
-                                            console.log("no iid found");
-                                            // conn.query(`update schedule set status = ? where schedule_id = ?`, [`ERROR`, schedule_id],
-                                            //     function (err, result) {
-                                            //         if (err || result.affectedRows < 1) return console.log(status.internalservererror());
-                                            //         let body = `Your scheduled task has not completed due to : disconnected instance.`;
-                                            //         sendEmail(to, subject, body).then(() => {
-                                            //             return console.log("Email Sent Scuuessfully");
-                                            //         }).catch((error) => {
-                                            //             return console.log(`error in Sending  E-Mail ::::::: <${error}>`);
-                                            //         })
-                                            //     });
-                                        }
                                     }
+                                    else {
+                                        console.log("no iid found");
+                                        conn.query(`update schedule set status = ? where schedule_id = ?`, [`ERROR`, schedule_id],
+                                            function (err, result) {
+                                                if (err || result.affectedRows < 1) return console.log(status.internalservererror());
+                                                let body = `Your scheduled task has not completed due to : disconnected instance.`;
+                                                sendEmail(sender, to, subject, body).then(() => {
+                                                    return console.log("Email Sent Scuuessfully");
+                                                }).catch((error) => {
+                                                    return console.log(`error in Sending  E-Mail ::::::: <${error}>`);
+                                                })
+                                            });
+                                    }
+
                                 }, { scheduled: true, timezone: 'Asia/Kolkata' });
                                 task.start();
                                 conn.query(`insert into schedule values(?,?,?,?,?,?)`, [schedule_id, JSON.stringify(data), time, `PENDING`, apikey, iid],
@@ -1223,12 +893,17 @@ app.post('/schedule', async (req, res) => {
 
                             case 'document': {
                                 createfolder(`image_data\\${apikey}\\${iid}`);
+                                let contacts = null;
+                                if (typeof (req.body.contacts_list) === 'object') {
+                                    contacts = req.body.contacts_list;
+                                }
+                                else if (typeof (req.body.contacts_list) === 'string') {
+                                    contacts = req.body.contacts_list.split(',');
+                                }
 
                                 if (req.files && Object.keys(req.files).length !== 0) {
                                     const uploadedFile = req.files.image;
                                     const uploadPath = `${__dirname}/assets/upload/image_data/${apikey}/${iid}/${uploadedFile.name}`;
-
-                                    // console.log(contacts.length, contacts);
 
                                     uploadedFile.mv(uploadPath, async function (err) {
                                         if (err) res.send(status.badRequest());
@@ -1242,24 +917,25 @@ app.post('/schedule', async (req, res) => {
                                         const task = cron.schedule(time, async () => {
                                             let filepath = `${__dirname}/assets/upload/image_data/${apikey}/${iid}/${uploadedFile.name}`;
 
-                                            for (let i = 0; i < contacts.length; i++) {
-                                                const chatId = `91${contacts[i]}@c.us`;
-                                                if (obj[iid]) {
+                                            if (obj[iid]) {
+                                                for (let i = 0; i < contacts.length; i++) {
+                                                    const chatId = `91${contacts[i]}@c.us`;
                                                     await obj[iid].send_whatsapp_document(chatId, media).then((messageId) => {
                                                         var msgid = crypto.randomBytes(8).toString("hex");
 
                                                         cloudinary.uploader.upload(filepath, { folder: 'M3' }).then((data) => {
-                                                            conn.query(`insert into message values(?,?,?,?,?,?,?,CURRENT_TIMESTAMP)`,
-                                                                [msgid, data.secure_url, req.files.image.mimetype, chatId, iid, apikey, token],
+                                                            conn.query(`insert into message values(?,?,?,?,?,?,?,?)`,
+                                                                [msgid, data.secure_url, req.files.image.mimetype, chatId, iid, apikey, token, new Date()],
                                                                 function (err, result) {
                                                                     if (err || result.affectedRows < 1) return res.send(status.internalservererror());
                                                                     if (i === contacts.length - 1) {
                                                                         conn.query(`update schedule set status = ? where schedule_id = ?`, [`DONE`, schedule_id],
-                                                                            function (err, result) {
+                                                                            async function (err, result) {
                                                                                 if (err || result.affectedRows < 1) return console.log(status.internalservererror());
 
                                                                                 let body = "Your scheduled task has completed without any error.";
-                                                                                sendEmail(to, subject, body).then(() => {
+
+                                                                                sendEmail(sender, to, subject, body).then(() => {
                                                                                     return console.log("Email Sent Scuuessfully");
                                                                                 }).catch((error) => {
                                                                                     return console.log(`error in Sending  E-Mail ::::::: <${error}>`);
@@ -1269,13 +945,14 @@ app.post('/schedule', async (req, res) => {
                                                                 });
                                                         }).catch((err) => {
                                                             console.log(`error in storing Document on cloudnary ::::::: <${err}>`);
-                                                            conn.query(`insert into message values(?,?,?,?,?,?,?,CURRENT_TIMESTAMP)`,
-                                                                [msgid, uploadedFile.name, req.files.image.mimetype, chatId, iid, apikey, token],
+                                                            conn.query(`insert into message values(?,?,?,?,?,?,?,?)`,
+                                                                [msgid, uploadedFile.name, req.files.image.mimetype, chatId, iid, apikey, token, new Date()],
                                                                 function (err, result) {
                                                                     if (err || result.affectedRows < 1) return res.send(status.internalservererror());
                                                                     if (i === contacts.length - 1) {
                                                                         let body = "Your scheduled task has completed without any error.";
-                                                                        sendEmail(to, subject, body).then(() => {
+
+                                                                        sendEmail(sender, to, subject, body).then(() => {
                                                                             console.log("Email Sent Scuuessfully");
                                                                         }).catch((error) => {
                                                                             console.log(`error in Sending  E-Mail ::::::: <${error}>`);
@@ -1289,7 +966,7 @@ app.post('/schedule', async (req, res) => {
                                                             function (err, result) {
                                                                 if (err || result.affectedRows < 1) return console.log(status.internalservererror());
                                                                 let body = `Your scheduled task has not completed due to : ${error}`;
-                                                                sendEmail(to, subject, body).then(() => {
+                                                                sendEmail(sender, to, subject, body).then(() => {
                                                                     return console.log("Email Sent Scuuessfully");
                                                                 }).catch((error) => {
                                                                     return console.log(`error in Sending  E-Mail ::::::: <${error}>`);
@@ -1297,20 +974,21 @@ app.post('/schedule', async (req, res) => {
                                                             });
                                                     });
                                                 }
-                                                else {
-                                                    console.log("no iid found");
-                                                    // conn.query(`update schedule set status = ? where schedule_id = ?`, [`ERROR`, schedule_id],
-                                                    //     function (err, result) {
-                                                    //         if (err || result.affectedRows < 1) return console.log(status.internalservererror());
-                                                    //         let body = `Your scheduled task has not completed due to : disconnected instance.`;
-                                                    //         sendEmail(to, subject, body).then(() => {
-                                                    //             return console.log("Email Sent Scuuessfully");
-                                                    //         }).catch((error) => {
-                                                    //             return console.log(`error in Sending  E-Mail ::::::: <${error}>`);
-                                                    //         })
-                                                    //     });
-                                                }
                                             }
+                                            else {
+                                                console.log("no iid found");
+                                                conn.query(`update schedule set status = ? where schedule_id = ?`, [`ERROR`, schedule_id],
+                                                    function (err, result) {
+                                                        if (err || result.affectedRows < 1) return console.log(status.internalservererror());
+                                                        let body = `Your scheduled task has not completed due to : disconnected instance.`;
+                                                        sendEmail(sender, to, subject, body).then(() => {
+                                                            return console.log("Email Sent Scuuessfully");
+                                                        }).catch((error) => {
+                                                            return console.log(`error in Sending  E-Mail ::::::: <${error}>`);
+                                                        })
+                                                    });
+                                            }
+
                                         }, { scheduled: false, timezone: 'Asia/Kolkata' });
                                         task.start();
                                         conn.query(`insert into schedule values(?,?,?,?,?,?)`, [schedule_id, JSON.stringify(data), time, `PENDING`, apikey, iid],
@@ -1336,6 +1014,28 @@ app.post('/schedule', async (req, res) => {
     }
 })
 
+// Bulkmessage : Refresh Token API
+app.get("/refreshtoken/:iid", async (req, res) => {
+    apikey = req.cookies.apikey;
+
+    const isValidapikey = await checkAPIKey(apikey);
+    try {
+        if (isValidapikey) {
+            let token = crypto.randomBytes(10).toString("hex");
+            let iid = req.params.iid;
+            conn.query(`UPDATE instance SET token = '${token}' where apikey = '${apikey}' and instance_id = '${iid}'`,
+                function (err) {
+                    if (err) console.log(err);
+                    res.send(token);
+                });
+        } else res.send(status.unauthorized());
+    }
+    catch (e) {
+        console.log(e);
+        res.send(status.unauthorized());
+    }
+});
+
 app.get("/checkauth/:iid", (req, res) => {
     if (obj[req.params.iid]) {
         obj[req.params.iid].checkAuth().then(() => {
@@ -1350,17 +1050,443 @@ app.get("/checkauth/:iid", (req, res) => {
 });
 
 
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+
+// Bulkmail : Send Bulk Template Mail API
+app.post("/bulktemplatemail", async function (req, res) {
+    apikey = req.cookies.apikey;
+
+    const isValidapikey = await checkAPIKey(apikey);
+    try {
+        if (isValidapikey) {
+            const iid = req.body.iid;
+            const token = req.body.token;
+
+            let contacts = req.body.contacts;
+            let msg = req.body.message;
+            let clientobj = req.body.clientobj;
+            let selectedcol = req.body.selectedcol;
+
+            if (req.body.type == "workflow") {
+                contacts = contacts.split(",");
+                selectedcol = selectedcol.split(",");
+            }
+            let msgarr;
+
+            if (selectedcol.length == 1) {
+                msgarr = one(msg, clientobj, selectedcol);
+            } else if (selectedcol.length == 2) {
+                msgarr = two(msg, clientobj, selectedcol);
+            } else if (selectedcol.length == 3) {
+                msgarr = three(msg, clientobj, selectedcol);
+            } else if (selectedcol.length == 4) {
+                msgarr = four(msg, clientobj, selectedcol);
+            } else if (selectedcol.length == 5) {
+                msgarr = five(msg, clientobj, selectedcol);
+            }
+
+            conn.query(`select * from instance where instance_id = '${iid}' and apikey = '${apikey}' and token = '${token}'`,
+                async function (err, result) {
+                    if (err || result.length <= 0) return res.send(status.forbidden());
+                    for (let i = 0; i < clientobj.length; i++) {
+                        const to = contacts[i];
+                        const subject = `TEST`;
+                        const body = msgarr[i];
+                        const sender = {
+                            "hostname": await findData(apikey, 'hostname'),
+                            "port": await findData(apikey, 'port'),
+                            "email": await findData(apikey, 'email'),
+                            "passcode": await findData(apikey, 'emailpasscode')
+                        };
+                        sendEmail(sender, to, subject, body).then(() => {
+                            if (i === clientobj.length - 1) {
+                                return res.send(status.ok());
+                            }
+                        }).catch((error) => {
+                            console.log(`error in Sending  E-Mail ::::::: <${error}>`);
+                            return res.send(status.badRequest());
+                        })
+                    }
+                });
+        }
+    }
+    catch (e) {
+        console.log(e);
+        return res.send(status.unauthorized());
+    }
+});
+
+// Bulkmail : Send Bulk Custom Mail API
+app.post("/bulkcustommail", async function (req, res) {
+    apikey = req.cookies.apikey;
+
+    const isValidapikey = await checkAPIKey(apikey);
+    try {
+        if (isValidapikey) {
+            const token = req.body.token;
+            const iid = req.body.iid;
+
+            var contacts = req.body.contacts;
+
+            conn.query(`select * from instance where instance_id = '${iid}' and apikey = '${apikey}' and token = '${token}'`,
+                async function (err, result) {
+                    if (err || result.length <= 0) return res.send(status.forbidden());
+                    for (let i = 0; i < contacts.length; i++) {
+                        const to = contacts[i];
+                        const subject = req.body.subject;
+                        const body = req.body.message;
+                        const sender = {
+                            "hostname": await findData(apikey, 'hostname'),
+                            "port": await findData(apikey, 'port'),
+                            "email": await findData(apikey, 'email'),
+                            "passcode": await findData(apikey, 'emailpasscode')
+                        };
+                        sendEmail(sender, to, subject, body).then(() => {
+                            if (i === contacts.length - 1) {
+                                return res.send(status.ok());
+                            }
+                        }).catch((error) => {
+                            console.log(`error in Sending  E-Mail ::::::: <${error}>`);
+                            return res.send(status.badRequest());
+                        })
+                    }
+                });
+        } else res.send(status.unauthorized());
+    }
+    catch (e) {
+        console.log(e);
+        res.send(status.unauthorized());
+    }
+});
+
+// Bulkmail : Send Bulk Mail through channel API
+app.post("/sendmailchannel", async function (req, res) {
+    apikey = req.cookies.apikey;
+
+    const isValidapikey = await checkAPIKey(apikey);
+    try {
+        if (isValidapikey) {
+            const token = req.body.token;
+            const iid = req.body.iid;
+
+            let contacts = req.body.contacts;
+
+            conn.query(`select * from instance where instance_id = '${iid}' and apikey = '${apikey}' and token = '${token}'`, async function (err, result) {
+                if (err || result.length <= 0) return res.send(status.forbidden());
+                for (let i = 0; i < contacts.length; i++) {
+                    const to = contacts[i];
+                    const subject = req.body.subject;
+                    const body = req.body.message;
+                    const sender = {
+                        "hostname": await findData(apikey, 'hostname'),
+                        "port": await findData(apikey, 'port'),
+                        "email": await findData(apikey, 'email'),
+                        "passcode": await findData(apikey, 'emailpasscode')
+                    };
+                    sendEmail(sender, to, subject, body).then(() => {
+                        if (i === contacts.length - 1) {
+                            return res.send(status.ok());
+                        }
+                    }).catch((error) => {
+                        console.log(`error in Sending  E-Mail ::::::: <${error}>`);
+                        return res.send(status.userNotValid());
+                    })
+                }
+            });
+        } else res.send(status.unauthorized());
+    }
+    catch (e) {
+        console.log(e);
+        res.send(status.unauthorized());
+    }
+});
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+
+// Channel : add contact to channel
+app.post("/addcontact2channel", async (req, res) => {
+    var apikey = req.cookies.apikey;
+
+    const isValidapikey = await checkAPIKey(apikey);
+    try {
+        if (isValidapikey) {
+            var contacts = req.body.contacts;
+            var query = `insert into contact_channel values `;
+            for (let i in contacts) {
+                if (i != contacts.length - 1) {
+                    query += `('${req.body.id}','${contacts[i]}','${apikey}','${req.body.iid}'),`;
+                }
+                else {
+                    query += `('${req.body.id}','${contacts[i]}','${apikey}','${req.body.iid}');`;
+                }
+            }
+            conn.query(query, (err, result) => {
+                if (err || result.affectedRows <= 0) return res.send(status.internalservererror());
+                res.send(status.ok());
+            });
+        } else res.send(status.unauthorized());
+    }
+    catch (e) {
+        console.log(e);
+        res.send(status.unauthorized());
+    }
+});
+
+// Channel : get contact of particular channel
+app.post("/get-channel-contact", async (req, res) => {
+    apikey = req.cookies.apikey;
+
+    const isValidapikey = await checkAPIKey(apikey);
+    try {
+        if (isValidapikey) {
+            const channel_id = req.body.channel_id;
+            conn.query(`SELECT cc.channel_id,c.contact_id,c.name,ch.channelName,c.phone,c.email FROM contact_channel cc, contact c, channel ch WHERE cc.channel_id = ch.channel_id AND cc.contact_id = c.contact_id and cc.apikey = '${apikey}' AND cc.channel_id = '${channel_id}' AND cc.instance_id = '${req.body.iid}' order by c.name asc`,
+                (err, result) => {
+                    if (err) return res.send(status.internalservererror());
+                    if (result.length == 0) return res.send(status.nodatafound());
+                    res.send(result);
+                });
+        } else res.send(status.unauthorized());
+    }
+    catch (e) {
+        console.log(e);
+        res.send(status.unauthorized());
+    }
+});
+
+// Channel : Create | Add Channel
+app.post("/createchannel", async (req, res) => {
+    apikey = req.cookies.apikey;
+
+    const isValidapikey = await checkAPIKey(apikey);
+    try {
+        if (isValidapikey) {
+            const id = crypto.randomBytes(8).toString("hex");
+            conn.query(`insert into channel values('${id}','${req.body.name}','${apikey}','${req.body.iid}')`,
+                (err, result) => {
+                    if (err || result.affectedRows <= 0) return res.send(status.internalservererror());
+                    res.send(status.created());
+                });
+        } else res.send(status.unauthorized());
+    }
+    catch (e) {
+        console.log(e);
+        res.send(status.unauthorized());
+    }
+});
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+
+// Contact-list : add contact from sheet / csv
+app.post("/importContactsFromGoogle", async (req, res) => {
+    var apikey = req.cookies.apikey;
+    const isValidapikey = await checkAPIKey(apikey);
+    try {
+        if (isValidapikey) {
+            var clientarr = req.body.clients;
+            var query = `insert into contact values`;
+            for (var i in clientarr) {
+                let id = crypto.randomBytes(8).toString("hex");
+                if (i != clientarr.length - 1) {
+                    query += `('${id}','${apikey}','${clientarr[i].name}','${clientarr[i].email}','${clientarr[i].phone}','${req.body.iid}'),`;
+                }
+                else {
+                    query += `('${id}','${apikey}','${clientarr[i].name}','${clientarr[i].email}','${clientarr[i].phone}','${req.body.iid}')`;
+                }
+            }
+            conn.query(query, (err, result) => {
+                if (err || result.affectedRows <= 0) return res.send(status.internalservererror());
+                res.send(status.ok());
+            });
+        } else res.send(status.unauthorized());
+    }
+    catch (e) {
+        console.log(e);
+        res.send(status.unauthorized());
+    }
+});
+
+// Contact-list : Add contact
+app.post("/addcontact", async (req, res) => {
+    apikey = req.cookies.apikey;
+
+    const isValidapikey = await checkAPIKey(apikey);
+    try {
+        if (isValidapikey) {
+            let id = crypto.randomBytes(8).toString("hex");
+            conn.query(
+                `insert into contact values('${id}','${apikey}','${req.body.name}','${req.body.email}','${req.body.phone}','${req.body.iid}')`,
+                (err, result) => {
+                    if (err || result.affectedRows <= 0) return res.send(status.internalservererror());
+                    res.send(status.ok());
+                });
+        } else res.send(status.unauthorized());
+    }
+    catch (e) {
+        console.log(e);
+        res.send(status.unauthorized());
+    }
+});
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+
+// Instance : Create Instance
+app.post("/addinstance", async (req, res) => {
+    var token = crypto.randomBytes(10).toString("hex");
+    var instanceid = crypto.randomBytes(8).toString("hex");
+    var instance_name = req.body.instance_name;
+    apikey = req.cookies.apikey;
+
+    function create(id, name, apikey, token) {
+        tableData({
+            table: "instance",
+            paramstr: `(i_name = '${name}')`,
+            apikey: apikey,
+        }, (result) => {
+            if (result.status_code == 404) {
+                conn.query(`INSERT INTO instance values('${id}','${name}','${apikey}','${token}',CURRENT_DATE,0)`,
+                    function (error, result) {
+                        if (error) return res.send(status.internalservererror());
+                        return res.send(status.created());
+                    });
+            }
+            else {
+                res.send(status.duplicateRecord());
+            }
+        })
+    }
+
+    const isValidapikey = await checkAPIKey(apikey);
+    try {
+        if (isValidapikey) {
+            tableData({
+                table: "subscription",
+                paramstr: true,
+                apikey: apikey,
+            }, (result) => {
+                if (result.status_code == 404) {
+                    tableData({
+                        table: "instance",
+                        paramstr: true,
+                        apikey: apikey,
+                    }, (result) => {
+                        if (result.status_code == 404) {
+                            create(instanceid, instance_name, apikey, token);
+                        }
+                        else {
+                            res.send(status.forbidden());
+                        }
+                    })
+                }
+                else {
+                    var latest = new Date(result[0].pay_date), current_date = new Date();
+                    var planID = result[0].planID;
+                    let total_instance = 0, duration = 0, remaining_days = 0;
+                    for (var i in result) {
+                        if (latest < new Date(result[i].pay_date)) {
+                            latest = new Date(result[i].pay_date);
+                            planID = result[i].planID;
+                        }
+                    }
+
+                    tableData({
+                        table: "plans",
+                        paramstr: `planid = ${planID} --`,
+                        apikey: apikey,
+                    }, (result) => {
+                        total_instance = result[0].totalInstance;
+                        duration = result[0].durationMonth;
+                        latest.setMonth(latest.getMonth() + duration);
+                        remaining_days = Math.ceil(Math.round(latest - current_date) / (1000 * 60 * 60 * 24));
+
+                        console.log(latest, total_instance);
+                        if (remaining_days > 0) {
+                            tableData({
+                                table: "instance",
+                                paramstr: true,
+                                apikey: apikey
+                            }, (result) => {
+                                if (result.length >= total_instance) return res.send(status.forbidden());
+                                create(instanceid, instance_name, apikey, token);
+                            })
+                        }
+                        else {
+                            res.send(status.forbidden());
+                        }
+                    })
+                }
+            });
+        } else res.send(status.unauthorized());
+    } catch (error) {
+        console.log(error);
+        res.send(status.unauthorized(), error);
+    }
+});
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+
+// Custom-Templet : Create Custom Template
+app.post("/create_custom_template", async function (req, res) {
+    apikey = req.cookies.apikey;
+
+    const isValidapikey = await checkAPIKey(apikey);
+    try {
+        if (isValidapikey) {
+            let cstm_id = crypto.randomBytes(6).toString("hex");
+            let cstm_name = req.body.name;
+            let cstm_message = req.body.message;
+            let field = req.body.field;
+
+            function char_count(str, letter) {
+                var letter_Count = 0;
+                for (var position = 0; position < str.length; position++) {
+                    if (str.charAt(position) == letter) {
+                        letter_Count += 1;
+                    }
+                }
+                return letter_Count;
+            }
+            let tempmsg = cstm_message;
+            let cnt = char_count(cstm_message, "{");
+            for (let k = 1; k <= cnt; k++) {
+                tempmsg = tempmsg.replace("{}", `[value${[k]}]`);
+            }
+
+            conn.query(`insert into cstm_template values(?,?,?,?,?)`,
+                [cstm_id, cstm_name, tempmsg, field, apikey],
+                (err, result) => {
+                    if (err || result.affectedRows < 1) return res.send(status.internalservererror());
+                    res.send(status.ok());
+                });
+        } else res.send(status.unauthorized());
+    }
+    catch (e) {
+        console.log(e);
+        res.send(status.unauthorized());
+    }
+});
+
+
+
 /*----------------------------------------------------------*/
+
 
 app.post("/sendEmailVerification", (req, res) => {
     var email = req.body.email;
     const token = jwt.sign({
         data: "Token Data",
-    },
-        "ourSecretKey",
-        {
-            expiresIn: "5m"
-        }
+    }, "ourSecretKey", {
+        expiresIn: "5m"
+    }
     );
     var transporter = nodemailer.createTransport({
         service: "gmail",
@@ -1505,26 +1631,6 @@ app.post("/getUserMessages", async (req, res) => {
     });
 });
 
-app.get("/refreshtoken/:iid", async (req, res) => {
-    apikey = req.cookies.apikey;
-
-    const isValidapikey = await checkAPIKey(apikey);
-    try {
-        if (isValidapikey) {
-            let token = crypto.randomBytes(10).toString("hex");
-            let iid = req.params.iid;
-            conn.query(`UPDATE instance SET token = '${token}' where apikey = '${apikey}' and instance_id = '${iid}'`,
-                function (err) {
-                    if (err) console.log(err);
-                    res.send(token);
-                });
-        } else res.send(status.unauthorized());
-    }
-    catch (e) {
-        console.log(e);
-        res.send(status.unauthorized());
-    }
-});
 
 app.get('/message_summary', async (req, res) => {
     apikey = req.cookies.apikey;
@@ -1604,97 +1710,7 @@ app.get("/getmsgtypes/:iid", (req, res) => {
     );
 });
 
-app.post("/addinstance", async (req, res) => {
-    var token = crypto.randomBytes(10).toString("hex");
-    var instanceid = crypto.randomBytes(8).toString("hex");
-    var instance_name = req.body.instance_name;
-    apikey = req.cookies.apikey;
 
-    function create(id, name, apikey, token) {
-        tableData({
-            table: "instance",
-            paramstr: `(i_name = '${name}')`,
-            apikey: apikey,
-        }, (result) => {
-            if (result.status_code == 404) {
-                conn.query(`INSERT INTO instance values('${id}','${name}','${apikey}','${token}',CURRENT_DATE,0)`,
-                    function (error, result) {
-                        if (error) return res.send(status.internalservererror());
-                        return res.send(status.created());
-                    });
-            }
-            else {
-                res.send(status.duplicateRecord());
-            }
-        })
-    }
-
-    const isValidapikey = await checkAPIKey(apikey);
-    try {
-        if (isValidapikey) {
-            tableData({
-                table: "subscription",
-                paramstr: true,
-                apikey: apikey,
-            }, (result) => {
-                if (result.status_code == 404) {
-                    tableData({
-                        table: "instance",
-                        paramstr: true,
-                        apikey: apikey,
-                    }, (result) => {
-                        if (result.status_code == 404) {
-                            create(instanceid, instance_name, apikey, token);
-                        }
-                        else {
-                            res.send(status.forbidden());
-                        }
-                    })
-                }
-                else {
-                    var latest = new Date(result[0].pay_date), current_date = new Date();
-                    var planID = result[0].planID;
-                    let total_instance = 0, duration = 0, remaining_days = 0;
-                    for (var i in result) {
-                        if (latest < new Date(result[i].pay_date)) {
-                            latest = new Date(result[i].pay_date);
-                            planID = result[i].planID;
-                        }
-                    }
-
-                    tableData({
-                        table: "plans",
-                        paramstr: `planid = ${planID} --`,
-                        apikey: apikey,
-                    }, (result) => {
-                        total_instance = result[0].totalInstance;
-                        duration = result[0].durationMonth;
-                        latest.setMonth(latest.getMonth() + duration);
-                        remaining_days = Math.ceil(Math.round(latest - current_date) / (1000 * 60 * 60 * 24));
-
-                        console.log(latest, total_instance);
-                        if (remaining_days > 0) {
-                            tableData({
-                                table: "instance",
-                                paramstr: true,
-                                apikey: apikey
-                            }, (result) => {
-                                if (result.length >= total_instance) return res.send(status.forbidden());
-                                create(instanceid, instance_name, apikey, token);
-                            })
-                        }
-                        else {
-                            res.send(status.forbidden());
-                        }
-                    })
-                }
-            });
-        } else res.send(status.unauthorized());
-    } catch (error) {
-        console.log(error);
-        res.send(status.unauthorized(), error);
-    }
-});
 
 app.get("/get_phone_code", (req, res) => {
     var country_obj = country.getList();
@@ -1766,12 +1782,16 @@ app.post("/profile_img", async (req, res) => {
 
     try {
         if (isValidapikey) {
-            createfolder(`\\profile\\${apikey}`);
+            const data = createfolder(`/profile/${apikey}`);
+            console.log(data);
             if (req.files && Object.keys(req.files).length !== 0) {
                 const uploadedFile = req.files.img;
+                console.log(uploadedFile);
                 const uploadPath = `${__dirname}\\assets\\upload\\profile\\${apikey}\\${uploadedFile.name}`;
+                console.log(uploadPath);
 
                 uploadedFile.mv(uploadPath, function (err) {
+                    console.log(err);
                     if (err) return res.send(status.badRequest());
                     conn.query(`UPDATE users SET image = '${uploadedFile.name}' WHERE apikey = '${apikey}'`,
                         function (err, result) {
@@ -1825,80 +1845,6 @@ app.get("/get-landingpage-data", (req, res) => {
     }
 });
 
-app.post("/sendTemplateBulkMail", async (req, res) => {
-    console.log("send_template");
-    var emailarray = req.body.emailarray;
-    var msg = req.body.message;
-    var clientobj = req.body.clientobj;
-    var selectedcol = req.body.selectedcol;
-    var subject = req.body.subject;
-    console.log(msg);
-    let msgarr;
-    if (selectedcol.length == 1) {
-        msgarr = one(msg, clientobj, selectedcol);
-    } else if (selectedcol.length == 2) {
-        msgarr = two(msg, clientobj, selectedcol);
-    } else if (selectedcol.length == 3) {
-        msgarr = three(msg, clientobj, selectedcol);
-    } else if (selectedcol.length == 4) {
-        msgarr = four(msg, clientobj, selectedcol);
-    } else if (selectedcol.length == 5) {
-        msgarr = five(msg, clientobj, selectedcol);
-    }
-    for (let i = 0; i < clientobj.length; i++) {
-        // let prefix = "+91";
-        let email = emailarray[i];
-        // phone = prefix.concat(phone);
-        // let chatId = phone.substring(1) + "@c.us";
-        var mailOptions = {
-            from: "sakshiiit232@gmail.com",
-            to: email,
-            subject: subject,
-            text: msgarr[i],
-        };
-
-        transporter.sendMail(mailOptions, function (err, info) {
-            if (err) {
-                console.log(err);
-                res.send(status.expectationFailed());
-            } else {
-                console.log("Email sent: " + info.response);
-            }
-        });
-    }
-    res.send(status.ok());
-});
-
-app.post("/sendEmailToAll", (req, res) => {
-    console.log("send_gsheet");
-    var clientarr = req.body.clientarr;
-    var subject = req.body.subject;
-    var msg = req.body.msg;
-    let email_array = new Array();
-    const data = {
-        table: "users",
-        paramstr: true,
-        apikey: apikey
-    }
-    tableData(data, (result) => {
-
-        for (let i = 0; i < clientarr.length; i++) {
-            email_array.push(clientarr[i].email);
-        }
-        var mailOptions = {
-            from: "gajjarharah1104@gmail.com",
-            to: email_array,
-            subject: subject,
-            text: msg,
-        };
-        transporter.sendMail(mailOptions, function (err, info) {
-            if (err) return res.send(status.expectationFailed());
-            console.log("Email sent: " + info.response);
-            res.send(status.ok());
-        });
-    });
-});
-
 app.get("/getPlans", function (req, res) {
     const data = {
         table: "plans",
@@ -1922,285 +1868,46 @@ app.get("/dis_template", function (req, res) {
 app.get("/dis_user", function (req, res) {
     const data = {
         table: "users",
-        paramstr: "true; --",
+        paramstr: "true --",
     }
     tableData(data, (result) => {
-        console.log(result);
         res.send(result);
     });
 });
 
 app.post("/dis_mes", function (req, res) {
     let temp_name = req.body.temp_name;
-    const data = {
+    tableData({
         table: "template",
-        paramstr: `temp_name = ${temp_name}`,
-    }
-    tableData(data, (result) => {
-        console.log(result);
-        res.send(result);
+        paramstr: `temp_name = '${temp_name}' --`,
+        apikey: 'null'
+    }, (result) => {
+        switch (result.status_code) {
+            case '500': {
+                res.send(status.internalservererror());
+                break;
+            }
+            case '404': {
+                tableData({
+                    table: "cstm_template",
+                    paramstr: `cstm_name = '${temp_name}'`,
+                    apikey: req.cookies.apikey
+                }, (result) => {
+                    res.send(result);
+                })
+                break;
+            }
+            default: {
+                res.send(result);
+                break;
+            }
+        }
     });
 });
 
-// Common UPDATE API
-app.put("/updateData", (req, res) => {
-    try {
-        if (req.body.table == "users" && req.body.paramstr.includes("password")) {
-            bcrypt.hash(req.body.paramstr.split('\'')[1], 10, (err, hash) => {
-                if (err) return res.send("err in bcrypt");
-                conn.query(`UPDATE ${req.body.table} SET password = '${hash}' WHERE ${req.body.condition}`,
-                    (err, result) => {
-                        if (err || result.affectedRows <= 0) return res.send(status.internalservererror());
-                        if (result <= 0) return res.send(status.nodatafound());
-                        res.send(status.ok());
-                    })
-            });
-        }
-        else {
-            conn.query(`UPDATE ${req.body.table} SET ${req.body.paramstr} WHERE ${req.body.condition}`,
-                (err, result) => {
-                    if (err || result.affectedRows <= 0) return res.send(status.internalservererror());
-                    if (result <= 0) return res.send(status.nodatafound());
-                    res.send(status.ok());
-                })
-        }
-    }
-    catch (e) {
-        console.log(e);
-    }
-});
-
-// Common DELETE API
-app.delete("/deleterecord", async (req, res) => {
-    apikey = req.cookies.apikey;
-
-    const isValidapikey = await checkAPIKey(apikey);
-    try {
-        if (isValidapikey) {
-            conn.query(`DELETE FROM ${req.body.obj.table} WHERE ${req.body.obj.paramstr}`,
-                (err, result) => {
-                    console.log(err);
-                    if (err || result.affectedRows < 0) return res.send(status.internalservererror());
-                    res.send(status.ok());
-                });
-        } else res.send(status.unauthorized());
-    }
-    catch (e) {
-        console.log(e);
-        res.send(status.unauthorized());
-    }
-});
-
-/*--------------------[ Custom-Templet ]--------------------*/
-
-app.post("/create_custom_template", async function (req, res) {
-    apikey = req.cookies.apikey;
-
-    const isValidapikey = await checkAPIKey(apikey);
-    try {
-        if (isValidapikey) {
-            let cstm_id = crypto.randomBytes(6).toString("hex");
-            let cstm_name = req.body.name;
-            let cstm_message = req.body.message;
-            let field = req.body.field;
-
-            function char_count(str, letter) {
-                var letter_Count = 0;
-                for (var position = 0; position < str.length; position++) {
-                    if (str.charAt(position) == letter) {
-                        letter_Count += 1;
-                    }
-                }
-                return letter_Count;
-            }
-            let tempmsg = cstm_message;
-            let cnt = char_count(cstm_message, "{");
-            for (let k = 1; k <= cnt; k++) {
-                tempmsg = tempmsg.replace("{}", `[value${[k]}]`);
-            }
-
-            conn.query(`insert into cstm_template values(?,?,?,?,?)`,
-                [cstm_id, cstm_name, tempmsg, field, apikey],
-                (err, result) => {
-                    if (err || result.affectedRows < 1) return res.send(status.internalservererror());
-                    res.send(status.ok());
-                });
-        } else res.send(status.unauthorized());
-    }
-    catch (e) {
-        console.log(e);
-        res.send(status.unauthorized());
-    }
-});
-
-/*--------------------[ Contact-list ]--------------------*/
-
-// Contact-list : add contact from sheet / csv
-app.post("/importContactsFromGoogle", async (req, res) => {
-    var apikey = req.cookies.apikey;
-    const isValidapikey = await checkAPIKey(apikey);
-    try {
-        if (isValidapikey) {
-            var clientarr = req.body.clients;
-            var query = `insert into contact values`;
-            for (var i in clientarr) {
-                let id = crypto.randomBytes(8).toString("hex");
-                if (i != clientarr.length - 1) {
-                    query += `('${id}','${apikey}','${clientarr[i].name}','${clientarr[i].email}','${clientarr[i].phone}','${req.body.iid}'),`;
-                }
-                else {
-                    query += `('${id}','${apikey}','${clientarr[i].name}','${clientarr[i].email}','${clientarr[i].phone}','${req.body.iid}')`;
-                }
-            }
-            conn.query(query, (err, result) => {
-                if (err || result.affectedRows <= 0) return res.send(status.internalservererror());
-                res.send(status.ok());
-            });
-        } else res.send(status.unauthorized());
-    }
-    catch (e) {
-        console.log(e);
-        res.send(status.unauthorized());
-    }
-});
-
-// Contact-list : Add contact
-app.post("/addcontact", async (req, res) => {
-    apikey = req.cookies.apikey;
-
-    const isValidapikey = await checkAPIKey(apikey);
-    try {
-        if (isValidapikey) {
-            let id = crypto.randomBytes(8).toString("hex");
-            conn.query(
-                `insert into contact values('${id}','${apikey}','${req.body.name}','${req.body.email}','${req.body.phone}','${req.body.iid}')`,
-                (err, result) => {
-                    if (err || result.affectedRows <= 0) return res.send(status.internalservererror());
-                    res.send(status.ok());
-                });
-        } else res.send(status.unauthorized());
-    }
-    catch (e) {
-        console.log(e);
-        res.send(status.unauthorized());
-    }
-});
-
-
-/*--------------------[ Channel ]--------------------*/
-
-// Channel : add contact to channel
-app.post("/addcontact2channel", async (req, res) => {
-    var apikey = req.cookies.apikey;
-
-    const isValidapikey = await checkAPIKey(apikey);
-    try {
-        if (isValidapikey) {
-            var contacts = req.body.contacts;
-            var query = `insert into contact_channel values `;
-            for (let i in contacts) {
-                if (i != contacts.length - 1) {
-                    query += `('${req.body.id}','${contacts[i]}','${apikey}','${req.body.iid}'),`;
-                }
-                else {
-                    query += `('${req.body.id}','${contacts[i]}','${apikey}','${req.body.iid}');`;
-                }
-            }
-            conn.query(query, (err, result) => {
-                if (err || result.affectedRows <= 0) return res.send(status.internalservererror());
-                res.send(status.ok());
-            });
-        } else res.send(status.unauthorized());
-    }
-    catch (e) {
-        console.log(e);
-        res.send(status.unauthorized());
-    }
-});
-
-// Channel : get contact of particular channel
-app.post("/get-channel-contact", async (req, res) => {
-    apikey = req.cookies.apikey;
-
-    const isValidapikey = await checkAPIKey(apikey);
-    try {
-        if (isValidapikey) {
-            const channel_id = req.body.channel_id;
-            conn.query(`SELECT cc.channel_id,c.contact_id,c.name,ch.channelName,c.phone,c.email FROM contact_channel cc, contact c, channel ch WHERE cc.channel_id = ch.channel_id AND cc.contact_id = c.contact_id and cc.apikey = '${apikey}' AND cc.channel_id = '${channel_id}' AND cc.instance_id = '${req.body.iid}' order by c.name asc`,
-                (err, result) => {
-                    if (err) return res.send(status.internalservererror());
-                    if (result.length == 0) return res.send(status.nodatafound());
-                    res.send(result);
-                });
-        } else res.send(status.unauthorized());
-    }
-    catch (e) {
-        console.log(e);
-        res.send(status.unauthorized());
-    }
-});
-
-// Channel : Create | Add Channel
-app.post("/createchannel", async (req, res) => {
-    apikey = req.cookies.apikey;
-
-    const isValidapikey = await checkAPIKey(apikey);
-    try {
-        if (isValidapikey) {
-            const id = crypto.randomBytes(8).toString("hex");
-            conn.query(`insert into channel values('${id}','${req.body.name}','${apikey}','${req.body.iid}')`,
-                (err, result) => {
-                    if (err || result.affectedRows <= 0) return res.send(status.internalservererror());
-                    res.send(status.created());
-                });
-        } else res.send(status.unauthorized());
-    }
-    catch (e) {
-        console.log(e);
-        res.send(status.unauthorized());
-    }
-});
-
-// Common instance wise page API
-app.get("/instance/:id/:pagename", async (req, res) => {
-    apikey = req.cookies.apikey;
-
-    const isValidapikey = await checkAPIKey(apikey);
-    try {
-        if (isValidapikey) {
-            const data = {
-                table: 'instance',
-                paramstr: `instance_id = '${req.params.id}'`,
-                apikey: apikey
-            }
-            tableData(data, (result) => {
-                switch (result.status_code) {
-                    case '404': {
-                        console.log(`${__dirname}/pages/404.html`);
-                        res.sendFile(`${__dirname}/pages/404.html`);
-                        // res.send(status.nodatafound());
-                        break;
-                    }
-                    case '500': {
-                        res.send(status.internalservererror());
-                        break;
-                    }
-                    default: {
-                        res.sendFile(`${__dirname}/pages/user/${req.params.pagename}.html`);
-                    }
-                }
-            });
-        } else res.send(status.unauthorized());
-    }
-    catch (e) {
-        console.log(e);
-        res.send(status.unauthorized());
-    }
-})
-
-
 /*--------------------[ Common ]--------------------*/
 
+// validate Instabce API
 app.post("/validateInstance", (req, res) => {
     let iid = req.body.iid;
     let apikey = req.cookies.apikey;
@@ -2217,20 +1924,17 @@ app.post("/validateInstance", (req, res) => {
                             apikey: apikey,
                         }, (result) => {
                             if (result.status_code == 404) {
-                                tableData(
-                                    {
-                                        table: "instance",
-                                        paramstr: true,
-                                        apikey: apikey,
-                                    },
-                                    (result) => {
-                                        if (result.status_code == 404) {
-                                            res.send(status.ok());
-                                        } else {
-                                            res.send(status.forbidden());
-                                        }
+                                tableData({
+                                    table: "instance",
+                                    paramstr: true,
+                                    apikey: apikey,
+                                }, (result) => {
+                                    if (result.status_code == 404) {
+                                        res.send(status.ok());
+                                    } else {
+                                        res.send(status.forbidden());
                                     }
-                                );
+                                });
                             }
                             else {
                                 var latest = new Date(result[0].pay_date),
@@ -2284,10 +1988,203 @@ app.post("/validateInstance", (req, res) => {
     }
 });
 
+// Common DISPLAY API
+app.post("/getData", async (req, res) => {
+    apikey = req.cookies.apikey;
+    console.log(apikey);
+    const isValidapikey = await checkAPIKey(apikey);
+    try {
+        if (isValidapikey) {
+            const data = {
+                table: req.body.obj.table,
+                paramstr: req.body.obj.paramstr,
+                apikey: apikey
+            }
+            tableData(data, (result) => {
+                res.send(result);
+            });
+        }
+        else res.send(status.unauthorized());
+    }
+    catch (e) {
+        console.log(e);
+        res.send(status.unauthorized());
+    }
+});
+
+// Common UPDATE API
+app.put("/updateData", (req, res) => {
+    try {
+        if (req.body.table == "users" && req.body.paramstr.includes("password")) {
+            bcrypt.hash(req.body.paramstr.split('\'')[1], 10, (err, hash) => {
+                if (err) return res.send("err in bcrypt");
+                conn.query(`UPDATE ${req.body.table} SET password = '${hash}' WHERE ${req.body.condition}`,
+                    (err, result) => {
+                        if (err || result.affectedRows <= 0) return res.send(status.internalservererror());
+                        if (result <= 0) return res.send(status.nodatafound());
+                        res.send(status.ok());
+                    })
+            });
+        }
+        else {
+            conn.query(`UPDATE ${req.body.table} SET ${req.body.paramstr} WHERE ${req.body.condition}`,
+                (err, result) => {
+                    if (err || result.affectedRows <= 0) return res.send(status.internalservererror());
+                    if (result <= 0) return res.send(status.nodatafound());
+                    res.send(status.ok());
+                })
+        }
+    }
+    catch (e) {
+        console.log(e);
+    }
+});
+
+// Common DELETE API
+app.delete("/deleterecord", async (req, res) => {
+    apikey = req.cookies.apikey;
+
+    const isValidapikey = await checkAPIKey(apikey);
+    try {
+        if (isValidapikey) {
+            conn.query(`DELETE FROM ${req.body.obj.table} WHERE ${req.body.obj.paramstr}`,
+                (err, result) => {
+                    console.log(err);
+                    if (err || result.affectedRows < 0) return res.send(status.internalservererror());
+                    res.send(status.ok());
+                });
+        } else res.send(status.unauthorized());
+    }
+    catch (e) {
+        console.log(e);
+        res.send(status.unauthorized());
+    }
+});
+
+// Common instance wise page API
+app.get("/instance/:id/:pagename", async (req, res) => {
+    apikey = req.cookies.apikey;
+
+    const isValidapikey = await checkAPIKey(apikey);
+    try {
+        if (isValidapikey) {
+            const data = {
+                table: 'instance',
+                paramstr: `instance_id = '${req.params.id}'`,
+                apikey: apikey
+            }
+            tableData(data, (result) => {
+                switch (result.status_code) {
+                    case '404': {
+                        console.log(`${__dirname}/pages/404.html`);
+                        res.sendFile(`${__dirname}/pages/404.html`);
+                        // res.send(status.nodatafound());
+                        break;
+                    }
+                    case '500': {
+                        res.send(status.internalservererror());
+                        break;
+                    }
+                    default: {
+                        res.sendFile(`${__dirname}/pages/user/${req.params.pagename}.html`);
+                    }
+                }
+            });
+        } else res.send(status.unauthorized());
+    }
+    catch (e) {
+        console.log(e);
+        res.send(status.unauthorized());
+    }
+})
 
 /*--------------------[ Docs ]--------------------*/
 
-// Docs : GET API for testing
+// Docs : Send Message Testing API
+app.post('/api/:iid/message', async (req, res) => {
+    apikey = req.headers.apikey;
+    const iid = req.params.iid;
+    const message = req.body.message;
+    const chatId = `91${req.body.phone}@c.us`;
+    console.log(iid, chatId, message);
+    const isValidapikey = await checkAPIKey(apikey);
+    try {
+        if (isValidapikey) {
+            tableData({
+                table: 'instance',
+                paramstr: `instance_id = '${iid}'`,
+                apikey: apikey
+            }, (result) => {
+                if (result.status_code == 500) return res.send(status.internalservererror());
+                if (result.status_code == 404) return res.send({ "status_code": "401", "Message": "Invalid Instance ID" });
+                if (result.length > 1) return res.send(status.duplicateRecord());
+
+                if (obj[iid]) {
+                    obj[iid].send_whatsapp_message(chatId, message).then((messageId) => {
+                        var msgid = crypto.randomBytes(8).toString("hex");
+                        conn.query(`insert into message values(?,?,?,?,?,?,?,?)`,
+                            [msgid, message, 'Test Single Message', chatId, iid, apikey, "none", new Date()],
+                            function (err, result) {
+                                if (err || result.affectedRows < 1) return res.send(status.internalservererror());
+                                res.send(status.ok());
+                            });
+                    }).catch((error) => {
+                        res.send({ "status_code": "1013", "Message": "Error in sending message / Inactive instance" });
+                    })
+                }
+                else {
+                    res.send({ "status_code": "1013", "Message": "Error in sending message / Inactive instance" });
+                }
+            });
+        } else res.send({ "status_code": "401", "Message": "Invalid API KEY" });
+    }
+    catch (e) {
+        console.log(e);
+        res.send({ "status_code": "401", "Message": "Invalid API KEY" });
+    }
+});
+
+// Docs : Send Message Testing API
+app.post('/api/:iid/email', async (req, res) => {
+    apikey = req.headers.apikey;
+
+    const isValidapikey = await checkAPIKey(apikey);
+    try {
+        if (isValidapikey) {
+            const iid = req.params.iid;
+
+            tableData({
+                table: 'instance',
+                paramstr: `instance_id = '${iid}'`,
+                apikey: apikey
+            }, async (result) => {
+                if (result.status_code == 500) return res.send(status.internalservererror());
+                if (result.status_code == 404 || result.length > 1) return res.send({ "status_code": "401", "Message": "Invalid Instance ID" });
+
+                const to = req.body.to;
+                const subject = req.body.subject;
+                const body = req.body.body;
+                const sender = {
+                    "hostname": await findData(apikey, 'hostname'),
+                    "port": await findData(apikey, 'port'),
+                    "email": await findData(apikey, 'email'),
+                    "passcode": await findData(apikey, 'emailpasscode')
+                };
+                sendEmail(sender, to, subject, body).then(() => {
+                    return res.send({ "status_code": "200", "Message": "Email Sent" });
+                }).catch((error) => {
+                    return res.send({ "status_code": "1013", "Message": `Error in sending Email <${error}>` });
+                })                
+            });
+        } else res.send({ "status_code": "401", "Message": "Invalid API KEY" });
+    }
+    catch (e) {
+        console.log(e);
+        res.send({ "status_code": "401", "Message": "Invalid API KEY" });
+    }
+});
+
+// Docs : GET Testing API
 app.get('/api/:iid/:fld', async (req, res) => {
     apikey = req.headers.apikey;
 
@@ -2320,7 +2217,7 @@ app.get('/api/:iid/:fld', async (req, res) => {
     }
 });
 
-// Docs : POST API for testing
+// Docs : POST Testing API
 app.post('/api/:iid/:fld', async (req, res) => {
     apikey = req.headers.apikey;
     const iid = req.params.iid;
@@ -2363,7 +2260,7 @@ app.post('/api/:iid/:fld', async (req, res) => {
     }
 });
 
-// Docs : DELETE API for testing
+// Docs : DELETE Testing API
 app.delete('/api/:iid/:fld', async (req, res) => {
     apikey = req.headers.apikey;
     const iid = req.params.iid;
@@ -2395,6 +2292,7 @@ app.delete('/api/:iid/:fld', async (req, res) => {
     }
 });
 
+/*------------------------------------------------*/
 
 app.post('/user', async (req, res) => {
     apikey = req.cookies.apikey;
@@ -2429,7 +2327,7 @@ app.post("/resetpasswordmail", async (req, res) => {
             paramstr: `email = ${email} --`,
             apikey: 'null'
         }
-        tableData(data, (result) => {
+        tableData(data, async (result) => {
             switch (result) {
                 case '500': {
                     return res.send(status.internalservererror())
@@ -2455,7 +2353,13 @@ app.post("/resetpasswordmail", async (req, res) => {
                 }
             }
             if (!flag) return res.send(status.nodatafound());
-            sendEmail(to, subject, body).then(() => {
+            const sender = {
+                "hostname": await findData(apikey, 'hostname'),
+                "port": await findData(apikey, 'port'),
+                "email": await findData(apikey, 'email'),
+                "passcode": await findData(apikey, 'emailpasscode')
+            };
+            sendEmail(sender, to, subject, body).then(() => {
                 return res.send(status.ok());
             }).catch((error) => {
                 console.log(`error in Sending  E-Mail ::::::: <${error}>`);
@@ -2465,37 +2369,19 @@ app.post("/resetpasswordmail", async (req, res) => {
     }
 });
 
-// Common DISPLAY API
-app.post("/getData", async (req, res) => {
-    apikey = req.cookies.apikey;
-    const isValidapikey = await checkAPIKey(apikey);
-    try {
-        if (isValidapikey) {
-            const data = {
-                table: req.body.obj.table,
-                paramstr: req.body.obj.paramstr,
-                apikey: apikey
-            }
-            tableData(data, (result) => {
-                res.send(result);
-            });
-        }
-        else res.send(status.unauthorized());
-    }
-    catch (e) {
-        console.log(e);
-        res.send(status.unauthorized());
-    }
-});
+
 
 app.post("/create/orderId", (req, res) => {
     let amount = req.body.amount;
+    console.log("amt", amount);
     var options = {
         amount: amount,
         currency: "INR",
         receipt: "order_rcptid_i5",
     };
     instance.orders.create(options, function (err, order) {
+        console.log("err", err);
+        console.log("order", order);
         res.send({ orderId: order.id });
     });
 });
@@ -2703,10 +2589,16 @@ app.post("/addticket", async (req, res) => {
     const isValidapikey = await checkAPIKey(apikey);
     try {
         if (isValidapikey) {
-            const t_id = `ST${crypto.randomBytes(8).toString("hex")}`;
-            const c_id = `ST${crypto.randomBytes(4).toString('Base64url').replace(/[^A-Z0-9]/g, '')}`;
+            const generateUniqueId = () => {
+                const prefix = "ST-";
+                const maxLength = 7 - prefix.length;
+                const maxNumber = Math.pow(10, maxLength) - 1;
+                const uniqueId = Math.floor(Math.random() * maxNumber) + 1;
+                return prefix + uniqueId.toString().padStart(maxLength, '0');
+            };
+            const t_id = generateUniqueId();
 
-            let email = await findEmail(apikey);
+            let email = await findData(apikey, 'email');
             let subject = req.body.subject;
             let t_type = req.body.t_type;
             let description = req.body.description;
@@ -2749,28 +2641,26 @@ app.post("/addticket", async (req, res) => {
                     "Service Inquiry": Service_Inquiry,
                     "Feedback and Suggestions": Feedback,
                 };
-                console.log(categories);
                 const agentsInCategory = categories[t_type];
                 const assignedAgent = agentsInCategory[Math.floor(Math.random() * agentsInCategory.length)];
 
 
-                conn.query(`INSERT INTO support_ticket VALUES(?,?,?,?,?,?,?,?,?,?,?)`,
-                    [t_id, c_id, `email`, email, subject, t_type, description, `open`, `current_timestamp`, apikey, assignedAgent],
-                    (err, resp) => {
+                conn.query(`INSERT INTO support_ticket VALUES(?,?,?,?,?,?,?,?,?,?)`,
+                    [t_id, `email`, email, subject, t_type, description, `open`, new Date(), apikey, assignedAgent],
+                    async (err, resp) => {
                         if (err) return res.send(status.internalservererror());
                         //mail to support person for support ticket assigning
-                        const smtpTransport = nodemailer.createTransport({
-                            service: 'gmail',
-                            auth: {
-                                user: "dashboardcrm.2022@gmail.com",
-                                pass: "dbwtdfmwrxmwzcat",
-                            }
-                        });
+                        const sender = {
+                            "hostname": await findData(apikey, 'hostname'),
+                            "port": await findData(apikey, 'port'),
+                            "email": await findData(apikey, 'email'),
+                            "passcode": await findData(apikey, 'emailpasscode')
+                        };
 
-                        sendEmail(assignedAgent, `New support ticket (${t_id}): ${t_type}`, `Dear ${assignedAgent},\n\nYou have been assigned a new support ticket (${t_id}) for the category '${t_type}'.\n\nPlease log in to the support portal to view and respond to this ticket.\n\nThank you,\nThe support team`).then(() => {
+                        sendEmail(sender, assignedAgent, `New support ticket (${t_id}): ${t_type}`, `Dear ${assignedAgent},\n\nYou have been assigned a new support ticket (${t_id}) for the category '${t_type}'.\n\nPlease log in to the support portal to view and respond to this ticket.\n\nThank you,\nThe support team`).then(() => {
                             console.log("Email Sent Scuuessfully");
-                            sendEmail(email, `Support ticket (${t_id}) issued`, `Dear customer,\n\nThank you for submitting a support ticket (${t_id}).\n\nOur support team will review your ticket and get back to you as soon as possible.\n\nThank you,\nThe support team`).then(() => {
-                                return res.send(status.ok());;
+                            sendEmail(sender, email, `Support ticket (${t_id}) issued`, `Dear customer,\n\nThank you for submitting a support ticket (${t_id}).\n\nOur support team will review your ticket and get back to you as soon as possible.\n\nThank you,\nThe support team`).then(() => {
+                                return res.send(status.ok());
                             }).catch((error) => {
                                 console.log(`error in Sending  E-Mail ::::::: <${error}>`);
                                 return res.send(status.badRequest());
@@ -2934,8 +2824,7 @@ app.get("/messagecount", (req, res) => {
 
 app.get("/dis_cstm_template", function (req, res) {
     apikey = req.cookies.apikey;
-    conn.query(
-        "select * from cstm_template where apikey='" + apikey + "'",
+    conn.query("select * from cstm_template where apikey='" + apikey + "'",
         function (err, rest1) {
             if (err) return //console.log(err);
             if (rest1.length > 0)
@@ -2946,37 +2835,337 @@ app.get("/dis_cstm_template", function (req, res) {
     );
 });
 
-app.post("/sendDirectMessage", (req, res) => {
-    let indx = req.cookies.index;
-    let chatId = `91${req.body.phone}@c.us`;
-    let message = req.body.message;
-    let apikey = req.cookies.apikey;
-    //console.log(req.body);
+app.post("/sendtoallgsheet", async (req, res) => {
+    apikey = req.cookies.apikey;
 
-    if (obj[indx].client.sendMessage(chatId, message)) {
-        var msgid = crypto.randomBytes(8).toString("hex");
-        var msgtype = "msg";
-        conn.query(
-            "insert into message(`msgid`,`msg`,`msg_type`,`receiver`,`apikey`)        values('" +
-            msgid +
-            "','" +
-            message +
-            "','" +
-            msgtype +
-            "','" +
-            chatId +
-            "','" +
-            apikey +
-            "')",
-            function (err, result, fields) {
-                if (err) return res.send(status.forbidden());
-                res.send(status.ok());
+    const isValidapikey = await checkAPIKey(apikey);
+    try {
+        if (isValidapikey) {
+            const token = req.body.token;
+            const iid = req.body.instanceid;
+
+            let data = req.body.data;
+            let msg = req.body.msg;
+
+            let object, flag = 0;
+
+            conn.query(`select * from instance where instance_id = '${iid}' and apikey = '${apikey}' and token = '${token}'`,
+                async function (err, result) {
+                    if (err || result.length <= 0) return res.send(status.forbidden());
+                    if (obj[iid]) {
+                        obj[iid].send_whatsapp_message(chatId, message).then((messageId) => {
+                            console.log("yo", messageId)
+                            var msgid = crypto.randomBytes(8).toString("hex");
+                            conn.query(`insert into message values(?,?,?,?,?,?,?,?)`,
+                                [msgid, message, 'Single Message', chatId, iid, apikey, token, new Date()],
+                                function (err, result) {
+                                    if (err || result.affectedRows < 1) return res.send(status.internalservererror());
+                                    res.send(status.ok());
+                                });
+                        }).catch((error) => {
+                            console.log(`error in Sending Message ::::::: <${error}>`);
+                            res.send(status.userNotValid());
+                        })
+                    }
+                    else {
+                        res.send(status.userNotValid());
+                    }
+                });
+
+        }
+    }
+    catch (e) {
+        //console.log(e);
+        res.send(status.unauthorized());
+    }
+
+
+
+    var date_ob = new Date();
+
+    conn.query(
+        `select * from instance where instance_id = '` +
+        iid +
+        `' and apikey = '` +
+        apikey +
+        `' and token = '` +
+        token +
+        `'`,
+        async function (err, result) {
+            if (err) return res.send(status.forbidden());
+            if (result.length > 0) {
+                try {
+                    for (let i = 0; i < data.length; i++) {
+                        let prefix = "+91";
+                        let phone = data[i].phone;
+                        phone = prefix.concat(phone);
+                        let chatId = phone.substring(1) + "@c.us";
+                        if (await obj[indx].client.sendMessage(chatId, msg)) {
+                            var msgid = crypto.randomBytes(8).toString("hex");
+                            var msgtype = "custom_bulk";
+                            conn.query(
+                                "insert into message(`msgid`,`msg`,`msg_type`,`receiver`,`instance_id`,`apikey`,`token`)        values('" +
+                                msgid +
+                                "','" +
+                                msg +
+                                "','" +
+                                msgtype +
+                                "','" +
+                                chatId +
+                                "','" +
+                                iid +
+                                "','" +
+                                apikey +
+                                "','" +
+                                token +
+                                "')",
+                                function (err, result, fields) {
+                                    if (err)
+                                        return res.send(status.forbidden());
+                                    //console.log("record added");
+                                }
+                            );
+                            //console.log("message sent to " + data[i].name);
+                        }
+                        flag = 1;
+                    }
+                } catch (e) {
+                    //console.log(e);
+                    object = {
+                        error: "client is not initialized",
+                    };
+                }
             }
-        );
-    } else {
-        //console.log(status.expectationFailed());
-        //console.log(status.userNotValid());
-        res.send(status.userNotValid());
+        }
+    );
+    if (flag == 1) {
+        object = {
+            error: null,
+        };
+    }
+    res.send(object);
+});
+
+function one(message, clientobj, selectedcol) {
+    let keys = Object.keys(clientobj[0]);
+    let msgarray = new Array();
+    // let phoneArray = new Array();
+    let value1arr = new Array();
+    // let emailarray = new Array();
+    //let changecount = 2;
+    for (let i = 0; i < keys.length; i++) {
+        for (let j = 0; j < selectedcol.length; j++) {
+            if (keys[i] == selectedcol[j]) {
+                //let custommsg;
+                for (let k = 0; k < clientobj.length; k++) {
+                    let values = Object.values(clientobj[k]);
+                    if (keys[i] == selectedcol[0]) {
+                        value1arr.push(values[i]);
+                    }
+                    // if (keys[i] == selectedcol[1]) {
+                    //   emailarray.push(values[i]);
+                    // }
+                }
+            }
+        }
+    }
+    let tempmsg;
+    for (let k = 0; k < clientobj.length; k++) {
+        tempmsg = message.replace("[value1]", value1arr[k]);
+        msgarray.push(tempmsg);
+    }
+    // //console.log(msgarray);
+    return msgarray;
+}
+
+function two(message, clientobj, selectedcol) {
+    let keys = Object.keys(clientobj[0]);
+    let msgarray = new Array();
+    //let phoneArray = new Array();
+    let value1arr = new Array();
+    let value2arr = new Array();
+    //let changecount = 2;
+    for (let i = 0; i < keys.length; i++) {
+        for (let j = 0; j < selectedcol.length; j++) {
+            if (keys[i] == selectedcol[j]) {
+                // let custommsg;
+                for (let k = 0; k < clientobj.length; k++) {
+                    let values = Object.values(clientobj[k]);
+                    if (keys[i] == selectedcol[0]) {
+                        value1arr.push(values[i]);
+                    }
+                    if (keys[i] == selectedcol[1]) {
+                        value2arr.push(values[i]);
+                    }
+                }
+            }
+        }
+    }
+    let tempmsg;
+    for (let k = 0; k < clientobj.length; k++) {
+        tempmsg = message.replace("[value1]", value1arr[k]);
+        tempmsg = tempmsg.replace("[value2]", value2arr[k]);
+        msgarray.push(tempmsg);
+    }
+    // //console.log(msgarray);
+    return msgarray;
+}
+
+function three(message, clientobj, selectedcol) {
+    let keys = Object.keys(clientobj[0]);
+    let msgarray = new Array();
+    //let phoneArray = new Array();
+    let value1arr = new Array();
+    let value2arr = new Array();
+    let value3arr = new Array();
+    //let changecount = 2;
+    for (let i = 0; i < keys.length; i++) {
+        for (let j = 0; j < selectedcol.length; j++) {
+            if (keys[i] == selectedcol[j]) {
+                // let custommsg;
+                for (let k = 0; k < clientobj.length; k++) {
+                    let values = Object.values(clientobj[k]);
+                    if (keys[i] == selectedcol[0]) {
+                        value1arr.push(values[i]);
+                    }
+                    if (keys[i] == selectedcol[1]) {
+                        value2arr.push(values[i]);
+                    }
+                    if (keys[i] == selectedcol[2]) {
+                        value3arr.push(values[i]);
+                    }
+                }
+            }
+        }
+    }
+    let tempmsg;
+    for (let k = 0; k < clientobj.length; k++) {
+        tempmsg = message.replace("[value1]", value1arr[k]);
+        tempmsg = tempmsg.replace("[value2]", value2arr[k]);
+        tempmsg = tempmsg.replace("[value3]", value3arr[k]);
+        msgarray.push(tempmsg);
+    }
+    // //console.log(msgarray);
+    return msgarray;
+}
+
+function four(message, clientobj, selectedcol) {
+    let keys = Object.keys(clientobj[0]);
+    let msgarray = new Array();
+    //let phoneArray = new Array();
+    let value1arr = new Array();
+    let value2arr = new Array();
+    let value3arr = new Array();
+    let value4arr = new Array();
+    //let changecount = 2;
+    for (let i = 0; i < keys.length; i++) {
+        for (let j = 0; j < selectedcol.length; j++) {
+            if (keys[i] == selectedcol[j]) {
+                // let custommsg;
+                for (let k = 0; k < clientobj.length; k++) {
+                    let values = Object.values(clientobj[k]);
+                    if (keys[i] == selectedcol[0]) {
+                        value1arr.push(values[i]);
+                    }
+                    if (keys[i] == selectedcol[1]) {
+                        value2arr.push(values[i]);
+                    }
+                    if (keys[i] == selectedcol[2]) {
+                        value3arr.push(values[i]);
+                    }
+                    if (keys[i] == selectedcol[3]) {
+                        value4arr.push(values[i]);
+                    }
+                }
+            }
+        }
+    }
+    let tempmsg;
+    for (let k = 0; k < clientobj.length; k++) {
+        tempmsg = message.replace("[value1]", value1arr[k]);
+        tempmsg = tempmsg.replace("[value2]", value2arr[k]);
+        tempmsg = tempmsg.replace("[value3]", value3arr[k]);
+        tempmsg = tempmsg.replace("[value4]", value4arr[k]);
+        msgarray.push(tempmsg);
+    }
+    // //console.log(msgarray);
+    return msgarray;
+}
+
+function five(message, clientobj, selectedcol) {
+    let keys = Object.keys(clientobj[0]);
+    let msgarray = new Array();
+    //let phoneArray = new Array();
+    let value1arr = new Array();
+    let value2arr = new Array();
+    let value3arr = new Array();
+    let value4arr = new Array();
+    let value5arr = new Array();
+    //let changecount = 2;
+    for (let i = 0; i < keys.length; i++) {
+        for (let j = 0; j < selectedcol.length; j++) {
+            if (keys[i] == selectedcol[j]) {
+                // let custommsg;
+                for (let k = 0; k < clientobj.length; k++) {
+                    let values = Object.values(clientobj[k]);
+                    if (keys[i] == selectedcol[0]) {
+                        value1arr.push(values[i]);
+                    }
+                    if (keys[i] == selectedcol[1]) {
+                        value2arr.push(values[i]);
+                    }
+                    if (keys[i] == selectedcol[2]) {
+                        value3arr.push(values[i]);
+                    }
+                    if (keys[i] == selectedcol[3]) {
+                        value4arr.push(values[i]);
+                    }
+                    if (keys[i] == selectedcol[4]) {
+                        value5arr.push(values[i]);
+                    }
+                }
+            }
+        }
+    }
+    let tempmsg;
+    for (let k = 0; k < clientobj.length; k++) {
+        tempmsg = message.replace("[value1]", value1arr[k]);
+        tempmsg = tempmsg.replace("[value2]", value2arr[k]);
+        tempmsg = tempmsg.replace("[value3]", value3arr[k]);
+        tempmsg = tempmsg.replace("[value4]", value4arr[k]);
+        tempmsg = tempmsg.replace("[value5]", value5arr[k]);
+        msgarray.push(tempmsg);
+    }
+    // //console.log(msgarray);
+    return msgarray;
+}
+
+app.post("/createworkflow", async (req, res) => {
+    apikey = req.cookies.apikey;
+
+    const isValidapikey = await checkAPIKey(apikey);
+    try {
+        if (isValidapikey) {
+            const iid = req.body.iid;
+            const generateUniqueId = () => {
+                const prefix = "W-";
+                const maxLength = 6 - prefix.length;
+                const maxNumber = Math.pow(10, maxLength) - 1;
+                const uniqueId = Math.floor(Math.random() * maxNumber) + 1;
+                return prefix + uniqueId.toString().padStart(maxLength, '0');
+            };
+            const wid = generateUniqueId();
+            let wname = req.body.wname;
+            conn.query(`insert into workflow (workflow_id,workflow_name,apikey,instance_id) values(?,?,?,?)`,
+                [wid, wname, apikey, iid],
+                (err, result) => {
+                    if (err) return res.send(status.internalservererror());
+                    return res.send(status.ok());
+                });
+        } else return res.send(status.unauthorized());
+    }
+    catch (e) {
+        return res.send(status.unauthorized());
     }
 });
 
@@ -2986,7 +3175,7 @@ app.use((req, res) => {
 
 app.listen(port, () => {
     console.log(`Your server is up and running on : ${port}`);
-
+    console.log(`http://localhost:${port}/signin`);
 });
 
 // bcrypt.hash('harsh@123', 10, (err, hash) => {
@@ -3003,3 +3192,18 @@ app.listen(port, () => {
 // }, 5000)
 
 // task.stop();
+
+// const generateUniqueId = () => {
+//     const prefix = "ST-";
+//     const maxLength = 7 - prefix.length;
+//     const maxNumber = Math.pow(10, maxLength) - 1;
+//     const uniqueId = Math.floor(Math.random() * maxNumber) + 1;
+//     return prefix + uniqueId.toString().padStart(maxLength, '0');
+// };
+
+// // Example usage
+// for(var i = 0;i < 20;i++){
+//     // console.log(existingIds);
+//     const uniqueId = generateUniqueId();
+//     console.log(uniqueId);
+// }

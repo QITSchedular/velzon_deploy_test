@@ -13,13 +13,6 @@
     <!-- App favicon -->
     <link rel="shortcut icon" href="/assets/images/favicon.ico">
 
-    <!-- jsvectormap css -->
-    <link href="/assets/libs/jsvectormap/css/jsvectormap.min.css" rel="stylesheet" type="text/css" />
-
-    <!--Swiper slider css-->
-    <link href="/assets/libs/swiper/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
-    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-
     <!-- aos css -->
     <link rel="stylesheet" href="/assets/libs/aos/aos.css" />
     <!-- Layout config Js -->
@@ -341,15 +334,8 @@
     <script src="/assets/libs/feather-icons/feather.min.js"></script>
     <script src="/assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
 
-    <!-- Vector map-->
-    <script src="/assets/libs/jsvectormap/js/jsvectormap.min.js"></script>
-    <script src="/assets/libs/jsvectormap/maps/world-merc.js"></script>
-
     <!--Swiper slider js-->
     <script src="/assets/libs/swiper/swiper-bundle.min.js"></script>
-
-    <!-- Dashboard init -->
-    <script src="/assets/js/pages/dashboard-ecommerce.init.js"></script>
 
     <!-- aos js -->
     <script src="/assets/libs/aos/aos.js"></script>
@@ -607,38 +593,47 @@
                     method: "POST",
                     data: { obj: obj },
                     success: function (val) {
+                        $('#instance_data, .noresult').addClass('d-none');
                         let data = ``;
                         if (val.status_code == 404) {
-                            $('#instance_data').addClass('d-none');
-                            $('.noresult').addClass('d-none');
                             $('.noresult').removeClass('d-none');
                         }
                         else {
+                            $('#instance_data').removeClass('d-none');
                             data += `<thead class="table-light">
                                         <tr>
-                                            <th class="w-25">Instance ID</th>
-                                            <th class="w-25">Name</th>
-                                            <th class="w-25">CREATE DATE</th>
-                                            <th class="w-25"></th>
+                                            <th class="w-20">INSTANCE ID</th>
+                                            <th class="w-20">NAME</th>
+                                            <th class="w-20">CREATE DATE</th>
+                                            <th class="w-20">STATUS</th>
+                                            <th class="w-20"></th>
                                         </tr>
                                     </thead>
                                     <tbody class="list form-check-all">`;
-                            $('#instance_data').addClass('d-none');
-                            $('.noresult').addClass('d-none');
-                            $('#instance_data').removeClass('d-none');
+                                        
                             const date = new Date().toLocaleDateString();
                             for (let r of val) {
                                 var cdate = new Date(r.create_date).toLocaleDateString();
                                 data += `<tr>
                                         <td class="instance_id">${r.instance_id}</td>
                                         <td class="instance_name">${r.i_name}</td>
-                                        <td class="date">${cdate}</td>
-                                        <td>
-                                            <div class="d-flex gap-2 justify-content-end me-5">
+                                        <td class="date">${cdate}</td>`;
+                                if (r.isActive) {
+                                    data += `<td class="status">
+                                                <span class="badge p-2 text-bg-success">Connected</span>
+                                            </td>`;
+                                }
+                                else {
+                                    data += `<td class="status">
+                                                <span class="badge p-2 text-bg-danger">Disconnected</span>
+                                            </td>`;
+                                }
+                                data += `<td>
+                                            <div class="d-flex justify-content-end me-3">
                                                 <div class="edit">
                                                     <button type="button" class="btn btn-sm btn-primary btn-label waves-effect right waves-light manage" id="${r.instance_id}">
-                                                        <i class="ri-arrow-right-s-fill label-icon align-middle fs-16 ms-2">
-                                                        </i> Manage
+                                                        <i class="mdi mdi-spin mdi-cog-outline label-icon align-middle fs-16 ms-2"></i>
+                                                        Manage
                                                     </button>
                                                 </div>
                                             </div>

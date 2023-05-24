@@ -223,7 +223,7 @@
                                 <div class="modal-header bg-soft-info p-3">
                                     <h5 class="modal-title">Create Channel</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
+                                        aria-label="Close" id="create_channel_close_btn"></button>
                                 </div>
                                 <div class="modal-body">
                                     <label for="channel_name" class="form-label">
@@ -472,7 +472,7 @@
                                     channelContactDisplay(val[i].channel_id);
                                     output += `
                                             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12" data-aos="zoom-in">
-                                                <div class="card" id="${val[i].channelName}">
+                                                <div class="card card-animate" id="${val[i].channelName}">
                                                     <div class="card-header py-2 mb-0 bg-soft-info">
                                                         <div class="float-end">
                                                             <button type="button" class="btn btn-light btn-icon waves-effect"
@@ -556,7 +556,7 @@
                                     }
 
                                     case '201': {
-                                        $('#close-modal').click();
+                                        $('#create_channel_close_btn').click();
                                         swal({
                                             title: "Channel created successfully",
                                             type: "success",
