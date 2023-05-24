@@ -31,12 +31,19 @@ let obj = [], apikey, userProfile;
 
 const SESSION_FILE_PATH = './assets/json/session-data.json';
 
+// const conn = mysql.createConnection({
+//     host: process.env.DB_HOST,
+//     user: process.env.DB_USER,
+//     password: process.env.DB_PASSWORD,
+//     database: process.env.DB_NAME,
+// });
+
 const conn = mysql.createConnection({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME,
-});
+    host: '164.52.208.110',
+    user: 'qitsolution_tempuser',
+    password: 'Qit123@#india',
+    database: 'qitsolution_sample',
+})
 
 // const conn = mysql.createConnection({
 //     host: 'm3-db.cpqpqooy9dzn.ap-south-1.rds.amazonaws.com',
