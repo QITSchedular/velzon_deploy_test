@@ -191,6 +191,10 @@ app.use(
 const port = process.env.PORT;
 let apikey;
 
+function setCookie(res, name, value, days) {
+    res.cookie(name, value, { maxAge: 1000 * 60 * 60 * 24 * days });
+}
+
 async function checkAPIKey(apikey) {
     try {
         return await new Promise((resolve, reject) => {
@@ -262,49 +266,38 @@ passport.use(
     )
 );
 
-app.get(
-    "/auth/google",
-    passport.authenticate("google", { scope: ["profile", "email"] })
-);
+app.get("/auth/google", passport.authenticate("google", { scope: ["profile", "email"] }));
 
-app.get(
-    "/auth/google/callback",
-    passport.authenticate("google", { failureRedirect: "/error" }),
+app.get("/auth/google/callback", passport.authenticate("google", { failureRedirect: "/signin" }),
     function (req, res) {
+        // console.log(userProfile.photos);
         const id = crypto.randomBytes(16).toString("hex");
         var Ac_name = userProfile.displayName;
         var Ac_mail = userProfile.emails[0].value;
-        conn.query(
-            "select * from users where email='" + Ac_mail + "'",
+        var Ac_image = userProfile.photos[0].value;
+        conn.query(`select * from users where email = '${Ac_mail}'`,
             function (err, result) {
-                if (err) return console.log(err);
+                if (err) return res.send(status.internalservererror());
                 if (result.length > 0) {
-                    res.cookie("apikey", result[0].apikey, {
-                        maxAge: 1000 * 24 * 60 * 60 * 7,
-                    });
-                    res.redirect("/dashboard");
-                } else {
+                    setCookie(res, "apikey", result[0].apikey, 1);
+                      res.redirect("/dashboard");
+                }
+                else {
                     conn.query(
-                        "INSERT INTO users(`apikey`, `uname`, `email`,`password`) VALUES('" +
-                        id +
-                        "','" +
-                        Ac_name +
-                        "','" +
-                        Ac_mail +
-                        "','')",
+                        `INSERT INTO users (apikey,uname,email,image)VALUES('${id}','${Ac_name}','${Ac_mail}','${Ac_image}')`,
                         function (err, result) {
                             if (err) return console.log(err);
                             if (result) {
-                                res.cookie("apikey", id, { maxAge: 1000 * 24 * 60 * 60 * 7 });
+                                setCookie(res, "apikey", result[0].apikey, 1);
                                 res.redirect("/dashboard");
                             }
-                        }
-                    );
+                        });
                 }
             }
         );
     }
 );
+
 
 const CREDENTIALS = JSON.parse(
     fs.readFileSync("studied-theater-374912-20d31d5fcc83.json")
