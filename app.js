@@ -1869,7 +1869,7 @@ app.post("/adduser", (req, res) => {
                 bcrypt.hash(password, 10, (err, hash) => {
                     if (err) return res.send("err in bcrypt");
                     conn.query(
-                        `INSERT INTO users(apikey,uname,email,password,phone,phoneverify,country,state,city,registrationDate,image) VALUES('${id}','${name}','${email}','${hash}','${phone}',false,'${country}','${state}','${city}',CURRENT_DATE,NULL)`,
+                        `INSERT INTO users(apikey,uname,email,password,phone,phoneverify,country,state,city,registrationDate,image) VALUES('${id}','${name}','${email}','${hash}','${phone}',false,'${country}','${state}','${city}',${new Date()}, NULL)`,
                         function (err, result) {
                             res.clearCookie("everify");
                             if (err) return res.send(status.internalservererror());
