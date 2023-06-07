@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg"
+    data-sidebar-image="none" data-preloader="disable">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Dashboard | WhatsApp Messages</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesbrand" name="author" />
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+
+    <!-- jsvectormap css -->
+    <link href="/assets/libs/jsvectormap/css/jsvectormap.min.css" rel="stylesheet" type="text/css" />
+
+    <!--Swiper slider css-->
+    <link href="/assets/libs/swiper/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- aos css -->
+    <link rel="stylesheet" href="/assets/libs/aos/aos.css" />
+    <!-- Layout config Js -->
+    <script src="/assets/js/layout.js"></script>
+    <!-- Bootstrap Css -->
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="/assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <!-- custom Css-->
+    <link href="/assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Font Awesome Files -->
+    <link href="/assets/fontawesome/css/all.min.css" rel="stylesheet" />
+    <link href="/assets/fontawesome/css/solid.css" rel="stylesheet" />
+    <link href="/assets/fontawesome/css/solid.min.css" rel="stylesheet" />
+    <link href="/assets/fontawesome/css/regular.css" rel="stylesheet" />
+    <link href="/assets/fontawesome/css/regular.min.css" rel="stylesheet" />
+    <link href="/assets/fontawesome/css/fontawesome.min.css" rel="stylesheet" />
+    <link href="/assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+        <header id="page-topbar">
+            <div class="layout-width">
+                <div class="navbar-header">
+                    <div class="d-flex">
+                        <!-- LOGO -->
+                        <div class="navbar-brand-box horizontal-logo">
+                            <a href="/" class="logo logo-dark">
+                                <span class="logo-sm">
+                                    <img src="/assets/images/logo-sm.png" alt="" height="22">
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="/assets/images/logo-dark.png" alt="" height="17">
+                                </span>
+                            </a>
+
+                            <a href="/" class="logo logo-light">
+                                <span class="logo-sm">
+                                    <img src="/assets/images/logo-sm.png" alt="" height="22">
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="/assets/images/logo-light.png" alt="" height="17">
+                                </span>
+                            </a>
+                        </div>
+
+                        <button type="button"
+                            class="btn btn-sm px-3 fs-16 header-item vertical-menu-btn topnav-hamburger"
+                            id="topnav-hamburger-icon">
+                            <span class="hamburger-icon">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </button>
+
+                    </div>
+
+                    <div class="d-flex align-items-center">
+                        <div class="dropdown d-md-none topbar-head-dropdown header-item">
+                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
+                                id="page-header-search-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                <i class="bx bx-search fs-22"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
+                                aria-labelledby="page-header-search-dropdown">
+                                <form class="p-3">
+                                    <div class="form-group m-0">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Search ..."
+                                                aria-label="Recipient's username">
+                                            <button class="btn btn-primary" type="submit">
+                                                <i class="mdi mdi-magnify"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="ms-1 header-item d-none d-sm-flex">
+                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
+                                data-toggle="fullscreen">
+                                <i class='bx bx-fullscreen fs-22'></i>
+                            </button>
+                        </div>
+
+                        <div class="ms-1 header-item d-none d-sm-flex">
+                            <button type="button"
+                                class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle light-dark-mode">
+                                <i class='bx bx-moon fs-22'></i>
+                            </button>
+                        </div>
+
+                        <div class="dropdown ms-sm-3 header-item topbar-user">
+                            <button type="button" class="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <span class="d-flex align-items-center">
+                                    <img class="rounded-circle header-profile-user profileimg" />
+                                    <span class="text-start ms-xl-2">
+                                        <span
+                                            class="d-none d-xl-inline-block ms-1 fw-medium user-name-text profilename"></span>
+                                        <span class="d-none d-xl-block ms-1 fs-12 text-muted user-name-sub-text">
+                                            Founder
+                                        </span>
+                                    </span>
+                                </span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <!-- item-->
+                                <h6 class="dropdown-header">Welcome <span class="profilename"></span></h6>
+                                <a class="dropdown-item" href="/profile">
+                                    <i class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i>
+                                    <span class="align-middle">Profile</span>
+                                </a>
+                                <a class="dropdown-item" href="/subscription">
+                                    <i class="mdi mdi-credit-card-chip text-muted fs-16 align-middle me-1"></i>
+                                    <span class="align-middle">Pay</span>
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" id="logout">
+                                    <i class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i>
+                                    <span class="align-middle" data-key="t-logout">Logout</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- ========== App Menu ========== -->
+        <div class="app-menu navbar-menu">
+            <!-- LOGO -->
+            <div class="navbar-brand-box">
+                <!-- Dark Logo-->
+                <a href="/" class="logo logo-dark">
+                    <span class="logo-sm">
+                        <img src="/assets/images/logo-sm.png" alt="" height="22" />
+                    </span>
+                    <span class="logo-lg">
+                        <img src="/assets/images/logo-dark.png" alt="" height="17" />
+                    </span>
+                </a>
+                <!-- Light Logo-->
+                <a href="/" class="logo logo-light">
+                    <span class="logo-sm">
+                        <img src="/assets/images/logo-sm.png" alt="" height="22" />
+                    </span>
+                    <span class="logo-lg">
+                        <img src="/assets/images/logo-light.png" alt="" height="17" />
+                    </span>
+                </a>
+                <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover"
+                    id="vertical-hover">
+                    <i class="ri-record-circle-line"></i>
+                </button>
+            </div>
+
+            <div id="scrollbar">
+                <div id="scrollbar">
+                    <div class="container-fluid">
+                        <div id="two-column-menu"></div>
+                        <ul class="navbar-nav" id="navbar-nav" data-aos="fade-right" data-aos-duration="1000"></ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-background"></div>
+        </div>
+        <!-- Left Sidebar End -->
+        <!-- Vertical Overlay-->
+        <div class="vertical-overlay"></div>
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+            <div class="page-content">
+                <div class="container-fluid">
+                    <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                        <div class="page-title">
+                            <ol class="breadcrumb m-0" id="api_path">
+                                <li class="breadcrumb-item">
+                                    <a href="/instance">
+                                        Instance
+                                    </a>
+                                </li>
+                                <li class="breadcrumb-item" id="i_name"></li>
+                                <li class="breadcrumb-item active">Channels</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="search-box col-4">
+                            <input type="text" class="form-control" id="searchChannel"
+                                placeholder="Search Channel..." />
+                            <i class="ri-search-line search-icon ms-3"></i>
+                        </div>
+                        <div class="d-flex justify-content-end col-8">
+                            <button type="button" class="btn btn-soft-danger waves-effect waves-light fs-15 me-2"
+                                id="mic" data-bs-toggle="modal" data-bs-target="#voice_input">
+                                <i class="mdi mdi-microphone"></i>
+                            </button>
+                            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#createchannelmodal"
+                                id="addchannelmodalbtn">
+                                <i class="ri-add-circle-line align-middle me-lg-2"></i>
+                                <span class="d-none d-lg-inline-block">Add Channel</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="createchannelmodal" tabindex="-1" aria-labelledby="" aria-hidden="true">
+                        <div class="modal-dialog modal-fullscreen-sm-down modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header bg-soft-info p-3">
+                                    <h5 class="modal-title">Create Channel</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                                        id="create_channel_close_btn"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <label for="channel_name" class="form-label">
+                                        Channel Name
+                                        <span class="text-danger">*</span>
+                                        <span class="text-danger" id="err_channel_name"></span>
+                                    </label>
+                                    <input type="text" class="form-control required" id="channel_name"
+                                        placeholder="Enter channel name" data-type="name" autofocus />
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" id="createChannel">
+                                        Create
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" id="channelData"></div>
+
+                    <div class="modal fade" id="addcontactmodal" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog modal-fullscreen-sm-down modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header bg-soft-info p-3 mb-4">
+                                    <h5 class="modal-title">
+                                        Add Contact to <span class="channel_name text-primary"></span>
+                                    </h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                                        id="close-modal"></button>
+                                </div>
+                                <div class="modal-body px-3 p-0">
+                                    <div data-simplebar data-simplebar-auto-hide="false" data-simplebar-track="primary"
+                                        style="max-height: 300px;" class="mx-n3">
+                                        <ul class="list list-group list-group-flush" id="addcontact-data"></ul>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <input type="button" class="btn btn-primary" id="addcontact" value="Add"
+                                        data-bs-dismiss="modal" data-id="" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="footer"></footer>
+        </div>
+    </div>
+
+    <!--start back-to-top-->
+    <button onclick="topFunction()" class="btn btn-danger btn-icon" id="back-to-top">
+        <i class="ri-arrow-up-line"></i>
+    </button>
+    <!--end back-to-top-->
+
+    <!--preloader-->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner-border text-primary avatar-sm" role="status"></div>
+            <span class="sr-only">Loading ...</span>
+        </div>
+    </div>
+
+    <div class="customizer-setting" id="chatbot">
+        <div class="btn-info btn-rounded shadow-lg btn btn-icon btn-lg p-2">
+            <i class="fa-solid fa-comment" id="iconchat"></i>
+        </div>
+    </div>
+
+    <div class="email-chat-detail" id="emailchat-detailElem" style="display: none">
+        <div class="card mb-0">
+            <div class="card-header align-items-center d-flex bg-primary text-white-50">
+                <div class="flex-grow-1">
+                    <h5 class="fs-15 text-white mb-1 profile-username">
+                        Velzon ChatBot
+                    </h5>
+                    <p class="mb-0 fs-12 lh-1">Ask here for help</p>
+                </div>
+                <div>
+                    <i class="fa-brands fa-bots fs-1 text-white"></i>
+                </div>
+            </div>
+
+            <div class="card-body p-0">
+                <div id="users-chat">
+                    <div class="chat-conversation p-3" id="chat-conversation" data-simplebar style="height: 250px">
+                        <ul class="list-unstyled chat-conversation-list chat-sm" id="conversation"></ul>
+                    </div>
+                </div>
+
+                <div class="border-top border-top-dashed">
+                    <div class="row g-2 mx-3 mt-2 mb-3">
+                        <div class="col">
+                            <div class="position-relative">
+                                <input type="text" class="form-control border-light bg-light message-input"
+                                    placeholder="Enter Message..." id="input" />
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <button class="btn btn-info" id="sendbotmsg">
+                                <i class="mdi mdi-send"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="voice_input" class="modal zoomIn">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                </button> -->
+                </div>
+                <div class="modal-body">
+                    <div class="fs-1 text-center" id="msg" style="resize: none;">
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script src="/assets/js/jquery.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/chatbot.js"></script>
+    <script src="/assets/js/voiceRecognition.js"></script>
+    <script src="/assets/js/validate.js"></script>
+
+    <script src="/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="/assets/libs/node-waves/waves.min.js"></script>
+    <script src="/assets/libs/feather-icons/feather.min.js"></script>
+    <script src="/assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+
+    <!--Swiper slider js-->
+    <script src="/assets/libs/swiper/swiper-bundle.min.js"></script>
+
+    <!-- aos js -->
+    <script src="/assets/libs/aos/aos.js"></script>
+    <!-- prismjs plugin -->
+    <script src="/assets/libs/prismjs/prism.js"></script>
+    <!-- animation init -->
+    <script src="/assets/js/pages/animation-aos.init.js"></script>
+
+    <!-- App js -->
+    <script src="/assets/js/app.js"></script>
+
+    <script src="/assets/sweetalert2/sweet-alert.init.js"></script>
+    <script src="/assets/sweetalert2/sweetalert2.all.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            chkLogin();
+
+            const iid = document.URL.split("/")[4];
+
+            $.ajax({
+                url: "/user",
+                method: "POST",
+                data: {
+                    "iid": iid,
+                },
+                success: function (val) {
+                    switch (val.status_code) {
+                        case '401': {
+                            InvalidUser();
+                            break;
+                        }
+
+                        case '404':
+                        case '500': {
+                            InternalServerError();
+                            break;
+                        }
+
+                        default: {
+                            $('#i_name').html(`<b class="text-primary">${val[0].i_name}</b>`);
+                        }
+                    }
+                }
+            });
+
+            function channelContactDisplay(channel_id) {
+                $.ajax({
+                    url: "/get-channel-contact",
+                    method: "POST",
+                    data: {
+                        "channel_id": channel_id,
+                        "iid": iid
+                    },
+                    success: function (val) {
+                        let data = ``;
+                        switch (val.status_code) {
+                            case '401': {
+                                InvalidUser();
+                                break;
+                            }
+
+                            case '500': {
+                                // InternalServerError();
+                                break;
+                            }
+                            case '404': {
+                                data += `
+                                    <div class="noresult pt-5">
+                                        <div class="text-center">
+                                            <lord-icon src="https://cdn.lordicon.com/msoeawqm.json" trigger="loop"
+                                                colors="primary:#212529,secondary:#405189"
+                                                style="width: 75px; height: 75px"></lord-icon>
+                                            <h5 class="mt-2">No Contacts Added</h5>
+                                        </div>
+                                    </div>`;
+                                break;
+                            }
+
+                            default: {
+                                for (var i in val) {
+                                    data += `
+                                        <li class="list-group-item" data-id="1">
+                                            <div class="d-flex gap-2">
+                                                <div class="flex-shrink-0 d-flex align-items-center">
+                                                    <i class="bx bxs-user fs-1 text-primary"></i>
+                                                </div>
+                                                <div class="vr"></div>
+                                                <div class="flex-grow-1 ms-2">
+                                                    <h5 class="fs-13 mb-1 text-primary">
+                                                        ${val[i].name}
+                                                    </h5>
+                                                    <p class="born timestamp text-muted mb-0">
+                                                        <i class="ri-phone-fill text-primary me-2"></i>${val[i].phone}
+                                                    </p>
+                                                    <p class="born timestamp text-muted mb-0">
+                                                        <i class="ri-mail-fill text-primary me-2"></i>${val[i].email}
+                                                    </p>
+                                                </div>
+                                                <div class="flex-shrink-0 d-flex align-items-center me-2 delete_contact d-none" data-channel_id = "${channel_id}" data-contact_id="${val[i].contact_id}">
+                                                    <i class="bx bx-user-minus text-danger fs-3 cursor-pointer"></i>
+                                                </div>
+                                            </div>
+                                        </li>`;
+                                }
+                            }
+                        }
+                        $(`#channel${channel_id}`).html(data);
+                    }
+                })
+            }
+
+            function channelDataDisplay(obj) {
+                $.ajax({
+                    url: "/getData",
+                    method: "POST",
+                    data: {
+                        obj: obj
+                    },
+                    success: function (val) {
+                        var output = "", data = "";
+                        switch (val.status_code) {
+                            case '401': {
+                                InvalidUser();
+                                break;
+                            }
+
+                            case '500': {
+                                InternalServerError();
+                                break;
+                            }
+                            case '404': {
+                                output += `
+                                <div class="noresult p-5 container d-flex align-items-center justify-content-center">
+                                    <div class="text-center">
+                                        <lord-icon src="https://cdn.lordicon.com/msoeawqm.json" trigger="loop"
+                                            colors="primary:#212529,secondary:#405189"
+                                            style="width: 75px; height: 75px"></lord-icon>
+                                        <h5 class="mt-2">No Channels Found</h5>
+                                    </div>
+                                </div>`;
+                                break;
+                            }
+
+                            default: {
+                                for (let i = 0; i < val.length; i++) {
+                                    channelContactDisplay(val[i].channel_id);
+                                    output += `
+                                            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12" data-aos="zoom-in">
+                                                <div class="card card-animate" id="${val[i].channelName}">
+                                                    <div class="card-header py-2 mb-0 bg-soft-info">
+                                                        <div class="float-end">
+                                                            <button type="button" class="btn btn-light btn-icon waves-effect"
+                                                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                <i class="fa-solid fa-ellipsis-vertical fs-5"></i>
+                                                            </button>
+                                                            <div class="dropdown-menu dropdown-menu-lg-end">
+                                                                <button class="dropdown-item deleteChannel fs-15 " data-id="${val[i].channel_id}">
+                                                                    <span class="text-end text-danger ">
+                                                                        <i class="bx bxs-trash me-2"></i>Delete Channel
+                                                                    </span>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <h4 class="card-title mb-0 d-flex align-items-center py-2" id="abc">
+                                                            ${val[i].channelName}
+                                                        </h4>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <div class="d-flex justify-content-evenly gap-3 mb-3">
+                                                            <button class="col-6 btn btn-primary btn-icon waves-effect px-3 addcontact w-50" data-id="${val[i].channel_id}" data-name="${val[i].channelName}" data-bs-toggle="modal" data-bs-target="#addcontactmodal">
+                                                                <i class="bx bx-user-plus align-middle fs-3 me-2"></i>Add
+                                                            </button>
+                                                            <button class="col-6 btn btn-soft-danger btn-icon waves-effect px-3 editcontact w-50" data-id="${val[i].channel_id}">
+                                                                <i class="bx bx-user-x align-middle fs-3 me-2"></i>Edit
+                                                            </button>
+                                                        </div>
+                                                        <div data-simplebar data-simplebar-auto-hide="false" 
+                                                            style="height: 210px;" class="mx-n3">
+                                                            <ul class="list list-group list-group-flush mb-3"
+                                                                id="channel${val[i].channel_id}">
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>`;
+                                }
+                            }
+                        }
+                        $("#channelData").html(output);
+                    }
+                });
+            }
+            channelDataDisplay({
+                table: "channel",
+                paramstr: `instance_id = '${iid}'`,
+            });
+
+            enterKeyEvent('channel_name', 'createChannel');
+
+            $(".required").on('focusout', function () {
+                onfocusout_validation($(this).attr('id'));
+            });
+
+            $(".required").on('input', function () {
+                oninput_validation($(this).attr('id'));
+            });
+
+            $(document).on("click", '#createChannel', function () {
+                nullfield_validation('channel_name');
+                if (objFlag.flag_channel_name == 0) {
+                    oninput_validation('channel_name');
+                    if (objFlag.flag_channel_name == 0) {
+                        $.ajax({
+                            url: "/createchannel",
+                            method: "POST",
+                            data: {
+                                "name": $('#channel_name').val(),
+                                "iid": iid
+                            },
+                            success: function (val) {
+                                switch (val.status_code) {
+                                    case '401': {
+                                        InvalidUser();
+                                        break;
+                                    }
+
+                                    case '500': {
+                                        InternalServerError();
+                                        break;
+                                    }
+
+                                    case '201': {
+                                        $('#create_channel_close_btn').click();
+                                        swal({
+                                            title: "Channel created successfully",
+                                            type: "success",
+                                            timer: 2000,
+                                            showConfirmButton: false,
+                                        }).then(function () {
+                                            $('#channel_name').val('');
+                                            $('.required').removeClass('form-control-danger form-control-success');
+
+                                            channelDataDisplay({
+                                                table: "channel",
+                                                paramstr: `instance_id = '${iid}'`,
+                                            });
+                                        });
+                                        break;
+                                    }
+                                }
+                            }
+                        });
+                    }
+                }
+            });
+
+            $(document).on('click', '.editcontact', function () {
+                const channel_id = $(this).attr('data-id');
+                $(`.delete_contact[data-channel_id='${channel_id}']`).toggleClass('d-none');
+            });
+
+            $(document).on('click', '.addcontact', function () {
+                $('.channel_name').html($(this).attr('data-name'));
+                const channel_id = $(this).attr('data-id');
+
+                let existcontact = [];
+                $('#addcontact').attr('data-id', channel_id);
+                $.ajax({
+                    url: "/get-channel-contact",
+                    method: "POST",
+                    data: {
+                        "channel_id": channel_id,
+                        "iid": iid
+                    },
+                    success: function (val) {
+                        let data = ``;
+                        switch (val.status_code) {
+                            case '401': {
+                                InvalidUser();
+                                break;
+                            }
+
+                            case '500': {
+                                InternalServerError();
+                                break;
+                            }
+                            case '404': {
+                                existcontact = [];
+                                break;
+                            }
+
+                            default: {
+                                for (var i in val) {
+                                    existcontact.push(val[i].contact_id);
+                                }
+                            }
+                        }
+                    }
+                })
+
+                $.ajax({
+                    url: "/getData",
+                    method: "POST",
+                    data: {
+                        obj: {
+                            table: "contact",
+                            paramstr: `instance_id = '${iid}'`,
+                        }
+                    },
+                    success: function (val) {
+                        let data = '', flag;
+                        switch (val.status_code) {
+                            case '401': {
+                                InvalidUser();
+                                break;
+                            }
+
+                            case '500': {
+                                InternalServerError();
+                                break;
+                            }
+
+                            case '404': {
+                                $('#addcontact').addClass('d-none');
+                                data += `
+                                <div class="noresult p-5 container d-flex align-items-center justify-content-center">
+                                    <div class="text-center">
+                                        <lord-icon src="https://cdn.lordicon.com/msoeawqm.json" trigger="loop"
+                                            colors="primary:#212529,secondary:#405189"
+                                            style="width: 75px; height: 75px"></lord-icon>
+                                        <h5 class="mt-2">No Contacts Found</h5>
+                                        <a type="button" class="btn btn-soft-primary mt-2" href="/instance/${iid}/contact-list">
+                                            <i class="ri-add-circle-line align-middle me-1"></i>
+                                            Add contact
+                                        </a>
+                                    </div>
+                                </div>`;
+                                break;
+                            }
+
+                            default: {
+                                if (val.length === existcontact.length) {
+                                    $('#addcontact').addClass('d-none');
+                                    data += `
+                                    <div class="noresult p-5 container d-flex align-items-center justify-content-center">
+                                            <div class="text-center">
+                                                <lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#212529,secondary:#405189" style="width: 105px; height: 105px"></lord-icon>
+                                                <h5 class="mt-2">All Contacts added</h5>
+                                                </div>  
+                                        </div>`;
+                                }
+                                else {
+                                    $('#addcontact').removeClass('d-none');
+                                    for (var i in val) {
+                                        for (var j in existcontact) {
+                                            if (val[i].contact_id == existcontact[j]) {
+                                                flag = true;
+                                                break;
+                                            }
+                                            else {
+                                                flag = false;
+                                            }
+                                        }
+                                        if (flag) {
+                                            continue;
+                                        }
+                                        else {
+                                            data += `
+                                            <li class="list-group-item">
+                                                <label class="d-flex gap-2" for="check${val[i].contact_id}">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" name="contacts"
+                                                            value="${val[i].contact_id}" id="check${val[i].contact_id}">
+                                                    </div>
+                                                    <div class="flex-shrink-0 d-flex align-items-center">
+                                                        <i class="bx bxs-user fs-1 text-primary"></i>
+                                                    </div>
+                                                    <div class="flex-grow-1">
+                                                        <h5 class="fs-13 mb-1">
+                                                            ${val[i].name}
+                                                        </h5>
+                                                        <p class="born timestamp text-muted mb-0">
+                                                            ${val[i].phone} | ${val[i].email}
+                                                        </p>
+                                                    </div>
+                                                </label>
+                                            </li> `;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        $('#addcontact-data').html(data);
+                    }
+                })
+            })
+
+            $(document).on('click', '#addcontact', function () {
+                const channel_id = $(this).attr("data-id");
+
+                $.ajax({
+                    url: "/addcontact2channel",
+                    method: "POST",
+                    data: {
+                        "id": channel_id,
+                        "iid": iid,
+                        "contacts": getCheckedCheckboxesFor('contacts')
+                    },
+                    success: function (val) {
+                        switch (val.status_code) {
+                            case '401': {
+                                InvalidUser();
+                                break;
+                            }
+
+                            case '500': {
+                                InternalServerError();
+                                break;
+                            }
+
+                            case '200': {
+                                channelContactDisplay(channel_id);
+                                break;
+                            }
+                        }
+                    }
+                });
+            })
+
+            $(document).on("click", ".delete_contact", function () {
+                let contact_id = $(this).attr('data-contact_id');
+                let channel_id = $(this).attr('data-channel_id');
+
+                swal({
+                    title: 'Are you sure?',
+                    text: "You won't be able to access this anymore..!!",
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: 'Yes, delete it',
+                    cancelButtonText: 'No, cancel',
+                    confirmButtonClass: 'btn btn-success mx-2',
+                    cancelButtonClass: 'btn btn-outline-danger mx-2',
+                    buttonsStyling: false
+                }).then(function (result) {
+                    if (result.value) {
+                        $.ajax({
+                            url: "/deleterecord",
+                            method: "delete",
+                            data: {
+                                obj: {
+                                    "table": "contact_channel",
+                                    "paramstr": `contact_id = '${contact_id}' AND channel_id = '${channel_id}' AND instance_id= '${iid}'`,
+                                }
+                            },
+                            success: function (val) {
+                                switch (val.status_code) {
+                                    case '401': {
+                                        InvalidUser();
+                                        break;
+                                    }
+                                    case '500': {
+                                        InternalServerError();
+                                        break;
+                                    }
+                                    case '200': {
+                                        swal({
+                                            title: "Contact Removed from channel",
+                                            type: "success",
+                                            timer: 2000,
+                                            showConfirmButton: false,
+                                        }).then(() => {
+                                            channelContactDisplay(channel_id);
+                                        });
+                                        break;
+                                    }
+                                }
+                            }
+                        });
+                    }
+                })
+            });
+
+            $(document).on("click", ".deleteChannel", function () {
+                const id = $(this).attr("data-id");
+                swal({
+                    title: 'Are you sure?',
+                    text: "You won't be able to access this anymore..!!",
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: 'Yes, delete it',
+                    cancelButtonText: 'No, cancel',
+                    confirmButtonClass: 'btn btn-success mx-2',
+                    cancelButtonClass: 'btn btn-outline-danger mx-2',
+                    buttonsStyling: false
+                }).then(function (result) {
+                    if (result.value) {
+                        $.ajax({
+                            url: "/deleterecord",
+                            method: "delete",
+                            data: {
+                                obj: {
+                                    "table": "channel",
+                                    "paramstr": `channel_id = '${id}'`,
+                                }
+                            },
+                            success: function (val) {
+                                switch (val.status_code) {
+                                    case '401': {
+                                        InvalidUser();
+                                        break;
+                                    }
+                                    case '500': {
+                                        InternalServerError();
+                                        break;
+                                    }
+                                    case '200': {
+                                        swal({
+                                            title: "Channel Removed.",
+                                            type: "success",
+                                            timer: 2000,
+                                            showConfirmButton: false,
+                                        }).then(() => {
+                                            channelDataDisplay({
+                                                table: "channel",
+                                                paramstr: `instance_id = '${iid}'`,
+                                            });
+                                        });
+                                        break;
+                                    }
+                                }
+                            }
+                        });
+                    }
+                })
+            });
+
+            $(document).on('input', '#searchChannel', function () {
+                let val = $('#searchChannel').val();
+
+                if (val == null || val == "") {
+                    channelDataDisplay({
+                        table: "channel",
+                        paramstr: `instance_id = '${iid}'`,
+                    });
+                }
+                else {
+                    channelDataDisplay({
+                        table: "channel",
+                        paramstr: `(channelName LIKE '%${val}%')`,
+                    });
+                }
+            })
+
+            $(document).on('click', '#mic', async function () {
+
+                mic("msg").then((result) => {
+                    let data = result.toString().split(" ");
+                    console.log(data);
+                    if (data[0] == "add" && data[1] == "channel") {
+                        $("#addchannelmodalbtn").click();
+                    }
+                    else if (data[0] == "add" && data[1] == "contact" && data[2] == "to" && data[3] != "" && data[3] != undefined) {
+
+                        $.ajax({
+                            url: "/getData",
+                            method: "post",
+                            data: {
+                                obj: {
+                                    table: `channel`,
+                                    paramstr: `channelName='${data[3]}' and instance_id='${iid}'`,
+                                }
+                            },
+                            success: function (data) {
+                                console.log(data);
+                                let wfcount = $(".addcontact").length;
+                                // alert($(".editBtn")[0].getAttribute("data-id"));
+                                for (let i = 0; i < wfcount; i++) {
+                                    if ($(".addcontact")[i].getAttribute("data-id") == data[0].channel_id) {
+                                        $(".addcontact")[i].click();
+                                    }
+                                }
+                            }
+                        })
+                    }
+                    else if (data[0] == "logout" || (data[0] == "log" && data[1] == "out")) {
+                        $("#logout").click();
+                    }
+                    else if (data[0] == "import" && data[1] == "from" && data[2] == "Google" && data[3] == "sheet") {
+                        $("#gsheetimport").click();
+                    }
+                    else if (data[0] == "import" && data[1] == "from" && data[2] == "csv" && data[3] == "file") {
+                        $("#csvimport").click();
+                    }
+                    else if ((data[0] == "edit" || data[0] == "update") && data[1] != "" && data[1] != undefined) {
+                        $.ajax({
+                            url: "/getData",
+                            method: "post",
+                            data: {
+                                obj: {
+                                    table: `channel`,
+                                    paramstr: `channelName='${data[1]}' and instance_id='${iid}'`,
+                                }
+                            },
+                            success: function (data) {
+                                console.log(data);
+                                let wfcount = $(".editBtn").length;
+                                // alert($(".editBtn")[0].getAttribute("data-id"));
+                                for (let i = 0; i < wfcount; i++) {
+                                    if ($(".editBtn")[i].getAttribute("data-id") == data[0].channel_id) {
+                                        $(".editBtn")[i].click();
+                                    }
+                                }
+                            }
+                        })
+                    }
+                    else if ((data[0] == "delete" || data[0] == "remove") && data[1] != "" && data[1] != undefined) {
+                        $.ajax({
+                            url: "/getData",
+                            method: "post",
+                            data: {
+                                obj: {
+                                    table: `channel`,
+                                    paramstr: `channelName='${data[1]}' and instance_id='${iid}'`,
+                                }
+                            },
+                            success: function (data) {
+                                console.log(data);
+                                let wfcount = $(".deleteChannel").length;
+                                // alert($(".editBtn")[0].getAttribute("data-id"));
+                                for (let i = 0; i < wfcount; i++) {
+                                    if ($(".deleteChannel")[i].getAttribute("data-id") == data[0].channel_id) {
+                                        $(".deleteChannel")[i].click();
+                                    }
+                                }
+                            }
+                        })
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "profile") {
+                        location.href = "/profile";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && (data[2] == "pay" || data[2] == "pricing" || data[2] == "payment" || data[2] == "subscription")) {
+                        location.href = "/subscription";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "dashboard") {
+                        location.href = "/dashboard";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "instance") {
+                        location.href = "/instance";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && (data[2] == "bulkmessage" || (data[2] == "bulk" && data[3] == "message"))) {
+                        location.href = `/instance/${iid}/bulkmessage`;
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && (data[2] == "bulkmail" || (data[2] == "bulk" && data[3] == "mail"))) {
+                        location.href = `/instance/${iid}/bulkmail`;
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && (data[2] == "contacts" || (data[2] == "contact" && data[3] == "list"))) {
+                        location.href = `/instance/${iid}/contact-list`;
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "channel") {
+                        location.href = `/instance/${iid}/channel`;
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "chat") {
+                        location.href = `/instance/${iid}/chat`;
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "workflow") {
+                        location.href = `/instance/${iid}/workflow`;
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "custom" && data[3] == "template") {
+                        location.href = "/customtemplate";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "email" && data[3] == "configuration") {
+                        location.href = "/addpasscode";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "support" && data[3] == "ticket") {
+                        location.href = "/support-ticket";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "api" && data[3] == "docs") {
+                        location.href = "/docs";
+                    }
+                    else {
+                        swal({
+                            title: "Command not recognized",
+                            type: 'error',
+                            timer: 2500,
+                            showConfirmButton: false,
+                        });
+                    }
+                })
+            })
+
+
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg"
+    data-sidebar-image="none" data-preloader="disable">
+
+<head>
+    <meta charset="utf-8" />
+
+    <title>Email Configuration</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesbrand" name="author" />
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+
+    <!-- aos css -->
+    <link rel="stylesheet" href="/assets/libs/aos/aos.css" />
+    <!-- Layout config Js -->
+    <script src="/assets/js/layout.js"></script>
+    <!-- Bootstrap Css -->
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="/assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <!-- custom Css-->
+    <link href="/assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Font Awesome Files -->
+    <link href="/assets/fontawesome/css/all.min.css" rel="stylesheet" />
+    <link href="/assets/fontawesome/css/solid.css" rel="stylesheet" />
+    <link href="/assets/fontawesome/css/solid.min.css" rel="stylesheet" />
+    <link href="/assets/fontawesome/css/regular.css" rel="stylesheet" />
+    <link href="/assets/fontawesome/css/regular.min.css" rel="stylesheet" />
+    <link href="/assets/fontawesome/css/fontawesome.min.css" rel="stylesheet" />
+    <link href="/assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+        <header id="page-topbar">
+            <div class="layout-width">
+                <div class="navbar-header">
+                    <div class="d-flex">
+                        <!-- LOGO -->
+                        <div class="navbar-brand-box horizontal-logo">
+                            <a href="/" class="logo logo-dark">
+                                <span class="logo-sm">
+                                    <img src="/assets/images/logo-sm.png" alt="" height="22" />
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="/assets/images/logo-dark.png" alt="" height="17" />
+                                </span>
+                            </a>
+
+                            <a href="/" class="logo logo-light">
+                                <span class="logo-sm">
+                                    <img src="/assets/images/logo-sm.png" alt="" height="22" />
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="/assets/images/logo-light.png" alt="" height="17" />
+                                </span>
+                            </a>
+                        </div>
+
+                        <button type="button"
+                            class="btn btn-sm px-3 fs-16 header-item vertical-menu-btn topnav-hamburger"
+                            id="topnav-hamburger-icon">
+                            <span class="hamburger-icon">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </button>
+                    </div>
+
+                    <div class="d-flex align-items-center">
+                        <div class="dropdown d-md-none topbar-head-dropdown header-item">
+                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
+                                id="page-header-search-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                <i class="bx bx-search fs-22"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
+                                aria-labelledby="page-header-search-dropdown">
+                                <form class="p-3">
+                                    <div class="form-group m-0">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Search ..."
+                                                aria-label="Recipient's username" />
+                                            <button class="btn btn-primary" type="submit">
+                                                <i class="mdi mdi-magnify"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="ms-1 header-item d-none d-sm-flex">
+                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
+                                data-toggle="fullscreen">
+                                <i class="bx bx-fullscreen fs-22"></i>
+                            </button>
+                        </div>
+
+                        <div class="ms-1 header-item d-none d-sm-flex">
+                            <button type="button"
+                                class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle light-dark-mode">
+                                <i class="bx bx-moon fs-22"></i>
+                            </button>
+                        </div>
+
+                        <div class="dropdown ms-sm-3 header-item topbar-user">
+                            <button type="button" class="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <span class="d-flex align-items-center">
+                                    <img class="rounded-circle header-profile-user profileimg" />
+                                    <span class="text-start ms-xl-2">
+                                        <span
+                                            class="d-none d-xl-inline-block ms-1 fw-medium user-name-text profilename"></span>
+                                        <span class="d-none d-xl-block ms-1 fs-12 text-muted user-name-sub-text">
+                                            Founder
+                                        </span>
+                                    </span>
+                                </span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <!-- item-->
+                                <h6 class="dropdown-header">
+                                    Welcome <span class="profilename"></span>
+                                </h6>
+                                <a class="dropdown-item" href="/profile">
+                                    <i class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i>
+                                    <span class="align-middle">Profile</span>
+                                </a>
+                                <a class="dropdown-item" href="/subscription">
+                                    <i class="mdi mdi-credit-card-chip text-muted fs-16 align-middle me-1"></i>
+                                    <span class="align-middle">Pay</span>
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" id="logout">
+                                    <i class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i>
+                                    <span class="align-middle" data-key="t-logout">Logout</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- ========== App Menu ========== -->
+        <div class="app-menu navbar-menu">
+            <!-- LOGO -->
+            <div class="navbar-brand-box">
+                <!-- Dark Logo-->
+                <a href="/" class="logo logo-dark">
+                    <span class="logo-sm">
+                        <img src="/assets/images/logo-sm.png" alt="" height="22" />
+                    </span>
+                    <span class="logo-lg">
+                        <img src="/assets/images/logo-dark.png" alt="" height="17" />
+                    </span>
+                </a>
+                <!-- Light Logo-->
+                <a href="/" class="logo logo-light">
+                    <span class="logo-sm">
+                        <img src="/assets/images/logo-sm.png" alt="" height="22" />
+                    </span>
+                    <span class="logo-lg">
+                        <img src="/assets/images/logo-light.png" alt="" height="17" />
+                    </span>
+                </a>
+                <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover"
+                    id="vertical-hover">
+                    <i class="ri-record-circle-line"></i>
+                </button>
+            </div>
+
+            <div id="scrollbar">
+                <div id="scrollbar">
+                    <div class="container-fluid">
+                        <div id="two-column-menu"></div>
+                        <ul class="navbar-nav" id="navbar-nav" data-aos="fade-right" data-aos-duration="1000"></ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Left Sidebar End -->
+            <!-- Vertical Overlay-->
+            <div class="vertical-overlay"></div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+            <div class="page-content">
+                <div class="container-fluid">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="row">
+                                <h3 class="col-6 d-flex align-items-center">Email Configuration</h3>
+                                <div class="col-6 d-flex align-items-center justify-content-end">
+                                    <button type="button"
+                                        class="btn btn-soft-danger waves-effect waves-light fs-15 me-2" id="mic"
+                                        data-bs-toggle="modal" data-bs-target="#voice_input">
+                                        <i class="mdi mdi-microphone"></i>
+                                    </button>
+                                    <button class="btn btn-primary fs-13" data-bs-toggle="modal"
+                                        data-bs-target="#addpasscodemodal" id="msg_btn">
+                                        <i class="las la-pen me-2"></i>Edit
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body" style="text-align: justify; text-justify: inter-word;">
+                            <div class="bg-warning bg-opacity-10 border border-warning p-3 mb-4 rounded-3 text-warning"
+                                id="warning_msg">
+                                <div class="d-flex align-items-center">
+                                    <i class="ri-error-warning-line me-2 fs-20"></i>
+                                    <div class="vr"></div>
+                                    <p class="fs-15 fw-medium mb-0 ms-2">
+                                        To configure your Gmail account to send email using Nodemailer, you need to
+                                        enable "Less Secure Apps" and optionally enable 2-step verification.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="bg-success bg-opacity-10 border border-success p-3 mb-4 rounded-3 text-success"
+                                id="success_msg">
+                                <div class="d-flex align-items-center">
+                                    <i class="ri-checkbox-circle-line align-middle me-2 fs-18"></i>
+                                    <div class="vr"></div>
+                                    <p class="fs-15 fw-medium mb-0 ms-2">
+                                        You have already configured your Gmail Account for the mail.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="fw-medium fs-17 text-primary mb-2">
+                                How to do it ?
+                            </div>
+                            <ol class="list-group">
+                                <li class="list-group-item">
+                                    <div class="d-flex align-items-center">
+                                        <div class="bg-primary p-2 rounded-circle me-3 fs-10">
+                                            <span class="avatar-title text-white fw-medium">
+                                                <i class="ri-number-1"></i>
+                                            </span>
+                                        </div>
+                                        <div class="fw-medium">
+                                            Go to
+                                            <a href="https://www.gmail.com" target="_blank">
+                                                www.gmail.com
+                                            </a>
+                                            and sign in to the Gmail account which you want to use to send
+                                            emails.
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="d-flex align-items-center">
+                                        <div class="bg-primary p-2 rounded-circle me-3 fs-10">
+                                            <span class="avatar-title text-white fw-medium">
+                                                <i class="ri-number-2"></i>
+                                            </span>
+                                        </div>
+                                        <div class="fw-medium">
+                                            Click on the gear icon
+                                            <i class="ri-settings-3-line fs-18 text-primary align-middle"></i>
+                                            in the top right corner of the page
+                                            and select "Settings" from the dropdown menu.
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="d-flex align-items-center">
+                                        <div class="bg-primary p-2 rounded-circle me-3 fs-10">
+                                            <span class="avatar-title text-white fw-medium">
+                                                <i class="ri-number-3"></i>
+                                            </span>
+                                        </div>
+                                        <div class="fw-medium">
+                                            Click on the
+                                            <span class="text-primary">Accounts and Import</span>
+                                            tab.
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class=" list-group-item">
+                                    <div class="d-flex align-items-center">
+                                        <div class="bg-primary p-2 rounded-circle me-3 fs-10">
+                                            <span class="avatar-title text-white fw-medium">
+                                                <i class="ri-number-4"></i>
+                                            </span>
+                                        </div>
+                                        <div class="fw-medium">
+                                            Under the
+                                            <span class="text-primary">Change account settings</span>
+                                            section, click on the
+                                            <span class="text-primary">Other Google Account settings</span>
+                                            link.
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="d-flex align-items-center">
+                                        <div class="bg-primary p-2 rounded-circle me-3 fs-10">
+                                            <span class="avatar-title text-white fw-medium">
+                                                <i class="ri-number-5"></i>
+                                            </span>
+                                        </div>
+                                        <div class="fw-medium">
+                                            This will redirect you to the
+                                            <span class="text-primary">Manage Account Page</span>.
+                                            Click on
+                                            <span class="text-primary">
+                                                <i class="ri-lock-2-line fs-18 text-primary align-middle"></i>
+                                                Security
+                                            </span>
+                                            tab in the left-hand menu.
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="d-flex align-items-center">
+                                        <div class="bg-primary p-2 rounded-circle me-3 fs-10">
+                                            <span class="avatar-title text-white fw-medium">
+                                                <i class="ri-number-6"></i>
+                                            </span>
+                                        </div>
+                                        <div class="fw-medium">
+                                            Under
+                                            <span class="text-primary">Signing in to Google</span>.
+                                            click on
+                                            <span class="text-primary">
+                                                <i class="ri-shield-keyhole-line fs-18 text-primary align-middle"></i>
+                                                2-Step Verification
+                                            </span>
+                                            and follow the prompts to enable it.
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="d-flex align-items-center">
+                                        <div class="bg-primary p-2 rounded-circle me-3 fs-10">
+                                            <span class="avatar-title text-white fw-medium">
+                                                <i class="ri-number-7"></i>
+                                            </span>
+                                        </div>
+                                        <div class="fw-medium">
+                                            Turn on
+                                            <span class="text-primary">Allow less secure apps</span>
+                                            This will allow Nodemailer to access your Gmail account to send
+                                            email.
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="d-flex align-items-center">
+                                        <div class="bg-primary p-2 rounded-circle me-3 fs-10">
+                                            <span class="avatar-title text-white fw-medium">
+                                                <i class="ri-number-8"></i>
+                                            </span>
+                                        </div>
+                                        <div class="fw-medium">
+                                            Once the
+                                            <span class="text-primary">2-step verification is enabled,</span>
+                                            Click on
+                                            <a href="https://myaccount.google.com/apppasswords" target="_blank">
+                                                App Passcode
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="d-flex align-items-center">
+                                        <div class="bg-primary p-2 rounded-circle me-3 fs-10">
+                                            <span class="avatar-title text-white fw-medium">
+                                                <i class="ri-number-9"></i>
+                                            </span>
+                                        </div>
+                                        <div class="fw-medium">
+                                            Enter The detail and
+                                            <span class="text-primary">generated code</span>
+                                            here by clicking on
+                                            <button class="btn btn-md btn-primary ms-3" data-bs-toggle="modal"
+                                                data-bs-target="#addpasscodemodal" id="list_btn">
+                                                Add Passcode
+                                            </button>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="addpasscodemodal" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header bg-soft-info p-3">
+                                    <h5 class="modal-title" id="modallbl">Enter Your Details</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                                        id="close-modal"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="mb-3">
+                                        <label for="usermail" class="form-label">
+                                            Email
+                                            <span class="text-danger">*</span>
+                                            <span class="text-danger" id="err_usermail"></span>
+                                        </label>
+                                        <input type="text" class="form-control required" id="usermail" data-type="email"
+                                            disabled />
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="host" class="form-label">
+                                            Hostname
+                                            <span class="text-danger">*</span>
+                                            <span class="text-danger" id="err_host"></span>
+                                        </label>
+                                        <input type="text" class="form-control required" id="host"
+                                            data-type="message" />
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="port" class="form-label">
+                                            Port Number
+                                            <span class="text-danger">*</span>
+                                            <span class="text-danger" id="err_port"></span>
+                                        </label>
+                                        <input type="text" class="form-control required" id="port" data-type="number" />
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="passcode" class="form-label">
+                                            Passcode For Gmail
+                                            <span class="text-danger">*</span>
+                                            <span class="text-danger" id="err_passcode"></span>
+                                        </label>
+                                        <input type="text" class="form-control required" id="passcode"
+                                            data-type="message" />
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button id="done" class="btn btn-md btn-primary">
+                                        Done
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- footer -->
+                <footer class="footer"></footer>
+            </div>
+        </div>
+    </div>
+
+    <!--start back-to-top-->
+    <button onclick="topFunction()" class="btn btn-danger btn-icon" id="back-to-top">
+        <i class="ri-arrow-up-line"></i>
+    </button>
+    <!--end back-to-top-->
+
+    <!--preloader-->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner-border text-primary avatar-sm" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="customizer-setting" id="chatbot">
+        <div class="btn-info btn-rounded shadow-lg btn btn-icon btn-lg p-2">
+            <i class="fa-solid fa-comment" id="iconchat"></i>
+        </div>
+    </div>
+
+    <div class="email-chat-detail" id="emailchat-detailElem" style="display: none">
+        <div class="card mb-0">
+            <div class="card-header align-items-center d-flex bg-primary text-white-50">
+                <div class="flex-grow-1">
+                    <h5 class="fs-15 text-white mb-1 profile-username">
+                        Velzon ChatBot
+                    </h5>
+                    <p class="mb-0 fs-12 lh-1">Ask here for help</p>
+                </div>
+                <div>
+                    <i class="fa-brands fa-bots fs-1 text-white"></i>
+                </div>
+            </div>
+
+            <div class="card-body p-0">
+                <div id="users-chat">
+                    <div class="chat-conversation p-3" id="chat-conversation" data-simplebar style="height: 250px">
+                        <ul class="list-unstyled chat-conversation-list chat-sm" id="conversation"></ul>
+                    </div>
+                </div>
+
+                <div class="border-top border-top-dashed">
+                    <div class="row g-2 mx-3 mt-2 mb-3">
+                        <div class="col">
+                            <div class="position-relative">
+                                <input type="text" class="form-control border-light bg-light message-input"
+                                    placeholder="Enter Message..." id="input" />
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <button class="btn btn-primary" id="sendbotmsg">
+                                <i class="mdi mdi-send"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="voice_input" class="modal zoomIn">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                </button> -->
+                </div>
+                <div class="modal-body">
+                    <div class="fs-1 text-center" id="msg" style="resize: none;">
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="/assets/js/jquery.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/chatbot.js"></script>
+    <script src="/assets/js/voiceRecognition.js"></script>
+    <script src="/assets/js/validate.js"></script>
+
+    <script src="/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="/assets/libs/node-waves/waves.min.js"></script>
+    <script src="/assets/libs/feather-icons/feather.min.js"></script>
+    <script src="/assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+
+    <!-- Sweet Alerts js -->
+    <script src="/assets/sweetalert2/sweet-alert.init.js"></script>
+    <script src="/assets/sweetalert2/sweetalert2.all.js"></script>
+
+    <!-- prismjs plugin -->
+    <script src="/assets/libs/prismjs/prism.js"></script>
+    <script src="/assets/libs/list.js/list.min.js"></script>
+    <script src="/assets/libs/list.pagination.js/list.pagination.min.js"></script>
+
+    <!-- aos js -->
+    <script src="/assets/libs/aos/aos.js"></script>
+    <!-- prismjs plugin -->
+    <script src="/assets/libs/prismjs/prism.js"></script>
+    <!-- animation init -->
+    <script src="/assets/js/pages/animation-aos.init.js"></script>
+
+    <!-- App js -->
+    <script src="/assets/js/app.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            chkLogin();
+            const apikey = getCookie("apikey");
+
+            $.ajax({
+                url: "/getData",
+                method: "post",
+                data: {
+                    obj: {
+                        table: "users",
+                        paramstr: true
+                    }
+                },
+                success: function (val) {
+                    switch (val.status_code) {
+                        case '401': {
+                            InvalidUser();
+                            break;
+                        }
+
+                        case '404':
+                        case '500': {
+                            InternalServerError();
+                            break;
+                        }
+
+                        default: {
+                            $("#usermail").val(val[0].email);
+                            $("#host").val(val[0].hostname);
+                            $("#port").val(val[0].port);
+
+                            if (val[0].emailpasscode == "" || val[0].emailpasscode == null) {
+                                $('#success_msg, #warning_msg, #list_btn, #msg_btn').addClass('d-none');
+                                $('#warning_msg').removeClass('d-none');
+                                $('#list_btn').removeClass('d-none');
+                            }
+                            else {
+                                $('#success_msg, #warning_msg, #list_btn, #msg_btn').addClass('d-none');
+                                $('#success_msg').removeClass('d-none');
+                                $('#msg_btn').removeClass('d-none');
+
+                                $('#passcode').val(val[0].emailpasscode);
+                            }
+                        }
+                    }
+                }
+            });
+
+            $(".required").on('focusout', function () {
+                onfocusout_validation($(this).attr('id'));
+            });
+
+            $(".required").on('input', function () {
+                oninput_validation($(this).attr('id'));
+            });
+
+            $(document).on('click', '#done', () => {
+                nullfield_validation('usermail');
+                nullfield_validation('host');
+                nullfield_validation('port');
+                nullfield_validation('passcode');
+                if (objFlag.flag_usermail == 0 && objFlag.flag_host == 0 &&
+                    objFlag.flag_port == 0 && objFlag.flag_passcode == 0) {
+                    oninput_validation('usermail');
+                    oninput_validation('host');
+                    oninput_validation('port');
+                    oninput_validation('passcode');
+                    if (objFlag.flag_usermail == 0 && objFlag.flag_host == 0 &&
+                        objFlag.flag_port == 0 && objFlag.flag_passcode == 0) {
+                        $.ajax({
+                            url: "/updateData",
+                            method: "PUT",
+                            data: {
+                                table: "users",
+                                paramstr: `emailpasscode='${$("#passcode").val()}', hostname = '${$("#host").val()}',port = ${$("#port").val()} `,
+                                condition: `apikey = '${apikey}'`,
+                            },
+                            success: function (val) {
+                                switch (val.status_code) {
+                                    case '400':
+                                    case '401': {
+                                        InvalidUser();
+                                        break;
+                                    }
+
+                                    case '404':
+                                    case '500': {
+                                        InternalServerError();
+                                        break;
+                                    }
+
+                                    case '200': {
+                                        $('#close-modal').click();
+                                        swal({
+                                            title: "Data updated successfully",
+                                            type: "success",
+                                            timer: 2000,
+                                            showConfirmButton: false,
+                                        }).then(function () {
+                                            $("#msg_btn").removeClass("d-none");
+                                            $("#list_btn").addClass("d-none");
+                                            $('.required').removeClass('form-control-danger form-control-success');
+                                        });
+                                        break;
+                                    }
+                                }
+                            }
+                        });
+                    }
+                }
+            })
+
+            $(document).on('click', '#mic', async function () {
+
+                mic("msg").then((result) => {
+                    let data = result.toString().split(" ");
+                    console.log(data);
+                    if (data[0] == "logout" || (data[0] == "log" && data[1] == "out")) {
+                        $("#logout").click();
+                    }
+                    else if (data[0] == "edit" || data[0] == "update" || data[1] == "passcode") {
+                        if ($("#msg_btn").hasClass("d-none")) {
+                            swal({
+                                title: "First add passcode, then try to edit",
+                                type: 'error',
+                                timer: 4000,
+                                showConfirmButton: false,
+                            });
+                        } else {
+                            $("#msg_btn").click();
+                        }
+                    }
+                    else if (data[0] == "add" && data[1] == "passcode") {
+                        if ($("#list_btn").hasClass("d-none")) {
+                            swal({
+                                title: "You have already added passcode. Try to edit it.",
+                                type: 'error',
+                                timer: 4000,
+                                showConfirmButton: false,
+                            });
+                        } else {
+                            $("#msg_btn").click();
+                        }
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "profile") {
+                        location.href = "/profile";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && (data[2] == "pay" || data[2] == "pricing" || data[2] == "payment" || data[2] == "subscription")) {
+                        location.href = "/subscription";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "dashboard") {
+                        location.href = "/dashboard";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "instance") {
+                        location.href = "/instance";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "custom" && data[3] == "template") {
+                        location.href = "/customtemplate";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "email" && data[3] == "configuration") {
+                        location.href = "/addpasscode";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "support" && data[3] == "ticket") {
+                        location.href = "/support-ticket";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "api" && data[3] == "docs") {
+                        location.href = "/docs";
+                    }
+                    else if (data[0] == "help") {
+                        $("#chatbot").click();
+                    }
+                    else {
+                        swal({
+                            title: "Command not recognized",
+                            type: 'error',
+                            timer: 2500,
+                            showConfirmButton: false,
+                        });
+                    }
+                })
+            })
+
+
+        });
+    </script>
+</body>
+
+</html>

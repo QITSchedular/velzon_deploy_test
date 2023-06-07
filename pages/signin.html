@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg"
+    data-sidebar-image="none" data-preloader="disable">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Sign In | WhatsApp Message</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesbrand" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="../assets/images/favicon.ico">
+
+    <!-- aos css -->
+    <link rel="stylesheet" href="../assets/libs/aos/aos.css" />
+    <!-- Layout config Js -->
+    <script src="../assets/js/layout.js"></script>
+    <!-- Bootstrap Css -->
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="../assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <!-- custom Css-->
+    <link href="../assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+
+    <div class="auth-page-wrapper pt-5">
+        <!-- auth page bg -->
+        <div class="auth-one-bg-position auth-one-bg" id="auth-particles">
+            <div class="bg-overlay"></div>
+
+            <div class="shape">
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 0 1440 120">
+                    <path d="M 0,36 C 144,53.6 432,123.2 720,124 C 1008,124.8 1296,56.8 1440,40L1440 140L0 140z"></path>
+                </svg>
+            </div>
+        </div>
+
+        <!-- auth page content -->
+        <div class="auth-page-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="text-center mt-sm-2 mb-2 text-white-50">
+                            <div>
+                                <a href="/" class="d-inline-block auth-logo">
+                                    <img src="../assets/images/M3.svg" alt="" height="150">
+                                </a>
+                            </div>
+                            <p class="mt-n3 fs-15 fw-medium">WhatsApp Message</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-8 col-lg-6 col-xl-5">
+                        <div class="card mt-4">
+                            <div class="card-body p-4">
+                                <div class="text-center mb-3">
+                                    <h4 class="text-primary">Sign In</h4>
+                                </div>
+
+                                <div class="p-2">
+                                    <div class="d-flex justify-content-evenly gap-3 mb-2">
+                                        <label
+                                            class="form-check border border-2 border-primary p-2 rounded-3 text-primary text-center bg-light cursor-pointer"
+                                            for="users">
+                                            <input class="form-check-input mx-1" type="radio" name="usertype" id="users"
+                                                value="users" checked hidden>
+                                            <label class="form-check-label fs-15 px-2" for="users">
+                                                <i class="ri-user-line me-lg-1 me-md-1 align-middle fs-18"></i>
+                                                <span class="d-none d-lg-inline-block d-md-inline-block">User</span>
+                                            </label>
+                                        </label>
+                                        <label
+                                            class="form-check border border-2 border-light p-2 rounded-3 text-muted text-center cursor-pointer"
+                                            for="admin">
+                                            <input class="form-check-input mx-1" type="radio" name="usertype" id="admin"
+                                                value="admin" hidden>
+                                            <label class="form-check-label fs-15 px-2" for="admin">
+                                                <i class="ri-admin-line me-lg-1 me-md-1 align-middle fs-18"></i>
+                                                <span class="d-none d-lg-inline-block d-md-inline-block">Admin</span>
+                                            </label>
+                                        </label>
+                                        <label
+                                            class="form-check border border-2 border-light p-2 rounded-3 text-muted text-center cursor-pointer"
+                                            for="support">
+                                            <input class="form-check-input mx-1" type="radio" name="usertype"
+                                                id="support" value="support_agents" hidden>
+                                            <label class="form-check-label fs-15 px-2" for="support">
+                                                <i class="bx bx-support me-lg-1 me-md-1 align-middle fs-18"></i>
+                                                <span class="d-none d-lg-inline-block d-md-inline-block">Support</span>
+                                            </label>
+                                        </label>
+                                    </div>
+                                    <div class="signin-other-title text-center">
+                                        <h5 class="fs-13 title"></h5>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label">
+                                            Email
+                                            <span class="text-danger">*</span>
+                                            <span class="text-danger" id="err_email"></span>
+                                        </label>
+                                        <input type="email" class="form-control required" name="email" id="email"
+                                            placeholder="Enter email address" data-type="email" />
+                                    </div>
+                                    <div class="mb-1">
+                                        <label for="password" class="form-label">
+                                            Password
+                                            <span class="text-danger">*</span>
+                                            <span class="text-danger" id="err_password"></span>
+                                        </label>
+                                        <div class="position-relative auth-pass-inputgroup">
+                                            <input type="password" class="form-control pe-5 password-input required"
+                                                name="password" placeholder="Enter password" id="password"
+                                                data-type="password" />
+                                            <button class="btn btn-link position-absolute end-0 top-0
+                                                     text-decoration-none text-muted password-addon" type="button"
+                                                id="password-addon">
+                                                <i class="ri-eye-fill align-middle"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 row">
+                                        <div class="col-6">
+                                            <input class="form-check-input" type="checkbox" value="" id="remeberme" />
+                                            <label class="form-check-label" for="remeberme">
+                                                Remember me
+                                            </label>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="float-end cursor-pointer">
+                                                <div id="forgot-pwd" class="text-muted">
+                                                    <u>Forgot password?</u>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4">
+                                        <input type="button" class="btn btn-success w-100" id="signin"
+                                            value="Sign In" />
+                                    </div>
+                                </div>
+                                <div id="signinwithgoogle" class="mt-2">
+                                    <div class="signin-other-title text-center">
+                                        <h5 class="fs-13 title">or</h5>
+                                    </div>
+                                    <div class="my-2 text-center">
+                                        <a href="/auth/google" class="btn btn-outline-danger fs-15">
+                                            <i class="ri-google-fill me-lg-2 me-md-2 align-middle"></i>
+                                            <span class="d-none d-lg-inline-block d-md-inline-block">signin with
+                                                Google</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <p class="mb-0">Don't have an account ?
+                            <a href="/signup" class="fw-semibold text-primary text-decoration-underline">
+                                Signup
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- footer -->
+        <footer class="footer"></footer>
+    </div>
+</body>
+
+
+<!-- JAVASCRIPT -->
+<script src="../assets/js/jquery.js"></script>
+<script src="../assets/js/validate.js"></script>
+<script src="../assets/js/main.js"></script>
+
+<script src="../assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/libs/simplebar/simplebar.min.js"></script>
+<script src="../assets/libs/node-waves/waves.min.js"></script>
+<script src="../assets/libs/feather-icons/feather.min.js"></script>
+<script src="../assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+
+<!-- particles js -->
+<script src="../assets/libs/particles.js/particles.js"></script>
+<!-- particles app js -->
+<script src="../assets/js/pages/particles.app.js"></script>
+<!-- password create init -->
+<script src="../assets/js/pages/passowrd-create.init.js"></script>
+
+<script src="../assets/sweetalert2/sweet-alert.init.js"></script>
+<script src="../assets/sweetalert2/sweetalert2.all.js"></script>
+
+<script>
+    $(document).ready(() => {
+        $.ajax({
+            url: "/getData",
+            method: "POST",
+            data: {
+                obj: {
+                    table: `users`,
+                    paramstr: true
+                }
+            },
+            success: function (val) {
+                if (val.length === 1) {
+                    location.href = "/dashboard";
+                }
+                else {
+                    switch (val.status_code) {
+                        case '401':
+                        case '404': {
+                            document.cookie = "apikey=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                            document.cookie = "email=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                            break;
+                        }
+                        case '500': {
+                            InternalServerError();
+                            break;
+                        }
+                    }
+                }
+            }
+        })
+
+        var email = document.getElementById('email');
+        var password = document.getElementById('password');
+        var remeberme = false;
+
+        email.value = getCookie('email');
+
+        $(".required").on('focusout', function () {
+            onfocusout_validation($(this).attr('id'));
+        });
+
+        $(".required").on('input', function () {
+            nullfield_validation($(this).attr('id'));
+        });
+
+        $(document).on('change', 'input[name="usertype"]', function () {
+            $('input[name="usertype"]').each(function () {
+                // alert($(this).val());
+                if ($(this).is(':checked')) {
+                    // alert($(this).val());
+                    $(this).parent().removeClass('text-muted text-primary border-primary border-light bg-light').addClass('text-primary border-primary bg-light')
+                }
+                else {
+                    $(this).parent().removeClass('text-muted text-primary border-primary border-light bg-light').addClass('text-muted border-light')
+                }
+            });
+
+            $('#signinwithgoogle').addClass('d-none');
+            switch ($('input[name="usertype"]:checked').attr('id')) {
+                case 'admin':
+                case 'support': {
+                    $('#signinwithgoogle').addClass('d-none');
+                    break;
+                }
+
+                case 'users': {
+                    $('#signinwithgoogle').removeClass('d-none');
+                    break;
+                }
+            }
+        })
+
+        $(document).on('click', '#forgot-pwd', function () {
+            localStorage.setItem("email", email.value.trim());
+            location.href = `/password-reset`;
+        })
+
+        focusEvent('email', 'password')
+        enterKeyEvent('password', 'signin');
+
+        $(document).on('click', '#signin', function () {
+            const type = $('input[name="usertype"]:checked').val();
+            nullfield_validation('email');
+            nullfield_validation('password');
+            if (objFlag.flag_email == 0 && objFlag.flag_password == 0) {
+                if ($('input[id="remeberme"]').prop("checked") == true) {
+                    remeberme = true;
+                }
+                else if ($('input[id="remeberme"]').prop("checked") == false) {
+                    remeberme = false;
+                }
+
+                $.ajax({
+                    url: "/signin",
+                    method: "POST",
+                    data: {
+                        "type": type,
+                        "email": email.value.trim(),
+                        "password": password.value.trim(),
+                        "rememberme": remeberme
+                    },
+                    success: function (val) {
+                        switch (val.status_code) {
+                            case "500": {
+                                InternalServerError();
+                                break;
+                            }
+
+                            case "409": {
+                                swal({
+                                    html: `There must be some error regarding your email <span>${email.value}</span>`,
+                                    type: 'error',
+                                    timer: 3500
+                                })
+                                break;
+                            }
+
+                            case "401": {
+                                swal({
+                                    title: 'Invalid email or password',
+                                    html: `in-case you forgot, click on forgot password`,
+                                    type: 'error',
+                                    timer: 3500,
+                                    showConfirmButton: false,
+                                })
+                                break;
+                            }
+
+                            case "200": {
+                                switch (type) {
+                                    case 'admin': {
+                                        location.href = "/adminDashboard";
+                                        break;
+                                    }
+
+                                    case 'support_agents': {
+                                        location.href = "/supportScan";
+                                        break;
+                                    }
+
+                                    case 'users': {
+                                        location.href = "/dashboard";
+                                        break;
+                                    }
+                                }
+                                break;
+                            }
+                        }
+                    }
+                })
+            }
+        })
+    })
+</script>
+
+</html>

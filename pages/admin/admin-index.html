@@ -1,0 +1,1105 @@
+<!doctype html>
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg"
+    data-sidebar-image="none" data-preloader="disable">
+
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Admin Index | M3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesbrand" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="/assets/images/favicon.ico">
+
+    <!-- Layout config Js -->
+    <script src="/assets/js/layout.js"></script>
+    <!-- Bootstrap Css -->
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="/assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <!-- custom Css-->
+    <link href="/assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+    <!-- cdn of chart -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script> -->
+
+</head>
+
+<body>
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+        <header id="page-topbar">
+            <div class="layout-width">
+                <div class="navbar-header">
+                    <div class="d-flex">
+                        <div class="navbar-brand-box horizontal-logo">
+                            <a href="/" class="logo logo-dark">
+                                <span class="logo-sm">
+                                    <img src="/assets/images/logo-sm.png" alt="" height="22" />
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="/assets/images/logo-dark.png" alt="" height="17" />
+                                </span>
+                            </a>
+                            <a href="/" class="logo logo-light">
+                                <span class="logo-sm">
+                                    <img src="/assets/images/logo-sm.png" alt="" height="22" />
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="/assets/images/logo-light.png" alt="" height="17" />
+                                </span>
+                            </a>
+                        </div>
+
+                        <button type="button"
+                            class="btn btn-sm px-3 fs-16 header-item vertical-menu-btn topnav-hamburger"
+                            id="topnav-hamburger-icon">
+                            <span class="hamburger-icon">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <div class="dropdown d-md-none topbar-head-dropdown header-item">
+                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
+                                id="page-header-search-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                <i class="bx bx-search fs-22"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
+                                aria-labelledby="page-header-search-dropdown">
+                                <form class="p-3">
+                                    <div class="form-group m-0">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Search ..."
+                                                aria-label="Recipient's username" />
+                                            <button class="btn btn-primary" type="submit">
+                                                <i class="mdi mdi-magnify"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="ms-1 header-item d-none d-sm-flex">
+                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
+                                data-toggle="fullscreen">
+                                <i class="bx bx-fullscreen fs-22"></i>
+                            </button>
+                        </div>
+
+                        <div class="ms-1 header-item d-none d-sm-flex">
+                            <button type="button"
+                                class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle light-dark-mode">
+                                <i class="bx bx-moon fs-22"></i>
+                            </button>
+                        </div>
+
+                        <div class="ms-1 header-item d-none d-sm-flex">
+                            <button type="button" id="logout"
+                                class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle">
+                                <i class="mdi mdi-logout fs-22"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ========== App Menu ========== -->
+        <div class="app-menu navbar-menu">
+            <!-- LOGO -->
+            <div class="navbar-brand-box">
+                <!-- Dark Logo-->
+                <a href="/" class="logo logo-dark">
+                    <span class="logo-sm">
+                        <img src="/assets/images/logo-sm.png" alt="" height="22">
+                    </span>
+                    <span class="logo-lg">
+                        <img src="/assets/images/logo-dark.png" alt="" height="17">
+                    </span>
+                </a>
+                <!-- Light Logo-->
+                <a href="/" class="logo logo-light">
+                    <span class="logo-sm">
+                        <img src="/assets/images/logo-sm.png" alt="" height="22">
+                    </span>
+                    <span class="logo-lg">
+                        <img src="/assets/images/logo-light.png" alt="" height="17">
+                    </span>
+                </a>
+                <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover"
+                    id="vertical-hover">
+                    <i class="ri-record-circle-line"></i>
+                </button>
+            </div>
+
+            <div id="scrollbar">
+                <div class="container-fluid">
+                    <div id="two-column-menu"></div>
+                    <ul class="navbar-nav" id="navbar-nav" data-aos="fade-right" data-aos-duration="1000"></ul>
+                </div>
+            </div>
+
+            <div class="sidebar-background"></div>
+        </div>
+        <!-- Left Sidebar End -->
+        <!-- Vertical Overlay-->
+        <div class="vertical-overlay"></div>
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+
+        <div class="main-content">
+            <div class="page-content">
+                <div class="container-fluid">
+                    <div class="row mb-3">
+                        <div class="col-12">
+                            <div class="d-flex align-items-lg-center flex-lg-row flex-column">
+                                <div class="flex-grow-1">
+                                    <h4 class="fs-16 mb-1">Hello,
+                                        <span class="text-primary fw-bold">Admin !</span>
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 col-sm-12">
+                            <div class="card card-animate">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <p class="text-uppercase fs-4 fw-medium text-muted text-truncate">
+                                                Total Users
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-end justify-content-between">
+                                        <div id="usercard" class="text-primary"></div>
+                                        <div class="avatar-sm flex-shrink-0">
+                                            <span class="avatar-title bg-soft-success rounded fs-2">
+                                                <i class="bx bxs-user-account text-success"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 col-sm-12">
+
+                            <div class="card card-animate">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <p class="text-uppercase fw-medium fs-4 text-muted text-truncate">
+                                                Total Instances
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-end justify-content-between">
+                                        <div id="inscard" class="text-primary"></div>
+                                        <div class="avatar-sm flex-shrink-0">
+                                            <span class="avatar-title bg-soft-info rounded fs-2">
+                                                <i class="ri-apps-2-line text-info"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 col-sm-12">
+                            <div class="card card-animate">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <p class="text-uppercase fs-4 fw-medium text-muted text-truncate">
+                                                Total Messages
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-end justify-content-between">
+                                        <div id="msgcard" class="text-primary"></div>
+                                        <div class="avatar-sm flex-shrink-0">
+                                            <span class="avatar-title bg-soft-warning rounded fs-2">
+                                                <i class="bx bx-message-detail text-warning"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 col-sm-12">
+                            <div class="card card-animate">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <p class="text-uppercase fs-4 fw-medium text-muted text-truncate">
+                                                Total Payments
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-end justify-content-between">
+                                        <div id="paycard" class="text-primary"></div>
+                                        <div class="avatar-sm flex-shrink-0">
+                                            <span class="avatar-title bg-soft-primary rounded fs-2">
+                                                <i class="bx bx-rupee text-primary"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="card justify-content-center">
+                                <div class="card-header align-items-center d-flex">
+                                    <h4 class="card-title text-center fs-3 mb-0 flex-grow-1">Country Wise User</h4>
+                                </div>
+                                <div class="card-body d-flex align-items-center justify-content-center">
+                                    <canvas id="countryuser" style="width:50%;max-width:350px"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="card justify-content-center">
+                                <div class="card-header align-items-center d-flex">
+                                    <h4 class="card-title text-center fs-2 mb-0 flex-grow-1 ">Monthly Registration of
+                                        User
+                                    </h4>
+                                </div>
+                                <div class="card-body d-flex align-items-center justify-content-center">
+                                    <canvas id="monthlychart" style="height:350px;width:100%;max-width:600px"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="card justify-content-center">
+                                <div class="card-header align-items-center d-flex">
+                                    <h4 class="card-title text-center fs-2 mb-0 flex-grow-1 ">Monthly Instances</h4>
+                                </div>
+                                <div class="card-body d-flex align-items-center justify-content-center">
+                                    <canvas id="monthlyinstances"
+                                        style="height:350px;width:100%;max-width:600px"></canvas>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="row">
+
+
+                        <div class="col-lg-8">
+                            <div class="card">
+                                <div class="card-header align-items-center d-flex">
+                                    <h4 class="card-title text-center fs-2 mb-0 flex-grow-1 ">Subscriptions</h4>
+                                </div>
+                                <div class="card-body d-flex align-items-center justify-content-center ">
+                                    <canvas id="subscriptionuser"
+                                        style="height:350px;width:100%;max-width:600px"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-4 col-md-12 col-sm-12">
+                            <div class="card justify-content-center">
+                                <div class="card-header align-items-center d-flex">
+                                    <h4 class="card-title text-center fs-2 mb-0 flex-grow-1 ">Email</h4>
+                                </div>
+                                <div class="card-body d-flex align-items-center justify-content-center">
+                                    <div id="email_chart"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-12 col-sm-12">
+                            <div class="card justify-content-center">
+                                <div class="card-header align-items-center d-flex">
+                                    <h4 class="card-title text-center fs-2 mb-0 flex-grow-1">Support-Ticket</h4>
+                                </div>
+                                <div class="card-body d-flex align-items-center justify-content-center">
+                                    <div id="ticket_chart"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-12 col-sm-12">
+                            <div class="card justify-content-center">
+                                <div class="card-header align-items-center d-flex">
+                                    <h4 class="card-title text-center fs-2 mb-0 flex-grow-1">Messages</h4>
+                                </div>
+                                <div class="card-body d-flex align-items-center justify-content-center">
+                                    <div id="message_chart"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- End Page-content -->
+
+                    <footer class="footer"></footer>
+                </div>
+                <!-- end main content-->
+            </div>
+        </div>
+    </div>
+    <!-- END layout-wrapper -->
+
+    <!--start back-to-top-->
+    <button onclick="topFunction()" class="btn btn-danger btn-icon" id="back-to-top">
+        <i class="ri-arrow-up-line"></i>
+    </button>
+    <!--end back-to-top-->
+
+    <!--preloader-->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner-border text-primary avatar-sm" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="customizer-setting d-none d-md-block">
+        <div class="btn-info btn-rounded shadow-lg btn btn-icon btn-lg p-2" data-bs-toggle="offcanvas"
+            data-bs-target="#theme-settings-offcanvas" aria-controls="theme-settings-offcanvas">
+            <i class='mdi mdi-spin mdi-cog-outline fs-22'></i>
+        </div>
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="/assets/js/jquery.js"></script>
+    <script src="/assets/js/admin.js"></script>
+    <script src="/assets/js/validate.js"></script>
+
+    <script src="/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="/assets/libs/node-waves/waves.min.js"></script>
+    <script src="/assets/libs/feather-icons/feather.min.js"></script>
+    <script src="/assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+
+    <!-- aos js -->
+    <script src="/assets/libs/aos/aos.js"></script>
+
+    <!-- apexcharts -->
+    <script src="/assets/libs/apexcharts/apexcharts.min.js"></script>
+
+    <!-- App js -->
+    <script src="/assets/js/app.js"></script>
+
+    <!-- Chart JS -->
+    <script src="assets/libs/chart.js/chart.min.js"></script>
+    
+    <!-- chartjs init -->
+    <script src="assets/js/pages/chartjs.init.js"></script>
+
+
+    <!-- code here -->
+    <script>
+        function card() {
+            $.ajax({
+                url: "/card",
+                method: "post",
+                data: {
+                    table: "users",
+                    paramstr: true,
+                },
+                success: function (data) {
+                    $("#usercard").html(`<h4 class="fs-3 text-primary fw-semibold mb-1">
+                                            ${data[0].cnt}
+                                        </h4>
+                                        <a href="/usersData" class="text-decoration-underline fs-4">
+                                            see details
+                                        </a>`);
+                }
+            })
+
+            $.ajax({
+                url: "/card",
+                method: "post",
+                data: {
+                    table: "instance",
+                    paramstr: true,
+                },
+                success: function (data) {
+                    $("#inscard").html(`<h4 class="fs-3 text-primary fw-semibold mb-1">
+                                            ${data[0].cnt}
+                                        </h4>
+                                        <a href="/instanceData" class="text-decoration-underline fs-4">
+                                            see details
+                                        </a>`);
+                }
+            })
+
+            $.ajax({
+                url: "/card",
+                method: "post",
+                data: {
+                    table: "message",
+                    paramstr: true,
+                },
+                success: function (data) {
+                    $("#msgcard").html(`<h4 class="fs-25 text-primary fw-semibold mb-1">
+                                            ${data[0].cnt}
+                                        </h4>
+                                        <a href="/messageData" class="text-decoration-underline fs-4">
+                                            see details
+                                        </a>`);
+                }
+            })
+
+            $.ajax({
+                url: "/card",
+                method: "post",
+                data: {
+                    table: "subscription",
+                    paramstr: true,
+                },
+                success: function (data) {
+                    $("#paycard").html(`<h4 class="fs-3 text-primary fw-semibold mb-1">
+                                            ${data[0].cnt}
+                                        </h4>
+                                        <a href="/subscriptionData" class="text-decoration-underline fs-4">
+                                            see details
+                                        </a>`);
+                }
+            })
+        }
+
+        var countryname = new Array();
+        var countrycount = new Array();
+        var usercount = new Array();
+        var usermonth = new Array();
+        var monthlyuser = new Array();
+        var messagecount = new Array();
+        var instancedata = new Array();
+        var instancemonth = new Array();
+        var plancount = new Array();
+        var tickettype = new Array();
+        var emailcount = new Array();
+        //ajax for data of chart
+
+        function countryuserchart() {
+            $.ajax({
+                url: "/distinct",
+                method: "post",
+                data: {
+                    table: "users",
+                    column: "country"
+                },
+                success: function (data) {
+                    console.log('data', data);
+                    for (i = 0; i < data.length; i++) {
+                        countryname.push(data[i].country);
+                    }
+                    for (i = 0; i < data.length; i++) {
+                        countrycount.push(data[i].cnt);
+                    }
+                    let xValues = countryname;
+                    let yValues = countrycount;
+
+                    // var barColors = ['#405189', '#f06548', '#0ab39c', '#f7b84b', '#299cdb', '#3577f1', '#6559cc',
+                    //     '#405189', '#f06548', '#0ab39c', '#f7b84b', '#299cdb', '#3577f1', '#6559cc',
+                    //     '#405189', '#f06548', '#0ab39c', '#f7b84b', '#299cdb', '#3577f1', '#6559cc',
+                    //     '#405189', '#f06548', '#0ab39c', '#f7b84b', '#299cdb', '#3577f1', '#6559cc',
+                    //     '#405189', '#f06548', '#0ab39c', '#f7b84b', '#299cdb', '#3577f1', '#6559cc',
+                    //     '#405189', '#f06548', '#0ab39c', '#f7b84b', '#299cdb', '#3577f1', '#6559cc'];
+
+                    var barColors = ['rgb(255, 99, 132)', 'rgb(75, 192, 192)', 'rgb(255, 159, 64)', 'rgb(54, 162, 235)', 'rgb(255, 205, 86)',
+                        'rgb(153, 102, 255)', 'rgb(201, 203, 207)', 'rgb(255, 99, 132)', 'rgb(75, 192, 192)', 'rgb(255, 159, 64)', 'rgb(54, 162, 235)', 'rgb(255, 205, 86)',
+                        'rgb(153, 102, 255)', 'rgb(201, 203, 207)', 'rgb(255, 99, 132)', 'rgb(75, 192, 192)', 'rgb(255, 159, 64)', 'rgb(54, 162, 235)', 'rgb(255, 205, 86)',
+                        'rgb(153, 102, 255)', 'rgb(201, 203, 207)', 'rgb(255, 99, 132)', 'rgb(75, 192, 192)', 'rgb(255, 159, 64)', 'rgb(54, 162, 235)', 'rgb(255, 205, 86)',
+                        'rgb(153, 102, 255)', 'rgb(201, 203, 207)', 'rgb(255, 99, 132)', 'rgb(75, 192, 192)', 'rgb(255, 159, 64)', 'rgb(54, 162, 235)', 'rgb(255, 205, 86)',
+                        'rgb(153, 102, 255)', 'rgb(201, 203, 207)', 'rgb(255, 99, 132)', 'rgb(75, 192, 192)', 'rgb(255, 159, 64)', 'rgb(54, 162, 235)', 'rgb(255, 205, 86)',
+                        'rgb(153, 102, 255)', 'rgb(201, 203, 207)', 'rgb(255, 99, 132)', 'rgb(75, 192, 192)', 'rgb(255, 159, 64)', 'rgb(54, 162, 235)', 'rgb(255, 205, 86)',
+                        'rgb(153, 102, 255)', 'rgb(201, 203, 207)',];
+
+                    new Chart("countryuser", {
+                        type: "pie",
+                        data: {
+                            labels: xValues,
+                            datasets: [{
+                                backgroundColor: barColors,
+                                data: yValues
+                            }]
+                        },
+                        options: {
+                            legend: {
+                                display: false,
+                            },
+                        }
+                    });
+                    // for (i = 0; i < countryname.length; i++) {
+                    //     $.ajax({
+                    //         url: "/card",
+                    //         method: "post",
+                    //         data: {
+                    //             table: "users",
+                    //             paramstr: `country='${countryname[i]}'`,
+                    //         },
+                    //         success: function (data) {
+                    //             for (i = 0; i < data.length; i++) {
+                    //                 usercount.push(data[i].cnt);
+                    //             }
+                    //             let yValues = usercount;
+                    //             var barColors = ['rgb(255, 99, 132)',
+                    //                 'rgb(75, 192, 192)',
+                    //                 'rgb(255, 159, 64)',
+                    //                 'rgb(54, 162, 235)',
+                    //                 'rgb(255, 205, 86)',
+                    //                 'rgb(153, 102, 255)',
+                    //                 'rgb(201, 203, 207)'];
+
+                    //             new Chart("countryuser", {
+                    //                 type: "doughnut",
+                    //                 data: {
+                    //                     labels: xValues,
+                    //                     datasets: [{
+                    //                         backgroundColor: barColors,
+                    //                         data: yValues
+                    //                     }]
+                    //                 },
+                    //                 options: {
+                    //                     legend: {
+                    //                         display: false,
+                    //                     },
+                    //                 }
+                    //             });
+                    //         }
+                    //     })
+                    // }
+                }
+            })
+        }
+
+
+
+        function registrationuserchart() {
+
+            var currentDate = new Date();
+
+            for (var i = 0; i < 6; i++) {
+
+                var monthNumber = currentDate.getMonth() - i;
+
+                var dateObj = new Date(currentDate.getFullYear(), monthNumber, 1);
+
+                var monthName = dateObj.toLocaleString('default', { month: 'long' });
+                usermonth.push(monthName);
+            }
+            var m = 0;
+            usermonth.reverse();
+            for (i = 0; i < usermonth.length; i++) {
+                switch (usermonth[i]) {
+                    case "January":
+                        m = 1;
+
+                        break;
+                    case "February":
+                        m = 2;
+
+                        break;
+                    case "March":
+                        m = 3;
+
+                        break;
+                    case "April":
+                        m = 4;
+
+                        break;
+                    case "May":
+                        m = 5;
+
+                        break;
+                    case "June":
+                        m = 6;
+
+                        break;
+                    case "July":
+                        m = 7;
+
+                        break;
+                    case "August":
+                        m = 8;
+
+                        break;
+                    case "september":
+                        m = 9;
+
+                        break;
+                    case "october":
+                        m = 10;
+
+                        break;
+                    case "November":
+                        m = 11;
+
+                        break;
+                    case "December":
+                        m = 12;
+
+                        break;
+                    default:
+
+                }
+                $.ajax({
+                    url: "/monthlyreport",
+                    method: "post",
+                    data: {
+                        month: m,
+                        year: currentDate.getFullYear(),
+                    },
+                    success: function (data) {
+                        //console.log(data);
+                        monthlyuser.push(data[0].cnt);
+                        var xValues = usermonth;
+                        var yValues = monthlyuser;
+                        var barColors = ['rgb(255, 99, 132)',
+                            'rgb(75, 192, 192)',
+                            'rgb(255, 159, 64)',
+                            'rgb(54, 162, 235)',
+                            'rgb(255, 205, 86)',
+                            'rgb(153, 102, 255)',
+                            'rgb(201, 203, 207)'];
+                        new Chart("monthlychart", {
+                            type: "line",
+                            data: {
+                                labels: xValues,
+                                datasets: [{
+                                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                                    borderColor: 'rgb(75, 192, 192)',
+                                    data: yValues,
+                                }]
+                            },
+                            options: {
+                                legend: { display: false },
+                            }
+                        })
+                    }
+                })
+
+            }
+        }
+
+        function displayPieChart(count, id, type) {
+            let options = {
+                series: count,
+                chart: {
+                    height: 300,
+                    width: 300,
+                    type: "pie",
+                },
+                legend: {
+                    show: false
+                },
+                dataLabels: {
+                    dropShadow: {
+                        enabled: 2
+                    }
+                },
+                colors: ['#405189', '#f06548', '#0ab39c', '#f7b84b', '#299cdb', '#3577f1', '#6559cc']
+            }
+            switch (type) {
+                case 'whatsapp': {
+                    options['labels'] = [
+                        "Single Message",
+                        "Document Message",
+                        "Template Bulk Message",
+                        "Custom Bulk Messages",
+                        "Channel Bulk Message",
+                    ];
+                    break;
+                }
+
+                case 'email': {
+                    options['labels'] = [
+                        "Template Bulk Mail",
+                        "Custom Bulk Mail",
+                        "Channel Bulk Mail",
+                    ];
+                    break;
+                }
+
+                case 'ticket': {
+                    options['labels'] = [
+                        "Account Management",
+                        "Technical Support",
+                        "Payment Problem",
+                        "Service Inquiry",
+                        "Feedback and Suggestions"
+                    ];
+                    break;
+                }
+
+                default: {
+                    options['labels'] = []
+                }
+            }
+            chart = new ApexCharts(document.querySelector("#" + id), options).render();
+        }
+
+        function message_summary() {
+            $.ajax({
+                url: "/message_summary_admin",
+                method: "GET",
+                success: function (val) {
+                    console.log(val);
+                    let output = ``;
+                    let obj = {};
+                    switch (val.status_code) {
+                        case '500': {
+                            InternalServerError();
+                            break;
+                        }
+                        case '404': {
+                            output += `<div class="text-center">
+                                            <h5 class="p-3">
+												No Message sent
+                                            </h5>
+                                        </div>`;
+                            break;
+                        }
+
+                        default: {
+                            var countmsgarray = new Array();
+
+                            countmsgarray.push(val[0].single_message_count);
+                            countmsgarray.push(val[0].single_document_count);
+                            countmsgarray.push(val[0].bulk_message_template_count);
+                            countmsgarray.push(val[0].bulk_message_custom_count);
+                            countmsgarray.push(val[0].bulk_message_channel_count);
+
+                            displayPieChart(countmsgarray, `message_chart`, "whatsapp");
+                        }
+                    }
+                }
+            })
+        }
+
+        function email_summary() {
+            $.ajax({
+                url: "/email_summary_admin",
+                method: "GET",
+                success: function (val) {
+                    console.log(val);
+                    let output = ``;
+                    let obj = {};
+                    switch (val.status_code) {
+                        case '500': {
+                            InternalServerError();
+                            break;
+                        }
+                        case '404': {
+                            output += `<div class="text-center">
+                                            <h5 class="p-3">
+												No Email sent
+                                            </h5>
+                                        </div>`;
+                            break;
+                        }
+
+                        default: {
+                            var countmsgarray = new Array();
+
+                            countmsgarray.push(val[0].bulk_mail_template_count);
+                            countmsgarray.push(val[0].bulk_mail_custom_count);
+                            countmsgarray.push(val[0].bulk_mail_channel_count);
+
+                            displayPieChart(countmsgarray, `email_chart`, "email");
+                        }
+                    }
+                }
+            })
+        }
+
+        function monthlyinstancereport() {
+            let currentDate = new Date();
+
+            for (var i = 0; i < 6; i++) {
+
+                let monthNumber = currentDate.getMonth() - i;
+
+                let dateObj = new Date(currentDate.getFullYear(), monthNumber, 1);
+
+                let monthName = dateObj.toLocaleString('default', { month: 'long' });
+                instancemonth.push(monthName);
+            }
+
+            let m = 0;
+            instancemonth.reverse();
+            for (i = 0; i < instancemonth.length; i++) {
+                switch (instancemonth[i]) {
+                    case "January":
+                        m = 1;
+
+                        break;
+                    case "February":
+                        m = 2;
+
+                        break;
+                    case "March":
+                        m = 3;
+
+                        break;
+                    case "April":
+                        m = 4;
+
+                        break;
+                    case "May":
+                        m = 5;
+
+                        break;
+                    case "June":
+                        m = 6;
+
+                        break;
+                    case "July":
+                        m = 7;
+
+                        break;
+                    case "August":
+                        m = 8;
+
+                        break;
+                    case "september":
+                        m = 9;
+
+                        break;
+                    case "october":
+                        m = 10;
+
+                        break;
+                    case "November":
+                        m = 11;
+
+                        break;
+                    case "December":
+                        m = 12;
+
+                        break;
+                    default:
+
+                }
+                $.ajax({
+                    url: "/instancereport",
+                    method: "post",
+                    data: {
+                        month: m,
+                        year: currentDate.getFullYear(),
+                    },
+                    success: function (data) {
+                        instancedata.push(data[0].cnt);
+                        var xValues = instancemonth;
+                        var yValues = instancedata;
+                        var barColors = ['rgb(255, 99, 132)',
+                            'rgb(75, 192, 192)',
+                            'rgb(255, 159, 64)',
+                            'rgb(54, 162, 235)',
+                            'rgb(255, 205, 86)',
+                            'rgb(153, 102, 255)',
+                            'rgb(201, 203, 207)'];
+                        new Chart("monthlyinstances", {
+                            type: "bar",
+                            data: {
+                                labels: xValues,
+                                datasets: [{
+                                    backgroundColor: barColors,
+                                    data: yValues,
+                                }]
+                            },
+                            options: {
+                                legend: { display: false },
+                            }
+                        })
+                    }
+                })
+            }
+        }
+
+        function usersubscription() {
+            $.ajax({
+                url: "/usersubscription",
+                method: "get",
+                success: function (data) {
+                    console.log(data);
+                    let flag = false;
+                    for (i = 0; i < data.length; i++) {
+                        if (data[i].planID == "101") {
+                            plancount.push(data[i].cnt);
+                            flag = true;
+                        }
+                    }
+                    if (flag == false) {
+                        plancount.push(0);
+                    }
+                    flag = false;
+                    for (i = 0; i < data.length; i++) {
+                        if (data[i].planID == "102") {
+                            plancount.push(data[i].cnt);
+                            flag = true;
+                        }
+                    }
+                    if (flag == false) {
+                        plancount.push(0);
+                    }
+                    flag = false;
+                    for (i = 0; i < data.length; i++) {
+                        if (data[i].planID == "103") {
+                            plancount.push(data[i].cnt);
+                            flag = true;
+                        }
+                    }
+                    if (flag == false) {
+                        plancount.push(0);
+                    }
+                    flag = false;
+                    for (i = 0; i < data.length; i++) {
+                        if (data[i].planID == "104") {
+                            plancount.push(data[i].cnt);
+                            flag = true;
+                        }
+                    }
+                    if (flag == false) {
+                        plancount.push(0);
+                    }
+                    flag = false;
+                    for (i = 0; i < data.length; i++) {
+                        if (data[i].planID == "105") {
+                            plancount.push(data[i].cnt);
+                            flag = true;
+                        }
+                    }
+                    if (flag == false) {
+                        plancount.push(0);
+                    }
+                    console.log(plancount);
+                    var xValues = ["Basic", "Standard(month)", "Premium(month)", "Standard(year)", "Premium(year)"];
+                    var yValues = plancount;
+                    var barColors = ['rgb(255, 99, 132)',
+                        'rgb(75, 192, 192)',
+                        'rgb(255, 159, 64)',
+                        'rgb(54, 162, 235)',
+                        'rgb(255, 205, 86)',
+                        'rgb(153, 102, 255)',
+                        'rgb(201, 203, 207)'];
+                    const config = {
+                        type: 'bar',
+                        data: {
+                            labels: xValues,
+                            datasets: [{
+                                backgroundColor: barColors,
+                                data: yValues,
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            plugins: {
+                                legend: {
+                                    position: 'top',
+                                },
+                                title: {
+                                    display: true,
+                                    text: "hello"
+                                }
+                            }
+                        },
+                    };
+                    new Chart("subscriptionuser", config
+                        // {
+                        //     type: "bar",
+                        //     data: {
+                        //         labels: xValues,
+                        //         datasets: [{
+                        //             backgroundColor: barColors,
+                        //             data: yValues,
+                        //         }]
+                        //     },
+                        //     options: {
+                        //         legend: { display: true },
+                        //     }
+                        // }
+                    )
+                }
+
+            })
+
+        }
+
+        function ticketdisplay() {
+            $.ajax({
+                url: "/chartsupportticket",
+                method: "get",
+                success: function (data) {
+                    console.log(data);
+                    tickettype.push(data.AM);
+                    tickettype.push(data.TS);
+                    tickettype.push(data.PP);
+                    tickettype.push(data.SI);
+                    tickettype.push(data.F);
+
+                    displayPieChart(tickettype, `ticket_chart`, "ticket");
+
+                    // var xValues = ["Account Management", "Technical Support", "Payment Problem", "Service Inquiry", "Feedback and Suggestions"];
+                    // var yValues = tickettype;
+                    // var barColors = ['rgb(255, 99, 132)',
+                    //     'rgb(75, 192, 192)',
+                    //     'rgb(255, 159, 64)',
+                    //     'rgb(54, 162, 235)',
+                    //     'rgb(255, 205, 86)',
+                    // ];
+
+                    // new Chart("ticket", {
+                    //     type: "doughnut",
+                    //     data: {
+                    //         labels: xValues,
+                    //         datasets: [{
+                    //             backgroundColor: barColors,
+                    //             data: yValues
+                    //         }]
+                    //     },
+                    //     options: {
+                    //         legend: { display: false },
+                    //     }
+                    // });
+                }
+            })
+        }
+
+        $(document).ready(function () {
+            card();
+            usersubscription();
+            monthlyinstancereport();
+
+            message_summary();
+            email_summary();
+
+            registrationuserchart();
+            countryuserchart();
+            ticketdisplay();
+        })
+    </script>
+
+</body>
+
+</html>

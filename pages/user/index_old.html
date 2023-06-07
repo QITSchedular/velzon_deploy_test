@@ -1,0 +1,667 @@
+<!doctype html>
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg"
+    data-sidebar-image="none" data-preloader="disable">
+
+
+<head>
+    <meta charset="utf-8" />
+
+    <title>Dashboard | WhatsApp Messages</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesbrand" name="author" />
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="/assets/images/favicon.ico">
+
+    <!-- jsvectormap css -->
+    <link href="/assets/libs/jsvectormap/css/jsvectormap.min.css" rel="stylesheet" type="text/css" />
+
+    <!--Swiper slider css-->
+    <link href="/assets/libs/swiper/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- aos css -->
+    <link rel="stylesheet" href="/assets/libs/aos/aos.css" />
+    <!-- Layout config Js -->
+    <script src="/assets/js/layout.js"></script>
+    <!-- Bootstrap Css -->
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="/assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <!-- custom Css-->
+    <link href="/assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Font Awesome Files -->
+    <link href="/assets/fontawesome/css/all.min.css" rel="stylesheet">
+    <link href="/assets/fontawesome/css/solid.css" rel="stylesheet">
+    <link href="/assets/fontawesome/css/solid.min.css" rel="stylesheet">
+    <link href="/assets/fontawesome/css/regular.css" rel="stylesheet">
+    <link href="/assets/fontawesome/css/regular.min.css" rel="stylesheet">
+    <link href="/assets/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+    <link href="/assets/fontawesome/css/fontawesome.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+        <header id="page-topbar">
+            <div class="layout-width">
+                <div class="navbar-header">
+                    <div class="d-flex">
+                        <!-- LOGO -->
+                        <div class="navbar-brand-box horizontal-logo">
+                            <a href="/" class="logo logo-dark">
+                                <span class="logo-sm">
+                                    <img src="/assets/images/logo-sm.png" alt="" height="22">
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="/assets/images/logo-dark.png" alt="" height="17">
+                                </span>
+                            </a>
+
+                            <a href="/" class="logo logo-light">
+                                <span class="logo-sm">
+                                    <img src="/assets/images/logo-sm.png" alt="" height="22">
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="/assets/images/logo-light.png" alt="" height="17">
+                                </span>
+                            </a>
+                        </div>
+
+                        <button type="button"
+                            class="btn btn-sm px-3 fs-16 header-item vertical-menu-btn topnav-hamburger"
+                            id="topnav-hamburger-icon">
+                            <span class="hamburger-icon">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </button>
+
+                    </div>
+
+                    <div class="d-flex align-items-center">
+
+                        <div class="dropdown d-md-none topbar-head-dropdown header-item">
+                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
+                                id="page-header-search-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                <i class="bx bx-search fs-22"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
+                                aria-labelledby="page-header-search-dropdown">
+                                <form class="p-3">
+                                    <div class="form-group m-0">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Search ..."
+                                                aria-label="Recipient's username">
+                                            <button class="btn btn-primary" type="submit">
+                                                <i class="mdi mdi-magnify"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="ms-1 header-item d-none d-sm-flex">
+                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
+                                data-toggle="fullscreen">
+                                <i class='bx bx-fullscreen fs-22'></i>
+                            </button>
+                        </div>
+
+                        <div class="ms-1 header-item d-none d-sm-flex">
+                            <button type="button"
+                                class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle light-dark-mode">
+                                <i class='bx bx-moon fs-22'></i>
+                            </button>
+                        </div>
+
+                        <div class="dropdown ms-sm-3 header-item topbar-user">
+                            <button type="button" class="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <span class="d-flex align-items-center">
+                                    <img class="rounded-circle header-profile-user profileimg" />
+                                    <span class="text-start ms-xl-2">
+                                        <span
+                                            class="d-none d-xl-inline-block ms-1 fw-medium user-name-text profilename"></span>
+                                        <span class="d-none d-xl-block ms-1 fs-12 text-muted user-name-sub-text">
+                                            Founder
+                                        </span>
+                                    </span>
+                                </span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <!-- item-->
+                                <h6 class="dropdown-header">Welcome <span class="profilename"></span></h6>
+                                <a class="dropdown-item" href="/profile">
+                                    <i class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i>
+                                    <span class="align-middle">Profile</span>
+                                </a>
+                                <a class="dropdown-item" href="/subscription">
+                                    <i class="mdi mdi-credit-card-chip text-muted fs-16 align-middle me-1"></i>
+                                    <span class="align-middle">Pay</span>
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" id="logout">
+                                    <i class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i>
+                                    <span class="align-middle" data-key="t-logout">Logout</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- ========== App Menu ========== -->
+        <div class="app-menu navbar-menu">
+            <!-- LOGO -->
+            <div class="navbar-brand-box">
+                <!-- Dark Logo-->
+                <a href="/" class="logo logo-dark">
+                    <span class="logo-sm">
+                        <img src="/assets/images/logo-sm.png" alt="" height="22">
+                    </span>
+                    <span class="logo-lg">
+                        <img src="/assets/images/logo-dark.png" alt="" height="17">
+                    </span>
+                </a>
+                <!-- Light Logo-->
+                <a href="/" class="logo logo-light">
+                    <span class="logo-sm">
+                        <img src="/assets/images/logo-sm.png" alt="" height="22">
+                    </span>
+                    <span class="logo-lg">
+                        <img src="/assets/images/logo-light.png" alt="" height="17">
+                    </span>
+                </a>
+                <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover"
+                    id="vertical-hover">
+                    <i class="ri-record-circle-line"></i>
+                </button>
+            </div>
+
+            <div id="scrollbar">
+                <div id="scrollbar">
+                    <div class="container-fluid">
+                        <div id="two-column-menu"></div>
+                        <ul class="navbar-nav" id="navbar-nav" data-aos="fade-right" data-aos-duration="1000"></ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-background"></div>
+        </div>
+        <!-- Left Sidebar End -->
+        <!-- Vertical Overlay-->
+        <div class="vertical-overlay"></div>
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+            <div class="page-content">
+                <div class="container-fluid">
+                    <div class="page-title-box">
+                        <div class="page-title">
+                            <h3 class="text-center">Application statistics
+                                <span class="float-end">
+                                    <button type="button" class="btn btn-soft-danger waves-effect waves-light fs-15"
+                                        id="mic" data-bs-toggle="modal" data-bs-target="#voice_input">
+                                        <i class="mdi mdi-microphone"></i>
+                                    </button>
+                                </span>
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="record" id="record">
+                        <!-- <div class="col-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div data-bs-toggle="collapse" data-bs-target="#id${result[i].iid}">
+                                        <div class="accordion" id="iid${result[i].iid}">
+                                            <div class="accordion-item border-0">
+                                                <div class="accordion-header" id="${result[i].iid}">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div class="" class="accordion-button">
+                                                            <h2 class="fw-medium text-primary">
+                                                                ABC
+                                                            </h2>
+                                                            <div class="fs-4">
+                                                                Total Message -
+                                                                <span class="text-info fw-semibold">
+                                                                    500
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="avatar-sm">
+                                                            <span class="avatar-title bg-primary rounded-circle">
+                                                                <i class="bx bxs-info-circle align-middle fs-2"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="id${result[i].iid}" class="accordion-collapse collapse"
+                                        aria-labelledby="${result[i].iid}" data-bs-parent="#iid${result[i].iid}">
+                                        <hr />
+                                        <div class="accordion-body p-0 text-daek fs-5">
+                                            <div id="chart${cnt}"
+                                                data-colors='["rgb(41, 156, 219)","rgb(247, 184, 75)", "rgb(240, 101, 72)"]'
+                                                class="apex-charts" dir="ltr">
+                                            </div>
+                                            <hr />
+                                            <div>Message :10</div>
+                                            <div>Image : 20</div>
+                                            <div>Bulk message : 0</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+
+
+                </div>
+            </div>
+
+            <!-- footer -->
+            <footer class="footer"></footer>
+        </div>
+    </div>
+
+    <!--start back-to-top-->
+    <button onclick="topFunction()" class="btn btn-danger btn-icon" id="back-to-top">
+        <i class="ri-arrow-up-line"></i>
+    </button>
+    <!--end back-to-top-->
+
+    <!--preloader-->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner-border text-primary avatar-sm" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="customizer-setting" id="chatbot">
+        <div class="btn-info btn-rounded shadow-lg btn btn-icon btn-lg p-2">
+            <i class="fa-solid fa-comment" id="iconchat"></i>
+        </div>
+    </div>
+
+    <div class="email-chat-detail" id="emailchat-detailElem" style="display: none;">
+        <div class="card mb-0">
+            <div class="card-header align-items-center d-flex bg-primary text-white-50">
+                <div class="flex-grow-1">
+                    <h5 class="fs-15 text-white mb-1 profile-username">Velzon ChatBot</h5>
+                    <p class="mb-0 fs-12 lh-1">Ask here for help</p>
+                </div>
+                <div>
+                    <i class="fa-brands fa-bots fs-1 text-white"></i>
+                </div>
+            </div>
+
+            <div class="card-body p-0">
+                <div id="users-chat">
+                    <div class="chat-conversation p-3" id="chat-conversation" data-simplebar style="height: 250px;">
+                        <ul class="list-unstyled chat-conversation-list chat-sm" id="conversation"></ul>
+                    </div>
+                </div>
+
+                <div class="border-top border-top-dashed">
+                    <div class="row g-2 mx-3 mt-2 mb-3">
+                        <div class="col">
+                            <div class="position-relative">
+                                <input type="text" class="form-control border-light bg-light message-input"
+                                    placeholder="Enter Message..." id="input">
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <button class="btn btn-primary" id="sendbotmsg">
+                                <i class="mdi mdi-send"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="voice_input" class="modal zoomIn">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                </button> -->
+                </div>
+                <div class="modal-body">
+                    <div class="fs-1 text-center" id="msg" style="resize: none;">
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- JAVASCRIPT -->
+    <script src="/assets/js/jquery.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/chatbot.js"></script>
+    <script src="/assets/js/voiceRecognition.js"></script>
+
+    <script src="/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="/assets/libs/node-waves/waves.min.js"></script>
+    <script src="/assets/libs/feather-icons/feather.min.js"></script>
+    <script src="/assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+
+    <!-- apexcharts -->
+    <script src="/assets/libs/apexcharts/apexcharts.min.js"></script>
+
+    <!-- Vector map-->
+    <script src="/assets/libs/jsvectormap/js/jsvectormap.min.js"></script>
+    <script src="/assets/libs/jsvectormap/maps/world-merc.js"></script>
+
+    <!--Swiper slider js-->
+    <script src="/assets/libs/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Dashboard init -->
+    <script src="/assets/js/pages/dashboard-ecommerce.init.js"></script>
+
+    <!-- aos js -->
+    <script src="/assets/libs/aos/aos.js"></script>
+    <!-- prismjs plugin -->
+    <script src="/assets/libs/prismjs/prism.js"></script>
+    <!-- animation init -->
+    <script src="/assets/js/pages/animation-aos.init.js"></script>
+
+    <!-- App js -->
+    <script src="/assets/js/app.js"></script>
+
+    <!-- prismjs plugin -->
+    <script src="/assets/libs/prismjs/prism.js"></script>
+
+    <script src="/assets/sweetalert2/sweet-alert.init.js"></script>
+    <script src="/assets/sweetalert2/sweetalert2.all.js"></script>
+
+    <script>
+
+        $(document).ready(() => {
+            chkLogin();
+            function getChartColorsArray(e) {
+                if (null !== document.getElementById(e))
+                    return ((e = document.getElementById(e).getAttribute("data-colors")),
+                        (e = JSON.parse(e)).map(function (e) {
+                            var t = e.replace(" ", "");
+                            return -1 === t.indexOf(",")
+                                ? getComputedStyle(document.documentElement).getPropertyValue(t) || t
+                                : 2 == (e = e.split(",")).length
+                                    ? "rgba(" +
+                                    getComputedStyle(document.documentElement).getPropertyValue(e[0]) +
+                                    "," + e[1] + ")" : t;
+                        })
+                    );
+            }
+
+            function displayPieChart(count, id) {
+                var chartPieBasicColors = getChartColorsArray(id);
+
+                chartPieBasicColors &&
+                    ((options = {
+                        series: count,
+                        chart: { height: 250, type: "pie" },
+                        labels: ["Message", "Image", "Bulk Messages"],
+                        legend: { position: "bottom" },
+                        dataLabels: { dropShadow: { enabled: !1 } },
+                        colors: chartPieBasicColors,
+                    }),
+                        (chart = new ApexCharts(
+                            document.querySelector("#" + id),
+                            options
+                        )).render());
+            }
+
+            function message_summary() {
+                $.ajax({
+                    url: "/message_summary",
+                    method: "GET",
+                    success: function (val) {
+                        console.log(val);
+                        let output = ``;
+                        switch (val.status_code) {
+                            case '500': {
+                                InternalServerError();
+                                break;
+                            }
+                            case '404': {
+                                output += `<div class="text-center">
+                                            <h5 class="p-3">
+                                                No message sent from instance / create instance
+                                            </h5>
+                                            <a class="btn btn-soft-success" href="/instance">
+                                                Create Instance
+                                            </a>
+                                        </div>`;
+                                break;
+                            }
+
+                            default: {
+                                for (let i = 0; i < val.length; i++) {
+                                    output += `<div class="col-4">
+                                            <div class="card">
+                                                <div class="card-body p-3 shadow">
+                                                    <div data-bs-toggle="collapse" data-bs-target="#id${val[i].instance_id}">
+                                                        <div class="accordion" id="iid${val[i].instance_id}">
+                                                            <div class="accordion-item border-0">
+                                                                <div class="accordion-header" id="${val[i].instance_id}">
+                                                                    <div class="row">
+                                                                        <div class="col-9" class="accordion-button">
+                                                                            <h2 class="fw-medium text-primary">
+                                                                                ${val[i].i_name}
+                                                                            </h2>
+                                                                            <div class="fs-4">
+                                                                                Total -
+                                                                                <span class="text-info fw-semibold">
+                                                                                    ${val[i].image_count + val[i].schedule_single_count + val[i].bulk_through_channel_count}
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="id${val[i].instance_id}" class="accordion-collapse collapse"
+                                                        aria-labelledby="${val[i].instance_id}" data-bs-parent="#iid${val[i].instance_id}">
+                                                        <hr />
+                                                        <div class="accordion-body p-0 text-daek fs-5">
+                                                            <div id="chart${i}"
+                                                                data-colors='["rgb(41, 156, 219)","rgb(247, 184, 75)", "rgb(240, 101, 72)"]'
+                                                                class="apex-charts" dir="ltr">
+                                                            </div>
+                                                            <hr />
+                                                            <div>Message : ${val[i].schedule_single_count}</div>
+                                                            <div>Image : ${val[i].image_count}</div>
+                                                            <div>Bulk message : ${val[i].bulk_through_channel_count}</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>`;
+                                }
+                            }
+                        }
+                        $('#record').html(output);
+                        while (countmsg.length) countmsgarray.push(countmsg.splice(0, 3));
+
+                        for (let i = 0; i < countmsgarray.length; i++) {
+                            displayPieChart(countmsgarray[i], "chart" + i);
+                        }
+                    }
+                })
+            }
+            message_summary();
+
+            var countmsg = new Array();
+            var countmsgarray = new Array();
+            function record() {
+                var object1 = "";
+                var msgcount = 0, imgcount = 0, bulkcount = 0;
+                var cnt = 0, arrcount = 0;
+                $.ajax({
+                    url: "/msg_record",
+                    method: "GET",
+                    async: false,
+                    success: function (result) {
+                        if (result.length > 0) {
+                            object1 += '<div class="row">';
+                            for (let i = 0; i < result.length; i++) {
+                                $.ajax({
+                                    url: "/getmsgtypes/" + result[i].iid + "",
+                                    method: "GET",
+                                    async: false,
+                                    success: function (res) {
+                                        msgcount = res.msg;
+                                        imgcount = res.img;
+                                        bulkcount = res.bulk;
+                                        countmsg.push(msgcount);
+                                        countmsg.push(imgcount);
+                                        countmsg.push(bulkcount);
+                                        object1 += `
+                                    <div class="col-4">
+                                        <div class="card">
+                                            <div class="card-body p-3 shadow">
+                                                <div data-bs-toggle="collapse" data-bs-target="#id${result[i].iid}">
+                                                    <div class="accordion" id="iid${result[i].iid}">
+                                                        <div class="accordion-item border-0">
+                                                            <div class="accordion-header" id="${result[i].iid}">
+                                                                <div class="row">
+                                                                    <div class="col-9" class="accordion-button" >
+                                                                        <h2 class="fw-medium text-primary">
+                                                                            ${result[i].iname}
+                                                                            </h2>
+                                                                            <div class="fs-4">
+                                                                                Total - 
+                                                                                <span class="text-info fw-semibold">
+                                                                                    ${result[i].total}
+                                                                                    </span>
+                                                                                    </div>
+                                                                                    </div>
+                                                                                    <div class="col-3">
+                                                                                        <div class="avatar-sm flex-shrink-0 m-auto">
+                                                                                            <span class="avatar-title bg-info rounded-circle">
+                                                                                                <h3 class="fw-semibold fs-5 text-light mt-2">
+                                                                                                    <i class="fa-solid fa-message"></i>
+                                                                                                    </h3>
+                                                                                                    </span>
+                                                                                                    </div>
+                                                                    </div>
+                                                                    </div>
+                                                                
+                                                                    </div>
+                                                                    </div>
+                                                                    </div>
+                                                                    </div>
+                                                <div id="id${result[i].iid}" class="accordion-collapse collapse" aria-labelledby="${result[i].iid}" data-bs-parent="#iid${result[i].iid}">
+                                                    <hr />
+                                                    <div class="accordion-body p-0 text-daek fs-5">
+                                                        <div id="chart${cnt}" data-colors='["rgb(41, 156, 219)","rgb(247, 184, 75)", "rgb(240, 101, 72)"]' 
+                                                            class="apex-charts" dir="ltr">
+                                                        </div>
+                                                        <hr />
+                                                        <div>Message : ${res.msg}</div>
+                                                        <div>Image : ${res.img}</div>
+                                                        <div>Bulk message : ${res.bulk}</div>
+                                                        </div>
+                                                        </div>
+                                            </div>
+                                            </div>
+                                    </div>`;
+                                    }
+                                })
+                                cnt++;
+                            }
+                            object1 += `</div>`;
+                        }
+                        else {
+                            object1 += `<div class="text-center">
+                                            <h5 class="p-3">
+                                                No message sent from instance / create instance
+                                            </h5>
+                                            <a class="btn btn-soft-success" href="/instance">
+                                                Create Instance
+                                            </a>
+                                        </div>`
+                        }
+                        document.getElementById("record").innerHTML = object1;
+                        while (countmsg.length) countmsgarray.push(countmsg.splice(0, 3));
+
+                        for (let i = 0; i < countmsgarray.length; i++) {
+                            displayPieChart(countmsgarray[i], "chart" + i);
+                        }
+                    }
+
+                })
+            }
+            // record();   
+
+            $(document).on('click', '#mic', async function () {
+
+                mic("msg").then((result) => {
+                    let data = result.toString().split(" ");
+                    console.log(data);
+                    if (data[0] == "logout" || (data[0] == "log" && data[1] == "out")) {
+                        $("#logout").click();
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "profile") {
+                        location.href = "/profile";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && (data[2] == "pay" || data[2] == "pricing" || data[2] == "payment" || data[2] == "subscription")) {
+                        location.href = "/subscription";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "dashboard") {
+                        location.href = "/dashboard";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "instance") {
+                        location.href = "/instance";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "custom" && data[3] == "template") {
+                        location.href = "/customtemplate";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "email" && data[3] == "configuration") {
+                        location.href = "/addpasscode";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "support" && data[3] == "ticket") {
+                        location.href = "/support-ticket";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "api" && data[3] == "docs") {
+                        location.href = "/docs";
+                    }
+                    else {
+                        swal({
+                            title: "Command not recognized",
+                            type: 'error',
+                            timer: 2500,
+                            showConfirmButton: false,
+                        });
+                    }
+                })
+            })
+
+        })
+    </script>
+</body>
+
+</html>

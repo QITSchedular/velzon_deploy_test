@@ -1,0 +1,1447 @@
+<!doctype html>
+
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg"
+    data-sidebar-image="none" data-preloader="disable">
+
+<head>
+    <meta charset="utf-8" />
+
+    <title>Contact-list</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesbrand" name="author" />
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="/assets/images/favicon.ico">
+
+    <!-- jsvectormap css -->
+    <link href="/assets/libs/jsvectormap/css/jsvectormap.min.css" rel="stylesheet" type="text/css" />
+
+    <!--Swiper slider css-->
+    <link href="/assets/libs/swiper/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- aos css -->
+    <link rel="stylesheet" href="/assets/libs/aos/aos.css" />
+    <!-- Layout config Js -->
+    <script src="/assets/js/layout.js"></script>
+    <!-- Bootstrap Css -->
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="/assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <!-- custom Css-->
+    <link href="/assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Font Awesome Files -->
+    <link href="/assets/fontawesome/css/all.min.css" rel="stylesheet">
+    <link href="/assets/fontawesome/css/solid.css" rel="stylesheet">
+    <link href="/assets/fontawesome/css/solid.min.css" rel="stylesheet">
+    <link href="/assets/fontawesome/css/regular.css" rel="stylesheet">
+    <link href="/assets/fontawesome/css/regular.min.css" rel="stylesheet">
+    <link href="/assets/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+    <link href="/assets/fontawesome/css/fontawesome.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+        <header id="page-topbar">
+            <div class="layout-width">
+                <div class="navbar-header">
+                    <div class="d-flex">
+                        <!-- LOGO -->
+                        <div class="navbar-brand-box horizontal-logo">
+                            <a href="/" class="logo logo-dark">
+                                <span class="logo-sm">
+                                    <img src="/assets/images/logo-sm.png" alt="" height="22">
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="/assets/images/logo-dark.png" alt="" height="17">
+                                </span>
+                            </a>
+
+                            <a href="/" class="logo logo-light">
+                                <span class="logo-sm">
+                                    <img src="/assets/images/logo-sm.png" alt="" height="22">
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="/assets/images/logo-light.png" alt="" height="17">
+                                </span>
+                            </a>
+                        </div>
+
+                        <button type="button"
+                            class="btn btn-sm px-3 fs-16 header-item vertical-menu-btn topnav-hamburger"
+                            id="topnav-hamburger-icon">
+                            <span class="hamburger-icon">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </button>
+
+                    </div>
+
+                    <div class="d-flex align-items-center">
+                        <div class="dropdown d-md-none topbar-head-dropdown header-item">
+                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
+                                id="page-header-search-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                <i class="bx bx-search fs-22"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
+                                aria-labelledby="page-header-search-dropdown">
+                                <form class="p-3">
+                                    <div class="form-group m-0">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Search ..."
+                                                aria-label="Recipient's username">
+                                            <button class="btn btn-primary" type="submit">
+                                                <i class="mdi mdi-magnify"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="ms-1 header-item d-none d-sm-flex">
+                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
+                                data-toggle="fullscreen">
+                                <i class='bx bx-fullscreen fs-22'></i>
+                            </button>
+                        </div>
+
+                        <div class="ms-1 header-item d-none d-sm-flex">
+                            <button type="button"
+                                class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle light-dark-mode">
+                                <i class='bx bx-moon fs-22'></i>
+                            </button>
+                        </div>
+
+                        <div class="dropdown ms-sm-3 header-item topbar-user">
+                            <button type="button" class="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <span class="d-flex align-items-center">
+                                    <img class="rounded-circle header-profile-user profileimg" />
+                                    <span class="text-start ms-xl-2">
+                                        <span
+                                            class="d-none d-xl-inline-block ms-1 fw-medium user-name-text profilename"></span>
+                                        <span class="d-none d-xl-block ms-1 fs-12 text-muted user-name-sub-text">
+                                            Founder
+                                        </span>
+                                    </span>
+                                </span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <!-- item-->
+                                <h6 class="dropdown-header">Welcome <span class="profilename"></span></h6>
+                                <a class="dropdown-item" href="/profile">
+                                    <i class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i>
+                                    <span class="align-middle">Profile</span>
+                                </a>
+                                <a class="dropdown-item" href="/subscription">
+                                    <i class="mdi mdi-credit-card-chip text-muted fs-16 align-middle me-1"></i>
+                                    <span class="align-middle">Pay</span>
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" id="logout">
+                                    <i class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i>
+                                    <span class="align-middle" data-key="t-logout">Logout</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- ========== App Menu ========== -->
+        <div class="app-menu navbar-menu">
+            <!-- LOGO -->
+            <div class="navbar-brand-box">
+                <!-- Dark Logo-->
+                <a href="/" class="logo logo-dark">
+                    <span class="logo-sm">
+                        <img src="/assets/images/logo-sm.png" alt="" height="22">
+                    </span>
+                    <span class="logo-lg">
+                        <img src="/assets/images/logo-dark.png" alt="" height="17">
+                    </span>
+                </a>
+                <!-- Light Logo-->
+                <a href="/" class="logo logo-light">
+                    <span class="logo-sm">
+                        <img src="/assets/images/logo-sm.png" alt="" height="22">
+                    </span>
+                    <span class="logo-lg">
+                        <img src="/assets/images/logo-light.png" alt="" height="17">
+                    </span>
+                </a>
+                <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover"
+                    id="vertical-hover">
+                    <i class="ri-record-circle-line"></i>
+                </button>
+            </div>
+
+            <div id="scrollbar">
+                <div id="scrollbar">
+                    <div class="container-fluid">
+                        <div id="two-column-menu"></div>
+                        <ul class="navbar-nav" id="navbar-nav" data-aos="fade-right" data-aos-duration="1000"></ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Left Sidebar End -->
+            <!-- Vertical Overlay-->
+            <div class="vertical-overlay"></div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+            <div class="page-content">
+                <div class="container-fluid">
+                    <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                        <div class="page-title">
+                            <ol class="breadcrumb m-0" id="api_path">
+                                <li class="breadcrumb-item">
+                                    <a href="/instance">
+                                        Instance
+                                    </a>
+                                </li> 
+                                <li class="breadcrumb-item" id="i_name"></li>
+                                <li class="breadcrumb-item active">Contacts</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="row justify-content-between mb-3">
+                        <div class="col-4">
+                            <div class="search-box">
+                                <input type="text" class="form-control search" id="searchContact"
+                                    placeholder="Search contact ..." />
+                                <i class="ri-search-line search-icon"></i>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-end col-8">
+                            <button type="button" class="btn btn-soft-danger waves-effect waves-light fs-15 me-2"
+                                id="mic" data-bs-toggle="modal" data-bs-target="#voice_input">
+                                <i class="mdi mdi-microphone"></i>
+                            </button>
+                            <button type="button" class="btn btn-success add-btn me-2" data-bs-toggle="modal"
+                                id="addcontactmodalbtn" data-bs-target="#showModal">
+                                <i class="ri-add-circle-line align-middle me-lg-2"></i>
+                                <span class="d-none d-lg-inline-block">Add contact</span>
+                            </button>
+                            <button class="btn btn-soft-danger me-2 fs-13 d-none" id="deleteMultiple"
+                                data-bs-toggle="tooltip" data-bs-placement="top" title="Delete All">
+                                <i class="ri-delete-bin-2-line me-lg-2"></i>
+                                <span class="d-none d-lg-inline-block">Delete Selected</span>
+                            </button>
+                            <div class="btn-group" data-bs-toggle="tooltip" data-bs-placement="top" title="Import">
+                                <button type="button" class="btn btn-primary" data-bs-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    <i class="bx bx-import me-lg-2"></i>
+                                    <span class="d-none d-lg-inline-block">Import</span>
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasRightGoogle" aria-controls="offcanvasRight">
+                                        Google Sheet
+                                    </a>
+                                    <a class="dropdown-item" data-bs-toggle="offcanvas"
+                                        data-bs-target="#offcanvasRightCSV" aria-controls="offcanvasRight">
+                                        CSV File
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3 class="card-header text-center">Contact List</h3>
+                        <div class="card-body">
+                            <div class="table-responsive table-card mb-1">
+                                <table class="table align-middle table-nowrap" id="customerTable">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th scope="col" style="width: 50px">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="select_all"
+                                                        value="option" />
+                                                </div>
+                                            </th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Phone</th>
+                                            <th style="width: 150px">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="list form-check-all" id="contact-list"></tbody>
+                                </table>
+                                <div class="noresult d-none py-5">
+                                    <div class="text-center">
+                                        <lord-icon src="https://cdn.lordicon.com/msoeawqm.json" trigger="loop"
+                                            colors="primary:#212529,secondary:#405189"
+                                            style="width: 75px; height: 75px">
+                                        </lord-icon>
+                                        <h5 class="mt-2">No Contacts Found</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- first offcanvas -->
+                        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRightGoogle">
+                            <div class="offcanvas-header bg-primary bg-gradient">
+                                <h5 id="offcanvasRightLabel" class="text-white">Import Contacts</h5>
+                                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                    aria-label="Close" id="close_btn_import_gsheet"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                <div class="mb-3">
+                                    <button id="connect" class="btn btn-primary btn-load fs-14">
+                                        <i class="mdi mdi-google-spreadsheet align-middle me-lg-2 me-md-2"></i>
+                                        <span class="">Connect</span>
+                                        <span class="d-none d-md-inline-block d-lg-inline-block">
+                                            with Google Sheet
+                                        </span>
+                                    </button>
+                                </div>
+                                <div id="after_connect_div_gsheet" class="d-none">
+                                    <div class="mb-3 row">
+                                        <div class="col-6">
+                                            <label for="spreedsheet" class="form-label">
+                                                Spreed-Sheet
+                                                <span class="text-danger">*</span>
+                                            </label>
+                                            <select class="form-select mb-3" id="spreedsheet"></select>
+                                        </div>
+                                        <div class="col-6">
+                                            <label for="sheetname" class="form-label">
+                                                Sheet
+                                                <span class="text-danger">*</span>
+                                            </label>
+                                            <select class="form-select mb-3" id="sheetname"></select>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3" data-simplebar data-simplebar-auto-hide="false"
+                                        style="height: 150px;">
+                                        <table class="table align-middle" id="sheet_data">
+                                            <tr>
+                                                <td>
+                                                    <h6
+                                                        class="d-flex justify-content-center text-muted text-center p-5">
+                                                        Preview of the data will show here after you select GoogleSheet
+                                                    </h6>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="offcanvas-footer bg-soft-primary bg-gradient p-3 text-end">
+                                <button id="importFromGoogle" class="btn btn-primary btn-load">Import Data</button>
+                            </div>
+                        </div>
+
+                        <!-- second offcanvas -->
+                        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRightCSV">
+                            <div class="offcanvas-header bg-primary bg-gradient">
+                                <h5 id="offcanvasRightLabel" class="text-white">Import Contacts</h5>
+                                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                    aria-label="Close" id="close_btn_import_localfile"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                <div class="mb-2">
+                                    <label for="contact_name" class="form-label">
+                                        Select CSV File
+                                        <span class="text-danger">*</span>
+                                        <span class="text-danger" id="err_contact_name"></span>
+                                    </label>
+                                    <input type="file" id="csvfile" class="form-control mb-2">
+                                    <div class="mt-3" data-simplebar data-simplebar-auto-hide="false"
+                                        style="height: 350px;">
+                                        <table class="table align-middle " id="tblcsvdata">
+                                            <tr>
+                                                <td>
+                                                    <h6
+                                                        class="d-flex justify-content-center text-muted text-center p-5">
+                                                        Preview of the data will show here after you select CSV File
+                                                    </h6>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="offcanvas-footer bg-soft-primary bg-gradient p-3 text-end">
+                                <button id="importFromCSV" class="btn btn-primary btn-load">Import Data</button>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="showModal" tabindex="-1" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header bg-soft-info p-3">
+                                        <h5 class="modal-title" id="modallbl">Add Contact</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close" id="close-modal"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="mb-3">
+                                            <label for="contact_name" class="form-label">
+                                                Contact Name
+                                                <span class="text-danger">*</span>
+                                                <span class="text-danger" id="err_contact_name"></span>
+                                            </label>
+                                            <input type="text" id="contact_name" class="form-control required"
+                                                placeholder="Enter Name" data-type="name" />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="contact_email" class="form-label">
+                                                Contact Email
+                                                <span class="text-danger">*</span>
+                                                <span class="text-danger" id="err_contact_email"></span>
+                                            </label>
+                                            <input type="text" id="contact_email" class="form-control required"
+                                                placeholder="Enter Email" data-type="email" />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="contact_phone" class="form-label">
+                                                Phone Number
+                                                <span class="text-danger">*</span>
+                                                <span class="text-danger" id="err_contact_phone"></span>
+                                            </label>
+                                            <input type="text" id="contact_phone" class="form-control required"
+                                                placeholder="Enter Phone no." data-type="phone" />
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <div class="hstack gap-2 justify-content-end">
+                                            <button class="btn btn-primary d-none fs-15" id="add_contact">
+                                                <span>
+                                                    <i class="mdi mdi-account-plus align-bottom me-1 "></i>
+                                                    Add Contact
+                                                </span>
+                                            </button>
+                                            <button class="btn btn-primary d-none fs-15" id="edit_contact">
+                                                <span>
+                                                    <i class="mdi mdi-account-edit align-bottom me-1 "></i>
+                                                    Edit Contact
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- footer -->
+                <footer class="footer"></footer>
+            </div>
+        </div>
+    </div>
+
+    <!--start back-to-top-->
+    <button onclick="topFunction()" class="btn btn-danger btn-icon" id="back-to-top">
+        <i class="ri-arrow-up-line"></i>
+    </button>
+    <!--end back-to-top-->
+
+    <!--preloader-->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner-border text-primary avatar-sm" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <span class="">Loading...</span>
+        </div>
+    </div>
+
+    <div class="customizer-setting" id="chatbot">
+        <div class="btn-info btn-rounded shadow-lg btn btn-icon btn-lg p-2">
+            <i class="fa-solid fa-comment" id="iconchat"></i>
+        </div>
+    </div>
+
+    <div class="email-chat-detail" id="emailchat-detailElem" style="display: none;">
+        <div class="card mb-0">
+            <div class="card-header align-items-center d-flex bg-primary text-white-50">
+                <div class="flex-grow-1">
+                    <h5 class="fs-15 text-white mb-1 profile-username">Velzon ChatBot</h5>
+                    <p class="mb-0 fs-12 lh-1">Ask here for help</p>
+                </div>
+                <div>
+                    <i class="fa-brands fa-bots fs-1 text-white"></i>
+                </div>
+            </div>
+
+            <div class="card-body p-0">
+                <div id="users-chat">
+                    <div class="chat-conversation p-3" id="chat-conversation" data-simplebar style="height: 250px;">
+                        <ul class="list-unstyled chat-conversation-list chat-sm" id="conversation"></ul>
+                    </div>
+                </div>
+
+                <div class="border-top border-top-dashed">
+                    <div class="row g-2 mx-3 mt-2 mb-3">
+                        <div class="col">
+                            <div class="position-relative">
+                                <input type="text" class="form-control border-light bg-light message-input"
+                                    placeholder="Enter Message..." id="input">
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <button class="btn btn-primary" id="sendbotmsg">
+                                <i class="mdi mdi-send"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="voice_input" class="modal zoomIn">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                </button> -->
+                </div>
+                <div class="modal-body">
+                    <div class="fs-1 text-center" id="msg" style="resize: none;">
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="/assets/js/jquery.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/chatbot.js"></script>
+    <script src="/assets/js/voiceRecognition.js"></script>
+    <script src="/assets/js/validate.js"></script>
+
+    <script src="/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="/assets/libs/node-waves/waves.min.js"></script>
+    <script src="/assets/libs/feather-icons/feather.min.js"></script>
+    <script src="/assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+    <!-- aos js -->
+    <script src="/assets/libs/aos/aos.js"></script>
+    <!-- prismjs plugin -->
+    <script src="/assets/libs/prismjs/prism.js"></script>
+    <!-- animation init -->
+    <script src="/assets/js/pages/animation-aos.init.js"></script>
+
+    <!-- App js -->
+    <script src="/assets/js/app.js"></script>
+
+    <!-- Sweet Alerts js -->
+    <script src="/assets/sweetalert2/sweet-alert.init.js"></script>
+    <script src="/assets/sweetalert2/sweetalert2.all.js"></script>
+
+    <!-- prismjs plugin -->
+    <script src="/assets/libs/prismjs/prism.js"></script>
+    <script src="/assets/libs/list.js/list.min.js"></script>
+    <script src="/assets/libs/list.pagination.js/list.pagination.min.js"></script>
+
+    <script async defer src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>
+    <script async defer src="https://accounts.google.com/gsi/client" onload="gisLoaded()"></script>
+
+    <script>
+        let colnames, colvalues;
+        let clientobj = new Array();
+        let clientarr = new Array();
+        let clientvalue = new Array();
+
+        const iid = document.URL.split("/")[4];
+
+        const CLIENT_ID = '946707776966-qbbl9q9eikhrtfld5l9pnbv3pkvcni7g.apps.googleusercontent.com';
+        const API_KEY = 'AIzaSyA2-ajldm4p1SEP1mZjG4qeco5uqqzM2vU';
+
+        async function getSheet(sheetID) {
+            await fetch(`https://sheets.googleapis.com/v4/spreadsheets/${sheetID}?key=${API_KEY}`)
+                .then((response) => response.json())
+                .then((data) => {
+                    let sheetName = `<option selected disabled>Select Sheetname</option>`, count = 0;
+                    const sheetNames = data.sheets.map((sheet) => sheet.properties);
+                    for (i = 0; i < sheetNames.length; i++) {
+                        sheetName += `<option value='${count}'>${sheetNames[i].title}</option>`;
+                        count++;
+                    }
+                    document.getElementById("sheetname").innerHTML = sheetName;
+                })
+                .catch((error) => {
+                    swal({
+                        title: "Oops !",
+                        text: "Provide appropriate reading permission in your selected spreadsheet..!!",
+                        icon: "warning",
+                        closeOnEsc: true,
+                    });
+                    document.getElementById("sheetname").innerHTML = "";
+                    console.error("There was an error!", error);
+                });
+        }
+        const DISCOVERY_DOC = 'https://www.googleapis.com/discovery/v1/apis/drive/v3/rest';
+        const SCOPES = 'https://www.googleapis.com/auth/drive.metadata.readonly';
+
+        let tokenClient;
+        let gapiInited = false;
+        let gisInited = false;
+
+        function gapiLoaded() {
+            gapi.load('client', initializeGapiClient);
+        }
+
+        async function initializeGapiClient() {
+            await gapi.client.init({
+                apiKey: API_KEY,
+                discoveryDocs: [DISCOVERY_DOC],
+            });
+            gapiInited = true;
+            maybeEnableButtons();
+        }
+
+        function gisLoaded() {
+            tokenClient = google.accounts.oauth2.initTokenClient({
+                client_id: CLIENT_ID,
+                scope: SCOPES,
+                callback: '', // defined later
+            });
+            gisInited = true;
+            maybeEnableButtons();
+        }
+
+        function maybeEnableButtons() {
+            if (gapiInited && gisInited) {
+                // document.getElementById('authorize_button').style.visibility = 'visible';
+                //display_in_out();
+            }
+        }
+
+        $(document).ready(() => {
+            chkLogin();
+
+            $.ajax({
+                url: "/user",
+                method: "POST",
+                data: {
+                    "iid": iid,
+                },
+                success: function (val) {
+                    switch (val.status_code) {
+                        case '401': {
+                            InvalidUser();
+                            break;
+                        }
+
+                        case '404':
+                        case '500': {
+                            InternalServerError();
+                            break;
+                        }
+
+                        default: {
+                            $('#i_name').html(`<b class="text-primary">${val[0].i_name}</b>`);
+                        }
+                    }
+                }
+            });
+
+            function handleAuthClick() {
+                tokenClient.callback = async (resp) => {
+                    if (resp.error !== undefined) {
+                        throw resp;
+                    }
+
+                    await listFiles();
+                };
+
+                if (gapi.client.getToken() === null) {
+                    tokenClient.requestAccessToken({
+                        prompt: "consent",
+                    });
+                } else {
+                    tokenClient.requestAccessToken({
+                        prompt: "",
+                    });
+                }
+            }
+
+            async function listFiles() {
+                let response;
+                try {
+                    response = await gapi.client.drive.files.list({
+                        fields: "files(id, name, mimeType)",
+                    });
+                } catch (err) {
+                    document.getElementById("content").innerText = err.message;
+                    return;
+                }
+
+                $('#after_connect_div_gsheet').removeClass('d-none');
+                const files = response.result.files;
+                let output = `<option selected disabled>Select spreedsheet</option>`;
+                if (!files || files.length == 0) {
+                    document.getElementById("content").innerText = "No files found.";
+                    return;
+                } else {
+                    $('#sheetname').html(`<option selected disabled>Select Sheetname</option>`);
+                    var obj = {};
+                    for (var i = 0; i < files.length; i++) {
+                        if (files[i].mimeType == "application/vnd.google-apps.spreadsheet") {
+                            var str2 = files[i].name;
+                            obj["id"] = files[i].id;
+                            obj["name"] = files[i].name;
+                            obj = JSON.stringify(obj);
+                            output += `<option value='${files[i].id}'>${files[i].name}</option>`;
+                        }
+                    }
+                }
+                document.getElementById("spreedsheet").innerHTML = output;
+            }
+
+            function displayContact(obj) {
+                $.ajax({
+                    url: "/getData",
+                    method: "POST",
+                    data: {
+                        obj: obj
+                    },
+                    success: function (val) {
+                        switch (val.status_code) {
+                            case '401': {
+                                InvalidUser();
+                                break;
+                            }
+
+                            case '500': {
+                                InternalServerError();
+                                break;
+                            }
+
+                            case '404': {
+                                $('#contact-list').addClass('d-none');
+                                $('.noresult').addClass('d-none');
+                                $('.noresult').removeClass('d-none');
+                                $('#select_all').addClass('d-none');
+                                break;
+                            }
+
+                            default: {
+                                let data = "";
+                                $('#contact-list').addClass('d-none');
+                                $('.noresult').addClass('d-none');
+                                $('#select_all').removeClass('d-none');
+                                $('#contact-list').removeClass('d-none');
+                                for (var i in val) {
+                                    data += `
+                                    <tr>
+                                        <th scope="row">
+                                            <div class="form-check">
+                                                <input class="form-check-input contact-select" type="checkbox" name="contact-select"
+                                                    value="${val[i].contact_id}" id="check${val[i].contact_id}" />
+                                            </div>
+                                        </th>
+                                        <td class="customer_name w-25">${val[i].name}</td>
+                                        <td class="customer_phone w-25">${val[i].email}</td>
+                                        <td class="customer_email w-25">${val[i].phone}</td>
+                                        <td>
+                                            <div class="d-flex gap-2">
+                                                <div class="edit">
+                                                    <button class="btn btn-sm btn-success edit-item-btn fs-12"
+                                                        data-bs-toggle="modal" data-bs-target="#showModal" 
+                                                        data-id="${val[i].contact_id}" data-name="${val[i].name}" 
+                                                        data-phone="${val[i].phone}" data-email="${val[i].email}">
+                                                        <i class="mdi mdi-lead-pencil align-bottom me-lg-2"></i>
+                                                        <span class="d-none d-lg-inline-block">Edit</span>
+                                                    </button>
+                                                </div>
+                                                <div class="remove">
+                                                    <button class="btn btn-sm btn-soft-danger remove-item-btn fs-12" 
+                                                        data-id="${val[i].contact_id}">
+                                                            <i class="mdi mdi-trash-can align-bottom me-lg-2"></i>
+                                                            <span class="d-none d-lg-inline-block">Remove</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>`;
+                                }
+                                $("#contact-list").html(data);
+                            }
+                        }
+                    }
+                });
+            }
+            displayContact({
+                table: "contact",
+                paramstr: `instance_id = '${iid}'`,
+            });
+
+            focusEvent('contact_name', 'contact_email');
+            focusEvent('contact_email', 'contact_phone');
+
+            $(document).on('click', '#addcontactmodalbtn', () => {
+                $('#contact_name,#contact_email,#contact_phone').val(``);
+                $('#modallbl').html('Add Contact');
+                $('#add_contact,#edit_contact').addClass("d-none");
+                $('#add_contact').removeClass("d-none");
+            });
+
+            $(".required").on('focusout', function () {
+                onfocusout_validation($(this).attr('id'));
+            });
+
+            $(".required").on('input', function () {
+                oninput_validation($(this).attr('id'));
+            });
+
+            $(document).on('click', '#add_contact', () => {
+                nullfield_validation('contact_name');
+                nullfield_validation('contact_email');
+                nullfield_validation('contact_phone');
+                if (objFlag.flag_contact_name == 0 && objFlag.flag_contact_email == 0 && objFlag.flag_contact_phone == 0) {
+                    oninput_validation('contact_email');
+                    oninput_validation('contact_phone');
+                    oninput_validation('contact_name');
+                    if (objFlag.flag_contact_name == 0 && objFlag.flag_contact_email == 0 && objFlag.flag_contact_phone == 0) {
+                        $.ajax({
+                            url: "/addcontact",
+                            method: "POST",
+                            data: {
+                                "name": $('#contact_name').val(),
+                                "email": $('#contact_email').val(),
+                                "phone": $('#contact_phone').val(),
+                                "iid": iid
+                            },
+                            success: function (val) {
+                                switch (val.status_code) {
+                                    case '401': {
+                                        InvalidUser();
+                                        break;
+                                    }
+
+                                    case '500': {
+                                        InternalServerError();
+                                        break;
+                                    }
+
+                                    case '200': {
+                                        $('#close-modal').click();
+                                        swal({
+                                            title: "Contact added successfully",
+                                            type: "success",
+                                            timer: 1500,
+                                            showConfirmButton: false,
+                                        }).then(function () {
+                                            $('#contact_name').val('');
+                                            $('#contact_email').val('');
+                                            $('#contact_phone').val('');
+                                            $('.required').removeClass('form-control-danger form-control-success');
+                                        });
+                                        break;
+                                    }
+                                }
+
+                                displayContact({
+                                    table: "contact",
+                                    paramstr: `instance_id = '${iid}'`,
+                                });
+                            }
+                        });
+                    }
+                }
+            })
+
+            $(document).on("click", ".edit-item-btn", function () {
+                const id = $(this).attr("data-id");
+                let name = $(this).attr("data-name");
+                let email = $(this).attr("data-email");
+                let phone = $(this).attr("data-phone");
+
+                $('#contact_name').attr("data-id", id);
+                $('#contact_name').val(name);
+                $('#contact_email').val(email);
+                $('#contact_phone').val(phone);
+
+                $('#modallbl').html('Edit Contact');
+
+                $('#add_contact').addClass("d-none");
+                $('#edit_contact').addClass("d-none");
+                $('#edit_contact').removeClass("d-none");
+            });
+
+            $(document).on('click', '#edit_contact', () => {
+                nullfield_validation('contact_name');
+                nullfield_validation('contact_email');
+                nullfield_validation('contact_phone');
+                if (objFlag.flag_contact_name == 0 && objFlag.flag_contact_email == 0 && objFlag.flag_contact_phone == 0) {
+                    oninput_validation('contact_email');
+                    oninput_validation('contact_phone');
+                    oninput_validation('contact_name');
+                    if (objFlag.flag_contact_name == 0 && objFlag.flag_contact_email == 0 && objFlag.flag_contact_phone == 0) {
+                        $.ajax({
+                            url: "/updateData",
+                            method: "PUT",
+                            data: {
+                                "table": "contact",
+                                "paramstr": `name = '${$('#contact_name').val()}',email = '${$('#contact_email').val()}',phone = ${$('#contact_phone').val()}`,
+                                "condition": `contact_id = '${$('#contact_name').attr('data-id')}'`
+                            },
+                            success: function (val) {
+                                switch (val.status_code) {
+                                    case '400':
+                                    case '401': {
+                                        InvalidUser();
+                                        break;
+                                    }
+
+                                    case '404':
+                                    case '500': {
+                                        InternalServerError();
+                                        break;
+                                    }
+
+                                    case '200': {
+                                        $('#close-modal').click();
+                                        swal({
+                                            title: "Contact Updated successfully",
+                                            type: "success",
+                                            timer: 1500,
+                                            showConfirmButton: false,
+                                        }).then(function () {
+                                            $('#contact_name').val('');
+                                            $('#contact_email').val('');
+                                            $('#contact_phone').val('');
+                                            $('.required').removeClass('form-control-danger form-control-success');
+                                        });
+                                        break;
+                                    }
+                                }
+                                displayContact({
+                                    table: "contact",
+                                    paramstr: `instance_id = '${iid}'`,
+                                });
+                            }
+                        });
+                    }
+                }
+            })
+
+            $(document).on('click', '.remove-item-btn', function () {
+                const id = $(this).attr("data-id");
+                swal({
+                    title: 'Are you sure?',
+                    text: "You won't be able to access this anymore..!!",
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: 'Yes, delete it',
+                    cancelButtonText: 'No, cancel',
+                    confirmButtonClass: 'btn btn-success mx-2',
+                    cancelButtonClass: 'btn btn-outline-danger mx-2',
+                    buttonsStyling: false
+                }).then(function (result) {
+                    if (result.value) {
+                        $.ajax({
+                            url: "/deleterecord",
+                            method: "delete",
+                            data: {
+                                obj: {
+                                    "table": "contact",
+                                    "paramstr": `contact_id = '${id}'`,
+                                }
+                            },
+                            success: function (val) {
+                                switch (val.status_code) {
+                                    case '401': {
+                                        InvalidUser();
+                                        break;
+                                    }
+
+                                    case '500': {
+                                        InternalServerError();
+                                        break;
+                                    }
+
+                                    case '200': {
+                                        swal({
+                                            title: "Contact Removed",
+                                            type: "success",
+                                            timer: 2000,
+                                            showConfirmButton: false,
+                                        }).then(function () {
+                                            displayContact({
+                                                table: "contact",
+                                                paramstr: `instance_id = '${iid}'`,
+                                            });
+                                        });
+                                        break;
+                                    }
+                                }
+                            }
+                        });
+                    }
+                })
+            });
+
+            $(document).on("input", "#searchContact", function () {
+                let val = $('#searchContact').val().trim();
+
+                if (val == null || val == "") {
+                    displayContact({
+                        table: "contact",
+                        paramstr: `instance_id = '${iid}'`,
+                    });
+                }
+                else {
+                    displayContact({
+                        table: "contact",
+                        paramstr: `(name LIKE '%${val}%' OR email LIKE '%${val}%' OR phone LIKE '%${val}%') and instance_id = '${iid}'`,
+                    });
+                }
+            })
+
+            $(document).on('click', '#select_all', function () {
+                $("input[name='contact-select']").prop("checked", this.checked);
+                if ($('.contact-select:checked').length != 0) {
+                    $('#deleteMultiple').removeClass('d-none');
+                    if ($('.contact-select:checked').length == $('.contact-select').length) {
+                        $('#select_all').prop('checked', true);
+                    } else {
+                        $('#select_all').prop('checked', false);
+                    }
+                } else {
+                    $('#deleteMultiple').addClass('d-none');
+                }
+            });
+
+            $(document).on('click', '.contact-select', function () {
+                if ($('.contact-select:checked').length != 0) {
+                    $('#deleteMultiple').removeClass('d-none');
+                    if ($('.contact-select:checked').length == $('.contact-select').length) {
+                        $('#select_all').prop('checked', true);
+                    } else {
+                        $('#select_all').prop('checked', false);
+                    }
+                } else {
+                    $('#deleteMultiple').addClass('d-none');
+                }
+            });
+
+            $(document).on('click', '#deleteMultiple', function () {
+                var id = getCheckedCheckboxesFor('contact-select');
+                console.log(id);
+
+                let paramstr = ``;
+                for (var i in id) {
+                    if (i != id.length - 1) {
+                        paramstr += `'${id[i]}',`;
+                    }
+                    else {
+                        paramstr += `'${id[i]}'`;
+                    }
+                }
+
+                swal({
+                    title: 'Are you sure?',
+                    text: "You won't be able to access this anymore..!!",
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: 'Yes, delete it',
+                    cancelButtonText: 'No, cancel',
+                    confirmButtonClass: 'btn btn-success mx-2',
+                    cancelButtonClass: 'btn btn-outline-danger mx-2',
+                    buttonsStyling: false
+                }).then(function (result) {
+                    if (result.value) {
+                        $.ajax({
+                            url: "/deleterecord",
+                            method: "delete",
+                            data: {
+                                obj: {
+                                    "table": "contact",
+                                    "paramstr": `contact_id in (${paramstr})`,
+                                }
+                            },
+                            success: function (val) {
+                                switch (val.status_code) {
+                                    case '401': {
+                                        InvalidUser();
+                                        break;
+                                    }
+
+                                    case '500': {
+                                        InternalServerError();
+                                        break;
+                                    }
+
+                                    case '200': {
+                                        swal({
+                                            title: "All Selected Contacts Removed",
+                                            type: "success",
+                                            timer: 2000,
+                                            showConfirmButton: false,
+                                        }).then(function () {
+                                            displayContact({
+                                                table: "contact",
+                                                paramstr: `instance_id = '${iid}'`,
+                                            });
+                                        });
+                                        break;
+                                    }
+                                }
+                                $('#deleteMultiple').addClass('d-none');
+                            }
+                        });
+                    }
+                })
+            })
+
+            $(document).on("click", "#connect", function () {
+                handleAuthClick();
+            })
+
+            $(document).on("change", "#spreedsheet", function () {
+                getSheet($("#spreedsheet").val());
+            })
+
+            var data1 = new Array();
+
+            $(document).on("change", "#sheetname", function () {
+                var ssid = $("#spreedsheet").val();
+                var sheetindex = $("#sheetname").val();
+
+                $.ajax({
+                    url: "/sheetdata",
+                    method: "POST",
+                    data: {
+                        ssid: ssid,
+                        sheetindex: sheetindex,
+                    },
+                    success: function (val) {
+                        clientarr = [];
+                        clientobj = val.colnames[0];
+                        clientvalue = val.values;
+                        let result = {};
+                        for (let i = 0; i < clientvalue.length; i++) {
+                            clientobj.forEach((key, j) => {
+                                result[key] = clientvalue[i][j];
+                                console.log(result[key]);
+                            });
+                            clientarr.push(result);
+                            result = {};
+                        }
+
+                        let data = `<thead class="table-light"><tr>`;
+                        for (let i = 0; i < val.colnames[0].length; i++) {
+                            data += `<th>${val.colnames[0][i]}</th>`;
+                        }
+                        data += `</tr></thead><tbody class="list form-check-all">`;
+                        if (val.values[0].length > 0) {
+                            for (let i = 0; i < val.values.length; i++) {
+                                data += `<tr>`;
+                                for (let j = 0; j < val.colnames[0].length; j++) {
+                                    data += `
+                                    <td class="${val.colnames[0][j]}">
+                                        ${val.values[i][j]}
+                                    </td>`;
+                                }
+                                data += "</tr>";
+                            }
+                            document.getElementById("sheet_data").innerHTML = data;
+                        } else {
+                            data +=
+                                `<tr>
+                                    <td colspan="${val.colnames.length}">
+                                        <b>No Such column like name and phone in this sheet !!!</b>
+                                    </td>
+                                </tr> `;
+                        }
+                        data += `</tbody ></table > `;
+                        document.getElementById("sheet_data").innerHTML = data;
+                    }
+                })
+            })
+
+            $(document).on('click', "#importFromGoogle", function () {
+                $.ajax({
+                    url: "/importContactsFromGoogle",
+                    method: "POST",
+                    data: { clients: clientarr, iid: iid },
+                    success: function (data) {
+                        if (data.status_code == 200) {
+                            swal({
+                                title: 'Contacts imported successfully',
+                                type: 'success',
+                                timer: 4000,
+                                showConfirmButton: false,
+                            }).then(function () {
+                                displayContact({
+                                    table: "contact",
+                                    paramstr: `instance_id = '${iid}'`,
+                                });
+                            })
+
+                        }
+                        else {
+                            swal({
+                                title: "Contacts can't be imported successfully",
+                                type: 'error',
+                                timer: 2000,
+                                showConfirmButton: false,
+                            })
+                        }
+                    }
+                })
+            })
+
+            $("#csvfile").on('change', function (e) {
+                let frmdata = new FormData();
+                frmdata.append("csvfile", document.getElementById("csvfile").files[0])
+                $.ajax({
+                    url: "/file",
+                    type: "POST",
+                    data: frmdata,
+                    contentType: false,
+                    processData: false,
+                    beforeSend: function () {
+                        $('#tblcsvdata')
+                            .html(`<div class="text-center py-3">
+                                        <div class="spinner-border text-primary" role="status">
+                                            <span class="sr-only">Loading...</span>
+                                        </div>
+                                        <h5 class="mt-2">Fetching Data</h5>
+                                    </div>`);
+                    },
+                    success: function (val) {
+                        if (val.status_code == '406') {
+                            swal({
+                                title: "Select Different File",
+                                html: `Only <span class="text-danger">CSV</span> File allowed.`,
+                                type: 'error',
+                                timer: 2000,
+                                showConfirmButton: false,
+                            }).then(() => {
+                                $('#csvfile').val('').addClass('form-control-danger');
+                                $('#tblcsvdata').html('');
+                            })
+                        }
+                        else {
+                            $('#csvfile').removeClass('form-control-danger')
+                            let data = `<thead class="table-light"><tr>`;
+                            colnames = Object.keys(val.json[0]);
+                            for (var i in colnames) {
+                                data += `<th>${colnames[i]}</th>`;
+                            }
+                            data += `</tr></thead><tbody class="list form-check-all">`;
+
+                            if (val.json.length != 0) {
+                                for (var i in val.json) {
+                                    clientobj = val.json;
+                                    colvalues = Object.values(val.json[i]);
+                                    data += `<tr>`;
+                                    for (var j in colvalues) {
+                                        data += `<td class="name">${colvalues[j]}</td>`;
+                                    }
+                                    data += `</tr>`;
+                                }
+                                data += `</tbody>`;
+                            }
+                            else {
+                                data += `<div><b>Required column is not in the file</b></div>`;
+                            }
+                            $('#tblcsvdata').html(data);
+                        }
+                    }
+                })
+            })
+
+            $(document).on("click", "#importFromCSV", function (e) {
+                nullfield_validation('csvfile');
+                if (objFlag.flag_csvfile == 0) {
+                    $.ajax({
+                        url: "/importContactsFromGoogle",
+                        method: "POST",
+                        data: {
+                            clients: clientobj,
+                            iid: iid
+                        },
+                        beforeSend: function () {
+                            $('#importFromCSV')
+                                .removeClass('btn-primary btn-success')
+                                .addClass('btn-warning')
+                                .html(`<span class="d-flex align-items-center">
+                                        <span class="flex-grow-1 me-lg-2 me-md-2">
+                                            Importing
+                                        </span>
+                                        <span class="spinner-border flex-shrink-0" role="status">
+                                            <span class="visually-hidden"></span>
+                                        </span>
+                                    </span>`);
+                        },
+                        success: function (data) {
+                            console.log(data);
+                            if (data.status_code == 200) {
+                                swal({
+                                    title: 'Contacts imported successfully',
+                                    type: 'success',
+                                    timer: 4000,
+                                    showConfirmButton: false,
+                                }).then(function () {
+                                    displayContact({
+                                        table: "contact",
+                                        paramstr: `instance_id = '${iid}'`,
+                                    });
+                                    $('#tblcsvdata').html('');
+                                    $('#csvfile').val('').removeClass('form-control-danger form-control-success');
+                                    $('#close_btn_import_localfile').click();
+                                })
+
+                            } else {
+                                swal({
+                                    title: "Contacts can't be imported.",
+                                    type: 'error',
+                                    timer: 2000,
+                                    showConfirmButton: false,
+                                })
+                            }
+                            $('#importFromCSV')
+                                .removeClass('btn-warning btn-success')
+                                .addClass('btn-primary')
+                                .html(`Import Data`);
+                        }
+                    })
+                }
+            })
+
+            $(document).on('click', '#mic', async function () {
+
+                mic("msg").then((result) => {
+                    let data = result.toString().split(" ");
+                    console.log(data);
+                    if (data[0] == "add" && data[1] == "contact") {
+                        $("#addcontactmodalbtn").click();
+                    }
+                    else if (data[0] == "logout" || (data[0] == "log" && data[1] == "out")) {
+                        $("#logout").click();
+                    }
+                    else if (data[0] == "import" && data[1] == "from" && data[2] == "Google" && data[3] == "sheet") {
+                        $("#gsheetimport").click();
+                    }
+                    else if (data[0] == "import" && data[1] == "from" && data[2] == "csv" && data[3] == "file") {
+                        $("#csvimport").click();
+                    }
+                    else if ((data[0] == "edit" || data[0] == "update") && data[1] != "" && data[1] != undefined) {
+                        $.ajax({
+                            url: "/getData",
+                            method: "post",
+                            data: {
+                                obj: {
+                                    table: `contact`,
+                                    paramstr: `name='${data[1]}' and instance_id='${iid}'`,
+                                }
+                            },
+                            success: function (data) {
+                                console.log(data);
+                                let wfcount = $(".edit-item-btn").length;
+                                // alert($(".editBtn")[0].getAttribute("data-id"));
+                                for (let i = 0; i < wfcount; i++) {
+                                    if ($(".edit-item-btn")[i].getAttribute("data-id") == data[0].contact_id) {
+                                        $(".edit-item-btn")[i].click();
+                                    }
+                                }
+                            }
+                        })
+                    }
+                    else if ((data[0] == "delete" || data[0] == "remove") && data[1] != "" && data[1] != undefined) {
+                        $.ajax({
+                            url: "/getData",
+                            method: "post",
+                            data: {
+                                obj: {
+                                    table: `contact`,
+                                    paramstr: `name='${data[1]}' and instance_id='${iid}'`,
+                                }
+                            },
+                            success: function (data) {
+                                console.log(data);
+                                let wfcount = $(".remove-item-btn").length;
+                                // alert($(".editBtn")[0].getAttribute("data-id"));
+                                for (let i = 0; i < wfcount; i++) {
+                                    if ($(".remove-item-btn")[i].getAttribute("data-id") == data[0].contact_id) {
+                                        $(".remove-item-btn")[i].click();
+                                    }
+                                }
+                            }
+                        })
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "profile") {
+                        location.href = "/profile";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && (data[2] == "pay" || data[2] == "pricing" || data[2] == "payment" || data[2] == "subscription")) {
+                        location.href = "/subscription";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "dashboard") {
+                        location.href = "/dashboard";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "instance") {
+                        location.href = "/instance";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && (data[2] == "bulkmessage" || (data[2] == "bulk" && data[3] == "message"))) {
+                        location.href = `/instance/${iid}/bulkmessage`;
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && (data[2] == "bulkmail" || (data[2] == "bulk" && data[3] == "mail"))) {
+                        location.href = `/instance/${iid}/bulkmail`;
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && (data[2] == "contacts" || (data[2] == "contact" && data[3] == "list"))) {
+                        location.href = `/instance/${iid}/contact-list`;
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "channel") {
+                        location.href = `/instance/${iid}/channel`;
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "chat") {
+                        location.href = `/instance/${iid}/chat`;
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "workflow") {
+                        location.href = `/instance/${iid}/workflow`;
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "custom" && data[3] == "template") {
+                        location.href = "/customtemplate";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "email" && data[3] == "configuration") {
+                        location.href = "/addpasscode";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "support" && data[3] == "ticket") {
+                        location.href = "/support-ticket";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "api" && data[3] == "docs") {
+                        location.href = "/docs";
+                    }
+                    else {
+                        swal({
+                            title: "Command not recognized",
+                            type: 'error',
+                            timer: 2500,
+                            showConfirmButton: false,
+                        });
+                    }
+                })
+            })
+
+
+        });
+    </script>
+
+</body>
+
+</html>

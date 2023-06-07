@@ -1,0 +1,97 @@
+[
+    {
+        "page": "Get Started",
+        "link": "docs",
+        "icon": "bx bxs-home"
+    },
+    {
+        "page": "Instance",
+        "link": "instance",
+        "icon": "ri-apps-2-line",
+        "submenu": [
+            {
+                "method": "GET",
+                "link": "get_instance",
+                "name": "GET Instance"
+            }
+        ]
+    },
+    {
+        "page": "Message",
+        "link": "message",
+        "icon": "bx bxs-message-rounded",
+        "submenu": [
+            {
+                "method": "GET",
+                "link": "get_message",
+                "name": "GET Message"
+            },
+            {
+                "method": "POST",
+                "link": "post_message",
+                "name": "Send Message"
+            },
+            {
+                "method": "POST",
+                "link": "post_document",
+                "name": "Send Document"
+            }
+        ]
+    },
+    {
+        "page": "Email",
+        "link": "email",
+        "icon": "mdi mdi-email",
+        "submenu": [
+            {
+                "method": "POST",
+                "link": "post_email",
+                "name": "Send Email"
+            }
+        ]
+    },
+    {
+        "page": "Contact",
+        "link": "contact",
+        "icon": "bx bxs-user",
+        "submenu": [
+            {
+                "method": "GET",
+                "link": "get_contact",
+                "name": "Display Contacts"
+            },
+            {
+                "method": "POST",
+                "link": "post_contact",
+                "name": "Add Contacts"
+            },
+            {
+                "method": "DELETE",
+                "link": "delete_contact",
+                "name": "DELETE Contacts"
+            }
+        ]
+    },
+    {
+        "page": "Channel",
+        "link": "channel",
+        "icon": "mdi mdi-account-group",
+        "submenu": [
+            {
+                "method": "GET",
+                "link": "get_channel",
+                "name": "Display Channel"
+            },
+            {
+                "method": "POST",
+                "link": "post_channel",
+                "name": "Create Channel"
+            },
+            {
+                "method": "DELETE",
+                "link": "delete_channel",
+                "name": "Delete Channel"
+            }
+        ]
+    }
+]

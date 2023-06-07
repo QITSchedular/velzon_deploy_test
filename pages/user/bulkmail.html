@@ -1,0 +1,2230 @@
+<!DOCTYPE html>
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg"
+    data-sidebar-image="none" data-preloader="disable">
+
+<head>
+    <meta charset="utf-8" />
+    <title>M3 | BULK MAIL</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesbrand" name="author" />
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+
+    <!-- jsvectormap css -->
+    <link href="/assets/libs/jsvectormap/css/jsvectormap.min.css" rel="stylesheet" type="text/css" />
+
+    <!--Swiper slider css-->
+    <link href="/assets/libs/swiper/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- aos css -->
+    <link rel="stylesheet" href="/assets/libs/aos/aos.css" />
+    <!-- Layout config Js -->
+    <script src="/assets/js/layout.js"></script>
+    <!-- Bootstrap Css -->
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="/assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <!-- custom Css-->
+    <link href="/assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Font Awesome Files -->
+    <link href="/assets/fontawesome/css/all.min.css" rel="stylesheet" />
+    <link href="/assets/fontawesome/css/solid.css" rel="stylesheet" />
+    <link href="/assets/fontawesome/css/solid.min.css" rel="stylesheet" />
+    <link href="/assets/fontawesome/css/regular.css" rel="stylesheet" />
+    <link href="/assets/fontawesome/css/regular.min.css" rel="stylesheet" />
+    <link href="/assets/fontawesome/css/fontawesome.min.css" rel="stylesheet" />
+    <link href="/assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+        <header id="page-topbar">
+            <div class="layout-width">
+                <div class="navbar-header">
+                    <div class="d-flex">
+                        <!-- LOGO -->
+                        <div class="navbar-brand-box horizontal-logo">
+                            <a href="/" class="logo logo-dark">
+                                <span class="logo-sm">
+                                    <img src="/assets/images/logo-sm.png" alt="" height="22" />
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="/assets/images/logo-dark.png" alt="" height="17" />
+                                </span>
+                            </a>
+
+                            <a href="/" class="logo logo-light">
+                                <span class="logo-sm">
+                                    <img src="/assets/images/logo-sm.png" alt="" height="22" />
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="/assets/images/logo-light.png" alt="" height="17" />
+                                </span>
+                            </a>
+                        </div>
+
+                        <button type="button"
+                            class="btn btn-sm px-3 fs-16 header-item vertical-menu-btn topnav-hamburger"
+                            id="topnav-hamburger-icon">
+                            <span class="hamburger-icon">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </button>
+                    </div>
+
+                    <div class="d-flex align-items-center">
+                        <div class="dropdown d-md-none topbar-head-dropdown header-item">
+                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
+                                id="page-header-search-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                <i class="bx bx-search fs-22"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
+                                aria-labelledby="page-header-search-dropdown">
+                                <form class="p-3">
+                                    <div class="form-group m-0">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Search ..."
+                                                aria-label="Recipient's username" />
+                                            <button class="btn btn-primary" type="submit">
+                                                <i class="mdi mdi-magnify"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="ms-1 header-item d-none d-sm-flex">
+                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
+                                data-toggle="fullscreen">
+                                <i class='bx bx-fullscreen fs-22'></i>
+                            </button>
+                        </div>
+
+                        <div class="ms-1 header-item d-none d-sm-flex">
+                            <button type="button"
+                                class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle light-dark-mode">
+                                <i class='bx bx-moon fs-22'></i>
+                            </button>
+                        </div>
+
+                        <div class="dropdown ms-sm-3 header-item topbar-user">
+                            <button type="button" class="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <span class="d-flex align-items-center">
+                                    <img class="rounded-circle header-profile-user profileimg" />
+                                    <span class="text-start ms-xl-2">
+                                        <span
+                                            class="d-none d-xl-inline-block ms-1 fw-medium user-name-text profilename"></span>
+                                        <span class="d-none d-xl-block ms-1 fs-12 text-muted user-name-sub-text">
+                                            Founder
+                                        </span>
+                                    </span>
+                                </span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <h6 class="dropdown-header">Welcome <span class="profilename"></span></h6>
+                                <a class="dropdown-item" href="/profile">
+                                    <i class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i>
+                                    <span class="align-middle">Profile</span>
+                                </a>
+                                <a class="dropdown-item" href="/subscription">
+                                    <i class="mdi mdi-credit-card-chip text-muted fs-16 align-middle me-1"></i>
+                                    <span class="align-middle">Pay</span>
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" id="logout">
+                                    <i class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i>
+                                    <span class="align-middle" data-key="t-logout">Logout</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- ========== App Menu ========== -->
+        <div class="app-menu navbar-menu">
+            <!-- LOGO -->
+            <div class="navbar-brand-box">
+                <!-- Dark Logo-->
+                <a href="/" class="logo logo-dark">
+                    <span class="logo-sm">
+                        <img src="/assets/images/logo-sm.png" alt="" height="22" />
+                    </span>
+                    <span class="logo-lg">
+                        <img src="/assets/images/logo-dark.png" alt="" height="17" />
+                    </span>
+                </a>
+                <!-- Light Logo-->
+                <a href="/" class="logo logo-light">
+                    <span class="logo-sm">
+                        <img src="/assets/images/logo-sm.png" alt="" height="22" />
+                    </span>
+                    <span class="logo-lg">
+                        <img src="/assets/images/logo-light.png" alt="" height="17" />
+                    </span>
+                </a>
+                <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover"
+                    id="vertical-hover">
+                    <i class="ri-record-circle-line"></i>
+                </button>
+            </div>
+
+            <div id="scrollbar">
+                <div class="container-fluid">
+                    <div id="two-column-menu"></div>
+                    <ul class="navbar-nav" id="navbar-nav" data-aos="fade-right" data-aos-duration="1000"></ul>
+                </div>
+            </div>
+
+            <div class="sidebar-background"></div>
+        </div>
+        <!-- Left Sidebar End -->
+        <!-- Vertical Overlay-->
+        <div class="vertical-overlay"></div>
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+            <div class="page-content">
+                <div class="container-fluid">
+                    <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                        <div class="page-title">
+                            <ol class="breadcrumb m-0" id="api_path">
+                                <li class="breadcrumb-item">
+                                    <a href="/instance">
+                                        Instance
+                                    </a>
+                                </li>
+                                <li class="breadcrumb-item" id="i_name"></li>
+                                <li class="breadcrumb-item active">Bulk Mail</li>
+                            </ol>
+                        </div>
+                        <div class="page-title-right d-flex align-items-center">
+                            <button type="button" class="btn btn-soft-danger waves-effect waves-light fs-15" id="mic"
+                                data-bs-toggle="modal" data-bs-target="#voice_input">
+                                <i class="mdi mdi-microphone"></i>
+                            </button>
+                            <span class="text-muted mx-2 fw-medium">
+                                <img width="27" height="27" src="https://img.icons8.com/color/48/gmail-new.png"
+                                    alt="gmail-new" class="mt-n1" />
+                                Configuration :
+                            </span>
+                            <div class="page-title-right" id="configuration_status"></div>
+                        </div>
+                    </div>
+
+                    <div class="card card-body card-animate">
+                        <div class="row mb-1">
+                            <div class="col-lg-4 col-md-6 col-sm-12">
+                                <label class="card-title">API Key</label>
+                                <div class="d-flex">
+                                    <input type="text" class="form-control" id="apikey" readonly disabled />
+                                    <a class="copy mx-2" id="copy_apikey" data-bs-toggle="tooltip"
+                                        data-bs-placement="top" title="Copy API">
+                                        <i class="fa-regular fa-copy form-control fs-4"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-12">
+                                <label class="card-title">Token</label>
+                                <div class="d-flex">
+                                    <input type="text" class="form-control" id="token" readonly disabled />
+                                    <a class="copy mx-2" id="copy_token" data-bs-toggle="tooltip"
+                                        data-bs-placement="top" title="Copy Token">
+                                        <i class="fa-regular fa-copy form-control fs-4"></i>
+                                    </a>
+                                    <a class="mx-2" id="refresh_token" data-bs-toggle="tooltip" data-bs-placement="top"
+                                        title="Refresh Token">
+                                        <i class="fa fa-arrows-rotate fs-4 refresh form-control"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-12">
+                                <label class="card-title">Instance Id</label>
+                                <div class="d-flex">
+                                    <input type="text" class="form-control" id="instanceid" readonly disabled />
+                                    <a class="copy mx-2" id="copy_instanceid" data-bs-toggle="tooltip"
+                                        data-bs-placement="top" title="Copy Instance Id">
+                                        <i class="fa-regular fa-copy form-control fs-4"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <ul class="nav nav-tabs nav-justified nav-border-top nav-border-top-success fs-15"
+                            role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="sheet_tab" data-bs-toggle="tab" href="#gsheetbulkmail"
+                                    role="tab" aria-selected="false">
+                                    <i class="mdi mdi-google-spreadsheet align-middle me-lg-2"></i>
+                                    <span class="d-none d-lg-inline-block">Google Sheet</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="file_tab" data-bs-toggle="tab" href="#localfilebulkmail"
+                                    role="tab" aria-selected="false">
+                                    <i class="bx bxs-file align-middle me-lg-2"></i>
+                                    <span class="d-none d-lg-inline-block">Local File</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-bs-toggle="tab" id="channel_tab" href="#channelbulkmail"
+                                    role="tab" aria-selected="false">
+                                    <i class="mdi mdi-account-group align-middle me-lg-2"></i>
+                                    <span class="d-none d-lg-inline-block">Channel</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="tab-content card-body">
+                            <div class="tab-pane active" id="gsheetbulkmail" role="tabpanel">
+                                <div class="mb-3">
+                                    <button id="connect" class="btn btn-primary btn-load fs-14">
+                                        <i class="mdi mdi-google-spreadsheet align-middle me-lg-2 me-md-2"></i>
+                                        <span class="ms-sm-2">Connect</span>
+                                        <span class="d-none d-md-inline-block d-lg-inline-block">
+                                            with Google Sheet
+                                        </span>
+                                    </button>
+                                </div>
+                                <div id="after_connect_div_gsheet" class="d-none">
+                                    <div class="mb-3 row">
+                                        <div class="col-6">
+                                            <label for="spreedsheet" class="form-label">
+                                                Spreed-Sheet
+                                                <span class="text-danger">*</span>
+                                            </label>
+                                            <select class="form-select mb-3" id="spreedsheet"></select>
+                                        </div>
+                                        <div class="col-6">
+                                            <label for="sheetname" class="form-label">
+                                                Sheet
+                                                <span class="text-danger">*</span>
+                                            </label>
+                                            <select class="form-select mb-3" id="sheetname"></select>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3" data-simplebar data-simplebar-auto-hide="false"
+                                        style="height: 150px;">
+                                        <table class="table align-middle" id="sheet_data"></table>
+                                    </div>
+                                    <div class="mb-2">
+                                        <label for="gsheetmailtype" class="form-label">Select Mail
+                                            Type</label>
+                                        <select class="form-select w-25 type_change" id="gsheetmailtype">
+                                            <option disabled selected>Select Mail type</option>
+                                            <option value="custom">Custom Mail</option>
+                                            <option value="template">Template Mail</option>
+                                        </select>
+                                    </div>
+
+
+                                    <div class="d-none mb-3" id="gsheetmailtype_custom">
+                                        <label for="gsheetmailtype_custom_subject_box" class="form-label">
+                                            Subject
+                                            <span class="text-danger">*</span>
+                                            <span class="text-danger" id="err_gsheetmailtype_custom_subject_box"></span>
+                                        </label>
+                                        <input type="text" class="form-control required"
+                                            id="gsheetmailtype_custom_subject_box" data-type="message" />
+                                        <label for="gsheetmailtype_message_box" class="form-label">
+                                            Body
+                                            <span class="text-danger">*</span>
+                                            <span class="text-danger" id="err_gsheetmailtype_message_box"></span>
+                                        </label>
+                                        <div class="position-relative">
+                                            <textarea id="gsheetmailtype_message_box"
+                                                class="form-control mb-3 pe-5 required" data-type="message"
+                                                style="resize:none;"></textarea>
+                                            <button class="btn btn-link position-absolute end-0 top-0
+                                                             text-decoration-none text-muted" id="gsheet_cstm_mic">
+                                                <i class="fas fa-microphone text-primary fs-5"></i>
+                                            </button>
+                                        </div>
+                                        <button id="gsheetmailtype_custom_send" class="btn btn-primary btn-load">
+                                            <i class="fa-solid fa-paper-plane"></i>
+                                            Send to All
+                                        </button>
+                                    </div>
+
+                                    <div class="d-none" id="gsheetmailtype_template">
+                                        <label for="gsheetmailtype_template_data" class="form-label">
+                                            Select Template
+                                            <span class="text-danger">*</span>
+                                            <span class="text-danger" id="err_gsheetmailtype_template_data"></span>
+                                        </label>
+                                        <select class="form-select w-50 mb-3"
+                                            id="gsheetmailtype_template_data"></select>
+                                        <div class="row mb-3" id="gsheetmailtype_template_column"></div>
+                                        <label for="gsheetmailtype_template_subject_box mb-3" class="form-label">
+                                            Subject
+                                            <span class="text-danger">*</span>
+                                            <span class="text-danger"
+                                                id="err_gsheetmailtype_template_subject_box"></span>
+                                        </label>
+                                        <input type="text" class="form-control required"
+                                            id="gsheetmailtype_template_subject_box" data-type="message" />
+                                        <label class="form-label">
+                                            Mail Preview
+                                        </label>
+                                        <textarea class="form-control mb-3" style="resize: none" cols="50" rows="6"
+                                            id="gsheetmailtype_template_textarea" readonly disabled></textarea>
+                                        <button id="gsheetmailtype_template_send" class="btn btn-primary btn-load">
+                                            <i class="mdi mdi-send me-lg-2 me-md-2"></i>
+                                            <span class="d-none d-lg-inline-block d-md-inline-block">
+                                                Send to All
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane" id="localfilebulkmail" role="tabpanel">
+                                <div class="mb-3">
+                                    <label for="datafile" class="form-label">
+                                        Select File
+                                        <span class="text-danger">*</span>
+                                        <span class="text-danger" id="err_datafile"></span>
+                                    </label>
+                                    <input type="file" id="datafile" class="form-control" />
+                                </div>
+                                <div id="after_connect_div_localfile" class="d-none">
+                                    <div class="mb-3" id="" data-simplebar data-simplebar-auto-hide="false"
+                                        style="height: 150px;">
+                                        <table class="table align-middle" id="localfile_data"></table>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="msgtype" class="form-label">Select Mail Type</label>
+                                        <select class="form-select w-25 type_change" id="localfilmailtype">
+                                            <option disabled selected>Select Mail type</option>
+                                            <option value="custom">Custom Mail</option>
+                                            <option value="template">Template Mail</option>
+                                        </select>
+                                    </div>
+                                    <div class="d-none mb-3" id="localfilmailtype_custom">
+                                        <div class="mb-3">
+                                            <label for="localfilmailtype_custom_subject_box" class="form-label">
+                                                Subject
+                                                <span class="text-danger">*</span>
+                                                <span class="text-danger"
+                                                    id="err_localfilmailtype_custom_subject_box"></span>
+                                            </label>
+                                            <input type="text" class="form-control required"
+                                                id="localfilmailtype_custom_subject_box" data-type="message" />
+                                            <label for="localfile_message_box" class="form-label">
+                                                Body
+                                                <span class="text-danger">*</span>
+                                                <span class="text-danger" id="err_localfile_message_box"></span>
+                                            </label>
+                                            <div class="position-relative">
+                                                <textarea id="localfile_message_box"
+                                                    class="form-control mb-3 pe-5 required" data-type="message"
+                                                    style="resize:none;"></textarea>
+                                                <button class="btn btn-link position-absolute end-0 top-0
+                                                                     text-decoration-none text-muted"
+                                                    id="localfile_cstm_mic">
+                                                    <i class="fas fa-microphone text-primary fs-5"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <button id="localfilmailtype_custom_send" class="btn btn-primary btn-load">
+                                            <i class="fa-solid fa-paper-plane"></i>
+                                            Send to All
+                                        </button>
+                                    </div>
+                                    <div class="d-none" id="localfilmailtype_template">
+                                        <label for="localfilmailtype_template_data" class="form-label">
+                                            Select Template
+                                            <span class="text-danger">*</span>
+                                            <span class="text-danger" id="err_localfilmailtype_template_data"></span>
+                                        </label>
+                                        <select class="form-select w-50 mb-3"
+                                            id="localfilmailtype_template_data"></select>
+                                        <div class="row mb-3" id="localfilmailtype_template_column"></div>
+                                        <label for="localfilmailtype_template_subject_box" class="form-label">
+                                            Subject
+                                            <span class="text-danger">*</span>
+                                            <span class="text-danger"
+                                                id="err_localfilmailtype_template_subject_box"></span>
+                                        </label>
+                                        <input type="text" class="form-control required"
+                                            id="localfilmailtype_template_subject_box" data-type="message" />
+                                        <label class="form-label">
+                                            Message Preview
+                                        </label>
+                                        <textarea class="form-control mb-3" style="resize: none" cols="50" rows="6"
+                                            id="localfilmailtype_template_textarea" readonly disabled></textarea>
+                                        <button id="localfilmailtype_template_send" class="btn btn-primary btn-load">
+                                            <i class="mdi mdi-send me-lg-2 me-md-2"></i>
+                                            <span class="d-none d-lg-inline-block d-md-inline-block">
+                                                Send to All
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane" id="channelbulkmail" role="tabpanel">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="mb-3">
+                                            <label class="form-label">
+                                                Channel
+                                                <span class="text-danger">*</span>
+                                                <span class="text-danger" id="err_channel_list"></span>
+                                            </label>
+                                            <select class="form-select required" id="channel_list"
+                                                data-type="message"></select>
+                                        </div>
+                                        <div id="after_connect_div_channel" class="d-none">
+                                            <div class="mb-3">
+                                                <label for="channelmailtype_template_subject_box mb-3"
+                                                    class="form-label">
+                                                    Subject
+                                                    <span class="text-danger">*</span>
+                                                    <span class="text-danger"
+                                                        id="err_channelmailtype_template_subject_box"></span>
+                                                </label>
+                                                <input type="text" class="form-control required"
+                                                    id="channelmailtype_template_subject_box" data-type="message" />
+                                            </div>
+                                            <div class="mb-2">
+                                                <label for="channelmailtype" class="d-none form-label">Select Message
+                                                    Type</label>
+                                                <select class="form-select channel_type_change" id="channelmailtype">
+                                                    <option value=""> select message type </option>
+                                                    <option value="custom">custom message</option>
+                                                    <option value="template">template message</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3 d-none" id="channelmailtype_custom">
+                                            <label for="channel_message_box" class="form-label">
+                                                Message
+                                                <span class="text-danger">*</span>
+                                                <span class="text-danger" id="err_channel_message_box"></span>
+                                            </label>
+                                            <div class="position-relative">
+                                                <textarea id="channel_message_box"
+                                                    class="form-control mb-3 pe-5 required" data-type="message"
+                                                    style="resize:none;"></textarea>
+                                                <button class="btn btn-link position-absolute end-0 top-0
+                                                                         text-decoration-none text-muted"
+                                                    id="channel_cstm_mic">
+                                                    <i class="fas fa-microphone text-primary fs-5"></i>
+                                                </button>
+                                            </div>
+                                            <div class="my-2 d-flex justify-content-end">
+                                                <button class="btn btn-primary btn-load"
+                                                    id="channelmailtype_custom_send">
+                                                    <i class="mdi mdi-send me-lg-2 me-md-2"></i>
+                                                    <span class="d-none d-lg-inline-block d-md-inline-block">
+                                                        Send to All
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <div class="d-none" id="channelmailtype_template">
+                                            <label for="channelmailtype_template_data" class="form-label">
+                                                Select Template
+                                                <span class="text-danger">*</span>
+                                                <span class="text-danger" id="err_channelmailtype_template_data"></span>
+                                            </label>
+                                            <select class="form-select mb-3"
+                                                id="channelmailtype_template_data"></select>
+                                            <div class="row mb-3" id="channelmailtype_template_column"></div>
+                                            <label class="form-label">
+                                                Message Preview
+                                            </label>
+                                            <textarea class="form-control mb-3" style="resize: none" cols="50" rows="6"
+                                                id="channelmailtype_template_textarea" readonly disabled></textarea>
+                                            <button id="channelmailtype_template_send" class="btn btn-primary btn-load">
+                                                <i class="mdi mdi-send me-lg-2 me-md-2"></i>
+                                                <span class="d-none d-lg-inline-block d-md-inline-block">
+                                                    Send to All
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6">
+                                        <label>Contact Data</label>
+                                        <div class="card" data-simplebar data-simplebar-auto-hide="false"
+                                            style="height: 230px;">
+                                            <div class="card-body" id="contact_data">
+                                                <h5 class="d-flex justify-content-center text-muted text-center p-5">
+                                                    Preview of the data will show here after you select the
+                                                    channel
+                                                </h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <footer class="footer"></footer>
+            </div>
+        </div>
+
+        <!--start back-to-top-->
+        <button onclick="topFunction()" class="btn btn-danger btn-icon" id="back-to-top">
+            <i class="ri-arrow-up-line"></i>
+        </button>
+        <!--end back-to-top-->
+
+        <!--preloader-->
+        <div id="preloader">
+            <div id="status">
+                <div class="spinner-border text-primary avatar-sm" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="customizer-setting" id="chatbot">
+            <div class="btn-info btn-rounded shadow-lg btn btn-icon btn-lg p-2">
+                <i class="fa-solid fa-comment" id="iconchat"></i>
+            </div>
+        </div>
+
+        <div class="email-chat-detail" id="emailchat-detailElem" style="display: none">
+            <div class="card mb-0">
+                <div class="card-header align-items-center d-flex bg-primary text-white-50">
+                    <div class="flex-grow-1">
+                        <h5 class="fs-15 text-white mb-1 profile-username">
+                            Velzon ChatBot
+                        </h5>
+                        <p class="mb-0 fs-12 lh-1">Ask here for help</p>
+                    </div>
+                    <div>
+                        <i class="fa-brands fa-bots fs-1 text-white"></i>
+                    </div>
+                </div>
+
+                <div class="card-body p-0">
+                    <div id="users-chat">
+                        <div class="chat-conversation p-3" id="chat-conversation" data-simplebar style="height: 250px">
+                            <ul class="list-unstyled chat-conversation-list chat-sm" id="conversation"></ul>
+                        </div>
+                    </div>
+
+                    <div class="border-top border-top-dashed">
+                        <div class="row g-2 mx-3 mt-2 mb-3">
+                            <div class="col">
+                                <div class="position-relative">
+                                    <input type="text" class="form-control border-light bg-light message-input"
+                                        placeholder="Enter Message..." id="input" />
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <button class="btn btn-info" id="sendbotmsg">
+                                    <i class="mdi mdi-send"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="voice_input" class="modal zoomIn">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                </button> -->
+                </div>
+                <div class="modal-body">
+                    <div class="fs-1 text-center" id="msg" style="resize: none;">
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="/assets/js/jquery.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/validate.js"></script>
+    <script src="/assets/js/voiceRecognition.js"></script>
+    <script src="/assets/js/chatbot.js"></script>
+
+    <script src="/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="/assets/libs/node-waves/waves.min.js"></script>
+    <script src="/assets/libs/feather-icons/feather.min.js"></script>
+    <script src="/assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+
+    <!-- cleave.js -->
+    <script src="/assets/libs/cleave.js/cleave.min.js"></script>
+    <!-- form masks init -->
+    <script src="/assets/js/pages/form-masks.init.js"></script>
+
+    <!-- aos js -->
+    <script src="/assets/libs/aos/aos.js"></script>
+    <!-- prismjs plugin -->
+    <script src="/assets/libs/prismjs/prism.js"></script>
+    <!-- animation init -->
+    <script src="/assets/js/pages/animation-aos.init.js"></script>
+
+    <!-- App js -->
+    <script src="/assets/js/app.js"></script>
+
+    <!-- prismjs plugin -->
+    <script src="/assets/libs/prismjs/prism.js"></script>
+
+    <script src="/assets/sweetalert2/sweet-alert.init.js"></script>
+    <script src="/assets/sweetalert2/sweetalert2.all.js"></script>
+
+
+    <script async defer src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>
+    <script async defer src="https://accounts.google.com/gsi/client" onload="gisLoaded()"></script>
+
+    <script>
+        let i_name;
+        let colnames, colvalues;
+        let clientobj = new Array();
+        let clientarr = new Array();
+        let clientvalue = new Array();
+
+        const iid = document.URL.split("/")[4];
+        var emailconfiguration;
+
+        const CLIENT_ID = '946707776966-qbbl9q9eikhrtfld5l9pnbv3pkvcni7g.apps.googleusercontent.com';
+        const API_KEY = 'AIzaSyA2-ajldm4p1SEP1mZjG4qeco5uqqzM2vU';
+
+        async function getSheet(sheetID) {
+            await fetch(`https://sheets.googleapis.com/v4/spreadsheets/${sheetID}?key=${API_KEY}`)
+                .then((response) => response.json())
+                .then((data) => {
+                    let sheetName = `<option selected disabled>Select Sheetname</option>`, count = 0;
+                    const sheetNames = data.sheets.map((sheet) => sheet.properties);
+                    for (i = 0; i < sheetNames.length; i++) {
+                        sheetName += `<option value='${count}'>${sheetNames[i].title}</option>`;
+                        count++;
+                    }
+                    document.getElementById("sheetname").innerHTML = sheetName;
+                })
+                .catch((error) => {
+                    swal({
+                        title: "Oops !",
+                        text: "Provide appropriate reading permission in your selected spreadsheet..!!",
+                        icon: "warning",
+                        closeOnEsc: true,
+                    });
+                    document.getElementById("sheetname").innerHTML = "";
+                    console.error("There was an error!", error);
+                });
+        }
+        const DISCOVERY_DOC = 'https://www.googleapis.com/discovery/v1/apis/drive/v3/rest';
+        const SCOPES = 'https://www.googleapis.com/auth/drive.metadata.readonly';
+
+        let tokenClient;
+        let gapiInited = false;
+        let gisInited = false;
+
+        function gapiLoaded() {
+            gapi.load('client', initializeGapiClient);
+        }
+
+        async function initializeGapiClient() {
+            await gapi.client.init({
+                apiKey: API_KEY,
+                discoveryDocs: [DISCOVERY_DOC],
+            });
+            gapiInited = true;
+            maybeEnableButtons();
+        }
+
+        function gisLoaded() {
+            tokenClient = google.accounts.oauth2.initTokenClient({
+                client_id: CLIENT_ID,
+                scope: SCOPES,
+                callback: '', // defined later
+            });
+            gisInited = true;
+            maybeEnableButtons();
+        }
+
+        function maybeEnableButtons() {
+            if (gapiInited && gisInited) {
+                // document.getElementById('authorize_button').style.visibility = 'visible';
+                //display_in_out();
+            }
+        }
+
+
+        $(document).ready(function () {
+            chkLogin();
+
+            function isValidEmail(callback) {
+                $.ajax({
+                    url: "/getData",
+                    method: "POST",
+                    data: {
+                        obj: {
+                            table: "users",
+                            paramstr: true
+                        }
+                    },
+                    success: function (data) {
+                        if (!data.status_code) {
+                            if (data[0].emailpasscode == "" || data[0].emailpasscode == null) {
+                                console.log(false);
+                                callback(false);
+                            } else {
+                                console.log(true);
+                                callback(true);
+                            }
+                        } else {
+                            callback(false);
+                        }
+                    }
+                });
+            }
+
+            $.ajax({
+                url: `/getData`,
+                method: `POST`,
+                data: {
+                    obj: {
+                        "table": `users`,
+                        "paramstr": `true`,
+                    }
+                },
+                success: function (val) {
+                    let data = ``;
+                    if (val[0].emailpasscode === "") {
+                        data += `<span class="badge text-bg-danger fs-13 p-2">Pending</span>`;
+                        emailconfiguration = false;
+                    }
+                    else {
+                        data += `<span class="badge text-bg-success fs-13 p-2">Done</span>`;
+                        emailconfiguration = true;
+                    }
+                    $('#configuration_status').html(data);
+                }
+            });
+
+            console.log(emailconfiguration);
+
+            function handleAuthClick() {
+                tokenClient.callback = async (resp) => {
+                    if (resp.error !== undefined) {
+                        throw resp;
+                    }
+
+                    await listFiles();
+                };
+
+                if (gapi.client.getToken() === null) {
+                    tokenClient.requestAccessToken({
+                        prompt: "consent",
+                    });
+                } else {
+                    tokenClient.requestAccessToken({
+                        prompt: "",
+                    });
+                }
+            }
+
+            async function listFiles() {
+                let response;
+                try {
+                    response = await gapi.client.drive.files.list({
+                        fields: "files(id, name, mimeType)",
+                    });
+                } catch (err) {
+                    document.getElementById("content").innerText = err.message;
+                    return;
+                }
+
+                $('#after_connect_div_gsheet').removeClass('d-none');
+                const files = response.result.files;
+                let output = `<option selected disabled>Select spreedsheet</option>`;
+                if (!files || files.length == 0) {
+                    document.getElementById("content").innerText = "No files found.";
+                    return;
+                } else {
+                    $('#sheetname').html(`<option selected disabled>Select Sheetname</option>`);
+                    var obj = {};
+                    for (var i = 0; i < files.length; i++) {
+                        if (files[i].mimeType == "application/vnd.google-apps.spreadsheet") {
+                            var str2 = files[i].name;
+                            obj["id"] = files[i].id;
+                            obj["name"] = files[i].name;
+                            obj = JSON.stringify(obj);
+                            output += `<option value='${files[i].id}'>${files[i].name}</option>`;
+                        }
+                    }
+                }
+                document.getElementById("spreedsheet").innerHTML = output;
+            }
+
+            $.ajax({
+                url: "/user",
+                method: "POST",
+                data: {
+                    "iid": iid,
+                },
+                success: function (val) {
+                    switch (val.status_code) {
+                        case '401': {
+                            InvalidUser();
+                            break;
+                        }
+
+                        case '404':
+                        case '500': {
+                            InternalServerError();
+                            break;
+                        }
+
+                        default: {
+                            $('#i_name').html(`<b class="text-primary">${val[0].i_name}</b>`);
+                            $('#apikey').val(val[0].apikey);
+                            $('#token').val(val[0].token);
+                            $('#instanceid').val(iid);
+                        }
+                    }
+                }
+            });
+
+            function getTemplateMessage(display_id, str) {
+                let message = ``;
+                $.ajax({
+                    url: "/dis_mes",
+                    method: "POST",
+                    data: {
+                        temp_name: str,
+                    },
+                    success: function (data) {
+                        let x = localStorage.getItem("colnames").split(",");
+                        let obj1 = ``;
+                        for (let i = 0; i < data[0].userfields; i++) {
+                            obj1 += `<div class="col-lg-3 col-md-6 col-sm-12 mb-2">
+                                    <label for="col${i + 1}" class="form-label">
+                                        Value ${i + 1}
+                                        <span class="text-danger">*</span>
+                                        <span class="text-danger" id="err_col${i + 1}"></span>
+                                    </label>
+                                    <select class="form-select selcol" id="col${i + 1}">
+                                        <option disabled selected>Select column</option>`;
+                            for (let j = 0; j < x.length; j++) {
+                                obj1 += `<option value="${x[j]}">${x[j]}</option>`;
+                            }
+                            obj1 += `</select></div>`;
+                        }
+                        $(`#${display_id}_column`).html(obj1);
+                        $(`#${display_id}_textarea`).html(data[0].cstm_msg || data[0].temp_message);
+                    }
+                });
+            }
+
+            function displayTemplate(display_id) {
+                $.ajax({
+                    url: "/dis_template",
+                    method: "GET",
+                    success: function (data) {
+                        let obj = `<option disabled selected>Select Template</option>`
+                        for (var i = 0; i < data.length; i++) {
+                            obj += `<option value = "${data[i].temp_name}">${data[i].temp_name}</option>`;
+                        }
+                        $.ajax({
+                            url: "/dis_cstm_template",
+                            method: "get",
+                            success: function (val) {
+                                // console.log("cstm_data", val);
+                                if (val.length == 0) {
+                                    $(`#${display_id}_data`).html(obj);
+                                    $(document).on('change', `#${display_id}_data`, () => {
+                                        getTemplateMessage(display_id, $(`#${display_id}_data`).val());
+                                    })
+                                }
+                                else {
+                                    for (let j = 0; j < val.length; j++) {
+                                        obj += `<option value = "${val[j].cstm_name}">${val[j].cstm_name}</option>`;
+                                    }
+                                    $(`#${display_id}_data`).html(obj);
+
+                                    $(document).on('change', `#${display_id}_data`, () => {
+                                        getTemplateMessage(display_id, $(`#${display_id}_data`).val());
+                                    })
+                                }
+                            }
+                        });
+                    }
+                });
+            }
+
+            //template display for channel
+            function channelgetTemplateMessage(str) {
+                let message = ``;
+                $.ajax({
+                    url: "/dis_mes",
+                    method: "POST",
+                    data: {
+                        temp_name: str,
+                    },
+                    success: function (data) {
+                        let x = ["name", "email", "phone"];
+                        let obj1 = ``;
+                        for (let i = 0; i < data[0].userfields; i++) {
+                            obj1 += `<div class="col-lg-6 col-md-6 col-sm-12 mb-2">
+                                    <label for="col${i + 1}" class="form-label">
+                                        Value ${i + 1}
+                                        <span class="text-danger">*</span>
+                                        <span class="text-danger" id="err_col${i + 1}"></span>
+                                    </label>
+                                    <select class="form-select selcol" id="col${i + 1}">
+                                        <option disabled selected>Select column</option>`;
+                            for (let j = 0; j < x.length; j++) {
+                                obj1 += `<option value="${x[j]}">${x[j]}</option>`;
+                            }
+                            obj1 += `</select></div>`;
+                        }
+                        $(`#channelmailtype_template_column`).html(obj1);
+                        $(`#channelmailtype_template_textarea`).html(data[0].cstm_msg || data[0].temp_message);
+                    }
+                });
+            }
+
+            function channeldisplayTemplate() {
+                $.ajax({
+                    url: "/dis_template",
+                    method: "GET",
+                    success: function (data) {
+                        let obj = `<option disabled selected>Select Template</option>`
+                        for (var i = 0; i < data.length; i++) {
+                            if (data[i].userfields < 4) {
+                                obj += `<option value = "${data[i].temp_name}">${data[i].temp_name}</option>`;
+                            }
+                        }
+
+                        $.ajax({
+                            url: "/dis_cstm_template",
+                            method: "get",
+                            success: function (val) {
+                                console.log("cstm_data", val);
+                                if (val.length == 0) {
+                                    $(`#channelmailtype_template_data`).html(obj);
+                                    $(document).on('change', `#channelmailtype_template_data`, () => {
+                                        channelgetTemplateMessage($(`#channelmailtype_template_data`).val());
+                                    })
+                                }
+                                else {
+                                    for (let j = 0; j < val.length; j++) {
+                                        obj += `<option value = "${val[j].cstm_name}">${val[j].cstm_name}</option>`;
+                                    }
+                                    $(`#channelmailtype_template_data`).html(obj);
+
+                                    $(document).on('change', `#channelmailtype_template_data`, () => {
+                                        channelgetTemplateMessage($(`#channelmailtype_template_data`).val());
+                                    })
+                                }
+                            }
+                        });
+                    }
+                });
+            }
+
+            // Google Sheet Bulk Mail
+            $("#connect").click(function () {
+                handleAuthClick();
+            });
+
+            $(document).on("change", "#spreedsheet", function () {
+                getSheet($("#spreedsheet").val());
+            });
+
+            $(".type_change").change(function () {
+                const id = $(this).attr('id');
+
+                $(`#${id}_custom, #${id}_template`).addClass("d-none");
+
+                if ($(`#${id}`).val() == "custom") {
+                    $(`#${id}_custom`).removeClass("d-none");
+                }
+                else if ($(`#${id}`).val() == "template") {
+                    $(`#${id}_template`).removeClass("d-none");
+                    displayTemplate(`${id}_template`);
+                }
+            });
+
+            $(document).on("change", "#sheetname", function () {
+                nullfield_validation('spreedsheet');
+                if (objFlag.flag_spreedsheet == 0) {
+                    var ssid = $("#spreedsheet").val();
+                    var sheetindex = $("#sheetname").val();
+
+                    $.ajax({
+                        url: "/sheetdata",
+                        method: "POST",
+                        data: {
+                            ssid: ssid,
+                            sheetindex: sheetindex,
+                        },
+                        beforeSend: function () {
+                            $("#sheet_data")
+                                .html(`<div class="text-center py-3">
+                                                    <div class="spinner-border text-primary" role="status">
+                                                        <span class="sr-only">Loading...</span>
+                                                    </div>
+                                                    <h5 class="mt-2">Fetching Data</h5>
+                                                </div>`);
+                        },
+                        success: function (val) {
+                            clientarr = [];
+                            clientobj = val.colnames[0];
+                            clientvalue = val.values;
+
+                            if (clientobj.includes("name") && clientobj.includes("phone") && clientobj.includes("email")) {
+                                $("#sheet_data").removeClass("text-danger");
+                                $("#sheet_data").removeClass("fs-15");
+
+                                let result = {};
+                                for (let i = 0; i < clientvalue.length; i++) {
+                                    clientobj.forEach((key, j) => {
+                                        result[key] = clientvalue[i][j];
+                                    });
+                                    clientarr.push(result);
+                                    result = {};
+                                }
+
+                                var data = '<thead class="table-light"><tr>';
+                                for (let i = 0; i < val.colnames[0].length; i++) {
+                                    data += `<th>${val.colnames[0][i]}</th>`;
+                                }
+                                data += '</tr></thead><tbody class="list form-check-all">';
+                                if (val.values[0].length > 0) {
+                                    for (let i = 0; i < val.values.length; i++) {
+                                        data += `<tr>`;
+                                        for (let j = 0; j < val.colnames[0].length; j++) {
+                                            data += `<td class="${val.colnames[0][j]}">${val.values[i][j]}</td>`;
+                                        }
+                                        data += "</tr>";
+                                    }
+                                    data += "</tbody></table>";
+                                    $('#sheet_data').html(data);
+                                } else {
+                                    data += `<tr>
+                                                <td colspan="${val.colnames.length}">
+                                                    <b>No Such column like name and phone in this sheet</b>
+                                                    <b>Required column is not in the sheet</b>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>`;
+                                }
+                                $('#sheet_data').html(data);
+                            } else {
+                                $("#sheet_data").addClass("text-danger");
+                                $("#sheet_data").addClass("fs-15");
+                                document.getElementById("sheet_data").innerHTML = "* Invalid Column Found!!\nSheet must have 'name', 'phone' and 'email' as Title!!";
+                            }
+                        }
+                    });
+                }
+
+            });
+
+            // googlesheet template Mail btn event
+            $(document).on("click", "#gsheetmailtype_template_send", async function (e) {
+                isValidEmail(function (result) {
+                    if (result) {
+
+                        let nthcol = document.getElementsByClassName('selcol').length;
+                        let flag = false;
+                        for (let i = 1; i <= nthcol; i++) {
+                            nullfield_validation(`col${i}`);
+                        }
+                        for (let i = 1; i <= nthcol; i++) {
+                            console.log(objFlag[`flag_col${i}`]);
+                            if (objFlag[`flag_col${i}`] == 0) {
+                                flag = true;
+                            } else {
+                                flag = false;
+                                break;
+                            }
+                        }
+                        nullfield_validation('gsheetmailtype_template_textarea');
+                        nullfield_validation('gsheetmailtype_template_subject_box');
+                        if (objFlag.flag_gsheetmailtype_template_textarea == 0 && objFlag.flag_gsheetmailtype_template_subject_box == 0 && flag) {
+                            let selectedcol = new Array();
+                            for (let i = 0; i < document.getElementsByClassName("selcol").length; i++) {
+                                let data2 = document.getElementsByClassName("selcol")[i].value;
+                                selectedcol.push(data2);
+                            }
+
+                            let contacts = new Array();
+                            for (let i = 0; i < clientarr.length; i++) {
+                                contacts.push(clientarr[i].email);
+                            }
+
+                            $.ajax({
+                                url: "/bulktemplatemail",
+                                method: "POST",
+                                data: {
+                                    "iid": iid,
+                                    "token": $("#token").val().trim(),
+                                    "message": $("#gsheetmailtype_template_textarea").val(),
+                                    "subject": $('#gsheetmailtype_template_subject_box').val().trim(),
+                                    "clientobj": clientarr,
+                                    "selectedcol": selectedcol,
+                                    "contacts": contacts,
+                                },
+                                beforeSend: function () {
+                                    $('#gsheetmailtype_template_send')
+                                        .removeClass('btn-primary btn-success')
+                                        .addClass('btn-warning')
+                                        .html(`<span class="d-flex align-items-center">
+                                            <span class="flex-grow-1 me-lg-2 me-md-2">
+                                                Sending
+                                            </span>
+                                            <span class="spinner-border flex-shrink-0" role="status">
+                                                <span class="visually-hidden"></span>
+                                            </span>
+                                        </span>`);
+                                },
+                                success: function (val) {
+                                    switch (val.status_code) {
+                                        case '401': {
+                                            InvalidUser();
+                                            break;
+                                        }
+
+                                        case '500': {
+                                            InternalServerError();
+                                            break;
+                                        }
+
+                                        case '1013': {
+                                            userNotFound(iid);
+                                            $('#gsheetmailtype_template_send')
+                                                .removeClass('btn-warning btn-success')
+                                                .addClass('btn-primary')
+                                                .html(`<i class="mdi mdi-send me-lg-2 me-md-2"></i>
+                                                    <span class="d-none d-lg-inline-block d-md-inline-block">
+                                                        Send to All
+                                                    </span>`);
+                                            break;
+                                        }
+
+                                        case '403': {
+                                            swal({
+                                                title: `Instance not valid`,
+                                                type: 'error',
+                                                timer: 2000,
+                                                showConfirmButton: false,
+                                            }).then(() => {
+                                                $('#gsheetmailtype_template_send')
+                                                    .removeClass('btn-warning btn-success')
+                                                    .addClass('btn-primary')
+                                                    .html(`<i class="mdi mdi-send me-lg-2 me-md-2"></i>
+                                                    <span class="d-none d-lg-inline-block d-md-inline-block">
+                                                        Send to All
+                                                    </span>`);
+                                            });
+                                            break;
+                                        }
+
+                                        case '200': {
+                                            $('#gsheetmailtype_template_send')
+                                                .removeClass('btn-warning btn-primary')
+                                                .addClass('btn-success')
+                                                .html(`<i class="mdi mdi-send me-lg-2 me-md-2"></i>
+                                                    <span class="d-none d-lg-inline-block d-md-inline-block">
+                                                        Sent
+                                                    </span>`);
+                                            swal({
+                                                title: "Mail sent to all Contacts",
+                                                type: "success",
+                                                timer: 2000,
+                                                showConfirmButton: false,
+                                            }).then(() => {
+                                                $('#gsheetmailtype_template_send')
+                                                    .removeClass('btn-warning btn-success')
+                                                    .addClass('btn-primary')
+                                                    .html(`<i class="mdi mdi-send me-lg-2 me-md-2"></i>
+                                                    <span class="d-none d-lg-inline-block d-md-inline-block">
+                                                        Send to All
+                                                    </span>`);
+                                            });
+                                            break;
+                                        }
+                                    }
+                                }
+                            });
+                        }
+                    }
+                    else {
+                        swal({
+                            title: `Email Confiruration Pending`,
+                            text: "Configure your email / Reset configuration",
+                            type: "error",
+                            timer: 3000,
+                            showConfirmButton: false,
+                        })
+                    }
+                })
+
+            });
+
+            // googlesheet Custom Mail btn event
+            $(document).on("click", "#gsheetmailtype_custom_send", async function () {
+                isValidEmail(function (result) {
+                    if (result) {
+                        let contacts = new Array();
+                        for (let i = 0; i < clientarr.length; i++) {
+                            contacts.push(clientarr[i].email);
+                        }
+
+                        nullfield_validation('gsheetmailtype_custom_subject_box');
+                        nullfield_validation('gsheetmailtype_message_box');
+                        if (objFlag.flag_gsheetmailtype_message_box == 0 && objFlag.flag_gsheetmailtype_custom_subject_box == 0) {
+                            $.ajax({
+                                url: "/bulkcustommail",
+                                method: "POST",
+                                data: {
+                                    "contacts": contacts,
+                                    "message": $("#gsheetmailtype_message_box").val(),
+                                    "subject": $('#gsheetmailtype_custom_subject_box').val().trim(),
+                                    "token": $("#token").val().trim(),
+                                    "iid": iid,
+                                },
+                                beforeSend: function () {
+                                    $('#gsheetmailtype_custom_send')
+                                        .removeClass('btn-primary btn-success')
+                                        .addClass('btn-warning')
+                                        .html(`<span class="d-flex align-items-center">
+                                        <span class="flex-grow-1 me-lg-2 me-md-2">
+                                            Sending
+                                        </span>
+                                        <span class="spinner-border flex-shrink-0" role="status">
+                                            <span class="visually-hidden"></span>
+                                        </span>
+                                    </span>`);
+                                },
+                                success: function (val) {
+                                    switch (val.status_code) {
+                                        case '401': {
+                                            InvalidUser();
+                                            break;
+                                        }
+
+                                        case '500': {
+                                            InternalServerError();
+                                            break;
+                                        }
+
+                                        case '1013': {
+                                            userNotFound(iid);
+                                            $('#gsheetmailtype_custom_send')
+                                                .removeClass('btn-warning btn-success')
+                                                .addClass('btn-primary')
+                                                .html(`<i class="mdi mdi-send me-lg-2 me-md-2"></i>
+                                                <span class="d-none d-lg-inline-block d-md-inline-block">
+                                                    Send to All
+                                                </span>`);
+                                            break;
+                                        }
+
+                                        case '403': {
+                                            swal({
+                                                title: `Instance not valid`,
+                                                type: 'error',
+                                                timer: 2000,
+                                                showConfirmButton: false,
+                                            }).then(() => {
+                                                $('#gsheetmailtype_custom_send')
+                                                    .removeClass('btn-warning btn-success')
+                                                    .addClass('btn-primary')
+                                                    .html(`<i class="mdi mdi-send me-lg-2 me-md-2"></i>
+                                                <span class="d-none d-lg-inline-block d-md-inline-block">
+                                                    Send to All
+                                                </span>`);
+                                            });
+                                            break;
+                                        }
+
+                                        case '200': {
+                                            $('#gsheetmailtype_custom_send')
+                                                .removeClass('btn-warning btn-primary')
+                                                .addClass('btn-success')
+                                                .html(`<i class="mdi mdi-send me-lg-2 me-md-2"></i>
+                                                <span class="d-none d-lg-inline-block d-md-inline-block">
+                                                    Sent
+                                                </span>`);
+                                            swal({
+                                                title: "Mail sent to all Contacts",
+                                                type: "success",
+                                                timer: 2000,
+                                                showConfirmButton: false,
+                                            }).then(() => {
+                                                $('#gsheetmailtype_custom_send')
+                                                    .removeClass('btn-warning btn-success')
+                                                    .addClass('btn-primary')
+                                                    .html(`<i class="mdi mdi-send me-lg-2 me-md-2"></i>
+                                                <span class="d-none d-lg-inline-block d-md-inline-block">
+                                                    Send to All
+                                                </span>`);
+                                                $('#gsheetmailtype_custom_subject_box, #gsheetmailtype_message_box')
+                                                    .removeClass('form-control-danger form-control-success')
+                                                    .val('');
+                                            });
+                                            break;
+                                        }
+                                    }
+                                }
+                            });
+                        }
+                    }
+                    else {
+                        swal({
+                            title: "First configure your email properly",
+                            type: "error",
+                            timer: 3000,
+                            showConfirmButton: false,
+                        })
+                    }
+                })
+            });
+
+            // load data from local file event
+            $("#datafile").on("change", function (e) {
+                $('#datafile').removeClass('form-control-success form-control-danger');
+                let filedata = document.getElementById("datafile").files[0];
+
+                if (filedata && filedata.type == 'text/csv') {
+                    $('#datafile').addClass('form-control-success');
+                    $('#after_connect_div_localfile').removeClass('d-none');
+                    let frmdata = new FormData();
+                    frmdata.append("csvfile", document.getElementById("datafile").files[0]);
+                    $.ajax({
+                        type: "POST",
+                        url: "/file",
+                        data: frmdata,
+                        contentType: false,
+                        processData: false,
+                        beforeSend: function () {
+                            $("#localfile_data").html(`<div class="text-center py-3">
+                                                        <div class="spinner-border text-primary" role="status">
+                                                            <span class="sr-only">Loading...</span>
+                                                        </div>
+                                                        <h5 class="mt-2">Fetching Data</h5>
+                                                    </div>`);
+                        },
+                        success: function (val) {
+                            let ddcol = "<option>Select Column</option>";
+                            colnames = Object.keys(val.json[0]);
+                            var data = `<thead class= "table-light"><tr>`;
+
+                            if (colnames.includes("name") && colnames.includes("phone") && colnames.includes("email")) {
+                                $("#localfile_data").removeClass("text-danger");
+                                $("#localfile_data").removeClass("fs-15");
+
+                                for (let i = 0; i < colnames.length; i++) {
+                                    data += "<th>" + colnames[i] + "</th>";
+                                    ddcol += `<option value="${colnames[i]}">${colnames[i]}</option>`;
+                                }
+                                data += `</tr></thead><tbody class="list form-check-all">`;
+                                if (val.json.length == 0) {
+                                    data += `<tr>
+                                                <td colspan="3" class="text-center">
+                                                    <b>No Such column like name and phone in this sheet !!!</b>
+                                                </td>
+                                            </tr>`;
+                                } else {
+                                    localStorage.setItem("clientobj", val.json);
+                                    for (let i = 0; i < val.json.length; i++) {
+                                        colvalues = Object.values(val.json[i]);
+                                        clientobj = val.json;
+
+                                        let y = localStorage.getItem("clientobj");
+                                        data += `<tr>`;
+                                        for (let j = 0; j < colnames.length; j++) {
+                                            data += `<td class="name">` + colvalues[j] + `</td>`;
+                                        }
+                                        data += `</tr>`;
+                                    }
+
+                                    localStorage.setItem("colnames", colnames);
+                                }
+                                data += `</tbody>`;
+                                document.getElementById("localfile_data").innerHTML = data;
+                            }
+                            else {
+                                $("#localfile_data").addClass("text-danger");
+                                $("#localfile_data").addClass("fs-15");
+                                document.getElementById("localfile_data").innerHTML = "* Invalid Column Found!!\nSheet must have 'name', 'phone' and 'email' as Title!!";
+                            }
+                        }
+                    });
+                } else {
+
+                    $('#after_connect_div_localfile').addClass('d-none');
+                    swal({
+                        title: "Select Different File",
+                        html: `Only <span class="text-danger">CSV</span> File allowed.`,
+                        type: 'error',
+                        timer: 2000,
+                        showConfirmButton: false,
+                    }).then(() => {
+                        $('#datafile').val('').addClass('form-control-danger');
+                    })
+                }
+            });
+
+            // local file template Mail btn event
+            $("#localfilmailtype_template_send").on("click", async function () {
+                isValidEmail(function (result) {
+                    if (result) {
+
+                        let nthcol = document.getElementsByClassName('selcol').length;
+                        let flag = false;
+                        for (let i = 1; i <= nthcol; i++) {
+                            nullfield_validation(`col${i}`);
+                        }
+                        for (let i = 1; i <= nthcol; i++) {
+                            if (objFlag[`flag_col${i}`] == 0) {
+                                flag = true;
+                            } else {
+                                flag = false;
+                                break;
+                            }
+                        }
+
+                        nullfield_validation('localfilmailtype_template_textarea');
+                        nullfield_validation('localfilmailtype_template_subject_box');
+                        if (objFlag.flag_localfilmailtype_template_textarea == 0 && objFlag.flag_localfilmailtype_template_subject_box == 0 && flag) {
+                            let selectedcol = new Array();
+                            for (let i = 0; i < document.getElementsByClassName("selcol").length; i++) {
+                                let data2 = document.getElementsByClassName("selcol")[i].value;
+                                selectedcol.push(data2);
+                            }
+
+                            let contacts = new Array();
+                            for (let i = 0; i < clientobj.length; i++) {
+                                contacts.push(clientobj[i].email);
+                            }
+
+                            $.ajax({
+                                url: "/bulktemplatemail",
+                                method: "POST",
+                                data: {
+                                    "iid": iid,
+                                    "token": $("#token").val().trim(),
+                                    "message": $("#localfilmailtype_template_textarea").val(),
+                                    "subject": $('#localfilmailtype_template_subject_box').val().trim(),
+                                    "clientobj": clientobj,
+                                    "selectedcol": selectedcol,
+                                    "contacts": contacts,
+                                },
+                                beforeSend: function () {
+                                    $('#localfilmailtype_template_send')
+                                        .removeClass('btn-primary btn-success')
+                                        .addClass('btn-warning')
+                                        .html(`<span class="d-flex align-items-center">
+                                        <span class="flex-grow-1 me-lg-2 me-md-2">
+                                            Sending
+                                        </span>
+                                        <span class="spinner-border flex-shrink-0" role="status">
+                                            <span class="visually-hidden"></span>
+                                        </span>
+                                    </span>`);
+                                },
+                                success: function (val) {
+                                    switch (val.status_code) {
+                                        case '401': {
+                                            InvalidUser();
+                                            break;
+                                        }
+
+                                        case '500': {
+                                            InternalServerError();
+                                            break;
+                                        }
+
+                                        case '1013': {
+                                            userNotFound(iid);
+                                            $('#localfilmailtype_template_send')
+                                                .removeClass('btn-warning btn-success')
+                                                .addClass('btn-primary')
+                                                .html(`<i class="mdi mdi-send me-lg-2 me-md-2"></i>
+                                                <span class="d-none d-lg-inline-block d-md-inline-block">
+                                                    Send to All
+                                                </span>`);
+                                            break;
+                                        }
+
+                                        case '403': {
+                                            swal({
+                                                title: `Instance not valid`,
+                                                type: 'error',
+                                                timer: 2000,
+                                                showConfirmButton: false,
+                                            }).then(() => {
+                                                $('#localfilmailtype_template_send')
+                                                    .removeClass('btn-warning btn-success')
+                                                    .addClass('btn-primary')
+                                                    .html(`<i class="mdi mdi-send me-lg-2 me-md-2"></i>
+                                                <span class="d-none d-lg-inline-block d-md-inline-block">
+                                                    Send to All
+                                                </span>`);
+                                            });
+                                            break;
+                                        }
+
+                                        case '200': {
+                                            $('#localfilmailtype_template_send')
+                                                .removeClass('btn-warning btn-primary')
+                                                .addClass('btn-success')
+                                                .html(`<i class="mdi mdi-send me-lg-2 me-md-2"></i>
+                                                <span class="d-none d-lg-inline-block d-md-inline-block">
+                                                    Sent
+                                                </span>`);
+                                            swal({
+                                                title: "Mail sent to all Contacts",
+                                                type: "success",
+                                                timer: 2000,
+                                                showConfirmButton: false,
+                                            }).then(() => {
+                                                $('#localfilmailtype_template_send')
+                                                    .removeClass('btn-warning btn-success')
+                                                    .addClass('btn-primary')
+                                                    .html(`<i class="mdi mdi-send me-lg-2 me-md-2"></i>
+                                                <span class="d-none d-lg-inline-block d-md-inline-block">
+                                                    Send to All
+                                                </span>`);
+                                            });
+                                            break;
+                                        }
+                                    }
+                                }
+                            });
+                        }
+                    }
+                    else {
+                        swal({
+                            title: "First configure your email properly",
+                            type: "error",
+                            timer: 3000,
+                            showConfirmButton: false,
+                        })
+                    }
+                })
+            });
+
+            // local file custome Mail btn event
+            $(document).on("click", "#localfilmailtype_custom_send", async function () {
+                isValidEmail(function (result) {
+                    if (result) {
+                        let contacts = new Array();
+                        for (let i = 0; i < clientobj.length; i++) {
+                            contacts.push(clientobj[i].email);
+                        }
+                        nullfield_validation('localfile_message_box');
+                        nullfield_validation('localfilmailtype_custom_subject_box');
+                        if (objFlag.flag_localfile_message_box == 0 && objFlag.flag_localfilmailtype_custom_subject_box == 0) {
+                            $.ajax({
+                                url: "/bulkcustommail",
+                                method: "POST",
+                                data: {
+                                    "contacts": contacts,
+                                    "message": $("#localfile_message_box").val(),
+                                    "subject": $('#localfilmailtype_custom_subject_box').val().trim(),
+                                    "token": $("#token").val().trim(),
+                                    "iid": iid,
+                                },
+                                beforeSend: function () {
+                                    $('#localfilmailtype_custom_send')
+                                        .removeClass('btn-primary btn-success')
+                                        .addClass('btn-warning')
+                                        .html(`<span class="d-flex align-items-center">
+                                        <span class="flex-grow-1 me-lg-2 me-md-2">
+                                            Sending
+                                        </span>
+                                        <span class="spinner-border flex-shrink-0" role="status">
+                                            <span class="visually-hidden"></span>
+                                        </span>
+                                    </span>`);
+                                },
+                                success: function (val) {
+                                    switch (val.status_code) {
+                                        case '401': {
+                                            InvalidUser();
+                                            break;
+                                        }
+
+                                        case '500': {
+                                            InternalServerError();
+                                            break;
+                                        }
+
+                                        case '1013': {
+                                            userNotFound(iid);
+                                            $('#localfilmailtype_custom_send')
+                                                .removeClass('btn-warning btn-success')
+                                                .addClass('btn-primary')
+                                                .html(`<i class="mdi mdi-send me-lg-2 me-md-2"></i>
+                                                <span class="d-none d-lg-inline-block d-md-inline-block">
+                                                    Send to All
+                                                </span>`);
+                                            break;
+                                        }
+
+                                        case '403': {
+                                            swal({
+                                                title: `Instance not valid`,
+                                                type: 'error',
+                                                timer: 2000,
+                                                showConfirmButton: false,
+                                            }).then(() => {
+                                                $('#localfilmailtype_custom_send')
+                                                    .removeClass('btn-warning btn-success')
+                                                    .addClass('btn-primary')
+                                                    .html(`<i class="mdi mdi-send me-lg-2 me-md-2"></i>
+                                                <span class="d-none d-lg-inline-block d-md-inline-block">
+                                                    Send to All
+                                                </span>`);
+                                            });
+                                            break;
+                                        }
+
+                                        case '200': {
+                                            $('#localfilmailtype_custom_send')
+                                                .removeClass('btn-warning btn-primary')
+                                                .addClass('btn-success')
+                                                .html(`<i class="mdi mdi-send me-lg-2 me-md-2"></i>
+                                                <span class="d-none d-lg-inline-block d-md-inline-block">
+                                                    Sent
+                                                </span>`);
+                                            swal({
+                                                title: "Mail sent to all Contacts",
+                                                type: "success",
+                                                timer: 2000,
+                                                showConfirmButton: false,
+                                            }).then(() => {
+                                                $('#localfilmailtype_custom_send')
+                                                    .removeClass('btn-warning btn-success')
+                                                    .addClass('btn-primary')
+                                                    .html(`<i class="mdi mdi-send me-lg-2 me-md-2"></i>
+                                                <span class="d-none d-lg-inline-block d-md-inline-block">
+                                                    Send to All
+                                                </span>`);
+                                                $('#localfilmailtype_custom_subject_box, #localfile_message_box')
+                                                    .removeClass('form-control-danger form-control-success')
+                                                    .val('');
+                                            });
+                                            break;
+                                        }
+                                    }
+                                }
+                            });
+                        }
+                    }
+                    else {
+                        swal({
+                            title: "First configure your email properly",
+                            type: "error",
+                            timer: 3000,
+                            showConfirmButton: false,
+                        })
+                    }
+                })
+            });
+
+            // channel tab select event
+            $("#channel_tab").on("click", function () {
+                $.ajax({
+                    url: "/getData",
+                    method: "post",
+                    data: {
+                        obj: {
+                            table: "channel",
+                            paramstr: `instance_id = '${iid}'`,
+                        }
+                    },
+                    success: function (val) {
+                        switch (val.status_code) {
+                            case '401': {
+                                InvalidUser();
+                                break;
+                            }
+
+                            case '500': {
+                                InternalServerError();
+                                break;
+                            }
+                            case '404': {
+                                let output = ``;
+                                output += `<div class= "noresult p-5 container d-flex align-items-center justify-content-center">
+                                    <div class="text-center">
+                                        <lord-icon src="https://cdn.lordicon.com/msoeawqm.json" trigger="loop"
+                                            colors="primary:#212529,secondary:#405189"
+                                            style="width: 75px; height: 75px"></lord-icon>
+                                        <h5 class="mt-2">No Channels Created</h5>
+                                        <a class="btn btn-soft-primary" href="/instance/${iid}/channel">
+                                            Create Channel
+                                        </a>
+                                    </div>
+                                </div>`;
+                                $('#contact_data').html(output);
+                                break;
+                            }
+
+                            default: {
+                                let data = `<option value = "null" selected disabled> Select Channel</option>`;
+                                for (var i in val) {
+                                    data += `<option value = "${val[i].channel_id}"> ${val[i].channelName}</option>`;
+                                }
+                                $("#channel_list").html(data);
+                            }
+                        }
+                    }
+                });
+            });
+
+            //channel wise contact data
+            let contacts = new Array();
+            let ch_data = new Array();
+            $(document).on("change", "#channel_list", function () {
+                contacts = [];
+                const channel_id = $("#channel_list").val();
+
+                $.ajax({
+                    url: "/get-channel-contact",
+                    method: "POST",
+                    data: {
+                        "channel_id": channel_id,
+                        "iid": iid
+                    },
+                    success: function (val) {
+                        ch_data = val;
+                        switch (val.status_code) {
+                            case '401': {
+                                InvalidUser();
+                                break;
+                            }
+
+                            case '500': {
+                                InternalServerError();
+                                break;
+                            }
+                            case '404': {
+                                let data = ``;
+                                data += `<div class= "noresult pt-5">
+                                            <div class="text-center">
+                                                <lord-icon src="https://cdn.lordicon.com/msoeawqm.json" trigger="loop"
+                                                    colors="primary:#212529,secondary:#405189"
+                                                    style="width: 75px; height: 75px"></lord-icon>
+                                                <h5 class="mt-2">No Contacts Added</h5>
+                                            </div>
+                                        </div>`;
+                                $("#contact_data").html(data);
+                                break;
+                            }
+
+                            default: {
+                                let output = `<table class= "table align-middle">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Contact Number</th>
+                                            <th>Email</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="list form-check-all">`;
+                                for (var i in val) {
+                                    contacts.push(val[i].email);
+                                    output += `
+                                        <tr>
+                                            <td>${val[i].name}</td>
+                                            <td>${val[i].phone}</td>
+                                            <td>${val[i].email}</td>
+                                        </tr>`;
+                                }
+                                output += `</tbody></table>`
+                                $("#contact_data").html(output);
+                                $('#after_connect_div_channel').removeClass('d-none');
+                            }
+                        }
+                    }
+                });
+            });
+
+            //channel contact Mail event
+            $(document).on('click', '#channelmailtype_custom_send', async function () {
+
+                isValidEmail(function (result) {
+                    if (result) {
+                        nullfield_validation('channel_list');
+                        nullfield_validation('channelmailtype_template_subject_box');
+                        nullfield_validation('channel_message_box');
+                        if (objFlag.flag_channel_message_box == 0 && objFlag.flag_channelmailtype_template_subject_box == 0 && objFlag.flag_channel_list == 0) {
+                            oninput_validation('channel_list');
+                            oninput_validation('channelmailtype_template_subject_box');
+                            oninput_validation('channel_message_box');
+                            if (objFlag.flag_channel_message_box == 0 && objFlag.flag_channelmailtype_template_subject_box == 0 && objFlag.flag_channel_list == 0) {
+                                $.ajax({
+                                    url: "/sendmailchannel",
+                                    method: "POST",
+                                    data: {
+                                        "iid": iid,
+                                        "token": $("#token").val().trim(),
+                                        "subject": $('#channelmailtype_template_subject_box').val().trim(),
+                                        "message": $("#channel_message_box").val(),
+                                        "contacts": contacts,
+                                    },
+                                    beforeSend: function () {
+                                        $('#channelmailtype_custom_send')
+                                            .addClass('btn-warning')
+                                            .removeClass('btn-primary btn-success')
+                                            .html(`<span class= "d-flex align-items-center">
+                                                <span class="flex-grow-1 me-lg-2 me-md-2">
+                                                    Sending
+                                                </span>
+                                                <span class="spinner-border flex-shrink-0" role="status">
+                                                    <span class="visually-hidden"></span>
+                                                </span>
+                                            </span>`);
+                                    },
+                                    success: function (val) {
+                                        $('#channelmailtype_template_subject_box, #channel_message_box, #channel_list').removeClass('form-control-danger form-control-success');
+                                        switch (val.status_code) {
+                                            case '401': {
+                                                InvalidUser();
+                                                break;
+                                            }
+
+                                            case '500': {
+                                                InternalServerError();
+                                                break;
+                                            }
+
+                                            case '1013': {
+                                                swal({
+                                                    title: `Unable to send Mail to all contacts.`,
+                                                    type: "error",
+                                                    timer: 2000,
+                                                    showConfirmButton: false,
+                                                });
+                                                break;
+                                            }
+
+                                            case '200': {
+                                                swal({
+                                                    title: `Mail sent to all contacts`,
+                                                    type: "success",
+                                                    timer: 2000,
+                                                    showConfirmButton: false,
+                                                }).then(() => {
+                                                    $('#channel_list').val('null');
+                                                    $('#contact_data').html(`<h5 class="d-flex justify-content-center text-muted text-center p-5">
+                                                        Preview of the data will show here after you select the
+                                                        channel
+                                                    </h5>`);
+                                                    $('#channelmailtype_template_subject_box, #channel_message_box').val('');
+                                                });
+                                                break;
+                                            }
+                                        }
+                                        $('#channelmailtype_custom_send')
+                                            .removeClass('btn-warning btn-success')
+                                            .addClass('btn-primary')
+                                            .html(`<i class= "mdi mdi-send me-lg-2 me-md-2"></i>
+                                                    <span class="d-none d-lg-inline-block d-md-inline-block">
+                                                        Send
+                                                    </span>`);
+                                    }
+                                })
+                            }
+                        }
+                    }
+                    else {
+                        swal({
+                            title: "First configure your email properly",
+                            type: "error",
+                            timer: 3000,
+                            showConfirmButton: false,
+                        })
+                    }
+
+                })
+
+            })
+
+
+
+            $(".channel_type_change").change(function () {
+
+                $(`#channelmailtype_custom, #channelmailtype_template`).addClass("d-none");
+
+                if ($(`#channelmailtype`).val() == "custom") {
+                    $(`#channelmailtype_custom`).removeClass("d-none");
+                }
+                else if ($(`#channelmailtype`).val() == "template") {
+                    $(`#channelmailtype_template`).removeClass("d-none");
+                    channeldisplayTemplate();
+                }
+            });
+
+            // channel template message send
+            $(document).on('click', '#channelmailtype_template_send', async function () {
+                isValidEmail(function (result) {
+                    if (result) {
+                        let nthcol = document.getElementsByClassName('selcol').length;
+                        let flag = false;
+                        for (let i = 1; i <= nthcol; i++) {
+                            nullfield_validation(`col${i}`);
+                        }
+                        for (let i = 1; i <= nthcol; i++) {
+                            console.log(objFlag[`flag_col${i}`]);
+                            if (objFlag[`flag_col${i}`] == 0) {
+                                flag = true;
+                            } else {
+                                flag = false;
+                                break;
+                            }
+                        }
+                        nullfield_validation('channelmailtype_template_textarea');
+                        nullfield_validation('channelmailtype_template_subject_box');
+                        if (objFlag.flag_channelmailtype_template_textarea == 0 && objFlag.flag_channelmailtype_template_subject_box == 0 && flag) {
+                            let selectedcol = new Array();
+                            for (let i = 0; i < document.getElementsByClassName("selcol").length; i++) {
+                                let data2 = document.getElementsByClassName("selcol")[i].value;
+                                selectedcol.push(data2);
+                            }
+
+                            $.ajax({
+                                url: "/bulktemplatemail",
+                                method: "POST",
+                                data: {
+                                    iid: iid,
+                                    token: $("#token").val().trim(),
+                                    message: $("#channelmailtype_template_textarea").val(),
+                                    subject:$('#channelmailtype_template_subject_box').val().trim(),
+                                    clientobj: ch_data,
+                                    selectedcol: selectedcol,
+                                    contacts: contacts,
+                                },
+                                beforeSend: function () {
+                                    $('#channelmailtype_template_send')
+                                        .removeClass('btn-primary btn-success')
+                                        .addClass('btn-warning')
+                                        .html(`<span class="d-flex align-items-center">
+                                            <span class="flex-grow-1 me-lg-2 me-md-2">
+                                                Sending
+                                            </span>
+                                            <span class="spinner-border flex-shrink-0" role="status">
+                                                <span class="visually-hidden"></span>
+                                            </span>
+                                        </span>`);
+                                },
+                                success: function (val) {
+                                    switch (val.status_code) {
+                                        case '401': {
+                                            InvalidUser();
+                                            break;
+                                        }
+
+                                        case '500': {
+                                            InternalServerError();
+                                            break;
+                                        }
+
+                                        case '1013': {
+                                            userNotFound(iid);
+                                            $('#channelmailtype_template_send')
+                                                .removeClass('btn-warning btn-success')
+                                                .addClass('btn-primary')
+                                                .html(`<i class="mdi mdi-send me-lg-2 me-md-2"></i>
+                                                    <span class="d-none d-lg-inline-block d-md-inline-block">
+                                                        Send to All
+                                                    </span>`);
+                                            break;
+                                        }
+
+                                        case '403': {
+                                            swal({
+                                                title: `Instance not valid`,
+                                                type: 'error',
+                                                timer: 2000,
+                                                showConfirmButton: false,
+                                            }).then(() => {
+                                                $('#channelmailtype_template_send')
+                                                    .removeClass('btn-warning btn-success')
+                                                    .addClass('btn-primary')
+                                                    .html(`<i class="mdi mdi-send me-lg-2 me-md-2"></i>
+                                                    <span class="d-none d-lg-inline-block d-md-inline-block">
+                                                        Send to All
+                                                    </span>`);
+                                            });
+                                            break;
+                                        }
+
+                                        case '200': {
+                                            $('#channelmailtype_template_send')
+                                                .removeClass('btn-warning btn-primary')
+                                                .addClass('btn-success')
+                                                .html(`<i class="mdi mdi-send me-lg-2 me-md-2"></i>
+                                                    <span class="d-none d-lg-inline-block d-md-inline-block">
+                                                        Sent
+                                                    </span>`);
+                                            swal({
+                                                title: "Messages sent to all Contacts",
+                                                type: "success",
+                                                timer: 2000,
+                                                showConfirmButton: false,
+                                            }).then(() => {
+                                                $('#channelmailtype_template_send')
+                                                    .removeClass('btn-warning btn-success')
+                                                    .addClass('btn-primary')
+                                                    .html(`<i class="mdi mdi-send me-lg-2 me-md-2"></i>
+                                                    <span class="d-none d-lg-inline-block d-md-inline-block">
+                                                        Send to All
+                                                    </span>`);
+                                            });
+                                            break;
+                                        }
+                                    }
+                                }
+                            });
+                        }
+                    }
+                    else {
+                        swal({
+                            title: "First configure your email properly",
+                            type: "error",
+                            timer: 3000,
+                            showConfirmButton: false,
+                        })
+                    }
+
+                })
+
+
+            })
+
+            $(document).on('click', '#mic', async function () {
+
+                mic("msg").then((result) => {
+                    let data = result.toString().split(" ");
+                    console.log(data);
+                    if (data[0] == "Google" && data[1] == "sheet") {
+                        $('#sheet_tab').tab('show');
+
+                    }
+                    else if (data[0] == "local" && data[1] == "file") {
+                        $('#file_tab').tab('show');
+
+                    }
+                    else if (data[0] == "channel") {
+                        $('#channel_tab').tab('show');
+
+                    }
+                    else if (data[0] == "logout" || (data[0] == "log" && data[1] == "out")) {
+                        $("#logout").click();
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "profile") {
+                        location.href = "/profile";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && (data[2] == "pay" || data[2] == "pricing" || data[2] == "payment" || data[2] == "subscription")) {
+                        location.href = "/subscription";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "dashboard") {
+                        location.href = "/dashboard";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "instance") {
+                        location.href = "/instance";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && (data[2] == "bulkmessage" || (data[2] == "bulk" && data[3] == "message"))) {
+                        location.href = `/instance/${iid}/bulkmessage`;
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && (data[2] == "bulkmail" || (data[2] == "bulk" && data[3] == "mail"))) {
+                        location.href = `/instance/${iid}/bulkmail`;
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && (data[2] == "contacts" || (data[2] == "contact" && data[3] == "list"))) {
+                        location.href = `/instance/${iid}/contact-list`;
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "channel") {
+                        location.href = `/instance/${iid}/channel`;
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "chat") {
+                        location.href = `/instance/${iid}/chat`;
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "workflow") {
+                        location.href = `/instance/${iid}/workflow`;
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "custom" && data[3] == "template") {
+                        location.href = "/customtemplate";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "email" && data[3] == "configuration") {
+                        location.href = "/addpasscode";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "support" && data[3] == "ticket") {
+                        location.href = "/support-ticket";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "api" && data[3] == "docs") {
+                        location.href = "/docs";
+                    }
+                    else {
+                        swal({
+                            title: "Command not recognized",
+                            type: 'error',
+                            timer: 2500,
+                            showConfirmButton: false,
+                        });
+                    }
+                })
+            })
+            
+            $(document).on('click', '#gsheet_cstm_mic', async function () {
+                mic("gsheetmailtype_message_box").then((result) => {
+                    console.log(result);
+                })
+
+            })
+
+            $(document).on('click', '#localfile_cstm_mic', async function () {
+                mic("localfile_message_box").then((result) => {
+                    console.log(result);
+                })
+
+            })
+
+            $(document).on('click', '#channel_cstm_mic', async function () {
+                mic("channel_message_box").then((result) => {
+                    console.log(result);
+                })
+
+            })
+
+        })
+    </script>
+
+</body>
+
+</html>

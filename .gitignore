@@ -1,0 +1,7 @@
+node_modules
+.env
+/serverlogs.js
+/index_s.js
+/sadie.jpg
+/test.html
+/test.js

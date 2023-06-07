@@ -1,0 +1,67 @@
+[
+    {
+        "page": "Dashboard",
+        "link": "adminDashboard",
+        "icon": "ri-dashboard-2-line"
+    },
+    {
+        "page": "WhatsApp Bot",
+        "link": "whatsappbot",
+        "icon": "mdi mdi-robot"
+    },
+    {
+        "page": "Instances",
+        "link": "instanceData",
+        "icon": "ri-apps-2-line"
+    },
+    {
+        "page": "Contacts",
+        "link": "contactData",
+        "icon": "bx bxs-contact"
+    },
+    {
+        "page": "Channels",
+        "link": "channelData",
+        "icon": "mdi mdi-account-group"
+    },
+    {
+        "page": "Messages",
+        "link": "messageData",
+        "icon": "bx bxs-message-alt-detail"
+    },
+    {
+        "page": "Emails",
+        "link": "emailData",
+        "icon": "mdi mdi-email"
+    },
+    {
+        "page": "Plans",
+        "link": "planData",
+        "icon": "ri-price-tag-3-fill"
+    },
+    {
+        "page": "Subscriptions",
+        "link": "subscriptionData",
+        "icon": "ri-secure-payment-fill"
+    },
+    {
+        "page": "Support Tickets",
+        "link": "ticketData",
+        "icon": "mdi mdi-ticket-account"
+    },
+    {
+        "page": "Support Agents",
+        "link": "agentsData",
+        "icon": "mdi mdi-face-agent"
+    },
+    {
+        "page": "Templates",
+        "link": "templateData",
+        "icon": "ri-pages-fill"
+    },
+    {
+        "page": "Users",
+        "link": "usersData",
+        "icon": "ri-shield-user-fill"
+    }
+]

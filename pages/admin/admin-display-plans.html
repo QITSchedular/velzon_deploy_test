@@ -1,0 +1,1738 @@
+<!DOCTYPE html>
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg"
+    data-sidebar-image="none" data-preloader="disable">
+<!-- Mirrored from themesbrand.com/velzon/html/default/tables-datatables.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 18 Jan 2023 09:39:26 GMT -->
+
+<head>
+    <meta charset="utf-8" />
+    <title>Datatables | Velzon - Admin & Dashboard Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesbrand" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+
+    <!--datatable css-->
+    <link rel="stylesheet" href="/assets/css/dataTables.bootstrap5.min.css" />
+    <!--datatable responsive css-->
+    <link rel="stylesheet" href="/assets/css/responsive.bootstrap.min.css" />
+
+    <link rel="stylesheet" href="/assets/css/buttons.dataTables.min.css" />
+    <link rel="stylesheet" href="/assets/libs/gridjs/theme/mermaid.min.css" />
+
+    <!-- Layout config Js -->
+    <script src="/assets/js/layout.js"></script>
+    <!-- Bootstrap Css -->
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="/assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <!-- custom Css-->
+    <link href="/assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+        <header id="page-topbar">
+            <div class="layout-width">
+                <div class="navbar-header">
+                    <div class="d-flex">
+                        <div class="navbar-brand-box horizontal-logo">
+                            <a href="/" class="logo logo-dark">
+                                <span class="logo-sm">
+                                    <img src="/assets/images/logo-sm.png" alt="" height="22" />
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="/assets/images/logo-dark.png" alt="" height="17" />
+                                </span>
+                            </a>
+                            <a href="/" class="logo logo-light">
+                                <span class="logo-sm">
+                                    <img src="/assets/images/logo-sm.png" alt="" height="22" />
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="/assets/images/logo-light.png" alt="" height="17" />
+                                </span>
+                            </a>
+                        </div>
+
+                        <button type="button"
+                            class="btn btn-sm px-3 fs-16 header-item vertical-menu-btn topnav-hamburger"
+                            id="topnav-hamburger-icon">
+                            <span class="hamburger-icon">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <div class="dropdown d-md-none topbar-head-dropdown header-item">
+                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
+                                id="page-header-search-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                <i class="bx bx-search fs-22"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
+                                aria-labelledby="page-header-search-dropdown">
+                                <form class="p-3">
+                                    <div class="form-group m-0">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Search ..."
+                                                aria-label="Recipient's username" />
+                                            <button class="btn btn-primary" type="submit">
+                                                <i class="mdi mdi-magnify"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="ms-1 header-item d-none d-sm-flex">
+                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
+                                data-toggle="fullscreen">
+                                <i class="bx bx-fullscreen fs-22"></i>
+                            </button>
+                        </div>
+
+                        <div class="ms-1 header-item d-none d-sm-flex">
+                            <button type="button"
+                                class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle light-dark-mode">
+                                <i class="bx bx-moon fs-22"></i>
+                            </button>
+                        </div>
+
+                        <div class="ms-1 header-item d-none d-sm-flex">
+                            <button type="button" id="logout"
+                                class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle">
+                                <i class="mdi mdi-logout fs-22"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ========== App Menu ========== -->
+        <div class="app-menu navbar-menu">
+            <!-- LOGO -->
+            <div class="navbar-brand-box">
+                <!-- Dark Logo-->
+                <a href="/" class="logo logo-dark">
+                    <span class="logo-sm">
+                        <img src="/assets/images/logo-sm.png" alt="" height="22">
+                    </span>
+                    <span class="logo-lg">
+                        <img src="/assets/images/logo-dark.png" alt="" height="17">
+                    </span>
+                </a>
+                <!-- Light Logo-->
+                <a href="/" class="logo logo-light">
+                    <span class="logo-sm">
+                        <img src="/assets/images/logo-sm.png" alt="" height="22">
+                    </span>
+                    <span class="logo-lg">
+                        <img src="/assets/images/logo-light.png" alt="" height="17">
+                    </span>
+                </a>
+                <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover"
+                    id="vertical-hover">
+                    <i class="ri-record-circle-line"></i>
+                </button>
+            </div>
+
+            <div id="scrollbar">
+                <div class="container-fluid">
+                    <div id="two-column-menu"></div>
+                    <ul class="navbar-nav" id="navbar-nav" data-aos="fade-right" data-aos-duration="1000"></ul>
+                </div>
+            </div>
+
+            <div class="sidebar-background"></div>
+        </div>
+        <!-- Left Sidebar End -->
+        <!-- Vertical Overlay-->
+        <div class="vertical-overlay"></div>
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+
+        <div class="main-content">
+            <div class="page-content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title mb-0 text-center fs-3">
+                                        Manage Plans
+                                    </h3>
+                                </div>
+                                <div class="card-body">
+                                    <div role="complementary" class="gridjs gridjs-container" style="width: 100%">
+                                        <div class="gridjs-head">
+                                            <div class="d-flex">
+                                                <div class="gridjs-search flex-grow-1">
+                                                    <input type="search" id="searchText" placeholder="Type a keyword..."
+                                                        aria-label="Type a keyword..."
+                                                        class="gridjs-input gridjs-search-input" />
+                                                </div>
+                                                <div class="flex-shrink-1 mx-2">
+                                                    <input type="button" value="Add Plan" class="btn btn-info"
+                                                        data-bs-toggle="modal" data-bs-target="#addModal" />
+                                                </div>
+                                                <div class="flex-shrink-0">
+                                                    <select id="chklimit" class="form-select mb-3">
+                                                        <option value="5">5 records</option>
+                                                        <option value="10">10 records</option>
+                                                        <option value="15">15 records</option>
+                                                        <option value="20">20 records</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="mycomplementry"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end row-->
+                </div>
+                <!-- container-fluid -->
+            </div>
+            <!-- End Page-content -->
+
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <script>
+                                document.write(new Date().getFullYear());
+                            </script>
+                            © Velzon.
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="text-sm-end d-none d-sm-block">
+                                Design & Develop by Themesbrand
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <!-- end main content-->
+        <!-- edit record modal -->
+        <div class="modal fade" id="showModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header bg-light p-3">
+                        <h5 class="modal-title" id="modallbl">Edit Plans</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                            id="close-modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="customername-field" class="form-label">Plan Name</label>
+                            <input type="text" id="plan-name" class="form-control" placeholder="Enter Name" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone-field" class="form-label">Price</label>
+                            <input type="text" id="plan-price" class="form-control" placeholder="Enter Price"
+                                required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="customername-field" class="form-label">Duration (in months)</label>
+                            <input type="text" id="plan-duration" class="form-control" placeholder="Enter Duration"
+                                required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="customername-field" class="form-label">Total Instances</label>
+                            <input type="text" id="total-instance" class="form-control"
+                                placeholder="Enter Total Instances" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="customername-field" class="form-label">Total Messages</label>
+                            <input type="text" id="total-message" class="form-control"
+                                placeholder="Enter Total Messages" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="customername-field" class="form-label">Discount</label>
+                            <input type="text" id="plan-discount" class="form-control" placeholder="Enter Discount"
+                                required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="customername-field" class="form-label">Plan Type</label>
+                            <select id="plan-type" class="form-control" required>
+                                <option>-- Select Plan Type --</option>
+                                <option>Monthly</option>
+                                <option>Yearly</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="hstack gap-2 justify-content-end">
+                            <button class="btn btn-success" id="edit-btn">Edit Plan</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Insert modal -->
+        <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header bg-light p-3">
+                        <h5 class="modal-title" id="modallbl">Add Plans</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                            id="close-modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="customername-field" class="form-label">Plan Name</label>
+                            <input type="text" id="p-name" class="form-control" placeholder="Enter Name" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone-field" class="form-label">Price</label>
+                            <input type="text" id="p-price" class="form-control" placeholder="Enter Price" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="customername-field" class="form-label">Duration (in months)</label>
+                            <input type="text" id="p-duration" class="form-control" placeholder="Enter Duration"
+                                required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="customername-field" class="form-label">Total Instances</label>
+                            <input type="text" id="t-instance" class="form-control" placeholder="Enter Total Instances"
+                                required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="customername-field" class="form-label">Total Messages</label>
+                            <input type="text" id="t-message" class="form-control" placeholder="Enter Total Messages"
+                                required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="customername-field" class="form-label">Discount</label>
+                            <input type="text" id="p-discount" class="form-control" placeholder="Enter Discount"
+                                required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="customername-field" class="form-label">Plan Type</label>
+                            <select id="p-type" class="form-control" required>
+                                <option>-- Select Plan Type --</option>
+                                <option>Monthly</option>
+                                <option>Yearly</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="hstack gap-2 justify-content-end">
+                            <button class="btn btn-success" id="add-btn">Add Plan</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- removeNotificationModal -->
+        <div id="removeNotificationModal" class="modal fade zoomIn" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                            id="NotificationModalbtn-close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mt-2 text-center">
+                            <lord-icon src="https://cdn.lordicon.com/gsqxdxog.json" trigger="loop"
+                                colors="primary:#f7b84b,secondary:#f06548"
+                                style="width: 100px; height: 100px"></lord-icon>
+                            <div class="mt-4 pt-2 fs-15 mx-4 mx-sm-5">
+                                <h4>Are you sure ?</h4>
+                                <p class="text-muted mx-4 mb-0">
+                                    Are you sure you want to remove this Notification ?
+                                </p>
+                            </div>
+                        </div>
+                        <div class="d-flex gap-2 justify-content-center mt-4 mb-2">
+                            <button type="button" class="btn w-sm btn-light" data-bs-dismiss="modal">
+                                Close
+                            </button>
+                            <button type="button" class="btn w-sm btn-danger" id="delete-notification">
+                                Yes, Delete It!
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+        
+    </div>
+    <!-- END layout-wrapper -->
+
+    <!--start back-to-top-->
+    <!-- <button onclick="topFunction()" class="btn btn-danger btn-icon" id="back-to-top">
+        <i class="ri-arrow-up-line"></i>
+    </button> -->
+    <!--end back-to-top-->
+
+    <!--preloader-->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner-border text-primary avatar-sm" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="customizer-setting d-none d-md-block">
+        <div class="btn-info btn-rounded shadow-lg btn btn-icon btn-lg p-2" data-bs-toggle="offcanvas"
+            data-bs-target="#theme-settings-offcanvas" aria-controls="theme-settings-offcanvas">
+            <i class="mdi mdi-spin mdi-cog-outline fs-22"></i>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script src="/assets/js/jquery.js"></script>
+    <script src="/assets/js/admin.js"></script>
+    <script src="/assets/js/validate.js"></script>
+
+    <script src="/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="/assets/libs/node-waves/waves.min.js"></script>
+    <script src="/assets/libs/feather-icons/feather.min.js"></script>
+    <script src="/assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+
+    <!-- aos js -->
+    <script src="/assets/libs/aos/aos.js"></script>
+    <script src="/assets/libs/gridjs/gridjs.umd.js"></script>
+
+    <!--datatable js-->
+    <script src="/assets/js/pages/jquery.dataTables.min.js"></script>
+    <script src="/assets/js/pages/dataTables.bootstrap5.min.js"></script>
+    <script src="/assets/js/pages/dataTables.responsive.min.js"></script>
+    <script src="/assets/js/pages/dataTables.buttons.min.js"></script>
+    <script src="/assets/js/pages/buttons.print.min.js"></script>
+    <script src="/assets/js/pages/buttons.html5.min.js"></script>
+    <script src="/assets/js/pages/vfs_fonts.js"></script>
+    <script src="/assets/js/pages/pdfmake.min.js"></script>
+    <script src="/assets/js/pages/jszip.min.js"></script>
+    <script src="/assets/js/pages/datatables.init.js"></script>
+    <script src="/assets/js/pages/datatables.init.js"></script>
+
+    <!-- App js -->
+    <script src="/assets/js/app.js"></script>
+
+    <script src="/assets/sweetalert2/sweet-alert.init.js"></script>
+    <script src="/assets/sweetalert2/sweetalert2.all.js"></script>
+
+    <script>
+        function displayAtBeginning(
+            content,
+            prevclass,
+            myclass,
+            nextclass,
+            paramstr
+        ) {
+            console.log(content);
+            let out = `
+                  <div class="gridjs-wrapper" style="height: auto">
+                    <table
+                      role="grid"
+                      class="gridjs-table"
+                      style="height: auto"
+                    >
+                      <thead class="gridjs-thead">
+                        <tr class="gridjs-tr">`;
+            console.log(Object.keys(content[0]));
+            for (let i = 0; i < Object.keys(content[0]).length; i++) {
+                out += `<th
+                            data-column-id="${Object.keys(content[0])[i]}"
+                            class="gridjs-th"
+                            style="min-width: 77px; width: 77px"
+                          >
+                            <div class="gridjs-th-content">${Object.keys(content[0])[i]
+                    }</div>
+                          </th>`;
+            }
+            out += `<th class="gridjs-th" style="min-width: 77px; width: 77px"><div class="gridjs-th-content" >Update</div></th><th class="gridjs-th" style="min-width: 77px; width: 77px"><div class="gridjs-th-content">Delete</div></th></tr>
+                      </thead>
+                      <tbody class="gridjs-tbody">`;
+            for (let j = 0; j < content.length; j++) {
+                out += `<tr class="gridjs-tr">`;
+                for (let k = 0; k < Object.keys(content[j]).length; k++) {
+                    out += `<td data-column-id="${Object.values(content[j])[k]
+                        }" class="gridjs-td">${Object.values(content[j])[k]}</td>`;
+                    if (k == Object.keys(content[j]).length - 1) {
+                        out += `<td class="gridjs-td"><input type="button" id="${Object.values(content[j])[0]
+                            }" value="Update" class="btn btn-sm btn-success updateBtn" data-bs-toggle="modal" data-id="${Object.values(content[j])[0]
+                            }" data-pname="${Object.values(content[j])[1]}" data-price="${Object.values(content[j])[2]
+                            }" data-duration="${Object.values(content[j])[3]
+                            }" data-tinstance="${Object.values(content[j])[4]
+                            }" data-tmessage="${Object.values(content[j])[5]
+                            }" data-discount="${Object.values(content[j])[6]}" data-ptype="${Object.values(content[j])[7]
+                            }" data-bs-target="#showModal"></td><td class="gridjs-td"><input type="button" class="btn btn-sm btn-danger" id="${Object.values(content[j])[0]
+                            }" value="Delete" onclick="deleteRecord(this.id)"></td></tr>`;
+                    }
+                }
+            }
+            out += `</tbody>
+                    </table>
+                  </div>
+                  <div class="gridjs-footer">
+                    <div class="gridjs-pagination">
+                      <div class="gridjs-pages">`;
+            $.ajax({
+                url: "/getBtn",
+                method: "post",
+                data: {
+                    table: "plans",
+                    pgno: 1,
+                    limit: localStorage.getItem("limit"),
+                    paramstr: paramstr,
+                },
+                success: (data) => {
+                    console.log(data);
+                    let btns = `<button
+                          tabindex="0"
+                          role="button"
+                          disabled=""
+                          title="Previous"
+                          aria-label="Previous"
+                          class=""
+                        >
+                          Previous</button
+                        >`;
+                    totalBtn = data.totalBtn;
+                    for (let i = 0; i < totalBtn; i++) {
+                        if (i == 0) {
+                            btns += `<button
+                          tabindex="0"
+                          role="button"
+                          class="gridjs-currentPage ${myclass}"
+                          title="Page ${i + 1}"
+                          data-id="${i + 1}"
+                          aria-label="Page ${i + 1}"
+                        >
+                          ${i + 1}</button
+                        >`;
+                        } else {
+                            btns += `<button
+                          tabindex="0"
+                          role="button"
+                          class="${myclass} ${nextclass}"
+                          title="Page ${i + 1}"
+                          aria-label="Page ${i + 1}"
+                          data-id="${i + 1}"
+                        >
+                          ${i + 1}</button
+                        >`;
+                        }
+                    }
+                    if (totalBtn == 1) {
+                        btns += `<button
+                          tabindex="0"
+                          role="button"
+                          title="Next"
+                          aria-label="Next"
+                          class="${nextclass}"
+                          disabled=""
+                        >
+                          Next
+                        </button>`;
+                    } else {
+                        btns += `<button
+                          tabindex="0"
+                          role="button"
+                          title="Next"
+                          aria-label="Next"
+                          class="${nextclass}"
+
+                        >
+                          Next
+                        </button>`;
+                    }
+                    btns += `</div>
+                    </div>
+                  </div>
+                  <div id="gridjs-temp" class="gridjs-temp"></div>`;
+                    $("#mycomplementry").html(out + btns);
+                    $("#chklimit").val(localStorage.getItem("limit"));
+                },
+            });
+            //   },
+            // });
+        }
+
+        function nextBtnDisplay(
+            content,
+            prevclass,
+            myclass,
+            nextclass,
+            pn,
+            paramstr
+        ) {
+            let out = `
+                  <div class="gridjs-wrapper" style="height: auto">
+                    <table
+                      role="grid"
+                      class="gridjs-table"
+                      style="height: auto"
+                    >
+                      <thead class="gridjs-thead">
+                        <tr class="gridjs-tr">`;
+            console.log(Object.keys(content[0]));
+            for (let i = 0; i < Object.keys(content[0]).length; i++) {
+                out += `<th
+                            data-column-id="${Object.keys(content[0])[i]}"
+                            class="gridjs-th"
+                            style="min-width: 77px; width: 77px"
+                          >
+                            <div class="gridjs-th-content">${Object.keys(content[0])[i]
+                    }</div>
+                          </th>`;
+            }
+            out += `<th class="gridjs-th" style="min-width: 77px; width: 77px"><div class="gridjs-th-content" >Update</div></th><th class="gridjs-th" style="min-width: 77px; width: 77px"><div class="gridjs-th-content">Delete</div></th></tr></thead><tbody class="gridjs-tbody">`;
+            for (let j = 0; j < content.length; j++) {
+                out += `<tr class="gridjs-tr">`;
+                for (let k = 0; k < Object.keys(content[j]).length; k++) {
+                    out += `<td data-column-id="${Object.values(content[j])[k]
+                        }" class="gridjs-td">${Object.values(content[j])[k]}</td>`;
+                    if (k == Object.keys(content[j]).length - 1) {
+                        out += `<td class="gridjs-td"><input type="button" id="${Object.values(content[j])[0]
+                            }" value="Update" class="btn btn-sm btn-success updateBtn" data-bs-toggle="modal" data-id="${Object.values(content[j])[0]
+                            }" data-pname="${Object.values(content[j])[1]}" data-price="${Object.values(content[j])[2]
+                            }" data-duration="${Object.values(content[j])[3]
+                            }" data-tinstance="${Object.values(content[j])[4]
+                            }" data-tmessage="${Object.values(content[j])[5]
+                            }" data-discount="${Object.values(content[j])[6]}" data-ptype="${Object.values(content[j])[7]
+                            }" data-bs-target="#showModal"></td><td class="gridjs-td"><input type="button" class="btn btn-sm btn-danger" id="${Object.values(content[j])[0]
+                            }" value="Delete" onclick="deleteRecord(this.id)"></td></tr>`;
+                    }
+                }
+
+                out += `</tr>`;
+            }
+            out += `</tbody>
+                    </table>
+                  </div>
+                  <div class="gridjs-footer">
+                    <div class="gridjs-pagination">
+                      <div class="gridjs-pages">`;
+            $.ajax({
+                url: "/getBtn",
+                method: "post",
+                data: {
+                    table: "plans",
+                    pgno: pn + 1,
+                    limit: localStorage.getItem("limit"),
+                    paramstr: paramstr,
+                },
+                success: (data) => {
+                    console.log(data);
+                    let btns = "";
+                    if (pn + 1 == 1) {
+                        btns += `<button
+                          tabindex="0"
+                          role="button"
+                          disabled=""
+                          title="Previous"
+                          aria-label="Previous"
+                          class="${prevclass}"
+                        >
+                          Previous</button
+                        >`;
+                    } else {
+                        btns += `<button
+                          tabindex="0"
+                          role="button"
+                          title="Previous"
+                          aria-label="Previous"
+                          class="${prevclass}"
+                        >
+                          Previous</button
+                        >`;
+                    }
+                    totalBtn = data.totalBtn;
+                    for (let i = 0; i < totalBtn; i++) {
+                        if (i == pn) {
+                            btns += `<button
+                          tabindex="0"
+                          role="button"
+                          class="gridjs-currentPage ${myclass}"
+                          title="Page ${i + 1}"
+                          data-id="${i + 1}"
+                          aria-label="Page ${i + 1}"
+                        >
+                          ${i + 1}</button
+                        >`;
+                        } else {
+                            btns += `<button
+                          tabindex="0"
+                          role="button"
+                          class="${myclass} ${nextclass}"
+                          title="Page ${i + 1}"
+                          aria-label="Page ${i + 1}"
+                          data-id="${i + 1}"
+                        >
+                          ${i + 1}</button
+                        >`;
+                        }
+                    }
+                    if (pn + 1 == Math.ceil(totalBtn)) {
+                        btns += `<button
+                          tabindex="0"
+                          role="button"
+                          title="Next"
+                          aria-label="Next"
+                          class="${nextclass}"
+                          disabled=""
+                        >
+                          Next
+                        </button>`;
+                    } else {
+                        btns += `<button
+                          tabindex="0"
+                          role="button"
+                          title="Next"
+                          aria-label="Next"
+                          class="${nextclass}"
+                        >
+                          Next
+                        </button>`;
+                    }
+                    btns += `</div>
+                    </div>
+                  </div>
+                  <div id="gridjs-temp" class="gridjs-temp"></div>`;
+                    $("#mycomplementry").html(out + btns);
+                    $("#chklimit").val(localStorage.getItem("limit"));
+                },
+            });
+        }
+
+        function previousBtnDisplay(
+            content,
+            prevclass,
+            myclass,
+            nextclass,
+            pn,
+            paramstr
+        ) {
+            let out = `
+                  <div class="gridjs-wrapper" style="height: auto">
+                    <table
+                      role="grid"
+                      class="gridjs-table"
+                      style="height: auto"
+                    >
+                      <thead class="gridjs-thead">
+                        <tr class="gridjs-tr">`;
+            console.log(Object.keys(content[0]));
+            for (let i = 0; i < Object.keys(content[0]).length; i++) {
+                out += `<th
+                            data-column-id="${Object.keys(content[0])[i]}"
+                            class="gridjs-th"
+                            style="min-width: 77px; width: 77px"
+                          >
+                            <div class="gridjs-th-content">${Object.keys(content[0])[i]
+                    }</div>
+                          </th>`;
+            }
+            out += `<th class="gridjs-th" style="min-width: 77px; width: 77px"><div class="gridjs-th-content" >Update</div></th><th class="gridjs-th" style="min-width: 77px; width: 77px"><div class="gridjs-th-content">Delete</div></th></tr></thead><tbody class="gridjs-tbody">`;
+            for (let j = 0; j < content.length; j++) {
+                out += `<tr class="gridjs-tr">`;
+                for (let k = 0; k < Object.keys(content[j]).length; k++) {
+                    out += `<td data-column-id="${Object.values(content[j])[k]
+                        }" class="gridjs-td">${Object.values(content[j])[k]}</td>`;
+                    if (k == Object.keys(content[j]).length - 1) {
+                        out += `<td class="gridjs-td"><input type="button" id="${Object.values(content[j])[0]
+                            }" value="Update" class="btn btn-sm btn-success updateBtn" data-bs-toggle="modal" data-id="${Object.values(content[j])[0]
+                            }" data-pname="${Object.values(content[j])[1]}" data-price="${Object.values(content[j])[2]
+                            }" data-duration="${Object.values(content[j])[3]
+                            }" data-tinstance="${Object.values(content[j])[4]
+                            }" data-tmessage="${Object.values(content[j])[5]
+                            }" data-discount="${Object.values(content[j])[6]}" data-ptype="${Object.values(content[j])[7]
+                            }" data-bs-target="#showModal"></td><td class="gridjs-td"><input type="button" class="btn btn-sm btn-danger" id="${Object.values(content[j])[0]
+                            }" value="Delete" onclick="deleteRecord(this.id)"></td></tr>`;
+                    }
+                }
+
+                out += `</tr>`;
+            }
+            out += `</tbody>
+                    </table>
+                  </div>
+                  <div class="gridjs-footer">
+                    <div class="gridjs-pagination">
+                      <div class="gridjs-pages">`;
+            $.ajax({
+                url: "/getBtn",
+                method: "post",
+                data: {
+                    table: "plans",
+                    pgno: pn - 1,
+                    limit: localStorage.getItem("limit"),
+                    paramstr: paramstr,
+                },
+                success: (data) => {
+                    console.log(data);
+                    let btns = "";
+                    if (pn - 1 == 1) {
+                        btns += `<button
+                          tabindex="0"
+                          role="button"
+                          disabled=""
+                          title="Previous"
+                          aria-label="Previous"
+                          class="${prevclass}"
+                        >
+                          Previous</button
+                        >`;
+                    } else {
+                        btns += `<button
+                          tabindex="0"
+                          role="button"
+                          title="Previous"
+                          aria-label="Previous"
+                          class="${prevclass}"
+                        >
+                          Previous</button
+                        >`;
+                    }
+                    totalBtn = data.totalBtn;
+                    for (let i = 0; i < totalBtn; i++) {
+                        if (i + 1 == pn - 1) {
+                            btns += `<button
+                          tabindex="0"
+                          role="button"
+                          class="gridjs-currentPage ${myclass}"
+                          title="Page ${i + 1}"
+                          data-id="${i + 1}"
+                          aria-label="Page ${i + 1}"
+                        >
+                          ${i + 1}</button
+                        >`;
+                        } else {
+                            btns += `<button
+                          tabindex="0"
+                          role="button"
+                          class="${myclass} ${nextclass}"
+                          title="Page ${i + 1}"
+                          aria-label="Page ${i + 1}"
+                          data-id="${i + 1}"
+                        >
+                          ${i + 1}</button
+                        >`;
+                        }
+                    }
+                    if (pn - 1 == Math.ceil(totalBtn)) {
+                        btns += `<button
+                          tabindex="0"
+                          role="button"
+                          title="Next"
+                          aria-label="Next"
+                          class="${nextclass}"
+                          disabled=""
+                        >
+                          Next
+                        </button>`;
+                    } else {
+                        btns += `<button
+                          tabindex="0"
+                          role="button"
+                          title="Next"
+                          aria-label="Next"
+                          class="${nextclass}"
+                        >
+                          Next
+                        </button>`;
+                    }
+                    btns += `</div>
+                    </div>
+                  </div>
+                  <div id="gridjs-temp" class="gridjs-temp"></div>`;
+                    $("#mycomplementry").html(out + btns);
+                    $("#chklimit").val(localStorage.getItem("limit"));
+                },
+            });
+        }
+
+        function myBtnDisplay(
+            content,
+            prevclass,
+            myclass,
+            nextclass,
+            index,
+            btnno,
+            pgno,
+            paramstr
+        ) {
+            let out = `
+                  <div class="gridjs-wrapper" style="height: auto">
+                    <table
+                      role="grid"
+                      class="gridjs-table"
+                      style="height: auto"
+                    >
+                      <thead class="gridjs-thead">
+                        <tr class="gridjs-tr">`;
+            console.log(Object.keys(content[0]));
+            for (let i = 0; i < Object.keys(content[0]).length; i++) {
+                out += `<th
+                            data-column-id="${Object.keys(content[0])[i]}"
+                            class="gridjs-th"
+                            style="min-width: 77px; width: 77px"
+                          >
+                            <div class="gridjs-th-content">${Object.keys(content[0])[i]
+                    }</div>
+                          </th>`;
+            }
+            out += `<th class="gridjs-th" style="min-width: 77px; width: 77px"><div class="gridjs-th-content" >Update</div></th><th class="gridjs-th" style="min-width: 77px; width: 77px"><div class="gridjs-th-content">Delete</div></th></tr></thead><tbody class="gridjs-tbody">`;
+            for (let j = 0; j < content.length; j++) {
+                out += `<tr class="gridjs-tr">`;
+                for (let k = 0; k < Object.keys(content[j]).length; k++) {
+                    out += `<td data-column-id="${Object.values(content[j])[k]
+                        }" class="gridjs-td">${Object.values(content[j])[k]}</td>`;
+                    if (k == Object.keys(content[j]).length - 1) {
+                        out += `<td class="gridjs-td"><input type="button" id="${Object.values(content[j])[0]
+                            }" value="Update" class="btn btn-sm btn-success updateBtn" data-bs-toggle="modal" data-id="${Object.values(content[j])[0]
+                            }" data-pname="${Object.values(content[j])[1]}" data-price="${Object.values(content[j])[2]
+                            }" data-duration="${Object.values(content[j])[3]
+                            }" data-tinstance="${Object.values(content[j])[4]
+                            }" data-tmessage="${Object.values(content[j])[5]
+                            }" data-discount="${Object.values(content[j])[6]}" data-ptype="${Object.values(content[j])[7]
+                            }" data-bs-target="#showModal"></td><td class="gridjs-td"><input type="button" class="btn btn-sm btn-danger" id="${Object.values(content[j])[0]
+                            }" value="Delete" onclick="deleteRecord(this.id)"></td></tr>`;
+                    }
+                }
+
+                out += `</tr>`;
+            }
+            out += `</tbody>
+                    </table>
+                  </div>
+                  <div class="gridjs-footer">
+                    <div class="gridjs-pagination">
+                      <div class="gridjs-pages">`;
+            $.ajax({
+                url: "/getBtn",
+                method: "post",
+                data: {
+                    table: "plans",
+                    pgno: pgno,
+                    limit: localStorage.getItem("limit"),
+                    paramstr: paramstr,
+                },
+                success: (data) => {
+                    console.log(data);
+                    let btns = "";
+                    if (btnno == 1) {
+                        btns += `<button
+                          tabindex="0"
+                          role="button"
+                          disabled=""
+                          title="Previous"
+                          aria-label="Previous"
+                          class="${prevclass}"
+                        >
+                          Previous</button
+                        >`;
+                    } else {
+                        btns += `<button
+                          tabindex="0"
+                          role="button"
+                          title="Previous"
+                          aria-label="Previous"
+                          class="${prevclass}"
+                        >
+                          Previous</button
+                        >`;
+                    }
+
+                    totalBtn = data.totalBtn;
+                    for (let i = 0; i < totalBtn; i++) {
+                        if (i == index) {
+                            btns += `<button
+                          tabindex="0"
+                          role="button"
+                          class="gridjs-currentPage ${myclass}"
+                          title="Page ${i + 1}"
+                          data-id="${i + 1}"
+                          aria-label="Page ${i + 1}"
+                        >
+                          ${i + 1}</button
+                        >`;
+                        } else {
+                            btns += `<button
+                          tabindex="0"
+                          role="button"
+                          class="${myclass} ${nextclass}"
+                          title="Page ${i + 1}"
+                          aria-label="Page ${i + 1}"
+                          data-id="${i + 1}"
+                        >
+                          ${i + 1}</button
+                        >`;
+                        }
+                    }
+                    if (btnno == Math.ceil(totalBtn)) {
+                        btns += `<button
+                          tabindex="0"
+                          role="button"
+                          title="Next"
+                          aria-label="Next"
+                          class="${nextclass}"
+                          disabled=""
+                        >
+                          Next
+                        </button>`;
+                    } else {
+                        btns += `<button
+                          tabindex="0"
+                          role="button"
+                          title="Next"
+                          aria-label="Next"
+                          class="${nextclass}"
+                        >
+                          Next
+                        </button>`;
+                    }
+
+                    btns += `</div>
+                    </div>
+                  </div>
+                  <div id="gridjs-temp" class="gridjs-temp"></div>`;
+                    $("#mycomplementry").html(out + btns);
+                    $("#chklimit").val(localStorage.getItem("limit"));
+                },
+            });
+        }
+
+        function deleteRecord(id) {
+            $.ajax({
+                url: "/adminDeleteRecord",
+                data: { id: id, table: "plans", column: "planid" },
+                method: "post",
+                success: function (data) {
+                    if (data.status_code == 200) {
+                        swal({
+                            title: "Recrd deleted",
+                            type: "success",
+                            timer: 1500,
+                            showConfirmButton: false,
+                        });
+                        $.ajax({
+                            url: "/getDataByPage",
+                            method: "post",
+                            data: {
+                                table: "plans",
+                                pgno: 1,
+                                limit: localStorage.getItem("limit"),
+                            },
+                            success: function (content) {
+                                console.log(content);
+                                displayAtBeginning(
+                                    content,
+                                    "previousBtn",
+                                    "mybtn",
+                                    "nextBtn",
+                                    true
+                                );
+                            },
+                        });
+                    } else {
+                        swal({
+                            title: "Record can't be deleted!!",
+                            text: "Some Internal Server Error!! Try again later",
+                            type: "error",
+                            timer: 1500,
+                            showConfirmButton: false,
+                        });
+                    }
+                },
+            });
+        }
+
+        $(document).ready(function () {
+            var totalBtn = 0;
+
+            $.ajax({
+                url: "/getDataByPage",
+                method: "post",
+                data: {
+                    table: "plans",
+                    pgno: 1,
+                    limit: localStorage.getItem("limit"),
+                },
+                success: function (content) {
+                    console.log(content);
+                    displayAtBeginning(
+                        content,
+                        "previousBtn",
+                        "mybtn",
+                        "nextBtn",
+                        true
+                    );
+                },
+            });
+
+            $(".navbar-nav").html(
+                '<li class="nav-item"><a class="nav-link menu-link" href="/adminDashboard"><i class="ri-dashboard-2-line"></i><span data-key="t-apps">Dashboard</span></a></li><li class="nav-item"><a class="nav-link menu-link" href="/instanceData"><i class="ri-apps-2-line"></i><span data-key="t-apps">Instances</span></a></li><li class="nav-item"><a class="nav-link menu-link" href="/contactData"><i class="bx bxs-contact"></i><span data-key="t-apps">Contacts</span></a></li><li class="nav-item"><a class="nav-link menu-link" href="/channelData" role="button" aria-expanded="false" aria-controls="sidebarDashboards"><i class="mdi mdi-account-group"></i><span data-key="t-dashboards">Channels</span></a></li><li class="nav-item"><a class="nav-link menu-link" href="/messageData"><i class="bx bxs-message-alt-detail"></i><span data-key="t-apps">Messages</span></a></li><li class="nav-item"><a class="nav-link menu-link active" href="/planData"><i class="ri-price-tag-fill"></i><span data-key="t-apps">Plans</span></a></li><li class="nav-item"><a class="nav-link menu-link" href="/subscriptionData"><i class="ri-secure-payment-fill"></i><span data-key="t-apps">Subscriptions</span></a></li><li class="nav-item"><a class="nav-link menu-link" href="/templateData"><i class="bx bx-windows"></i><span data-key="t-apps">Templates</span></a></li><li class="nav-item"><a class="nav-link menu-link" href="/usersData"><i class=" ri-shield-user-fill"></i><span data-key="t-apps">Users</span></a></li>'
+            );
+
+            $(document).on("click", "#add-btn", function () {
+                let pname = $("#p-name").val();
+                let price = $("#p-price").val();
+                let duration = $("#p-duration").val();
+                let instances = $("#t-instance").val();
+                let messages = $("#t-message").val();
+                let discount = $("#p-discount").val();
+                let type = $("#p-type").val();
+
+                if (
+                    pname == "" ||
+                    price == "" ||
+                    duration == "" ||
+                    instances == "" ||
+                    discount == "" ||
+                    messages == "" ||
+                    type == ""
+                ) {
+                    swal({
+                        title: "All the records are required!!",
+                        type: "error",
+                        timer: 1500,
+                        showConfirmButton: false,
+                    });
+                } else {
+                    $.ajax({
+                        url: "/addRecord",
+                        method: "post",
+                        data: {
+                            pname: pname,
+                            price: price,
+                            duration: duration,
+                            instances: instances,
+                            messages: messages,
+                            discount: discount,
+                            type: type,
+                            table: "plans",
+                        },
+                        success: function (result) {
+                            if (result.status_code == 200) {
+                                swal({
+                                    title: "Record added",
+                                    type: "success",
+                                    timer: 1500,
+                                    showConfirmButton: false,
+                                });
+                                $("#addModal").modal("hide");
+                                $.ajax({
+                                    url: "/getDataByPage",
+                                    method: "post",
+                                    data: {
+                                        table: "plans",
+                                        pgno: 1,
+                                        limit: localStorage.getItem("limit"),
+                                    },
+                                    success: function (content) {
+                                        displayAtBeginning(
+                                            content,
+                                            "previousBtn",
+                                            "mybtn",
+                                            "nextBtn",
+                                            true
+                                        );
+                                    },
+                                });
+                            } else {
+                                swal({
+                                    title: "Record can't be added!!",
+                                    text: "Some Internal Server Error!! Try again later",
+                                    type: "error",
+                                    timer: 1500,
+                                    showConfirmButton: false,
+                                });
+                            }
+                        },
+                    });
+                }
+            });
+
+            $(document).on("click", ".updateBtn", function () {
+                let pid = $(this).attr("data-id");
+                let pname = $(this).attr("data-pname");
+                let price = $(this).attr("data-price");
+                let month = $(this).attr("data-duration");
+                let instances = $(this).attr("data-tinstance");
+                let messages = $(this).attr("data-tmessage");
+                let discount = $(this).attr("data-discount");
+                let type = $(this).attr("data-ptype");
+                $("#plan-name").val(pname);
+                $("#plan-price").val(price);
+                $("#plan-duration").val(month);
+                $("#total-instance").val(instances);
+                $("#total-message").val(messages);
+                $("#plan-discount").val(discount);
+                $("#plan-type").val(type);
+                $("#edit-btn").attr("data-id", pid);
+            });
+
+            $(document).on("click", "#edit-btn", function () {
+                $.ajax({
+                    url: "/updateData",
+                    method: "PUT",
+                    data: {
+                        paramstr: `pname='${$("#plan-name").val()}', price=${$(
+                            "#plan-price"
+                        ).val()}, durationMonth=${$(
+                            "#plan-duration"
+                        ).val()}, totalInstance=${$(
+                            "#total-instance"
+                        ).val()}, totalMessage=${$("#total-message").val()}, discount=${$(
+                            "#plan-discount"
+                        ).val()}, plan_type='${$("#plan-type").val()}'`,
+                        condition: `planid=${$(this).attr("data-id")}`,
+                        table: "plans",
+                    },
+                    success: function (result) {
+                        if (result.status_code == 200) {
+                            swal({
+                                title: "Record updated",
+                                type: "success",
+                                timer: 1500,
+                                showConfirmButton: false,
+                            });
+                            $("#showModal").modal("hide");
+                            $.ajax({
+                                url: "/getDataByPage",
+                                method: "post",
+                                data: {
+                                    table: "plans",
+                                    pgno: 1,
+                                    limit: localStorage.getItem("limit"),
+                                },
+                                success: function (content) {
+                                    displayAtBeginning(
+                                        content,
+                                        "previousBtn",
+                                        "mybtn",
+                                        "nextBtn",
+                                        true
+                                    );
+                                },
+                            });
+                        } else {
+                            swal({
+                                title: "Record can't be updated!!",
+                                text: "Some Internal Server Error!! Try again later",
+                                type: "error",
+                                timer: 1500,
+                                showConfirmButton: false,
+                            });
+                        }
+                    },
+                });
+            });
+
+            $(document).on("input", "#searchText", () => {
+                let str = $("#searchText").val();
+                if (str == "") {
+                    $.ajax({
+                        url: "/getDataByPage",
+                        method: "post",
+                        data: {
+                            table: "plans",
+                            pgno: 1,
+                            limit: localStorage.getItem("limit"),
+                        },
+                        success: function (content) {
+                            console.log(content);
+                            if(content.status_code == "404"){
+                                swal({
+                                    title: "No such record found",
+                                    type: "error",
+                                    timer: 2000,
+                                    showConfirmButton: false,
+                                });
+                            }
+                            else if(content.status_code == "500"){
+                                swal({
+                                    title: "Internal Server Error",
+                                    text:"Try again after some time",
+                                    type: "error",
+                                    timer: 2000,
+                                    showConfirmButton: false,
+                                });
+                            }
+                            else if(!content.status_code){
+                                displayAtBeginning(
+                                    content,
+                                    "previousBtn",
+                                    "mybtn",
+                                    "nextBtn",
+                                    true
+                                );
+                            } 
+                        },
+                    });
+                } else {
+                    let paramstr = `pname like '%${str}%' or cast(planid as char) like '%${str}%' or cast(price as char) like '%${str}%' or cast(durationMonth as char) like '%${str}%' or cast(totalInstance as char) like '%${str}%' or cast(totalMessage as char) like '%${str}%' or cast(discount as char) like '%${str}%' or plan_type like '%${str}%'`;
+                    $.ajax({
+                        url: "/adminSearchRecord",
+                        method: "POST",
+                        data: {
+                            table: "plans",
+                            pgno: 1,
+                            limit: localStorage.getItem("limit"),
+                            paramstr: paramstr,
+                        },
+                        success: function (result) {
+                            // alert();
+                            console.log("below data of search");
+                            console.log(result);
+                           if (result.status_code == "404") {
+                                $("#mycomplementry").html(`<div class="noresult py-5">
+                                    <div class="text-center">
+                                        <lord-icon src="https://cdn.lordicon.com/msoeawqm.json" trigger="loop"
+                                            colors="primary:#212529,secondary:#405189"
+                                            style="width: 75px; height: 75px">
+                                        </lord-icon>
+                                        <h5 class="mt-2">No Rocoed Found</h5>
+                                    </div>
+                                </div>`);
+                            }
+                            
+                            else if(result.status_code == "500"){
+                                swal({
+                                    title: "Internal Server Error",
+                                    text:"Try again after some time",
+                                    type: "error",
+                                    timer: 2000,
+                                    showConfirmButton: false,
+                                });
+                            }
+                            else if(!result.status_code){
+                            displayAtBeginning(
+                                result,
+                                "previousSearchBtn",
+                                "mysearchbtn",
+                                "nextSearchBtn",
+                                paramstr
+                            );
+                            }
+                        },
+                    });
+                }
+            });
+
+            $(document).on("change", "#chklimit", function () {
+                var num = $("#chklimit").val();
+                localStorage.setItem("limit", num);
+                location.reload();
+            });
+
+            $(document).on("click", ".nextBtn", function () {
+                console.log(document.getElementsByClassName("mybtn"));
+                var arr = document.getElementsByClassName("mybtn").length;
+                count = 0;
+                for (let pn = 1; pn <= arr; pn++) {
+                    if (
+                        document
+                            .getElementsByClassName("mybtn")
+                        [pn - 1].classList.contains("gridjs-currentPage")
+                    ) {
+                        $.ajax({
+                            url: "/getDataByPage",
+                            method: "post",
+                            data: {
+                                table: "plans",
+                                pgno: pn + 1,
+                                limit: localStorage.getItem("limit"),
+                            },
+                            success: function (content) {
+                                console.log(content);
+                                nextBtnDisplay(
+                                    content,
+                                    "previousBtn",
+                                    "mybtn",
+                                    "nextBtn",
+                                    pn,
+                                    true
+                                );
+                                // nextBtnDisplay(content,"")
+                            },
+                        });
+                    }
+                }
+            });
+
+            $(document).on("click", ".nextSearchBtn", function () {
+                alert("search next btn");
+                let str = $("#searchText").val();
+                if (str == "") {
+                    $.ajax({
+                        url: "/getDataByPage",
+                        method: "post",
+                        data: {
+                            table: "plans",
+                            pgno: 1,
+                            limit: localStorage.getItem("limit"),
+                        },
+                        success: function (content) {
+                            console.log(content);
+                            if(content.status_code == "404"){
+                                swal({
+                                    title: "No such record found",
+                                    type: "error",
+                                    timer: 2000,
+                                    showConfirmButton: false,
+                                });
+                            }
+                            else if(content.status_code == "500"){
+                                swal({
+                                    title: "Internal Server Error",
+                                    text:"Try again after some time",
+                                    type: "error",
+                                    timer: 2000,
+                                    showConfirmButton: false,
+                                });
+                            }
+                            else if(!content.status_code){
+                            
+                            displayAtBeginning(
+                                content,
+                                "previousBtn",
+                                "mybtn",
+                                "nextBtn",
+                                true
+                            );
+                            }
+                        },
+                    });
+                } else {
+                    console.log(document.getElementsByClassName("mysearchbtn"));
+                    var arr = document.getElementsByClassName("mysearchbtn").length;
+                    count = 0;
+                    let paramstr = `pname like '%${str}%' or cast(planid as char) like '%${str}%' or cast(price as char) like '%${str}%' or cast(durationMonth as char) like '%${str}%' or cast(totalInstance as char) like '%${str}%' or cast(totalMessage as char) like '%${str}%' or cast(discount as char) like '%${str}%' or plan_type like '%${str}%'`;
+                    for (let pn = 1; pn <= arr; pn++) {
+                        if (
+                            document
+                                .getElementsByClassName("mysearchbtn")
+                            [pn - 1].classList.contains("gridjs-currentPage")
+                        ) {
+                            $.ajax({
+                                url: "/adminSearchRecord",
+                                method: "post",
+                                data: {
+                                    table: "plans",
+                                    pgno: pn + 1,
+                                    limit: localStorage.getItem("limit"),
+                                    paramstr: paramstr,
+                                },
+                                success: function (content) {
+                                    console.log(content);
+                                    if(content.status_code == "404"){
+                                swal({
+                                    title: "No such record found",
+                                    type: "error",
+                                    timer: 2000,
+                                    showConfirmButton: false,
+                                });
+                            }
+                            else if(content.status_code == "500"){
+                                swal({
+                                    title: "Internal Server Error",
+                                    text:"Try again after some time",
+                                    type: "error",
+                                    timer: 2000,
+                                    showConfirmButton: false,
+                                });
+                            }
+                            else if(!content.status_code){
+                            
+                                    nextBtnDisplay(
+                                        content,
+                                        "previousSearchBtn",
+                                        "mysearchbtn",
+                                        "nextSearchBtn",
+                                        pn,
+                                        paramstr
+                                    );
+                            }
+                                },
+                            });
+                        }
+                    }
+                }
+            });
+
+            $(document).on("click", ".previousBtn", function () {
+                console.log(document.getElementsByClassName("mybtn"));
+                var arr = document.getElementsByClassName("mybtn").length;
+                count = 0;
+                for (let pn = 1; pn <= arr; pn++) {
+                    if (
+                        document
+                            .getElementsByClassName("mybtn")
+                        [pn - 1].classList.contains("gridjs-currentPage")
+                    ) {
+                        $.ajax({
+                            url: "/getDataByPage",
+                            method: "post",
+                            data: {
+                                table: "plans",
+                                pgno: pn - 1,
+                                limit: localStorage.getItem("limit"),
+                            },
+                            success: function (content) {
+                                console.log(content);
+                                previousBtnDisplay(
+                                    content,
+                                    "previousBtn",
+                                    "mybtn",
+                                    "nextBtn",
+                                    pn,
+                                    true
+                                );
+                            },
+                        });
+                    }
+                }
+            });
+
+            $(document).on("click", ".previousSearchBtn", function () {
+                alert("previous serach btn");
+                let str = $("#searchText").val();
+                if (str == "") {
+                    $.ajax({
+                        url: "/getDataByPage",
+                        method: "post",
+                        data: {
+                            table: "plans",
+                            pgno: 1,
+                            limit: localStorage.getItem("limit"),
+                        },
+                        success: function (content) {
+                            console.log(content);
+                            if(content.status_code == "404"){
+                                swal({
+                                    title: "No such record found",
+                                    type: "error",
+                                    timer: 2000,
+                                    showConfirmButton: false,
+                                });
+                            }
+                            else if(content.status_code == "500"){
+                                swal({
+                                    title: "Internal Server Error",
+                                    text:"Try again after some time",
+                                    type: "error",
+                                    timer: 2000,
+                                    showConfirmButton: false,
+                                });
+                            }
+                            else if(!content.status_code){
+                            
+                            displayAtBeginning(
+                                content,
+                                "previousBtn",
+                                "mybtn",
+                                "nextBtn",
+                                true
+                            );
+                            }
+                        },
+                    });
+                } else {
+                    console.log(document.getElementsByClassName("mysearchbtn"));
+                    var arr = document.getElementsByClassName("mysearchbtn").length;
+                    count = 0;
+                    let paramstr = `pname like '%${str}%' or cast(planid as char) like '%${str}%' or cast(price as char) like '%${str}%' or cast(durationMonth as char) like '%${str}%' or cast(totalInstance as char) like '%${str}%' or cast(totalMessage as char) like '%${str}%' or cast(discount as char) like '%${str}%' or plan_type like '%${str}%'`;
+                    for (let pn = 1; pn <= arr; pn++) {
+                        if (
+                            document
+                                .getElementsByClassName("mysearchbtn")
+                            [pn - 1].classList.contains("gridjs-currentPage")
+                        ) {
+                            $.ajax({
+                                url: "/adminSearchRecord",
+                                method: "post",
+                                data: {
+                                    table: "plans",
+                                    pgno: pn - 1,
+                                    limit: localStorage.getItem("limit"),
+                                    paramstr: paramstr,
+                                },
+                                success: function (content) {
+                                    console.log(content);
+                                    if(content.status_code == "404"){
+                                swal({
+                                    title: "No such record found",
+                                    type: "error",
+                                    timer: 2000,
+                                    showConfirmButton: false,
+                                });
+                            }
+                            else if(content.status_code == "500"){
+                                swal({
+                                    title: "Internal Server Error",
+                                    text:"Try again after some time",
+                                    type: "error",
+                                    timer: 2000,
+                                    showConfirmButton: false,
+                                });
+                            }
+                            else if(!content.status_code){
+                            
+                                    previousBtnDisplay(
+                                        content,
+                                        "previousSearchBtn",
+                                        "mysearchbtn",
+                                        "nextSearchBtn",
+                                        pn,
+                                        paramstr
+                                    );
+                            }
+                                },
+                            });
+                        }
+                    }
+                }
+            });
+
+            $(document).on("click", ".mybtn", function () {
+                let index = $(this).attr("data-id") - 1;
+                let btnno = $(this).attr("data-id");
+                $.ajax({
+                    url: "/getDataByPage",
+                    method: "post",
+                    data: {
+                        table: "plans",
+                        pgno: $(this).attr("data-id"),
+                        limit: localStorage.getItem("limit"),
+                    },
+                    success: function (content) {
+                        console.log(content);
+                        myBtnDisplay(
+                            content,
+                            "previousBtn",
+                            "mybtn",
+                            "nextBtn",
+                            index,
+                            btnno,
+                            $(this).attr("data-id"),
+                            true
+                        );
+                    },
+                });
+            });
+
+            $(document).on("click", ".mysearchbtn", function () {
+                alert("my search btn");
+                let str = $("#searchText").val();
+                if (str == "") {
+                    $.ajax({
+                        url: "/getDataByPage",
+                        method: "post",
+                        data: {
+                            table: "plans",
+                            pgno: 1,
+                            limit: localStorage.getItem("limit"),
+                        },
+                        success: function (content) {
+                            console.log(content);
+                            if(content.status_code == "404"){
+                                swal({
+                                    title: "No such record found",
+                                    type: "error",
+                                    timer: 2000,
+                                    showConfirmButton: false,
+                                });
+                            }
+                            else if(content.status_code == "500"){
+                                swal({
+                                    title: "Internal Server Error",
+                                    text:"Try again after some time",
+                                    type: "error",
+                                    timer: 2000,
+                                    showConfirmButton: false,
+                                });
+                            }
+                            else if(!content.status_code){
+                            
+                            displayAtBeginning(
+                                content,
+                                "previousBtn",
+                                "mybtn",
+                                "nextBtn",
+                                true
+                            );
+                            }
+                        },
+                    });
+                } else {
+                    let index = $(this).attr("data-id") - 1;
+                    let btnno = $(this).attr("data-id");
+                    let pgno = $(this).attr("data-id");
+                    let paramstr = `pname like '%${str}%' or cast(planid as char) like '%${str}%' or cast(price as char) like '%${str}%' or cast(durationMonth as char) like '%${str}%' or cast(totalInstance as char) like '%${str}%' or cast(totalMessage as char) like '%${str}%' or cast(discount as char) like '%${str}%' or plan_type like '%${str}%'`;
+                    $.ajax({
+                        url: "/adminSearchRecord",
+                        method: "post",
+                        data: {
+                            table: "plans",
+                            pgno: pgno,
+                            limit: localStorage.getItem("limit"),
+                            paramstr: paramstr,
+                        },
+                        success: function (content) {
+                            console.log(content);
+                            if(content.status_code == "404"){
+                                swal({
+                                    title: "No such record found",
+                                    type: "error",
+                                    timer: 2000,
+                                    showConfirmButton: false,
+                                });
+                            }
+                            else if(content.status_code == "500"){
+                                swal({
+                                    title: "Internal Server Error",
+                                    text:"Try again after some time",
+                                    type: "error",
+                                    timer: 2000,
+                                    showConfirmButton: false,
+                                });
+                            }
+                            else if(!content.status_code){
+                            
+                            myBtnDisplay(
+                                content,
+                                "previousSearchBtn",
+                                "mysearchbtn",
+                                "nextSearchBtn",
+                                index,
+                                btnno,
+                                pgno,
+                                paramstr
+                            );
+                            }
+                        },
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

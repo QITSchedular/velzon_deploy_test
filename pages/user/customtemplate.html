@@ -1,0 +1,700 @@
+<!doctype html>
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg"
+    data-sidebar-image="none" data-preloader="disable">
+
+
+<!-- Mirrored from themesbrand.com/velzon/html/default/forms-editors.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 18 Jan 2023 09:38:58 GMT -->
+
+<head>
+    <style>
+        #cstmmsg {
+            resize: none;
+        }
+    </style>
+    <meta charset="utf-8" />
+    <title>Editors | Velzon - Admin & Dashboard Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesbrand" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="/assets/images/favicon.ico">
+
+    <!-- aos css -->
+    <link rel="stylesheet" href="/assets/libs/aos/aos.css" />
+    <!-- Layout config Js -->
+    <script src="/assets/js/layout.js"></script>
+    <!-- Bootstrap Css -->
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="/assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <!-- custom Css-->
+    <link href="/assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Font Awesome Files -->
+    <link href="/assets/fontawesome/css/all.min.css" rel="stylesheet" />
+    <link href="/assets/fontawesome/css/solid.css" rel="stylesheet" />
+    <link href="/assets/fontawesome/css/solid.min.css" rel="stylesheet" />
+    <link href="/assets/fontawesome/css/regular.css" rel="stylesheet" />
+    <link href="/assets/fontawesome/css/regular.min.css" rel="stylesheet" />
+    <link href="/assets/fontawesome/css/fontawesome.min.css" rel="stylesheet" />
+    <link href="/assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        <header id="page-topbar">
+            <div class="layout-width">
+                <div class="navbar-header">
+                    <div class="d-flex">
+                        <div class="navbar-brand-box horizontal-logo">
+                            <a href="/" class="logo logo-dark">
+                                <span class="logo-sm">
+                                    <img src="/assets/images/logo-sm.png" alt="" height="22" />
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="/assets/images/logo-dark.png" alt="" height="17" />
+                                </span>
+                            </a>
+                            <a href="/" class="logo logo-light">
+                                <span class="logo-sm">
+                                    <img src="/assets/images/logo-sm.png" alt="" height="22" />
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="/assets/images/logo-light.png" alt="" height="17" />
+                                </span>
+                            </a>
+                        </div>
+
+                        <button type="button"
+                            class="btn btn-sm px-3 fs-16 header-item vertical-menu-btn topnav-hamburger"
+                            id="topnav-hamburger-icon">
+                            <span class="hamburger-icon">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <div class="dropdown d-md-none topbar-head-dropdown header-item">
+                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
+                                id="page-header-search-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                <i class="bx bx-search fs-22"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
+                                aria-labelledby="page-header-search-dropdown">
+                                <form class="p-3">
+                                    <div class="form-group m-0">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Search ..."
+                                                aria-label="Recipient's username" />
+                                            <button class="btn btn-primary" type="submit">
+                                                <i class="mdi mdi-magnify"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="ms-1 header-item d-none d-sm-flex">
+                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
+                                data-toggle="fullscreen">
+                                <i class="bx bx-fullscreen fs-22"></i>
+                            </button>
+                        </div>
+
+                        <div class="ms-1 header-item d-none d-sm-flex">
+                            <button type="button"
+                                class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle light-dark-mode">
+                                <i class="bx bx-moon fs-22"></i>
+                            </button>
+                        </div>
+
+                        <div class="dropdown ms-sm-3 header-item topbar-user">
+                            <button type="button" class="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <span class="d-flex align-items-center">
+                                    <img class="rounded-circle header-profile-user profileimg" />
+                                    <span class="text-start ms-xl-2">
+                                        <span
+                                            class="d-none d-xl-inline-block ms-1 fw-medium user-name-text profilename"></span>
+                                        <span class="d-none d-xl-block ms-1 fs-12 text-muted user-name-sub-text">
+                                            Founder
+                                        </span>
+                                    </span>
+                                </span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <h6 class="dropdown-header">
+                                    Welcome <span class="profilename"></span>
+                                </h6>
+                                <a class="dropdown-item" href="/profile">
+                                    <i class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i>
+                                    <span class="align-middle">Profile</span>
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" id="logout">
+                                    <i class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i>
+                                    <span class="align-middle" data-key="t-logout">Logout</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ========== App Menu ========== -->
+        <div class="app-menu navbar-menu">
+            <!-- LOGO -->
+            <div class="navbar-brand-box">
+                <!-- Dark Logo-->
+                <a href="index.html" class="logo logo-dark">
+                    <span class="logo-sm">
+                        <img src="/assets/images/logo-sm.png" alt="" height="22">
+                    </span>
+                    <span class="logo-lg">
+                        <img src="/assets/images/logo-dark.png" alt="" height="17">
+                    </span>
+                </a>
+                <!-- Light Logo-->
+                <a href="index.html" class="logo logo-light">
+                    <span class="logo-sm">
+                        <img src="/assets/images/logo-sm.png" alt="" height="22">
+                    </span>
+                    <span class="logo-lg">
+                        <img src="/assets/images/logo-light.png" alt="" height="17">
+                    </span>
+                </a>
+                <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover"
+                    id="vertical-hover">
+                    <i class="ri-record-circle-line"></i>
+                </button>
+            </div>
+
+            <div id="scrollbar">
+                <div class="container-fluid">
+                    <div id="two-column-menu"></div>
+                    <ul class="navbar-nav" id="navbar-nav" data-aos="fade-right" data-aos-duration="1000"></ul>
+                </div>
+            </div>
+
+            <div class="sidebar-background"></div>
+        </div>
+        <!-- Left Sidebar End -->
+        <!-- Vertical Overlay-->
+        <div class="vertical-overlay"></div>
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+
+        <!--form Start-->
+        <div class="main-content">
+            <div class="page-content">
+                <div class="container-fluid">
+                    <div class="row mb-3">
+                        <div class="search-box col-4">
+                            <input type="text" class="form-control" id="searchtemplate"
+                                placeholder="Search Template..." />
+                            <i class="ri-search-line search-icon ms-3"></i>
+                        </div>
+                        <div class="d-flex justify-content-end col-8">
+                            <button type="button" class="btn btn-soft-danger waves-effect waves-light fs-15 me-2"
+                                id="mic" data-bs-toggle="modal" data-bs-target="#voice_input">
+                                <i class="mdi mdi-microphone"></i>
+                            </button>
+                            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#createtemplatemodal"
+                                id="createtemplatemodalbtn">
+                                <i class="ri-add-circle-line align-middle me-lg-2"></i>
+                                <span class="d-none d-lg-inline-block">Create Template</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="createtemplatemodal" tabindex="-1" aria-labelledby=""
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-fullscreen-sm-down modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header bg-soft-info p-3">
+                                    <h5 class="modal-title" id="modallbl"></h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                                        id="close-modal"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="mb-3">
+                                        <label for="name" class="form-label">
+                                            Name
+                                            <span class="text-danger">*</span>
+                                            <span class="text-danger" id="err_name"></span>
+                                        </label>
+                                        <input type="text" class="form-control required" id="name" data-type="name"
+                                            placeholder="Enter template name" />
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="message" class="form-label">
+                                            Custom message
+                                            <span class="text-danger">*</span>
+                                            <span class="text-danger" id="err_message"></span>
+                                        </label>
+                                        <textarea class="form-control required" rows="6" data-type="message"
+                                            id="message" placeholder="Create your template here..."></textarea>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="field" class="form-label">
+                                            User Field
+                                            <span class="text-danger">*</span>
+                                            <span class="text-danger" id="err_field"></span>
+                                        </label>
+                                        <input type="number" class="form-control required" data-type="number" id="field"
+                                            placeholder="Enter No. of UserField" />
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button id="create" class="btn btn-primary d-none">
+                                        Create
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" id="templateData"></div>
+                </div>
+            </div>
+            <footer class="footer"></footer>
+        </div>
+    </div>
+    <!-- END layout-wrapper -->
+
+    <!--start back-to-top-->
+    <button onclick="topFunction()" class="btn btn-danger btn-icon" id="back-to-top">
+        <i class="ri-arrow-up-line"></i>
+    </button>
+    <!--end back-to-top-->
+
+    <!--preloader-->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner-border text-primary avatar-sm" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="customizer-setting" id="chatbot">
+        <div class="btn-info btn-rounded shadow-lg btn btn-icon btn-lg p-2">
+            <i class="fa-solid fa-comment" id="iconchat"></i>
+        </div>
+    </div>
+
+    <div class="email-chat-detail" id="emailchat-detailElem" style="display: none;">
+        <div class="card mb-0">
+            <div class="card-header align-items-center d-flex bg-primary text-white-50">
+                <div class="flex-grow-1">
+                    <h5 class="fs-15 text-white mb-1 profile-username">Velzon ChatBot</h5>
+                    <p class="mb-0 fs-12 lh-1">Ask here for help</p>
+                </div>
+                <div>
+                    <i class="fa-brands fa-bots fs-1 text-white"></i>
+                </div>
+            </div>
+
+            <div class="card-body p-0">
+                <div id="users-chat">
+                    <div class="chat-conversation p-3" id="chat-conversation" data-simplebar style="height: 250px;">
+                        <ul class="list-unstyled chat-conversation-list chat-sm" id="conversation"></ul>
+                    </div>
+                </div>
+
+                <div class="border-top border-top-dashed">
+                    <div class="row g-2 mx-3 mt-2 mb-3">
+                        <div class="col">
+                            <div class="position-relative">
+                                <input type="text" class="form-control border-light bg-light message-input"
+                                    placeholder="Enter Message..." id="input">
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <button class="btn btn-primary" id="sendbotmsg">
+                                <i class="mdi mdi-send"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="voice_input" class="modal zoomIn">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header"></div>
+                <div class="modal-body">
+                    <div class="fs-1 text-center" id="msg" style="resize: none;"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script src="/assets/js/jquery.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/validate.js"></script>
+    <script src="/assets/js/voiceRecognition.js"></script>
+    <script src="/assets/js/chatbot.js"></script>
+
+    <script src="/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="/assets/libs/node-waves/waves.min.js"></script>
+    <script src="/assets/libs/feather-icons/feather.min.js"></script>
+    <script src="/assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+
+    <!-- init js -->
+    <script src="/assets/js/pages/form-editor.init.js"></script>
+    <script src="/assets/sweetalert2/sweet-alert.init.js"></script>
+    <script src="/assets/sweetalert2/sweetalert2.all.js"></script>
+    <!-- aos js -->
+    <script src="/assets/libs/aos/aos.js"></script>
+    <!-- prismjs plugin -->
+    <script src="/assets/libs/prismjs/prism.js"></script>
+    <!-- animation init -->
+    <script src="/assets/js/pages/animation-aos.init.js"></script>
+
+    <!-- App js -->
+    <script src="/assets/js/app.js"></script>
+    <script>
+        $(document).ready(function () {
+            chkLogin();
+            function temmplateDataDisplay(obj) {
+                $.ajax({
+                    url: "/getData",
+                    method: "POST",
+                    data: {
+                        obj: obj
+                    },
+                    success: function (val) {
+                        console.log(val);
+                        var output = "", data = "";
+                        switch (val.status_code) {
+                            case '401': {
+                                InvalidUser();
+                                break;
+                            }
+
+                            case '500': {
+                                InternalServerError();
+                                break;
+                            }
+                            case '404': {
+                                output += `
+                                <div class="noresult p-5 container d-flex align-items-center justify-content-center">
+                                    <div class="text-center">
+                                        <lord-icon src="https://cdn.lordicon.com/msoeawqm.json" trigger="loop"
+                                            colors="primary:#212529,secondary:#405189"
+                                            style="width: 75px; height: 75px"></lord-icon>
+                                        <h5 class="mt-2">No Template created</h5>
+                                    </div>
+                                </div>`;
+                                break;
+                            }
+
+                            default: {
+                                for (let i = 0; i < val.length; i++) {
+                                    output += `
+                                            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12" data-aos="zoom-in">
+                                                <div class="card card-animate" id="${val[i].cstm_id}">
+                                                    <div class="card-header py-2 mb-0 bg-soft-info">
+                                                        <div class="float-end">
+                                                            <button type="button" class="btn btn-light btn-icon waves-effect"
+                                                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                <i class="fa-solid fa-ellipsis-vertical fs-5"></i>
+                                                            </button>
+                                                            <div class="dropdown-menu dropdown-menu-end">
+                                                                <button class="dropdown-item remove-item-btn fs-13" data-id="${val[i].cstm_id}">
+                                                                    <span class="text-end text-danger">
+                                                                        <i class="bx bxs-trash align-middle me-2"></i>
+                                                                        Delete
+                                                                    </span>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <h4 class="card-title mb-0 d-flex align-items-center py-2" id="abc">
+                                                            ${val[i].cstm_name}
+                                                        </h4>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <div data-simplebar data-simplebar-auto-hide="false" 
+                                                            style="height: 150px;" class="p-1 fs-15">
+                                                                ${val[i].cstm_msg}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>`;
+                                }
+                            }
+                        }
+                        $("#templateData").html(output);
+                    }
+                });
+            }
+            temmplateDataDisplay({
+                table: "cstm_template",
+                paramstr: `true`,
+            });
+
+            $(document).on('click', '#createtemplatemodalbtn', () => {
+                $('#modallbl').html('Create Custome Template');
+
+                $('#create, #edit').addClass("d-none");
+                $('#create').removeClass("d-none");
+            });
+
+            $(".required").on("focusout", function () {
+                onfocusout_validation($(this).attr("id"));
+            });
+
+            $(".required").on("input", function () {
+                oninput_validation($(this).attr("id"));
+            });
+
+            focusEvent('name', 'message');
+            // focusEvent('message', 'field');
+
+            if ($('#create').hasClass('d-none')) {
+                enterKeyEvent('field', 'edit');
+            }
+            else {
+                enterKeyEvent('field', 'create');
+            }
+
+            $(document).on('click', '#create', function () {
+                nullfield_validation('name');
+                nullfield_validation('message');
+                nullfield_validation('field');
+                if (objFlag.flag_name == 0 && objFlag.flag_message == 0 && objFlag.flag_field == 0) {
+                    oninput_validation('name');
+                    oninput_validation('message');
+                    oninput_validation('field');
+                    if (objFlag.flag_name == 0 && objFlag.flag_message == 0 && objFlag.flag_field == 0) {
+                        $.ajax({
+                            url: "/create_custom_template",
+                            method: "POST",
+                            data: {
+                                "name": $("#name").val().trim(),
+                                "message": $('#message').val(),
+                                "field": $("#field").val()
+                            },
+                            success: function (val) {
+                                switch (val.status_code) {
+                                    case '401': {
+                                        InvalidUser();
+                                        break;
+                                    }
+
+                                    case '500': {
+                                        InternalServerError();
+                                        break;
+                                    }
+
+                                    case '200': {
+                                        $('#close-modal').click();
+                                        swal({
+                                            title: "Template added successfully",
+                                            type: "success",
+                                            timer: 1500,
+                                            showConfirmButton: false,
+                                        }).then(function () {
+                                            $('#name, #messag, #field').val('');
+                                            $('.required').removeClass('form-control-danger form-control-success');
+                                        });
+                                        break;
+                                    }
+                                }
+
+                                temmplateDataDisplay({
+                                    table: "cstm_template",
+                                    paramstr: `true`,
+                                });
+                            }
+                        })
+                    }
+                }
+            })
+
+            $(document).on('click', '.remove-item-btn', function () {
+                const id = $(this).attr("data-id");
+                swal({
+                    title: 'Are you sure?',
+                    text: "You won't be able to access this anymore..!!",
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: 'Yes, delete it',
+                    cancelButtonText: 'No, cancel',
+                    confirmButtonClass: 'btn btn-success mx-2',
+                    cancelButtonClass: 'btn btn-outline-danger mx-2',
+                    buttonsStyling: false
+                }).then(function (result) {
+                    if (result.value) {
+                        $.ajax({
+                            url: "/deleterecord",
+                            method: "delete",
+                            data: {
+                                obj: {
+                                    "table": "cstm_template",
+                                    "paramstr": `cstm_id = '${id}'`,
+                                }
+                            },
+                            success: function (val) {
+                                switch (val.status_code) {
+                                    case '401': {
+                                        InvalidUser();
+                                        break;
+                                    }
+
+                                    case '500': {
+                                        InternalServerError();
+                                        break;
+                                    }
+
+                                    case '200': {
+                                        swal({
+                                            title: "Template Removed",
+                                            type: "success",
+                                            timer: 2000,
+                                            showConfirmButton: false,
+                                        }).then(function () {
+                                            temmplateDataDisplay({
+                                                table: "cstm_template",
+                                                paramstr: `true`,
+                                            });
+                                        });
+                                        break;
+                                    }
+                                }
+                            }
+                        });
+                    }
+                })
+            });
+
+            $(document).on('input', '#searchtemplate', function () {
+                let val = $('#searchtemplate').val().trim();
+
+                if (val == null || val == "") {
+                    temmplateDataDisplay({
+                        table: "cstm_template",
+                        paramstr: `true`,
+                    });
+                }
+                else {
+                    temmplateDataDisplay({
+                        table: "cstm_template",
+                        paramstr: `cstm_name LIKE '%${val}%'`,
+                    });
+                }
+            })
+
+            $(document).on('click', '#mic', async function () {
+
+                mic("msg").then((result) => {
+                    let data = result.toString().split(" ");
+                    console.log(data);
+                    if (data[0] == "create" && data[1] == "template") {
+                        $("#createtemplatemodalbtn").click();
+                    }
+                    else if (data[0] == "logout" || (data[0] == "log" && data[1] == "out")) {
+                        $("#logout").click();
+                    }
+                    else if ((data[0] == "edit" || data[0] == "update") && data[1] != "" && data[1] != undefined) {
+                        $.ajax({
+                            url: "/getData",
+                            method: "post",
+                            data: {
+                                obj: {
+                                    table: `cstm_template`,
+                                    paramstr: `cstm_name='${data[1]}'`,
+                                }
+                            },
+                            success: function (data) {
+                                console.log(data);
+                                let wfcount = $(".edit-item-btn").length;
+                                // alert($(".editBtn")[0].getAttribute("data-id"));
+                                for (let i = 0; i < wfcount; i++) {
+                                    if ($(".edit-item-btn")[i].getAttribute("data-id") == data[0].cstm_id) {
+                                        $(".edit-item-btn")[i].click();
+                                    }
+                                }
+                            }
+                        })
+                    }
+                    else if (data[0] == "delete" && data[1] != "" && data[1] != undefined) {
+                        $.ajax({
+                            url: "/getData",
+                            method: "post",
+                            data: {
+                                obj: {
+                                    table: `cstm_template`,
+                                    paramstr: `cstm_name='${data[1]}'`,
+                                }
+                            },
+                            success: function (data) {
+                                console.log(data);
+                                let wfcount = $(".remove-item-btn").length;
+                                // alert($(".editBtn")[0].getAttribute("data-id"));
+                                for (let i = 0; i < wfcount; i++) {
+                                    if ($(".remove-item-btn")[i].getAttribute("data-id") == data[0].cstm_id) {
+                                        $(".remove-item-btn")[i].click();
+                                    }
+                                }
+                            }
+                        })
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "profile") {
+                        location.href = "/profile";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && (data[2] == "pay" || data[2] == "pricing" || data[2] == "payment" || data[2] == "subscription")) {
+                        location.href = "/subscription";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "dashboard") {
+                        location.href = "/dashboard";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "instance") {
+                        location.href = "/instance";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "custom" && data[3] == "template") {
+                        location.href = "/customtemplate";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "email" && data[3] == "configuration") {
+                        location.href = "/addpasscode";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "support" && data[3] == "ticket") {
+                        location.href = "/support-ticket";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "api" && data[3] == "docs") {
+                        location.href = "/docs";
+                    }
+                    else {
+                        swal({
+                            title: "Command not recognized",
+                            type: 'error',
+                            timer: 2500,
+                            showConfirmButton: false,
+                        });
+                    }
+                })
+            })
+
+
+        })
+    </script>
+
+</body>
+
+</html>

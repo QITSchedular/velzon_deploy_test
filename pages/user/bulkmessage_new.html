@@ -1,0 +1,1870 @@
+<!DOCTYPE html>
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg"
+  data-sidebar-image="none" data-preloader="disable">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Dashboard | WhatsApp Messages</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+  <meta content="Themesbrand" name="author" />
+  <!-- App favicon -->
+  <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+
+  <!-- jsvectormap css -->
+  <link href="/assets/libs/jsvectormap/css/jsvectormap.min.css" rel="stylesheet" type="text/css" />
+
+  <!--Swiper slider css-->
+  <link href="/assets/libs/swiper/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
+
+  <!-- Layout config Js -->
+  <script src="/assets/js/layout.js"></script>
+  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+  <!-- Bootstrap Css -->
+  <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <!-- Icons Css -->
+  <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+  <!-- App Css-->
+  <link href="/assets/css/app.min.css" rel="stylesheet" type="text/css" />
+  <!-- custom Css-->
+  <link href="/assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+
+  <!-- Font Awesome Files -->
+  <link href="/assets/fontawesome/css/all.min.css" rel="stylesheet" />
+  <link href="/assets/fontawesome/css/solid.css" rel="stylesheet" />
+  <link href="/assets/fontawesome/css/solid.min.css" rel="stylesheet" />
+  <link href="/assets/fontawesome/css/regular.css" rel="stylesheet" />
+  <link href="/assets/fontawesome/css/regular.min.css" rel="stylesheet" />
+  <link href="/assets/fontawesome/css/fontawesome.min.css" rel="stylesheet" />
+  <link href="/assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://unpkg.com/placeholder-loading/dist/css/placeholder-loading.min.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js"
+    integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk=" crossorigin="anonymous"></script>
+</head>
+<style>
+  .refresh {
+    transition: all 0.1s linear;
+  }
+
+  .refresh.down {
+    transform: rotate(180deg);
+  }
+</style>
+
+<body>
+  <!-- Begin page -->
+  <div id="layout-wrapper">
+    <header id="page-topbar">
+      <div class="layout-width">
+        <div class="navbar-header">
+          <div class="d-flex">
+            <!-- LOGO -->
+            <div class="navbar-brand-box horizontal-logo">
+              <a href="/" class="logo logo-dark">
+                <span class="logo-sm">
+                  <img src="/assets/images/logo-sm.png" alt="" height="22" />
+                </span>
+                <span class="logo-lg">
+                  <img src="/assets/images/logo-dark.png" alt="" height="17" />
+                </span>
+              </a>
+
+              <a href="/" class="logo logo-light">
+                <span class="logo-sm">
+                  <img src="/assets/images/logo-sm.png" alt="" height="22" />
+                </span>
+                <span class="logo-lg">
+                  <img src="/assets/images/logo-light.png" alt="" height="17" />
+                </span>
+              </a>
+            </div>
+
+            <button type="button" class="btn btn-sm px-3 fs-16 header-item vertical-menu-btn topnav-hamburger"
+              id="topnav-hamburger-icon">
+              <span class="hamburger-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+            </button>
+          </div>
+
+          <div class="d-flex align-items-center">
+            <div class="dropdown d-md-none topbar-head-dropdown header-item">
+              <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
+                id="page-header-search-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="bx bx-search fs-22"></i>
+              </button>
+              <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
+                aria-labelledby="page-header-search-dropdown">
+                <form class="p-3">
+                  <div class="form-group m-0">
+                    <div class="input-group">
+                      <input type="text" class="form-control" placeholder="Search ..."
+                        aria-label="Recipient's username" />
+                      <button class="btn btn-primary" type="submit">
+                        <i class="mdi mdi-magnify"></i>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <div class="ms-1 header-item d-none d-sm-flex">
+              <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
+                data-toggle="fullscreen">
+                <i class="bx bx-fullscreen fs-22"></i>
+              </button>
+            </div>
+
+            <div class="ms-1 header-item d-none d-sm-flex">
+              <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle light-dark-mode">
+                <i class="bx bx-moon fs-22"></i>
+              </button>
+            </div>
+
+            <div class="dropdown ms-sm-3 header-item topbar-user">
+              <button type="button" class="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <span class="d-flex align-items-center">
+                  <img class="rounded-circle header-profile-user profileimg" />
+                  <span class="text-start ms-xl-2">
+                    <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text profilename"></span>
+                    <span class="d-none d-xl-block ms-1 fs-12 text-muted user-name-sub-text">
+                      Founder
+                    </span>
+                  </span>
+                </span>
+              </button>
+              <div class="dropdown-menu dropdown-menu-end">
+                <!-- item-->
+                <h6 class="dropdown-header">
+                  Welcome <span class="profilename"></span>
+                </h6>
+                <a class="dropdown-item" href="/profile">
+                  <i class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i>
+                  <span class="align-middle">Profile</span>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" id="logout">
+                  <i class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i>
+                  <span class="align-middle" data-key="t-logout">Logout</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- ========== App Menu ========== -->
+    <div class="app-menu navbar-menu">
+      <!-- LOGO -->
+      <div class="navbar-brand-box">
+        <!-- Dark Logo-->
+        <a href="/" class="logo logo-dark">
+          <span class="logo-sm">
+            <img src="/assets/images/logo-sm.png" alt="" height="22" />
+          </span>
+          <span class="logo-lg">
+            <img src="/assets/images/logo-dark.png" alt="" height="17" />
+          </span>
+        </a>
+        <!-- Light Logo-->
+        <a href="/" class="logo logo-light">
+          <span class="logo-sm">
+            <img src="/assets/images/logo-sm.png" alt="" height="22" />
+          </span>
+          <span class="logo-lg">
+            <img src="/assets/images/logo-light.png" alt="" height="17" />
+          </span>
+        </a>
+        <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover"
+          id="vertical-hover">
+          <i class="ri-record-circle-line"></i>
+        </button>
+      </div>
+
+      <div id="scrollbar">
+        <div class="container-fluid">
+          <div id="two-column-menu"></div>
+          <ul class="navbar-nav" id="navbar-nav">
+            <li class="menu-title"><span data-key="t-menu">Menu</span></li>
+            <li class="nav-item">
+              <a class="nav-link menu-link" href="/dashboard" role="button" aria-expanded="false"
+                aria-controls="sidebarDashboards">
+                <i class="ri-dashboard-2-line"></i>
+                <span data-key="t-dashboards">Dashboards</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link menu-link" href="/instance">
+                <i class="ri-apps-2-line"></i>
+                <span data-key="t-apps">Instance</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link menu-link" href="#sidebarLayouts">
+                <i class="ri-layout-3-line"></i>
+                <span data-key="t-layouts">API Docs</span>
+              </a>
+            </li>
+            <!-- end Dashboard Menu -->
+          </ul>
+        </div>
+        <!-- Sidebar -->
+      </div>
+
+      <div class="sidebar-background"></div>
+    </div>
+    <!-- Left Sidebar End -->
+    <!-- Vertical Overlay-->
+    <div class="vertical-overlay"></div>
+
+    <!-- ============================================================== -->
+    <!-- Start right Content here -->
+    <!-- ============================================================== -->
+    <div class="main-content">
+      <div class="page-content">
+        <div class="container-fluid">
+          <div class="card">
+            <div class="card-header" id="i_name"></div>
+            <div class="card-body">
+              <div class="row mb-1 px-2">
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+                  <label class="card-title">API Key</label>
+                  <div class="d-flex">
+                    <input type="text" class="form-control" id="apikey" readonly disabled />
+                    <a class="copy mx-2" id="copy_apikey" data-bs-toggle="tooltip" data-bs-placement="top"
+                      title="Copy API">
+                      <i class="fa-regular fa-copy form-control fs-4"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+                  <label class="card-title">Token</label>
+                  <div class="d-flex">
+                    <input type="text" class="form-control" id="token" readonly disabled />
+                    <a class="copy mx-2" id="copy_token" data-bs-toggle="tooltip" data-bs-placement="top"
+                      title="Copy Token">
+                      <i class="fa-regular fa-copy form-control fs-4"></i>
+                    </a>
+                    <a class="mx-2" id="refresh_token" data-bs-toggle="tooltip" data-bs-placement="top"
+                      title="Refresh Token">
+                      <i class="fa fa-arrows-rotate fs-4 refresh form-control"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+                  <label class="card-title">Instance Id</label>
+                  <div class="d-flex">
+                    <input type="text" class="form-control" id="instanceid" readonly disabled />
+                    <a class="copy mx-2" id="copy_instanceid" data-bs-toggle="tooltip" data-bs-placement="top"
+                      title="Copy Instance Id">
+                      <i class="fa-regular fa-copy form-control fs-4"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="row mb-2 px-2">
+                <div class="col-lg-4 col-md-4 col-sm-12 mb-3">
+                  <label class="card-title">AUTH STATUS</label>
+                  <div class="d-flex">
+                    <div class="edit">
+                      <button id="scanqr" class="btn btn-md btn-success d-none">
+                        <span class="mx-1">
+                          <i class="fa-solid fa-qrcode"></i>
+                        </span>
+                        <span> Scan QR </span>
+                      </button>
+                      <div id="disconnect" class="d-none">
+                        <div class="btn btn-success">
+                          <span class="mx-1">
+                            <i class="fa-solid fa-check"></i>
+                          </span>
+                          <span>Authenticated</span>
+                        </div>
+                        <button id="disconnect_btn" class="btn btn-outline-danger">
+                          <span class="mx-1">
+                            <i class="fa-solid fa-circle-exclamation"></i>
+                          </span>
+                          <span> Disconnect </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-8 col-md-8 col-sm-12 mb-3">
+                  <label class="card-title">Task</label>
+                  <div class="d-flex">
+                    <select id="apiurl" class="form-select">
+                      <option disable selected>-- Select API --</option>
+                      <option value="sendmsg">
+                        Send Message
+                      </option>
+                      <option value="sendimage">
+                        Send Image
+                      </option>
+                      <option value="bulkmessage">Bulk Message</option>
+                    </select>
+
+                    <!-- <input type="text" name="apiurl" class="form-control"> -->
+                    <a class="copy mx-2" id="copy_apiurl" data-bs-toggle="tooltip" data-bs-placement="top"
+                      title="Copy API URL">
+                      <i class="fa-regular fa-copy form-control fs-4"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card d-none" id="QRbox">
+            <div class="row">
+              <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card-body">
+                  <div class="text-center">
+                    <div id="output" class="m-auto">
+                      <h4 class="mt-5 text-center">
+                        <span>QR code</span><br />
+                        <span>will be generate</span><br />
+                        <span>here ...</span><br />
+                      </h4>
+                    </div>
+                    <div class="p-5 d-none" id="loader">
+                      <div class="position-absolute top-50 start-50 translate-middle rounded">
+                        <div class="spinner-border text-primary" role="status">
+                          <span class="sr-only"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-9 col-md-6 col-sm-12 p-3 fs-5">
+                <div class="d-flex align-items-center h-100">
+                  <ul>
+                    <li>Open WhatsApp on your phone</li>
+                    <li>Tap Menu or settings and select Linked Devices</li>
+                    <li>
+                      Point your phone to this screen to capture the code
+                    </li>
+                    <li class="text-primary">
+                      A QR code is valid only for 10 seconds. Message sending
+                      will be available right after authorization.<br />
+                      Click Scan QR to regenerate QR code.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12">
+              <div class="d-none card" id="msgform">
+                <h3 class="card-header text-center">
+                  Send Messages from here
+                </h3>
+                <div class="card-body">
+                  <div class="mb-3">
+                    <label for="message" class="form-label">
+                      Message
+                      <span class="text-danger">*</span>
+                      <span class="text-danger" id="err_msg"></span>
+                    </label>
+                    <input type="text" name="msg" id="msg" class="form-control required" />
+                  </div>
+                  <div class="mb-3">
+                    <label for="image" class="form-label">
+                      Phone no
+                      <span class="text-danger">*</span>
+                      <span class="text-danger" id="err_phone"></span>
+                    </label>
+                    <input type="number" name="phone" id="phone" class="form-control required" />
+                  </div>
+                  <div class="mb-3">
+                    <input type="button" id="sendmsg" name="submit_button" class="btn btn-primary" value="Send" />
+                  </div>
+                </div>
+              </div>
+              <div class="d-none card" id="imageform">
+                <h3 class="card-header text-center">Send Image from here</h3>
+                <div class="card-body">
+                  <div class="mb-3">
+                    <label for="image" class="form-label"> Image </label>
+                    <input type="file" name="fileupload2" id="fileupload2" class="form-control" />
+                  </div>
+                  <div class="mb-3">
+                    <label>Image Caption</label>
+                    <input type="text" name="msg_caption" id="msg_caption" class="form-control" />
+                  </div>
+                  <div class="mb-3">
+                    <label for="image" class="form-label">
+                      Phone no
+                      <span class="text-danger">*</span>
+                      <span class="text-danger" id="err_phone2"></span>
+                    </label>
+                    <input type="text" name="phone2" id="phone2" class="form-control required" />
+                  </div>
+                  <div class="mb-3">
+                    <input type="button" id="sendmsg2" name="submit_button" class="btn btn-primary" value="Send" />
+                  </div>
+                </div>
+              </div>
+              <div class="d-none card" id="bulkmsg">
+
+                <!-- <div class="row card-body">
+                    <div class="col-md-6 text-center fs-5" id="gsheet">
+                      Google Sheet
+                    </div>
+                    <div class="col-md-6 text-center fs-5" id="lfile">
+                      Local File
+                    </div>
+                  </div> -->
+                <!-- <div class="card-header"> -->
+                <ul class="nav nav-tabs nav-justified nav-border-top nav-border-top-success mb-3" role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link" id="gsheet" data-bs-toggle="tab" href="#bulkformgoogle" role="tab"
+                      aria-selected="false">
+                      <i class="ri-home-5-line align-middle me-1"></i> Google Sheet
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="lfile" data-bs-toggle="tab" href="#bulkformsimple" role="tab"
+                      aria-selected="false">
+                      <i class="ri-user-line me-1 align-middle"></i> Local File
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="tab" id="channel" href="#bulkformchannel" role="tab"
+                      aria-selected="false">
+                      <i class="ri-question-answer-line align-middle me-1"></i> Channel
+                    </a>
+                  </li>
+                </ul>
+                <!-- </div> -->
+                <div class="d-none card" id="bulkformsimple">
+                  <h3 class="card-header text-center">
+                    Send Bulk Message from Local File
+                  </h3>
+                  <div class="card-body">
+                    <div class="mb-1">
+                      <label for="datafile" class="form-label">Select CSV File :</label>
+                      <input type="file" id="datafile" class="form-control" />
+                      <input type="hidden" name="clientdata" /><br />
+                      <table class="table align-middle" id="tbldata2"></table>
+                    </div>
+                    <br />
+                    <div class="mb-1">
+                      <label for="msgtype" class="form-label">Select Message Type :</label>
+                      <select class="form-select w-25" id="msgtype" name="msgtype">
+                        <option value="">-- select message type --</option>
+                        <option value="custom">custom message</option>
+                        <option value="template">template message</option>
+                      </select>
+                    </div>
+                    <br />
+                    <div class="d-none mt-3" id="sheetdata2">
+                      <div class="mb-3">
+                        <label for="message" class="form-label">
+                          Message
+                          <span class="text-danger">*</span>
+                          <span class="text-danger" id="err_msg2"></span>
+                        </label>
+                        <input type="text" name="msg2" id="msg2" class="form-control" />
+                      </div>
+                      <button id="sendtoall2" class="btn btn-md btn-primary">
+                        <span class="mx-1">
+                          <i class="fa-solid fa-paper-plane"></i>
+                        </span>
+                        <span> Send to All </span>
+                      </button>
+                    </div>
+                    <!-- template display -->
+                    <div class="d-none" id="distemp">
+                      <label class="form-label">Template:</label>
+                      <select class="form-select w-50" id="template" name="template"></select><br />
+                      <div id="templatemsg" class="row mb-3"></div>
+                      <textarea class="form-control mb-3" style="resize: none" cols="50" rows="6" id="mesg"></textarea>
+                      <button id="sendto" class="btn btn-md btn-primary">
+                        <span class="mx-1">
+                          <i class="fa-solid fa-paper-plane"></i>
+                        </span>
+                        <span> Send to All </span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="d-none card" id="bulkformgoogle">
+                  <h3 class="card-header text-center">
+                    Send Bulk Message from Google Sheet
+                  </h3>
+                  <div class="card-body">
+                    <div class="mb-3">
+                      <button id="connect" class="btn btn-md btn-success">
+                        <span class="mx-1">
+                          <i class="fa-solid fa-plug"></i>
+                        </span>
+                        <span> Connect </span>
+                      </button>
+                    </div>
+                    <div class="mb-1 row">
+                      <div class="col-6">
+                        <select class="form-select mb-3" id="spreedsheet">
+                          <option selected>select spreedsheet</option>
+                        </select>
+                      </div>
+                      <div class="col-6">
+                        <select class="form-select mb-3" id="sheetname">
+                          <option selected>select sheet</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="mt-3" id="sheetdata">
+                      <table class="table align-middle" id="tbldata"></table>
+                    </div>
+                    <div class="mb-1">
+                      <label for="msgtype1" class="form-label">Select Message Type :</label>
+                      <select class="form-select w-25" id="msgtype1" name="msgtype">
+                        <option value="">-- select message type --</option>
+                        <option value="custom">custom message</option>
+                        <option value="template">template message</option>
+                      </select>
+                    </div>
+                    <div class="d-none mb-3" id="discustom">
+                      <label for="message" class="form-label">
+                        Message
+                        <span class="text-danger">*</span>
+                        <span class="text-danger" id="err_msg"></span>
+                      </label>
+                      <input type="text" name="msggsheet" id="msggsheet" class="form-control required" />
+                      <div class="mb-3">
+                        <button id="sendtoallgsheet" class="btn btn-md btn-primary">
+                          <span class="mx-1">
+                            <i class="fa-solid fa-paper-plane"></i>
+                          </span>
+                          <span> Send to All </span>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="d-none" id="distemplate">
+                      <label class="form-label">Template:</label>
+                      <select class="form-select w-50" id="template1" name="template"></select>
+                      <div id="templatemsg1" class="row mb-3"></div>
+                      <textarea class="form-control mb-3" style="resize: none" cols="50" rows="6" id="mesg1"></textarea>
+                      <div class="mb-3">
+                        <button id="sendto1" class="btn btn-md btn-primary">
+                          <span class="mx-1">
+                            <i class="fa-solid fa-paper-plane"></i>
+                          </span>
+                          <span> Send to All </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="d-none card" id="bulkformchannel">
+                  <h3 class="card-header text-center">
+                    Send Messages From Channel
+                  </h3>
+                  <div class="card-body">
+                    <div class="mb-1">
+                      <label class="form-label">Channel:</label><br>
+                      <select class="form-select w-25" id="channeldata" name="channeldata"></select>
+                    </div><br>
+                    <div class="mb-1" id="contactdata">
+
+                    </div><br>
+                    <div class="mb-1">
+                      <label class="form-label">Message:</label><br>
+                      <input type="text" name="msgchannel" id="msgchannel" class="form-control" />
+                    </div><br>
+                    <div class="mb-1">
+                      <input type="button" id="sendmsgchannel" name="sendmsgchannel" class="btn btn-primary"
+                        value="Send" />
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-6">
+              <script>
+                document.write(new Date().getFullYear());
+              </script>
+              © Velzon.
+            </div>
+            <div class="col-sm-6">
+              <div class="text-sm-end d-none d-sm-block">
+                Develop by Triangles
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <!-- END layout-wrapper -->
+
+  <!--start back-to-top-->
+  <button onclick="topFunction()" class="btn btn-danger btn-icon" id="back-to-top">
+    <i class="ri-arrow-up-line"></i>
+  </button>
+  <!--end back-to-top-->
+
+  <!--preloader-->
+  <div id="preloader">
+    <div id="status">
+      <div class="spinner-border text-primary avatar-sm" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="customizer-setting d-none d-md-block">
+    <div class="btn-info btn-rounded shadow-lg btn btn-icon btn-lg p-2" data-bs-toggle="offcanvas"
+      data-bs-target="#theme-settings-offcanvas" aria-controls="theme-settings-offcanvas">
+      <i class="mdi mdi-spin mdi-cog-outline fs-22"></i>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT -->
+  <script src="/assets/js/jquery.js"></script>
+  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/validate.js"></script>
+  <script src="/assets/js/chatbot.js"></script>
+  <script src="/assets/js/app.js"></script>
+
+  <script src="/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/libs/simplebar/simplebar.min.js"></script>
+  <script src="/assets/libs/node-waves/waves.min.js"></script>
+  <script src="/assets/libs/feather-icons/feather.min.js"></script>
+  <script src="/assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+
+  <!--Swiper slider js-->
+  <script src="/assets/libs/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Dashboard init -->
+  <script src="/assets/js/pages/dashboard-ecommerce.init.js"></script>
+
+  <script src="/assets/sweetalert2/sweet-alert.init.js"></script>
+  <script src="/assets/sweetalert2/sweetalert2.all.js"></script>
+
+
+  <script async defer src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>
+  <script async defer src="https://accounts.google.com/gsi/client" onload="gisLoaded()"></script>
+
+  <script>
+    var channel_contact;
+    const CLIENT_ID =
+      "946707776966-qbbl9q9eikhrtfld5l9pnbv3pkvcni7g.apps.googleusercontent.com";
+    const API_KEY = "AIzaSyA2-ajldm4p1SEP1mZjG4qeco5uqqzM2vU";
+
+    async function getSheet(sheetID) {
+      let sheetName = "";
+      const endpoint = `https://sheets.googleapis.com/v4/spreadsheets/${sheetID}?key=${API_KEY}`;
+      let count = 0;
+      await fetch(endpoint)
+        .then((response) => response.json())
+        .then((data) => {
+          const sheetNames = data.sheets.map((sheet) => sheet.properties);
+          for (i = 0; i < sheetNames.length; i++) {
+            sheetName +=
+              "<option value='" +
+              count +
+              "'>" +
+              sheetNames[i].title +
+              "</option>";
+            console.log(sheetNames[i]);
+            count++;
+          }
+          document.getElementById("sheetname").innerHTML = sheetName;
+        })
+        .catch((error) => {
+          swal({
+            title: "Oops !",
+            text: "Provide appropriate reading permission in your selected spreadsheet..!!",
+            icon: "warning",
+            closeOnEsc: true,
+          });
+          document.getElementById("sheetname").innerHTML = "";
+          console.error("There was an error!", error);
+        });
+    }
+    const DISCOVERY_DOC =
+      "https://www.googleapis.com/discovery/v1/apis/drive/v3/rest";
+
+    const SCOPES = "https://www.googleapis.com/auth/drive.metadata.readonly";
+
+    let tokenClient;
+    let gapiInited = false;
+    let gisInited = false;
+
+    function gapiLoaded() {
+      gapi.load("client", initializeGapiClient);
+    }
+
+    async function initializeGapiClient() {
+      await gapi.client.init({
+        apiKey: API_KEY,
+        discoveryDocs: [DISCOVERY_DOC],
+      });
+      gapiInited = true;
+      maybeEnableButtons();
+    }
+
+    function gisLoaded() {
+      tokenClient = google.accounts.oauth2.initTokenClient({
+        client_id: CLIENT_ID,
+        scope: SCOPES,
+        callback: "", // defined later
+      });
+      gisInited = true;
+      maybeEnableButtons();
+    }
+
+    function maybeEnableButtons() {
+      if (gapiInited && gisInited) {
+        // document.getElementById('authorize_button').style.visibility = 'visible';
+        //display_in_out();
+      }
+    }
+    function handleAuthClick() {
+      tokenClient.callback = async (resp) => {
+        if (resp.error !== undefined) {
+          throw resp;
+        }
+
+        await listFiles();
+      };
+
+      if (gapi.client.getToken() === null) {
+        tokenClient.requestAccessToken({
+          prompt: "consent",
+        });
+      } else {
+        tokenClient.requestAccessToken({
+          prompt: "",
+        });
+      }
+    }
+    async function listFiles() {
+      let response;
+      try {
+        response = await gapi.client.drive.files.list({
+          fields: "files(id, name, mimeType)",
+        });
+      } catch (err) {
+        document.getElementById("content").innerText = err.message;
+        return;
+      }
+      const files = response.result.files;
+      let output = "";
+      if (!files || files.length == 0) {
+        document.getElementById("content").innerText = "No files found.";
+        return;
+      } else {
+        getSheet(files[0].id);
+        var obj = {};
+        for (var i = 0; i < files.length; i++) {
+          if (
+            files[i].mimeType == "application/vnd.google-apps.spreadsheet"
+          ) {
+            var str2 = files[i].name;
+            obj["id"] = files[i].id;
+            obj["name"] = files[i].name;
+            obj = JSON.stringify(obj);
+            output +=
+              "<option value='" +
+              files[i].id +
+              "'>" +
+              files[i].name +
+              "</option>";
+          }
+        }
+      }
+      document.getElementById("spreedsheet").innerHTML = output;
+    }
+
+    function makeApiCall(ssheetId) {
+      var params = {
+        spreadsheetId: ssheetId,
+        ranges: [],
+        includeGridData: false,
+      };
+
+      var request = gapi.client.sheets.spreadsheets.get(params);
+      request.then(
+        function (response) {
+          // TODO: Change code below to process the `response` object:
+          console.log(response.result);
+        },
+        function (reason) {
+          console.error("error: " + reason.result.error.message);
+        }
+      );
+    }
+    let apikey, token, iid, i_name;
+    let colnames, colvalues;
+    let clientobj = new Array();
+    let clientarr = new Array();
+    let clientvalue = new Array();
+    $(document).ready(function () {
+
+      let id = window.location.pathname.split("/")[2];
+    //   $.ajax({
+    //     url: "/validateInstance",
+    //     method: "POST",
+    //     data: { iid: id },
+    //     success: function (data) {
+    //       if (data.status_code != 200) {
+    //         location.href = "/instance";
+    //       }
+    //     }
+    //   })
+
+      chkLogin();
+
+      $.ajax({
+        url: "/getAdminData",
+        method: "POST",
+        data: { table: "instance" },
+        success: function (data) {
+          console.log(data);
+          for (let i = 0; i < data.length; i++) {
+            if (data[i].isActive == 0) {
+              $("#disconnect").addClass("d-none");
+              $("#scanqr").removeClass("d-none");
+            }
+
+          }
+
+        }
+      })
+
+
+      $("#scanqr").removeClass("d-none");
+      iid = window.location.pathname.split("/")[2];
+
+      $.ajax({
+        url: "/user",
+        method: "POST",
+        data: {
+          iid: iid,
+        },
+        success: function (val) {
+          document.getElementById(
+            "i_name"
+          ).innerHTML = `<div class="card-title mb-0">${val[0].i_name}</div>`;
+          document.getElementById("apikey").value = val[0].apikey;
+          document.getElementById("token").value = val[0].token;
+          document.getElementById("instanceid").value = iid;
+        },
+      });
+
+      // $("#scanqr").on("click", async function () {
+      //   $("#QRbox").removeClass("d-none");
+      //   $("#loader").removeClass("d-none");
+      //   $("#output").addClass("d-none");
+
+      //   await $.ajax({
+      //     url: "/qr/" + iid + "",
+      //     method: "GET",
+      //     success: function (data) {
+      //       console.log(data);
+      //       $("#loader").addClass("d-none");
+      //       $("#output").removeClass("d-none");
+
+      //       $("#output").empty();
+      //       // Clear Previous QR Code
+
+      //       // Set Size to Match User Input
+      //       $("#output").css({
+      //         width: 200,
+      //         height: 200,
+      //       });
+
+      //       // Generate and Output QR Code
+      //       $("#output").qrcode({
+      //         width: 200,
+      //         height: 200,
+      //         text: data,
+      //       });
+
+      //       var index = getCookie("index");
+      //       console.log(getCookie("index"));
+      //       $.ajax({
+      //         url: "/authenticated/" + index + "/" + iid + "/" + apikey + "",
+      //         method: "get",
+      //         success: function (data) {
+      //           swal({
+      //             title: "Authenticated successfully",
+      //             type: "success",
+      //             timer: 2000,
+      //             showConfirmButton: false,
+      //           });
+      //           sessionStorage.setItem("authdone", "ok");
+      //           $("#apiurl").removeClass("d-none");
+      //           $("#copy_apiurl").removeClass("d-none");
+      //           $("#disconnect").removeClass("d-none");
+      //           $("#scanqr").addClass("d-none");
+      //           $("#QRbox").addClass("d-none");
+      //         },
+      //       });
+      //     },
+      //   });
+      // });
+
+      $("#scanqr").on("click", async function () {
+        $("#QRbox").removeClass("d-none");
+        $("#loader").removeClass("d-none");
+        $("#output").addClass("d-none");
+
+        await $.ajax({
+          url: "/qr/" + iid + "",
+          method: "GET",
+          success: function (data) {
+            console.log(data);
+            $("#loader").addClass("d-none");
+            $("#output").html("");
+            const base64String = data;
+
+            QRCode.toCanvas(base64String, { errorCorrectionLevel: 'H' }, function (err, canvas) {
+              if (err) throw err
+
+              var container = document.getElementById('output')
+              canvas.style.cssText = "height: 200px; width: 200px;";
+              container.appendChild(canvas)
+            })
+
+            $("#output").removeClass("d-none");
+            //Clear Previous QR Code
+
+            // //Set Size to Match User Input
+            $("#output").css({
+              width: 200,
+              height: 200,
+            });
+            var index = getCookie("index");
+            console.log(getCookie("index"));
+            $.ajax({
+              url: "/authenticated/" + iid + "",
+              method: "get",
+              success: function (data) {
+                if (data.status_code == 200) {
+                  swal({
+                    title: "Authenticated successfully",
+                    type: "success",
+                    timer: 2000,
+                    showConfirmButton: false,
+                  });
+                  sessionStorage.setItem("authdone", "ok");
+                  $("#apiurl").removeClass("d-none");
+                  $("#copy_apiurl").removeClass("d-none");
+                  $("#disconnect").removeClass("d-none");
+                  $("#scanqr").addClass("d-none");
+                  $("#QRbox").addClass("d-none");
+                }
+                else {
+                  swal({
+                    title: "Error in Authentication",
+                    text: "Try again after some time",
+                    type: "error",
+                    timer: 2000,
+                    showConfirmButton: false,
+                  });
+                }
+
+              },
+            });
+          },
+        });
+      });
+
+      //msgType display localfile
+      $("#msgtype").change(function () {
+        if ($("#msgtype").val() == "custom") {
+          $("#sheetdata2").removeClass("d-none");
+          $("#distemp").addClass("d-none");
+        } else if ($("#msgtype").val() == "template") {
+          $("#sheetdata2").addClass("d-none");
+          $("#distemp").removeClass("d-none");
+        }
+      });
+      // send message form validation
+      var instanceid = document.getElementById("instanceid");
+      var apikey = document.getElementById("apikey");
+      var token = document.getElementById("token");
+      var msg = document.getElementById("msg");
+      var phone = document.getElementById("phone");
+
+      $(".required").on("focusout", function () {
+        onfocusout_validation($(this).attr("id"));
+      });
+
+      $(".required").on("input", function () {
+        oninput_validation($(this).attr("id"));
+      });
+
+      $("#sendmsg").on("click", async function () {
+        var iid = document.getElementById("instanceid").value;
+        var apikey = document.getElementById("apikey").value;
+        var token = document.getElementById("token").value;
+        var msg = document.getElementById("msg").value;
+        var phone = document.getElementById("phone").value;
+
+        var index = getCookie("index");
+        var obj = {
+          to: phone,
+          msg: msg,
+          token: token,
+          iid: iid,
+        };
+        if (index == -1) {
+          swal({
+            title: "You are not connected.",
+            type: "error",
+            timer: 3500,
+            showConfirmButton: false,
+          });
+          $("#phone").val("");
+          $("#msg").val("");
+        } else {
+          $.ajax({
+            url: "/sendmsg",
+            method: "post",
+            data: obj,
+            beforeSend: function () {
+              $('#sendmsg').val('Sending...');
+              $('#sendmsg').removeClass('btn-primary');
+              $('#sendmsg').removeClass('btn-success');
+              $('#sendmsg').addClass('btn-warning');
+            },
+            success: function (data) {
+              if (data.status_code == 200) {
+                $('#sendmsg').val('Sent');
+                $('#sendmsg').removeClass('btn-primary');
+                $('#sendmsg').removeClass('btn-warning');
+                $('#sendmsg').addClass('btn-success');
+                swal({
+                  title: "Message sent successfully",
+                  type: "success",
+                  timer: 2000,
+                  showConfirmButton: false,
+                });
+                $("#phone").val("");
+                $("#msg").val("");
+              } else {
+                $('#sendmsg').val('Not Sent');
+                $('#sendmsg').removeClass('btn-warning');
+                $('#sendmsg').removeClass('btn-primary');
+                $('#sendmsg').addClass('btn-danger');
+
+                swal({
+                  title: "Client is disconnected or is not ready yet",
+                  type: "error",
+                  timer: 3500,
+                  showConfirmButton: false,
+                });
+                $("#phone").val("");
+                $("#msg").val("");
+              }
+            },
+          });
+
+        }
+      });
+
+      var page = document.URL.split("/");
+      console.log(page[4]);
+      function authdone() {
+        $.ajax({
+          url: "/getData",
+          method: "post",
+          data: { obj: { table: "instance", paramstr: `isActive=1 and instance_id='${page[4]}'` } },
+          success: function (data) {
+            console.log(data);
+            if (data.status_code != 404 && data[0].isActive == 1) {
+              $("#apiurl").removeClass("d-none");
+              $("#copy_apiurl").removeClass("d-none");
+              $("#disconnect").removeClass("d-none");
+              $("#scanqr").addClass("d-none");
+              $("#QRbox").addClass("d-none");
+            }
+          }
+        })
+      }
+      authdone();
+
+      $("#sendmsg2").on("click", (e) => {
+        e.preventDefault();
+        var frmdata = new FormData();
+        frmdata.append("apikey", $("#apikey").val());
+        frmdata.append("token", $("#token").val());
+        frmdata.append("phone", $("#phone2").val());
+        frmdata.append("caption", $("#msg_caption").val());
+
+        frmdata.append(
+          "fileupload2",
+          document.getElementById("fileupload2").files[0]
+        );
+        frmdata.append("instanceid", $("#instanceid").val());
+
+        $.ajax({
+          url: "/sendimage",
+          type: "POST",
+          data: frmdata,
+          contentType: false,
+          processData: false,
+          beforeSend: function () {
+            $('#sendmsg2').val('Sending...');
+            $('#sendmsg2').removeClass('btn-primary');
+            $('#sendmsg2').removeClass('btn-success');
+            $('#sendmsg2').addClass('btn-warning');
+          },
+          success: function (data) {
+            console.log(data);
+            if (data.status_code == 200) {
+              $('#sendmsg2').val('Sent');
+              $('#sendmsg2').removeClass('btn-primary');
+              $('#sendmsg2').removeClass('btn-warning');
+              $('#sendmsg2').addClass('btn-success');
+              swal("Image sent!", "Image sent successfully!!", "success");
+              $("#phone2").val("");
+              $("#msg_caption").val("");
+              $("#fileupload2").val("");
+            }
+            else {
+              $('#sendmsg2').val('Not Sent');
+              $('#sendmsg2').removeClass('btn-primary');
+              $('#sendmsg2').removeClass('btn-warning');
+              $('#sendmsg2').addClass('btn-danger');
+              swal("Image sent!", "Image can't be sent!!", "error");
+              $("#phone2").val("");
+              $("#msg_caption").val("");
+              $("#fileupload2").val("");
+            }
+          },
+        });
+      });
+
+      function copy_api(id) {
+        var copyText = document.getElementById(id);
+
+        // var copyText = $('#' + id);
+
+        // copyText.select();
+        // copyText.setSelectionRange(0, 99999);
+
+        navigator.clipboard.writeText(copyText.value);
+      }
+
+      $(document).on("click", ".copy", function () {
+        var param = $(this).attr("id").substring(5);
+        copy_api(param);
+      });
+
+      $(".fa-arrows-rotate").click(function () {
+        $(this).toggleClass("down");
+      });
+
+      $("#apiurl").on("change", () => {
+        if ($("#apiurl").val() == "sendmsg") {
+          $("#msgform").removeClass("d-none");
+          $("#imageform").addClass("d-none");
+          $("#bulkform").addClass("d-none");
+          $("#bulkmsg").addClass("d-none");
+        } else if ($("#apiurl").val() == "sendimage") {
+          $("#imageform").removeClass("d-none");
+          $("#msgform").addClass("d-none");
+          $("#bulkform").addClass("d-none");
+          $("#bulkmsg").addClass("d-none");
+        } else if ($("#apiurl").val() == "bulkmessage") {
+          $("#bulkmsg").removeClass("d-none");
+          $("#bulkform").removeClass('d-none');
+          $("#imageform").addClass('d-none');
+          $("#msgform").addClass('d-none');
+        }
+      });
+
+      $("#refresh_token").on("click", function () {
+        var iid = document.getElementById("instanceid").value;
+        var apikey = document.getElementById("apikey").value;
+
+        $.ajax({
+          url: "/refreshtoken/" + iid + "/" + apikey + "",
+          method: "GET",
+          success: function (res) {
+            $("#token").val(res);
+          },
+        });
+      });
+
+      $("#disconnect_btn").on("click", function () {
+        swal({
+          title: "Are you sure?",
+          text: "You want to disconnect!",
+          type: "warning",
+          showCancelButton: true,
+          confirmButtonText: "Yes, disconnect it",
+          cancelButtonText: "No, cancel",
+          confirmButtonClass: "btn btn-success mx-2",
+          cancelButtonClass: "btn btn-danger mx-2",
+          buttonsStyling: false,
+        }).then(function (result) {
+          if (result.value) {
+            $("#disconnect").addClass("d-none");
+            $("#scanqr").removeClass("d-none");
+            var index = getCookie("index");
+            $.ajax({
+              url: "/disconnected/" + index + "/" + iid + "",
+              method: "GET",
+              success: function (data) {
+                console.log(data);
+                if (data.status_code == 200) {
+                  sessionStorage.removeItem("authdone");
+                  swal({
+                    title: "You are disconnected.",
+                    type: "success",
+                    timer: 2000,
+                    showConfirmButton: false,
+                  });
+                } else {
+                  swal({
+                    title: "You are not disconnected.",
+                    type: "error",
+                    timer: 2000,
+                    text: "Try again later",
+                    showConfirmButton: false,
+                  });
+                }
+              },
+            });
+          }
+        });
+      });
+
+      $("#connect").click(function () {
+        handleAuthClick();
+      });
+
+      $("#spreedsheet").on("change", function () {
+        getSheet($("#spreedsheet").val());
+      });
+
+      var data1 = new Object();
+
+      $("#sheetname").on("change", function () {
+        var ssid = $("#spreedsheet").val();
+        var sheetindex = $("#sheetname").val();
+
+        $.ajax({
+          url: "/sheetdata",
+          method: "POST",
+          data: {
+            ssid: ssid,
+            sheetindex: sheetindex,
+          },
+          success: function (val) {
+            //console.log(val);
+            clientarr = [];
+            clientobj = val.colnames[0];
+            clientvalue = val.values;
+            //console.log(clientvalue);
+            //console.log(clientobj);
+            let result = {};
+            for (let i = 0; i < clientvalue.length; i++) {
+              clientobj.forEach((key, j) => {
+                result[key] = clientvalue[i][j];
+                console.log(result[key]);
+                // clientarr[i][key] = clientvalue[i][j];
+              });
+              console.log(result);
+              clientarr.push(result);
+              result = {};
+            }
+
+            console.log(clientarr);
+
+            var data = '<thead class="table-light"><tr>';
+            for (let i = 0; i < val.colnames[0].length; i++) {
+              data += "<th>" + val.colnames[0][i] + "</th>";
+            }
+            data += '</tr></thead><tbody class="list form-check-all">';
+            if (val.values[0].length > 0) {
+              for (let i = 0; i < val.values.length; i++) {
+                data += "<tr>";
+                for (let j = 0; j < val.colnames[0].length; j++) {
+                  data +=
+                    '<td class="' +
+                    val.colnames[0][j] +
+                    '">' +
+                    val.values[i][j] +
+                    "</td>";
+                }
+                data += "</tr>";
+              }
+              data += "</tbody></table>";
+              console.log(data);
+              document.getElementById("tbldata").innerHTML = data;
+            } else {
+              data +=
+                '<tr><td colspan="' +
+                val.colnames.length +
+                '"><b>No Such column like name and phone in this sheet !!!</b></td></tr></tbody></table>';
+              console.log(data);
+              document.getElementById("tbldata").innerHTML = data;
+            }
+          },
+        });
+      });
+
+      //channel wise contact data
+      $(document).on("change", "#channeldata", function () {
+        let contact = `<label class="form-label">Contact Data:</label><br>
+                <table class="table align-middle">
+                                <thead class="table-light">
+                                    <tr>
+                                    <th>Name</th>
+                                    <th>Contact Number</th>
+                                    <th>Email</th>
+                                    </tr>
+                                    </thead>
+                <tbody class="list form-check-all">`;
+        let channel_id = $("#channeldata").val();
+        $.ajax({
+          url: "/get-channel-contact",
+          method: "post",
+          data: {
+            channelID: channel_id,
+            iid: iid
+          },
+          success: function (data) {
+            channel_contact = data;
+            console.log(data);
+            for (i = 0; i < data.length; i++) {
+              contact += `<tr>
+                                <td>${data[i].name}</td>
+                                <td>${data[i].phone}</td>
+                                <td>${data[i].email}</td>
+                                </tr>`;
+            }
+            contact += `</tbody>
+                        </table>`;
+            $("#contactdata").html(contact);
+          },
+        });
+      });
+
+      //channel message
+      $("#sendmsgchannel").on("click", function () {
+        console.log(channel_contact);
+        $.ajax({
+          url: "/sendmsgchannel",
+          method: "post",
+          data: {
+            apikey: $("#apikey").val(),
+            token: $("#token").val(),
+            instanceid: iid,
+            channel_contact: channel_contact,
+            msg: $("#msgchannel").val(),
+          },
+          success: function (data) {
+            console.log(data);
+            if (data.error == null) {
+              swal({
+                title: "Messages sent to channel's all clients",
+                type: "success",
+                timer: 2000,
+                showConfirmButton: false,
+              })
+            }
+            else {
+              swal({
+                title: "Messages can't be sent to channel's clients",
+                type: "error",
+                timer: 2000,
+                text: "Try again later",
+                showConfirmButton: false,
+              })
+            }
+          }
+        })
+      })
+
+      $("#sendtoallgsheet").on("click", function () {
+        console.log(clientarr);
+        $.ajax({
+          url: "/sendtoallgsheet",
+          method: "POST",
+          data: {
+            apikey: apikey.value,
+            token: token.value,
+            instanceid: iid,
+            data: clientarr,
+            msg: $("#msggsheet").val(),
+          },
+          beforeSend: function () {
+            $('#sendtoallgsheet').val('Sending...');
+            $('#sendtoallgsheet').removeClass('btn-primary');
+            $('#sendtoallgsheet').removeClass('btn-success');
+            $('#sendtoallgsheet').addClass('btn-warning');
+          },
+          success: function (val) {
+            console.log(val);
+            if (val.error == null) {
+              $('#sendtoallgsheet').val('Sent');
+              $('#sendtoallgsheet').removeClass('btn-primary');
+              $('#sendtoallgsheet').removeClass('btn-warning');
+              $('#sendtoallgsheet').addClass('btn-success');
+              swal({
+                title: "Messages sent to all clients",
+                type: "success",
+                timer: 2000,
+                showConfirmButton: false,
+              });
+              clientobj = [];
+            } else {
+              $('#sendtoallgsheet').val('Not Sent');
+              $('#sendtoallgsheet').removeClass('btn-primary');
+              $('#sendtoallgsheet').removeClass('btn-warning');
+              $('#sendtoallgsheet').addClass('btn-danger');
+              swal({
+                title: "Messages can't be sent to all clients",
+                type: "error",
+                timer: 2000,
+                text: "Try again later",
+                showConfirmButton: false,
+              });
+            }
+          },
+        });
+      });
+
+      $("#gsheet").on("click", function () {
+        $("#bulkformgoogle").removeClass("d-none");
+        $("#bulkformsimple").addClass("d-none");
+        $("#bulkformchannel").addClass("d-none");
+      });
+
+      $("#lfile").on("click", function () {
+        $("#bulkformgoogle").addClass("d-none");
+        $("#bulkformsimple").removeClass("d-none");
+        $("#bulkformchannel").addClass("d-none");
+      });
+
+      $("#channel").on("click", function () {
+        $("#bulkformgoogle").addClass("d-none");
+        $("#bulkformsimple").addClass("d-none");
+        $("#bulkformchannel").removeClass("d-none");
+      });
+
+      $.ajax({
+        url: "/get-channels",
+        method: "post",
+        data: {
+          obj: {
+            table: "channel",
+            paramstr: true,
+          },
+        },
+        success: function (data) {
+          // console.log(data);
+          let channel = `<option value="none" selected disabled>Select Channel</option>`;
+          if (data.status_code == 404) {
+            console.log("no channels");
+          } else {
+            for (var i in data) {
+              channel += `<option value="${data[i].channelID}">${data[i].channelName}</option>`;
+            }
+          }
+
+          $("#channeldata").html(channel);
+        },
+      });
+
+      $("#datafile").on("change", function (e) {
+        e.preventDefault();
+
+        var frmdata = new FormData();
+        frmdata.append(
+          "csvfile",
+          document.getElementById("datafile").files[0]
+        );
+        $.ajax({
+          type: "POST",
+          url: "/file",
+          data: frmdata,
+          contentType: false,
+          processData: false,
+          success: function (val) {
+            console.log(val);
+            let ddcol = "<option>-- Select Column --</option>";
+            colnames = Object.keys(val.json[0]);
+            var data = `<thead class="table-light">
+                                        <tr><th></th>`;
+
+            for (let i = 0; i < colnames.length; i++) {
+              data += "<th>" + colnames[i] + "</th>";
+              ddcol +=
+                '<option value="' +
+                colnames[i] +
+                '">' +
+                colnames[i] +
+                "</option>";
+            }
+            data += `</tr>
+                                    </thead>
+                                    <tbody class="list form-check-all">`;
+            if (val.json.length == 0) {
+              data += `<tr>
+                                        <td colspan="3" class="text-center">
+                                            <b>No Such column like name and phone in this sheet !!!</b>
+                                        </td>
+                                    </tr>`;
+            } else {
+              localStorage.setItem("clientobj", val.json);
+              for (let i = 0; i < val.json.length; i++) {
+                colvalues = Object.values(val.json[i]);
+                clientobj = val.json;
+                console.log(clientobj);
+
+                let y = localStorage.getItem("clientobj");
+
+                //alert(clientobj);
+                // let tempobj = { "name": val.json[i].name, "phone": val.json[i].phone };
+                // clientobj.push(tempobj);
+                //console.log(tempobj);
+                //console.log(clientobj);
+                data += `<tr>
+                                            <td scope="row">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox"
+                                                        name="${val.json[i].name}" value="${val.json[i].phone}" checked>
+                                                </div>
+                                            </td>`;
+                for (let j = 0; j < colnames.length; j++) {
+                  data += `<td class="name">` + colvalues[j] + `</td>`;
+                }
+
+                `</tr>`;
+              }
+
+              localStorage.setItem("colnames", colnames);
+              // localStorage.setItem("clientdata", clientdata);
+              //console.log("option colnames : " + ddcol);
+              // document.getElementById("colnames").innerHTML = ddcol;
+            }
+            data += `</tbody>`;
+            document.getElementById("tbldata2").innerHTML = data;
+          },
+        });
+      });
+
+      $("#sendtoall2").on("click", function () {
+        let dataobj = {
+          message: $("#msg2").val(),
+          clientdata: clientobj,
+          apikey: apikey.value,
+          token: token.value,
+          instanceid: iid,
+        };
+        $.ajax({
+          url: "/sendToAllUsingLfile",
+          method: "POST",
+          data: dataobj,
+          beforeSend: function () {
+            $('#sendtoall2').val('Sending...');
+            $('#sendtoall2').removeClass('btn-primary');
+            $('#sendtoall2').removeClass('btn-success');
+            $('#sendtoall2').addClass('btn-warning');
+          },
+          success: function (response) {
+            console.log(response);
+            if (response.error == null) {
+              $('#sendtoall2').val('Sent');
+              $('#sendtoall2').removeClass('btn-primary');
+              $('#sendtoall2').removeClass('btn-warning');
+              $('#sendtoall2').addClass('btn-success');
+              swal({
+                title: "Messages sent to all clients",
+                type: "success",
+                timer: 2000,
+                showConfirmButton: false,
+              });
+              clientobj = [];
+              $("#msg2").val("");
+            } else {
+              $('#sendtoall2').val('Not Sent');
+              $('#sendtoall2').removeClass('btn-primary');
+              $('#sendtoall2').removeClass('btn-warning');
+              $('#sendtoall2').addClass('btn-danger');
+              swal({
+                title: "Messages can't be sent to all clients",
+                type: "error",
+                timer: 2000,
+                text: "Try again later",
+                showConfirmButton: false,
+              });
+              $("#msg2").val("");
+            }
+          },
+        });
+      });
+    });
+
+    var obj = "<option>--Select Template--</option>";
+    $.ajax({
+      url: "/dis_template",
+      method: "get",
+      success: function (data) {
+        for (var i = 0; i < data.length; i++) {
+          obj += `
+                  <option value="${data[i].temp_name}">${data[i].temp_name}</option>`;
+        }
+        $.ajax({
+          url: "/dis_cstm_template",
+          method: "get",
+          success: function (data2) {
+            console.log(data2);
+            if (data2.length == 0) {
+              document.getElementById("template").innerHTML = obj;
+              document.getElementById("template1").innerHTML = obj;
+            } else {
+              for (var j = 0; j <= data2.length; j++) {
+                console.log(data2[j].cstm_name);
+                obj += `
+                        <option value="${data2[j].cstm_name}">${data2[j].cstm_name}</option>`;
+                document.getElementById("template").innerHTML = obj;
+                document.getElementById("template1").innerHTML = obj;
+              }
+            }
+            // document.getElementById("template").innerHTML = obj;
+            // document.getElementById("template1").innerHTML = obj;
+          },
+        });
+      },
+    });
+
+    $(document).on("change", "#template", function () {
+      let obj1 = "";
+      $.ajax({
+        url: "/dis_mes",
+        method: "post",
+        data: {
+          temp_name: $("#template").val(),
+        },
+        success: function (data) {
+          document.getElementById("mesg").innerHTML =
+            data[0].temp_message || data[0].cstm_msg;
+          let x = localStorage.getItem("colnames").split(",");
+          for (let i = 0; i < data[0].userfields; i++) {
+            obj1 += `<div class="col-3 mb-2"><label class="form-label">Value ${i + 1
+              } :</label><select class="form-select selcol" id="colnames">
+                            <option>--Select column--</option>`;
+            for (let j = 0; j < x.length; j++) {
+              obj1 += "<option value=" + x[j] + ">" + x[j] + "</option>";
+            }
+            obj1 += `</select></div>`;
+          }
+          document.getElementById("templatemsg").innerHTML = obj1;
+        },
+      });
+    });
+
+    //dynamic dropdown googlesheet
+    $(document).on("change", "#template1", function () {
+      let obj1 = "";
+      $.ajax({
+        url: "/dis_mes",
+        method: "post",
+        data: {
+          temp_name: $("#template1").val(),
+        },
+        success: function (data) {
+          document.getElementById("mesg1").innerHTML =
+            data[0].temp_message || data[0].cstm_msg;
+          for (let i = 0; i < data[0].userfields; i++) {
+            obj1 += `<div class="col-3 mb-2"><label class="form-label">Value ${i + 1
+              } :</label><select class="form-select selcol" id="colnames">
+                            <option>--Select column--</option>`;
+            for (let j = 0; j < clientobj.length; j++) {
+              obj1 +=
+                "<option value=" +
+                clientobj[j] +
+                ">" +
+                clientobj[j] +
+                "</option>";
+            }
+            obj1 += `</select></div>`;
+          }
+          document.getElementById("templatemsg1").innerHTML = obj1;
+        },
+      });
+    });
+
+    $("#sendto").on("click", function (e) {
+      e.preventDefault();
+      console.log(clientobj);
+      let selectedcol = new Array();
+      for (
+        let i = 0;
+        i < document.getElementsByClassName("selcol").length;
+        i++
+      ) {
+        let data2 = document.getElementsByClassName("selcol")[i].value;
+        selectedcol.push(data2);
+      }
+      let token = document.getElementById("token").value;
+      let message = document.getElementById("mesg").value;
+      var phonearray = new Array();
+      for (let i = 0; i < clientobj.length; i++) {
+        phonearray.push(clientobj[i].phone);
+      }
+      console.log(selectedcol);
+      console.log(phonearray);
+      $.ajax({
+        url: "/tempmsg",
+        method: "post",
+        data: {
+          iid: iid,
+          token: token,
+          template: $("#template").val(),
+          message: $("#mesg").val(),
+          clientobj: clientobj,
+          selectedcol: selectedcol,
+          phonearray: phonearray,
+        },
+        beforeSend: function () {
+          $('#sendto').val('Sending...');
+          $('#sendto').removeClass('btn-primary');
+          $('#sendto').removeClass('btn-success');
+          $('#sendto').addClass('btn-warning');
+        },
+        success: function (data) {
+          if (data.status_code == 200) {
+            $('#sendto').val('Sent');
+            $('#sendto').removeClass('btn-primary');
+            $('#sendto').removeClass('btn-warning');
+            $('#sendto').addClass('btn-success');
+            swal({
+              title: "Messages sent to all clients",
+              type: "success",
+              timer: 2000,
+              showConfirmButton: false,
+            });
+          } else {
+            $('#sendto').val('Not Sent');
+            $('#sendto').removeClass('btn-primary');
+            $('#sendto').removeClass('btn-warning');
+            $('#sendto').addClass('btn-danger');
+            swal({
+              title: "Messages can't be sent to all clients",
+              type: "error",
+              timer: 2000,
+              text: "Try again later",
+              showConfirmButton: false,
+            });
+          }
+        },
+      });
+    });
+    //msgtype display g-sheet
+    $("#msgtype1").change(function () {
+      if ($("#msgtype1").val() == "custom") {
+        $("#discustom").removeClass("d-none");
+        $("#distemplate").addClass("d-none");
+      } else if ($("#msgtype1").val() == "template") {
+        $("#discustom").addClass("d-none");
+        $("#distemplate").removeClass("d-none");
+      }
+    });
+    //googlesheet template message
+    $("#sendto1").on("click", function (e) {
+      e.preventDefault();
+      console.log(clientobj);
+      let selectedcol = new Array();
+      for (
+        let i = 0;
+        i < document.getElementsByClassName("selcol").length;
+        i++
+      ) {
+        let data2 = document.getElementsByClassName("selcol")[i].value;
+        selectedcol.push(data2);
+      }
+      let token = document.getElementById("token").value;
+      let message = document.getElementById("mesg1").value;
+      var phonearray = new Array();
+      for (let i = 0; i < clientarr.length; i++) {
+        phonearray.push(clientarr[i].phone);
+      }
+      //console.log(selectedcol);
+      console.log(phonearray);
+      $.ajax({
+        url: "/tempmsg",
+        method: "post",
+        data: {
+          iid: iid,
+          token: token,
+          template: $("#template1").val(),
+          message: $("#mesg1").val(),
+          clientobj: clientarr,
+          selectedcol: selectedcol,
+          phonearray: phonearray,
+        },
+        beforeSend: function () {
+          $('#sendto1').val('Sending...');
+          $('#sendto1').removeClass('btn-primary');
+          $('#sendto1').removeClass('btn-success');
+          $('#sendto1').addClass('btn-warning');
+        },
+        success: function (data) {
+          if (data.status_code == 200) {
+            $('#sendto1').val('Sending...');
+            $('#sendto1').removeClass('btn-primary');
+            $('#sendto1').removeClass('btn-warning');
+            $('#sendto1').addClass('btn-success');
+            swal({
+              title: "Messages sent to all clients",
+              type: "success",
+              timer: 2000,
+              showConfirmButton: false,
+            });
+          } else {
+            $('#sendto1').val('Sending...');
+            $('#sendto1').removeClass('btn-primary');
+            $('#sendto1').removeClass('btn-warning');
+            $('#sendto1').addClass('btn-danger');
+            swal({
+              title: "Messages can't be sent to all clients",
+              type: "error",
+              timer: 2000,
+              text: "Try again later",
+              showConfirmButton: false,
+            });
+          }
+        },
+      });
+
+
+
+
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg"
+    data-sidebar-image="none" data-preloader="disable">
+
+<head>
+    <meta charset="utf-8" />
+
+    <title>Workflow</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesbrand" name="author" />
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+
+    <!-- jsvectormap css -->
+    <link href="/assets/libs/jsvectormap/css/jsvectormap.min.css" rel="stylesheet" type="text/css" />
+
+    <!--Swiper slider css-->
+    <link href="/assets/libs/swiper/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Layout config Js -->
+    <script src="/assets/js/layout.js"></script>
+    <!-- Bootstrap Css -->
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="/assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <!-- custom Css-->
+    <link href="/assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Font Awesome Files -->
+    <link href="/assets/fontawesome/css/all.min.css" rel="stylesheet" />
+    <link href="/assets/fontawesome/css/solid.css" rel="stylesheet" />
+    <link href="/assets/fontawesome/css/solid.min.css" rel="stylesheet" />
+    <link href="/assets/fontawesome/css/regular.css" rel="stylesheet" />
+    <link href="/assets/fontawesome/css/regular.min.css" rel="stylesheet" />
+    <link href="/assets/fontawesome/css/fontawesome.min.css" rel="stylesheet" />
+    <link href="/assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+        <header id="page-topbar">
+            <div class="layout-width">
+                <div class="navbar-header">
+                    <div class="d-flex">
+                        <!-- LOGO -->
+                        <div class="navbar-brand-box horizontal-logo">
+                            <a href="/" class="logo logo-dark">
+                                <span class="logo-sm">
+                                    <img src="/assets/images/logo-sm.png" alt="" height="22" />
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="/assets/images/logo-dark.png" alt="" height="17" />
+                                </span>
+                            </a>
+
+                            <a href="/" class="logo logo-light">
+                                <span class="logo-sm">
+                                    <img src="/assets/images/logo-sm.png" alt="" height="22" />
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="/assets/images/logo-light.png" alt="" height="17" />
+                                </span>
+                            </a>
+                        </div>
+
+                        <button type="button"
+                            class="btn btn-sm px-3 fs-16 header-item vertical-menu-btn topnav-hamburger"
+                            id="topnav-hamburger-icon">
+                            <span class="hamburger-icon">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </button>
+                    </div>
+
+                    <div class="d-flex align-items-center">
+                        <div class="dropdown d-md-none topbar-head-dropdown header-item">
+                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
+                                id="page-header-search-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                <i class="bx bx-search fs-22"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
+                                aria-labelledby="page-header-search-dropdown">
+                                <form class="p-3">
+                                    <div class="form-group m-0">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Search ..."
+                                                aria-label="Recipient's username" />
+                                            <button class="btn btn-primary" type="submit">
+                                                <i class="mdi mdi-magnify"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="ms-1 header-item d-none d-sm-flex">
+                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
+                                data-toggle="fullscreen">
+                                <i class="bx bx-fullscreen fs-22"></i>
+                            </button>
+                        </div>
+
+                        <div class="ms-1 header-item d-none d-sm-flex">
+                            <button type="button"
+                                class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle light-dark-mode">
+                                <i class="bx bx-moon fs-22"></i>
+                            </button>
+                        </div>
+
+                        <div class="dropdown ms-sm-3 header-item topbar-user">
+                            <button type="button" class="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <span class="d-flex align-items-center">
+                                    <img class="rounded-circle header-profile-user profileimg" />
+                                    <span class="text-start ms-xl-2">
+                                        <span
+                                            class="d-none d-xl-inline-block ms-1 fw-medium user-name-text profilename"></span>
+                                        <span class="d-none d-xl-block ms-1 fs-12 text-muted user-name-sub-text">
+                                            Founder
+                                        </span>
+                                    </span>
+                                </span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <!-- item-->
+                                <h6 class="dropdown-header">
+                                    Welcome
+                                    <span class="profilename"></span>
+                                </h6>
+                                <a class="dropdown-item" href="/profile">
+                                    <i class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i>
+                                    <span class="align-middle" id="abc">Profile</span>
+                                </a>
+                                <a class="dropdown-item" href="/subscription">
+                                    <i class="mdi mdi-credit-card-chip text-muted fs-16 align-middle me-1"></i>
+                                    <span class="align-middle" id="pay">Pay</span>
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" id="logout">
+                                    <i class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i>
+                                    <span class="align-middle" data-key="t-logout">Logout</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- ========== App Menu ========== -->
+        <div class="app-menu navbar-menu">
+            <!-- LOGO -->
+            <div class="navbar-brand-box">
+                <!-- Dark Logo-->
+                <a href="/" class="logo logo-dark">
+                    <span class="logo-sm">
+                        <img src="/assets/images/logo-sm.png" alt="" height="22" />
+                    </span>
+                    <span class="logo-lg">
+                        <img src="/assets/images/logo-dark.png" alt="" height="17" />
+                    </span>
+                </a>
+                <!-- Light Logo-->
+                <a href="/" class="logo logo-light">
+                    <span class="logo-sm">
+                        <img src="/assets/images/logo-sm.png" alt="" height="22" />
+                    </span>
+                    <span class="logo-lg">
+                        <img src="/assets/images/logo-light.png" alt="" height="17" />
+                    </span>
+                </a>
+                <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover"
+                    id="vertical-hover">
+                    <i class="ri-record-circle-line"></i>
+                </button>
+            </div>
+
+            <div id="scrollbar">
+                <div id="scrollbar">
+                    <div class="container-fluid">
+                        <div id="two-column-menu"></div>
+                        <ul class="navbar-nav" id="navbar-nav"></ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Left Sidebar End -->
+            <!-- Vertical Overlay-->
+            <div class="vertical-overlay"></div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+            <div class="page-content">
+                <div class="container-fluid">
+                    <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                        <div class="page-title">
+                            <ol class="breadcrumb m-0" id="api_path">
+                                <li class="breadcrumb-item">
+                                    <a href="/instance">
+                                        Instance
+                                    </a>
+                                </li>
+                                <li class="breadcrumb-item" id="i_name"></li>
+                                <li class="breadcrumb-item active">Workflow</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="search-box col-4">
+                            <input type="text" class="form-control" id="searchworkflow"
+                                placeholder="Search Workflow..." />
+                            <i class="ri-search-line search-icon ms-3"></i>
+                        </div>
+                        <div class="d-flex justify-content-end col-8 gap-2">
+                            <button type="button" class="btn btn-soft-danger waves-effect waves-light fs-15" id="mic"
+                                data-bs-toggle="modal" data-bs-target="#voice_input">
+                                <i class="mdi mdi-microphone"></i>
+                            </button>
+                            <button class="btn btn-primary" id="createworkflow" type="button" data-bs-toggle="modal"
+                                data-bs-target="#createWorkflowModal">
+                                <i class="ri-add-circle-line align-middle me-1"></i>
+                                Create Workflow
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="row" id="workflows"></div>
+
+                    <div id="createWorkflowModal" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel"
+                        aria-hidden="true" style="display: none">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header bg-soft-info p-3">
+                                    <h5 class="modal-title" id="modallbl">Create Workflow</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                                        id="workflow_close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="mb-2">
+                                        <label for="workflow_name" class="form-label">
+                                            Workflow Name
+                                            <span class="text-danger">*</span>
+                                            <span class="text-danger" id="err_workflow_name"></span>
+                                        </label>
+                                        <input type="text" id="workflow_name" class="form-control required"
+                                            placeholder="Enter Workflow Name" data-type="name" />
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" id="create_workflow">
+                                        Create Workflow
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- footer -->
+                    <footer class="footer"></footer>
+                </div>
+
+                <div id="voice_input" class="modal zoomIn">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                            </button> -->
+                            </div>
+                            <div class="modal-body">
+                                <div class="fs-1 text-center" id="msg" style="resize: none;">
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <!-- Edit modal  -->
+        <div class="modal fade" id="editModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header bg-soft-info p-3">
+                        <h5 class="modal-title" id="modallbl">Edit Workflow</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                            id="close-modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="edit_workflow_name" class="form-label">
+                                Workflow Name
+                                <span class="text-danger">*</span>
+                                <span class="text-danger" id="err_edit_workflow_name"></span>
+                            </label>
+                            <input type="text" id="edit_workflow_name" class="form-control required"
+                                placeholder="Enter Name" data-type="name" />
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="hstack gap-2 justify-content-end">
+                            <button class="btn btn-primary fs-15" id="edit_workflow">
+                                <span>
+                                    <i class="mdi mdi-account-plus align-bottom me-1 "></i>
+                                    Edit Workflow
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--start back-to-top-->
+        <button onclick="topFunction()" class="btn btn-danger btn-icon" id="back-to-top">
+            <i class="ri-arrow-up-line"></i>
+        </button>
+        <!--end back-to-top-->
+
+        <!--preloader-->
+        <div id="preloader">
+            <div id="status">
+                <div class="spinner-border text-primary avatar-sm" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="customizer-setting d-none d-md-block" id="chatbot">
+            <div class="btn-info btn-rounded shadow-lg btn btn-icon btn-lg p-2">
+                <i class="fa-solid fa-comment" id="iconchat"></i>
+            </div>
+        </div>
+
+        <div class="email-chat-detail" id="emailchat-detailElem" style="display: none">
+            <div class="card mb-0">
+                <div class="card-header align-items-center d-flex bg-primary text-white-50">
+                    <div class="flex-grow-1">
+                        <h5 class="fs-15 text-white mb-1 profile-username">
+                            Velzon ChatBot
+                        </h5>
+                        <p class="mb-0 fs-12 lh-1">Ask here for help</p>
+                    </div>
+                    <div>
+                        <i class="fa-brands fa-bots fs-1 text-white"></i>
+                    </div>
+                </div>
+
+                <div class="card-body p-0">
+                    <div id="users-chat">
+                        <div class="chat-conversation p-3" id="chat-conversation" data-simplebar style="height: 250px">
+                            <ul class="list-unstyled chat-conversation-list chat-sm" id="conversation"></ul>
+                        </div>
+                    </div>
+
+                    <div class="border-top border-top-dashed">
+                        <div class="row g-2 mx-3 mt-2 mb-3">
+                            <div class="col">
+                                <div class="position-relative">
+                                    <input type="text" class="form-control border-light bg-light message-input"
+                                        placeholder="Enter Message..." id="input" />
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <button class="btn btn-primary" id="sendbotmsg">
+                                    <i class="mdi mdi-send"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- JAVASCRIPT -->
+        <script src="/assets/js/jquery.js"></script>
+        <script src="/assets/js/main.js"></script>
+        <script src="/assets/js/chatbot.js"></script>
+        <script src="/assets/js/validate.js"></script>
+        <script src="/assets/js/voiceRecognition.js"></script>
+
+        <script src="/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="/assets/libs/simplebar/simplebar.min.js"></script>
+        <script src="/assets/libs/node-waves/waves.min.js"></script>
+        <script src="/assets/libs/feather-icons/feather.min.js"></script>
+        <script src="/assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+
+        <!-- Sweet Alerts js -->
+        <script src="/assets/sweetalert2/sweet-alert.init.js"></script>
+        <script src="/assets/sweetalert2/sweetalert2.all.js"></script>
+
+        <!-- prismjs plugin -->
+        <script src="/assets/libs/prismjs/prism.js"></script>
+        <script src="/assets/libs/list.js/list.min.js"></script>
+        <script src="/assets/libs/list.pagination.js/list.pagination.min.js"></script>
+
+        <!-- App js -->
+        <script src="/assets/js/app.js"></script>
+        <script>
+
+            $(document).ready(function () {
+                chkLogin();
+                
+                const iid = document.URL.split("/")[4];
+
+                $.ajax({
+                    url: "/user",
+                    method: "POST",
+                    data: {
+                        "iid": iid,
+                    },
+                    success: function (val) {
+                        switch (val.status_code) {
+                            case '401': {
+                                InvalidUser();
+                                break;
+                            }
+
+                            case '404':
+                            case '500': {
+                                InternalServerError();
+                                break;
+                            }
+
+                            default: {
+                                $('#i_name').html(`<b class="text-primary">${val[0].i_name}</b>`);
+                            }
+                        }
+                    }
+                });
+
+                function displayWorkflow(obj) {
+                    $.ajax({
+                        url: "/getData",
+                        method: "POST",
+                        data: {
+                            obj: obj,
+                        },
+                        success: function (val) {
+                            let output = "";
+                            switch (val.status_code) {
+                                case '401': {
+                                    InvalidUser();
+                                    break;
+                                }
+
+                                case '500': {
+                                    InternalServerError();
+                                    break;
+                                }
+                                case '404': {
+                                    output += `<div class="p-5 container d-flex align-items-center justify-content-center">
+                                                    <div class="text-center">
+                                                        <lord-icon src="https://cdn.lordicon.com/msoeawqm.json" trigger="loop"
+                                                            colors="primary:#212529,secondary:#405189"
+                                                            style="width: 75px; height: 75px"></lord-icon>
+                                                        <h5 class="mt-2">No Workflow Found</h5>
+                                                    </div>
+                                                </div>`;
+                                    break;
+                                }
+
+                                default: {
+                                    for (let i = 0; i < val.length; i++) {
+                                        output += `
+                                            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12" data-aos="zoom-in">
+                                                <div class="card card-animate " id="${val[i].cstm_id}">
+                                                    <div class="card-header p-3 mb-0 bg-soft-info">
+                                                        <div class="float-end">
+                                                            <button type="button" class="btn btn-light btn-icon waves-effect"
+                                                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                <i class="fa-solid fa-ellipsis-vertical fs-5"></i>
+                                                            </button>
+                                                            <div class="dropdown-menu">
+                                                                <button class="dropdown-item editBtn fs-15" data-bs-toggle="modal" data-bs-target="#editModal" data-id="${val[i].workflow_id}" data-name="${val[i].workflow_name}">
+                                                                    <span class="text-end text-success ">
+                                                                        <i class="mdi mdi-lead-pencil align-bottom me-2 "></i>
+                                                                        Edit
+                                                                    </span>
+                                                                </button>
+                                                                <button class="dropdown-item deleteBtn fs-15" data-id="${val[i].workflow_id}">
+                                                                    <span class="text-end text-danger">
+                                                                        <i class="bx bxs-trash me-2 align-middle"></i>
+                                                                        Delete
+                                                                    </span>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <h4 class="card-title mb-0 d-flex align-items-center py-2">
+                                                            <a href="/instance/${iid}/individualworkflow?id=${val[i].workflow_id}">
+                                                                ${val[i].workflow_name}
+                                                            </a>
+                                                        </h4>
+                                                    </div>
+                                                </div>
+                                            </div>`;
+                                    }
+                                }
+                            }
+                            $("#workflows").html(output);
+                        }
+                    })
+                }
+                displayWorkflow({
+                    table: "workflow",
+                    paramstr: `instance_id ='${iid}' and apikey = '${getCookie('apikey')}' group by workflow_id --`
+                });
+
+                $(".required").on('focusout', function () {
+                    onfocusout_validation($(this).attr('id'));
+                });
+
+                $(".required").on('input', function () {
+                    oninput_validation($(this).attr('id'));
+                });
+
+                enterKeyEvent('workflow_name', 'create_workflow');
+
+                $(document).on("click", "#create_workflow", function () {
+                    nullfield_validation('workflow_name');
+                    if (objFlag.flag_workflow_name == 0) {
+                        oninput_validation('workflow_name');
+                        if (objFlag.flag_workflow_name == 0) {
+                            $.ajax({
+                                url: "/createworkflow",
+                                method: "POST",
+                                data: {
+                                    "wname": $("#workflow_name").val().trim(),
+                                    "iid": iid
+                                },
+                                success: function (val) {
+                                    switch (val.status_code) {
+                                        case '401': {
+                                            InvalidUser();
+                                            break;
+                                        }
+
+                                        case "500": {
+                                            InternalServerError();
+                                            break;
+                                        }
+
+                                        case "200":
+                                            $("#workflow_close").click();
+                                            swal({
+                                                title: "Workflow created",
+                                                type: 'success',
+                                                timer: 2500,
+                                                showConfirmButton: false,
+                                            }).then(() => {
+                                                $("#workflow_name").val("");
+                                            });
+                                            break;
+                                    }
+                                    displayWorkflow({
+                                        table: "workflow",
+                                        paramstr: `instance_id ='${iid}' and apikey = '${getCookie('apikey')}' group by workflow_id --`
+                                    });
+                                }
+                            })
+                        }
+                    }
+                })
+
+                $(document).on("input", "#searchworkflow", function () {
+                    let val = $('#searchworkflow').val().trim();
+
+                    if (val == null || val == "") {
+                        displayWorkflow({
+                            table: "workflow",
+                            paramstr: `instance_id ='${iid}' and apikey = '${getCookie('apikey')}' group by workflow_id --`
+                        });
+                    }
+                    else {
+                        displayWorkflow({
+                            table: "workflow",
+                            paramstr: `(workflow_name LIKE '%${val}%') and apikey = '${getCookie('apikey')}' group by workflow_id --`
+                        });
+                    }
+                })
+
+                $(document).on('click', '#mic', async function () {
+
+                    mic("msg").then((result) => {
+                        let data = result.toString().split(" ");
+                        console.log(data);
+                        if (data[0] == "execute" && data[1] != "") {
+                            $.ajax({
+                                url: "/getData",
+                                method: "post",
+                                data: {
+                                    obj: {
+                                        table: `workflow`,
+                                        paramstr: `workflow_name='${data[1]}' and instance_id='${iid}'`,
+                                    }
+                                },
+                                success: function (data) {
+                                    console.log(data);
+                                    let flag = true;
+                                    for (let i = 0; i < data.length; i++) {
+                                        let bodydata = $.parseJSON(data[i].body_data);
+                                        $.ajax({
+                                            url: data[i].api_name,
+                                            method: "POST",
+                                            data: bodydata,
+                                            async: false,
+                                            success: function (data) {
+                                                if (data.status_code != 200) {
+                                                    flag = false;
+                                                }
+                                            }
+                                        })
+                                        if (i == data.length - 1) {
+                                            if (flag) {
+                                                swal({
+                                                    title: "Workflow executed",
+                                                    type: 'success',
+                                                    timer: 2500,
+                                                    showConfirmButton: false,
+                                                });
+                                            }
+                                            else {
+                                                swal({
+                                                    title: "Workflow not executed",
+                                                    type: 'error',
+                                                    timer: 2500,
+                                                    showConfirmButton: false,
+                                                });
+                                            }
+                                        }
+                                    }
+                                }
+                            })
+                        }
+                        else if (data[0] == "create" && data[1] == "workflow") {
+                            $("#createworkflow").click();
+                        }
+                        else if (data[0] == "logout" || (data[0] == "log" && data[1] == "out")) {
+                            $("#logout").click();
+                        }
+                        else if ((data[0] == "edit" || data[0] == "update") && data[1] != "" && data[1] != undefined) {
+                            $.ajax({
+                                url: "/getData",
+                                method: "post",
+                                data: {
+                                    obj: {
+                                        table: `workflow`,
+                                        paramstr: `workflow_name='${data[1]}' and instance_id='${iid}'`,
+                                    }
+                                },
+                                success: function (data) {
+                                    console.log(data);
+                                    let wfcount = $(".editBtn").length;
+                                    // alert($(".editBtn")[0].getAttribute("data-id"));
+                                    for (let i = 0; i < wfcount; i++) {
+                                        if ($(".editBtn")[i].getAttribute("data-id") == data[0].workflow_id) {
+                                            $(".editBtn")[i].click();
+                                        }
+                                    }
+                                }
+                            })
+                        }
+                        else if (data[0] == "delete" && data[1] != "" && data[1] != undefined) {
+                            $.ajax({
+                                url: "/getData",
+                                method: "post",
+                                data: {
+                                    obj: {
+                                        table: `workflow`,
+                                        paramstr: `workflow_name='${data[1]}' and instance_id='${iid}'`,
+                                    }
+                                },
+                                success: function (data) {
+                                    console.log(data);
+                                    let wfcount = $(".deleteBtn").length;
+                                    for (let i = 0; i < wfcount; i++) {
+                                        if ($(".deleteBtn")[i].getAttribute("data-id") == data[0].workflow_id) {
+                                            $(".deleteBtn")[i].click();
+                                        }
+                                    }
+                                }
+                            })
+                        }
+                        else if (data[0] == "go" && data[1] == "to" && data[2] == "profile") {
+                            location.href = "/profile";
+                        }
+                        else if (data[0] == "go" && data[1] == "to" && (data[2] == "pay" || data[2] == "pricing" || data[2] == "payment" || data[2] == "subscription")) {
+                            location.href = "/subscription";
+                        }
+                        else if (data[0] == "go" && data[1] == "to" && data[2] == "dashboard") {
+                            location.href = "/dashboard";
+                        }
+                        else if (data[0] == "go" && data[1] == "to" && data[2] == "instance") {
+                            location.href = "/instance";
+                        }
+                        else if (data[0] == "go" && data[1] == "to" && (data[2] == "bulkmessage" || (data[2] == "bulk" && data[3] == "message"))) {
+                            location.href = `/instance/${iid}/bulkmessage`;
+                        }
+                        else if (data[0] == "go" && data[1] == "to" && (data[2] == "bulkmail" || (data[2] == "bulk" && data[3] == "mail"))) {
+                            location.href = `/instance/${iid}/bulkmail`;
+                        }
+                        else if (data[0] == "go" && data[1] == "to" && (data[2] == "contacts" || (data[2] == "contact" && data[3] == "list"))) {
+                            location.href = `/instance/${iid}/contact-list`;
+                        }
+                        else if (data[0] == "go" && data[1] == "to" && data[2] == "channel") {
+                            location.href = `/instance/${iid}/channel`;
+                        }
+                        else if (data[0] == "go" && data[1] == "to" && data[2] == "chat") {
+                            location.href = `/instance/${iid}/chat`;
+                        }
+                        else if (data[0] == "go" && data[1] == "to" && data[2] == "workflow") {
+                            location.href = `/instance/${iid}/workflow`;
+                        }
+                        else if (data[0] == "go" && data[1] == "to" && data[2] == "custom" && data[3] == "template") {
+                            location.href = "/customtemplate";
+                        }
+                        else if (data[0] == "go" && data[1] == "to" && data[2] == "email" && data[3] == "configuration") {
+                            location.href = "/addpasscode";
+                        }
+                        else if (data[0] == "go" && data[1] == "to" && data[2] == "support" && data[3] == "ticket") {
+                            location.href = "/support-ticket";
+                        }
+                        else if (data[0] == "go" && data[1] == "to" && data[2] == "api" && data[3] == "docs") {
+                            location.href = "/docs";
+                        }
+                        else {
+                            swal({
+                                title: "Command not recognized",
+                                type: 'error',
+                                timer: 2500,
+                                showConfirmButton: false,
+                            });
+                        }
+                    })
+                })
+
+                $(document).on('click', '.deleteBtn', function () {
+                    let wid = $(this).attr("data-id");
+                    swal({
+                        title: 'Are you sure?',
+                        text: "You won't be able to access this anymore..!!",
+                        type: 'warning',
+                        showCancelButton: true,
+                        confirmButtonText: 'Yes, delete it',
+                        cancelButtonText: 'No, cancel',
+                        confirmButtonClass: 'btn btn-success mx-2',
+                        cancelButtonClass: 'btn btn-outline-danger mx-2',
+                        buttonsStyling: false
+                    }).then(function (result) {
+                        if (result.value) {
+                            $.ajax({
+                                url: "/deleterecord",
+                                method: "delete",
+                                data: { obj: { table: "workflow", paramstr: `workflow_id='${wid}'` } },
+                                success: function (data) {
+                                    console.log(data);
+                                    if (data.status_code == 200) {
+                                        swal({
+                                            title: "Workflow deleted",
+                                            type: 'success',
+                                            timer: 2500,
+                                            showConfirmButton: false,
+                                        });
+                                        displayWorkflow({
+                                            table: "workflow",
+                                            paramstr: `instance_id ='${iid}' and apikey = '${getCookie('apikey')}' group by workflow_id --`
+                                        });
+                                    } else {
+                                        swal({
+                                            title: "Workflow not deleted",
+                                            text: "Try again after some time!!",
+                                            type: 'success',
+                                            timer: 2500,
+                                            showConfirmButton: false,
+                                        })
+                                    }
+                                }
+                            })
+                        }
+                    })
+
+                })
+
+                $(document).on('click', ".editBtn", function () {
+                    $("#edit_workflow_name").attr("data-id", $(this).attr("data-id"));
+                    $("#edit_workflow_name").val($(this).attr("data-name"));
+                })
+
+                $(document).on('click', "#edit_workflow", function () {
+                    $.ajax({
+                        url: "/updateData",
+                        method: "put",
+                        data: {
+                            table: "workflow",
+                            paramstr: `workflow_name='${$("#edit_workflow_name").val()}'`,
+                            condition: `workflow_id='${$("#edit_workflow_name").attr("data-id")}'`
+                        },
+                        success: function (data) {
+                            if (data.status_code == 200) {
+                                $("#close-modal").click();
+                                swal({
+                                    title: "Workflow updated",
+                                    type: 'success',
+                                    timer: 2500,
+                                    showConfirmButton: false,
+                                });
+
+                                displayWorkflow({
+                                    table: "workflow",
+                                    paramstr: `instance_id ='${iid}' and apikey = '${getCookie('apikey')}' group by workflow_id --`
+                                });
+                            } else {
+                                swal({
+                                    title: "Workflow not updated",
+                                    text: "Try again after some time",
+                                    type: 'error',
+                                    timer: 2500,
+                                    showConfirmButton: false,
+                                });
+                            }
+                        }
+                    })
+                })
+            });
+        </script>
+</body>
+
+</html>

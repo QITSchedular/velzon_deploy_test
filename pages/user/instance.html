@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg"
+    data-sidebar-image="none" data-preloader="disable">
+
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Dashboard | WhatsApp Messages</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesbrand" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="/assets/images/favicon.ico">
+
+    <!-- aos css -->
+    <link rel="stylesheet" href="/assets/libs/aos/aos.css" />
+    <!-- Layout config Js -->
+    <span src="/assets/js/layout.js"></span>
+    <!-- Bootstrap Css -->
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="/assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <!-- custom Css-->
+    <link href="/assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Font Awesome Files -->
+    <link href="/assets/fontawesome/css/all.min.css" rel="stylesheet">
+    <link href="/assets/fontawesome/css/solid.css" rel="stylesheet">
+    <link href="/assets/fontawesome/css/solid.min.css" rel="stylesheet">
+    <link href="/assets/fontawesome/css/regular.css" rel="stylesheet">
+    <link href="/assets/fontawesome/css/regular.min.css" rel="stylesheet">
+    <link href="/assets/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+    <link href="/assets/fontawesome/css/fontawesome.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+        <header id="page-topbar">
+            <div class="layout-width">
+                <div class="navbar-header">
+                    <div class="d-flex">
+                        <!-- LOGO -->
+                        <div class="navbar-brand-box horizontal-logo">
+                            <a href="/" class="logo logo-dark">
+                                <span class="logo-sm">
+                                    <img src="/assets/images/logo-sm.png" alt="" height="22">
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="/assets/images/logo-dark.png" alt="" height="17">
+                                </span>
+                            </a>
+                            <a href="/" class="logo logo-light">
+                                <span class="logo-sm">
+                                    <img src="/assets/images/logo-sm.png" alt="" height="22">
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="/assets/images/logo-light.png" alt="" height="17">
+                                </span>
+                            </a>
+                        </div>
+                        <button type="button"
+                            class="btn btn-sm px-3 fs-16 header-item vertical-menu-btn topnav-hamburger"
+                            id="topnav-hamburger-icon">
+                            <span class="hamburger-icon">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <div class="dropdown topbar-head-dropdown header-item">
+                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
+                                id="page-header-search-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                <i class="bx bx-search fs-22"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
+                                aria-labelledby="page-header-search-dropdown">
+                                <form class="p-3">
+                                    <div class="form-group m-0">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Search ..."
+                                                aria-label="Recipient's username">
+                                            <button class="btn btn-primary" type="submit">
+                                                <i class="mdi mdi-magnify"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="ms-1 header-item d-none d-sm-flex">
+                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
+                                data-toggle="fullscreen">
+                                <i class='bx bx-fullscreen fs-22'></i>
+                            </button>
+                        </div>
+
+                        <div class="ms-1 header-item d-none d-sm-flex">
+                            <button type="button"
+                                class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle light-dark-mode">
+                                <i class='bx bx-moon fs-22'></i>
+                            </button>
+                        </div>
+
+                        <div class="dropdown ms-sm-3 header-item topbar-user">
+                            <button type="button" class="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <span class="d-flex align-items-center">
+                                    <img class="rounded-circle header-profile-user profileimg" />
+                                    <span class="text-start ms-xl-2">
+                                        <span
+                                            class="d-none d-xl-inline-block ms-1 fw-medium user-name-text profilename"></span>
+                                        <span class="d-none d-xl-block ms-1 fs-12 text-muted user-name-sub-text">
+                                            Founder
+                                        </span>
+                                    </span>
+                                </span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <!-- item-->
+                                <h6 class="dropdown-header">Welcome <span class="profilename"></span></h6>
+                                <a class="dropdown-item" href="/profile">
+                                    <i class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i>
+                                    <span class="align-middle">Profile</span>
+                                </a>
+                                <a class="dropdown-item" href="/subscription">
+                                    <i class="mdi mdi-credit-card-chip text-muted fs-16 align-middle me-1"></i>
+                                    <span class="align-middle">Pay</span>
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" id="logout">
+                                    <i class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i>
+                                    <span class="align-middle" data-key="t-logout">Logout</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- ========== App Menu ========== -->
+        <div class="app-menu navbar-menu">
+            <!-- LOGO -->
+            <div class="navbar-brand-box">
+                <!-- Dark Logo-->
+                <a href="/" class="logo logo-dark">
+                    <span class="logo-sm">
+                        <img src="/assets/images/logo-sm.png" alt="" height="22">
+                    </span>
+                    <span class="logo-lg">
+                        <img src="/assets/images/logo-dark.png" alt="" height="17">
+                    </span>
+                </a>
+                <!-- Light Logo-->
+                <a href="/" class="logo logo-light">
+                    <span class="logo-sm">
+                        <img src="/assets/images/logo-sm.png" alt="" height="22">
+                    </span>
+                    <span class="logo-lg">
+                        <img src="/assets/images/logo-light.png" alt="" height="17">
+                    </span>
+                </a>
+                <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover"
+                    id="vertical-hover">
+                    <i class="ri-record-circle-line"></i>
+                </button>
+            </div>
+
+            <div id="scrollbar">
+                <div id="scrollbar">
+                    <div class="container-fluid">
+                        <div id="two-column-menu"></div>
+                        <ul class="navbar-nav" id="navbar-nav" data-aos="fade-right" data-aos-duration="1000"></ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-background"></div>
+        </div>
+        <!-- Left Sidebar End -->
+        <!-- Vertical Overlay-->
+        <div class="vertical-overlay"></div>
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+            <div class="page-content">
+                <div class="container-fluid">
+                    <div class="row mb-3">
+                        <div class="search-box col-4">
+                            <input type="text" class="form-control" id="searchInstance"
+                                placeholder="Search Instance ..." />
+                            <i class="ri-search-line search-icon ms-3"></i>
+                        </div>
+                        <div class="d-flex justify-content-end col-8">
+                            <button type="button" class="btn btn-soft-danger waves-effect waves-light fs-15 me-2"
+                                id="mic" data-bs-toggle="modal" data-bs-target="#voice_input">
+                                <i class="mdi mdi-microphone"></i>
+                            </button>
+                            <button id="add_instance_btn" type="button" class="btn btn-success" data-bs-toggle="modal"
+                                data-bs-target="#createinstance">
+                                <i class="ri-add-circle-line align-middle me-1"></i>
+                                Add Instance
+                            </button>
+                            <a id="pay_btn" class="btn btn-primary ms-2 d-none" href="/subscription">Pay</a>
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="createinstance" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog modal-fullscreen-sm-down modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header bg-soft-info p-3">
+                                    <h5 class="modal-title">
+                                        Create Instance
+                                    </h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <label for="instance_name" class="form-label">
+                                        Instance name
+                                        <span class="text-danger">*</span>
+                                        <span class="text-danger" id="err_instance_name"></span>
+                                    </label>
+                                    <input type="text" class="form-control required" id="instance_name"
+                                        name="instance_name" placeholder="Enter Instance name" />
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" id="create" data-bs-dismiss="modal">
+                                        Create
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card ribbon-box border shadow-none mb-3">
+                        <div class="card-header text-muted">
+                            <h2 class="d-flex justify-content-center">Instances</h2>
+                            <div class="ribbon ribbon-primary ribbon-shape" id="pay_status">-</div>
+                            <div class="d-flex justify-content-center text-primary" id="remaining_days"></div>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive table-card">
+                                <table class="table align-middle table-nowrap" id="instance_data"></table>
+                                <div class="noresult d-none py-5">
+                                    <div class="text-center">
+                                        <lord-icon src="https://cdn.lordicon.com/msoeawqm.json" trigger="loop"
+                                            colors="primary:#212529,secondary:#405189"
+                                            style="width: 75px; height: 75px">
+                                        </lord-icon>
+                                        <h5 class="mt-2">Sorry! No Result Found</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Page-content -->
+            <footer class="footer"></footer>
+        </div>
+        <!-- end main content-->
+    </div>
+    <!-- END layout-wrapper -->
+
+    <!--preloader-->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner-border text-primary avatar-sm" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="customizer-setting" id="chatbot">
+        <div class="btn-info btn-rounded shadow-lg btn btn-icon btn-lg p-2">
+            <i class="fa-solid fa-comment" id="iconchat"></i>
+        </div>
+    </div>
+
+    <div class="email-chat-detail" id="emailchat-detailElem" style="display: none;">
+        <div class="card mb-0">
+            <div class="card-header align-items-center d-flex bg-primary text-white-50">
+                <div class="flex-grow-1">
+                    <h5 class="fs-15 text-white mb-1 profile-username">Velzon ChatBot</h5>
+                    <p class="mb-0 fs-12 lh-1">Ask here for help</p>
+                </div>
+                <div>
+                    <i class="fa-brands fa-bots fs-1 text-white"></i>
+                </div>
+            </div>
+
+            <div class="card-body p-0">
+                <div id="users-chat">
+                    <div class="chat-conversation p-3" id="chat-conversation" data-simplebar style="height: 250px;">
+                        <ul class="list-unstyled chat-conversation-list chat-sm" id="conversation"></ul>
+                    </div>
+                </div>
+
+                <div class="border-top border-top-dashed">
+                    <div class="row g-2 mx-3 mt-2 mb-3">
+                        <div class="col">
+                            <div class="position-relative">
+                                <input type="text" class="form-control border-light bg-light message-input"
+                                    placeholder="Enter Message..." id="input">
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <button class="btn btn-primary" id="sendbotmsg">
+                                <i class="mdi mdi-send"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="voice_input" class="modal zoomIn">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+            </button> -->
+                </div>
+                <div class="modal-body">
+                    <div class="fs-1 text-center" id="msg" style="resize: none;">
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script src="/assets/js/jquery.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/validate.js"></script>
+    <script src="/assets/js/voiceRecognition.js"></script>
+    <script src="/assets/js/chatbot.js"></script>
+
+    <script src="/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="/assets/libs/node-waves/waves.min.js"></script>
+    <script src="/assets/libs/feather-icons/feather.min.js"></script>
+    <script src="/assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+
+    <!--Swiper slider js-->
+    <script src="/assets/libs/swiper/swiper-bundle.min.js"></script>
+
+    <!-- aos js -->
+    <script src="/assets/libs/aos/aos.js"></script>
+    <!-- prismjs plugin -->
+    <script src="/assets/libs/prismjs/prism.js"></script>
+    <!-- animation init -->
+    <script src="/assets/js/pages/animation-aos.init.js"></script>
+
+    <!-- App js -->
+    <script src="/assets/js/app.js"></script>
+
+    <!-- Sweet Alerts js -->
+    <script src="/assets/sweetalert2/sweet-alert.init.js"></script>
+    <script src="/assets/sweetalert2/sweetalert2.all.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            chkLogin();
+
+            $(document).on('input', '#searchInstance', () => {
+                instance_data({
+                    "table": "instance",
+                    "paramstr": `(i_name like '%${$('#searchInstance').val()}%')`
+                });
+            })
+
+            function display_ribbon_days() {
+                $.ajax({
+                    url: "/getData",
+                    method: "POST",
+                    data: {
+                        obj: {
+                            table: "subscription",
+                            paramstr: true,
+                        }
+                    },
+                    success: function (val) {
+                        $('#pay_status').removeClass('ribbon-danger');
+                        $('#pay_status').removeClass('ribbon-success');
+                        $('#pay_status').removeClass('ribbon-warning');
+
+                        switch (val.status_code) {
+                            case '401': {
+                                InvalidUser();
+                                break;
+                            }
+
+                            case '500': {
+                                InternalServerError();
+                                break;
+                            }
+
+                            case '404': {
+                                $.ajax({
+                                    url: "/getData",
+                                    method: "POST",
+                                    data: {
+                                        obj: {
+                                            table: "instance",
+                                            paramstr: true,
+                                        }
+                                    },
+                                    success: function (val) {
+                                        switch (val.status_code) {
+                                            case '401': {
+                                                InvalidUser();
+                                                break;
+                                            }
+
+                                            case '500': {
+                                                InternalServerError();
+                                                break;
+                                            }
+
+                                            case '404': {
+                                                $('#pay_status').addClass('d-none');
+                                                swal({
+                                                    type: 'info',
+                                                    html: `<span class="text-success fs-2">
+                                                        Free trial of <span class="text-danger"> 7 </span> 
+                                                    days will start <br> after you create 
+                                                    <span class="text-primary">1<sup>st</sup> instance.</span> 
+                                                    <span>`,
+                                                    showCancelButton: false,
+                                                    confirmButtonText: 'OK, Got it',
+                                                    confirmButtonClass: 'btn btn-primary mx-2',
+                                                    buttonsStyling: false
+                                                })
+                                                instance_data({
+                                                    "table": "instance",
+                                                    "paramstr": true
+                                                });
+                                                break;
+                                            }
+
+                                            default: {
+                                                $('#pay_status').removeClass('d-none');
+                                                let current_date = new Date();
+                                                let create_date = new Date(val[0].create_date);
+                                                let expiry_date = new Date(create_date);
+                                                expiry_date.setDate(create_date.getDate() + 7);
+                                                let remaining_days = Math.ceil(Math.abs(expiry_date - current_date) / (1000 * 60 * 60 * 24));
+
+                                                if (val.length == 1 && expiry_date > current_date) {
+                                                    $('#pay_status').addClass('ribbon-warning');
+                                                    $('#pay_status').html(`<span>Free Trial</span>`);
+
+                                                    $('#remaining_days').html(`${remaining_days} Days left`);
+                                                    $('#remaining_days').addClass('text-danger');
+
+                                                    $('.manage').prop("disabled", false);
+                                                    $('#add_instance_btn').prop("disabled", false);
+                                                }
+                                                else {
+                                                    swal({
+                                                        title: `Your Trial period has expired`,
+                                                        text: "You can't use the services untill you pay",
+                                                        type: 'error',
+                                                        showCancelButton: true,
+                                                        confirmButtonText: 'Pay Now',
+                                                        cancelButtonText: 'Remind me later',
+                                                        confirmButtonClass: 'btn btn-success mx-2',
+                                                        cancelButtonClass: 'btn btn-outline-primary mx-2',
+                                                        buttonsStyling: false
+                                                    }).then(function (result) {
+                                                        if (result.value) {
+                                                            location.href = "/subscription";
+                                                        }
+                                                    })
+
+                                                    $('#pay_status').addClass('ribbon-danger');
+                                                    $('#pay_status').html(`<span>Trial Expired</span>`);
+
+                                                    $('#remaining_days').html(`- Days left`);
+
+                                                    $('.manage').prop("disabled", true);
+                                                    $('#add_instance_btn').prop("disabled", true);
+                                                    $('#pay_btn').removeClass('d-none');
+                                                }
+                                                break;
+                                            }
+                                        }
+                                    }
+                                })
+                                break;
+                            }
+
+                            default: {
+                                var latest_date = new Date(val[0].pay_date);
+                                let current_date = new Date();
+                                var planid = val[0].planID;
+                                let duration = 0, remaining_days = 0;
+
+                                for (var i in val) {
+                                    if (latest_date < new Date(val[i].pay_date)) {
+                                        latest_date = new Date(val[i].pay_date);
+                                        planid = val[i].planID;
+                                    }
+                                }
+
+                                $.ajax({
+                                    url: "/getData",
+                                    method: "POST",
+                                    data: {
+                                        obj: {
+                                            table: "plans",
+                                            paramstr: `planid = ${planid} --`,
+                                        }
+                                    },
+                                    success: function (val) {
+                                        switch (val.status_code) {
+                                            case '401': {
+                                                InvalidUser();
+                                                break;
+                                            }
+
+                                            case '500': {
+                                                InternalServerError();
+                                                break;
+                                            }
+
+                                            default: {
+                                                duration = val[0].durationMonth;
+                                                latest_date.setMonth(latest_date.getMonth() + duration);
+
+                                                remaining_days = Math.ceil(Math.round(latest_date - current_date) / (1000 * 60 * 60 * 24));
+
+                                                $('#remaining_days').remove('text-primary text-danger');
+                                                if (remaining_days > 0) {
+                                                    $('#remaining_days').html(`${remaining_days} Days left`);
+                                                    $('#pay_status').html(`<span>Active</span>`);
+                                                    $('#pay_status').addClass('ribbon-success');
+                                                    if (remaining_days <= 7) {
+                                                        $('#remaining_days').addClass('text-danger');
+                                                        swal({
+                                                            title: `Only <span class="text-danger">${remaining_days}</span> Day left`,
+                                                            text: "You can't use the services anymore..!!",
+                                                            type: 'warning',
+                                                            showCancelButton: true,
+                                                            confirmButtonText: 'Pay Now',
+                                                            cancelButtonText: 'Remind me later',
+                                                            confirmButtonClass: 'btn btn-success mx-2',
+                                                            cancelButtonClass: 'btn btn-outline-primary mx-2',
+                                                            buttonsStyling: false
+                                                        }).then(function (result) {
+                                                            if (result.value) {
+                                                                location.href = "/subscription";
+                                                            }
+                                                        })
+                                                    }
+                                                }
+                                                else {
+                                                    swal({
+                                                        title: `Your subscription has finished`,
+                                                        text: "You can't use the services untill you pay",
+                                                        type: 'error',
+                                                        showCancelButton: true,
+                                                        confirmButtonText: 'Pay Now',
+                                                        cancelButtonText: 'Remind me later',
+                                                        confirmButtonClass: 'btn btn-success mx-2',
+                                                        cancelButtonClass: 'btn btn-outline-primary mx-2',
+                                                        buttonsStyling: false
+                                                    }).then(function (result) {
+                                                        if (result.value) {
+                                                            location.href = "/subscription";
+                                                        }
+                                                    })
+
+                                                    $('#remaining_days').addClass('text-primary');
+                                                    $('#remaining_days').html(` -  Days left`);
+
+                                                    $('#pay_status').addClass('ribbon-danger');
+                                                    $('#pay_status').html(`<span>Expired</span>`);
+
+                                                    $('.manage').prop("disabled", true);
+                                                    $('#add_instance_btn').prop("disabled", true);
+                                                    $('#pay_btn').removeClass('d-none');
+                                                }
+                                                break;
+                                            }
+                                        }
+                                    }
+                                });
+                                break;
+                            }
+                        }
+                    }
+                })
+            }
+            display_ribbon_days();
+
+            function instance_data(obj) {
+                $.ajax({
+                    url: "/getData",
+                    method: "POST",
+                    data: { obj: obj },
+                    success: function (val) {
+                        $('#instance_data, .noresult').addClass('d-none');
+                        let data = ``;
+                        if (val.status_code == 404) {
+                            $('.noresult').removeClass('d-none');
+                        }
+                        else {
+                            $('#instance_data').removeClass('d-none');
+                            data += `<thead class="table-light">
+                                        <tr>
+                                            <th class="w-30">INSTANCE ID</th>
+                                            <th class="w-30">NAME</th>
+                                            <th class="w-30">CREATE DATE</th>
+                                            <th class="w-10"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="list form-check-all">`;
+
+                            const date = new Date().toLocaleDateString();
+                            for (let r of val) {
+                                var cdate = new Date(r.create_date).toLocaleDateString();
+                                data += `<tr>
+                                        <td class="instance_id">${r.instance_id}</td>
+                                        <td class="instance_name">${r.i_name}</td>
+                                        <td class="date">${cdate}</td>
+                                        <td>
+                                            <div class="d-flex justify-content-end me-3">
+                                                <div class="edit">
+                                                    <button type="button" class="btn btn-sm btn-primary btn-label waves-effect right waves-light manage" id="${r.instance_id}">
+                                                        <i class="mdi mdi-spin mdi-cog-outline label-icon align-middle fs-16 ms-2"></i>
+                                                        Manage
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>`;
+                            }
+                        }
+                        data += `</tbody>`;
+                        document.getElementById("instance_data").innerHTML = data;
+                    }
+                })
+            }
+            instance_data({
+                "table": "instance",
+                "paramstr": true
+            });
+
+
+            $(".required").on('focusout', function () {
+                onfocusout_validation($(this).attr('id'));
+            });
+
+            $(".required").on('input', function () {
+                nullfield_validation($(this).attr('id'));
+            });
+
+            $('#instance_name').keypress((e) => {
+                var keycode = (event.keyCode ? event.keyCode : event.which);
+                if (keycode == '13') {
+                    $('#create').click();
+                }
+            })
+
+            $(document).on('click', '#create', () => {
+                var instance_name = document.getElementById('instance_name');
+                nullfield_validation('instance_name');
+                if (objFlag.flag_instance_name == 0) {
+                    $.ajax({
+                        url: "/addinstance",
+                        method: "POST",
+                        data: {
+                            "instance_name": $('#instance_name').val().trim()
+                        },
+                        success: function (val) {
+                            display_ribbon_days();
+
+                            switch (val.status_code) {
+                                case "201": {
+                                    swal({
+                                        title: 'Instance Created successfully',
+                                        type: 'success',
+                                        timer: 2000,
+                                        showConfirmButton: false,
+                                    }).then(function () {
+                                        $('#instance_name').val("");
+                                        $('#instance_name').removeClass('form-control-danger form-control-success')
+                                        instance_data({
+                                            "table": "instance",
+                                            "paramstr": true
+                                        });
+                                    })
+                                    break;
+                                }
+                                case "403": {
+                                    instance_name.value = "";
+                                    swal({
+                                        title: `Instance limit exceeded`,
+                                        text: `You can\'t create instance`,
+                                        type: 'error',
+                                        timer: 2500,
+                                        showConfirmButton: false,
+                                    })
+                                    break;
+                                }
+                                case "409": {
+                                    instance_name.value = "";
+                                    swal({
+                                        title: 'Instance alerady exist',
+                                        type: 'warning',
+                                        timer: 2500,
+                                        showConfirmButton: false,
+                                    })
+                                    break;
+                                }
+                                case "500": {
+                                    InternalServerError();
+                                    break;
+                                }
+                            }
+                        }
+                    })
+                }
+            })
+            $(document).on('click', '#mic', async function () {
+
+                mic("msg").then((result) => {
+                    let data = result.toString().split(" ");
+                    console.log(data);
+                    if (data[0] == "add" && data[1] == "instance") {
+                        $("#add_instance_btn").click();
+                    }
+                    else if (data[0] == "manage" && data[1] != "" && data[1] != undefined) {
+                        let apikey = getCookie("apikey");
+                        alert(apikey);
+                        $.ajax({
+                            url: "/getData",
+                            method: "post",
+                            data: {
+                                obj: {
+                                    table: `instance`,
+                                    paramstr: `i_name='${data[1]}' and apikey='${apikey}'`,
+                                }
+                            },
+                            success: function (data) {
+                                console.log(data);
+                                if (data.status_code) {
+                                    swal({
+                                        title: "Instance not found",
+                                        type: 'error',
+                                        timer: 2500,
+                                        showConfirmButton: false,
+                                    });
+                                } else {
+                                    $($("#" + data[0].instance_id + "")).click();
+                                }
+
+                            }
+                        })
+                    }
+                    else if (data[0] == "logout" || (data[0] == "log" && data[1] == "out")) {
+                        $("#logout").click();
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "profile") {
+                        location.href = "/profile";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && (data[2] == "pay" || data[2] == "pricing" || data[2] == "payment" || data[2] == "subscription")) {
+                        location.href = "/subscription";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "dashboard") {
+                        location.href = "/dashboard";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "instance") {
+                        location.href = "/instance";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "custom" && data[3] == "template") {
+                        location.href = "/customtemplate";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "email" && data[3] == "configuration") {
+                        location.href = "/addpasscode";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "support" && data[3] == "ticket") {
+                        location.href = "/support-ticket";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "api" && data[3] == "docs") {
+                        location.href = "/docs";
+                    }
+                    else {
+                        swal({
+                            title: "Command not recognized",
+                            type: 'error',
+                            timer: 2500,
+                            showConfirmButton: false,
+                        });
+                    }
+                })
+            })
+
+            $(document).on('click', ".manage", function () {
+                location.href = `instance/${$(this).attr('id')}/bulkmessage`;
+            })
+        })
+
+
+
+    </script>
+</body>
+
+</html>

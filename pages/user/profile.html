@@ -1,0 +1,568 @@
+<!doctype html>
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg"
+    data-sidebar-image="none" data-preloader="disable">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Profile Settings | Velzon - Admin & Dashboard Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesbrand" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="/assets/images/favicon.ico">
+
+    <!-- jsvectormap css -->
+    <link href="/assets/libs/jsvectormap/css/jsvectormap.min.css" rel="stylesheet" type="text/css" />
+
+    <!--Swiper slider css-->
+    <link href="/assets/libs/swiper/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- aos css -->
+    <link rel="stylesheet" href="/assets/libs/aos/aos.css" />
+    <!-- Layout config Js -->
+    <script src="/assets/js/layout.js"></script>
+    <!-- Bootstrap Css -->
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="/assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <!-- custom Css-->
+    <link href="/assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Font Awesome Files -->
+    <link href="/assets/fontawesome/css/all.min.css" rel="stylesheet">
+    <link href="/assets/fontawesome/css/solid.css" rel="stylesheet">
+    <link href="/assets/fontawesome/css/solid.min.css" rel="stylesheet">
+    <link href="/assets/fontawesome/css/regular.css" rel="stylesheet">
+    <link href="/assets/fontawesome/css/regular.min.css" rel="stylesheet">
+    <link href="/assets/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+    <link href="/assets/fontawesome/css/fontawesome.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="layout-wrapper">
+        <header id="page-topbar">
+            <div class="layout-width">
+                <div class="navbar-header">
+                    <div class="d-flex">
+                        <div class="navbar-brand-box horizontal-logo">
+                            <a href="/" class="logo logo-dark">
+                                <span class="logo-sm">
+                                    <img src="/assets/images/logo-sm.png" alt="" height="22">
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="/assets/images/logo-dark.png" alt="" height="17">
+                                </span>
+                            </a>
+
+                            <a href="/" class="logo logo-light">
+                                <span class="logo-sm">
+                                    <img src="/assets/images/logo-sm.png" alt="" height="22">
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="/assets/images/logo-light.png" alt="" height="17">
+                                </span>
+                            </a>
+                        </div>
+
+                        <button type="button"
+                            class="btn btn-sm px-3 fs-16 header-item vertical-menu-btn topnav-hamburger"
+                            id="topnav-hamburger-icon">
+                            <span class="hamburger-icon">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </button>
+                    </div>
+
+                    <div class="d-flex align-items-center">
+                        <div class="dropdown d-md-none topbar-head-dropdown header-item">
+                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
+                                id="page-header-search-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                <i class="bx bx-search fs-22"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
+                                aria-labelledby="page-header-search-dropdown">
+                                <form class="p-3">
+                                    <div class="form-group m-0">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Search ..."
+                                                aria-label="Recipient's username">
+                                            <button class="btn btn-primary" type="submit"><i
+                                                    class="mdi mdi-magnify"></i></button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="ms-1 header-item d-none d-sm-flex">
+                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
+                                data-toggle="fullscreen">
+                                <i class='bx bx-fullscreen fs-22'></i>
+                            </button>
+                        </div>
+
+                        <div class="ms-1 header-item d-none d-sm-flex">
+                            <button type="button"
+                                class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle light-dark-mode">
+                                <i class='bx bx-moon fs-22'></i>
+                            </button>
+                        </div>
+
+                        <div class="dropdown ms-sm-3 header-item topbar-user">
+                            <button type="button" class="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <span class="d-flex align-items-center">
+                                    <img class="rounded-circle header-profile-user profileimg" />
+                                    <span class="text-start ms-xl-2">
+                                        <span
+                                            class="d-none d-xl-inline-block ms-1 fw-medium user-name-text profilename"></span>
+                                        <span class="d-none d-xl-block ms-1 fs-12 text-muted user-name-sub-text">
+                                            Founder
+                                        </span>
+                                    </span>
+                                </span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <h6 class="dropdown-header">Welcome <span class="profilename"></span></h6>
+                                <a class="dropdown-item" href="/profile">
+                                    <i class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i>
+                                    <span class="align-middle">Profile</span>
+                                </a>
+                                <a class="dropdown-item" href="/subscription">
+                                    <i class="mdi mdi-credit-card-chip text-muted fs-16 align-middle me-1"></i>
+                                    <span class="align-middle">Pay</span>
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" id="logout">
+                                    <i class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i>
+                                    <span class="align-middle" data-key="t-logout">Logout</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- ========== App Menu ========== -->
+        <div class="app-menu navbar-menu">
+            <!-- LOGO -->
+            <div class="navbar-brand-box">
+                <!-- Dark Logo-->
+                <a href="/" class="logo logo-dark">
+                    <span class="logo-sm">
+                        <img src="/assets/images/logo-sm.png" alt="" height="22">
+                    </span>
+                    <span class="logo-lg">
+                        <img src="/assets/images/logo-dark.png" alt="" height="17">
+                    </span>
+                </a>
+                <!-- Light Logo-->
+                <a href="/" class="logo logo-light">
+                    <span class="logo-sm">
+                        <img src="/assets/images/logo-sm.png" alt="" height="22">
+                    </span>
+                    <span class="logo-lg">
+                        <img src="/assets/images/logo-light.png" alt="" height="17">
+                    </span>
+                </a>
+                <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover"
+                    id="vertical-hover">
+                    <i class="ri-record-circle-line"></i>
+                </button>
+            </div>
+
+            <div id="scrollbar">
+                <div class="container-fluid">
+                    <div id="two-column-menu"></div>
+                    <ul class="navbar-nav" id="navbar-nav" data-aos="fade-right" data-aos-duration="1000"></ul>
+                </div>
+            </div>
+            <div class="sidebar-background"></div>
+        </div>
+        <!-- Left Sidebar End -->
+        <!-- Vertical Overlay-->
+        <div class="vertical-overlay"></div>
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+            <div class="page-content">
+                <div class="container-fluid">
+                    <div class="profile-foreground position-relative mx-n4 mt-n4">
+                        <div class="profile-wid-bg">
+                            <img src="/assets/images/profile-bg.jpg" alt="" class="profile-wid-img" />
+                        </div>
+                    </div>
+                    <div class="mb-4 pt-3">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-sm-3 d-flex align-items-center">
+                                <div class="avatar-lg">
+                                    <img alt="user-img"
+                                        class="rounded-circle avatar-lg user-profile-image rounded-circle profileimg img-thumbnail" />
+                                </div>
+                                <h3 class="text-white profilename ps-3"></h3>
+                            </div>
+                            <div class="col-lg-9 col-md-9 col-sm-9 d-flex justify-content-end align-items-center">
+                                <span>
+                                    <button type="button" class="btn btn-danger waves-effect waves-light fs-15 me-2"
+                                        id="mic" data-bs-toggle="modal" data-bs-target="#voice_input">
+                                        <i class="mdi mdi-microphone"></i>
+                                    </button>
+                                </span>
+                                <a href="/updateprofile" class="btn btn-success">
+                                    <i class="ri-edit-box-line align-middle me-lg-2"></i>
+                                    <span class="d-none d-lg-inline-block">Edit Profile</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card" data-aos="zoom-in">
+                                <div class="card-header">
+                                    <div class="d-flex align-items-center mb-1">
+                                        <div class="flex-grow-1">
+                                            <h5 class="card-title mb-2" id="progress-title"></h5>
+                                        </div>
+                                    </div>
+                                    <div class="progress animated-progress custom-progress progress-label">
+                                        <div class="progress-bar bg-success" id="progress-bar" aria-valuenow="60"
+                                            aria-valuemin="0" aria-valuemax="100">
+                                            <div id="progress-lbl" class="label"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body fs-15">
+                                    <div class="table-responsive">
+                                        <table class="table table-borderless mb-0">
+                                            <tbody>
+                                                <tr>
+                                                    <th class="ps-0" scope="row">Full Name :</th>
+                                                    <td class="text-muted" id="name"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="ps-0" scope="row">Phone :</th>
+                                                    <td class="text-muted" id="phone"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="ps-0" scope="row">E-mail :</th>
+                                                    <td class="text-muted" id="email"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="ps-0" scope="row">City :</th>
+                                                    <td class="text-muted" id="city"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="ps-0" scope="row">State</th>
+                                                    <td class="text-muted" id="state"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="ps-0" scope="row">Country</th>
+                                                    <td class="text-muted" id="country"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer"></footer>
+    </div>
+
+    <!--start back-to-top-->
+    <button onclick="topFunction()" class="btn btn-danger btn-icon" id="back-to-top">
+        <i class="ri-arrow-up-line"></i>
+    </button>
+    <!--end back-to-top-->
+
+    <!--preloader-->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner-border text-primary avatar-sm" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="customizer-setting" id="chatbot">
+        <div class="btn-info btn-rounded shadow-lg btn btn-icon btn-lg p-2">
+            <i class="fa-solid fa-comment" id="iconchat"></i>
+        </div>
+    </div>
+
+    <div class="email-chat-detail" id="emailchat-detailElem" style="display: none;">
+        <div class="card mb-0">
+            <div class="card-header align-items-center d-flex bg-primary text-white-50">
+                <div class="flex-grow-1">
+                    <h5 class="fs-15 text-white mb-1 profile-username">Velzon ChatBot</h5>
+                    <p class="mb-0 fs-12 lh-1">Ask here for help</p>
+                </div>
+                <div>
+                    <i class="fa-brands fa-bots fs-1 text-white"></i>
+                </div>
+            </div>
+
+            <div class="card-body p-0">
+                <div id="users-chat">
+                    <div class="chat-conversation p-3" id="chat-conversation" data-simplebar style="height: 250px;">
+                        <ul class="list-unstyled chat-conversation-list chat-sm" id="conversation"></ul>
+                    </div>
+                </div>
+
+                <div class="border-top border-top-dashed">
+                    <div class="row g-2 mx-3 mt-2 mb-3">
+                        <div class="col">
+                            <div class="position-relative">
+                                <input type="text" class="form-control border-light bg-light message-input"
+                                    placeholder="Enter Message..." id="input">
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <button class="btn btn-primary" id="sendbotmsg">
+                                <i class="mdi mdi-send"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="voice_input" class="modal zoomIn">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                </button> -->
+                </div>
+                <div class="modal-body">
+                    <div class="fs-1 text-center" id="msg" style="resize: none;">
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="/assets/js/jquery.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/validate.js"></script>
+    <script src="/assets/js/chatbot.js"></script>
+    <script src="/assets/js/voiceRecognition.js"></script>
+
+    <script src="/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="/assets/libs/node-waves/waves.min.js"></script>
+    <script src="/assets/libs/feather-icons/feather.min.js"></script>
+    <script src="/assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+
+    <!-- cleave.js -->
+    <script src="/assets/libs/cleave.js/cleave.min.js"></script>
+    <!-- form masks init -->
+    <script src="/assets/js/pages/form-masks.init.js"></script>
+
+    <!-- Vector map-->
+    <script src="/assets/libs/jsvectormap/js/jsvectormap.min.js"></script>
+    <script src="/assets/libs/jsvectormap/maps/world-merc.js"></script>
+
+    <!--Swiper slider js-->
+    <script src="/assets/libs/swiper/swiper-bundle.min.js"></script>
+
+    <!-- aos js -->
+    <script src="/assets/libs/aos/aos.js"></script>
+    <!-- prismjs plugin -->
+    <script src="/assets/libs/prismjs/prism.js"></script>
+    <!-- animation init -->
+    <script src="/assets/js/pages/animation-aos.init.js"></script>
+
+    <!-- App js -->
+    <script src="/assets/js/app.js"></script>
+
+    <script src="/assets/sweetalert2/sweet-alert.init.js"></script>
+    <script src="/assets/sweetalert2/sweetalert2.all.js"></script>
+
+    <!-- two-step-verification js -->
+    <script src="/assets/js/pages/two-step-verification.init.js"></script>
+
+    <!-- Firebase -->
+    <script>
+
+
+        $(document).ready(function () {
+            chkLogin();
+
+            let name = document.getElementById('name'),
+                phone = document.getElementById('phone'),
+                email = document.getElementById('email'),
+                state = document.getElementById('state'),
+                city = document.getElementById('city'),
+                country = document.getElementById('country');
+
+            const nameper = 20,
+                phoneper = 20,
+                emailper = 20,
+                countryper = 10,
+                stateper = 10,
+                cityper = 10,
+                imgper = 10;
+
+            function displaydata() {
+                $.ajax({
+                    url: "/getData",
+                    method: "POST",
+                    data: {
+                        obj: {
+                            table: "users",
+                            paramstr: true
+                        }
+                    },
+                    success: function (val) {
+                        switch (val.status_code) {
+                            case '401':
+                            case '404': {
+                                InvalidUser();
+                                break;
+                            }
+
+                            case '500': {
+                                InternalServerError();
+                                break;
+                            }
+
+                            default: {
+
+                                let Obj = {};
+                                var data = "";
+                                for (let i = 0; i < val.length; i++) {
+                                    Object.assign(Obj, val[i]);
+                                }
+                                var percent = 0;
+                                name.innerHTML = Obj.uname;
+                                email.innerHTML = Obj.email;
+                                phone.innerHTML = Obj.phone;
+                                country.innerHTML = Obj.country;
+                                state.innerHTML = Obj.state;
+                                city.innerHTML = Obj.city;
+
+                                if (Obj.uname != '') {
+                                    percent += nameper;
+                                }
+                                if (Obj.email != '') {
+                                    percent += phoneper;
+                                }
+                                if (Obj.phone != '') {
+                                    percent += emailper;
+                                }
+                                if (Obj.country != '') {
+                                    percent += countryper;
+                                }
+                                if (Obj.state != '') {
+                                    percent += stateper;
+                                }
+                                if (Obj.city != '') {
+                                    percent += cityper;
+                                }
+                                if (Obj.image != '') {
+                                    percent += imgper;
+                                }
+
+                                if (percent != 100) {
+                                    $('#progress-title').html("Complete Your Profile");
+                                }
+                                else {
+                                    $('#progress-title').html("Profile UP TO DATE");
+                                }
+
+                                $('#progress-bar').css('width', `${percent}%`);
+                                $('#progress-lbl').html(`${percent} % `);
+                            }
+                        }
+                    }
+                })
+            }
+            displaydata();
+
+            $(document).on('click', '#mic', async function () {
+
+                mic("msg").then((result) => {
+                    let data = result.toString().split(" ");
+                    console.log(data);
+                    if ((data[0] == "edit" || data[0] == "update") && data[1] == "profile") {
+                        location.href = "/updateprofile";
+                    }
+                    else if (data[0] == "logout" || (data[0] == "log" && data[1] == "out")) {
+                        $("#logout").click();
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "profile") {
+                        location.href = "/profile";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && (data[2] == "pay" || data[2] == "pricing" || data[2] == "payment" || data[2] == "subscription")) {
+                        location.href = "/subscription";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "dashboard") {
+                        location.href = "/dashboard";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "instance") {
+                        location.href = "/instance";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && (data[2] == "bulkmessage" || (data[2] == "bulk" && data[3] == "message"))) {
+                        location.href = `/instance/${iid}/bulkmessage`;
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && (data[2] == "bulkmail" || (data[2] == "bulk" && data[3] == "mail"))) {
+                        location.href = `/instance/${iid}/bulkmail`;
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && (data[2] == "contacts" || (data[2] == "contact" && data[3] == "list"))) {
+                        location.href = `/instance/${iid}/contact-list`;
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "channel") {
+                        location.href = `/instance/${iid}/channel`;
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "chat") {
+                        location.href = `/instance/${iid}/chat`;
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "workflow") {
+                        location.href = `/instance/${iid}/workflow`;
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "custom" && data[3] == "template") {
+                        location.href = "/customtemplate";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "email" && data[3] == "configuration") {
+                        location.href = "/addpasscode";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "support" && data[3] == "ticket") {
+                        location.href = "/support-ticket";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "api" && data[3] == "docs") {
+                        location.href = "/docs";
+                    }
+                    else {
+                        swal({
+                            title: "Command not recognized",
+                            type: 'error',
+                            timer: 2500,
+                            showConfirmButton: false,
+                        });
+                    }
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>

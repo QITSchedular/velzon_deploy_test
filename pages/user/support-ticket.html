@@ -1,0 +1,918 @@
+<!doctype html>
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg"
+    data-sidebar-image="none" data-preloader="disable">
+
+
+<head>
+    <meta charset="utf-8" />
+
+    <title>Support Ticket | M3</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesbrand" name="author" />
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="/assets/images/favicon.ico">
+
+    <!--Swiper slider css-->
+    <link href="/assets/libs/swiper/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Layout config Js -->
+    <script src="/assets/js/layout.js"></script>
+    <!-- Bootstrap Css -->
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="/assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <!-- custom Css-->
+    <link href="/assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Font Awesome Files -->
+    <link href="/assets/fontawesome/css/all.min.css" rel="stylesheet">
+    <link href="/assets/fontawesome/css/solid.css" rel="stylesheet">
+    <link href="/assets/fontawesome/css/solid.min.css" rel="stylesheet">
+    <link href="/assets/fontawesome/css/regular.css" rel="stylesheet">
+    <link href="/assets/fontawesome/css/regular.min.css" rel="stylesheet">
+    <link href="/assets/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+    <link href="/assets/fontawesome/css/fontawesome.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+        <header id="page-topbar">
+            <div class="layout-width">
+                <div class="navbar-header">
+                    <div class="d-flex">
+                        <!-- LOGO -->
+                        <div class="navbar-brand-box horizontal-logo">
+                            <a href="/" class="logo logo-dark">
+                                <span class="logo-sm">
+                                    <img src="/assets/images/logo-sm.png" alt="" height="22">
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="/assets/images/logo-dark.png" alt="" height="17">
+                                </span>
+                            </a>
+
+                            <a href="/" class="logo logo-light">
+                                <span class="logo-sm">
+                                    <img src="/assets/images/logo-sm.png" alt="" height="22">
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="/assets/images/logo-light.png" alt="" height="17">
+                                </span>
+                            </a>
+                        </div>
+
+                        <button type="button"
+                            class="btn btn-sm px-3 fs-16 header-item vertical-menu-btn topnav-hamburger"
+                            id="topnav-hamburger-icon">
+                            <span class="hamburger-icon">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </button>
+
+                    </div>
+
+                    <div class="d-flex align-items-center">
+
+                        <div class="dropdown d-md-none topbar-head-dropdown header-item">
+                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
+                                id="page-header-search-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                <i class="bx bx-search fs-22"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
+                                aria-labelledby="page-header-search-dropdown">
+                                <form class="p-3">
+                                    <div class="form-group m-0">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Search ..."
+                                                aria-label="Recipient's username">
+                                            <button class="btn btn-primary" type="submit">
+                                                <i class="mdi mdi-magnify"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="ms-1 header-item d-none d-sm-flex">
+                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
+                                data-toggle="fullscreen">
+                                <i class='bx bx-fullscreen fs-22'></i>
+                            </button>
+                        </div>
+
+                        <div class="ms-1 header-item d-none d-sm-flex">
+                            <button type="button"
+                                class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle light-dark-mode">
+                                <i class='bx bx-moon fs-22'></i>
+                            </button>
+                        </div>
+
+                        <div class="dropdown ms-sm-3 header-item topbar-user">
+                            <button type="button" class="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <span class="d-flex align-items-center">
+                                    <img class="rounded-circle header-profile-user profileimg" />
+                                    <span class="text-start ms-xl-2">
+                                        <span
+                                            class="d-none d-xl-inline-block ms-1 fw-medium user-name-text profilename"></span>
+                                        <span class="d-none d-xl-block ms-1 fs-12 text-muted user-name-sub-text">
+                                            Founder
+                                        </span>
+                                    </span>
+                                </span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <!-- item-->
+                                <h6 class="dropdown-header">Welcome <span class="profilename"></span></h6>
+                                <a class="dropdown-item" href="/profile">
+                                    <i class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i>
+                                    <span class="align-middle">Profile</span>
+                                </a>
+                                <a class="dropdown-item" href="/subscription">
+                                    <i class="mdi mdi-credit-card-chip text-muted fs-16 align-middle me-1"></i>
+                                    <span class="align-middle">Pay</span>
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" id="logout">
+                                    <i class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i>
+                                    <span class="align-middle" data-key="t-logout">Logout</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- ========== App Menu ========== -->
+        <div class="app-menu navbar-menu">
+            <!-- LOGO -->
+            <div class="navbar-brand-box">
+                <!-- Dark Logo-->
+                <a href="/" class="logo logo-dark">
+                    <span class="logo-sm">
+                        <img src="/assets/images/logo-sm.png" alt="" height="22">
+                    </span>
+                    <span class="logo-lg">
+                        <img src="/assets/images/logo-dark.png" alt="" height="17">
+                    </span>
+                </a>
+                <!-- Light Logo-->
+                <a href="/" class="logo logo-light">
+                    <span class="logo-sm">
+                        <img src="/assets/images/logo-sm.png" alt="" height="22">
+                    </span>
+                    <span class="logo-lg">
+                        <img src="/assets/images/logo-light.png" alt="" height="17">
+                    </span>
+                </a>
+                <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover"
+                    id="vertical-hover">
+                    <i class="ri-record-circle-line"></i>
+                </button>
+            </div>
+
+            <div id="scrollbar">
+                <div id="scrollbar">
+                    <div class="container-fluid">
+                        <div id="two-column-menu"></div>
+                        <ul class="navbar-nav" id="navbar-nav"></ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-background"></div>
+        </div>
+        <!-- Left Sidebar End -->
+        <!-- Vertical Overlay-->
+        <div class="vertical-overlay"></div>
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+            <div class="page-content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-12 col-sm-12">
+                            <div class="card" id="ticketsList">
+                                <div class="card-header border-0">
+                                    <div class="d-flex align-items-center">
+                                        <h5 class="card-title mb-0 flex-grow-1">Tickets Summary</h5>
+                                    </div>
+                                </div>
+                                <div class="card-body border border-dashed border-end-0 border-start-0">
+                                    <div class="d-flex gap-0">
+                                        <div class="search-box flex-grow-1 me-2">
+                                            <input type="text" class="form-control w-50"
+                                                placeholder="Search for ticket..." id="search_ticket">
+                                            <i class="ri-search-line search-icon"></i>
+                                        </div>
+                                        <div class="flex-shrink-1">
+                                            <button type="button"
+                                                class="btn btn-soft-danger waves-effect waves-light fs-15 me-2" id="mic"
+                                                data-bs-toggle="modal" data-bs-target="#voice_input">
+                                                <i class="mdi mdi-microphone"></i>
+                                            </button>
+                                            <button id="add_instance_btn" type="button" class="btn btn-success"
+                                                data-bs-toggle="modal" data-bs-target="#raise_ticket_modal">
+                                                <i class="ri-add-circle-line align-middle me-lg-1"></i>
+                                                <span class="d-none d-lg-inline-block">Generate Ticket</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end card-body-->
+                                <div class="card-body p-4">
+                                    <div class="table-responsive table-card">
+                                        <table class="table align-middle table-nowrap" id="customerTable">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th class="w-20">Ticket ID</th>
+                                                    <th class="w-20">Subject</th>
+                                                    <th class="w-25">Category</th>
+                                                    <th class="w-20">Status</th>
+                                                    <th class="w-15">Type</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="list form-check-all d-none" id="ticket-data"></tbody>
+                                        </table>
+                                        <div class="noresult d-none p-5" id="noresult_ticket">
+                                            <div class="text-center">
+                                                <lord-icon src="https://cdn.lordicon.com/msoeawqm.json" trigger="loop"
+                                                    colors="primary:#212529,secondary:#405189"
+                                                    style="width: 75px; height: 75px">
+                                                </lord-icon>
+                                                <h5 class="mt-2">No Ticket Found</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-12 col-sm-12">
+                            <div class="card">
+                                <div class="card-header border-0">
+                                    <div class="d-flex align-items-center">
+                                        <h5 class="card-title mb-0 flex-grow-1">Frequently Asked Question</h5>
+                                    </div>
+                                </div>
+                                <div class="card-body border border-dashed border-end-0 border-start-0">
+                                    <div class="accordion" id="default-accordion-example">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingOne">
+                                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#collapseOne" aria-expanded="true"
+                                                    aria-controls="collapseOne">
+                                                    How does the website work?
+                                                </button>
+                                            </h2>
+                                            <div id="collapseOne" class="accordion-collapse collapse show"
+                                                aria-labelledby="headingOne"
+                                                data-bs-parent="#default-accordion-example">
+                                                <div class="accordion-body">
+                                                    <ul>
+                                                        <li class="mb-2">The website integrates with Google Sheets and
+                                                            CSV File to
+                                                            access and
+                                                            process data.</li>
+                                                        <li class="mb-2">It utilizes the WhatsApp API to send messages
+                                                            and the email
+                                                            service to send emails.</li>
+                                                        <li class="mb-2">Users provide the necessary information in the
+                                                            Google Sheet
+                                                            or CSV File
+                                                            and
+                                                            the website fetches that data to send messages and
+                                                            emails.</li>
+                                                    </ul>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingTwo">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                                    aria-expanded="false" aria-controls="collapseTwo">
+                                                    What information do I need to provide in the Google Sheet or CSV
+                                                    File?
+                                                </button>
+                                            </h2>
+                                            <div id="collapseTwo" class="accordion-collapse collapse"
+                                                aria-labelledby="headingTwo"
+                                                data-bs-parent="#default-accordion-example">
+                                                <div class="accordion-body">
+                                                    <ul>
+                                                        <li class="mb-2">The required information includes recipient
+                                                            names, phone
+                                                            numbers (for WhatsApp), email addresses, and the content of
+                                                            the messages or emails.</li>
+                                                        <li class="mb-2">The column name for phone number must be
+                                                            <b>'phone'</b>,
+                                                            email address must be <b>'email'</b> and recepient name must
+                                                            be <b>'name'</b>.
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingThree">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                                    aria-expanded="false" aria-controls="collapseThree">
+                                                    Can I send messages and emails to multiple recipients at once?
+                                                </button>
+                                            </h2>
+                                            <div id="collapseThree" class="accordion-collapse collapse"
+                                                aria-labelledby="headingThree"
+                                                data-bs-parent="#default-accordion-example">
+                                                <div class="accordion-body">
+                                                    Yes, you can send messages and emails to multiple recipients by
+                                                    populating the respective columns in the Google Sheet or CSV File.
+                                                    Make sure to follow the specified format for column names.
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingFour">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseFour"
+                                                    aria-expanded="false" aria-controls="collapseFour">
+                                                    Can I customize the content of the messages and emails?
+                                                </button>
+                                            </h2>
+                                            <div id="collapseFour" class="accordion-collapse collapse"
+                                                aria-labelledby="headingFour"
+                                                data-bs-parent="#default-accordion-example">
+                                                <div class="accordion-body">
+                                                    <ul>
+                                                        <li class="mb-2">
+                                                            Yes, you can customize the content of the messages and
+                                                            emails by filling in the appropriate columns in the Google
+                                                            Sheet or CSV File.</li>
+
+                                                        <li class="mb-2">You can use templates to personalize the
+                                                            messages or emails for each recipient, such as including
+                                                            their names or other relevant data from the Google Sheet or
+                                                            CSV File.</li>
+
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingFive">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseFive"
+                                                    aria-expanded="false" aria-controls="collapseFive">
+                                                    How do I manage my contacts on the website?
+                                                </button>
+                                            </h2>
+                                            <div id="collapseFive" class="accordion-collapse collapse"
+                                                aria-labelledby="headingFive"
+                                                data-bs-parent="#default-accordion-example">
+                                                <div class="accordion-body">
+                                                    <ul>
+                                                        <li class="mb-2">
+                                                            The website should provide options to view, edit, and delete
+                                                            contacts.</li>
+
+                                                        <li class="mb-2">You are able to search for specific contacts or
+                                                            organize them into groups called channels.</li>
+                                                        <li class="mb-2">You are allowed to import contacts from
+                                                            external sources such as Google Sheet or CSV file.</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingSix">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseSix"
+                                                    aria-expanded="false" aria-controls="collapseSix">
+                                                    Can I send messages or emails to specific groups of contacts?
+                                                </button>
+                                            </h2>
+                                            <div id="collapseSix" class="accordion-collapse collapse"
+                                                aria-labelledby="headingSix"
+                                                data-bs-parent="#default-accordion-example">
+                                                <div class="accordion-body">
+                                                    <ul>
+                                                        <li class="mb-2">
+                                                            Yes, the website supports contact grouping into channels,
+                                                            you can choose specific groups to send messages or
+                                                            emails to.
+
+                                                        </li>
+                                                        <li class="mb-2">This can be useful for targeting specific
+                                                            subsets of your contacts for different purposes.</li>
+
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingSeven">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseSeven"
+                                                    aria-expanded="false" aria-controls="collapseSeven">
+                                                    What if there are errors or issues while sending messages or emails?
+                                                </button>
+                                            </h2>
+                                            <div id="collapseSeven" class="accordion-collapse collapse"
+                                                aria-labelledby="headingSeven"
+                                                data-bs-parent="#default-accordion-example">
+                                                <div class="accordion-body">
+                                                    <ul>
+                                                        <li class="mb-2">
+                                                            Common issues could include incorrect recipient information,
+                                                            insufficient credits or permissions, or connectivity
+                                                            problems.</li>
+                                                        <li class="mb-2">If the problem persists, you may need to
+                                                            contact the
+                                                            website's support team for assistance.</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingEight">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseEight"
+                                                    aria-expanded="false" aria-controls="collapseEight">
+                                                    Is there a cost associated with using the service?
+                                                </button>
+                                            </h2>
+                                            <div id="collapseEight" class="accordion-collapse collapse"
+                                                aria-labelledby="headingEight"
+                                                data-bs-parent="#default-accordion-example">
+                                                <div class="accordion-body">The website should have measures in place to
+                                                    ensure the security of your data.
+                                                    <ul>
+                                                        <li class="mb-2">The website has different pricing plans or
+                                                            usage tiers depending on your needs.</li>
+                                                        <li class="mb-2">Basic plan offers a free tier with limitations,
+                                                            while others require a subscription or payment for full
+                                                            functionality.</li>
+                                                        <li class="mb-2">Review the pricing details provided by the
+                                                            website to understand any associated costs.</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingNine">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseNine"
+                                                    aria-expanded="false" aria-controls="collapseNine">
+                                                    Is my data secure?
+                                                </button>
+                                            </h2>
+                                            <div id="collapseNine" class="accordion-collapse collapse"
+                                                aria-labelledby="headingNine"
+                                                data-bs-parent="#default-accordion-example">
+                                                <div class="accordion-body">The website should have measures in place to
+                                                    ensure the security of your data.
+                                                    It's important to review the website's privacy policy and understand
+                                                    how they handle and protect your data.
+                                                    If you have any concerns, you can reach out to the website's support
+                                                    team to inquire about their data security
+                                                    practices.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- insert ticket modal -->
+                    <div class="modal flip" id="raise_ticket_modal" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content border-0">
+                                <div class="modal-header p-3 bg-soft-info">
+
+                                    <h5 class="modal-title">Generate Ticket</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                                        id="raise_ticket_modal_close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row g-3">
+                                        <div class="col-lg-6">
+                                            <label for="t_subject" class="form-label">
+                                                Subject
+                                                <span class="text-danger">*</span>
+                                                <span class="text-danger" id="err_t_subject"></span>
+                                            </label>
+                                            <input type="text" id="t_subject" class="form-control required"
+                                                placeholder="Subject" data-type="name" />
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label for="t_type" class="form-label">
+                                                Ticket Type
+                                                <span class="text-danger">*</span>
+                                                <span class="text-danger" id="err_t_type"></span>
+                                            </label>
+                                            <select class="form-select required" data-plugin="choices"
+                                                data-type="message" id="t_type" data-type="name">
+                                                <option value="" selected disabled>Select Ticket Type</option>
+                                                <option value="Account Management">Account Management</option>
+                                                <option value="Technical Support">Technical Support</option>
+                                                <option value="Payment Problem">Payment Problem</option>
+                                                <option value="Service Inquiry">Service Inquiry</option>
+                                                <option value="Feedback and Suggestions">Feedback and Suggestions
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <label for="t_desc" class="form-label">
+                                                Description
+                                                <span class="text-danger">*</span>
+                                                <span class="text-danger" id="err_t_description"></span>
+                                            </label>
+                                            <textarea class="form-control" style="resize: none;" id="t_description"
+                                                rows="10" data-type="message"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-primary btn-load" id="add_ticket">
+                                        Generate Ticket
+                                    </button>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- insert ticket modal -->
+
+            <!-- footer -->
+            <footer class="footer"></footer>
+        </div>
+    </div>
+
+    <!--start back-to-top-->
+    <button onclick="topFunction()" class="btn btn-danger btn-icon" id="back-to-top">
+        <i class="ri-arrow-up-line"></i>
+    </button>
+    <!--end back-to-top-->
+
+    <!--preloader-->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner-border text-primary avatar-sm" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="customizer-setting" id="chatbot">
+        <div class="btn-info btn-rounded shadow-lg btn btn-icon btn-lg p-2">
+            <i class="fa-solid fa-comment" id="iconchat"></i>
+        </div>
+    </div>
+
+    <div class="email-chat-detail" id="emailchat-detailElem" style="display: none;">
+        <div class="card mb-0">
+            <div class="card-header align-items-center d-flex bg-primary text-white-50">
+                <div class="flex-grow-1">
+                    <h5 class="fs-15 text-white mb-1 profile-username">Velzon ChatBot</h5>
+                    <p class="mb-0 fs-12 lh-1">Ask here for help</p>
+                </div>
+                <div>
+                    <i class="fa-brands fa-bots fs-1 text-white"></i>
+                </div>
+            </div>
+
+            <div class="card-body p-0">
+                <div id="users-chat">
+                    <div class="chat-conversation p-3" id="chat-conversation" data-simplebar style="height: 250px;">
+                        <ul class="list-unstyled chat-conversation-list chat-sm" id="conversation"></ul>
+                    </div>
+                </div>
+
+                <div class="border-top border-top-dashed">
+                    <div class="row g-2 mx-3 mt-2 mb-3">
+                        <div class="col">
+                            <div class="position-relative">
+                                <input type="text" class="form-control border-light bg-light message-input"
+                                    placeholder="Enter Message..." id="input">
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <button class="btn btn-primary" id="sendbotmsg">
+                                <i class="mdi mdi-send"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="voice_input" class="modal zoomIn">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                </button> -->
+                </div>
+                <div class="modal-body">
+                    <div class="fs-1 text-center" id="msg" style="resize: none;">
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script src="/assets/js/jquery.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/chatbot.js"></script>
+    <script src="/assets/js/voiceRecognition.js"></script>
+    <script src="/assets/js/validate.js"></script>
+
+    <script src="/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="/assets/libs/node-waves/waves.min.js"></script>
+    <script src="/assets/libs/feather-icons/feather.min.js"></script>
+    <script src="/assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+
+    <!-- swal -->
+    <script src="/assets/sweetalert2/sweet-alert.init.js"></script>
+    <script src="/assets/sweetalert2/sweetalert2.all.js"></script>
+
+    <!--Swiper slider js-->
+    <script src="/assets/libs/swiper/swiper-bundle.min.js"></script>
+
+    <!-- App js -->
+    <script src="/assets/js/app.js"></script>
+
+    <script>
+        $(document).ready(() => {
+            chkLogin();
+
+            function ticket_data(obj) {
+                $.ajax({
+                    url: "/getdata",
+                    method: "post",
+                    data: {
+                        obj: obj,
+                    },
+                    success: function (val) {
+                        $('#noresult_ticket, #ticket-data').addClass('d-none');
+                        switch (val.status_code) {
+                            case '401': {
+                                InvalidUser();
+                                break;
+                            }
+
+                            case '500': {
+                                InternalServerError();
+                                break;
+                            }
+
+                            case '404': {
+                                $('#noresult_ticket').removeClass('d-none');
+                                break;
+                            }
+
+                            default: {
+                                $('#ticket-data').removeClass('d-none');
+                                let output = ``;
+                                for (var i in val) {
+                                    output += `<tr>
+                                        <td><a href="/support-ticket/${val[i].ticket_id}">#${val[i].ticket_id}</a></td>
+                                        <td>${val[i].t_subject}</td>
+                                        <td>${val[i].t_type}</td>`;
+
+                                    switch (val[i].status) {
+                                        case 'open': output += `<td><span class="badge badge-soft-success">${val[i].status}</span></td>`;
+                                            break;
+                                        case 'inprogress': output += `<td><span class="badge badge-soft-warning">${val[i].status}</span></td>`;
+                                            break;
+                                        case 'closed': output += `<td><span class="badge badge-soft-danger">${val[i].status}</span></td>`;
+                                            break;
+                                    }
+
+                                    switch (val[i].category) {
+                                        case 'email': output += `<td><img width="27" height="27" src="https://img.icons8.com/color/48/gmail-new.png" alt="gmail-new"/></td></tr>`;
+                                            break;
+                                        case 'whatsapp': output += `<td><img width="30" height="30" src="https://img.icons8.com/color/48/whatsapp--v1.png" alt="whatsapp--v1"/></td></tr>`;
+                                            break;
+                                    }
+                                }
+                                $("#ticket-data").html(output);
+                            }
+                        }
+                    }
+                })
+            }
+            ticket_data({
+                table: "support_ticket",
+                paramstr: true,
+            });
+
+            $(document).on('input', '#search_ticket', function () {
+                let val = $('#search_ticket').val();
+                if (val !== "" || val !== null) {
+                    ticket_data({
+                        table: "support_ticket",
+                        paramstr: `ticket_id like '%${val}%'`,
+                    });
+                }
+                else {
+                    ticket_data({
+                        table: "support_ticket",
+                        paramstr: true,
+                    });
+                }
+            })
+
+            $(document).on('click', "#add_ticket", function () {
+                nullfield_validation('t_subject');
+                nullfield_validation('t_type');
+                nullfield_validation('t_description');
+                if (objFlag.flag_t_subject == 0 && objFlag.flag_t_type == 0 && objFlag.flag_t_description == 0) {
+                    oninput_validation('t_subject');
+                    oninput_validation('t_type');
+                    oninput_validation('t_description');
+                    if (objFlag.flag_t_subject == 0 && objFlag.flag_t_type == 0 && objFlag.flag_t_description == 0) {
+                        $.ajax({
+                            url: "/addticket",
+                            method: "POST",
+                            data: {
+                                "subject": $('#t_subject').val().trim(),
+                                "t_type": $('#t_type').val().trim(),
+                                "description": $('#t_description').val().trim()
+                            },
+                            beforeSend: function () {
+                                $('#add_ticket')
+                                    .removeClass('btn-primary btn-success')
+                                    .addClass('btn-warning')
+                                    .html(`<span class="d-flex align-items-center">
+                                        <span class="flex-grow-1 me-lg-2 me-md-2">
+                                            Sending
+                                        </span>
+                                        <span class="spinner-border flex-shrink-0" role="status">
+                                            <span class="visually-hidden"></span>
+                                        </span>
+                                    </span>`);
+                            },
+                            success: function (val) {
+                                switch (val.status_code) {
+                                    case '401': {
+                                        InvalidUser();
+                                        break;
+                                    }
+
+                                    case '500': {
+                                        InternalServerError();
+                                        break;
+                                    }
+
+                                    case '400': {
+                                        $('#raise_ticket_modal_close').click();
+                                        swal({
+                                            title: "Ticket not Raised",
+                                            type: 'error',
+                                            timer: 2500,
+                                            showConfirmButton: false,
+                                        }).then(() => {
+                                            $('#t_subject,#t_description,#t_type').val('');
+                                            $('#add_ticket')
+                                                .removeClass('btn-success btn-warning')
+                                                .addClass('btn-primary')
+                                                .html(`Raise Ticket`);
+                                        })
+                                        break;
+                                    }
+
+                                    case '200': {
+                                        swal({
+                                            title: "Ticket Registered!!!",
+                                            type: 'success',
+                                            timer: 3000,
+                                            showConfirmButton: false,
+                                        }).then(() => {
+                                            $('#t_subject,#t_description,#t_type').val('').removeClass('form-control-danger form-control-success');
+                                            $('#add_ticket')
+                                                .removeClass('btn-primary btn-warning')
+                                                .addClass('btn-success')
+                                                .html(`Ticket Raised`);
+                                            $('#raise_ticket_modal_close').click();
+                                            $('#add_ticket')
+                                                .removeClass('btn-success btn-warning')
+                                                .addClass('btn-primary')
+                                                .html(`Raise Ticket`);
+                                        })
+                                        break;
+                                    }
+                                }
+
+
+                                ticket_data({
+                                    table: "support_ticket",
+                                    paramstr: true,
+                                });
+                            }
+                        })
+                    }
+                }
+            })
+            $(document).on('click', '#mic', async function () {
+
+                mic("msg").then((result) => {
+                    let data = result.toString().split(" ");
+                    console.log(data);
+                    if (data[0] == "generate" && data[1] == "ticket") {
+                        $("#add_instance_btn").click();
+                    }
+                    else if (data[0] == "logout" || (data[0] == "log" && data[1] == "out")) {
+                        $("#logout").click();
+                    }
+                    else if (data[0] == "open" && data[1] != "" && data[1] != undefined) {
+                        $.ajax({
+                            url: "/getData",
+                            method: "post",
+                            data: {
+                                obj: {
+                                    table: `support_ticket`,
+                                    paramstr: `t_subject='${data[1]}' and apikey='${apikey}'`,
+                                }
+                            },
+                            success: function (data) {
+                                if (!data.status_code) {
+                                    location.href = `/support-ticket/${data[0].ticket_id}`
+                                } else {
+                                    swal({
+                                        title: "Ticket not found",
+                                        type: 'error',
+                                        timer: 3000,
+                                        showConfirmButton: false,
+                                    });
+                                }
+                            }
+                        })
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "profile") {
+                        location.href = "/profile";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && (data[2] == "pay" || data[2] == "pricing" || data[2] == "payment" || data[2] == "subscription")) {
+                        location.href = "/subscription";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "dashboard") {
+                        location.href = "/dashboard";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "instance") {
+                        location.href = "/instance";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "custom" && data[3] == "template") {
+                        location.href = "/customtemplate";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "email" && data[3] == "configuration") {
+                        location.href = "/addpasscode";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "support" && data[3] == "ticket") {
+                        location.href = "/support-ticket";
+                    }
+                    else if (data[0] == "go" && data[1] == "to" && data[2] == "api" && data[3] == "docs") {
+                        location.href = "/docs";
+                    }
+                    else {
+                        swal({
+                            title: "Command not recognized",
+                            type: 'error',
+                            timer: 2500,
+                            showConfirmButton: false,
+                        });
+                    }
+                })
+            })
+
+
+        })
+    </script>
+</body>
+
+</html>

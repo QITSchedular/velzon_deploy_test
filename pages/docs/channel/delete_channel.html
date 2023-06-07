@@ -1,0 +1,525 @@
+<!doctype html>
+
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg"
+    data-sidebar-image="none" data-preloader="disable">
+
+<head>
+    <meta charset="utf-8" />
+
+    <title>Delete Channel | API Docs</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesbrand" name="author" />
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="/assets/images/favicon.ico">
+
+    <!-- jsvectormap css -->
+    <link href="/assets/libs/jsvectormap/css/jsvectormap.min.css" rel="stylesheet" type="text/css" />
+
+    <!--Swiper slider css-->
+    <link href="/assets/libs/swiper/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- aos css -->
+    <link rel="stylesheet" href="/assets/libs/aos/aos.css" />
+    <!-- Layout config Js -->
+    <script src="/assets/js/layout.js"></script>
+    <!-- Bootstrap Css -->
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="/assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <!-- custom Css-->
+    <link href="/assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Font Awesome Files -->
+    <link href="/assets/fontawesome/css/all.min.css" rel="stylesheet">
+    <link href="/assets/fontawesome/css/solid.css" rel="stylesheet">
+    <link href="/assets/fontawesome/css/solid.min.css" rel="stylesheet">
+    <link href="/assets/fontawesome/css/regular.css" rel="stylesheet">
+    <link href="/assets/fontawesome/css/regular.min.css" rel="stylesheet">
+    <link href="/assets/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+    <link href="/assets/fontawesome/css/fontawesome.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+</head>
+
+<body>
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+        <header id="page-topbar">
+            <div class="layout-width">
+                <div class="navbar-header">
+                    <div class="d-flex">
+                        <!-- LOGO -->
+                        <div class="navbar-brand-box horizontal-logo">
+                            <a href="/" class="logo logo-dark">
+                                <span class="logo-sm">
+                                    <img src="/assets/images/logo-sm.png" alt="" height="22">
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="/assets/images/logo-dark.png" alt="" height="17">
+                                </span>
+                            </a>
+
+                            <a href="/" class="logo logo-light">
+                                <span class="logo-sm">
+                                    <img src="/assets/images/logo-sm.png" alt="" height="22">
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="/assets/images/logo-light.png" alt="" height="17">
+                                </span>
+                            </a>
+                        </div>
+
+                        <button type="button"
+                            class="btn btn-sm px-3 fs-16 header-item vertical-menu-btn topnav-hamburger"
+                            id="topnav-hamburger-icon">
+                            <span class="hamburger-icon">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </button>
+
+                    </div>
+
+                    <div class="d-flex align-items-center">
+                        <div class="dropdown d-md-none topbar-head-dropdown header-item">
+                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
+                                id="page-header-search-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                <i class="bx bx-search fs-22"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
+                                aria-labelledby="page-header-search-dropdown">
+                                <form class="p-3">
+                                    <div class="form-group m-0">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Search ..."
+                                                aria-label="Recipient's username">
+                                            <button class="btn btn-primary" type="submit">
+                                                <i class="mdi mdi-magnify"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="ms-1 header-item d-none d-sm-flex">
+                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
+                                data-toggle="fullscreen">
+                                <i class='bx bx-fullscreen fs-22'></i>
+                            </button>
+                        </div>
+
+                        <div class="ms-1 header-item d-none d-sm-flex">
+                            <button type="button"
+                                class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle light-dark-mode">
+                                <i class='bx bx-moon fs-22'></i>
+                            </button>
+                        </div>
+
+                        <div class="ms-1 header-item d-none d-sm-flex">
+                            <a href="/dashboard">
+                                <button type="button" class="btn btn-outline-primary">
+                                    <i class='ri-dashboard-2-line fs-20 align-middle me-1'></i>
+                                    Dashboard
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- ========== App Menu ========== -->
+        <div class="app-menu navbar-menu">
+            <!-- LOGO -->
+            <div class="navbar-brand-box">
+                <!-- Dark Logo-->
+                <a href="/" class="logo logo-dark">
+                    <span class="logo-sm">
+                        <img src="/assets/images/logo-sm.png" alt="" height="22">
+                    </span>
+                    <span class="logo-lg">
+                        <img src="/assets/images/logo-dark.png" alt="" height="17">
+                    </span>
+                </a>
+                <!-- Light Logo-->
+                <a href="/" class="logo logo-light">
+                    <span class="logo-sm">
+                        <img src="/assets/images/logo-sm.png" alt="" height="22">
+                    </span>
+                    <span class="logo-lg">
+                        <img src="/assets/images/logo-light.png" alt="" height="17">
+                    </span>
+                </a>
+                <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover"
+                    id="vertical-hover">
+                    <i class="ri-record-circle-line"></i>
+                </button>
+            </div>
+
+            <div id="scrollbar">
+                <div id="scrollbar">
+                    <div class="container-fluid">
+                        <div id="two-column-menu"></div>
+                        <ul class="navbar-nav" id="navbar-nav" data-aos="fade-right" data-aos-duration="1000"></ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Left Sidebar End -->
+            <!-- Vertical Overlay-->
+            <div class="vertical-overlay"></div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+            <div class="page-content">
+                <div class="container-fluid">
+                    <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                        <div class="page-title">
+                            <ol class="breadcrumb m-0" id="api_path"></ol>
+                        </div>
+                    </div>
+                    <div class="card card-body">
+                        <div class="d-flex justify-content-evenly gap-3">
+                            <input type="text" class="form-control required" id="iid" placeholder="Enter Instance ID"
+                                data-type="message" autocomplete="off" />
+                            <input type="text" class="form-control required" id="apikey" placeholder="Enter API KEY"
+                                data-type="message" autocomplete="off" />
+                            <button type="button" class="btn btn-primary" id="save">
+                                Save
+                            </button>
+                            <button type="button" class="btn btn-outline-danger" id="clear">
+                                Clear
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="text-primary fs-18 fw-medium">Request Body</div>
+                                </div>
+                                <div class="card-body">
+                                    <label for="channel_id" class="form-label">
+                                        Channel ID
+                                        <span class="text-danger">*</span>
+                                        <span class="text-danger" id="err_channel_id"></span>
+                                    </label>
+                                    <input type="text" class="form-control required mb-4" id="channel_id"
+                                        placeholder="Enter Channel ID" data-type="message" />
+                                    <div class="text-end">
+                                        <button type="button" class="btn btn-primary" id="test">
+                                            <i class="ri-send-plane-fill align-middle me-2"></i>
+                                            Test
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <ul class="nav nav-tabs mb-3" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" data-bs-toggle="tab" href="#requesttab"
+                                                role="tab" aria-selected="false">
+                                                Request
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link " data-bs-toggle="tab" href="#responsetab" role="tab"
+                                                aria-selected="false">
+                                                Response
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content text-muted">
+                                        <div class="tab-pane active" id="requesttab" role="tabpanel">
+                                            <div class="accordion custom-accordionwithicon-plus" id="accordionFill">
+                                                <div class="accordion-item">
+                                                    <h2 class="accordion-header" id="accordionFillExample1">
+                                                        <button class="accordion-button" type="button"
+                                                            data-bs-toggle="collapse" data-bs-target="#accordion_apiurl"
+                                                            aria-expanded="true" aria-controls="accordion_apiurl">
+                                                            API URL
+                                                        </button>
+                                                    </h2>
+                                                    <div id="accordion_apiurl" class="accordion-collapse collapse show"
+                                                        aria-labelledby="accordionFillExample1"
+                                                        data-bs-parent="#accordionFill">
+                                                        <div class="accordion-body">
+                                                            <span>
+                                                                <span
+                                                                    class="badge text-bg-danger p-2 me-2">DELETE</span>
+                                                                <span class="text-primary" id="apiurl"
+                                                                    style="word-wrap: break-word;"></span>
+                                                            </span>
+                                                            <span class="btn btn-light btn-icon mx-2 copy"
+                                                                id="copy_apiurl" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top" title="Copy API">
+                                                                <i class="fa-regular fa-copy"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item">
+                                                    <h2 class="accordion-header" id="accordionFillExample2">
+                                                        <button class="accordion-button collapsed" type="button"
+                                                            data-bs-toggle="collapse" data-bs-target="#accordion_param"
+                                                            aria-expanded="false" aria-controls="accordion_param">
+                                                            Parameters
+                                                        </button>
+                                                    </h2>
+                                                    <div id="accordion_param" class="accordion-collapse collapse"
+                                                        aria-labelledby="accordionFillExample2"
+                                                        data-bs-parent="#accordionFill">
+                                                        <div class="accordion-body">
+                                                            <table class="table table-bordered">
+                                                                <tr>
+                                                                    <th style="width: 40%;">
+                                                                        Channel ID
+                                                                        <span class="text-danger fs-12 mx-2">
+                                                                            (Required)
+                                                                        </span>
+                                                                    </th>
+                                                                    <td style="width: 70%;">ID of Channel</td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="accordion-item">
+                                                    <h2 class="accordion-header" id="accordionFillExample3">
+                                                        <button class="accordion-button collapsed" type="button"
+                                                            data-bs-toggle="collapse"
+                                                            data-bs-target="#accordion_response" aria-expanded="false"
+                                                            aria-controls="accordion_response">
+                                                            Possible Response
+                                                        </button>
+                                                    </h2>
+                                                    <div id="accordion_response" class="accordion-collapse collapse"
+                                                        aria-labelledby="accordionFillExample3"
+                                                        data-bs-parent="#accordionFill">
+                                                        <div class="accordion-body">
+                                                            <table class="table">
+                                                                <tr>
+                                                                    <th class="text-success text-center"
+                                                                        style="width: 20%;">
+                                                                        200
+                                                                    </th>
+                                                                    <td style="width: 80%;">
+                                                                        Channel Deleted
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th class="text-danger text-center"
+                                                                        style="width: 20%;">
+                                                                        401
+                                                                    </th>
+                                                                    <td style="width: 80%;">
+                                                                        Invalid APIKEY / Instance ID
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th class="text-danger text-center"
+                                                                        style="width: 20%;">
+                                                                        404
+                                                                    </th>
+                                                                    <td style="width: 80%;">
+                                                                        Invalid Contact ID
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th class="text-danger text-center"
+                                                                        style="width: 20%;">
+                                                                        500
+                                                                    </th>
+                                                                    <td style="width: 80%;">
+                                                                        Internal Server Error
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane" id="responsetab" role="tabpanel">
+                                            <div class="d-flex justify-content-end">
+                                                <button class="btn btn-outline-primary waves-effect copy mb-2"
+                                                    id="copy_response" data-bs-toggle="tooltip" data-bs-placement="top"
+                                                    title="Copy Response">
+                                                    <i class="fa-regular fa-copy me-lg-2"></i>
+                                                    <span class="d-none d-lg-inline-block">Copy</span>
+                                                </button>
+                                            </div>
+                                            <div class="live-preview rounded-3" data-simplebar
+                                                data-simplebar-auto-hide="false" style="height: 210px;">
+                                                <pre id="response">
+                                                    <code class="language-json"></code>
+                                                </pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- footer -->
+                <footer class="footer"></footer>
+            </div>
+        </div>
+    </div>
+
+    <!--start back-to-top-->
+    <button onclick="topFunction()" class="btn btn-danger btn-icon" id="back-to-top">
+        <i class="ri-arrow-up-line"></i>
+    </button>
+    <!--end back-to-top-->
+
+    <!--preloader-->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner-border text-primary avatar-sm" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <span class="">Loading...</span>
+        </div>
+    </div>
+
+    <div class="customizer-setting" id="chatbot">
+        <div class="btn-info btn-rounded shadow-lg btn btn-icon btn-lg p-2">
+            <i class="fa-solid fa-comment" id="iconchat"></i>
+        </div>
+    </div>
+
+    <div class="email-chat-detail" id="emailchat-detailElem" style="display: none;">
+        <div class="card mb-0">
+            <div class="card-header align-items-center d-flex bg-primary text-white-50">
+                <div class="flex-grow-1">
+                    <h5 class="fs-15 text-white mb-1 profile-username">Velzon ChatBot</h5>
+                    <p class="mb-0 fs-12 lh-1">Ask here for help</p>
+                </div>
+                <div>
+                    <i class="fa-brands fa-bots fs-1 text-white"></i>
+                </div>
+            </div>
+
+            <div class="card-body p-0">
+                <div id="users-chat">
+                    <div class="chat-conversation p-3" id="chat-conversation" data-simplebar style="height: 250px;">
+                        <ul class="list-unstyled chat-conversation-list chat-sm" id="conversation"></ul>
+                    </div>
+                </div>
+
+                <div class="border-top border-top-dashed">
+                    <div class="row g-2 mx-3 mt-2 mb-3">
+                        <div class="col">
+                            <div class="position-relative">
+                                <input type="text" class="form-control border-light bg-light message-input"
+                                    placeholder="Enter Message..." id="input">
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <button class="btn btn-primary" id="sendbotmsg">
+                                <i class="mdi mdi-send"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script src="/assets/js/jquery.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/chatbot.js"></script>
+    <script src="/assets/js/validate.js"></script>
+    <script src="/assets/js/docs.js"></script>
+
+    <script src="/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="/assets/libs/node-waves/waves.min.js"></script>
+    <script src="/assets/libs/feather-icons/feather.min.js"></script>
+    <script src="/assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+    <!-- aos js -->
+    <script src="/assets/libs/aos/aos.js"></script>
+    <!-- prismjs plugin -->
+    <script src="/assets/libs/prismjs/prism.js"></script>
+    <!-- animation init -->
+    <script src="/assets/js/pages/animation-aos.init.js"></script>
+
+    <!-- App js -->
+    <script src="/assets/js/app.js"></script>
+
+    <!-- Sweet Alerts js -->
+    <script src="/assets/sweetalert2/sweet-alert.init.js"></script>
+    <script src="/assets/sweetalert2/sweetalert2.all.js"></script>
+
+    <!-- prismjs plugin -->
+    <script src="/assets/libs/prismjs/prism.js"></script>
+    <script src="/assets/libs/list.js/list.min.js"></script>
+    <script src="/assets/libs/list.pagination.js/list.pagination.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $(".required").on('focusout', function () {
+                onfocusout_validation($(this).attr('id'));
+            });
+
+            $(".required").on('input', function () {
+                oninput_validation($(this).attr('id'));
+            });
+
+            $(document).on('click', '#test', function () {
+                nullfield_validation('channel_id');
+                if (objFlag.flag_channel_id == 0) {
+                    oninput_validation('channel_id');
+                    if (objFlag.flag_channel_id == 0) {
+                        const iid = sessionStorage.getItem('iid') || `{{ instance_id }}`;
+                        $.ajax({
+                            url: `/api/${iid}/${document.URL.split('/')[4]}`,
+                            method: `DELETE`,
+                            headers: {
+                                "apikey": $('#apikey').val()
+                            },
+                            data: {
+                                "channel_id": `'${$('#channel_id').val()}'`,
+                            },
+                            success: function (val) {
+                                $(`#requesttab, a.nav-link[href="#requesttab"], 
+                                    #responsetab,a.nav-link[href="#responsetab"]`).removeClass('active');
+                                $('#responsetab, a.nav-link[href="#responsetab"]').addClass('active');
+
+                                $('#response').addClass('text-primary');
+                                const pre = document.getElementById('response');
+                                pre.textContent = JSON.stringify(val, null, 2);
+                                hljs.highlightBlock(pre);
+
+                                $('#channel_id').removeClass('form-control-success form-control-success').val(``);
+
+                                if (val.status_code == 401) {
+                                    (val.Message.includes("API KEY"))
+                                        ? $('#apikey').focus().addClass('form-control-danger')
+                                        : $('#iid').focus().addClass('form-control-danger');
+                                }
+                            }
+                        });
+                    }
+                }
+            })
+        });
+    </script>
+</body>
+
+</html>

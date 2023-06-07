@@ -1,0 +1,734 @@
+<!doctype html>
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg"
+    data-sidebar-image="none" data-preloader="disable">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Sign Up | WhatsApp Message</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesbrand" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="../assets/images/favicon.ico">
+
+    <!-- aos css -->
+    <link rel="stylesheet" href="../assets/libs/aos/aos.css" />
+    <!-- Layout config Js -->
+    <script src="../assets/js/layout.js"></script>
+    <!-- Bootstrap Css -->
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="../assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <!-- custom Css-->
+    <link href="../assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <!-- Font Awesome Files -->
+    <link href="../assets/fontawesome/css/all.min.css" rel="stylesheet">
+    <link href="../assets/fontawesome/css/solid.css" rel="stylesheet">
+    <link href="../assets/fontawesome/css/solid.min.css" rel="stylesheet">
+    <link href="../assets/fontawesome/css/regular.css" rel="stylesheet">
+    <link href="../assets/fontawesome/css/regular.min.css" rel="stylesheet">
+    <link href="../assets/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+    <link href="../assets/fontawesome/css/fontawesome.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="auth-page-wrapper pt-5">
+        <!-- auth page bg -->
+        <div class="auth-one-bg-position auth-one-bg" id="auth-particles">
+            <div class="bg-overlay"></div>
+
+            <div class="shape">
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 0 1440 120">
+                    <path d="M 0,36 C 144,53.6 432,123.2 720,124 C 1008,124.8 1296,56.8 1440,40L1440 140L0 140z"></path>
+                </svg>
+            </div>
+        </div>
+
+        <!-- auth page content -->
+        <div class="auth-page-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="text-center mt-sm-2 mb-2 text-white-50">
+                            <a href="/" class="d-inline-block auth-logo">
+                                <img src="../assets/images/logo-light.png" alt="" height="20">
+                            </a>
+                            <p class="mt-3 fs-15 fw-medium">WhatsApp Message</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-md-8 col-lg-6 col-xl-5">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title text-center">Signup Your Account</h4>
+                                <div class="signin-other-title text-center mb-4">
+                                    <!-- <h5 class="fs-13 title"></h5> -->
+                                </div>
+                                <div id="custom-progress-bar" class="progress-nav mb-4">
+                                    <div class="progress" style="height: 5px;">
+                                        <div class="progress-bar" role="progressbar" style="width: 0%;"
+                                            aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <ul class="nav nav-pills progress-bar-tab custom-nav" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link rounded-pill active"
+                                                data-progressbar="custom-progress-bar" id="email-verify-tab"
+                                                data-bs-toggle="pill" data-bs-target="#email-verify-tabpan"
+                                                type="button" role="tab" aria-controls="email-verify-tabpan"
+                                                aria-selected="true">1</button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link rounded-pill" data-progressbar="custom-progress-bar"
+                                                id="general-info-tab" data-bs-toggle="pill"
+                                                data-bs-target="#general-info-tabpan" type="button" role="tab"
+                                                aria-controls="general-info-tabpan" aria-selected="false">2</button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link rounded-pill" data-progressbar="custom-progress-bar"
+                                                id="set-password-tab" data-bs-toggle="pill"
+                                                data-bs-target="#set-password-tabpan" type="button" role="tab"
+                                                aria-controls="set-password-tabpan" aria-selected="false">3</button>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="tab-content">
+                                    <div class="tab-pane fade show active" id="email-verify-tabpan" role="tabpanel">
+                                        <div class="mb-4">
+                                            <h5 class="text-primary">Email Verification</h5>
+                                        </div>
+                                        <div class="mb-1">
+                                            <label for="email" class="form-label">
+                                                Email
+                                                <span class="text-danger">*</span>
+                                                <span class="text-danger" id="err_email"></span>
+                                            </label>
+                                            <div class="d-lg-flex d-md-flex justify-content-between gap-2">
+                                                <input type="email" class="form-control required flex-grow-1 mb-2"
+                                                    name="email" id="email" placeholder="Enter email address"
+                                                    data-type="email" />
+                                                <button id="sendOTP"
+                                                    class="btn btn-primary btn-load flex-shrink-0 mb-2">
+                                                    Send Code
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="bg-warning bg-opacity-10 border border-warning p-2 rounded-3 text-warning mb-3 d-none"
+                                            id="warning_lbl">
+                                            <div class="d-flex align-items-center">
+                                                <i class="ri-error-warning-line align-middle me-2 fs-20"></i>
+                                                <div class="vr"></div>
+                                                <p class="fs-14 fw-medium mb-0 ms-2" style="text-align: justify;">
+                                                    The Verification code is sent to your Email
+                                                    <span id="enter_email" class="text-primary">email</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 d-none" id="verify_email_div">
+                                            <label for="code" class="form-label">
+                                                Verification Code
+                                                <span class="text-danger">*</span>
+                                                <span class="text-danger" id="err_code"></span>
+                                            </label>
+                                            <div class="d-lg-flex d-md-flex justify-content-between gap-2">
+                                                <input type="text" class="form-control required flex-grow-1 mb-2"
+                                                    id="code" placeholder="Enter Verification code"
+                                                    data-type="message" />
+                                                <button id="verifyOTP"
+                                                    class="btn btn-success btn-load flex-shrink-0 mb-2">
+                                                    Verify
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-start gap-3 mt-4">
+                                            <button class="btn btn-success btn-label right ms-auto"
+                                                id="email-verify-next-btn">
+                                                <i class="ri-arrow-right-line label-icon align-middle fs-16 ms-2"></i>
+                                                Next
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="tab-pane fade" id="general-info-tabpan" role="tabpanel">
+                                        <div class="mb-4">
+                                            <h5 class="text-primary">General Information</h5>
+                                        </div>
+                                        <div class="row mb-3">
+                                            <div class="col-lg-6">
+                                                <label for="uname" class="form-label">
+                                                    Name
+                                                    <span class="text-danger">*</span>
+                                                    <span class="text-danger" id="err_uname"></span>
+                                                </label>
+                                                <input type="text" class="form-control required" name="name" id="uname"
+                                                    placeholder="Enter name" data-type="name" />
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label for="phone" class="form-label">
+                                                    Phone
+                                                    <span class="text-danger">*</span>
+                                                    <span class="text-danger" id="err_phone"></span>
+                                                </label>
+                                                <input type="text" class="form-control required mb-2" id="phone"
+                                                    placeholder="xxxxx xxxxx" data-type="phone" />
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="country" class="form-label">
+                                                Country
+                                                <span class="text-danger">*</span>
+                                                <span class="text-danger" id="err_country"></span>
+                                            </label>
+                                            <select id="country" name="country" class="form-control required"
+                                                data-type="name">
+                                                <option selected disabled value=""> Select Country </option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="state" class="form-label">
+                                                State
+                                                <span class="text-danger">*</span>
+                                                <span class="text-danger" id="err_state"></span>
+                                            </label>
+                                            <select id="state" name="state" class="form-control required"
+                                                data-type="name">
+                                                <option selected disabled value=""> Select State </option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="city" class="form-label">
+                                                City
+                                                <span class="text-danger" id="err_city"></span>
+                                            </label>
+                                            <select id="city" name="city" class='form-control'>
+                                                <option selected disabled value=""> Select City </option>
+                                            </select>
+                                        </div>
+                                        <div class="d-flex align-items-start gap-3 mt-4">
+                                            <button type="button"
+                                                class="btn btn-link text-decoration-none btn-label previestab"
+                                                data-previous="pills-gen-info-tab"><i
+                                                    class="ri-arrow-left-line label-icon align-middle fs-16 me-2"></i>
+                                                Back</button>
+                                            <button type="button"
+                                                class="btn btn-success btn-label right ms-auto nexttab nexttab"
+                                                data-nexttab="pills-success-tab" id="general-info-next-btn">
+                                                <i class="ri-arrow-right-line label-icon align-middle fs-16 "></i>
+                                                Next
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="tab-pane fade" id="set-password-tabpan" role="tabpanel">
+                                        <div class="mb-4">
+                                            <h5 class="text-primary">Set Password</h5>
+                                        </div>
+                                        <div class="p-2">
+                                            <form>
+                                                <div class="mb-3">
+                                                    <label for="password" class="form-label">
+                                                        Password
+                                                        <span class="text-danger">*</span>
+                                                        <span class="text-danger" id="err_password"></span>
+                                                    </label>
+                                                    <div class="position-relative auth-pass-inputgroup">
+                                                        <input type="password"
+                                                            class="form-control pe-5 password-input required"
+                                                            name="password" placeholder="Enter password" id="password"
+                                                            data-type="password" autocomplete="on" />
+                                                        <button
+                                                            class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon"
+                                                            type="button">
+                                                            <i class="ri-eye-fill align-middle"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <label for="password" class="form-label">
+                                                        Confirm Password
+                                                        <span class="text-danger">*</span>
+                                                        <span class="text-danger" id="err_cnfm_password"></span>
+                                                    </label>
+                                                    <div class="position-relative auth-pass-inputgroup">
+                                                        <input type="password" class="form-control pe-5 required"
+                                                            name="password" placeholder="Enter password"
+                                                            id="cnfm_password" data-type="password" autocomplete="on" />
+                                                        <button
+                                                            class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon"
+                                                            type="button">
+                                                            <i class="ri-eye-fill align-middle"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                        <div id="password-contain" class="p-3 bg-light mb-2 rounded">
+                                            <h5 class="fs-13">Password must contain:</h5>
+                                            <p id="pass-length" class="invalid fs-12 mb-2">
+                                                Minimum <b>8 characters</b>
+                                            </p>
+                                            <p id="pass-lower" class="invalid fs-12 mb-2">
+                                                At <b>lowercase</b> letter (a-z)
+                                            </p>
+                                            <p id="pass-upper" class="invalid fs-12 mb-2">
+                                                At least <b>uppercase</b> letter (A-Z)
+                                            </p>
+                                            <p id="pass-number" class="invalid fs-12 mb-2">
+                                                A least <b>number</b>(0-9)
+                                            </p>
+                                            <p id="pass-symbol" class="invalid fs-12 mb-0">
+                                                A least <b>Symbol</b>(like - *#@..)
+                                            </p>
+                                        </div>
+                                        <div class="d-flex align-items-start gap-3 mt-4">
+                                            <button class="btn btn-success btn-label right ms-auto nexttab" id="signup">
+                                                <i class="ri-arrow-right-line label-icon align-middle fs-16 "></i>
+                                                Submit
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-4 text-center">
+                            <p class="mb-0">
+                                Already have an account ?
+                                <a href="/signin" class="fw-semibold text-primary text-decoration-underline">
+                                    Signin
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="text-center">
+                            <p class="mb-0 text-muted">&copy;
+                                <span id="current_year"></span> Velzon. Created by Triangles
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- end Footer -->
+    </div>
+    <!-- end auth-page-wrapper -->
+
+    <!-- JAVASCRIPT -->
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/validate.js"></script>
+    <script src="../assets/js/main.js"></script>
+
+    <script src="../assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="../assets/libs/node-waves/waves.min.js"></script>
+    <script src="../assets/libs/feather-icons/feather.min.js"></script>
+    <script src="../assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+    <script src="../assets/js/pages/form-wizard.init.js"></script>
+
+    <!-- cleave.js -->
+    <script src="../assets/libs/cleave.js/cleave.min.js"></script>
+    <!-- form masks init -->
+    <script src="../assets/js/pages/form-masks.init.js"></script>
+    <!-- particles js -->
+    <script src="../assets/libs/particles.js/particles.js"></script>
+    <!-- particles app js -->
+    <script src="../assets/js/pages/particles.app.js"></script>
+    <!-- aos js -->
+    <script src="../assets/libs/aos/aos.js"></script>
+    <!-- prismjs plugin -->
+    <script src="../assets/libs/prismjs/prism.js"></script>
+    <!-- animation init -->
+    <script src="../assets/js/pages/animation-aos.init.js"></script>
+
+    <!-- App js -->
+    <script src="../assets/js/app.js"></script>
+    <!-- validation init -->
+    <script src="../assets/js/pages/form-validation.init.js"></script>
+    <!-- password create init -->
+    <script src="../assets/js/pages/passowrd-create.init.js"></script>
+
+    <script src="../assets/sweetalert2/sweet-alert.init.js"></script>
+    <script src="../assets/sweetalert2/sweetalert2.all.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            //-------------------------------SELECT CASCADING-------------------------//
+            let selectedCountry = (selectedRegion = selectedCity = "");
+            let globalcountry;
+            // This is a demo API key for testing purposes. You should rather request your API key (free) from http://battuta.medunes.net/
+            var BATTUTA_KEY = "00000000000000000000000000000000";
+            // Populate country select box from battuta API
+            url =
+                "https://battuta.medunes.net/api/country/all/?key=" +
+                BATTUTA_KEY +
+                "&callback=?";
+
+            // EXTRACT JSON DATA.
+            $.getJSON(url, function (data) {
+                $.each(data, function (index, value) {
+                    // APPEND OR INSERT DATA TO SELECT ELEMENT.
+                    $("#country").append(
+                        '<option id="' + value.name + '" value="' + value.code + '">' + value.name + "</option>"
+                    );
+                });
+
+
+            });
+            $("#country").change(function () {
+                selectedCountry = this.options[this.selectedIndex].text;
+                globalcountry = this.options[this.selectedIndex].text;
+
+                alert(selectedCountry);
+                countryCode = $("#country").val();
+                alert(countryCode);
+                url =
+                    "https://battuta.medunes.net/api/region/" +
+                    countryCode +
+                    "/all/?key=" +
+                    BATTUTA_KEY +
+                    "&callback=?";
+                $.getJSON(url, function (data) {
+                    $("#state option").remove();
+                    $('#state').append('<option selected disabled value=""> Select State </option>');
+                    $.each(data, function (index, value) {
+                        // APPEND OR INSERT DATA TO SELECT ELEMENT.
+                        $("#state").append(
+                            '<option value="' + value.region + '">' + value.region + "</option>"
+                        );
+                    });
+                });
+            });
+            // Region selected --> updated city list
+            $("#state").on("change", function () {
+                selectedRegion = this.options[this.selectedIndex].text;
+                // Populate country select box from battuta API
+                countryCode = $("#country").val();
+                state = $("#state").val();
+                alert(state);
+                url =
+                    "https://battuta.medunes.net/api/city/" +
+                    countryCode +
+                    "/search/?region=" +
+                    state +
+                    "&key=" +
+                    BATTUTA_KEY +
+                    "&callback=?";
+                $.getJSON(url, function (data) {
+                    console.log(data);
+                    $("#city option").remove();
+                    $('#city').append('<option selected disabled value=""> Select City </option>');
+                    $.each(data, function (index, value) {
+                        // APPEND OR INSERT DATA TO SELECT ELEMENT.
+                        $("#city").append(
+                            '<option value="' + value.city + '">' + value.city + "</option>"
+                        );
+                    });
+                });
+            });
+            // city selected --> update location string
+            $("#city").on("change", function () {
+                selectedCity = this.options[this.selectedIndex].text;
+                $("#location").html(`Locatation: Country: ${selectedCountry}, Region: ${selectedRegion}, City: ${selectedCity}`);
+            });
+
+
+            // $('#email-verify-next-btn').prop("disabled", true);
+
+            $("#sendOTP").on("click", function () {
+                nullfield_validation('email');
+                if (objFlag.flag_email == 0) {
+                    $.ajax({
+                        url: "/sendEmailVerification",
+                        method: "POST",
+                        data: {
+                            "email": $("#email").val().trim()
+                        },
+                        beforeSend: function () {
+                            $("#sendOTP")
+                                .removeClass('btn-primary btn-success')
+                                .addClass('btn-warning')
+                                .html(`<span class="d-flex align-items-center">
+                                        <span class="flex-grow-1 me-lg-2 me-md-2">
+                                            Sending
+                                        </span>
+                                        <span class="spinner-border flex-shrink-0" role="status">
+                                            <span class="visually-hidden"></span>
+                                        </span>
+                                    </span>`);
+                        },
+                        success: function (val) {
+                            $("#warning_lbl, #verify_email_div").removeClass("d-none");
+                            $("#sendOTP")
+                                .removeClass('btn-warning btn-success')
+                                .addClass('btn-primary')
+                                .html("Resend");
+                        }
+                    })
+                }
+            })
+
+            document.cookie = "everify=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+            $(document).on("click", '#verifyOTP', function () {
+                nullfield_validation('code');
+                if (objFlag.flag_code == 0) {
+                    $.ajax({
+                        url: `/verifyOTP`,
+                        method: "POST",
+                        data: {
+                            "otp": $("#code").val().trim()
+                        },
+                        success: function (val) {
+                            switch (val.status_code) {
+                                case '401': {
+                                    swal({
+                                        title: 'Wrong OTP',
+                                        type: 'error',
+                                        timer: 2500,
+                                        showConfirmButton: false,
+                                    }).then(function () {
+                                        $("#code").val('').focus();
+                                    })
+                                    break;
+                                }
+
+                                case '403': {
+                                    swal({
+                                        title: 'OTP Expired',
+                                        text: 'Click resend button to resend OTP',
+                                        type: 'error',
+                                        timer: 3500,
+                                        showConfirmButton: false,
+                                    }).then(function () {
+                                        $("#code").focus();
+                                    })
+                                    break;
+                                }
+
+                                case '200': {
+                                    swal({
+                                        title: 'Email Verified',
+                                        type: 'success',
+                                        timer: 2500,
+                                        showConfirmButton: false,
+                                    }).then(function () {
+                                        $("#warning_lbl, #verify_email_div, #sendOTP").addClass("d-none");
+                                        $('#email-verify-next-btn').prop("disabled", false);
+                                        $('#email').prop("disabled", true);
+                                    })
+                                    break;
+                                }
+                            }
+                        }
+                    })
+                }
+            })
+
+            $(document).on('click', '#email-verify-next-btn', function () {
+                nullfield_validation('email');
+                const flag = getCookie('everify');
+                console.log(flag);
+                console.log(typeof (flag));
+                if (objFlag.flag_email == 0 && flag == "true") {
+                    $('#general-info-tab').click();
+                }
+                else {
+                    swal({
+                        title: 'Email Verification Pending',
+                        type: 'error',
+                        timer: 2500,
+                        showConfirmButton: false,
+                    }).then(function () {
+                        $("#warning_lbl, #verify_email_div").addClass("d-none");
+                        $('#email-verify-next-btn').prop("disabled", true);
+                    })
+                }
+            })
+
+            var name = document.getElementById('uname');
+            var phone = document.getElementById('phone');
+            var email = document.getElementById('email');
+            var password = document.getElementById('password');
+            var country = document.getElementById('country');
+            var state = document.getElementById('state');
+            var city = document.getElementById('city');
+            $('#pwd_tip').show();
+
+            $(".required").on('focusout', function () {
+                onfocusout_validation($(this).attr('id'));
+            });
+
+            $(".required").on('input', function () {
+                oninput_validation($(this).attr('id'));
+            });
+
+            $(document).on('click', '#general-info-next-btn', function () {
+                nullfield_validation('uname');
+                nullfield_validation('phone');
+                nullfield_validation('country');
+                nullfield_validation('state');
+                if (objFlag.flag_uname == 0 && objFlag.flag_phone == 0 && objFlag.flag_country == 0 && objFlag.flag_state == 0) {
+                    oninput_validation('uname');
+                    oninput_validation('phone');
+                    nullfield_validation('country');
+                    nullfield_validation('state');
+
+                    if (objFlag.flag_uname == 0 && objFlag.flag_phone == 0 && objFlag.flag_country == 0 && objFlag.flag_state == 0) {
+                        selectedCountry = country.options[country.selectedIndex].text;
+                        $('#set-password-tab').click();
+                    }
+                }
+
+            })
+
+            focusEvent('password', 'cnfm_password');
+
+            $(document).on('click', '#signup', function () {
+                alert();
+                console.log(name.value + " " + phone.value + " " + email.value + " " + password.value + " " + globalcountry + " " + state + " " + city.value);
+                nullfield_validation('password');
+                nullfield_validation('cnfm_password');
+                if (objFlag.flag_cnfm_password == 0 && objFlag.flag_password == 0) {
+                    oninput_validation('password');
+                    oninput_validation('cnfm_password');
+                    if (objFlag.flag_cnfm_password == 0 && objFlag.flag_password == 0) {
+                        alert("done validation");
+                        if ($('#password').val() == $('#cnfm_password').val()) {
+                            alert("pwd mathed");
+                            $.ajax({
+                                url: "/adduser",
+                                method: "POST",
+                                data: {
+                                    "name": $("#uname").val(),
+                                    "phone": phone.value,
+                                    "email": email.value,
+                                    "password": password.value,
+                                    "country": globalcountry,
+                                    "state": state,
+                                    "city": city.value
+                                },
+                                success: function (val) {
+                                    if (val.status_code == 200) {
+                                        swal(
+                                            {
+                                                title: 'Registered successfully',
+                                                type: 'success',
+                                                timer: 3000,
+                                                showConfirmButton: false
+                                            }
+                                        ).then(function () {
+                                            location.href = "/signin";
+                                        })
+                                    }
+                                    else if (val.status_code == 409) {
+                                        document.getElementById('email').focus();
+                                        swal({
+                                            title: 'User alerady exist',
+                                            type: 'error',
+                                            timer: 3000,
+                                            showConfirmButton: false
+                                        })
+                                        email.classList.add('form-control-danger');
+                                    }
+                                    else if (val.status_code == 500) {
+                                        swal({
+                                            title: 'Internal server error',
+                                            text: 'try againg later',
+                                            type: 'warning',
+                                            showConfirmButton: false,
+                                            timer: 3000
+                                        }).then(function () {
+                                            location.href = "/signup";
+                                        })
+                                    }
+                                }
+                            })
+                        }
+                        else {
+                            swal({
+                                title: 'Password didn\'t Match.',
+                                text: `password and confirm-password must be same.`,
+                                type: 'warning',
+                                showConfirmButton: false,
+                                timer: 2500
+                            })
+                        }
+                    }
+
+                }
+            })
+        });
+    </script>
+</body>
+
+
+</html>
+
+
+
+
+
+<!-- // $.ajax({
+    //     url: "/adduser",
+    //     method: "POST",
+    //     data: {
+    //         "name": name.value,
+    //         "phone": phone.value,
+    //         "email": email.value,
+    //         "password": password.value,
+    //         "country": selectedCountry,
+    //         "state": state.value,
+    //         "city": city.value
+    //     },
+    //     success: function (val) {
+    //         if (val.status_code == 200) {
+    //             // swal(
+    //             //     {
+    //             //         title: 'Registered successfully',
+    //             //         type: 'success',
+    //             //         timer: 3000
+    //             //     }
+    //             // ).then(function () {
+    //             //     location.href = "/signin";
+    //             // })
+    //         }
+    //         else if (val.status_code == 409) {
+    //             document.getElementById('email').focus();
+    //             swal({
+    //                 title: 'User alerady exist',
+    //                 type: 'error',
+    //                 timer: 3000
+    //             })
+    //             email.classList.add('form-control-danger');
+    //         }
+    //         else if (val.status_code == 500) {
+    //             swal({
+    //                 title: 'Internal server error',
+    //                 text: 'try againg later',
+    //                 type: 'warning',
+    //                 timer: 3000
+    //             }).then(function () {
+    //                 location.href = "/signup";
+    //             })
+    //         }
+    //     }
+    // }) -->
